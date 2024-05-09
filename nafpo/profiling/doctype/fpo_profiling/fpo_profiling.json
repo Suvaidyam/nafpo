@@ -1,0 +1,368 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-09 11:20:29.637489",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "state_name",
+  "district_name",
+  "block_name",
+  "name_of_the_fpo",
+  "fpos_address",
+  "fpos_pincode",
+  "bod_kyc_name",
+  "name_of_cbbo",
+  "supporting_agencies_from_to",
+  "type_of_organization",
+  "date_of_incorporation",
+  "registration_no",
+  "gst_status",
+  "gst_no",
+  "gst_received_upload",
+  "fpo_email_id",
+  "contact_detail_of_fpo",
+  "licence_number_for_seeds",
+  "date_of_expiry_for_seeds",
+  "license_doc",
+  "licence_number_for_fertilizer",
+  "date_of_expiry_for_fertilizer",
+  "license_doc_fertilizer",
+  "licence_number_for_pesticide",
+  "date_of_expiry_for_pesticide",
+  "license_doc1",
+  "licence_number_for_fssai",
+  "date_of_expiry_for_fssai",
+  "license_doc2",
+  "ceo_name",
+  "ceo_gender",
+  "ceo_dob",
+  "ceo_age",
+  "ceo_date_of_joining",
+  "ceo_contact_number",
+  "accountant_name",
+  "accountant_gender",
+  "accountant_dob",
+  "accountant_age",
+  "accountant_date_of_joining",
+  "accountant_contact_number",
+  "do_you_have_logo",
+  "fpo_logo",
+  "status",
+  "created_at",
+  "updated_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "state_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "State Name",
+   "options": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "district_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "District Name",
+   "options": "District",
+   "reqd": 1
+  },
+  {
+   "fieldname": "block_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Block Name",
+   "options": "Block",
+   "reqd": 1
+  },
+  {
+   "fieldname": "name_of_the_fpo",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of the FPO",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fpos_address",
+   "fieldtype": "Data",
+   "label": "FPO's Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fpos_pincode",
+   "fieldtype": "Int",
+   "label": "FPO's pincode",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bod_kyc_name",
+   "fieldtype": "Data",
+   "label": "BOD KYC Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "name_of_cbbo",
+   "fieldtype": "Link",
+   "label": "Name of CBBO",
+   "options": "CBBO",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supporting_agencies_from_to",
+   "fieldtype": "Data",
+   "label": "Supporting Agencies, From, To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type_of_organization",
+   "fieldtype": "Data",
+   "label": "Type of Organization",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_incorporation",
+   "fieldtype": "Date",
+   "label": "Date of incorporation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "registration_no",
+   "fieldtype": "Int",
+   "label": "Registration No.",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gst_status",
+   "fieldtype": "Data",
+   "label": "GST Status",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gst_no",
+   "fieldtype": "Data",
+   "label": "GST No.",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gst_received_upload",
+   "fieldtype": "Attach",
+   "label": "GST Received Upload"
+  },
+  {
+   "fieldname": "fpo_email_id",
+   "fieldtype": "Data",
+   "label": "FPO Email Id",
+   "options": "email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_detail_of_fpo",
+   "fieldtype": "Phone",
+   "label": "Contact Detail of FPO",
+   "options": "+91-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "licence_number_for_seeds",
+   "fieldtype": "Data",
+   "label": "Licence Number for Seeds",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_expiry_for_seeds",
+   "fieldtype": "Date",
+   "label": "Date of expiry for Seeds",
+   "reqd": 1
+  },
+  {
+   "fieldname": "license_doc",
+   "fieldtype": "Attach",
+   "label": "License Doc"
+  },
+  {
+   "fieldname": "licence_number_for_fertilizer",
+   "fieldtype": "Int",
+   "label": "Licence Number for Fertilizer",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_expiry_for_fertilizer",
+   "fieldtype": "Date",
+   "label": "Date of expiry for Fertilizer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "license_doc_fertilizer",
+   "fieldtype": "Attach",
+   "label": "License Doc"
+  },
+  {
+   "fieldname": "licence_number_for_pesticide",
+   "fieldtype": "Int",
+   "label": "Licence Number for Pesticide",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_expiry_for_pesticide",
+   "fieldtype": "Date",
+   "label": "Date of expiry for Pesticide",
+   "reqd": 1
+  },
+  {
+   "fieldname": "license_doc1",
+   "fieldtype": "Attach",
+   "label": "License Doc."
+  },
+  {
+   "fieldname": "licence_number_for_fssai",
+   "fieldtype": "Data",
+   "label": "Licence Number for fssai",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_expiry_for_fssai",
+   "fieldtype": "Date",
+   "label": "Date of expiry for fssai",
+   "reqd": 1
+  },
+  {
+   "fieldname": "license_doc2",
+   "fieldtype": "Attach",
+   "label": "License Doc."
+  },
+  {
+   "fieldname": "ceo_name",
+   "fieldtype": "Data",
+   "label": "CEO Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ceo_gender",
+   "fieldtype": "Select",
+   "label": "CEO Gender",
+   "options": "Male\nFemale\nOthers",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ceo_dob",
+   "fieldtype": "Date",
+   "label": "CEO DOB",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ceo_age",
+   "fieldtype": "Int",
+   "label": "CEO Age",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "ceo_date_of_joining",
+   "fieldtype": "Date",
+   "label": "CEO date of joining",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ceo_contact_number",
+   "fieldtype": "Int",
+   "label": "CEO Contact Number",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "accountant_name",
+   "fieldtype": "Data",
+   "label": "Accountant Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "accountant_gender",
+   "fieldtype": "Select",
+   "label": "Accountant Gender",
+   "options": "Male\nFemale\nOthers",
+   "reqd": 1
+  },
+  {
+   "fieldname": "accountant_dob",
+   "fieldtype": "Date",
+   "label": "Accountant DOB",
+   "reqd": 1
+  },
+  {
+   "fieldname": "accountant_age",
+   "fieldtype": "Int",
+   "label": "Accountant Age",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "accountant_date_of_joining",
+   "fieldtype": "Date",
+   "label": "Accountant date of joining",
+   "reqd": 1
+  },
+  {
+   "fieldname": "accountant_contact_number",
+   "fieldtype": "Int",
+   "label": "Accountant Contact Number",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "do_you_have_logo",
+   "fieldtype": "Select",
+   "label": "Do You Have Logo?",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fpo_logo",
+   "fieldtype": "Attach Image",
+   "label": "FPO Logo"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive",
+   "reqd": 1
+  },
+  {
+   "fieldname": "created_at",
+   "fieldtype": "Datetime",
+   "label": "Created At"
+  },
+  {
+   "fieldname": "updated_at",
+   "fieldtype": "Datetime",
+   "label": "Updated At"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-09 11:53:03.527821",
+ "modified_by": "Administrator",
+ "module": "Profiling",
+ "name": "FPO Profiling",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
