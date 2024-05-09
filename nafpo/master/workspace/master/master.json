@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Master\"}}]",
+ "content": "[{\"id\":\"PzXFEezwZo\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Geo Master</span>\",\"col\":12}},{\"id\":\"5h24_A5x_l\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"State\",\"col\":3}},{\"id\":\"5yqD0opDZz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"District\",\"col\":3}},{\"id\":\"cK4CW4yzO_\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Block\",\"col\":3}},{\"id\":\"5XL6o5SBCH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Grampanchayat\",\"col\":3}},{\"id\":\"nFDVic1ohx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Village\",\"col\":3}}]",
  "creation": "2024-05-09 07:37:57.599460",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Master",
  "links": [],
- "modified": "2024-05-09 07:38:08.018331",
+ "modified": "2024-05-09 07:47:57.050547",
  "modified_by": "Administrator",
  "module": "Master",
  "name": "Master",
@@ -24,6 +24,47 @@
  "quick_lists": [],
  "roles": [],
  "sequence_id": 1.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "State",
+   "link_to": "State",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "District",
+   "link_to": "District",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Block",
+   "link_to": "Block",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Grampanchayat",
+   "link_to": "Grampanchayat",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Village",
+   "link_to": "Village",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
  "title": "Master"
 }
