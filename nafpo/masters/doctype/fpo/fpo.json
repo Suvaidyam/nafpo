@@ -1,0 +1,79 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2024-05-09 07:58:33.629244",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "state",
+        "district",
+        "block",
+        "fpo_name",
+        "cbbo_name"
+    ],
+    "fields": [
+        {
+            "fieldname": "state",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "State",
+            "options": "State",
+            "reqd": 1
+        },
+        {
+            "fieldname": "district",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "District",
+            "options": "District",
+            "reqd": 1
+        },
+        {
+            "fieldname": "block",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Block",
+            "options": "Block",
+            "reqd": 1
+        },
+        {
+            "fieldname": "fpo_name",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "FPO Name",
+            "options": "FPO",
+            "reqd": 1
+        },
+        {
+            "fieldname": "cbbo_name",
+            "fieldtype": "Link",
+            "label": "CBBO Name",
+            "options": "CBBO",
+            "reqd": 1
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-09 08:00:21.011443",
+    "modified_by": "Administrator",
+    "module": "Masters",
+    "name": "FPO",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}
