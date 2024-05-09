@@ -1,11 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:state_code",
  "creation": "2024-05-09 07:39:03.905658",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "state_name"
+  "state_name",
+  "state_code"
  ],
  "fields": [
   {
@@ -14,14 +16,22 @@
    "in_list_view": 1,
    "label": "State Name",
    "reqd": 1
+  },
+  {
+   "fieldname": "state_code",
+   "fieldtype": "Data",
+   "label": "State Code",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-09 07:39:20.570335",
+ "modified": "2024-05-09 11:13:52.607130",
  "modified_by": "Administrator",
  "module": "Master",
  "name": "State",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
