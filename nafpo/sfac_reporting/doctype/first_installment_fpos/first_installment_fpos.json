@@ -1,0 +1,154 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-10 11:52:19.344678",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "select_fpo",
+  "allocation_year",
+  "recommendation_letter_of_cbbo",
+  "upload_recommendation_letter_of_cbbo",
+  "certificate_of_incorporation",
+  "upload_certificate_of_incorporation",
+  "moa_memorandum_of_association",
+  "upload_moa_memorandum_of_association",
+  "aoa_articles_of_association",
+  "upload_aoa_articles_of_association",
+  "column_break_gnde",
+  "list_of_bods_with_din_no",
+  "upload_list_of_bods_with_din_no",
+  "board_resolutions_of_fpo_authorized_signatory",
+  "upload_board_resolutions_of_fpo_authorized_signatory",
+  "amount_received_by_fpo",
+  "amount_utilised_by_fpo",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "select_fpo",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Select FPO",
+   "options": "FPO",
+   "reqd": 1
+  },
+  {
+   "fieldname": "allocation_year",
+   "fieldtype": "Data",
+   "label": "Allocation Year"
+  },
+  {
+   "fieldname": "recommendation_letter_of_cbbo",
+   "fieldtype": "Select",
+   "label": "Recommendation letter of CBBO",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "certificate_of_incorporation",
+   "fieldtype": "Select",
+   "label": "Certificate of Incorporation",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "upload_certificate_of_incorporation",
+   "fieldtype": "Attach",
+   "label": "Upload Certificate of Incorporation"
+  },
+  {
+   "fieldname": "upload_recommendation_letter_of_cbbo",
+   "fieldtype": "Attach",
+   "label": "Upload Recommendation letter of CBBO"
+  },
+  {
+   "fieldname": "moa_memorandum_of_association",
+   "fieldtype": "Select",
+   "label": "MoA (Memorandum of Association)",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "upload_moa_memorandum_of_association",
+   "fieldtype": "Attach",
+   "label": "Upload MoA (Memorandum of Association)"
+  },
+  {
+   "fieldname": "aoa_articles_of_association",
+   "fieldtype": "Select",
+   "label": "AoA (Articles of Association)",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "upload_aoa_articles_of_association",
+   "fieldtype": "Attach",
+   "label": "Upload AoA (Articles of Association)"
+  },
+  {
+   "fieldname": "list_of_bods_with_din_no",
+   "fieldtype": "Select",
+   "label": "List of BoDs with DIN No",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "upload_list_of_bods_with_din_no",
+   "fieldtype": "Attach",
+   "label": "Upload List of BoDs with DIN No"
+  },
+  {
+   "fieldname": "board_resolutions_of_fpo_authorized_signatory",
+   "fieldtype": "Select",
+   "label": "Board resolutions of FPO authorized signatory",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "upload_board_resolutions_of_fpo_authorized_signatory",
+   "fieldtype": "Attach",
+   "label": "Upload Board resolutions of FPO authorized signatory"
+  },
+  {
+   "fieldname": "amount_received_by_fpo",
+   "fieldtype": "Int",
+   "label": "Amount received by FPO",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "amount_utilised_by_fpo",
+   "fieldtype": "Int",
+   "label": "Amount utilised by FPO",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive"
+  },
+  {
+   "fieldname": "column_break_gnde",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-10 11:58:54.346795",
+ "modified_by": "Administrator",
+ "module": "SFAC Reporting",
+ "name": "First Installment Fpos",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

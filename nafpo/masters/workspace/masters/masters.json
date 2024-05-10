@@ -1,0 +1,126 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"PzXFEezwZo\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Geo Masters</span>\",\"col\":12}},{\"id\":\"5h24_A5x_l\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"State\",\"col\":3}},{\"id\":\"5yqD0opDZz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"District\",\"col\":3}},{\"id\":\"cK4CW4yzO_\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Block\",\"col\":3}},{\"id\":\"5XL6o5SBCH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Grampanchayat\",\"col\":3}},{\"id\":\"nFDVic1ohx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Village\",\"col\":3}},{\"id\":\"vhXdidEDDV\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>NAFPO Masters</b></span>\",\"col\":12}},{\"id\":\"IJb7hq2m5S\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Financial Year\",\"col\":3}},{\"id\":\"qO0bfUBYxF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"IA\",\"col\":3}},{\"id\":\"s7cvLMuvag\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FPO\",\"col\":3}},{\"id\":\"wG7Doqz0Yo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Category\",\"col\":3}},{\"id\":\"ISJlZFt-4f\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Tribe\",\"col\":3}},{\"id\":\"qmnz6XDgFG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Crops</b></span>\",\"col\":12}},{\"id\":\"YkULIZPdqC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Crop Type\",\"col\":3}},{\"id\":\"g4PBrajalI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Crop Name\",\"col\":3}}]",
+ "creation": "2024-05-09 07:37:57.599460",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "table",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Masters",
+ "links": [],
+ "modified": "2024-05-10 14:17:14.147915",
+ "modified_by": "Administrator",
+ "module": "Masters",
+ "name": "Masters",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 2.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "State",
+   "link_to": "State",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Category",
+   "link_to": "Category",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Tribe",
+   "link_to": "Tribe",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Crop Type",
+   "link_to": "Crop Type",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Financial Year",
+   "link_to": "Financial Year",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Crop Name",
+   "link_to": "Crop Name",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "IA",
+   "link_to": "IA",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "FPO",
+   "link_to": "FPO",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "District",
+   "link_to": "District",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Block",
+   "link_to": "Block",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Grampanchayat",
+   "link_to": "Grampanchayat",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Village",
+   "link_to": "Village",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Masters"
+}

@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-10 11:14:55.721742",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "state_name",
+  "name_of_fpo",
+  "type_of_crop",
+  "name_of_crop",
+  "column_break_bari",
+  "expected_yields_quintal_per_acre",
+  "target_market_1",
+  "target_market_2",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "state_name",
+   "fieldtype": "Link",
+   "label": "State Name",
+   "options": "State"
+  },
+  {
+   "fieldname": "name_of_fpo",
+   "fieldtype": "Link",
+   "label": "Name of FPO",
+   "options": "FPO"
+  },
+  {
+   "fieldname": "type_of_crop",
+   "fieldtype": "Link",
+   "label": "Type of Crop",
+   "options": "Crop Type"
+  },
+  {
+   "fieldname": "name_of_crop",
+   "fieldtype": "Data",
+   "label": "Name of Crop"
+  },
+  {
+   "fieldname": "expected_yields_quintal_per_acre",
+   "fieldtype": "Int",
+   "label": "Expected Yields (Quintal per Acre)"
+  },
+  {
+   "fieldname": "target_market_1",
+   "fieldtype": "Data",
+   "label": "Target Market 1"
+  },
+  {
+   "fieldname": "target_market_2",
+   "fieldtype": "Data",
+   "label": "Target Market 2"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive"
+  },
+  {
+   "fieldname": "column_break_bari",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-10 11:18:08.108738",
+ "modified_by": "Administrator",
+ "module": "Masters",
+ "name": "Crop Name",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,171 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-10 12:40:14.923073",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "state",
+  "district",
+  "block",
+  "fpo",
+  "category",
+  "other_category",
+  "language_of_training_material",
+  "language_of_module",
+  "column_break_jwep",
+  "training_title",
+  "objective_of_the_training",
+  "duration_of_training_in_days",
+  "no_of_sessions",
+  "upload_training_module",
+  "approved_status",
+  "feedback",
+  "status",
+  "training_content_section",
+  "training_content_table"
+ ],
+ "fields": [
+  {
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "State",
+   "options": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "District",
+   "options": "District",
+   "reqd": 1
+  },
+  {
+   "fieldname": "block",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Block",
+   "options": "Block",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "FPO",
+   "options": "FPO",
+   "reqd": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Data",
+   "label": "Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "other_category",
+   "fieldtype": "Data",
+   "label": "Other Category"
+  },
+  {
+   "fieldname": "training_title",
+   "fieldtype": "Data",
+   "label": "Training Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "objective_of_the_training",
+   "fieldtype": "Data",
+   "label": "Objective of the training"
+  },
+  {
+   "fieldname": "duration_of_training_in_days",
+   "fieldtype": "Int",
+   "label": "Duration of Training (In days)"
+  },
+  {
+   "fieldname": "no_of_sessions",
+   "fieldtype": "Int",
+   "label": "No. of Sessions"
+  },
+  {
+   "fieldname": "language_of_training_material",
+   "fieldtype": "Link",
+   "label": "Language of Training Material",
+   "options": "Language",
+   "reqd": 1
+  },
+  {
+   "fieldname": "language_of_module",
+   "fieldtype": "Link",
+   "label": "Language of Module",
+   "options": "Language",
+   "reqd": 1
+  },
+  {
+   "fieldname": "upload_training_module",
+   "fieldtype": "Attach",
+   "label": "Upload Training Module"
+  },
+  {
+   "fieldname": "approved_status",
+   "fieldtype": "Select",
+   "label": "Approved Status",
+   "options": "Pending\nApproved\nRejected",
+   "reqd": 1
+  },
+  {
+   "fieldname": "feedback",
+   "fieldtype": "Data",
+   "label": "Feedback"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_jwep",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "training_content_section",
+   "fieldtype": "Section Break",
+   "label": "Training Content"
+  },
+  {
+   "fieldname": "training_content_table",
+   "fieldtype": "Table",
+   "label": "Training Content Table",
+   "options": "Training Content Child"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-10 13:26:28.540326",
+ "modified_by": "Administrator",
+ "module": "Capacity Building",
+ "name": "Training Material",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

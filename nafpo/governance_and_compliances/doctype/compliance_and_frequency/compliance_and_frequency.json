@@ -1,0 +1,136 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-10 12:15:26.524090",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "compliance",
+  "frequency",
+  "level",
+  "state_name",
+  "district_name",
+  "block_name",
+  "column_break_wgds",
+  "fpo_name",
+  "member",
+  "start_date",
+  "dead_line",
+  "alert",
+  "narration",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "compliance",
+   "fieldtype": "Link",
+   "label": "Compliance",
+   "options": "Compliances",
+   "reqd": 1
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Link",
+   "label": "Frequency",
+   "options": "Frequency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "level",
+   "fieldtype": "Data",
+   "label": "Level",
+   "reqd": 1
+  },
+  {
+   "fieldname": "state_name",
+   "fieldtype": "Link",
+   "label": "State Name",
+   "options": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "district_name",
+   "fieldtype": "Link",
+   "label": "District Name",
+   "options": "District",
+   "reqd": 1
+  },
+  {
+   "fieldname": "block_name",
+   "fieldtype": "Link",
+   "label": "Block Name",
+   "options": "Block",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fpo_name",
+   "fieldtype": "Link",
+   "label": "FPO Name",
+   "options": "FPO",
+   "reqd": 1
+  },
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "label": "Member",
+   "options": "FPO member details"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dead_line",
+   "fieldtype": "Date",
+   "label": "Dead Line"
+  },
+  {
+   "fieldname": "alert",
+   "fieldtype": "Int",
+   "label": "Alert"
+  },
+  {
+   "fieldname": "narration",
+   "fieldtype": "Data",
+   "label": "Narration"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\ninactive",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_wgds",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-10 12:20:07.718259",
+ "modified_by": "Administrator",
+ "module": "Governance and compliances",
+ "name": "Compliance and Frequency",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

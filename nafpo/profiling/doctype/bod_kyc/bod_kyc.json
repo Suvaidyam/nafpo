@@ -1,0 +1,184 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-10 09:53:22.793813",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "state_name",
+  "fpo_name",
+  "bod_kycs_name",
+  "mobile_number",
+  "director_identifiation_number",
+  "din_document",
+  "upload_aadhar_document",
+  "gender",
+  "age",
+  "date_of_joining",
+  "column_break_vimi",
+  "address_proof_status",
+  "address_proof_other",
+  "address_proof",
+  "aadhar_number",
+  "aadhar_number2",
+  "director_status",
+  "status",
+  "created_at",
+  "updated_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "state_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "State Name",
+   "options": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fpo_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "FPO Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bod_kycs_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "BOD KYCs Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Mobile Number",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "director_identifiation_number",
+   "fieldtype": "Int",
+   "label": "Director Identifiation Number",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "din_document",
+   "fieldtype": "Attach",
+   "label": "DIN Document",
+   "reqd": 1
+  },
+  {
+   "fieldname": "upload_aadhar_document",
+   "fieldtype": "Attach",
+   "label": "Upload Aadhar Document",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address_proof_status",
+   "fieldtype": "Data",
+   "label": "Address Proof Status",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address_proof_other",
+   "fieldtype": "Data",
+   "label": "Address Proof Other",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address_proof",
+   "fieldtype": "Attach",
+   "label": "Address Proof",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale\nOthers",
+   "reqd": 1
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date Of Joining",
+   "reqd": 1
+  },
+  {
+   "fieldname": "aadhar_number",
+   "fieldtype": "Int",
+   "label": "Aadhar Number",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "aadhar_number2",
+   "fieldtype": "Int",
+   "label": "Aadhar Number",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "director_status",
+   "fieldtype": "Select",
+   "label": "Director Status",
+   "options": "Active\nInactive",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive",
+   "reqd": 1
+  },
+  {
+   "fieldname": "created_at",
+   "fieldtype": "Datetime",
+   "label": "Created At"
+  },
+  {
+   "fieldname": "updated_at",
+   "fieldtype": "Datetime",
+   "label": "Updated At"
+  },
+  {
+   "fieldname": "column_break_vimi",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-10 10:10:05.493356",
+ "modified_by": "Administrator",
+ "module": "Profiling",
+ "name": "BOD KYC",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
