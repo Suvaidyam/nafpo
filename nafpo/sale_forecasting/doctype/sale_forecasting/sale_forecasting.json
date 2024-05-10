@@ -1,0 +1,153 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-10 15:23:36.033891",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "state",
+  "district",
+  "block",
+  "fpo",
+  "crop_type",
+  "crop_name",
+  "status",
+  "column_break_daxa",
+  "unit",
+  "quoted_price_per_unit",
+  "quantity_of_produce",
+  "longitude",
+  "latitude",
+  "remarks",
+  "product_photo"
+ ],
+ "fields": [
+  {
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "State",
+   "options": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "District",
+   "options": "District",
+   "reqd": 1
+  },
+  {
+   "fieldname": "block",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Block",
+   "options": "Block",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "FPO",
+   "options": "FPO",
+   "reqd": 1
+  },
+  {
+   "fieldname": "crop_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Crop Type",
+   "options": "Crop Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "crop_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Crop Name",
+   "options": "Crop Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Unit",
+   "options": "Unit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "quoted_price_per_unit",
+   "fieldtype": "Int",
+   "label": "Quoted Price Per Unit",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantity_of_produce",
+   "fieldtype": "Int",
+   "label": "Quantity Of Produce",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Int",
+   "label": "Longitude",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Int",
+   "label": "Latitude",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "product_photo",
+   "fieldtype": "Attach",
+   "label": "Product Photo"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_daxa",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-10 17:18:16.398847",
+ "modified_by": "Administrator",
+ "module": "Sale Forecasting",
+ "name": "Sale Forecasting",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
