@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"WHY3552wHi\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Profiling</span>\",\"col\":12}}]",
+ "content": "[{\"id\":\"WHY3552wHi\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Profiling</span>\",\"col\":12}},{\"id\":\"aTBVBVV1Kp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"BOD KYC\",\"col\":3}},{\"id\":\"D-4N4lEeEW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FPO Profiling\",\"col\":3}},{\"id\":\"rz6H2GKxnf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Producer Groups\",\"col\":3}},{\"id\":\"7n84WFXQq5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FPO member details\",\"col\":3}}]",
  "creation": "2024-05-09 11:19:56.402957",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Profiling",
  "links": [],
- "modified": "2024-05-10 09:10:06.396020",
+ "modified": "2024-05-10 14:17:14.050212",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Profiling",
@@ -24,6 +24,39 @@
  "quick_lists": [],
  "roles": [],
  "sequence_id": 1.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "BOD KYC",
+   "link_to": "BOD KYC",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Producer Groups",
+   "link_to": "Producer Groups",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "FPO member details",
+   "link_to": "FPO member details",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "FPO Profiling",
+   "link_to": "FPO Profiling",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
  "title": "Profiling"
 }

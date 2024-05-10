@@ -1,0 +1,44 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-10 13:37:03.976063",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "name_of_practise",
+  "column_break_vzxw",
+  "snap"
+ ],
+ "fields": [
+  {
+   "fieldname": "name_of_practise",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of Practise",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_vzxw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "snap",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Snap"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-05-10 13:38:00.138172",
+ "modified_by": "Administrator",
+ "module": "Capacity Building",
+ "name": "Crop Best Practice Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

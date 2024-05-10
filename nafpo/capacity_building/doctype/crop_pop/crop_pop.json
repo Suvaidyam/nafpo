@@ -1,0 +1,188 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-10 13:28:21.845452",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "state",
+  "district",
+  "block",
+  "fpo",
+  "crop_type",
+  "crop_name",
+  "suitable_region",
+  "season",
+  "column_break_vgve",
+  "duration_of_the_crop_in_days",
+  "sowing_month",
+  "upload_crop_pop",
+  "no_of_practise",
+  "number_of_damages_to_be_posted",
+  "last_update_date",
+  "approved_status",
+  "feedback",
+  "status",
+  "crops_best_practices_section",
+  "crop_practice_table",
+  "pest_diagnostic_and_management_section",
+  "pest_diagnostic_management_table"
+ ],
+ "fields": [
+  {
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "State",
+   "options": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "label": "District",
+   "options": "District",
+   "reqd": 1
+  },
+  {
+   "fieldname": "block",
+   "fieldtype": "Link",
+   "label": "Block",
+   "options": "Block",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "label": "FPO",
+   "options": "FPO",
+   "reqd": 1
+  },
+  {
+   "fieldname": "crop_type",
+   "fieldtype": "Link",
+   "label": "Crop Type",
+   "options": "Crop Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "crop_name",
+   "fieldtype": "Link",
+   "label": "Crop Name",
+   "options": "Crop Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "suitable_region",
+   "fieldtype": "Data",
+   "label": "Suitable Region"
+  },
+  {
+   "fieldname": "season",
+   "fieldtype": "Int",
+   "label": "Season",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "duration_of_the_crop_in_days",
+   "fieldtype": "Data",
+   "label": "Duration of the Crop (In Days)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sowing_month",
+   "fieldtype": "Date",
+   "label": "Sowing Month"
+  },
+  {
+   "fieldname": "upload_crop_pop",
+   "fieldtype": "Attach",
+   "label": "Upload Crop POP"
+  },
+  {
+   "fieldname": "no_of_practise",
+   "fieldtype": "Int",
+   "label": "No of practise",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "number_of_damages_to_be_posted",
+   "fieldtype": "Int",
+   "label": "Number of Damages to be posted"
+  },
+  {
+   "fieldname": "last_update_date",
+   "fieldtype": "Date",
+   "label": "Last update date"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "approved_status",
+   "fieldtype": "Select",
+   "label": "Approved Status",
+   "options": "Pending\nApproved\nRejected"
+  },
+  {
+   "fieldname": "feedback",
+   "fieldtype": "Data",
+   "label": "Feedback"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_vgve",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "crops_best_practices_section",
+   "fieldtype": "Section Break",
+   "label": "Crop's Best Practices"
+  },
+  {
+   "fieldname": "crop_practice_table",
+   "fieldtype": "Table",
+   "label": "Crop Practice Table",
+   "options": "Crop Best Practice Child"
+  },
+  {
+   "fieldname": "pest_diagnostic_and_management_section",
+   "fieldtype": "Section Break",
+   "label": "Pest Diagnostic and Management"
+  },
+  {
+   "fieldname": "pest_diagnostic_management_table",
+   "fieldtype": "Table",
+   "label": "Pest Diagnostic Management Table",
+   "options": "Pest Diagnostic and Management Child"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-10 13:46:01.618527",
+ "modified_by": "Administrator",
+ "module": "Capacity Building",
+ "name": "Crop POP",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

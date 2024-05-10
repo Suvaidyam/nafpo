@@ -1,0 +1,81 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-10 13:38:35.207732",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "description_of_damage",
+  "type_of_damage",
+  "upload_reference_snaps_of_damage_1",
+  "upload_reference_snaps_of_damage_2",
+  "remedy_organic",
+  "remedy_organic_snap",
+  "remedy_in_organic",
+  "remedy_in_organic_snap"
+ ],
+ "fields": [
+  {
+   "fieldname": "description_of_damage",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description of Damage",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type_of_damage",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Type of Damage",
+   "reqd": 1
+  },
+  {
+   "fieldname": "upload_reference_snaps_of_damage_1",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Upload Reference Snaps of Damage 1"
+  },
+  {
+   "fieldname": "upload_reference_snaps_of_damage_2",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Upload Reference Snaps of Damage 2"
+  },
+  {
+   "fieldname": "remedy_organic",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Remedy (Organic)"
+  },
+  {
+   "fieldname": "remedy_organic_snap",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Remedy (Organic) Snap"
+  },
+  {
+   "fieldname": "remedy_in_organic",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Remedy (In Organic)"
+  },
+  {
+   "fieldname": "remedy_in_organic_snap",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Remedy (In Organic) Snap"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-05-10 13:45:47.536000",
+ "modified_by": "Administrator",
+ "module": "Capacity Building",
+ "name": "Pest Diagnostic and Management Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
