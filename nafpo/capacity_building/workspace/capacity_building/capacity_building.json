@@ -1,0 +1,70 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"BsZlXri6c9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Capacity Building</span>\",\"col\":12}},{\"id\":\"yOJHCi3_3W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Training Material\",\"col\":3}},{\"id\":\"bvh2LsXCyq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Crop POP\",\"col\":3}},{\"id\":\"ArUHik_Ksm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Research Study Surveys\",\"col\":3}},{\"id\":\"DdZb7n5ebB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Success Stories\",\"col\":3}},{\"id\":\"eFbA0h8ttf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Other Format\",\"col\":3}}]",
+ "creation": "2024-05-10 14:16:08.795574",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "share-people",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Capacity Building",
+ "links": [],
+ "modified": "2024-05-10 15:14:49.883503",
+ "modified_by": "Administrator",
+ "module": "Capacity Building",
+ "name": "Capacity Building",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 5.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Training Material",
+   "link_to": "Training Material",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Crop POP",
+   "link_to": "Crop POP",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Research Study Surveys",
+   "link_to": "Research Study Surveys",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Success Stories",
+   "link_to": "Success Stories",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Other Format",
+   "link_to": "Other Format",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Capacity Building"
+}
