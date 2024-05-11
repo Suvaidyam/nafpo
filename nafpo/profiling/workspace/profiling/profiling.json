@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Profiling",
  "links": [],
- "modified": "2024-05-10 17:16:56.041061",
+ "modified": "2024-05-11 06:50:46.393698",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Profiling",
@@ -23,7 +23,7 @@
  "public": 1,
  "quick_lists": [],
  "roles": [],
- "sequence_id": 1.0,
+ "sequence_id": 2.0,
  "shortcuts": [
   {
    "color": "Grey",
