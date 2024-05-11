@@ -13,18 +13,20 @@
   {
    "fieldname": "fpo",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "FPO"
   },
   {
    "fieldname": "financial_year",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Financial Year"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-11 13:47:25.577472",
+ "modified": "2024-05-11 19:58:43.969662",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Financial Year Child",
