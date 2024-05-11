@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"MCUzdlJ9B9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\" style=\\\"\\\">Geographical Reach (FPO Profile)</span>\",\"col\":12}},{\"id\":\"L94VgzoGYE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State Cover\",\"col\":4}},{\"id\":\"O-2kSZF0XQ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District Cover\",\"col\":4}},{\"id\":\"FJkubRnyzd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block Cover\",\"col\":4}}]",
+ "content": "[{\"id\":\"MCUzdlJ9B9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\" style=\\\"\\\">Geographical Reach (FPO Profile)</span>\",\"col\":12}},{\"id\":\"L94VgzoGYE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State Cover\",\"col\":4}},{\"id\":\"O-2kSZF0XQ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District Cover\",\"col\":4}},{\"id\":\"FJkubRnyzd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block Cover\",\"col\":4}},{\"id\":\"PwS95sT0Qf\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\">FPO</span>\",\"col\":12}},{\"id\":\"oAOsdHB5T5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No. of FPO (Total FPO)\",\"col\":4}},{\"id\":\"lYU1vxnzvV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No. of FPO (FPO Profile)\",\"col\":4}},{\"id\":\"sgS27P5TrE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"BOD\",\"col\":4}},{\"id\":\"nI-1fx8nwb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Producer Group\",\"col\":6}},{\"id\":\"WbjftSkge4\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Members\",\"col\":6}}]",
  "creation": "2024-05-11 06:50:42.682799",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-05-11 07:06:41.959385",
+ "modified": "2024-05-11 08:09:57.865681",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Dashboards",
@@ -25,6 +25,26 @@
   {
    "label": "District Cover",
    "number_card_name": "District Cover"
+  },
+  {
+   "label": "No. of FPO (Total FPO)",
+   "number_card_name": "No. of FPO (Total FPO)"
+  },
+  {
+   "label": "No. of FPO (FPO Profile)",
+   "number_card_name": "No. of FPO (FPO Profile)"
+  },
+  {
+   "label": "BOD",
+   "number_card_name": "BOD"
+  },
+  {
+   "label": "Producer Group",
+   "number_card_name": "Producer Group"
+  },
+  {
+   "label": "Members",
+   "number_card_name": "Members"
   },
   {
    "label": "Block Cover",
