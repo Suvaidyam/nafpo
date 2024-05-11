@@ -8,12 +8,10 @@
   "state",
   "fpo",
   "name1",
+  "column_break_aisb",
   "contact_number",
   "name_of_contact_person",
-  "column_break_aisb",
-  "status",
-  "created_at",
-  "updated_at"
+  "status"
  ],
  "fields": [
   {
@@ -58,23 +56,13 @@
    "reqd": 1
   },
   {
-   "fieldname": "created_at",
-   "fieldtype": "Datetime",
-   "label": "Created At"
-  },
-  {
-   "fieldname": "updated_at",
-   "fieldtype": "Datetime",
-   "label": "Updated At"
-  },
-  {
    "fieldname": "column_break_aisb",
    "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 10:24:42.449449",
+ "modified": "2024-05-11 07:48:38.315109",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Producer Groups",

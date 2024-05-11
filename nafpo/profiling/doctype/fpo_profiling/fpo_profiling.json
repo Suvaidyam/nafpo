@@ -11,15 +11,13 @@
   "fpos_pincode",
   "bod_kyc_name",
   "name_of_cbbo",
+  "column_break_vdsq",
   "supporting_agencies_from_to",
   "status",
-  "column_break_vdsq",
   "fpo_email_id",
   "contact_detail_of_fpo",
   "do_you_have_logo",
   "fpo_logo",
-  "created_at",
-  "updated_at",
   "address_tab",
   "state_name",
   "district_name",
@@ -343,16 +341,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "created_at",
-   "fieldtype": "Datetime",
-   "label": "Created At"
-  },
-  {
-   "fieldname": "updated_at",
-   "fieldtype": "Datetime",
-   "label": "Updated At"
-  },
-  {
    "fieldname": "basic_details_tab",
    "fieldtype": "Tab Break",
    "label": "Basic details"
@@ -409,7 +397,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 09:50:24.419469",
+ "modified": "2024-05-11 07:22:36.789774",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",

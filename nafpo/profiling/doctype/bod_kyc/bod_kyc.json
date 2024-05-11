@@ -14,17 +14,15 @@
   "upload_aadhar_document",
   "gender",
   "age",
-  "date_of_joining",
   "column_break_vimi",
+  "date_of_joining",
   "address_proof_status",
   "address_proof_other",
   "address_proof",
   "aadhar_number",
   "aadhar_number2",
   "director_status",
-  "status",
-  "created_at",
-  "updated_at"
+  "status"
  ],
  "fields": [
   {
@@ -143,23 +141,13 @@
    "reqd": 1
   },
   {
-   "fieldname": "created_at",
-   "fieldtype": "Datetime",
-   "label": "Created At"
-  },
-  {
-   "fieldname": "updated_at",
-   "fieldtype": "Datetime",
-   "label": "Updated At"
-  },
-  {
    "fieldname": "column_break_vimi",
    "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 10:10:05.493356",
+ "modified": "2024-05-11 07:20:10.518189",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "BOD KYC",
