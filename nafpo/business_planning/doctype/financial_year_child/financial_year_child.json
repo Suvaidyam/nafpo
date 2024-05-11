@@ -1,0 +1,36 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-11 13:22:54.619077",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "fpo",
+  "financial_year"
+ ],
+ "fields": [
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Data",
+   "label": "FPO"
+  },
+  {
+   "fieldname": "financial_year",
+   "fieldtype": "Date",
+   "label": "Financial Year"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-05-11 13:47:25.577472",
+ "modified_by": "Administrator",
+ "module": "Business Planning",
+ "name": "Financial Year Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

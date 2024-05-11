@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-11 13:13:11.154099",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "fpo_name",
+  "fixed_capital",
+  "financial_year_tab",
+  "financial_year"
+ ],
+ "fields": [
+  {
+   "fieldname": "fpo_name",
+   "fieldtype": "Link",
+   "label": "FPO Name",
+   "options": "FPO Profiling"
+  },
+  {
+   "fieldname": "fixed_capital",
+   "fieldtype": "Table",
+   "label": "Fixed Capital",
+   "options": "Fixed Capital Child"
+  },
+  {
+   "fieldname": "financial_year_tab",
+   "fieldtype": "Tab Break",
+   "label": "Financial Year"
+  },
+  {
+   "fieldname": "financial_year",
+   "fieldtype": "Table",
+   "label": "Financial Year",
+   "options": "Financial Year Child"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-11 13:46:12.678383",
+ "modified_by": "Administrator",
+ "module": "Business Planning",
+ "name": "Business Planning",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
