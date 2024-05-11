@@ -13,18 +13,20 @@
   {
    "fieldname": "data",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Data"
   },
   {
    "fieldname": "value",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Value"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-11 13:40:13.473706",
+ "modified": "2024-05-11 19:56:46.212877",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Fixed Capital Child",
