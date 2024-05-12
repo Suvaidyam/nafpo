@@ -1,0 +1,46 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"BdH8QoN1s5\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Crop</span>\",\"col\":12}},{\"id\":\"kD2yM5cPql\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Crop Name\",\"col\":3}},{\"id\":\"qa0wKa2com\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Crop Type\",\"col\":3}}]",
+ "creation": "2024-05-12 06:24:24.364118",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "branch",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Crop",
+ "links": [],
+ "modified": "2024-05-12 06:27:48.513416",
+ "modified_by": "Administrator",
+ "module": "Crop",
+ "name": "Crop",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 4.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Crop Name",
+   "link_to": "Crop Name",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Crop Type",
+   "link_to": "Crop Type",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Crop"
+}

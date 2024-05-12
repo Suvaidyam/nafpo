@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-12 05:34:08.785359",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "crop_name",
+  "season",
+  "total_no_of_fpo_members",
+  "total_cropping_area_of_fpo_members_acre",
+  "total_harvest_by_fpo_members_quintals",
+  "expected_purchase_pricers",
+  "quantity_available_for_sale_defult_deducted_1_of_weight_loos",
+  "expected_unit_selling_price_per_quintals",
+  "total_selling_priceincome_rs",
+  "total_income_of_fpo_from_output"
+ ],
+ "fields": [
+  {
+   "fieldname": "crop_name",
+   "fieldtype": "Data",
+   "label": "Crop Name"
+  },
+  {
+   "fieldname": "season",
+   "fieldtype": "Data",
+   "label": "Season"
+  },
+  {
+   "fieldname": "total_no_of_fpo_members",
+   "fieldtype": "Int",
+   "label": "Total no. of FPO members"
+  },
+  {
+   "fieldname": "total_cropping_area_of_fpo_members_acre",
+   "fieldtype": "Int",
+   "label": "Total cropping area of FPO members (Acre)"
+  },
+  {
+   "fieldname": "total_harvest_by_fpo_members_quintals",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total harvest by FPO members (Quintals)"
+  },
+  {
+   "fieldname": "expected_purchase_pricers",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Expected Purchase price(RS)"
+  },
+  {
+   "fieldname": "quantity_available_for_sale_defult_deducted_1_of_weight_loos",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Quantity available for sale (defult deducted 1% of weight loos)"
+  },
+  {
+   "fieldname": "expected_unit_selling_price_per_quintals",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Expected Unit selling price per (Quintals)"
+  },
+  {
+   "fieldname": "total_selling_priceincome_rs",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Selling price/income (RS)"
+  },
+  {
+   "fieldname": "total_income_of_fpo_from_output",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total income of FPO from Output"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-05-12 06:07:44.299029",
+ "modified_by": "Administrator",
+ "module": "Business Planning",
+ "name": "Output Side Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
