@@ -11,8 +11,8 @@
   "section_break_cxcc",
   "fixed_capital",
   "financial_year_tab",
-  "financial_year_child",
-  "output_side"
+  "output_side",
+  "input_side"
  ],
  "fields": [
   {
@@ -51,21 +51,21 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "financial_year_child",
-   "fieldtype": "Table",
-   "label": "Financial Year",
-   "options": "Financial Year Child"
-  },
-  {
    "fieldname": "output_side",
    "fieldtype": "Table",
    "label": "Output Side",
    "options": "Output Side Child"
+  },
+  {
+   "fieldname": "input_side",
+   "fieldtype": "Table",
+   "label": "Input Side",
+   "options": "Input Side Child"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-12 05:55:20.339282",
+ "modified": "2024-05-12 06:59:14.168818",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Planning",
