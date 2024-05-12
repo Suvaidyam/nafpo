@@ -19,8 +19,9 @@
  "fields": [
   {
    "fieldname": "crop_name",
-   "fieldtype": "Data",
-   "label": "Crop Name"
+   "fieldtype": "Link",
+   "label": "Crop Name",
+   "options": "Crop Name"
   },
   {
    "fieldname": "season",
@@ -77,7 +78,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-12 06:07:44.299029",
+ "modified": "2024-05-12 06:29:43.571129",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Output Side Child",
