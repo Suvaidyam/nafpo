@@ -29,6 +29,10 @@
    "reqd": 1
   },
   {
+   "fieldname": "column_break_gnqh",
+   "fieldtype": "Column Break"
+  },
+  {
    "fieldname": "name1",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -43,17 +47,13 @@
    "label": "Status",
    "options": "Active\nInactive",
    "reqd": 1
-  },
-  {
-   "fieldname": "column_break_gnqh",
-   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 11:18:30.840872",
+ "modified": "2024-05-12 06:25:44.345581",
  "modified_by": "Administrator",
- "module": "Masters",
+ "module": "Crop",
  "name": "Crop Type",
  "owner": "Administrator",
  "permissions": [

@@ -40,6 +40,10 @@
    "label": "Name of Crop"
   },
   {
+   "fieldname": "column_break_bari",
+   "fieldtype": "Column Break"
+  },
+  {
    "fieldname": "expected_yields_quintal_per_acre",
    "fieldtype": "Int",
    "label": "Expected Yields (Quintal per Acre)"
@@ -60,17 +64,13 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "Active\nInactive"
-  },
-  {
-   "fieldname": "column_break_bari",
-   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 11:18:08.108738",
+ "modified": "2024-05-12 06:25:55.151542",
  "modified_by": "Administrator",
- "module": "Masters",
+ "module": "Crop",
  "name": "Crop Name",
  "owner": "Administrator",
  "permissions": [
