@@ -32,6 +32,21 @@ doctype_js = {
     "District" : [
         "public/js/utils/utils.js"
     ],
+    "Block" : [
+        "public/js/utils/utils.js"
+    ],
+    "Grampanchayat" : [
+        "public/js/utils/utils.js"
+    ],
+    "Village" : [
+        "public/js/utils/utils.js"
+    ],
+    "CBBO" : [
+        "public/js/utils/utils.js"
+    ],
+    "FPO" : [
+        "public/js/utils/utils.js"
+    ],
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
