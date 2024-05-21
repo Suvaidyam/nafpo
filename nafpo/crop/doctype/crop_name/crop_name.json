@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{state_name}-{name_of_crop}",
  "creation": "2024-05-10 11:14:55.721742",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -19,25 +20,33 @@
   {
    "fieldname": "state_name",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "State Name",
-   "options": "State"
+   "options": "State",
+   "reqd": 1
   },
   {
    "fieldname": "name_of_fpo",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Name of FPO",
-   "options": "FPO"
+   "options": "FPO",
+   "reqd": 1
   },
   {
    "fieldname": "type_of_crop",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Type of Crop",
-   "options": "Crop Type"
+   "options": "Crop Type",
+   "reqd": 1
   },
   {
    "fieldname": "name_of_crop",
    "fieldtype": "Data",
-   "label": "Name of Crop"
+   "in_list_view": 1,
+   "label": "Name of Crop",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_bari",
@@ -46,7 +55,9 @@
   {
    "fieldname": "expected_yields_quintal_per_acre",
    "fieldtype": "Int",
-   "label": "Expected Yields (Quintal per Acre)"
+   "label": "Expected Yields (Quintal per Acre)",
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "fieldname": "target_market_1",
@@ -68,10 +79,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-12 06:25:55.151542",
+ "modified": "2024-05-21 09:30:01.014663",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop Name",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -87,7 +99,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "name_of_crop"
 }

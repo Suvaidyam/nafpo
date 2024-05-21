@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{state_name}-{name1}",
  "creation": "2024-05-10 11:11:36.325683",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -51,10 +52,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-12 06:25:44.345581",
+ "modified": "2024-05-21 09:29:36.136907",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop Type",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -70,7 +72,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "name1"
 }
