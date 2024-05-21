@@ -28,7 +28,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 19:05:50.191568",
+ "modified": "2024-05-21 14:30:38.229547",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "CBBO",
@@ -48,7 +48,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "name_of_cbbo"
 }
