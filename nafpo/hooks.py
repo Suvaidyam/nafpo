@@ -47,6 +47,12 @@ doctype_js = {
     "FPO" : [
         "public/js/utils/utils.js"
     ],
+    "Crop Type" : [
+        "public/js/utils/utils.js"
+    ],
+    "Crop Name" : [
+        "public/js/utils/utils.js"
+    ],
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
