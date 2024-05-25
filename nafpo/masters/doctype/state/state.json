@@ -1,13 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:state_code",
+ "autoname": "hash",
  "creation": "2024-05-09 07:39:03.905658",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "state_name",
-  "state_code"
+  "state_code",
+  "status"
  ],
  "fields": [
   {
@@ -21,17 +22,22 @@
    "fieldname": "state_code",
    "fieldtype": "Data",
    "label": "State Code",
-   "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nActive\nInactive"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 18:26:07.576374",
+ "modified": "2024-05-22 08:01:00.927507",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "State",
- "naming_rule": "By fieldname",
+ "naming_rule": "Random",
  "owner": "Administrator",
  "permissions": [
   {
