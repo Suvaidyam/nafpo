@@ -65,6 +65,12 @@ doctype_js = {
     "FPO member details" : [
         "public/js/utils/utils.js"
     ],
+    "CBBO Management" : [
+        "public/js/utils/utils.js"
+    ],
+    "First Installment Fpos" : [
+        "public/js/utils/utils.js"
+    ],
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}

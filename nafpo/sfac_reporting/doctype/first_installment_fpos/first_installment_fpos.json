@@ -42,13 +42,13 @@
    "fieldname": "recommendation_letter_of_cbbo",
    "fieldtype": "Select",
    "label": "Recommendation letter of CBBO",
-   "options": "Yes\nNo"
+   "options": "\nYes\nNo"
   },
   {
    "fieldname": "certificate_of_incorporation",
    "fieldtype": "Select",
    "label": "Certificate of Incorporation",
-   "options": "Yes\nNo"
+   "options": "\nYes\nNo"
   },
   {
    "fieldname": "upload_certificate_of_incorporation",
@@ -64,7 +64,7 @@
    "fieldname": "moa_memorandum_of_association",
    "fieldtype": "Select",
    "label": "MoA (Memorandum of Association)",
-   "options": "Yes\nNo"
+   "options": "\nYes\nNo"
   },
   {
    "fieldname": "upload_moa_memorandum_of_association",
@@ -75,7 +75,7 @@
    "fieldname": "aoa_articles_of_association",
    "fieldtype": "Select",
    "label": "AoA (Articles of Association)",
-   "options": "Yes\nNo"
+   "options": "\nYes\nNo"
   },
   {
    "fieldname": "upload_aoa_articles_of_association",
@@ -86,7 +86,7 @@
    "fieldname": "list_of_bods_with_din_no",
    "fieldtype": "Select",
    "label": "List of BoDs with DIN No",
-   "options": "Yes\nNo"
+   "options": "\nYes\nNo"
   },
   {
    "fieldname": "upload_list_of_bods_with_din_no",
@@ -97,7 +97,7 @@
    "fieldname": "board_resolutions_of_fpo_authorized_signatory",
    "fieldtype": "Select",
    "label": "Board resolutions of FPO authorized signatory",
-   "options": "Yes\nNo"
+   "options": "\nYes\nNo"
   },
   {
    "fieldname": "upload_board_resolutions_of_fpo_authorized_signatory",
@@ -117,6 +117,7 @@
    "non_negative": 1
   },
   {
+   "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
@@ -129,7 +130,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 11:58:54.346795",
+ "modified": "2024-05-26 10:05:18.725056",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "First Installment Fpos",
