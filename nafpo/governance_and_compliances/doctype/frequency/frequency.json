@@ -25,6 +25,7 @@
    "reqd": 1
   },
   {
+   "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
@@ -33,7 +34,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 12:14:41.936954",
+ "modified": "2024-05-26 10:12:21.784692",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Frequency",

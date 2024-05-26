@@ -71,6 +71,15 @@ doctype_js = {
     "First Installment Fpos" : [
         "public/js/utils/utils.js"
     ],
+    "Compliance and Frequency" : [
+        "public/js/utils/utils.js"
+    ],
+    "Compliance Frequency Mapper" : [
+        "public/js/utils/utils.js"
+    ],
+    "Email Directory" : [
+        "public/js/utils/utils.js"
+    ],
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
