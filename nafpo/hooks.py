@@ -80,6 +80,21 @@ doctype_js = {
     "Email Directory" : [
         "public/js/utils/utils.js"
     ],
+    "Training Material" : [
+        "public/js/utils/utils.js"
+    ],
+    "Crop POP" : [
+        "public/js/utils/utils.js"
+    ],
+    "Research Study Surveys" : [
+        "public/js/utils/utils.js"
+    ],
+    "Success Stories" : [
+        "public/js/utils/utils.js"
+    ],
+    "Other Format" : [
+        "public/js/utils/utils.js"
+    ],
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}

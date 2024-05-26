@@ -70,6 +70,7 @@
    "label": "Feedback"
   },
   {
+   "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
@@ -83,7 +84,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 14:14:48.815928",
+ "modified": "2024-05-26 11:23:14.717688",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Other Format",

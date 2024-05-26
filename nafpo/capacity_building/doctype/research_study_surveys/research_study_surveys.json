@@ -84,6 +84,7 @@
    "label": "Feedback"
   },
   {
+   "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
@@ -97,7 +98,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 14:05:31.047561",
+ "modified": "2024-05-26 11:18:45.703330",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Research Study Surveys",
