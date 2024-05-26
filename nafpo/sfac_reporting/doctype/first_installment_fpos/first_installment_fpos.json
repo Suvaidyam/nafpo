@@ -5,6 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "section_break_bldc",
   "select_fpo",
   "allocation_year",
   "recommendation_letter_of_cbbo",
@@ -35,27 +36,33 @@
   },
   {
    "fieldname": "allocation_year",
-   "fieldtype": "Data",
-   "label": "Allocation Year"
+   "fieldtype": "Link",
+   "label": "Allocation Year",
+   "options": "Financial Year",
+   "reqd": 1
   },
   {
    "fieldname": "recommendation_letter_of_cbbo",
    "fieldtype": "Select",
    "label": "Recommendation letter of CBBO",
-   "options": "\nYes\nNo"
+   "options": "\nYes\nNo",
+   "reqd": 1
   },
   {
    "fieldname": "certificate_of_incorporation",
    "fieldtype": "Select",
    "label": "Certificate of Incorporation",
-   "options": "\nYes\nNo"
+   "options": "\nYes\nNo",
+   "reqd": 1
   },
   {
+   "depends_on": "eval:doc.certificate_of_incorporation == \"Yes\"",
    "fieldname": "upload_certificate_of_incorporation",
    "fieldtype": "Attach",
    "label": "Upload Certificate of Incorporation"
   },
   {
+   "depends_on": "eval:doc.recommendation_letter_of_cbbo == \"Yes\"",
    "fieldname": "upload_recommendation_letter_of_cbbo",
    "fieldtype": "Attach",
    "label": "Upload Recommendation letter of CBBO"
@@ -64,9 +71,11 @@
    "fieldname": "moa_memorandum_of_association",
    "fieldtype": "Select",
    "label": "MoA (Memorandum of Association)",
-   "options": "\nYes\nNo"
+   "options": "\nYes\nNo",
+   "reqd": 1
   },
   {
+   "depends_on": "eval:doc.moa_memorandum_of_association == \"Yes\"",
    "fieldname": "upload_moa_memorandum_of_association",
    "fieldtype": "Attach",
    "label": "Upload MoA (Memorandum of Association)"
@@ -75,9 +84,11 @@
    "fieldname": "aoa_articles_of_association",
    "fieldtype": "Select",
    "label": "AoA (Articles of Association)",
-   "options": "\nYes\nNo"
+   "options": "\nYes\nNo",
+   "reqd": 1
   },
   {
+   "depends_on": "eval:doc.aoa_articles_of_association == \"Yes\"",
    "fieldname": "upload_aoa_articles_of_association",
    "fieldtype": "Attach",
    "label": "Upload AoA (Articles of Association)"
@@ -86,9 +97,11 @@
    "fieldname": "list_of_bods_with_din_no",
    "fieldtype": "Select",
    "label": "List of BoDs with DIN No",
-   "options": "\nYes\nNo"
+   "options": "\nYes\nNo",
+   "reqd": 1
   },
   {
+   "depends_on": "eval:doc.list_of_bods_with_din_no == \"Yes\"",
    "fieldname": "upload_list_of_bods_with_din_no",
    "fieldtype": "Attach",
    "label": "Upload List of BoDs with DIN No"
@@ -97,9 +110,11 @@
    "fieldname": "board_resolutions_of_fpo_authorized_signatory",
    "fieldtype": "Select",
    "label": "Board resolutions of FPO authorized signatory",
-   "options": "\nYes\nNo"
+   "options": "\nYes\nNo",
+   "reqd": 1
   },
   {
+   "depends_on": "eval:doc.board_resolutions_of_fpo_authorized_signatory == \"Yes\"",
    "fieldname": "upload_board_resolutions_of_fpo_authorized_signatory",
    "fieldtype": "Attach",
    "label": "Upload Board resolutions of FPO authorized signatory"
@@ -108,13 +123,15 @@
    "fieldname": "amount_received_by_fpo",
    "fieldtype": "Int",
    "label": "Amount received by FPO",
-   "non_negative": 1
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "fieldname": "amount_utilised_by_fpo",
    "fieldtype": "Int",
    "label": "Amount utilised by FPO",
-   "non_negative": 1
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "default": "Active",
@@ -126,11 +143,15 @@
   {
    "fieldname": "column_break_gnde",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_bldc",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-26 10:05:18.725056",
+ "modified": "2024-05-26 15:40:52.300287",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "First Installment Fpos",
