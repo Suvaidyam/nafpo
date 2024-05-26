@@ -6,44 +6,53 @@
  "engine": "InnoDB",
  "field_order": [
   "select_fpo",
+  "06_months_section",
   "baseline_survey_done",
   "report_submitted",
+  "column_break_ofgr",
   "aggregation_activities_undertaken_for_fpo_formation",
+  "612_months_section",
   "fpo_formed_in_allocated_aspirational_district",
   "no_of_farmers_mobilized_to_become_the_members_of_fpo",
   "fpo_registration_as_companies_act",
+  "column_break_psyl",
   "business_plan_formulation_for_fpo_done",
   "business_plan_uploaded",
+  "2nd_year_section",
   "statutory_clearances_obtained_to_carry_out_business_activities",
   "minimum_50_of_business_activities_executed_as_per_business_plan",
-  "audit_and_filing_of_financial_statements",
-  "mou_and_vendor_registration",
   "preliminary_awareness_programmes_for_memberbods_done",
   "number_of_preliminary_awareness_programmes_done",
   "exposure_visits_of_fpos_done",
   "number_of_exposure_visits_conducted",
   "first_tranche_of_equity_grant_availed_by_fpo",
-  "amount_availed",
-  "column_break_kmcl",
+  "amount_availed_tranche_of_equity",
+  "column_break_byhv",
   "first_tranche_of_credit_guarantee_facility_availed_by_fpo",
-  "amount_availed2",
+  "amount_availed_tranche_of_credit",
   "institutional_training_provided_to_ceobods",
   "number_if_institutional_trainings_provided",
   "registration_of_fpo_in_enam_or_other_electronic_platform_done",
   "has_any_trading_activity_taken_place",
+  "3rd_and_4th_year_section",
   "share_certificates_issued_to_each_member_in_third_year",
+  "audit_and_filing_of_financial_statements",
+  "mou_and_vendor_registration",
   "tradinguploading_of_produce_in_enamother_sources_done",
+  "column_break_tulf",
   "second_tranche_equity_grant_availed_by_fpo",
-  "amount_availed3",
+  "amount_availed_second_trache",
   "second_tranche_of_credit_guarantee_facility_availed_by_fpo",
-  "amount_availed4",
+  "amount_availed_seconde_trache_credit",
+  "5th_year_section",
   "audit_and_filing_of_statements_of_accounts_of_fpo_done",
   "of_agribusiness_plan_executed",
   "value_chain_developed",
   "revenue_model_showing_financial_growth",
+  "column_break_kswi",
   "detailed_project_completion_report_submitted",
   "third_tranche_of_credit_guarantee_facility_availed_by_fpo",
-  "amount_availed5"
+  "amount_availed_third_trache_credit"
  ],
  "fields": [
   {
@@ -58,19 +67,22 @@
    "fieldname": "baseline_survey_done",
    "fieldtype": "Select",
    "label": "Baseline Survey Done",
-   "options": "\nYes\nNo"
+   "options": "\nYes\nNo",
+   "reqd": 1
   },
   {
    "fieldname": "report_submitted",
    "fieldtype": "Select",
    "label": "Report Submitted",
-   "options": "\nYes\nNo"
+   "options": "\nYes\nNo",
+   "reqd": 1
   },
   {
    "fieldname": "aggregation_activities_undertaken_for_fpo_formation",
    "fieldtype": "Select",
    "label": "Aggregation activities undertaken for FPO Formation",
-   "options": "\nYes\nNo"
+   "options": "\nYes\nNo",
+   "reqd": 1
   },
   {
    "fieldname": "fpo_formed_in_allocated_aspirational_district",
@@ -97,6 +109,7 @@
    "options": "\nYes\nNo"
   },
   {
+   "depends_on": "eval:doc.business_plan_formulation_for_fpo_done == \"Yes\"",
    "fieldname": "business_plan_uploaded",
    "fieldtype": "Select",
    "label": "Business plan uploaded",
@@ -121,6 +134,7 @@
    "options": "\nYes\nNo"
   },
   {
+   "depends_on": "eval:doc.preliminary_awareness_programmes_for_memberbods_done == \"Yes\"",
    "fieldname": "number_of_preliminary_awareness_programmes_done",
    "fieldtype": "Int",
    "label": "Number of Preliminary awareness programmes done",
@@ -133,6 +147,7 @@
    "options": "\nYes\nNo"
   },
   {
+   "depends_on": "eval:doc.exposure_visits_of_fpos_done == \"Yes\"",
    "fieldname": "number_of_exposure_visits_conducted",
    "fieldtype": "Int",
    "label": "Number of exposure visits conducted",
@@ -145,22 +160,10 @@
    "options": "\nYes\nNo"
   },
   {
-   "fieldname": "amount_availed",
-   "fieldtype": "Int",
-   "label": "Amount availed",
-   "non_negative": 1
-  },
-  {
    "fieldname": "first_tranche_of_credit_guarantee_facility_availed_by_fpo",
    "fieldtype": "Select",
    "label": "First tranche of Credit Guarantee Facility availed by FPO",
    "options": "\nYes\nNo"
-  },
-  {
-   "fieldname": "amount_availed2",
-   "fieldtype": "Int",
-   "label": "Amount availed",
-   "non_negative": 1
   },
   {
    "fieldname": "institutional_training_provided_to_ceobods",
@@ -169,14 +172,11 @@
    "options": "\nYes\nNo"
   },
   {
+   "depends_on": "eval:doc.institutional_training_provided_to_ceobods == \"Yes\"",
    "fieldname": "number_if_institutional_trainings_provided",
    "fieldtype": "Int",
    "label": "Number if Institutional Trainings Provided",
    "non_negative": 1
-  },
-  {
-   "fieldname": "column_break_kmcl",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "registration_of_fpo_in_enam_or_other_electronic_platform_done",
@@ -185,6 +185,7 @@
    "options": "\nYes\nNo"
   },
   {
+   "depends_on": "eval:doc.registration_of_fpo_in_enam_or_other_electronic_platform_done == \"Yes\"",
    "fieldname": "has_any_trading_activity_taken_place",
    "fieldtype": "Select",
    "label": "Has any trading activity taken place",
@@ -197,6 +198,7 @@
    "options": "\nYes\nNo"
   },
   {
+   "depends_on": "eval:doc.share_certificates_issued_to_each_member_in_third_year == \"Yes\"",
    "fieldname": "audit_and_filing_of_financial_statements",
    "fieldtype": "Select",
    "label": "Audit and filing of Financial Statements for FPO for second year and third year done in due time",
@@ -221,21 +223,10 @@
    "options": "\nYes\nNo"
   },
   {
-   "fieldname": "amount_availed3",
-   "fieldtype": "Int",
-   "label": "Amount availed",
-   "non_negative": 1
-  },
-  {
    "fieldname": "second_tranche_of_credit_guarantee_facility_availed_by_fpo",
    "fieldtype": "Select",
    "label": "Second tranche of credit guarantee facility availed by FPO",
    "options": "\nYes\nNo"
-  },
-  {
-   "fieldname": "amount_availed4",
-   "fieldtype": "Int",
-   "label": "Amount availed"
   },
   {
    "fieldname": "audit_and_filing_of_statements_of_accounts_of_fpo_done",
@@ -251,8 +242,9 @@
   },
   {
    "fieldname": "value_chain_developed",
-   "fieldtype": "Int",
-   "label": "Value chain developed"
+   "fieldtype": "Select",
+   "label": "Value chain developed",
+   "options": "\nYes\nNo"
   },
   {
    "fieldname": "revenue_model_showing_financial_growth",
@@ -273,14 +265,87 @@
    "options": "\nYes\nNo"
   },
   {
-   "fieldname": "amount_availed5",
+   "fieldname": "06_months_section",
+   "fieldtype": "Section Break",
+   "label": "0-6 Months"
+  },
+  {
+   "fieldname": "column_break_ofgr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "612_months_section",
+   "fieldtype": "Section Break",
+   "label": "6-12 Months"
+  },
+  {
+   "fieldname": "column_break_psyl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "2nd_year_section",
+   "fieldtype": "Section Break",
+   "label": "2nd Year"
+  },
+  {
+   "depends_on": "eval:doc.first_tranche_of_equity_grant_availed_by_fpo == \"Yes\"",
+   "fieldname": "amount_availed_tranche_of_equity",
+   "fieldtype": "Int",
+   "label": "Amount availed",
+   "non_negative": 1
+  },
+  {
+   "depends_on": "eval:doc.first_tranche_of_credit_guarantee_facility_availed_by_fpo == \"Yes\"",
+   "fieldname": "amount_availed_tranche_of_credit",
+   "fieldtype": "Int",
+   "label": "Amount availed",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_byhv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "3rd_and_4th_year_section",
+   "fieldtype": "Section Break",
+   "label": "3rd and 4th Year"
+  },
+  {
+   "depends_on": "eval:doc.second_tranche_equity_grant_availed_by_fpo == \"Yes\"",
+   "fieldname": "amount_availed_second_trache",
+   "fieldtype": "Int",
+   "label": "Amount availed",
+   "non_negative": 1
+  },
+  {
+   "depends_on": "eval:doc.second_tranche_of_credit_guarantee_facility_availed_by_fpo == \"Yes\"",
+   "fieldname": "amount_availed_seconde_trache_credit",
    "fieldtype": "Int",
    "label": "Amount availed"
+  },
+  {
+   "fieldname": "column_break_tulf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "5th_year_section",
+   "fieldtype": "Section Break",
+   "label": "5th Year"
+  },
+  {
+   "depends_on": "eval:doc.third_tranche_of_credit_guarantee_facility_availed_by_fpo == \"Yes\"",
+   "fieldname": "amount_availed_third_trache_credit",
+   "fieldtype": "Int",
+   "label": "Amount availed"
+  },
+  {
+   "fieldname": "column_break_kswi",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-26 10:00:22.554421",
+ "modified": "2024-05-26 15:32:05.483106",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "CBBO Management",
