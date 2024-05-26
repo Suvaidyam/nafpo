@@ -15,7 +15,6 @@
   "fpos_pincode",
   "bod_kyc_name",
   "name_of_cbbo",
-  "supporting_agencies_from_to",
   "column_break_zdzq",
   "type_of_organization",
   "date_of_incorporation",
@@ -25,6 +24,8 @@
   "gst_received_upload",
   "fpo_email_id",
   "contact_detail_of_fpo",
+  "supporting_aggencies_section",
+  "supporting_agencies_table",
   "details_of_ceo_section",
   "ceo_name",
   "ceo_gender",
@@ -70,7 +71,9 @@
   "logo_details_section",
   "do_you_have_logo",
   "column_break_zkma",
-  "fpo_logo"
+  "fpo_logo",
+  "column_break_siay",
+  "supporting_document"
  ],
  "fields": [
   {
@@ -91,10 +94,9 @@
   },
   {
    "fieldname": "block_name",
-   "fieldtype": "Link",
-   "in_list_view": 1,
+   "fieldtype": "Table MultiSelect",
    "label": "Block Name",
-   "options": "Block",
+   "options": "Block Child",
    "reqd": 1
   },
   {
@@ -118,9 +120,9 @@
   },
   {
    "fieldname": "bod_kyc_name",
-   "fieldtype": "Link",
+   "fieldtype": "Table MultiSelect",
    "label": "BOD KYC Name",
-   "options": "BOD KYC",
+   "options": "BOD KYC Child",
    "reqd": 1
   },
   {
@@ -129,11 +131,6 @@
    "label": "Name of CBBO",
    "options": "CBBO",
    "reqd": 1
-  },
-  {
-   "fieldname": "supporting_agencies_from_to",
-   "fieldtype": "Data",
-   "label": "Supporting Agencies, From, To"
   },
   {
    "fieldname": "type_of_organization",
@@ -155,16 +152,19 @@
   },
   {
    "fieldname": "gst_status",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "label": "GST Status",
+   "options": "\nApplied but not receive\nNot applied\nReceived",
    "reqd": 1
   },
   {
+   "depends_on": "eval:doc.gst_status == \"Received\"",
    "fieldname": "gst_no",
    "fieldtype": "Data",
    "label": "GST No."
   },
   {
+   "depends_on": "eval:doc.gst_status == \"Received\"",
    "fieldname": "gst_received_upload",
    "fieldtype": "Attach",
    "label": "GST Received Upload"
@@ -298,6 +298,7 @@
    "options": "\nYes\nNo"
   },
   {
+   "depends_on": "eval:doc.do_you_have_logo == \"Yes\"",
    "fieldname": "fpo_logo",
    "fieldtype": "Attach Image",
    "label": "FPO Logo"
@@ -425,11 +426,32 @@
   {
    "fieldname": "column_break_zkma",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supporting_aggencies_section",
+   "fieldtype": "Section Break",
+   "label": "Supporting Aggencies"
+  },
+  {
+   "fieldname": "supporting_agencies_table",
+   "fieldtype": "Table",
+   "label": "Supporting Agencies Table",
+   "options": "Supporting Agencies Child"
+  },
+  {
+   "depends_on": "eval:doc.do_you_have_logo == \"Yes\"",
+   "fieldname": "supporting_document",
+   "fieldtype": "Attach",
+   "label": "Supporting Document"
+  },
+  {
+   "fieldname": "column_break_siay",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-21 22:25:52.906050",
+ "modified": "2024-05-26 14:24:16.416822",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",

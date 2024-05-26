@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:village_code",
+ "autoname": "hash",
  "creation": "2024-05-09 07:44:03.140601",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -69,11 +69,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-26 10:46:41.982350",
+ "modified": "2024-05-26 13:41:23.551909",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Village",
- "naming_rule": "By fieldname",
+ "naming_rule": "Random",
  "owner": "Administrator",
  "permissions": [
   {

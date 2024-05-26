@@ -14,22 +14,28 @@ const extend_options_length = (frm, fields) => {
 };
 
 // this function apply filter
-function apply_filter(field_name, filter_on, frm, filter_value, withoutFilter = false) {
+async function apply_filter(field_name, filter_on, frm, filter_value, multiSelectParent = false) {
     frm.fields_dict[field_name].get_query = () => {
-        if (withoutFilter) {
+        if (multiSelectParent) {
+            let values = filter_value.map(val => val[filter_on]) || frm.doc[filter_on].map(val => val[filter_on]);
             return {
-                filters: {},
+                filters: [
+                    [filter_on, 'IN', values],
+                ],
+                page_length: 1000
+            };
+        } else {
+            let filter = filter_value || frm.doc[filter_on] || `please select ${filter_on}`;
+            return {
+                filters: {
+                    [filter_on]: filter,
+                },
                 page_length: 1000
             };
         }
-        return {
-            filters: {
-                [filter_on]: filter_value || frm.doc[filter_on] || `please select ${filter_on}`,
-            },
-            page_length: 1000
-        };
-    }
+    };
 };
+
 //  This Fields delete fields values
 async function truncate_multiple_fields_value(_frm, fields) {
     for (field of fields) {
