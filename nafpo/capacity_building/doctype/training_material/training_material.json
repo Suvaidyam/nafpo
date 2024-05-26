@@ -60,14 +60,17 @@
   },
   {
    "fieldname": "category",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Category",
+   "options": "Category",
    "reqd": 1
   },
   {
+   "depends_on": "eval:doc.category == \"Other\"",
    "fieldname": "other_category",
    "fieldtype": "Data",
-   "label": "Other Category"
+   "label": "Other Category",
+   "mandatory_depends_on": "eval:doc.category == \"Other\""
   },
   {
    "fieldname": "training_title",
@@ -122,6 +125,7 @@
    "label": "Feedback"
   },
   {
+   "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
@@ -146,7 +150,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 13:26:28.540326",
+ "modified": "2024-05-26 11:10:49.908946",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Training Material",

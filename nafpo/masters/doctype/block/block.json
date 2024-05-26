@@ -41,6 +41,7 @@
    "unique": 1
   },
   {
+   "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
@@ -49,7 +50,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-22 08:02:34.882818",
+ "modified": "2024-05-26 10:46:10.643162",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Block",

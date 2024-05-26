@@ -49,6 +49,7 @@
    "unique": 1
   },
   {
+   "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
@@ -57,7 +58,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-22 08:03:23.765954",
+ "modified": "2024-05-26 10:46:26.659668",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Grampanchayat",

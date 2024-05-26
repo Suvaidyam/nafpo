@@ -25,6 +25,7 @@
    "unique": 1
   },
   {
+   "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
@@ -33,7 +34,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-22 08:01:00.927507",
+ "modified": "2024-05-26 10:44:53.905167",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "State",
