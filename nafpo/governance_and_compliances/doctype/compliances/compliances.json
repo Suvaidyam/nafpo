@@ -18,6 +18,7 @@
    "reqd": 1
   },
   {
+   "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
@@ -31,7 +32,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 12:10:54.242392",
+ "modified": "2024-05-26 10:10:16.137093",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Compliances",
