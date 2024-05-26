@@ -15,6 +15,7 @@
   "director_identifiation_number",
   "din_document",
   "address_proof_status",
+  "address_proof_other",
   "address_proof",
   "gender",
   "column_break_vimi",
@@ -22,7 +23,6 @@
   "date_of_joining",
   "aadhar_number",
   "upload_aadhar_document",
-  "address_proof_other",
   "director_status",
   "status"
  ],
@@ -75,14 +75,15 @@
    "fieldname": "address_proof_status",
    "fieldtype": "Select",
    "label": "Address Proof Status",
-   "options": "\nActive\nInactive",
+   "options": "\nVoter Card\nRation Card\nDriving Licence\nOther",
    "reqd": 1
   },
   {
+   "depends_on": "eval:doc.address_proof_status == \"Other\"",
    "fieldname": "address_proof_other",
    "fieldtype": "Data",
    "label": "Address Proof Other",
-   "reqd": 1
+   "mandatory_depends_on": "eval:doc.address_proof_status == \"Other\""
   },
   {
    "fieldname": "address_proof",
@@ -126,6 +127,7 @@
    "reqd": 1
   },
   {
+   "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
@@ -155,7 +157,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-21 22:18:21.492596",
+ "modified": "2024-05-26 11:42:41.556440",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "BOD KYC",
