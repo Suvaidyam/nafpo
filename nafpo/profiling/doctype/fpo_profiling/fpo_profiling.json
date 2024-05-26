@@ -6,61 +6,71 @@
  "engine": "InnoDB",
  "field_order": [
   "basic_details_tab",
+  "section_break_lxef",
+  "state_name",
+  "district_name",
+  "block_name",
   "name_of_the_fpo",
   "fpos_address",
   "fpos_pincode",
   "bod_kyc_name",
   "name_of_cbbo",
-  "column_break_vdsq",
   "supporting_agencies_from_to",
-  "status",
-  "fpo_email_id",
-  "contact_detail_of_fpo",
-  "do_you_have_logo",
-  "fpo_logo",
-  "address_tab",
-  "state_name",
-  "district_name",
-  "column_break_pwoz",
-  "block_name",
-  "commercial_details_tab",
+  "column_break_zdzq",
   "type_of_organization",
   "date_of_incorporation",
   "registration_no",
-  "column_break_ullz",
   "gst_status",
   "gst_no",
   "gst_received_upload",
-  "license_details_tab",
-  "licence_number_for_seeds",
-  "date_of_expiry_for_seeds",
-  "license_doc",
-  "licence_number_for_fertilizer",
-  "date_of_expiry_for_fertilizer",
-  "license_doc_fertilizer",
-  "column_break_ayxt",
-  "licence_number_for_pesticide",
-  "date_of_expiry_for_pesticide",
-  "license_doc1",
-  "licence_number_for_fssai",
-  "date_of_expiry_for_fssai",
-  "license_doc2",
-  "ceo_details_tab",
+  "fpo_email_id",
+  "contact_detail_of_fpo",
+  "details_of_ceo_section",
   "ceo_name",
   "ceo_gender",
-  "ceo_contact_number",
-  "column_break_rtbs",
   "ceo_dob",
+  "column_break_rtbs",
   "ceo_age",
   "ceo_date_of_joining",
-  "accountant_details_tab",
+  "ceo_contact_number",
+  "details_of_accountant_section",
   "accountant_name",
   "accountant_gender",
-  "accountant_contact_number",
-  "column_break_zrsk",
   "accountant_dob",
+  "column_break_zrsk",
   "accountant_age",
-  "accountant_date_of_joining"
+  "accountant_date_of_joining",
+  "accountant_contact_number",
+  "licence_details_for_seeds_section",
+  "licence_number_for_seeds",
+  "date_of_expiry_for_seeds",
+  "column_break_nycb",
+  "license_doc_for_seed",
+  "licence_details_for_fertilizer_section",
+  "licence_number_for_fertilizer",
+  "date_of_expiry_for_fertilizer",
+  "column_break_lxxh",
+  "license_doc_for_fertilizer",
+  "licence_details_for_pesticide_section",
+  "licence_number_for_pesticide",
+  "date_of_expiry_for_pesticide",
+  "column_break_njfx",
+  "license_doc_for_pesticide",
+  "section_break_cnwm",
+  "column_break_ayxt",
+  "licence_number_for_fssai",
+  "date_of_expiry_for_fssai",
+  "column_break_xbmr",
+  "license_doc_for_fssai",
+  "licence_details_for_seed_production_section",
+  "licence_number_for_seed_production",
+  "date_of_expiry__for_seed_production",
+  "column_break_zhah",
+  "licence_doc_for_seed_production",
+  "logo_details_section",
+  "do_you_have_logo",
+  "column_break_zkma",
+  "fpo_logo"
  ],
  "fields": [
   {
@@ -89,23 +99,22 @@
   },
   {
    "fieldname": "name_of_the_fpo",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Name of the FPO",
+   "options": "FPO",
    "reqd": 1
   },
   {
    "fieldname": "fpos_address",
    "fieldtype": "Data",
-   "label": "FPO's Address",
-   "reqd": 1
+   "label": "FPO's Address"
   },
   {
    "fieldname": "fpos_pincode",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "FPO's pincode",
-   "length": 6,
-   "reqd": 1
+   "length": 6
   },
   {
    "fieldname": "bod_kyc_name",
@@ -124,8 +133,7 @@
   {
    "fieldname": "supporting_agencies_from_to",
    "fieldtype": "Data",
-   "label": "Supporting Agencies, From, To",
-   "reqd": 1
+   "label": "Supporting Agencies, From, To"
   },
   {
    "fieldname": "type_of_organization",
@@ -154,8 +162,7 @@
   {
    "fieldname": "gst_no",
    "fieldtype": "Data",
-   "label": "GST No.",
-   "reqd": 1
+   "label": "GST No."
   },
   {
    "fieldname": "gst_received_upload",
@@ -179,156 +186,116 @@
   {
    "fieldname": "licence_number_for_seeds",
    "fieldtype": "Data",
-   "label": "Licence Number for Seeds",
-   "reqd": 1
+   "label": "Licence number"
   },
   {
    "fieldname": "date_of_expiry_for_seeds",
    "fieldtype": "Date",
-   "label": "Date of expiry for Seeds",
-   "reqd": 1
-  },
-  {
-   "fieldname": "license_doc",
-   "fieldtype": "Attach",
-   "label": "License Doc"
+   "label": "Date of expiry"
   },
   {
    "fieldname": "licence_number_for_fertilizer",
    "fieldtype": "Int",
-   "label": "Licence Number for Fertilizer",
-   "non_negative": 1,
-   "reqd": 1
+   "label": "Licence Number",
+   "non_negative": 1
   },
   {
    "fieldname": "date_of_expiry_for_fertilizer",
    "fieldtype": "Date",
-   "label": "Date of expiry for Fertilizer",
-   "reqd": 1
-  },
-  {
-   "fieldname": "license_doc_fertilizer",
-   "fieldtype": "Attach",
-   "label": "License Doc"
+   "label": "Date of expiry"
   },
   {
    "fieldname": "licence_number_for_pesticide",
    "fieldtype": "Int",
-   "label": "Licence Number for Pesticide",
-   "reqd": 1
+   "label": "Licence number",
+   "non_negative": 1
   },
   {
    "fieldname": "date_of_expiry_for_pesticide",
    "fieldtype": "Date",
-   "label": "Date of expiry for Pesticide",
-   "reqd": 1
-  },
-  {
-   "fieldname": "license_doc1",
-   "fieldtype": "Attach",
-   "label": "License Doc."
+   "label": "Date of expiry"
   },
   {
    "fieldname": "licence_number_for_fssai",
    "fieldtype": "Data",
-   "label": "Licence Number for fssai",
-   "reqd": 1
+   "label": "Licence Number"
   },
   {
    "fieldname": "date_of_expiry_for_fssai",
    "fieldtype": "Date",
-   "label": "Date of expiry for fssai",
-   "reqd": 1
-  },
-  {
-   "fieldname": "license_doc2",
-   "fieldtype": "Attach",
-   "label": "License Doc."
+   "label": "Date of expiry"
   },
   {
    "fieldname": "ceo_name",
    "fieldtype": "Data",
-   "label": "CEO Name",
-   "reqd": 1
+   "label": "CEO Name"
   },
   {
    "fieldname": "ceo_gender",
    "fieldtype": "Select",
    "label": "CEO Gender",
-   "options": "Male\nFemale\nOthers",
-   "reqd": 1
+   "options": "\nMale\nFemale\nOthers"
   },
   {
    "fieldname": "ceo_dob",
    "fieldtype": "Date",
-   "label": "CEO DOB",
-   "reqd": 1
+   "label": "CEO DOB"
   },
   {
    "fieldname": "ceo_age",
    "fieldtype": "Int",
    "label": "CEO Age",
-   "non_negative": 1,
-   "reqd": 1
+   "non_negative": 1
   },
   {
    "fieldname": "ceo_date_of_joining",
    "fieldtype": "Date",
-   "label": "CEO date of joining",
-   "reqd": 1
+   "label": "CEO date of joining"
   },
   {
    "fieldname": "ceo_contact_number",
    "fieldtype": "Int",
    "label": "CEO Contact Number",
-   "non_negative": 1,
-   "reqd": 1
+   "non_negative": 1
   },
   {
    "fieldname": "accountant_name",
    "fieldtype": "Data",
-   "label": "Accountant Name",
-   "reqd": 1
+   "label": "Accountant Name"
   },
   {
    "fieldname": "accountant_gender",
    "fieldtype": "Select",
    "label": "Accountant Gender",
-   "options": "Male\nFemale\nOthers",
-   "reqd": 1
+   "options": "\nMale\nFemale\nOthers"
   },
   {
    "fieldname": "accountant_dob",
    "fieldtype": "Date",
-   "label": "Accountant DOB",
-   "reqd": 1
+   "label": "Accountant DOB"
   },
   {
    "fieldname": "accountant_age",
    "fieldtype": "Int",
    "label": "Accountant Age",
-   "non_negative": 1,
-   "reqd": 1
+   "non_negative": 1
   },
   {
    "fieldname": "accountant_date_of_joining",
    "fieldtype": "Date",
-   "label": "Accountant date of joining",
-   "reqd": 1
+   "label": "Accountant date of joining"
   },
   {
    "fieldname": "accountant_contact_number",
    "fieldtype": "Int",
    "label": "Accountant Contact Number",
-   "non_negative": 1,
-   "reqd": 1
+   "non_negative": 1
   },
   {
    "fieldname": "do_you_have_logo",
    "fieldtype": "Select",
    "label": "Do You Have Logo?",
-   "options": "Yes\nNo",
-   "reqd": 1
+   "options": "\nYes\nNo"
   },
   {
    "fieldname": "fpo_logo",
@@ -336,52 +303,12 @@
    "label": "FPO Logo"
   },
   {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Active\nInactive",
-   "reqd": 1
-  },
-  {
    "fieldname": "basic_details_tab",
    "fieldtype": "Tab Break",
-   "label": "Basic details"
-  },
-  {
-   "fieldname": "license_details_tab",
-   "fieldtype": "Tab Break",
-   "label": "License details"
-  },
-  {
-   "fieldname": "ceo_details_tab",
-   "fieldtype": "Tab Break",
-   "label": "CEO details"
-  },
-  {
-   "fieldname": "accountant_details_tab",
-   "fieldtype": "Tab Break",
-   "label": "Accountant details"
-  },
-  {
-   "fieldname": "commercial_details_tab",
-   "fieldtype": "Tab Break",
-   "label": "Commercial details"
-  },
-  {
-   "fieldname": "address_tab",
-   "fieldtype": "Tab Break",
-   "label": "Address"
+   "label": "Details"
   },
   {
    "fieldname": "column_break_ayxt",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_pwoz",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_ullz",
    "fieldtype": "Column Break"
   },
   {
@@ -393,13 +320,116 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_vdsq",
+   "fieldname": "section_break_lxef",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_zdzq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "details_of_ceo_section",
+   "fieldtype": "Section Break",
+   "label": "Details of CEO"
+  },
+  {
+   "fieldname": "details_of_accountant_section",
+   "fieldtype": "Section Break",
+   "label": "Details of Accountant"
+  },
+  {
+   "fieldname": "section_break_cnwm",
+   "fieldtype": "Section Break",
+   "label": "Licence Details for fssai"
+  },
+  {
+   "fieldname": "licence_details_for_seeds_section",
+   "fieldtype": "Section Break",
+   "label": "Licence Details for Seeds"
+  },
+  {
+   "fieldname": "column_break_nycb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "license_doc_for_seed",
+   "fieldtype": "Attach",
+   "label": "License Doc"
+  },
+  {
+   "fieldname": "licence_details_for_fertilizer_section",
+   "fieldtype": "Section Break",
+   "label": "Licence Details for Fertilizer"
+  },
+  {
+   "fieldname": "column_break_lxxh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "license_doc_for_fertilizer",
+   "fieldtype": "Attach",
+   "label": "License Doc"
+  },
+  {
+   "fieldname": "licence_details_for_pesticide_section",
+   "fieldtype": "Section Break",
+   "label": "Licence Details for Pesticide"
+  },
+  {
+   "fieldname": "column_break_njfx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "license_doc_for_pesticide",
+   "fieldtype": "Attach",
+   "label": "License Doc"
+  },
+  {
+   "fieldname": "column_break_xbmr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "license_doc_for_fssai",
+   "fieldtype": "Attach",
+   "label": "License Doc"
+  },
+  {
+   "fieldname": "licence_details_for_seed_production_section",
+   "fieldtype": "Section Break",
+   "label": "Licence Details for Seed Production"
+  },
+  {
+   "fieldname": "licence_number_for_seed_production",
+   "fieldtype": "Int",
+   "label": "Licence number"
+  },
+  {
+   "fieldname": "date_of_expiry__for_seed_production",
+   "fieldtype": "Date",
+   "label": "Date of expiry"
+  },
+  {
+   "fieldname": "column_break_zhah",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "licence_doc_for_seed_production",
+   "fieldtype": "Attach",
+   "label": "Licence Doc"
+  },
+  {
+   "fieldname": "logo_details_section",
+   "fieldtype": "Section Break",
+   "label": "Logo Details"
+  },
+  {
+   "fieldname": "column_break_zkma",
    "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-21 14:32:25.058106",
+ "modified": "2024-05-21 22:25:52.906050",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
