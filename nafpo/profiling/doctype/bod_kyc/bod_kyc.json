@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{state_name}-{#####}",
  "creation": "2024-05-10 09:53:22.793813",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -35,9 +36,10 @@
   },
   {
    "fieldname": "fpo_name",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "FPO Name",
+   "options": "FPO",
    "reqd": 1
   },
   {
@@ -48,16 +50,18 @@
    "reqd": 1
   },
   {
+   "default": "+91-",
    "fieldname": "mobile_number",
-   "fieldtype": "Int",
+   "fieldtype": "Phone",
    "in_list_view": 1,
    "label": "Mobile Number",
    "non_negative": 1,
    "reqd": 1
   },
   {
+   "default": "+91-",
    "fieldname": "director_identifiation_number",
-   "fieldtype": "Int",
+   "fieldtype": "Phone",
    "label": "Director Identifiation Number",
    "non_negative": 1,
    "reqd": 1
@@ -147,10 +151,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-11 07:20:10.518189",
+ "modified": "2024-05-21 14:29:36.703487",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "BOD KYC",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -166,7 +171,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "bod_kycs_name"
 }

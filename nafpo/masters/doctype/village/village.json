@@ -11,7 +11,8 @@
   "block",
   "grampanchayat",
   "village_name",
-  "village_code"
+  "village_code",
+  "status"
  ],
  "fields": [
   {
@@ -56,13 +57,18 @@
    "fieldname": "village_code",
    "fieldtype": "Data",
    "label": "Village Code",
-   "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nActive\nInactive"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 18:39:43.447556",
+ "modified": "2024-05-22 08:03:48.551143",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Village",

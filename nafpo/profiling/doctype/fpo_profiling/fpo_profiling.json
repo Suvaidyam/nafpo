@@ -104,12 +104,14 @@
    "fieldname": "fpos_pincode",
    "fieldtype": "Int",
    "label": "FPO's pincode",
+   "length": 6,
    "reqd": 1
   },
   {
    "fieldname": "bod_kyc_name",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "BOD KYC Name",
+   "options": "BOD KYC",
    "reqd": 1
   },
   {
@@ -168,10 +170,10 @@
    "reqd": 1
   },
   {
+   "default": "+91-",
    "fieldname": "contact_detail_of_fpo",
    "fieldtype": "Phone",
    "label": "Contact Detail of FPO",
-   "options": "+91-",
    "reqd": 1
   },
   {
@@ -397,7 +399,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-11 07:22:36.789774",
+ "modified": "2024-05-21 14:32:25.058106",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",

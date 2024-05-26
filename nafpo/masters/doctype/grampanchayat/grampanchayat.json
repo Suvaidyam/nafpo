@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:grampanchayat_code",
+ "autoname": "hash",
  "creation": "2024-05-09 07:42:25.466358",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -10,7 +10,8 @@
   "district",
   "block",
   "grampanchayat_name",
-  "grampanchayat_code"
+  "grampanchayat_code",
+  "status"
  ],
  "fields": [
   {
@@ -45,17 +46,22 @@
    "fieldname": "grampanchayat_code",
    "fieldtype": "Data",
    "label": "Grampanchayat Code",
-   "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nActive\nInactive"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 18:27:31.254961",
+ "modified": "2024-05-22 08:03:23.765954",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Grampanchayat",
- "naming_rule": "By fieldname",
+ "naming_rule": "Random",
  "owner": "Administrator",
  "permissions": [
   {
