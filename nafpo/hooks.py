@@ -56,11 +56,15 @@ doctype_js = {
     "BOD KYC" : [
         "public/js/utils/utils.js"
     ],
-     "FPO Profiling" : [
+    "FPO Profiling" : [
         "public/js/utils/utils.js"
     ],
-    
-
+    "Producer Groups" : [
+        "public/js/utils/utils.js"
+    ],
+    "FPO member details" : [
+        "public/js/utils/utils.js"
+    ],
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}

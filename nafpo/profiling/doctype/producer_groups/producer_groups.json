@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:PG-{###}",
  "creation": "2024-05-10 10:11:13.734827",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -36,9 +37,10 @@
   },
   {
    "fieldname": "contact_number",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Contact Number",
+   "length": 10,
    "non_negative": 1,
    "reqd": 1
   },
@@ -49,6 +51,7 @@
    "reqd": 1
   },
   {
+   "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
@@ -62,10 +65,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-11 07:48:38.315109",
+ "modified": "2024-05-21 21:12:28.473089",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Producer Groups",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -81,7 +85,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "name1"
 }

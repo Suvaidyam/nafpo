@@ -6,62 +6,57 @@
  "engine": "InnoDB",
  "field_order": [
   "details_tab",
+  "state_name",
+  "district_name",
+  "block_name",
   "fpo",
+  "grampanchayat_name",
+  "village_name",
   "producer_group",
   "member_name",
   "father__husbands_name",
   "gender",
   "age",
   "category",
+  "column_break_xgko",
   "tribe",
   "member_of_shg",
   "name_of_the_shg",
   "bpl_status",
-  "column_break_rwts",
-  "mobile_number",
   "have_you_received_aadhar_card_consent",
   "aadhar_number",
-  "consent_image",
   "register_aadhar_mobile_number",
+  "consent_image",
   "bank_ac_number",
   "ifsc_code",
   "number_of_family_member",
-  "created_at",
-  "updated_at",
-  "address_tab",
-  "state_name",
-  "district_name",
-  "block_name",
-  "column_break_puby",
-  "grampanchayat_name",
-  "village_name",
-  "data_tab",
+  "member_of_any_other_cooperative_agriculture_societies",
+  "total_income_annually_section",
   "agriculture",
   "livestock",
   "labour",
   "ntfp",
+  "column_break_lodv",
   "micro_enterprise",
   "other_income",
   "total_income",
+  "availability_of_land_area_in_acre_section",
   "total_own_land",
   "total_own_irrigated_land",
-  "column_break_kejv",
-  "member_of_any_other_cooperative_agriculture_societies",
+  "column_break_pels",
   "do_you_have_any_leased_land_area_in_acre",
   "how_much_irrigated_leased_land_area_in_acre",
+  "section_break_tjir",
+  "column_break_kejv",
   "year_of_share_issued",
   "no_of_share_alloted",
   "distinctive_number_of_share",
+  "column_break_jyrt",
   "folio_no",
   "would_you_like_to_get_ivrs_or_other_alerts",
-  "status"
+  "mobile_number"
  ],
  "fields": [
-  {
-   "fieldname": "address_tab",
-   "fieldtype": "Tab Break",
-   "label": "Address"
-  },
   {
    "fieldname": "state_name",
    "fieldtype": "Link",
@@ -72,7 +67,7 @@
   {
    "fieldname": "details_tab",
    "fieldtype": "Tab Break",
-   "label": "Basic details"
+   "label": "Details"
   },
   {
    "fieldname": "fpo",
@@ -100,26 +95,20 @@
    "fieldname": "grampanchayat_name",
    "fieldtype": "Link",
    "label": "Grampanchayat Name",
-   "options": "Grampanchayat",
-   "reqd": 1
+   "options": "Grampanchayat"
   },
   {
    "fieldname": "village_name",
    "fieldtype": "Link",
    "label": "Village Name",
-   "options": "Village",
-   "reqd": 1
-  },
-  {
-   "fieldname": "column_break_puby",
-   "fieldtype": "Column Break"
+   "options": "Village"
   },
   {
    "fieldname": "producer_group",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Producer Group",
-   "reqd": 1
+   "options": "Producer Groups"
   },
   {
    "fieldname": "member_name",
@@ -139,7 +128,7 @@
    "fieldname": "gender",
    "fieldtype": "Select",
    "label": "Gender",
-   "options": "Male\nFemale\nOthers",
+   "options": "\nMale\nFemale\nOthers",
    "reqd": 1
   },
   {
@@ -167,10 +156,11 @@
    "fieldname": "member_of_shg",
    "fieldtype": "Select",
    "label": "Member of SHG",
-   "options": "Yes\nNo",
+   "options": "\nYes\nNo",
    "reqd": 1
   },
   {
+   "depends_on": "eval:doc.member_of_shg == \"Yes\"",
    "fieldname": "name_of_the_shg",
    "fieldtype": "Data",
    "label": "Name of the SHG"
@@ -179,34 +169,36 @@
    "fieldname": "bpl_status",
    "fieldtype": "Select",
    "label": "BPL Status",
-   "options": "Yes\nNo",
+   "options": "\nYes\nNo",
    "reqd": 1
   },
   {
    "fieldname": "have_you_received_aadhar_card_consent",
    "fieldtype": "Select",
    "label": "Have You Received Aadhar Card Consent",
-   "options": "Yes\nNo",
+   "options": "\nYes\nNo",
    "reqd": 1
   },
   {
+   "depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
    "fieldname": "aadhar_number",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Aadhar Number",
-   "non_negative": 1,
-   "reqd": 1
+   "length": 12,
+   "non_negative": 1
   },
   {
+   "depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
    "fieldname": "consent_image",
    "fieldtype": "Attach Image",
    "label": "Consent Image"
   },
   {
+   "depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
    "fieldname": "register_aadhar_mobile_number",
    "fieldtype": "Int",
    "label": "Register Aadhar Mobile Number",
-   "non_negative": 1,
-   "reqd": 1
+   "non_negative": 1
   },
   {
    "fieldname": "bank_ac_number",
@@ -286,17 +278,17 @@
    "fieldname": "member_of_any_other_cooperative_agriculture_societies",
    "fieldtype": "Select",
    "label": "Member of any other cooperative agriculture societies",
-   "options": "Yes\nNo",
+   "options": "\nYes\nNo",
    "reqd": 1
   },
   {
    "fieldname": "do_you_have_any_leased_land_area_in_acre",
    "fieldtype": "Select",
    "label": "Do you have any leased land? (Area in Acre)",
-   "options": "Yes\nNo",
-   "reqd": 1
+   "options": "\nYes\nNo"
   },
   {
+   "depends_on": "eval:doc.do_you_have_any_leased_land_area_in_acre == \"Yes\"",
    "fieldname": "how_much_irrigated_leased_land_area_in_acre",
    "fieldtype": "Int",
    "label": "How Much Irrigated Leased Land( Area In acre)?",
@@ -310,7 +302,7 @@
   {
    "fieldname": "no_of_share_alloted",
    "fieldtype": "Int",
-   "label": "No of Share Alloted",
+   "label": "No. of Share Alloted",
    "non_negative": 1
   },
   {
@@ -322,56 +314,60 @@
   {
    "fieldname": "folio_no",
    "fieldtype": "Int",
-   "label": "Folio No",
+   "label": "Folio No.",
    "non_negative": 1
   },
   {
    "fieldname": "would_you_like_to_get_ivrs_or_other_alerts",
    "fieldtype": "Select",
    "label": "Would you like to get IVRS or other alerts?",
-   "options": "Yes\nNo",
-   "reqd": 1
+   "options": "\nYes\nNo"
   },
   {
+   "default": "+91-",
    "fieldname": "mobile_number",
-   "fieldtype": "Int",
+   "fieldtype": "Phone",
    "label": "Mobile Number",
-   "non_negative": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Active\nInactive"
-  },
-  {
-   "fieldname": "created_at",
-   "fieldtype": "Datetime",
-   "label": "Created At"
-  },
-  {
-   "fieldname": "updated_at",
-   "fieldtype": "Datetime",
-   "label": "Updated At"
-  },
-  {
-   "fieldname": "data_tab",
-   "fieldtype": "Tab Break",
-   "label": "Data"
+   "non_negative": 1
   },
   {
    "fieldname": "column_break_kejv",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_rwts",
+   "fieldname": "column_break_xgko",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_tjir",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_income_annually_section",
+   "fieldtype": "Section Break",
+   "label": "Total Income (annually)"
+  },
+  {
+   "fieldname": "column_break_lodv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "availability_of_land_area_in_acre_section",
+   "fieldtype": "Section Break",
+   "label": "Availability of land (Area in acre)"
+  },
+  {
+   "fieldname": "column_break_pels",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jyrt",
    "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 10:59:06.422943",
+ "modified": "2024-05-21 22:57:55.644962",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO member details",

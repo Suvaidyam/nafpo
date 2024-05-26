@@ -7,21 +7,22 @@
  "engine": "InnoDB",
  "field_order": [
   "state_name",
+  "column_break_xrmn",
   "fpo_name",
-  "bod_kycs_name",
+  "section_break_xbpn",
+  "name1",
   "mobile_number",
   "director_identifiation_number",
   "din_document",
-  "upload_aadhar_document",
-  "gender",
-  "age",
-  "column_break_vimi",
-  "date_of_joining",
   "address_proof_status",
-  "address_proof_other",
   "address_proof",
+  "gender",
+  "column_break_vimi",
+  "age",
+  "date_of_joining",
   "aadhar_number",
-  "aadhar_number2",
+  "upload_aadhar_document",
+  "address_proof_other",
   "director_status",
   "status"
  ],
@@ -43,13 +44,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "bod_kycs_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "BOD KYCs Name",
-   "reqd": 1
-  },
-  {
    "default": "+91-",
    "fieldname": "mobile_number",
    "fieldtype": "Phone",
@@ -59,9 +53,8 @@
    "reqd": 1
   },
   {
-   "default": "+91-",
    "fieldname": "director_identifiation_number",
-   "fieldtype": "Phone",
+   "fieldtype": "Int",
    "label": "Director Identifiation Number",
    "non_negative": 1,
    "reqd": 1
@@ -80,8 +73,9 @@
   },
   {
    "fieldname": "address_proof_status",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "label": "Address Proof Status",
+   "options": "\nActive\nInactive",
    "reqd": 1
   },
   {
@@ -100,7 +94,7 @@
    "fieldname": "gender",
    "fieldtype": "Select",
    "label": "Gender",
-   "options": "Male\nFemale\nOthers",
+   "options": "\nMale\nFemale\nOthers",
    "reqd": 1
   },
   {
@@ -118,15 +112,9 @@
   },
   {
    "fieldname": "aadhar_number",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Aadhar Number",
-   "non_negative": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "aadhar_number2",
-   "fieldtype": "Int",
-   "label": "Aadhar Number",
+   "length": 12,
    "non_negative": 1,
    "reqd": 1
   },
@@ -134,7 +122,7 @@
    "fieldname": "director_status",
    "fieldtype": "Select",
    "label": "Director Status",
-   "options": "Active\nInactive",
+   "options": "\nActive\nInactive",
    "reqd": 1
   },
   {
@@ -147,11 +135,27 @@
   {
    "fieldname": "column_break_vimi",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xrmn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xbpn",
+   "fieldtype": "Section Break",
+   "label": "Details of BOD"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-21 14:29:36.703487",
+ "modified": "2024-05-21 22:18:21.492596",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "BOD KYC",
@@ -175,5 +179,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "bod_kycs_name"
+ "title_field": "name1"
 }
