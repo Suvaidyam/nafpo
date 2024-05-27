@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Profiling",
  "links": [],
- "modified": "2024-05-27 10:36:02.926601",
+ "modified": "2024-05-27 11:39:29.657768",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Profiling",
@@ -28,6 +28,9 @@
   },
   {
    "role": "Admin"
+  },
+  {
+   "role": "CBBO"
   }
  ],
  "sequence_id": 3.0,

@@ -117,7 +117,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 11:11:15.928799",
+ "modified": "2024-05-27 12:35:34.859552",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Success Stories",
@@ -144,6 +144,16 @@
    "read": 1,
    "report": 1,
    "role": "Admin",
+   "select": 1,
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CBBO",
    "select": 1,
    "share": 1
   }

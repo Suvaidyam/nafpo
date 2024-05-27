@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Sales Forecasting",
  "links": [],
- "modified": "2024-05-27 10:38:53.021818",
+ "modified": "2024-05-27 11:41:10.002395",
  "modified_by": "Administrator",
  "module": "Sale Forecasting",
  "name": "Sales Forecasting",
@@ -28,6 +28,9 @@
   },
   {
    "role": "Admin"
+  },
+  {
+   "role": "CBBO"
   }
  ],
  "sequence_id": 9.0,
