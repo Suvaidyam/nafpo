@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Capacity Building",
  "links": [],
- "modified": "2024-05-27 11:40:36.540311",
+ "modified": "2024-05-27 12:56:30.420401",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity Building",
@@ -25,6 +25,9 @@
  "roles": [
   {
    "role": "Administrator"
+  },
+  {
+   "role": "FPO"
   },
   {
    "role": "Admin"

@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Business Plannings",
  "links": [],
- "modified": "2024-05-27 11:40:52.863492",
+ "modified": "2024-05-27 12:56:30.565231",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Business Plannings",
@@ -27,13 +27,16 @@
    "role": "Administrator"
   },
   {
+   "role": "FPO"
+  },
+  {
    "role": "Admin"
   },
   {
    "role": "CBBO"
   }
  ],
- "sequence_id": 8.0,
+ "sequence_id": 9.0,
  "shortcuts": [
   {
    "color": "Grey",
