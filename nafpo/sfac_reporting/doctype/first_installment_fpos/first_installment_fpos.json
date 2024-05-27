@@ -151,7 +151,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 11:01:34.764610",
+ "modified": "2024-05-27 12:26:45.368639",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "First Installment Fpos",
@@ -178,6 +178,18 @@
    "role": "Admin",
    "select": 1,
    "share": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CBBO",
+   "select": 1,
+   "share": 1,
+   "write": 1
   }
  ],
  "sort_field": "creation",
