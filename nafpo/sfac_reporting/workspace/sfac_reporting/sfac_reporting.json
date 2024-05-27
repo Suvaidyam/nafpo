@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "SFAC Reporting",
  "links": [],
- "modified": "2024-05-27 11:40:05.750185",
+ "modified": "2024-05-27 12:56:30.240409",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "SFAC Reporting",
@@ -25,6 +25,9 @@
  "roles": [
   {
    "role": "Administrator"
+  },
+  {
+   "role": "FPO"
   },
   {
    "role": "Admin"

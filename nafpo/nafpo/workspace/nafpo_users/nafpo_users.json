@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Nafpo Users",
  "links": [],
- "modified": "2024-05-27 11:41:25.113077",
+ "modified": "2024-05-27 12:56:42.547392",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Nafpo Users",
@@ -31,6 +31,9 @@
  "roles": [
   {
    "role": "Administrator"
+  },
+  {
+   "role": "FPO"
   },
   {
    "role": "Admin"
