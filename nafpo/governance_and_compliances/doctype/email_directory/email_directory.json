@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:ED-{####}",
  "creation": "2024-05-10 12:27:12.438116",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -162,10 +163,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 09:03:44.442304",
+ "modified": "2024-05-27 09:50:04.504018",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Email Directory",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

@@ -1,0 +1,62 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-05-27 09:50:28.926389",
+  "name": "Admin",
+  "role_profile": "Admin",
+  "roles": [
+   {
+    "parent": "Admin",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Admin"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-05-27 09:50:41.937034",
+  "name": "IA",
+  "role_profile": "IA",
+  "roles": [
+   {
+    "parent": "IA",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "IA"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-05-27 09:50:53.094025",
+  "name": "FPO",
+  "role_profile": "FPO",
+  "roles": [
+   {
+    "parent": "FPO",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "FPO"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-05-27 09:51:05.321771",
+  "name": "CBBO",
+  "role_profile": "CBBO",
+  "roles": [
+   {
+    "parent": "CBBO",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "CBBO"
+   }
+  ]
+ }
+]
