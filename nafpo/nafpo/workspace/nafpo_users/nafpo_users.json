@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Nafpo Users",
  "links": [],
- "modified": "2024-05-27 11:41:25.113077",
+ "modified": "2024-05-27 12:50:12.021535",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Nafpo Users",
@@ -33,10 +33,10 @@
    "role": "Administrator"
   },
   {
-   "role": "Admin"
+   "role": "FPO"
   },
   {
-   "role": "CBBO"
+   "role": "Admin"
   }
  ],
  "sequence_id": 10.0,

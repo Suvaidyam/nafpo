@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-05-27 11:38:48.166306",
+ "modified": "2024-05-27 12:51:36.894772",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Dashboards",
@@ -60,10 +60,10 @@
    "role": "Administrator"
   },
   {
-   "role": "Admin"
+   "role": "FPO"
   },
   {
-   "role": "CBBO"
+   "role": "Admin"
   }
  ],
  "sequence_id": 1.0,
