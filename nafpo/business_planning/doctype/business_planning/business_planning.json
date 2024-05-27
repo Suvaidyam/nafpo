@@ -66,7 +66,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 12:38:42.478675",
+ "modified": "2024-05-27 17:11:05.649564",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Planning",
@@ -101,6 +101,16 @@
    "read": 1,
    "report": 1,
    "role": "CBBO",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "FPO",
+   "select": 1,
    "share": 1
   }
  ],

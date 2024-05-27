@@ -50,7 +50,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 11:44:59.944375",
+ "modified": "2024-05-27 16:36:04.043438",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Block",
@@ -90,6 +90,15 @@
    "read": 1,
    "report": 1,
    "role": "CBBO",
+   "select": 1,
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "role": "FPO",
    "select": 1,
    "share": 1
   }
