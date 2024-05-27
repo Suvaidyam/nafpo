@@ -6,6 +6,11 @@ app_email = "amresh.yadav@dhwaniris.com"
 app_license = "mit"
 # required_apps = []
 
+fixtures = [
+    "Role",
+    "Role Profile"
+]
+
 # Includes in <head>
 # ------------------
 
