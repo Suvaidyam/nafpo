@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:RSS-{####}",
  "creation": "2024-05-10 14:00:42.502843",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -98,10 +99,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-26 11:18:45.703330",
+ "modified": "2024-05-27 11:09:47.059153",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Research Study Surveys",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -115,6 +117,17 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin",
+   "select": 1,
+   "share": 1
   }
  ],
  "sort_field": "creation",

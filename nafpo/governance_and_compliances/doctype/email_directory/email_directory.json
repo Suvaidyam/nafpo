@@ -163,7 +163,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 09:50:04.504018",
+ "modified": "2024-05-27 11:06:31.775750",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Email Directory",
@@ -179,6 +179,19 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin",
+   "select": 1,
    "share": 1,
    "write": 1
   }

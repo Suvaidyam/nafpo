@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-05-27 10:07:27.811669",
+ "modified": "2024-05-27 10:35:11.032991",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Dashboards",
@@ -55,7 +55,14 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Admin"
+  }
+ ],
  "sequence_id": 1.0,
  "shortcuts": [],
  "title": "Dashboards"
