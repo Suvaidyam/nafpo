@@ -37,43 +37,45 @@
   },
   {
    "fieldname": "level",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "label": "Level",
+   "options": "\nFPO\nMember",
    "reqd": 1
   },
   {
+   "depends_on": "eval:doc.level == \"FPO\"",
    "fieldname": "state_name",
    "fieldtype": "Link",
    "label": "State Name",
-   "options": "State",
-   "reqd": 1
+   "options": "State"
   },
   {
+   "depends_on": "eval:doc.level == \"FPO\"",
    "fieldname": "district_name",
    "fieldtype": "Link",
    "label": "District Name",
-   "options": "District",
-   "reqd": 1
+   "options": "District"
   },
   {
+   "depends_on": "eval:doc.level == \"FPO\"",
    "fieldname": "block_name",
    "fieldtype": "Link",
    "label": "Block Name",
-   "options": "Block",
-   "reqd": 1
+   "mandatory_depends_on": "eval:doc.level == \"FPO\"",
+   "options": "Block"
   },
   {
+   "depends_on": "eval:doc.level == \"FPO\"",
    "fieldname": "fpo_name",
    "fieldtype": "Link",
    "label": "FPO Name",
-   "options": "FPO",
-   "reqd": 1
+   "options": "FPO"
   },
   {
+   "depends_on": "eval:doc.level == \"Member\"",
    "fieldname": "member",
-   "fieldtype": "Link",
-   "label": "Member",
-   "options": "FPO member details"
+   "fieldtype": "Data",
+   "label": "Member"
   },
   {
    "fieldname": "start_date",
@@ -89,7 +91,8 @@
   {
    "fieldname": "alert",
    "fieldtype": "Int",
-   "label": "Alert"
+   "label": "Alert",
+   "reqd": 1
   },
   {
    "fieldname": "narration",
@@ -112,7 +115,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-26 10:13:36.171935",
+ "modified": "2024-05-27 08:51:12.969674",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Compliance and Frequency",

@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{state_name}-{#####}",
+ "autoname": "format:BOD-{#####}",
  "creation": "2024-05-10 09:53:22.793813",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -44,11 +44,11 @@
    "reqd": 1
   },
   {
-   "default": "+91-",
    "fieldname": "mobile_number",
-   "fieldtype": "Phone",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Mobile Number",
+   "length": 10,
    "non_negative": 1,
    "reqd": 1
   },
@@ -157,7 +157,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-26 11:42:41.556440",
+ "modified": "2024-05-27 09:10:52.111312",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "BOD KYC",

@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:FPO-P-{#####}",
  "creation": "2024-05-09 11:20:29.637489",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -177,10 +178,10 @@
    "reqd": 1
   },
   {
-   "default": "+91-",
    "fieldname": "contact_detail_of_fpo",
-   "fieldtype": "Phone",
+   "fieldtype": "Data",
    "label": "Contact Detail of FPO",
+   "length": 10,
    "reqd": 1
   },
   {
@@ -451,10 +452,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-26 14:24:16.416822",
+ "modified": "2024-05-27 09:09:57.713392",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -470,7 +472,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "name_of_the_fpo"
 }
