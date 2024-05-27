@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Crop",
  "links": [],
- "modified": "2024-05-27 12:51:18.248526",
+ "modified": "2024-05-27 12:56:30.167737",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop",
@@ -31,6 +31,9 @@
   },
   {
    "role": "Admin"
+  },
+  {
+   "role": "CBBO"
   }
  ],
  "sequence_id": 4.0,

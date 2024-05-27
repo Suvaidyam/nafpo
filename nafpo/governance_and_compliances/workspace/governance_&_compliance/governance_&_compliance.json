@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Governance & Compliance",
  "links": [],
- "modified": "2024-05-27 12:50:57.389328",
+ "modified": "2024-05-27 12:56:30.322133",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Governance & Compliance",
@@ -31,6 +31,9 @@
   },
   {
    "role": "Admin"
+  },
+  {
+   "role": "CBBO"
   }
  ],
  "sequence_id": 6.0,

@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Capacity Building",
  "links": [],
- "modified": "2024-05-27 12:50:49.063882",
+ "modified": "2024-05-27 12:56:30.420401",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity Building",
@@ -31,6 +31,9 @@
   },
   {
    "role": "Admin"
+  },
+  {
+   "role": "CBBO"
   }
  ],
  "sequence_id": 7.0,

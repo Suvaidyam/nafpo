@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "SFAC Reporting",
  "links": [],
- "modified": "2024-05-27 12:51:08.821395",
+ "modified": "2024-05-27 12:56:30.240409",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "SFAC Reporting",
@@ -31,6 +31,9 @@
   },
   {
    "role": "Admin"
+  },
+  {
+   "role": "CBBO"
   }
  ],
  "sequence_id": 5.0,
