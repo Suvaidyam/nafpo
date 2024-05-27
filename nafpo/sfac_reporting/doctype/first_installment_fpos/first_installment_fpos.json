@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:FIF-{####}",
  "creation": "2024-05-10 11:52:19.344678",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -151,10 +152,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 12:26:45.368639",
+ "modified": "2024-05-27 16:50:03.158854",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "First Installment Fpos",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -187,6 +189,18 @@
    "read": 1,
    "report": 1,
    "role": "CBBO",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "FPO",
    "select": 1,
    "share": 1,
    "write": 1

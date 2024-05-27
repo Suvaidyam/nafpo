@@ -151,7 +151,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 12:34:04.288384",
+ "modified": "2024-05-27 16:58:42.253853",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Training Material",
@@ -188,6 +188,17 @@
    "read": 1,
    "report": 1,
    "role": "CBBO",
+   "select": 1,
+   "share": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "FPO",
    "select": 1,
    "share": 1
   }
