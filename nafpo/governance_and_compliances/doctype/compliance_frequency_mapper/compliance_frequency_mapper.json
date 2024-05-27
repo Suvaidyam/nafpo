@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:CFM-{####}",
  "creation": "2024-05-10 12:20:58.123006",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -127,10 +128,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 12:26:49.046323",
+ "modified": "2024-05-27 11:05:52.237506",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Compliance Frequency Mapper",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -144,6 +146,16 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin",
+   "select": 1,
+   "share": 1
   }
  ],
  "sort_field": "creation",

@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:CPOP-{####}",
  "creation": "2024-05-10 13:28:21.845452",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -164,10 +165,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-26 11:12:10.430661",
+ "modified": "2024-05-27 11:08:53.170656",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Crop POP",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -181,6 +183,17 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin",
+   "select": 1,
+   "share": 1
   }
  ],
  "sort_field": "creation",

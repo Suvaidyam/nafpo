@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:SF-{####}",
  "creation": "2024-05-10 15:23:36.033891",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -128,10 +129,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 17:18:16.398847",
+ "modified": "2024-05-27 11:15:22.870469",
  "modified_by": "Administrator",
  "module": "Sale Forecasting",
  "name": "Sale Forecasting",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -145,6 +147,17 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin",
+   "select": 1,
+   "share": 1
   }
  ],
  "sort_field": "creation",

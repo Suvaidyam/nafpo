@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Capacity Building",
  "links": [],
- "modified": "2024-05-27 10:07:28.830907",
+ "modified": "2024-05-27 10:38:08.511115",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity Building",
@@ -22,7 +22,14 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Admin"
+  }
+ ],
  "sequence_id": 7.0,
  "shortcuts": [
   {

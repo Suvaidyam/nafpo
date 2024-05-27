@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Nafpo Users",
  "links": [],
- "modified": "2024-05-27 10:31:49.579269",
+ "modified": "2024-05-27 10:39:18.560654",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Nafpo Users",
@@ -28,7 +28,14 @@
    "quick_list_filter": "[]"
   }
  ],
- "roles": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Admin"
+  }
+ ],
  "sequence_id": 10.0,
  "shortcuts": [],
  "title": "Nafpo Users"

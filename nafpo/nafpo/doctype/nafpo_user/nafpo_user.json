@@ -66,7 +66,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 10:22:37.720031",
+ "modified": "2024-05-27 11:16:33.082248",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Nafpo User",
@@ -82,6 +82,19 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin",
+   "select": 1,
    "share": 1,
    "write": 1
   }

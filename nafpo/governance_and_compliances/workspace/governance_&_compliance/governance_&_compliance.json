@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Governance & Compliance",
  "links": [],
- "modified": "2024-05-27 10:07:28.673593",
+ "modified": "2024-05-27 10:37:22.229718",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Governance & Compliance",
@@ -22,7 +22,14 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Admin"
+  }
+ ],
  "sequence_id": 6.0,
  "shortcuts": [
   {
