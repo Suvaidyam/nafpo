@@ -5,18 +5,27 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "fpo_details_section",
   "fpo_name",
-  "fpo_email",
   "fpo_mobile_number",
-  "fpo_anchor_email",
+  "column_break_nwph",
+  "fpo_email",
+  "fpo_anchor_details_section",
   "fpo_anchor_name",
   "fpo_anchor_mobile_number",
-  "tc_email",
+  "column_break_hmdg",
+  "fpo_anchor_email",
+  "tc_details_section",
   "tc_name",
   "tc_mobile_number",
-  "state_anchor_email",
+  "column_break_wobb",
+  "tc_email",
+  "state_anchor_details_section",
   "state_anchor_name",
   "state_anchor_mobile_number",
+  "column_break_bcmz",
+  "state_anchor_email",
+  "section_break_mzfc",
   "fpo_rc"
  ],
  "fields": [
@@ -25,95 +34,135 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "FPO Name",
-   "options": "FPO",
+   "options": "FPO Profiling",
    "reqd": 1
   },
   {
+   "fetch_from": "fpo_name.fpo_email_id",
    "fieldname": "fpo_email",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "FPO Email",
    "options": "Email",
+   "read_only": 1,
    "reqd": 1
   },
   {
+   "fetch_from": "fpo_name.contact_detail_of_fpo",
    "fieldname": "fpo_mobile_number",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "FPO Mobile Number",
+   "length": 10,
    "non_negative": 1,
+   "read_only": 1,
    "reqd": 1
   },
   {
    "fieldname": "fpo_anchor_email",
    "fieldtype": "Data",
    "label": "FPO Anchor Email",
-   "options": "Email",
-   "reqd": 1
+   "options": "Email"
   },
   {
    "fieldname": "fpo_anchor_name",
    "fieldtype": "Data",
-   "label": "FPO Anchor Name",
-   "reqd": 1
+   "label": "FPO Anchor Name"
   },
   {
    "fieldname": "fpo_anchor_mobile_number",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "FPO Anchor Mobile Number",
-   "non_negative": 1,
-   "reqd": 1
+   "length": 10,
+   "non_negative": 1
   },
   {
    "fieldname": "tc_email",
    "fieldtype": "Data",
    "label": "TC Email",
-   "options": "Email",
-   "reqd": 1
+   "options": "Email"
   },
   {
    "fieldname": "tc_name",
    "fieldtype": "Data",
-   "label": "TC Name",
-   "reqd": 1
+   "label": "TC Name"
   },
   {
    "fieldname": "tc_mobile_number",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "TC Mobile Number",
-   "non_negative": 1,
-   "reqd": 1
+   "length": 10,
+   "non_negative": 1
   },
   {
    "fieldname": "state_anchor_email",
    "fieldtype": "Data",
    "label": "State Anchor Email",
-   "options": "Email",
-   "reqd": 1
+   "options": "Email"
   },
   {
    "fieldname": "state_anchor_name",
    "fieldtype": "Data",
-   "label": "State Anchor Name",
-   "reqd": 1
+   "label": "State Anchor Name"
   },
   {
    "fieldname": "state_anchor_mobile_number",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "State Anchor Mobile Number",
-   "non_negative": 1,
-   "reqd": 1
+   "length": 10,
+   "non_negative": 1
   },
   {
    "fieldname": "fpo_rc",
    "fieldtype": "Data",
    "label": "FPO RC",
    "reqd": 1
+  },
+  {
+   "fieldname": "fpo_details_section",
+   "fieldtype": "Section Break",
+   "label": "FPO Details"
+  },
+  {
+   "fieldname": "column_break_nwph",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_mzfc",
+   "fieldtype": "Section Break",
+   "label": "RC Details"
+  },
+  {
+   "fieldname": "fpo_anchor_details_section",
+   "fieldtype": "Section Break",
+   "label": "FPO Anchor Details"
+  },
+  {
+   "fieldname": "column_break_hmdg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tc_details_section",
+   "fieldtype": "Section Break",
+   "label": "TC Details"
+  },
+  {
+   "fieldname": "column_break_wobb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "state_anchor_details_section",
+   "fieldtype": "Section Break",
+   "label": "State Anchor Details"
+  },
+  {
+   "fieldname": "column_break_bcmz",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 12:32:17.459940",
+ "modified": "2024-05-27 09:03:44.442304",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Email Directory",

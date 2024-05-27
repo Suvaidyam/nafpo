@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:name1",
  "creation": "2024-05-10 12:10:06.253447",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -15,7 +16,8 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Name",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "days",
@@ -29,15 +31,17 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Active\nInactive"
+   "options": "Active\nInactive",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-26 10:12:21.784692",
+ "modified": "2024-05-27 08:43:11.019234",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Frequency",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
