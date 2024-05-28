@@ -85,7 +85,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 17:02:01.252316",
+ "modified": "2024-05-28 09:28:04.451396",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Other Format",
@@ -133,6 +133,16 @@
    "read": 1,
    "report": 1,
    "role": "FPO",
+   "select": 1,
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IA",
    "select": 1,
    "share": 1
   }

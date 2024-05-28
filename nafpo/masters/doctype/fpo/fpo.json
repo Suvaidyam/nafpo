@@ -55,7 +55,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 16:38:38.921796",
+ "modified": "2024-05-27 18:19:12.984690",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "FPO",
@@ -107,6 +107,18 @@
    "role": "FPO",
    "select": 1,
    "share": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IA",
+   "select": 1,
+   "share": 1,
+   "write": 1
   }
  ],
  "show_title_field_in_link": 1,
