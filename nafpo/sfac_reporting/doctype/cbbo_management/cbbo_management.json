@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:CM-{####}",
  "creation": "2024-05-10 11:21:38.016648",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -345,10 +346,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 16:48:55.663014",
+ "modified": "2024-05-28 09:19:37.831947",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "CBBO Management",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -393,6 +395,19 @@
    "role": "FPO",
    "select": 1,
    "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IA",
+   "select": 1,
+   "share": 1,
+   "write": 1
   }
  ],
  "sort_field": "creation",

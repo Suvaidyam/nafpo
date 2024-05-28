@@ -452,7 +452,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 16:41:58.934300",
+ "modified": "2024-05-28 09:09:58.773048",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
@@ -503,6 +503,16 @@
    "select": 1,
    "share": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IA",
+   "select": 1,
+   "share": 1
   }
  ],
  "show_title_field_in_link": 1,

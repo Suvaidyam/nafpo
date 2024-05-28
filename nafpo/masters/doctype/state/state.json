@@ -34,7 +34,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 16:35:07.112147",
+ "modified": "2024-05-27 18:15:18.156086",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "State",
@@ -83,6 +83,17 @@
    "print": 1,
    "report": 1,
    "role": "FPO",
+   "select": 1,
+   "share": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IA",
    "select": 1,
    "share": 1
   }
