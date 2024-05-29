@@ -52,7 +52,7 @@ def ia_perm(self):
 		existing_doc.save(ignore_permissions=True)
 	else:
 		perm_doc = frappe.get_doc(ia_perm_doc)
-		perm_doc.for_value=self.ia,
+		perm_doc.for_value=self.ia
 		perm_doc.insert(ignore_permissions=True)
 
 def fpo_perm(self):
@@ -68,7 +68,7 @@ def fpo_perm(self):
 		existing_doc.save(ignore_permissions=True)
 	else:
 		perm_doc = frappe.get_doc(fpo_perm_doc)
-		perm_doc.for_value=self.fpo,
+		perm_doc.for_value=self.fpo
 		perm_doc.insert(ignore_permissions=True)
 
 def cbbo_perm(self):
@@ -84,5 +84,5 @@ def cbbo_perm(self):
 		existing_doc.save(ignore_permissions=True)
 	else:
 		perm_doc = frappe.get_doc(cbbo_perm_doc)
-		perm_doc.for_value=self.cbbo,
+		perm_doc.for_value=self.cbbo
 		perm_doc.insert(ignore_permissions=True)
