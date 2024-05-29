@@ -12,18 +12,15 @@
   "fpo",
   "category",
   "other_category",
-  "language_of_training_material",
-  "language_of_module",
-  "column_break_jwep",
   "training_title",
+  "column_break_zocn",
   "objective_of_the_training",
   "duration_of_training_in_days",
   "no_of_sessions",
+  "language_of_training_material",
+  "language_of_module",
   "upload_training_module",
-  "approved_status",
-  "feedback",
-  "status",
-  "training_content_section",
+  "upload_training_module_section",
   "training_content_table"
  ],
  "fields": [
@@ -61,17 +58,15 @@
   },
   {
    "fieldname": "category",
-   "fieldtype": "Link",
+   "fieldtype": "Table MultiSelect",
    "label": "Category",
-   "options": "Category",
+   "options": "Category Child",
    "reqd": 1
   },
   {
-   "depends_on": "eval:doc.category == \"Other\"",
    "fieldname": "other_category",
    "fieldtype": "Data",
-   "label": "Other Category",
-   "mandatory_depends_on": "eval:doc.category == \"Other\""
+   "label": "Other Category"
   },
   {
    "fieldname": "training_title",
@@ -82,23 +77,34 @@
   {
    "fieldname": "objective_of_the_training",
    "fieldtype": "Data",
-   "label": "Objective of the training"
+   "label": "Objective of the training",
+   "reqd": 1
   },
   {
    "fieldname": "duration_of_training_in_days",
    "fieldtype": "Int",
-   "label": "Duration of Training (In days)"
-  },
-  {
-   "fieldname": "no_of_sessions",
-   "fieldtype": "Int",
-   "label": "No. of Sessions"
+   "label": "Duration of Training (In days)",
+   "reqd": 1
   },
   {
    "fieldname": "language_of_training_material",
    "fieldtype": "Link",
    "label": "Language of Training Material",
    "options": "Language",
+   "reqd": 1
+  },
+  {
+   "fieldname": "training_content_table",
+   "fieldtype": "Table",
+   "label": "Training Content Table",
+   "options": "Training Content Child"
+  },
+  {
+   "description": "Number cannot exceed 20.",
+   "fieldname": "no_of_sessions",
+   "fieldtype": "Int",
+   "label": "No. of Sessions",
+   "non_negative": 1,
    "reqd": 1
   },
   {
@@ -109,49 +115,24 @@
    "reqd": 1
   },
   {
-   "fieldname": "upload_training_module",
-   "fieldtype": "Attach",
-   "label": "Upload Training Module"
-  },
-  {
-   "fieldname": "approved_status",
-   "fieldtype": "Select",
-   "label": "Approved Status",
-   "options": "Pending\nApproved\nRejected",
-   "reqd": 1
-  },
-  {
-   "fieldname": "feedback",
-   "fieldtype": "Data",
-   "label": "Feedback"
-  },
-  {
-   "default": "Active",
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Active\nInactive",
-   "reqd": 1
-  },
-  {
-   "fieldname": "column_break_jwep",
+   "fieldname": "column_break_zocn",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "training_content_section",
+   "fieldname": "upload_training_module_section",
    "fieldtype": "Section Break",
-   "label": "Training Content"
+   "label": "Upload Training Module"
   },
   {
-   "fieldname": "training_content_table",
-   "fieldtype": "Table",
-   "label": "Training Content Table",
-   "options": "Training Content Child"
+   "fieldname": "upload_training_module",
+   "fieldtype": "Attach Image",
+   "label": "Upload Training Module",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 09:25:06.873991",
+ "modified": "2024-05-29 16:01:56.976398",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Training Material",
