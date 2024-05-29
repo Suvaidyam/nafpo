@@ -9,9 +9,12 @@
   "email",
   "name1",
   "username",
-  "column_break_sgbq",
   "mobile",
+  "column_break_sgbq",
   "level",
+  "ia",
+  "fpo",
+  "cbbo",
   "password"
  ],
  "fields": [
@@ -62,11 +65,35 @@
   {
    "fieldname": "column_break_sgbq",
    "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.level == \"IA\"",
+   "fieldname": "ia",
+   "fieldtype": "Link",
+   "label": "IA",
+   "mandatory_depends_on": "eval:doc.level == \"IA\"",
+   "options": "IA"
+  },
+  {
+   "depends_on": "eval:doc.level == \"FPO\"",
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "label": "FPO",
+   "mandatory_depends_on": "eval:doc.level == \"FPO\"",
+   "options": "FPO"
+  },
+  {
+   "depends_on": "eval:doc.level == \"CBBO\"",
+   "fieldname": "cbbo",
+   "fieldtype": "Link",
+   "label": "CBBO",
+   "mandatory_depends_on": "eval:doc.level == \"CBBO\"",
+   "options": "CBBO"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 09:31:08.158592",
+ "modified": "2024-05-29 08:48:53.941656",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Nafpo User",

@@ -9,7 +9,7 @@ class NafpoUser(Document):
 	def after_insert(self):
 		new_user = frappe.new_doc("User")
 		new_user.email = self.email
-		new_user.first_name = self.name
+		new_user.first_name = self.name1
 		new_user.role_profile_name = self.level
 		new_user.new_password = self.password
 		new_user.save()
@@ -18,10 +18,16 @@ class NafpoUser(Document):
 	def on_update(self):
 		user_doc = frappe.get_doc("User", self.email)
 		user_doc.email = self.email
-		user_doc.first_name = self.name
+		user_doc.first_name = self.name1
 		user_doc.role_profile_name = self.level
 		user_doc.new_password = self.password
 		user_doc.save()
+		if(self.level == "IA" and self.ia):
+			ia_perm(self)
+		if(self.level == "FPO" and self.fpo):
+			fpo_perm(self)
+		if(self.level == "CBBO" and self.cbbo):
+			cbbo_perm(self)
 		
 	def on_trash(self):
 		# Check if the user exists
@@ -31,4 +37,52 @@ class NafpoUser(Document):
 			frappe.msgprint(f"The user {self.name} has been deleted.")
 		else:
 			frappe.msgprint(f"The user {self.name} does not exist.")
-	
+
+
+def ia_perm(self):
+	ia_perm_doc = {
+		'doctype': "User Permission",
+		'allow': 'IA',
+		'user':self.email
+	}
+	ia_perm_exist  = frappe.db.exists(ia_perm_doc)
+	if ia_perm_exist:
+		existing_doc = frappe.get_doc("User Permission",ia_perm_exist)
+		existing_doc.for_value=self.ia
+		existing_doc.save(ignore_permissions=True)
+	else:
+		perm_doc = frappe.get_doc(ia_perm_doc)
+		perm_doc.for_value=self.ia,
+		perm_doc.insert(ignore_permissions=True)
+
+def fpo_perm(self):
+	fpo_perm_doc = {
+		'doctype': "User Permission",
+		'allow': 'FPO',
+		'user':self.email
+	}
+	fpo_perm_exist  = frappe.db.exists(fpo_perm_doc)
+	if fpo_perm_exist:
+		existing_doc = frappe.get_doc("User Permission",fpo_perm_exist)
+		existing_doc.for_value=self.fpo
+		existing_doc.save(ignore_permissions=True)
+	else:
+		perm_doc = frappe.get_doc(fpo_perm_doc)
+		perm_doc.for_value=self.fpo,
+		perm_doc.insert(ignore_permissions=True)
+
+def cbbo_perm(self):
+	cbbo_perm_doc = {
+		'doctype': "User Permission",
+		'allow': 'CBBO',
+		'user':self.email
+	}
+	cbbo_perm_exist  = frappe.db.exists(cbbo_perm_doc)
+	if cbbo_perm_exist:
+		existing_doc = frappe.get_doc("User Permission",cbbo_perm_exist)
+		existing_doc.for_value=self.cbbo
+		existing_doc.save(ignore_permissions=True)
+	else:
+		perm_doc = frappe.get_doc(cbbo_perm_doc)
+		perm_doc.for_value=self.cbbo,
+		perm_doc.insert(ignore_permissions=True)
