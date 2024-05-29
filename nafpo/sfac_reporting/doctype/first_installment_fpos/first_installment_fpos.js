@@ -3,7 +3,7 @@
 
 frappe.ui.form.on("First Installment Fpos", {
     refresh(frm) {
-        hide_advance_search(frm, ['select_fpo'])
-        extend_options_length(frm, ['select_fpo'])
+        hide_advance_search(frm, ['select_fpo', 'allocation_year'])
+        extend_options_length(frm, ['select_fpo', 'allocation_year'])
     },
 });
