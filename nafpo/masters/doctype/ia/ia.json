@@ -18,7 +18,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 16:37:53.921612",
+ "modified": "2024-05-29 15:08:39.313938",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "IA",
@@ -66,6 +66,15 @@
    "print": 1,
    "report": 1,
    "role": "FPO",
+   "select": 1,
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "role": "IA",
    "select": 1,
    "share": 1
   }
