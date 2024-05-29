@@ -100,6 +100,9 @@ doctype_js = {
     "Other Format" : [
         "public/js/utils/utils.js"
     ],
+    "Nafpo User" : [
+        "public/js/utils/utils.js"
+    ],
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
