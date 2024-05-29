@@ -64,49 +64,58 @@
   {
    "fieldname": "summary",
    "fieldtype": "Data",
-   "label": "Summary"
+   "label": "Summary",
+   "reqd": 1
   },
   {
    "fieldname": "location_of_the_story",
    "fieldtype": "Data",
-   "label": "Location of the Story"
+   "label": "Location of the Story",
+   "reqd": 1
   },
   {
    "fieldname": "upload_case_study_type",
    "fieldtype": "Select",
    "label": "Upload Case Study Type",
-   "options": "Document\nSnap"
+   "options": "\nDocument\nVideo",
+   "reqd": 1
   },
   {
    "fieldname": "upload_case_study",
    "fieldtype": "Attach",
-   "label": "Upload Case Study"
+   "label": "Upload Case Study",
+   "reqd": 1
   },
   {
    "fieldname": "upload_snaps",
    "fieldtype": "Attach Image",
-   "label": "Upload Snaps"
+   "label": "Upload Snaps",
+   "reqd": 1
   },
   {
    "fieldname": "upload_video",
    "fieldtype": "Attach",
-   "label": "Upload Video"
+   "label": "Upload Video",
+   "reqd": 1
   },
   {
    "fieldname": "approved_status",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Approved Status",
    "options": "Pending\nApproved\nRejected"
   },
   {
    "fieldname": "feedback",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Feedback"
   },
   {
    "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Status",
    "options": "Active\nInactive"
   },
@@ -117,7 +126,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 09:27:23.798785",
+ "modified": "2024-05-29 16:41:36.274454",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Success Stories",
