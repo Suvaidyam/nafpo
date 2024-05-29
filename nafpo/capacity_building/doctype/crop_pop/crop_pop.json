@@ -18,15 +18,15 @@
   "duration_of_the_crop_in_days",
   "sowing_month",
   "upload_crop_pop",
-  "no_of_practise",
-  "number_of_damages_to_be_posted",
   "last_update_date",
   "approved_status",
   "feedback",
   "status",
   "crops_best_practices_section",
+  "no_of_practise",
   "crop_practice_table",
   "pest_diagnostic_and_management_section",
+  "number_of_damages_to_be_posted",
   "pest_diagnostic_management_table"
  ],
  "fields": [
@@ -76,40 +76,34 @@
   {
    "fieldname": "suitable_region",
    "fieldtype": "Data",
-   "label": "Suitable Region"
+   "label": "Suitable Region",
+   "reqd": 1
   },
   {
    "fieldname": "season",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Season",
-   "non_negative": 1
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "fieldname": "duration_of_the_crop_in_days",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Duration of the Crop (In Days)",
+   "non_negative": 1,
    "reqd": 1
   },
   {
    "fieldname": "sowing_month",
-   "fieldtype": "Date",
-   "label": "Sowing Month"
+   "fieldtype": "Select",
+   "label": "Sowing Month",
+   "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember",
+   "reqd": 1
   },
   {
    "fieldname": "upload_crop_pop",
    "fieldtype": "Attach",
    "label": "Upload Crop POP"
-  },
-  {
-   "fieldname": "no_of_practise",
-   "fieldtype": "Int",
-   "label": "No of practise",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "number_of_damages_to_be_posted",
-   "fieldtype": "Int",
-   "label": "Number of Damages to be posted"
   },
   {
    "fieldname": "last_update_date",
@@ -161,11 +155,27 @@
    "fieldtype": "Table",
    "label": "Pest Diagnostic Management Table",
    "options": "Pest Diagnostic and Management Child"
+  },
+  {
+   "description": "Number cannot exceed 20.",
+   "fieldname": "number_of_damages_to_be_posted",
+   "fieldtype": "Int",
+   "label": "Number of Damages to be posted",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "description": "Number cannot exceed 20.",
+   "fieldname": "no_of_practise",
+   "fieldtype": "Int",
+   "label": "No of practise",
+   "non_negative": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 09:25:53.724498",
+ "modified": "2024-05-29 16:08:44.177477",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Crop POP",
