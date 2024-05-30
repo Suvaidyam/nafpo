@@ -20,6 +20,7 @@
   "language_of_training_material",
   "language_of_module",
   "upload_training_module",
+  "approval_status",
   "upload_training_module_section",
   "training_content_table"
  ],
@@ -28,6 +29,7 @@
    "fieldname": "state",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "State",
    "options": "State",
    "reqd": 1
@@ -52,6 +54,7 @@
    "fieldname": "fpo",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "FPO",
    "options": "FPO",
    "reqd": 1
@@ -59,6 +62,7 @@
   {
    "fieldname": "category",
    "fieldtype": "Table MultiSelect",
+   "in_standard_filter": 1,
    "label": "Category",
    "options": "Category Child",
    "reqd": 1
@@ -71,6 +75,7 @@
   {
    "fieldname": "training_title",
    "fieldtype": "Data",
+   "in_standard_filter": 1,
    "label": "Training Title",
    "reqd": 1
   },
@@ -128,11 +133,21 @@
    "fieldtype": "Attach Image",
    "label": "Upload Training Module",
    "reqd": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "approval_status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Approval Status",
+   "options": "Pending\nApproved\nRejected"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-29 16:01:56.976398",
+ "modified": "2024-05-30 13:21:02.908093",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Training Material",

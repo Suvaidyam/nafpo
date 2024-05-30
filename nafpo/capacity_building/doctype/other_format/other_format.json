@@ -22,6 +22,7 @@
    "fieldname": "state",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "State",
    "options": "State",
    "reqd": 1
@@ -43,6 +44,8 @@
   {
    "fieldname": "fpo",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "FPO",
    "options": "FPO",
    "reqd": 1
@@ -50,6 +53,8 @@
   {
    "fieldname": "name_of_format",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Name of Format",
    "reqd": 1
   },
@@ -63,6 +68,8 @@
    "fieldname": "approved_status",
    "fieldtype": "Select",
    "hidden": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Approved Status",
    "options": "Pending\nApproved\nRejected"
   },
@@ -87,7 +94,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-29 16:42:53.382241",
+ "modified": "2024-05-30 13:55:46.492018",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Other Format",

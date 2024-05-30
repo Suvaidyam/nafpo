@@ -34,6 +34,7 @@
    "fieldname": "state",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "State",
    "options": "State",
    "reqd": 1
@@ -55,6 +56,8 @@
   {
    "fieldname": "fpo",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "FPO",
    "options": "FPO",
    "reqd": 1
@@ -62,6 +65,8 @@
   {
    "fieldname": "crop_type",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Crop Type",
    "options": "Crop Type",
    "reqd": 1
@@ -69,6 +74,8 @@
   {
    "fieldname": "crop_name",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Crop Name",
    "options": "Crop Name",
    "reqd": 1
@@ -76,6 +83,8 @@
   {
    "fieldname": "suitable_region",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Suitable Region",
    "reqd": 1
   },
@@ -114,6 +123,8 @@
    "default": "Pending",
    "fieldname": "approved_status",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Approved Status",
    "options": "Pending\nApproved\nRejected"
   },
@@ -175,7 +186,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-29 16:08:44.177477",
+ "modified": "2024-05-30 13:22:40.811995",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Crop POP",
