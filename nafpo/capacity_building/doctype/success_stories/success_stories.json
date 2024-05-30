@@ -27,6 +27,7 @@
    "fieldname": "state",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "State",
    "options": "State",
    "reqd": 1
@@ -51,6 +52,7 @@
    "fieldname": "fpo",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "FPO",
    "options": "FPO",
    "reqd": 1
@@ -58,18 +60,24 @@
   {
    "fieldname": "topic",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Topic",
    "reqd": 1
   },
   {
    "fieldname": "summary",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Summary",
    "reqd": 1
   },
   {
    "fieldname": "location_of_the_story",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Location of the Story",
    "reqd": 1
   },
@@ -102,6 +110,8 @@
    "fieldname": "approved_status",
    "fieldtype": "Select",
    "hidden": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Approved Status",
    "options": "Pending\nApproved\nRejected"
   },
@@ -126,7 +136,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-29 16:41:36.274454",
+ "modified": "2024-05-30 13:52:40.470624",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Success Stories",
