@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:name_of_category",
  "creation": "2024-05-10 10:34:59.611173",
@@ -19,9 +20,10 @@
    "unique": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 16:39:06.601053",
+ "modified": "2024-06-01 19:16:44.043808",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Category",

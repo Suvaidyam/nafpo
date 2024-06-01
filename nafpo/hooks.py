@@ -8,7 +8,11 @@ app_license = "mit"
 
 fixtures = [
     "Role",
-    "Role Profile"
+    "Role Profile",
+    "Financial Year",
+    "IA",
+    "CBBO",
+    
 ]
 
 # Includes in <head>

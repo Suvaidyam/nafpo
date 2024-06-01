@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:name1",
  "creation": "2024-05-26 14:11:38.177129",
@@ -18,9 +19,10 @@
    "unique": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 16:40:19.452204",
+ "modified": "2024-06-01 19:17:18.020170",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Supporting Agencies",

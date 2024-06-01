@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "hash",
  "creation": "2024-05-09 07:39:03.905658",
@@ -32,9 +33,10 @@
    "options": "\nActive\nInactive"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 18:15:18.156086",
+ "modified": "2024-06-01 19:14:27.189119",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "State",

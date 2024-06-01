@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:tribe_name",
  "creation": "2024-05-10 10:36:55.170928",
@@ -19,9 +20,10 @@
    "unique": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 16:39:54.181391",
+ "modified": "2024-06-01 19:17:01.902063",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Tribe",

@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "hash",
  "creation": "2024-05-09 07:44:03.140601",
@@ -67,9 +68,10 @@
    "options": "\nActive\nInactive"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 18:17:53.371380",
+ "modified": "2024-06-01 19:15:39.165402",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Village",

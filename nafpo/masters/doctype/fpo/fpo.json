@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:{block}-FPO-{###}",
  "creation": "2024-05-09 07:58:33.629244",
@@ -53,9 +54,10 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 18:19:12.984690",
+ "modified": "2024-06-01 19:16:28.695410",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "FPO",

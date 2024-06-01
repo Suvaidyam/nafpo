@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:unit_name",
  "creation": "2024-05-10 17:09:44.827091",
@@ -16,9 +17,10 @@
    "unique": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 16:40:42.933940",
+ "modified": "2024-06-01 19:17:34.993137",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Unit",
