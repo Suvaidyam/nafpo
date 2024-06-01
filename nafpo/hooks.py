@@ -12,7 +12,7 @@ fixtures = [
     "Financial Year",
     "IA",
     "CBBO",
-    
+
 ]
 
 # Includes in <head>
@@ -257,7 +257,7 @@ doctype_js = {
 # Ignore links to specified DocTypes when deleting documents
 # -----------------------------------------------------------
 
-# ignore_links_on_delete = ["Communication", "ToDo"]
+ignore_links_on_delete = ["Route History"]
 
 # Request Events
 # ----------------
