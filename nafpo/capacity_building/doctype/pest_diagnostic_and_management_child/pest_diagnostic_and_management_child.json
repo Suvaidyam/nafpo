@@ -11,7 +11,14 @@
   "remedy_organic",
   "remedy_organic_snap",
   "remedy_in_organic",
-  "remedy_in_organic_snap"
+  "remedy_in_organic_snap",
+  "section_break_vykd",
+  "insect",
+  "fungs",
+  "disease",
+  "column_break_wyhz",
+  "weeds",
+  "nutrient_deficiency"
  ],
  "fields": [
   {
@@ -57,12 +64,51 @@
    "fieldtype": "Attach",
    "in_list_view": 1,
    "label": "Remedy (In Organic) Snap"
+  },
+  {
+   "default": "0",
+   "fieldname": "insect",
+   "fieldtype": "Check",
+   "label": "Insect"
+  },
+  {
+   "default": "0",
+   "fieldname": "fungs",
+   "fieldtype": "Check",
+   "label": "Fungs"
+  },
+  {
+   "default": "0",
+   "fieldname": "disease",
+   "fieldtype": "Check",
+   "label": "Disease"
+  },
+  {
+   "default": "0",
+   "fieldname": "weeds",
+   "fieldtype": "Check",
+   "label": "Weeds"
+  },
+  {
+   "default": "0",
+   "fieldname": "nutrient_deficiency",
+   "fieldtype": "Check",
+   "label": "Nutrient Deficiency"
+  },
+  {
+   "fieldname": "section_break_vykd",
+   "fieldtype": "Section Break",
+   "label": "Damage"
+  },
+  {
+   "fieldname": "column_break_wyhz",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-29 15:54:20.377641",
+ "modified": "2024-06-02 11:37:55.273929",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Pest Diagnostic and Management Child",
