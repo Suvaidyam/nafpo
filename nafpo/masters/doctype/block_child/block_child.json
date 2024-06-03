@@ -12,14 +12,16 @@
   {
    "fieldname": "block",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Block",
-   "options": "Block"
+   "options": "Block",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-26 12:18:35.896946",
+ "modified": "2024-06-03 21:05:18.000941",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Block Child",

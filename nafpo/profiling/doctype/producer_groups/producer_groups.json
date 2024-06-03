@@ -68,6 +68,7 @@
    "fetch_from": "cbbo.ia_name",
    "fieldname": "ia",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "IA",
    "options": "IA"
   },
@@ -75,13 +76,14 @@
    "fetch_from": "fpo.cbbo_name",
    "fieldname": "cbbo",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "CBBO",
    "options": "CBBO"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 18:54:59.032418",
+ "modified": "2024-06-03 21:18:17.553164",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Producer Groups",
