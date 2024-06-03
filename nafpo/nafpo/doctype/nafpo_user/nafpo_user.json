@@ -15,7 +15,9 @@
   "ia",
   "fpo",
   "cbbo",
-  "password"
+  "password",
+  "section_break_gcvk",
+  "html_aeie"
  ],
  "fields": [
   {
@@ -92,11 +94,20 @@
    "label": "CBBO",
    "mandatory_depends_on": "eval:doc.level == \"CBBO\"",
    "options": "CBBO"
+  },
+  {
+   "fieldname": "section_break_gcvk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "html_aeie",
+   "fieldtype": "HTML",
+   "options": "<div id=\"datatable\"></div>"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 13:11:55.670143",
+ "modified": "2024-06-03 14:33:14.006879",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Nafpo User",
