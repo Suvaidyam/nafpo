@@ -8,6 +8,8 @@
  "field_order": [
   "state_name",
   "name_of_fpo",
+  "cbbo",
+  "ia",
   "type_of_crop",
   "name_of_crop",
   "column_break_bari",
@@ -75,11 +77,25 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "Active\nInactive"
+  },
+  {
+   "fetch_from": "name_of_fpo.cbbo_name",
+   "fieldname": "cbbo",
+   "fieldtype": "Link",
+   "label": "CBBO",
+   "options": "CBBO"
+  },
+  {
+   "fetch_from": "cbbo.ia_name",
+   "fieldname": "ia",
+   "fieldtype": "Link",
+   "label": "IA",
+   "options": "IA"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 09:18:02.213473",
+ "modified": "2024-06-03 21:34:59.790668",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop Name",
