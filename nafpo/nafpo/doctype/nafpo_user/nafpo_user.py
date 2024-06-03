@@ -32,7 +32,9 @@ class NafpoUser(Document):
 			fpo_perm(self)
 		if(self.level == "CBBO" and self.cbbo):
 			cbbo_perm(self)
-		
+		delete_existing_permissions(self)
+		add_new_permissions(self)
+
 	def on_trash(self):
 		# Check if the user exists
 		if frappe.db.exists("User", self.name):
@@ -42,6 +44,26 @@ class NafpoUser(Document):
 		else:
 			frappe.msgprint(f"The user {self.name} does not exist.")
 
+
+def delete_existing_permissions(self):
+    roles = ["IA", "CBBO", "FPO"]
+    for role in roles:
+        delete_permission(role, self.email)
+
+
+def delete_permission(role, email):
+    perm_exist = frappe.db.exists("User Permission", {"allow": role, "user": email})
+    if perm_exist:
+        frappe.delete_doc("User Permission", perm_exist, ignore_permissions=True)
+
+
+def add_new_permissions(self):
+    if self.level == "IA" and self.ia:
+        ia_perm(self)
+    elif self.level == "CBBO" and self.cbbo:
+        cbbo_perm(self)
+    elif self.level == "FPO" and self.fpo:
+        fpo_perm(self)
 
 def ia_perm(self):
 	ia_perm_doc = {
