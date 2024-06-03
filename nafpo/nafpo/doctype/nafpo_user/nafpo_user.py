@@ -59,6 +59,44 @@ def ia_perm(self):
 		perm_doc.for_value=self.ia
 		perm_doc.insert(ignore_permissions=True)
 
+def cbbo_perm(self):
+	cbbo_perm_doc = {
+		'doctype': "User Permission",
+		'allow': 'CBBO',
+		'user':self.email
+	}
+	cbbo_perm_exist  = frappe.db.exists(cbbo_perm_doc)
+	if cbbo_perm_exist:
+		existing_doc = frappe.get_doc("User Permission",cbbo_perm_exist)
+		existing_doc.for_value=self.cbbo
+		existing_doc.save(ignore_permissions=True)
+	else:
+		perm_doc = frappe.get_doc(cbbo_perm_doc)
+		perm_doc.for_value=self.cbbo
+		perm_doc.insert(ignore_permissions=True)
+
+	cbbo_list = frappe.db.get_list('CBBO',
+			filters={'name': self.cbbo},
+			fields=['ia_name']
+		)
+	ia_names = cbbo_list[0].get('ia_name')
+
+	# Set IA user permission directly within cbbo_perm
+	ia_perm_doc = {
+		'doctype': "User Permission",
+		'allow': 'IA',
+		'user': self.email
+	}
+	ia_perm_exist = frappe.db.exists(ia_perm_doc)
+	if ia_perm_exist:
+		existing_doc = frappe.get_doc("User Permission", ia_perm_exist)
+		existing_doc.for_value = ia_names
+		existing_doc.save(ignore_permissions=True)
+	else:
+		perm_doc = frappe.get_doc(ia_perm_doc)
+		perm_doc.for_value = ia_names
+		perm_doc.insert(ignore_permissions=True)
+
 def fpo_perm(self):
 	fpo_perm_doc = {
 		'doctype': "User Permission",
@@ -75,7 +113,33 @@ def fpo_perm(self):
 		perm_doc.for_value=self.fpo
 		perm_doc.insert(ignore_permissions=True)
 
-def cbbo_perm(self):
+	fpo_list = frappe.get_doc('FPO',
+			self.fpo,
+			fields=['cbbo_name']
+		)
+
+	cbbo_list = frappe.get_doc('CBBO',
+			fpo_list.cbbo_name,
+			fields=['ia_name']
+		)
+	
+	# Set IA user permission directly within fpo_perm
+	ia_perm_doc = {
+		'doctype': "User Permission",
+		'allow': 'IA',
+		'user': self.email
+	}
+	ia_perm_exist = frappe.db.exists(ia_perm_doc)
+	if ia_perm_exist:
+		existing_doc = frappe.get_doc("User Permission", ia_perm_exist)
+		existing_doc.for_value = cbbo_list.ia_name
+		existing_doc.save(ignore_permissions=True)
+	else:
+		perm_doc = frappe.get_doc(ia_perm_doc)
+		perm_doc.for_value = cbbo_list.ia_name
+		perm_doc.insert(ignore_permissions=True)
+
+	# Set CBBO user permission directly within fpo_perm
 	cbbo_perm_doc = {
 		'doctype': "User Permission",
 		'allow': 'CBBO',
@@ -84,9 +148,9 @@ def cbbo_perm(self):
 	cbbo_perm_exist  = frappe.db.exists(cbbo_perm_doc)
 	if cbbo_perm_exist:
 		existing_doc = frappe.get_doc("User Permission",cbbo_perm_exist)
-		existing_doc.for_value=self.cbbo
+		existing_doc.for_value=fpo_list.cbbo_name
 		existing_doc.save(ignore_permissions=True)
 	else:
 		perm_doc = frappe.get_doc(cbbo_perm_doc)
-		perm_doc.for_value=self.cbbo
+		perm_doc.for_value=fpo_list.cbbo_name
 		perm_doc.insert(ignore_permissions=True)
