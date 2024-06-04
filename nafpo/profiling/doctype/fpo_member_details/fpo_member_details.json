@@ -376,12 +376,12 @@
    "fieldtype": "Link",
    "hidden": 1,
    "label": "IA",
-   "options": "CBBO"
+   "options": "IA"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 21:21:45.731687",
+ "modified": "2024-06-04 10:33:50.178848",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO member details",
