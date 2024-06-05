@@ -47,8 +47,7 @@
    "in_list_view": 1,
    "label": "FPO Email",
    "options": "Email",
-   "read_only": 1,
-   "reqd": 1
+   "read_only_depends_on": "eval:(doc.fpo_name && doc.fpo_name.length > 0)"
   },
   {
    "fetch_from": "fpo_name.contact_detail_of_fpo",
@@ -58,8 +57,7 @@
    "label": "FPO Mobile Number",
    "length": 10,
    "non_negative": 1,
-   "read_only": 1,
-   "reqd": 1
+   "read_only_depends_on": "eval:(doc.fpo_name && doc.fpo_name.length > 0) "
   },
   {
    "fieldname": "fpo_anchor_email",
@@ -179,7 +177,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-04 11:28:52.343058",
+ "modified": "2024-06-05 14:55:10.442124",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Email Directory",

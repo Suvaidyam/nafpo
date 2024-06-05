@@ -7,8 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
-  "days",
-  "status"
+  "days"
  ],
  "fields": [
   {
@@ -25,19 +24,11 @@
    "label": "Days",
    "non_negative": 1,
    "reqd": 1
-  },
-  {
-   "default": "Active",
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Active\nInactive",
-   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 09:22:23.880465",
+ "modified": "2024-06-05 12:59:33.283472",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Frequency",
