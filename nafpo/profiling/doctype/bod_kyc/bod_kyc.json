@@ -25,8 +25,7 @@
   "date_of_joining",
   "aadhar_number",
   "upload_aadhar_document",
-  "director_status",
-  "status"
+  "director_status"
  ],
  "fields": [
   {
@@ -129,14 +128,6 @@
    "reqd": 1
   },
   {
-   "default": "Active",
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Active\nInactive",
-   "reqd": 1
-  },
-  {
    "fieldname": "column_break_vimi",
    "fieldtype": "Column Break"
   },
@@ -175,7 +166,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 20:30:59.294890",
+ "modified": "2024-06-05 11:28:41.057972",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "BOD KYC",
