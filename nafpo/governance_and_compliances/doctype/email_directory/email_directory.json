@@ -8,6 +8,8 @@
  "field_order": [
   "fpo_details_section",
   "fpo_name",
+  "cbbo",
+  "ia",
   "fpo_mobile_number",
   "column_break_nwph",
   "fpo_email",
@@ -159,11 +161,25 @@
   {
    "fieldname": "column_break_bcmz",
    "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "fpo_name.cbbo",
+   "fieldname": "cbbo",
+   "fieldtype": "Link",
+   "label": "CBBO",
+   "options": "CBBO"
+  },
+  {
+   "fetch_from": "cbbo.ia_name",
+   "fieldname": "ia",
+   "fieldtype": "Link",
+   "label": "IA",
+   "options": "IA"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 09:24:22.169968",
+ "modified": "2024-06-04 11:28:52.343058",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Email Directory",

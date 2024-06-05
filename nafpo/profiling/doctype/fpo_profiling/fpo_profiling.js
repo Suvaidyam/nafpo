@@ -4,7 +4,7 @@
 frappe.ui.form.on("FPO Profiling", {
     async refresh(frm) {
         hide_advance_search(frm, ['bod_kyc_name', 'name_of_cbbo', 'state_name',
-            'block_name', 'district_name', 'name_of_the_fpo'
+            'block_name', 'district_name', 'name_of_the_fpo', 'type_of_organization'
         ])
         extend_options_length(frm, ['fpo_name', 'fpo_name', 'district_name', 'name_of_the_fpo', 'bod_kyc_name', 'name_of_cbbo'])
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
