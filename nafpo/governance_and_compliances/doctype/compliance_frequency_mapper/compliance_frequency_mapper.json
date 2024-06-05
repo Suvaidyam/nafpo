@@ -13,6 +13,8 @@
   "district_name",
   "block_name",
   "fpo_name",
+  "cbbo",
+  "ia",
   "member",
   "column_break_cwqk",
   "start_date",
@@ -124,11 +126,27 @@
   {
    "fieldname": "column_break_cwqk",
    "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "fpo_name.cbbo_name",
+   "fieldname": "cbbo",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "CBBO",
+   "options": "CBBO"
+  },
+  {
+   "fetch_from": "cbbo.ia_name",
+   "fieldname": "ia",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "IA",
+   "options": "IA"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 09:23:44.344944",
+ "modified": "2024-06-04 11:10:37.822944",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Compliance Frequency Mapper",

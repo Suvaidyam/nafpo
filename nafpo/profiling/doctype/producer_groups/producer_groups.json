@@ -13,8 +13,7 @@
   "name1",
   "column_break_aisb",
   "contact_number",
-  "name_of_contact_person",
-  "status"
+  "name_of_contact_person"
  ],
  "fields": [
   {
@@ -53,14 +52,6 @@
    "reqd": 1
   },
   {
-   "default": "Active",
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Active\nInactive",
-   "reqd": 1
-  },
-  {
    "fieldname": "column_break_aisb",
    "fieldtype": "Column Break"
   },
@@ -83,7 +74,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 21:18:17.553164",
+ "modified": "2024-06-05 11:29:52.594292",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Producer Groups",

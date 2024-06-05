@@ -187,6 +187,7 @@
    "fieldtype": "Data",
    "label": "Aadhar Number",
    "length": 12,
+   "mandatory_depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
    "non_negative": 1
   },
   {
@@ -381,7 +382,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-04 10:33:50.178848",
+ "modified": "2024-06-05 11:08:56.079828",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO member details",
