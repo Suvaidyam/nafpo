@@ -126,12 +126,14 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Approved Status",
-   "options": "Pending\nApproved\nRejected"
+   "options": "Pending\nApproved\nRejected",
+   "read_only": 1
   },
   {
    "fieldname": "feedback",
    "fieldtype": "Data",
-   "label": "Feedback"
+   "label": "Feedback",
+   "read_only": 1
   },
   {
    "default": "Active",
@@ -139,7 +141,7 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "Active\nInactive",
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "column_break_vgve",
@@ -186,7 +188,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 13:22:40.811995",
+ "modified": "2024-06-06 13:43:44.936175",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Crop POP",
