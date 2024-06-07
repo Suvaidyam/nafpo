@@ -53,3 +53,15 @@ function callAPI(options) {
         });
     })
 }
+
+// Integer length validator
+const integer_length_validator = (value, reqd_length, label) => {
+    if (value && String(value).length > reqd_length) {
+        frappe.throw(`${label} can't be more than ${reqd_length} digits!`)
+    }
+}
+
+// Hide Print Button
+const hide_print_button = (frm) =>{
+    frm.page.wrapper.find('.btn[data-original-title="Print"], .dropdown-menu [data-label="Print"]').parent().hide()
+}

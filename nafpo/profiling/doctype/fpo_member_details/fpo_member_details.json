@@ -184,9 +184,8 @@
   {
    "depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
    "fieldname": "aadhar_number",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Aadhar Number",
-   "length": 12,
    "mandatory_depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
    "non_negative": 1
   },
@@ -194,7 +193,8 @@
    "depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
    "fieldname": "consent_image",
    "fieldtype": "Attach Image",
-   "label": "Consent Image"
+   "label": "Consent Image",
+   "mandatory_depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\""
   },
   {
    "depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
@@ -382,7 +382,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-05 11:08:56.079828",
+ "modified": "2024-06-07 11:43:53.047810",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO member details",
