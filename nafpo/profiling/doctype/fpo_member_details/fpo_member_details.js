@@ -10,6 +10,13 @@ frappe.ui.form.on("FPO member details", {
         await apply_filter('fpo', 'block', frm, frm.doc.block_name)
         await apply_filter('grampanchayat_name', 'block', frm, frm.doc.block_name)
     },
+    validate(frm){
+        integer_length_validator(frm.doc.aadhar_number, 12, 'Aadhar Card');
+        integer_length_validator(frm.doc.register_aadhar_mobile_number, 10, 'Register Aadhar Mobile Number');
+        if (frm.doc.total_own_land < frm.doc.total_own_irrigated_land) {
+            frappe.throw(`Total own irrigated land can't be more than Total own land`)
+        }
+    },
     state_name: async function (frm) {
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
         truncate_multiple_fields_value(frm, ['district_name', 'block_name', 'fpo', 'grampanchayat_name', 'village_name'])
@@ -31,4 +38,20 @@ frappe.ui.form.on("FPO member details", {
         await apply_filter('village_name', 'grampanchayat', frm, frm.doc.grampanchayat_name)
         truncate_multiple_fields_value(frm, ['village_name'])
     },
+    before_save: function (frm) {
+        if (frm.doc.mobile_number === '+91-') {
+            frm.doc.mobile_number = '';
+        }
+    },
+    aadhar_number(frm){
+        integer_length_validator(frm.doc.aadhar_number, 12, 'Aadhar Card');
+    },
+    register_aadhar_mobile_number(frm){
+        integer_length_validator(frm.doc.register_aadhar_mobile_number, 10, 'Register Aadhar Mobile Number');
+    },
+    total_own_irrigated_land(frm){
+        if (frm.doc.total_own_land < frm.doc.total_own_irrigated_land) {
+            frappe.throw(`Total own irrigated land can't be more than Total own land`)
+        }
+    }
 });

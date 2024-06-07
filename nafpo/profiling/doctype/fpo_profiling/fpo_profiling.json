@@ -12,6 +12,7 @@
   "district_name",
   "block_name",
   "name_of_the_fpo",
+  "name_of_the_fpo_copy",
   "ia",
   "fpos_address",
   "fpos_pincode",
@@ -107,7 +108,8 @@
    "in_list_view": 1,
    "label": "Name of the FPO",
    "options": "FPO",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "fpos_address",
@@ -157,19 +159,21 @@
    "depends_on": "eval:doc.gst_status == \"Received\"",
    "fieldname": "gst_no",
    "fieldtype": "Data",
-   "label": "GST No."
+   "label": "GST No.",
+   "mandatory_depends_on": "eval:doc.gst_status == \"Received\""
   },
   {
    "depends_on": "eval:doc.gst_status == \"Received\"",
    "fieldname": "gst_received_upload",
    "fieldtype": "Attach",
-   "label": "GST Received Upload"
+   "label": "GST Received Upload",
+   "mandatory_depends_on": "eval:doc.gst_status == \"Received\""
   },
   {
    "fieldname": "fpo_email_id",
    "fieldtype": "Data",
    "label": "FPO Email Id",
-   "options": "email",
+   "options": "Email",
    "reqd": 1
   },
   {
@@ -297,7 +301,8 @@
    "depends_on": "eval:doc.do_you_have_logo == \"Yes\"",
    "fieldname": "fpo_logo",
    "fieldtype": "Attach Image",
-   "label": "FPO Logo"
+   "label": "FPO Logo",
+   "mandatory_depends_on": "eval:doc.do_you_have_logo == \"Yes\""
   },
   {
    "fieldname": "basic_details_tab",
@@ -438,7 +443,8 @@
    "depends_on": "eval:doc.do_you_have_logo == \"Yes\"",
    "fieldname": "supporting_document",
    "fieldtype": "Attach",
-   "label": "Supporting Document"
+   "label": "Supporting Document",
+   "mandatory_depends_on": "eval:doc.do_you_have_logo == \"Yes\""
   },
   {
    "fieldname": "column_break_siay",
@@ -460,11 +466,19 @@
    "options": "CBBO",
    "read_only_depends_on": "eval:(doc.name_of_the_fpo && doc.name_of_the_fpo.length > 0) ",
    "reqd": 1
+  },
+  {
+   "fieldname": "name_of_the_fpo_copy",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Name of the FPO",
+   "options": "FPO"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-05 10:49:49.624232",
+ "modified": "2024-06-07 13:54:01.573569",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
@@ -531,5 +545,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "name_of_the_fpo"
+ "title_field": "name_of_the_fpo_copy"
 }

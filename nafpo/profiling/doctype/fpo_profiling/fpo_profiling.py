@@ -1,9 +1,8 @@
-# Copyright (c) 2024, dhwaniris and contributors
-# For license information, please see license.txt
-
-# import frappe
+# Import the necessary module from Frappe
+import frappe
 from frappe.model.document import Document
 
-
 class FPOProfiling(Document):
-	pass
+    def before_save(self):
+        fpo_profile_name = frappe.get_doc('FPO', self.name_of_the_fpo)
+        self.name_of_the_fpo_copy = fpo_profile_name.fpo_name
