@@ -1,0 +1,234 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-08 11:15:37.277074",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "financial_year",
+  "financial_statements_section",
+  "due_date",
+  "audit_report",
+  "column_break_mbqr",
+  "status",
+  "filing_of_annual_return_section",
+  "due_date_2",
+  "director_list",
+  "column_break_blho",
+  "shareholder_list",
+  "status_2",
+  "auditor_appointment_for_five_year_section",
+  "due_date_3",
+  "fpo_resolution",
+  "column_break_idlb",
+  "status_3",
+  "director_kyc_section",
+  "due_date_4",
+  "bod_aadhar",
+  "pan_card_verification",
+  "column_break_bouw",
+  "otp",
+  "status_copy_4",
+  "it_return_section",
+  "due_date_5",
+  "it_return",
+  "column_break_qtwj",
+  "status_copy_5",
+  "agm_section",
+  "due_date_6",
+  "status_copy_6"
+ ],
+ "fields": [
+  {
+   "fieldname": "financial_year",
+   "fieldtype": "Link",
+   "label": "Financial Year",
+   "options": "Financial Year"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only_depends_on": "eval:doc.due_date && doc.due_date.length > 0"
+  },
+  {
+   "fieldname": "audit_report",
+   "fieldtype": "Attach Image",
+   "label": "Audit Report"
+  },
+  {
+   "description": "1 financial year",
+   "fieldname": "financial_statements_section",
+   "fieldtype": "Section Break",
+   "label": "FORM AOC-4 \u2013 Filing of Financial Statements"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Autocomplete",
+   "label": "Status",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "description": "After agm 60 days",
+   "fieldname": "filing_of_annual_return_section",
+   "fieldtype": "Section Break",
+   "label": "Form MGT-7 - Filing of Annual Return"
+  },
+  {
+   "fieldname": "due_date_2",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only_depends_on": "eval:doc.due_date_2 && doc.due_date_2.length > 0"
+  },
+  {
+   "fieldname": "director_list",
+   "fieldtype": "Attach Image",
+   "label": "Director List"
+  },
+  {
+   "fieldname": "shareholder_list",
+   "fieldtype": "Attach Image",
+   "label": "Shareholder List"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status_2",
+   "fieldtype": "Autocomplete",
+   "label": "Status",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "description": "After 1st AGM",
+   "fieldname": "auditor_appointment_for_five_year_section",
+   "fieldtype": "Section Break",
+   "label": "Form ADT-1 \u2013 Auditor Appointment for Five year"
+  },
+  {
+   "fieldname": "due_date_3",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only_depends_on": "eval:doc.due_date_3 && doc.due_date_3.length > 0"
+  },
+  {
+   "fieldname": "fpo_resolution",
+   "fieldtype": "Attach Image",
+   "label": "FPO resolution"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status_3",
+   "fieldtype": "Autocomplete",
+   "label": "Status",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "description": "Once in a year",
+   "fieldname": "director_kyc_section",
+   "fieldtype": "Section Break",
+   "label": "DIRECTOR KYC"
+  },
+  {
+   "fieldname": "due_date_4",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only_depends_on": "eval:doc.due_date_4 && doc.due_date_4.length > 0"
+  },
+  {
+   "fieldname": "bod_aadhar",
+   "fieldtype": "Attach Image",
+   "label": "BOD Aadhar"
+  },
+  {
+   "fieldname": "pan_card_verification",
+   "fieldtype": "Attach Image",
+   "label": "PAN Card verification"
+  },
+  {
+   "fieldname": "otp",
+   "fieldtype": "Attach Image",
+   "label": "OTP"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status_copy_4",
+   "fieldtype": "Autocomplete",
+   "label": "Status Copy",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "description": "30th September every year",
+   "fieldname": "it_return_section",
+   "fieldtype": "Section Break",
+   "label": "IT return"
+  },
+  {
+   "fieldname": "due_date_5",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only_depends_on": "eval:doc.due_date_5 && doc.due_date_5.length > 0"
+  },
+  {
+   "fieldname": "it_return",
+   "fieldtype": "Attach Image",
+   "label": "IT return "
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status_copy_5",
+   "fieldtype": "Autocomplete",
+   "label": "Status Copy",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "fieldname": "agm_section",
+   "fieldtype": "Section Break",
+   "label": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda"
+  },
+  {
+   "fieldname": "due_date_6",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only_depends_on": "eval:doc.due_date_6 && doc.due_date_6.length > 0"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status_copy_6",
+   "fieldtype": "Autocomplete",
+   "label": "Status Copy",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "fieldname": "column_break_mbqr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_blho",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_idlb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bouw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qtwj",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-06-08 16:22:05.759883",
+ "modified_by": "Administrator",
+ "module": "Governance and compliances",
+ "name": "Governance Financial Year Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

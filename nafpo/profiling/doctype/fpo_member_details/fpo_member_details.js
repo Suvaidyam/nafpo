@@ -10,7 +10,7 @@ frappe.ui.form.on("FPO member details", {
         await apply_filter('fpo', 'block', frm, frm.doc.block_name)
         await apply_filter('grampanchayat_name', 'block', frm, frm.doc.block_name)
     },
-    validate(frm){
+    validate(frm) {
         integer_length_validator(frm.doc.aadhar_number, 12, 'Aadhar Card');
         integer_length_validator(frm.doc.register_aadhar_mobile_number, 10, 'Register Aadhar Mobile Number');
         if (frm.doc.total_own_land < frm.doc.total_own_irrigated_land) {
@@ -43,13 +43,13 @@ frappe.ui.form.on("FPO member details", {
             frm.doc.mobile_number = '';
         }
     },
-    aadhar_number(frm){
+    aadhar_number(frm) {
         integer_length_validator(frm.doc.aadhar_number, 12, 'Aadhar Card');
     },
-    register_aadhar_mobile_number(frm){
+    register_aadhar_mobile_number(frm) {
         integer_length_validator(frm.doc.register_aadhar_mobile_number, 10, 'Register Aadhar Mobile Number');
     },
-    total_own_irrigated_land(frm){
+    total_own_irrigated_land(frm) {
         if (frm.doc.total_own_land < frm.doc.total_own_irrigated_land) {
             frappe.throw(`Total own irrigated land can't be more than Total own land`)
         }

@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"slGX-EuopM\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Governance &amp; Compliance</span>\",\"col\":12}},{\"id\":\"u9tbI74LOw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Compliances\",\"col\":3}},{\"id\":\"qP-4yzYDAB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Frequency\",\"col\":3}},{\"id\":\"ua7rNHKbQU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Compliance and Frequency\",\"col\":3}},{\"id\":\"YIrDZAIOvq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Compliance Frequency Mapper\",\"col\":3}},{\"id\":\"YBenHwIJC3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Email Directory\",\"col\":3}}]",
+ "content": "[{\"id\":\"slGX-EuopM\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Governance &amp; Compliance</span>\",\"col\":12}},{\"id\":\"u9tbI74LOw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Compliances\",\"col\":3}}]",
  "creation": "2024-05-10 12:34:17.047788",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Governance & Compliance",
  "links": [],
- "modified": "2024-05-27 18:10:38.470094",
+ "modified": "2024-06-07 18:19:19.805447",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Governance & Compliance",
@@ -46,38 +46,6 @@
    "doc_view": "List",
    "label": "Compliances",
    "link_to": "Compliances",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Frequency",
-   "link_to": "Frequency",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Compliance and Frequency",
-   "link_to": "Compliance and Frequency",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Compliance Frequency Mapper",
-   "link_to": "Compliance Frequency Mapper",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Email Directory",
-   "link_to": "Email Directory",
    "stats_filter": "[]",
    "type": "DocType"
   }

@@ -1,30 +1,203 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:name_of_compliances",
+ "autoname": "format:Compliances {####}",
  "creation": "2024-05-10 12:08:20.334019",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "name_of_compliances"
+  "section_break_rcvf",
+  "fpo",
+  "details_section",
+  "details_column",
+  "due_date",
+  "bank_statement",
+  "fpo_banner_with_bod_photo",
+  "column_break_kxjy",
+  "status",
+  "submitted_on",
+  "section_break_tnjs",
+  "due_date_2",
+  "attach_image_trhi",
+  "rent_agreement",
+  "electricity_bill",
+  "column_break_pspv",
+  "status_2",
+  "submitted_on_2",
+  "section_break_ihse",
+  "due_date_3",
+  "fpo_resolution",
+  "column_break_apko",
+  "status_3",
+  "submitted_on_3",
+  "financial_year_tab",
+  "section_break_kerr",
+  "table_rmhe",
+  "bod_meeting_tab",
+  "table_ztul"
  ],
  "fields": [
   {
-   "fieldname": "name_of_compliances",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Name of Compliances",
-   "reqd": 1,
-   "unique": 1
+   "fieldname": "details_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Within 180 days of registration",
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Form Inc-20A \u2013 BUSINESS COMMENCEMENT- MCA"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "non_negative": 1,
+   "read_only_depends_on": "eval:doc.due_date && doc.due_date.length > 0"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Autocomplete",
+   "label": "Status",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "description": "Within 30 days of registration ",
+   "fieldname": "section_break_tnjs",
+   "fieldtype": "Section Break",
+   "label": "Form INC-22 \u2013 Registered office Address - MCA"
+  },
+  {
+   "fieldname": "fpo_banner_with_bod_photo",
+   "fieldtype": "Attach Image",
+   "label": "FPO Banner with BOD photo"
+  },
+  {
+   "fieldname": "bank_statement",
+   "fieldtype": "Attach Image",
+   "label": "Bank Statement"
+  },
+  {
+   "fieldname": "due_date_2",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only_depends_on": "eval:doc.due_date_2 && doc.due_date_2.length > 0"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status_2",
+   "fieldtype": "Autocomplete",
+   "label": "Status",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "fieldname": "attach_image_trhi",
+   "fieldtype": "Attach Image",
+   "label": "NOC"
+  },
+  {
+   "fieldname": "column_break_kxjy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pspv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rent_agreement",
+   "fieldtype": "Attach Image",
+   "label": "Rent agreement"
+  },
+  {
+   "fieldname": "electricity_bill",
+   "fieldtype": "Attach Image",
+   "label": "Electricity Bill"
+  },
+  {
+   "description": "Within 30 days of registration",
+   "fieldname": "section_break_ihse",
+   "fieldtype": "Section Break",
+   "label": "Form ADT-1 \u2013 Auditor Appointment for First year"
+  },
+  {
+   "fieldname": "fpo_resolution",
+   "fieldtype": "Attach Image",
+   "label": "FPO resolution"
+  },
+  {
+   "fieldname": "column_break_apko",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "due_date_3",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only_depends_on": "eval:doc.due_date_3 && doc.due_date_3.length > 0"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status_3",
+   "fieldtype": "Autocomplete",
+   "label": "Status",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "fieldname": "table_rmhe",
+   "fieldtype": "Table",
+   "options": "Governance Financial Year Child"
+  },
+  {
+   "fieldname": "submitted_on",
+   "fieldtype": "Date",
+   "label": "Submitted On"
+  },
+  {
+   "fieldname": "submitted_on_2",
+   "fieldtype": "Date",
+   "label": "Submitted On"
+  },
+  {
+   "fieldname": "submitted_on_3",
+   "fieldtype": "Date",
+   "label": "Submitted On"
+  },
+  {
+   "fieldname": "section_break_rcvf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "label": "FPO",
+   "options": "FPO"
+  },
+  {
+   "fieldname": "table_ztul",
+   "fieldtype": "Table",
+   "options": "BOD Meeting Child"
+  },
+  {
+   "fieldname": "financial_year_tab",
+   "fieldtype": "Tab Break",
+   "label": "Financial Year"
+  },
+  {
+   "fieldname": "section_break_kerr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bod_meeting_tab",
+   "fieldtype": "Tab Break",
+   "label": "BOD Meeting"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-05 12:58:27.963067",
+ "modified": "2024-06-08 17:06:10.919387",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Compliances",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
