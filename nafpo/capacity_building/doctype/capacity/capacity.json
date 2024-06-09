@@ -1,0 +1,107 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-09 12:20:53.446650",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "create_training_details",
+  "training_details",
+  "section_break_feyi",
+  "topic",
+  "category",
+  "dates",
+  "total_days",
+  "palce",
+  "physical__virtual",
+  "no_of_participants",
+  "training_partnerorganisation_name",
+  "training_document_if_needed"
+ ],
+ "fields": [
+  {
+   "fieldname": "create_training_details",
+   "fieldtype": "Button",
+   "label": "Create Training Details"
+  },
+  {
+   "fieldname": "training_details",
+   "fieldtype": "Button",
+   "label": "Training Details - Display training details of this FPO"
+  },
+  {
+   "fieldname": "section_break_feyi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "topic",
+   "fieldtype": "Data",
+   "label": "Topic"
+  },
+  {
+   "fieldname": "dates",
+   "fieldtype": "Date",
+   "label": "Dates"
+  },
+  {
+   "fieldname": "total_days",
+   "fieldtype": "Data",
+   "label": "Total days"
+  },
+  {
+   "fieldname": "palce",
+   "fieldtype": "Data",
+   "label": "Palce"
+  },
+  {
+   "fieldname": "physical__virtual",
+   "fieldtype": "Data",
+   "label": "Physical / virtual \u2013 (Mode of Capacity Building)"
+  },
+  {
+   "fieldname": "no_of_participants",
+   "fieldtype": "Data",
+   "label": "No of participants who attended  the training from your FPO\u2013 10"
+  },
+  {
+   "fieldname": "training_partnerorganisation_name",
+   "fieldtype": "Data",
+   "label": "Training Partner/Organisation Name"
+  },
+  {
+   "fieldname": "training_document_if_needed",
+   "fieldtype": "Attach Image",
+   "label": "Training document (If needed)"
+  },
+  {
+   "description": "Category \u2013Membership System (FPO Member) Governance System (BOD) Operation System (CEO/Account/other staff) any other ",
+   "fieldname": "category",
+   "fieldtype": "Data",
+   "label": "Category"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-09 12:32:48.444988",
+ "modified_by": "Administrator",
+ "module": "Capacity Building",
+ "name": "Capacity",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

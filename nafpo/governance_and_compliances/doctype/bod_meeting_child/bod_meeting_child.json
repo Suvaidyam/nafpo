@@ -5,7 +5,8 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "status"
+  "status",
+  "date"
  ],
  "fields": [
   {
@@ -14,12 +15,17 @@
    "fieldtype": "Autocomplete",
    "label": "Status",
    "options": "Pending\nCompleted"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-08 17:04:39.457285",
+ "modified": "2024-06-09 12:34:25.308252",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "BOD Meeting Child",
