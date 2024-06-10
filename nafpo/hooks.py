@@ -110,6 +110,9 @@ doctype_js = {
     "Financial Year" : [
         "public/js/utils/utils.js"
     ],
+    "Capacity" : [
+        "public/js/utils/utils.js"
+    ],
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
