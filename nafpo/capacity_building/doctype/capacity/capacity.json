@@ -5,25 +5,24 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "create_training_details",
   "training_details",
   "section_break_feyi",
+  "fpo",
   "topic",
   "category",
-  "dates",
+  "fpo_member",
+  "bod_kyc_name",
+  "other",
+  "start_date",
+  "end_date",
   "total_days",
   "palce",
-  "physical__virtual",
+  "mode_of_capacity_building",
   "no_of_participants",
   "training_partnerorganisation_name",
   "training_document_if_needed"
  ],
  "fields": [
-  {
-   "fieldname": "create_training_details",
-   "fieldtype": "Button",
-   "label": "Create Training Details"
-  },
   {
    "fieldname": "training_details",
    "fieldtype": "Button",
@@ -39,11 +38,6 @@
    "label": "Topic"
   },
   {
-   "fieldname": "dates",
-   "fieldtype": "Date",
-   "label": "Dates"
-  },
-  {
    "fieldname": "total_days",
    "fieldtype": "Data",
    "label": "Total days"
@@ -52,11 +46,6 @@
    "fieldname": "palce",
    "fieldtype": "Data",
    "label": "Palce"
-  },
-  {
-   "fieldname": "physical__virtual",
-   "fieldtype": "Data",
-   "label": "Physical / virtual \u2013 (Mode of Capacity Building)"
   },
   {
    "fieldname": "no_of_participants",
@@ -74,15 +63,62 @@
    "label": "Training document (If needed)"
   },
   {
-   "description": "Category \u2013Membership System (FPO Member) Governance System (BOD) Operation System (CEO/Account/other staff) any other ",
    "fieldname": "category",
+   "fieldtype": "Autocomplete",
+   "label": "Category",
+   "options": "Membership System (FPO Member)\nGovernance System (BOD)\nOperation System (CEO/Account/other staff)\nOther"
+  },
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "FPO",
+   "options": "FPO",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.category == \"Governance System (BOD)\"",
+   "fieldname": "bod_kyc_name",
    "fieldtype": "Data",
-   "label": "Category"
+   "label": "BOD KYC Name"
+  },
+  {
+   "depends_on": "eval:doc.category == \"Membership System (FPO Member)\"",
+   "fieldname": "fpo_member",
+   "fieldtype": "Data",
+   "label": "FPO Member"
+  },
+  {
+   "depends_on": "eval:doc.category == \"Other\"",
+   "fieldname": "other",
+   "fieldtype": "Data",
+   "label": "Other",
+   "mandatory_depends_on": "eval:doc.category == \"Other\""
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mode_of_capacity_building",
+   "fieldtype": "Autocomplete",
+   "label": "Mode of Capacity Building",
+   "options": "Physical\nvirtual"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-09 12:32:48.444988",
+ "modified": "2024-06-10 14:33:18.023439",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity",
