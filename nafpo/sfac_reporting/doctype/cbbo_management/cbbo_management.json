@@ -68,30 +68,30 @@
   },
   {
    "fieldname": "baseline_survey_done",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Baseline Survey Done",
-   "options": "\nYes\nNo",
+   "options": "Yes\nNo",
    "reqd": 1
   },
   {
    "fieldname": "report_submitted",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Report Submitted",
-   "options": "\nYes\nNo",
+   "options": "Yes\nNo",
    "reqd": 1
   },
   {
    "fieldname": "aggregation_activities_undertaken_for_fpo_formation",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Aggregation activities undertaken for FPO Formation",
-   "options": "\nYes\nNo",
+   "options": "Yes\nNo",
    "reqd": 1
   },
   {
    "fieldname": "fpo_formed_in_allocated_aspirational_district",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "FPO formed in allocated aspirational district",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "no_of_farmers_mobilized_to_become_the_members_of_fpo",
@@ -101,40 +101,40 @@
   },
   {
    "fieldname": "fpo_registration_as_companies_act",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "FPO Registration as Companies Act",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "business_plan_formulation_for_fpo_done",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Business plan formulation for FPO done",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "depends_on": "eval:doc.business_plan_formulation_for_fpo_done == \"Yes\"",
    "fieldname": "business_plan_uploaded",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Business plan uploaded",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "statutory_clearances_obtained_to_carry_out_business_activities",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Statutory clearances obtained to carry out business activities",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "minimum_50_of_business_activities_executed_as_per_business_plan",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Minimum 50% of business activities executed as per business plan",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "preliminary_awareness_programmes_for_memberbods_done",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Preliminary awareness programmes for member/BoDs done",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "depends_on": "eval:doc.preliminary_awareness_programmes_for_memberbods_done == \"Yes\"",
@@ -145,9 +145,9 @@
   },
   {
    "fieldname": "exposure_visits_of_fpos_done",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Exposure visits of FPOs done",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "depends_on": "eval:doc.exposure_visits_of_fpos_done == \"Yes\"",
@@ -158,21 +158,21 @@
   },
   {
    "fieldname": "first_tranche_of_equity_grant_availed_by_fpo",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "First tranche of Equity Grant availed by FPO",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "first_tranche_of_credit_guarantee_facility_availed_by_fpo",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "First tranche of Credit Guarantee Facility availed by FPO",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "institutional_training_provided_to_ceobods",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Institutional Training provided to CEO/BoDs",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "depends_on": "eval:doc.institutional_training_provided_to_ceobods == \"Yes\"",
@@ -183,89 +183,89 @@
   },
   {
    "fieldname": "registration_of_fpo_in_enam_or_other_electronic_platform_done",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Registration of FPO in e-NAM or other electronic platform done",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "depends_on": "eval:doc.registration_of_fpo_in_enam_or_other_electronic_platform_done == \"Yes\"",
    "fieldname": "has_any_trading_activity_taken_place",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Has any trading activity taken place",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "share_certificates_issued_to_each_member_in_third_year",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Share Certificates issued to each member in third year",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "depends_on": "eval:doc.share_certificates_issued_to_each_member_in_third_year == \"Yes\"",
    "fieldname": "audit_and_filing_of_financial_statements",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Audit and filing of Financial Statements for FPO for second year and third year done in due time",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "mou_and_vendor_registration",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "MoU and vendor registration (as per Business Plan) with Marketing Agencies/ Institutional Buyers completed",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "tradinguploading_of_produce_in_enamother_sources_done",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Trading/uploading of produce in e-NAM/other sources done",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "second_tranche_equity_grant_availed_by_fpo",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Second tranche equity grant availed by FPO",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "second_tranche_of_credit_guarantee_facility_availed_by_fpo",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Second tranche of credit guarantee facility availed by FPO",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "audit_and_filing_of_statements_of_accounts_of_fpo_done",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Audit and filing of statements of accounts of FPO done",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "of_agribusiness_plan_executed",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "100% of agri-business plan executed",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "value_chain_developed",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Value chain developed",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "revenue_model_showing_financial_growth",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Revenue model showing financial growth in last 3 consecutive years",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "detailed_project_completion_report_submitted",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Detailed project completion report submitted",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "third_tranche_of_credit_guarantee_facility_availed_by_fpo",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Third tranche of credit guarantee facility availed by FPO",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "06_months_section",
@@ -364,7 +364,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-04 06:26:59.694402",
+ "modified": "2024-06-11 11:15:38.438937",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "CBBO Management",

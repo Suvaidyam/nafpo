@@ -5,6 +5,6 @@ frappe.ui.form.on("District", {
     refresh(frm) {
         hide_advance_search(frm, ['state'])
         extend_options_length(frm, ['state'])
-        frm.is_new() && hide_print_button(frm)
+        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
     },
 });

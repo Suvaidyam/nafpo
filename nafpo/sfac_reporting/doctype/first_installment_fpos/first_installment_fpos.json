@@ -45,16 +45,16 @@
   },
   {
    "fieldname": "recommendation_letter_of_cbbo",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Recommendation letter of CBBO",
-   "options": "\nYes\nNo",
+   "options": "Yes\nNo",
    "reqd": 1
   },
   {
    "fieldname": "certificate_of_incorporation",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Certificate of Incorporation",
-   "options": "\nYes\nNo",
+   "options": "Yes\nNo",
    "reqd": 1
   },
   {
@@ -71,9 +71,9 @@
   },
   {
    "fieldname": "moa_memorandum_of_association",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "MoA (Memorandum of Association)",
-   "options": "\nYes\nNo",
+   "options": "Yes\nNo",
    "reqd": 1
   },
   {
@@ -84,9 +84,9 @@
   },
   {
    "fieldname": "aoa_articles_of_association",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "AoA (Articles of Association)",
-   "options": "\nYes\nNo",
+   "options": "Yes\nNo",
    "reqd": 1
   },
   {
@@ -97,9 +97,9 @@
   },
   {
    "fieldname": "list_of_bods_with_din_no",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "List of BoDs with DIN No",
-   "options": "\nYes\nNo",
+   "options": "Yes\nNo",
    "reqd": 1
   },
   {
@@ -110,9 +110,9 @@
   },
   {
    "fieldname": "board_resolutions_of_fpo_authorized_signatory",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Board resolutions of FPO authorized signatory",
-   "options": "\nYes\nNo",
+   "options": "Yes\nNo",
    "reqd": 1
   },
   {
@@ -164,7 +164,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-06 16:16:06.063201",
+ "modified": "2024-06-11 11:25:39.899107",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "First Installment Fpos",
