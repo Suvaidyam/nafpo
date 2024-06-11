@@ -15,11 +15,9 @@ frappe.ui.form.on("Compliances", {
                 console.error('User data fetch error:', e);
             }
         }
-        frm.fields_dict['bank_statement'].df.on_upload_complete = null;
         let date = new Date();
         date.setDate(date.getDate() + 180);
         frm.set_value('due_date', date.toISOString().split('T')[0]);
-
         let due_date_2 = new Date();
         due_date_2.setDate(due_date_2.getDate() + 30);
         frm.set_value('due_date_2', due_date_2.toISOString().split('T')[0]);
