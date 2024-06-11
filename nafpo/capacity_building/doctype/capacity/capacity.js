@@ -4,17 +4,17 @@
 
 frappe.ui.form.on("Capacity", {
     refresh: async function (frm) {
-        // if (frappe.user.has_role('FPO')) {
-        //     try {
-        //         let { message: { fpo } } = await frappe.call({
-        //             method: "frappe.client.get",
-        //             args: { doctype: "Nafpo User", name: frappe.session.user }
-        //         });
-        //         frm.set_value('fpo', fpo)
-        //     } catch (e) {
-        //         console.error('User data fetch error:', e);
-        //     }
-        // }
+        if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
+            try {
+                let { message: { fpo } } = await frappe.call({
+                    method: "frappe.client.get",
+                    args: { doctype: "Nafpo User", name: frappe.session.user }
+                });
+                frm.set_value('fpo', fpo)
+            } catch (e) {
+                console.error('User data fetch error:', e);
+            }
+        }
     },
     async fpo(frm) {
         let data = await callAPI({

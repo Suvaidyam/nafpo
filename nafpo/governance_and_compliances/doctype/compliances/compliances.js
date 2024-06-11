@@ -2,7 +2,20 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Compliances", {
-    refresh(frm) {
+    refresh: async function (frm) {
+
+        if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
+            try {
+                let { message: { fpo } } = await frappe.call({
+                    method: "frappe.client.get",
+                    args: { doctype: "Nafpo User", name: frappe.session.user }
+                });
+                frm.set_value('fpo', fpo)
+            } catch (e) {
+                console.error('User data fetch error:', e);
+            }
+        }
+        frm.fields_dict['bank_statement'].df.on_upload_complete = null;
         let date = new Date();
         date.setDate(date.getDate() + 180);
         frm.set_value('due_date', date.toISOString().split('T')[0]);

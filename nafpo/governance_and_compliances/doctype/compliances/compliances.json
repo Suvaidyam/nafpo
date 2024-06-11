@@ -42,7 +42,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "description": "Within 180 days of registration",
+   "description": "<span style=\"font-size:13.5px;\">Within 180 days of registration</span>",
    "fieldname": "details_section",
    "fieldtype": "Section Break",
    "label": "Form Inc-20A \u2013 BUSINESS COMMENCEMENT- MCA"
@@ -62,7 +62,7 @@
    "options": "Pending\nCompleted"
   },
   {
-   "description": "Within 30 days of registration ",
+   "description": "<span style=\"font-size:13.5px;\">Within 30 days of registration </span>",
    "fieldname": "section_break_tnjs",
    "fieldtype": "Section Break",
    "label": "Form INC-22 \u2013 Registered office Address - MCA"
@@ -114,7 +114,7 @@
    "label": "Electricity Bill"
   },
   {
-   "description": "Within 30 days of registration",
+   "description": "<span style=\"font-size:13.5px;\">Within 30 days of registration</span>",
    "fieldname": "section_break_ihse",
    "fieldtype": "Section Break",
    "label": "Form ADT-1 \u2013 Auditor Appointment for First year"
@@ -193,7 +193,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-08 17:06:10.919387",
+ "modified": "2024-06-11 10:25:23.523256",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Compliances",
