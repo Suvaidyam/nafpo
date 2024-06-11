@@ -150,9 +150,9 @@
   },
   {
    "fieldname": "gst_status",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "GST Status",
-   "options": "\nApplied but not receive\nNot applied\nReceived",
+   "options": "Applied but not receive\nNot applied\nReceived",
    "reqd": 1
   },
   {
@@ -293,9 +293,9 @@
   },
   {
    "fieldname": "do_you_have_logo",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Do You Have Logo?",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "depends_on": "eval:doc.do_you_have_logo == \"Yes\"",
@@ -478,7 +478,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-07 13:54:01.573569",
+ "modified": "2024-06-11 11:04:29.030666",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",

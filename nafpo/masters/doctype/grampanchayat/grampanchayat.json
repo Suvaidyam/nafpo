@@ -52,15 +52,15 @@
   {
    "default": "Active",
    "fieldname": "status",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Status",
-   "options": "\nActive\nInactive"
+   "options": "Active\nInactive"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-02 11:31:54.159771",
+ "modified": "2024-06-11 11:01:07.893314",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Grampanchayat",

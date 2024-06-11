@@ -28,15 +28,15 @@
   {
    "default": "Active",
    "fieldname": "status",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Status",
-   "options": "\nActive\nInactive"
+   "options": "Active\nInactive"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-02 11:30:56.756541",
+ "modified": "2024-06-11 10:58:10.028154",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "State",

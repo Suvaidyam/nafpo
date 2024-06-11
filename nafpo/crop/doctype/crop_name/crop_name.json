@@ -74,7 +74,7 @@
   {
    "default": "Active",
    "fieldname": "status",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Status",
    "options": "Active\nInactive"
   },
@@ -95,7 +95,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 21:34:59.790668",
+ "modified": "2024-06-11 11:09:34.731402",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop Name",

@@ -74,9 +74,9 @@
   },
   {
    "fieldname": "address_proof_status",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Address Proof Status",
-   "options": "\nVoter Card\nRation Card\nDriving Licence\nOther",
+   "options": "Voter Card\nRation Card\nDriving Licence\nOther",
    "reqd": 1
   },
   {
@@ -94,9 +94,9 @@
   },
   {
    "fieldname": "gender",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Gender",
-   "options": "\nMale\nFemale\nOthers",
+   "options": "Male\nFemale\nOthers",
    "reqd": 1
   },
   {
@@ -122,9 +122,9 @@
   },
   {
    "fieldname": "director_status",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Director Status",
-   "options": "\nActive\nInactive",
+   "options": "Active\nInactive",
    "reqd": 1
   },
   {
@@ -166,7 +166,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-05 11:28:41.057972",
+ "modified": "2024-06-11 11:03:28.555151",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "BOD KYC",

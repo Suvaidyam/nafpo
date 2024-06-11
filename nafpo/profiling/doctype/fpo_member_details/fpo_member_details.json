@@ -129,9 +129,9 @@
   },
   {
    "fieldname": "gender",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Gender",
-   "options": "\nMale\nFemale\nTransgender\nNot willing to disclose",
+   "options": "Male\nFemale\nTransgender\nNot willing to disclose",
    "reqd": 1
   },
   {
@@ -155,9 +155,9 @@
   },
   {
    "fieldname": "member_of_shg",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Member of SHG",
-   "options": "\nYes\nNo",
+   "options": "Yes\nNo",
    "reqd": 1
   },
   {
@@ -169,16 +169,16 @@
   },
   {
    "fieldname": "bpl_status",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "BPL Status",
-   "options": "\nYes\nNo",
+   "options": "Yes\nNo",
    "reqd": 1
   },
   {
    "fieldname": "have_you_received_aadhar_card_consent",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Have You Received Aadhar Card Consent",
-   "options": "\nYes\nNo",
+   "options": "Yes\nNo",
    "reqd": 1
   },
   {
@@ -276,15 +276,15 @@
   },
   {
    "fieldname": "member_of_any_other_cooperative_agriculture_societies",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Member of any other cooperative agriculture societies",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "do_you_have_any_leased_land_area_in_acre",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Do you have any leased land? (Area in Acre)",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "depends_on": "eval:doc.do_you_have_any_leased_land_area_in_acre == \"Yes\"",
@@ -318,9 +318,9 @@
   },
   {
    "fieldname": "would_you_like_to_get_ivrs_or_other_alerts",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Would you like to get IVRS or other alerts?",
-   "options": "\nYes\nNo"
+   "options": "Yes\nNo"
   },
   {
    "default": "+91-",
@@ -382,7 +382,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-07 11:43:53.047810",
+ "modified": "2024-06-11 11:07:51.217200",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO member details",
