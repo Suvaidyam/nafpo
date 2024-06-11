@@ -113,6 +113,9 @@ doctype_js = {
     "Capacity" : [
         "public/js/utils/utils.js"
     ],
+    "State" : [
+        "public/js/utils/utils.js"
+    ],
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}

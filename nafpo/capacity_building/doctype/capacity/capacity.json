@@ -15,6 +15,7 @@
   "other",
   "start_date",
   "end_date",
+  "column_break_sfuz",
   "total_days",
   "palce",
   "mode_of_capacity_building",
@@ -114,11 +115,15 @@
    "fieldtype": "Autocomplete",
    "label": "Mode of Capacity Building",
    "options": "Physical\nvirtual"
+  },
+  {
+   "fieldname": "column_break_sfuz",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-10 14:33:18.023439",
+ "modified": "2024-06-10 16:45:24.234850",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity",

@@ -14,7 +14,7 @@ frappe.ui.form.on("FPO member details", {
         integer_length_validator(frm.doc.aadhar_number, 12, 'Aadhar Card');
         integer_length_validator(frm.doc.register_aadhar_mobile_number, 10, 'Register Aadhar Mobile Number');
         if (frm.doc.total_own_land < frm.doc.total_own_irrigated_land) {
-            frappe.throw(`Total own irrigated land can't be more than Total own land`)
+            frappe.throw(`Total owned irrigated land cannot exceed the total owned land.`)
         }
     },
     state_name: async function (frm) {
@@ -51,7 +51,7 @@ frappe.ui.form.on("FPO member details", {
     },
     total_own_irrigated_land(frm) {
         if (frm.doc.total_own_land < frm.doc.total_own_irrigated_land) {
-            frappe.throw(`Total own irrigated land can't be more than Total own land`)
+            frappe.throw(`Total owned irrigated land cannot exceed the total owned land.`)
         }
     }
 });

@@ -62,6 +62,10 @@ const integer_length_validator = (value, reqd_length, label) => {
 }
 
 // Hide Print Button
-const hide_print_button = (frm) =>{
+const hide_print_button = (frm) => {
     frm.page.wrapper.find('.btn[data-original-title="Print"], .dropdown-menu [data-label="Print"]').parent().hide()
+}
+// Hide Print Button
+const show_print_button = (frm) => {
+    frm.page.wrapper.find('.btn[data-original-title="Print"], .dropdown-menu [data-label="Print"]').parent().show()
 }
