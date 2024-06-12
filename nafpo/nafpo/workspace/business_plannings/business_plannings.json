@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"OIj9JaG8jO\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Business Plannings</span>\",\"col\":12}},{\"id\":\"bxRTkO8TKh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Business Planning\",\"col\":3}}]",
+ "content": "[{\"id\":\"OIj9JaG8jO\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Business Planning</span>\",\"col\":12}},{\"id\":\"bxRTkO8TKh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Business Planning\",\"col\":3}}]",
  "creation": "2024-05-11 19:53:22.072209",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Business Plannings",
  "links": [],
- "modified": "2024-05-27 18:11:15.239917",
+ "modified": "2024-06-11 17:39:19.408431",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Business Plannings",

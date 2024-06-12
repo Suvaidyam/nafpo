@@ -168,8 +168,10 @@
   {
    "fieldname": "fpo",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "FPO",
-   "options": "FPO"
+   "options": "FPO",
+   "reqd": 1
   },
   {
    "fieldname": "table_ztul",
@@ -193,7 +195,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-11 10:25:23.523256",
+ "modified": "2024-06-12 09:41:26.909877",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Compliances",

@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"PzXFEezwZo\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Geo Masters</span>\",\"col\":12}},{\"id\":\"5h24_A5x_l\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"State\",\"col\":3}},{\"id\":\"5yqD0opDZz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"District\",\"col\":3}},{\"id\":\"cK4CW4yzO_\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Block\",\"col\":3}},{\"id\":\"5XL6o5SBCH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Grampanchayat\",\"col\":3}},{\"id\":\"nFDVic1ohx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Village\",\"col\":3}},{\"id\":\"vhXdidEDDV\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>NAFPO Masters</b></span>\",\"col\":12}},{\"id\":\"IJb7hq2m5S\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Financial Year\",\"col\":3}},{\"id\":\"qO0bfUBYxF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"IA\",\"col\":3}},{\"id\":\"iIHvvHcpZY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"CBBO\",\"col\":3}},{\"id\":\"s7cvLMuvag\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FPO\",\"col\":3}},{\"id\":\"wG7Doqz0Yo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Category\",\"col\":3}},{\"id\":\"CdB2_maZOp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supporting Agencies\",\"col\":3}},{\"id\":\"UAa1IT964E\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Unit\",\"col\":3}}]",
+ "content": "[{\"id\":\"PzXFEezwZo\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Geo Masters</span>\",\"col\":12}},{\"id\":\"OSZuhvOv17\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State\",\"col\":4}},{\"id\":\"-CuOvgLsC3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District\",\"col\":4}},{\"id\":\"WrsPbp20XM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block\",\"col\":4}},{\"id\":\"ohemT5PYOi\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Grampanchayat\",\"col\":4}},{\"id\":\"WRofSgKarf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Village\",\"col\":4}},{\"id\":\"vhXdidEDDV\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>NAFPO Masters</b></span>\",\"col\":12}},{\"id\":\"IkNon-Zm0k\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Financial Year\",\"col\":4}},{\"id\":\"da9qU8xNZg\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"IA\",\"col\":4}},{\"id\":\"v72lbqCo3S\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"CBBO\",\"col\":4}},{\"id\":\"1ObLhE4Rgw\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO\",\"col\":4}},{\"id\":\"QvimP965HE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Category\",\"col\":4}}]",
  "creation": "2024-05-09 07:37:57.599460",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,11 +13,52 @@
  "is_hidden": 0,
  "label": "Masters",
  "links": [],
- "modified": "2024-06-07 15:18:01.452734",
+ "modified": "2024-06-12 09:30:15.414980",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Masters",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Grampanchayat",
+   "number_card_name": "Grampanchayat"
+  },
+  {
+   "label": "Village",
+   "number_card_name": "Village"
+  },
+  {
+   "label": "Financial Year",
+   "number_card_name": "Financial Year"
+  },
+  {
+   "label": "IA",
+   "number_card_name": "IA"
+  },
+  {
+   "label": "CBBO",
+   "number_card_name": "CBBO"
+  },
+  {
+   "label": "FPO",
+   "number_card_name": "FPO"
+  },
+  {
+   "label": "Category",
+   "number_card_name": "Category"
+  },
+  {
+   "label": "State",
+   "number_card_name": "State Cover"
+  },
+  {
+   "label": "District",
+   "number_card_name": "District Cover"
+  },
+  {
+   "label": "Block",
+   "number_card_name": "Block Cover"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
@@ -37,103 +78,6 @@
   }
  ],
  "sequence_id": 2.0,
- "shortcuts": [
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "State",
-   "link_to": "State",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Supporting Agencies",
-   "link_to": "Supporting Agencies",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "CBBO",
-   "link_to": "CBBO",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Unit",
-   "link_to": "Unit",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Category",
-   "link_to": "Category",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Financial Year",
-   "link_to": "Financial Year",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "IA",
-   "link_to": "IA",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "FPO",
-   "link_to": "FPO",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "District",
-   "link_to": "District",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Block",
-   "link_to": "Block",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Grampanchayat",
-   "link_to": "Grampanchayat",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Village",
-   "link_to": "Village",
-   "stats_filter": "[]",
-   "type": "DocType"
-  }
- ],
+ "shortcuts": [],
  "title": "Masters"
 }
