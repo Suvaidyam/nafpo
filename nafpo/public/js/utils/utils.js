@@ -69,3 +69,13 @@ const hide_print_button = (frm) => {
 const show_print_button = (frm) => {
     frm.page.wrapper.find('.btn[data-original-title="Print"], .dropdown-menu [data-label="Print"]').parent().show()
 }
+// Disable autosave on doctype to attach image
+function disable_Attachment_autosave(frm) {
+    if (this.frm) {
+        this.parse_validate_and_set_in_model(frm.file_url)
+            .then(function () {
+                this.frm.attachments.update_attachment(frm);
+            });
+    }
+    this.set_value(frm.file_url);
+}

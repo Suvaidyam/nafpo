@@ -53,5 +53,8 @@ frappe.ui.form.on("FPO member details", {
         if (frm.doc.total_own_land < frm.doc.total_own_irrigated_land) {
             frappe.throw(`Total owned irrigated land cannot exceed the total owned land.`)
         }
+    },
+    consent_image(frm) {
+        disable_Attachment_autosave(frm);
     }
 });

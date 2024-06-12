@@ -18,7 +18,7 @@
   "submitted_on",
   "section_break_tnjs",
   "due_date_2",
-  "attach_image_trhi",
+  "noc",
   "rent_agreement",
   "electricity_bill",
   "column_break_pspv",
@@ -89,11 +89,6 @@
    "fieldtype": "Autocomplete",
    "label": "Status",
    "options": "Pending\nCompleted"
-  },
-  {
-   "fieldname": "attach_image_trhi",
-   "fieldtype": "Attach Image",
-   "label": "NOC"
   },
   {
    "fieldname": "column_break_kxjy",
@@ -191,11 +186,16 @@
    "fieldname": "bod_meeting_tab",
    "fieldtype": "Tab Break",
    "label": "BOD Meeting"
+  },
+  {
+   "fieldname": "noc",
+   "fieldtype": "Attach Image",
+   "label": "NOC"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-12 09:41:26.909877",
+ "modified": "2024-06-12 12:14:28.077360",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Compliances",
