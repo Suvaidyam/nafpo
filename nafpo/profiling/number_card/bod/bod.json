@@ -11,14 +11,14 @@
  "is_public": 0,
  "is_standard": 1,
  "label": "BOD",
- "modified": "2024-05-11 08:07:27.076709",
+ "modified": "2024-06-12 10:16:10.673343",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "BOD",
  "owner": "Administrator",
  "parent_document_type": "",
  "report_function": "Sum",
- "show_percentage_stats": 1,
+ "show_percentage_stats": 0,
  "stats_time_interval": "Daily",
  "type": "Document Type"
 }

@@ -23,6 +23,12 @@ frappe.ui.form.on("Compliances", {
         frm.set_value('due_date_2', due_date_2.toISOString().split('T')[0]);
         frm.set_value('due_date_3', due_date_2.toISOString().split('T')[0]);
     },
+    ...['bank_statement', 'fpo_banner_with_bod_photo', 'noc', 'rent_agreement', 'electricity_bill', 'fpo_resolution'].reduce((acc, field) => {
+        acc[field] = function (frm) {
+            disable_Attachment_autosave(frm);
+        };
+        return acc;
+    }, {})
 });
 
 frappe.ui.form.on("Governance Financial Year Child", {

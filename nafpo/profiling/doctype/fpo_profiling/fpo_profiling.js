@@ -56,4 +56,10 @@ frappe.ui.form.on("FPO Profiling", {
     accountant_contact_number(frm) {
         integer_length_validator(frm.doc.accountant_contact_number, 10, 'Accountant Contact Number');
     },
+    ...['gst_received_upload', 'license_doc_for_seed', 'license_doc_for_fertilizer', 'license_doc_for_pesticide', 'license_doc_for_fssai', 'licence_doc_for_seed_production', 'fpo_logo', 'supporting_document'].reduce((acc, field) => {
+        acc[field] = function (frm) {
+            disable_Attachment_autosave(frm);
+        };
+        return acc;
+    }, {})
 });
