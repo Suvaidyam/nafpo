@@ -1,6 +1,6 @@
 {
  "aggregate_function_based_on": "",
- "creation": "2024-05-11 06:59:31.953662",
+ "creation": "2024-06-12 09:26:43.148744",
  "docstatus": 0,
  "doctype": "Number Card",
  "document_type": "District",
@@ -11,7 +11,7 @@
  "is_public": 0,
  "is_standard": 1,
  "label": "District Cover",
- "modified": "2024-05-11 06:59:31.953662",
+ "modified": "2024-06-12 09:26:43.148744",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "District Cover",

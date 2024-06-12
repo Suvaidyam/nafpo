@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"slGX-EuopM\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Governance &amp; Compliance</span>\",\"col\":12}},{\"id\":\"u9tbI74LOw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Compliances\",\"col\":3}}]",
+ "content": "[{\"id\":\"slGX-EuopM\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Governance &amp; Compliance</span>\",\"col\":12}},{\"id\":\"2WVikWwEpj\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Compliance\",\"col\":4}}]",
  "creation": "2024-05-10 12:34:17.047788",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,11 +13,16 @@
  "is_hidden": 0,
  "label": "Governance & Compliance",
  "links": [],
- "modified": "2024-06-07 18:19:19.805447",
+ "modified": "2024-06-11 17:52:41.653247",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Governance & Compliance",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Compliance",
+   "number_card_name": "Compliance"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
@@ -40,15 +45,6 @@
   }
  ],
  "sequence_id": 6.0,
- "shortcuts": [
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Compliances",
-   "link_to": "Compliances",
-   "stats_filter": "[]",
-   "type": "DocType"
-  }
- ],
+ "shortcuts": [],
  "title": "Governance & Compliance"
 }

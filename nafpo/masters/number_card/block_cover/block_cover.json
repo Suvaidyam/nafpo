@@ -1,6 +1,6 @@
 {
  "aggregate_function_based_on": "",
- "creation": "2024-05-11 06:59:57.219150",
+ "creation": "2024-06-12 09:27:31.819045",
  "docstatus": 0,
  "doctype": "Number Card",
  "document_type": "Block",
@@ -11,7 +11,7 @@
  "is_public": 0,
  "is_standard": 1,
  "label": "Block Cover",
- "modified": "2024-05-11 06:59:57.219150",
+ "modified": "2024-06-12 09:27:31.819045",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Block Cover",
