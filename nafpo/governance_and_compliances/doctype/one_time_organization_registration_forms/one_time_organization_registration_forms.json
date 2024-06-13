@@ -1,0 +1,216 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:OTORF-{###}",
+ "creation": "2024-06-13 12:17:14.894131",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "form_inc_20a_tab",
+  "fpo",
+  "column_break_lkhy",
+  "financial_year",
+  "inc_20a_section",
+  "inc_20_due_date",
+  "inc_20_bank_statement",
+  "inc_20_fpo_banner_with_bod_photo",
+  "column_break_viht",
+  "inc_20_status",
+  "inc_20_submitted_on",
+  "tab_2_tab",
+  "section_break_cnwj",
+  "inc_22_due_date",
+  "inc_22_noc",
+  "inc_22_rent_agreement",
+  "column_break_hkbk",
+  "inc_22_electricity_bill",
+  "inc_22_status",
+  "inc_22_submitted_on",
+  "adt_1_tab",
+  "section_break_klzi",
+  "adt_1_due_date",
+  "adt_1_fpo_resolution",
+  "column_break_ccga",
+  "adt_1_status",
+  "adt_1_submitted_on"
+ ],
+ "fields": [
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "FPO",
+   "options": "FPO",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_lkhy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "financial_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Financial Year",
+   "options": "Financial Year",
+   "reqd": 1
+  },
+  {
+   "description": "<span style=\"font-size:13.5px;\">Within 180 days of registration</span>",
+   "fieldname": "inc_20a_section",
+   "fieldtype": "Section Break",
+   "label": "Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Form INC-22"
+  },
+  {
+   "fieldname": "adt_1_tab",
+   "fieldtype": "Tab Break",
+   "label": "Form ADT-1"
+  },
+  {
+   "fieldname": "inc_22_due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only_depends_on": "eval:doc.inc_22_due_date && doc.inc_22_due_date.length > 0 "
+  },
+  {
+   "fieldname": "inc_20_due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only_depends_on": "eval:doc.inc_20_due_date && doc.inc_20_due_date.length > 0 "
+  },
+  {
+   "fieldname": "inc_20_bank_statement",
+   "fieldtype": "Attach Image",
+   "label": "Bank Statement"
+  },
+  {
+   "fieldname": "inc_20_fpo_banner_with_bod_photo",
+   "fieldtype": "Attach Image",
+   "label": "FPO Banner with BOD photo"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "inc_20_status",
+   "fieldtype": "Autocomplete",
+   "label": "Status",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "fieldname": "inc_20_submitted_on",
+   "fieldtype": "Date",
+   "label": "Submitted On",
+   "mandatory_depends_on": "eval:doc.inc_20_status == \"Completed\""
+  },
+  {
+   "fieldname": "column_break_viht",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "inc_22_noc",
+   "fieldtype": "Attach Image",
+   "label": "Noc"
+  },
+  {
+   "fieldname": "inc_22_rent_agreement",
+   "fieldtype": "Attach Image",
+   "label": "Rent agreement"
+  },
+  {
+   "fieldname": "inc_22_electricity_bill",
+   "fieldtype": "Attach Image",
+   "label": "Electricity Bill"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "inc_22_status",
+   "fieldtype": "Autocomplete",
+   "label": "Status",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "fieldname": "inc_22_submitted_on",
+   "fieldtype": "Date",
+   "label": "Submitted On",
+   "mandatory_depends_on": "eval:doc.inc_22_status == \"Completed\""
+  },
+  {
+   "fieldname": "column_break_hkbk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "<span style=\"font-size:13.5px;\">Within 30 days of registration </span>",
+   "fieldname": "section_break_cnwj",
+   "fieldtype": "Section Break",
+   "label": "Form INC-22 \u2013 Registered office Address - MCA"
+  },
+  {
+   "description": "<span style=\"font-size:13.5px;\">Within 30 days of registration</span>",
+   "fieldname": "section_break_klzi",
+   "fieldtype": "Section Break",
+   "label": "Form ADT-1 \u2013 Auditor Appointment for First year"
+  },
+  {
+   "fieldname": "adt_1_due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only_depends_on": "eval:doc.adt_1_due_date && doc.adt_1_due_date.length > 0 "
+  },
+  {
+   "fieldname": "adt_1_fpo_resolution",
+   "fieldtype": "Attach Image",
+   "label": "FPO resolution"
+  },
+  {
+   "fieldname": "column_break_ccga",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "adt_1_status",
+   "fieldtype": "Autocomplete",
+   "label": "Status",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "fieldname": "adt_1_submitted_on",
+   "fieldtype": "Date",
+   "label": "Submitted On",
+   "mandatory_depends_on": "eval:doc.adt_1_status == \"Completed\""
+  },
+  {
+   "fieldname": "form_inc_20a_tab",
+   "fieldtype": "Tab Break",
+   "label": "Form INC-20A"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-13 15:58:07.944194",
+ "modified_by": "Administrator",
+ "module": "Governance and compliances",
+ "name": "One Time Organization Registration Forms",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
