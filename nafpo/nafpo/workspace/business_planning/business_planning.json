@@ -9,14 +9,14 @@
  "hide_custom": 0,
  "icon": "calendar",
  "idx": 0,
- "indicator_color": "green",
+ "indicator_color": "",
  "is_hidden": 0,
- "label": "Business Plannings",
+ "label": "Business Planning",
  "links": [],
- "modified": "2024-06-11 17:39:19.408431",
+ "modified": "2024-06-13 12:10:17.954201",
  "modified_by": "Administrator",
  "module": "Nafpo",
- "name": "Business Plannings",
+ "name": "Business Planning",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
@@ -45,10 +45,10 @@
    "color": "Grey",
    "doc_view": "List",
    "label": "Business Planning",
-   "link_to": "Business Planning",
+   "link_to": "Business Plannings",
    "stats_filter": "[]",
    "type": "DocType"
   }
  ],
- "title": "Business Plannings"
+ "title": "Business Planning"
 }

@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:BOD-{###}",
+ "creation": "2024-06-13 14:57:14.469653",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "fpo",
+  "financial_year",
+  "column_break_tevg",
+  "status",
+  "date"
+ ],
+ "fields": [
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "FPO",
+   "options": "FPO",
+   "reqd": 1
+  },
+  {
+   "fieldname": "financial_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Financial Year",
+   "options": "Financial Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "mandatory_depends_on": "eval:doc.status == \"Completed\""
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Autocomplete",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "fieldname": "column_break_tevg",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-13 16:57:08.795205",
+ "modified_by": "Administrator",
+ "module": "Governance and compliances",
+ "name": "Board of Directors Meeting Forms",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
