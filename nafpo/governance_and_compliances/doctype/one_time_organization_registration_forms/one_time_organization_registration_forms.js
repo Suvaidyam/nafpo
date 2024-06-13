@@ -21,6 +21,9 @@ frappe.ui.form.on("One Time Organization Registration Forms", {
         frm.set_value('inc_22_due_date', date.toISOString().split('T')[0]);
         frm.set_value('adt_1_due_date', date.toISOString().split('T')[0]);
     },
+    financial_year: async function (frm) {
+        check_fpo(frm)
+    },
     ...['inc_20_bank_statement', 'inc_20_bank_statement', 'inc_22_noc', 'inc_22_rent_agreement', 'inc_22_electricity_bill', 'adt_1_fpo_resolution'].reduce((acc, field) => {
         acc[field] = function (frm) {
             disable_Attachment_autosave(frm);
@@ -28,3 +31,25 @@ frappe.ui.form.on("One Time Organization Registration Forms", {
         return acc;
     }, {})
 });
+
+async function check_fpo(frm) {
+    let filters = {
+        'financial_year': frm.doc.financial_year,
+        'name': ['!=', frm.doc.name] // Exclude current document
+    };
+    let fields = ['name', 'financial_year'];
+    let limit = 1;
+
+    try {
+        let data = await frappe.db.get_list('One Time Organization Registration Forms', { filters, fields, limit });
+        let exists = data.length > 0;
+        if (exists) {
+            await frappe.throw(`FPO already exists for the Financial Year ${frm.doc.financial_year}`);
+            return false; // Prevent form from saving
+        }
+        return true; // Allow form to save
+    } catch (err) {
+        console.error('Error fetching data:', err);
+        return false; // Prevent form from saving on error
+    }
+}
