@@ -78,18 +78,17 @@
   {
    "description": "<span style=\"font-size:13.5px;\">1 financial year</span>",
    "fieldname": "section_break_fjls",
-   "fieldtype": "Section Break",
-   "label": "FORM AOC-4 \u2013 Filing of Financial Statements"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "form_aoc_4_tab",
    "fieldtype": "Tab Break",
-   "label": "FORM AOC-4"
+   "label": "FORM AOC-4 \u2013 Filing of Financial Statements"
   },
   {
    "fieldname": "tab_2_tab",
    "fieldtype": "Tab Break",
-   "label": "Form MGT-7"
+   "label": "Form MGT-7 - Filing of Annual Return"
   },
   {
    "fieldname": "aoc_4_due_date",
@@ -106,7 +105,8 @@
    "default": "Pending",
    "fieldname": "aoc_4_status",
    "fieldtype": "Autocomplete",
-   "label": "Status",
+   "in_list_view": 1,
+   "label": "AOC-4 Status",
    "options": "Pending\nCompleted"
   },
   {
@@ -116,8 +116,7 @@
   {
    "description": "<span style=\"font-size:13.5px;\">After agm 60 days</span>",
    "fieldname": "form_mgt_7_section",
-   "fieldtype": "Section Break",
-   "label": "Form MGT-7 - Filing of Annual Return"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "mgt_7_due_date",
@@ -149,7 +148,8 @@
    "default": "Pending",
    "fieldname": "mgt_7_status",
    "fieldtype": "Autocomplete",
-   "label": "Status",
+   "in_list_view": 1,
+   "label": "MGT-7 Status",
    "options": "Pending\nCompleted"
   },
   {
@@ -161,13 +161,12 @@
   {
    "fieldname": "form_adt_1_tab",
    "fieldtype": "Tab Break",
-   "label": "Form ADT-1"
+   "label": "Form ADT-1 \u2013 Auditor Appointment for Five year"
   },
   {
    "description": "<span style=\"font-size:13.5px;\">After 1st AGM</span>",
    "fieldname": "form_adt_1_section",
-   "fieldtype": "Section Break",
-   "label": "Form ADT-1 \u2013 Auditor Appointment for Five year"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "adt_1_due_date",
@@ -188,7 +187,8 @@
    "default": "Pending",
    "fieldname": "adt_1_status",
    "fieldtype": "Autocomplete",
-   "label": "Status",
+   "in_list_view": 1,
+   "label": " ADT-1 Status",
    "options": "Pending\nCompleted"
   },
   {
@@ -237,7 +237,8 @@
    "default": "Pending",
    "fieldname": "d_kyc_status",
    "fieldtype": "Autocomplete",
-   "label": "Status",
+   "in_list_view": 1,
+   "label": "Director Kyc Status",
    "options": "Pending\nCompleted"
   },
   {
@@ -276,7 +277,8 @@
    "default": "Pending",
    "fieldname": "it_return_status",
    "fieldtype": "Autocomplete",
-   "label": "Status",
+   "in_list_view": 1,
+   "label": "IT Return Status",
    "options": "Pending\nCompleted"
   },
   {
@@ -288,7 +290,7 @@
   {
    "fieldname": "agm_tab",
    "fieldtype": "Tab Break",
-   "label": "AGM"
+   "label": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda"
   },
   {
    "fieldname": "agm_section",
@@ -305,7 +307,8 @@
    "default": "Pending",
    "fieldname": "agm_status",
    "fieldtype": "Autocomplete",
-   "label": "Status",
+   "in_list_view": 1,
+   "label": "AGM Status",
    "options": "Pending\nCompleted"
   },
   {
@@ -321,7 +324,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-13 22:22:32.534675",
+ "modified": "2024-06-14 10:39:35.857033",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Annual Compliance Forms",
