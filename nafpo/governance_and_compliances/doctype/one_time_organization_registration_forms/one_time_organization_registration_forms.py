@@ -9,5 +9,5 @@ class OneTimeOrganizationRegistrationForms(Document):
             "financial_year": self.financial_year
         })
         data_exists = bool(exists)
-        if data_exists:
+        if data_exists and exists != self.name:
             frappe.throw(f"FPO already exists for the Financial Year {self.financial_year}")

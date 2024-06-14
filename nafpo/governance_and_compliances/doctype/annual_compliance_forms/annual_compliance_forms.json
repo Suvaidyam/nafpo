@@ -138,7 +138,8 @@
    "fieldname": "aoc_4_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.aoc_4_status == \"Completed\""
+   "mandatory_depends_on": "eval:doc.aoc_4_status == \"Completed\"",
+   "read_only_depends_on": "eval:doc.aoc_4_status == \"Pending\""
   },
   {
    "fieldname": "column_break_qjtx",
@@ -156,7 +157,8 @@
    "fieldname": "mgt_7_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.mgt_7_status == \"Completed\""
+   "mandatory_depends_on": "eval:doc.mgt_7_status == \"Completed\"",
+   "read_only_depends_on": "eval:doc.mgt_7_status == \"Pending\""
   },
   {
    "fieldname": "form_adt_1_tab",
@@ -195,7 +197,8 @@
    "fieldname": "adt_1_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.adt_1_status == \"Completed\""
+   "mandatory_depends_on": "eval:doc.adt_1_status == \"Completed\"",
+   "read_only_depends_on": "eval:doc.adt_1_status == \"Pending\""
   },
   {
    "fieldname": "director_kyc_tab",
@@ -245,7 +248,8 @@
    "fieldname": "d_kyc_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.d_kyc_status == \"Completed\""
+   "mandatory_depends_on": "eval:doc.d_kyc_status == \"Completed\"",
+   "read_only_depends_on": "eval:doc.d_kyc_status == \"Pending\""
   },
   {
    "fieldname": "it_return_tab",
@@ -285,7 +289,8 @@
    "fieldname": "it_return_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.it_return_status == \"Completed\""
+   "mandatory_depends_on": "eval:doc.it_return_status == \"Completed\"",
+   "read_only_depends_on": "eval:doc.it_return_status == \"Pending\""
   },
   {
    "fieldname": "agm_tab",
@@ -319,12 +324,13 @@
    "fieldname": "agm_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.agm_status == \"Completed\""
+   "mandatory_depends_on": "eval:doc.agm_status == \"Completed\"",
+   "read_only_depends_on": "eval:doc.agm_status == \"Pending\""
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-14 10:39:35.857033",
+ "modified": "2024-06-14 12:18:38.714032",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Annual Compliance Forms",
