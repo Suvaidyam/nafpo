@@ -12,7 +12,6 @@ fixtures = [
     "Financial Year",
     "IA",
     "CBBO",
-
 ]
 
 # Includes in <head>
