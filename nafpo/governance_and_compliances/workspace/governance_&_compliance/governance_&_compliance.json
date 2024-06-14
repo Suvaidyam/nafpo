@@ -1,6 +1,11 @@
 {
- "charts": [],
- "content": "[{\"id\":\"slGX-EuopM\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Governance &amp; Compliance</span>\",\"col\":12}},{\"id\":\"rDb57FA3hy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"One Time Organization Registration Forms\",\"col\":4}},{\"id\":\"ijuvX8QFvC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Annual Compliance Forms\",\"col\":4}},{\"id\":\"jYWxB4Pojp\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Board of Directors (BOD) Meeting Forms\",\"col\":4}}]",
+ "charts": [
+  {
+   "chart_name": "Compliance Chart",
+   "label": "Compliance Chart"
+  }
+ ],
+ "content": "[{\"id\":\"slGX-EuopM\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Governance &amp; Compliance</span>\",\"col\":12}},{\"id\":\"XW2Hdg6t5H\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"One Time Organization Registration Forms\",\"col\":4}},{\"id\":\"ijuvX8QFvC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Annual Compliance Forms\",\"col\":4}},{\"id\":\"jYWxB4Pojp\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Board of Directors (BOD) Meeting Forms\",\"col\":4}},{\"id\":\"OJP7VJCGw5\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Compliance Chart\",\"col\":12}}]",
  "creation": "2024-05-10 12:34:17.047788",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,14 +18,14 @@
  "is_hidden": 0,
  "label": "Governance & Compliance",
  "links": [],
- "modified": "2024-06-13 15:14:02.347213",
+ "modified": "2024-06-14 10:04:47.878890",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Governance & Compliance",
  "number_cards": [
   {
    "label": "One Time Organization Registration Forms",
-   "number_card_name": "One-Time Organization Registration Forms"
+   "number_card_name": "One Time Organization Registration Forms"
   },
   {
    "label": "Annual Compliance Forms",

@@ -7,7 +7,6 @@ from frappe.model.document import Document
 
 class AnnualComplianceForms(Document):
     def before_validate(self):
-        # Check if a document with the same financial year already exists
         exists = frappe.db.exists({
             "doctype": "Annual Compliance Forms", 
             "financial_year": self.financial_year
