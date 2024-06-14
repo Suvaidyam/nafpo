@@ -105,7 +105,8 @@
    "fieldname": "inc_20_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.inc_20_status == \"Completed\""
+   "mandatory_depends_on": "eval:doc.inc_20_status == \"Completed\"",
+   "read_only_depends_on": "eval:doc.inc_20_status == \"Pending\""
   },
   {
    "fieldname": "column_break_viht",
@@ -138,7 +139,8 @@
    "fieldname": "inc_22_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.inc_22_status == \"Completed\""
+   "mandatory_depends_on": "eval:doc.inc_22_status == \"Completed\"",
+   "read_only_depends_on": "eval:doc.inc_22_status == \"Pending\""
   },
   {
    "fieldname": "column_break_hkbk",
@@ -181,7 +183,8 @@
    "fieldname": "adt_1_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.adt_1_status == \"Completed\""
+   "mandatory_depends_on": "eval:doc.adt_1_status == \"Completed\"",
+   "read_only_depends_on": "eval:doc.adt_1_status == \"Pending\""
   },
   {
    "fieldname": "form_inc_20a_tab",
@@ -191,7 +194,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-14 10:41:28.588388",
+ "modified": "2024-06-14 12:13:30.761264",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "One Time Organization Registration Forms",
