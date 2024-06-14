@@ -53,23 +53,23 @@
    "in_list_view": 1,
    "label": "Financial Year",
    "options": "Financial Year",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "description": "<span style=\"font-size:13.5px;\">Within 180 days of registration</span>",
    "fieldname": "inc_20a_section",
-   "fieldtype": "Section Break",
-   "label": "Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "tab_2_tab",
    "fieldtype": "Tab Break",
-   "label": "Form INC-22"
+   "label": "Form INC-22 \u2013 Registered office Address - MCA"
   },
   {
    "fieldname": "adt_1_tab",
    "fieldtype": "Tab Break",
-   "label": "Form ADT-1"
+   "label": "Form ADT-1 \u2013 Auditor Appointment for First year"
   },
   {
    "fieldname": "inc_22_due_date",
@@ -97,7 +97,8 @@
    "default": "Pending",
    "fieldname": "inc_20_status",
    "fieldtype": "Autocomplete",
-   "label": "Status",
+   "in_list_view": 1,
+   "label": "INC-20A Status",
    "options": "Pending\nCompleted"
   },
   {
@@ -129,7 +130,8 @@
    "default": "Pending",
    "fieldname": "inc_22_status",
    "fieldtype": "Autocomplete",
-   "label": "Status",
+   "in_list_view": 1,
+   "label": "INC-22 Status",
    "options": "Pending\nCompleted"
   },
   {
@@ -145,14 +147,12 @@
   {
    "description": "<span style=\"font-size:13.5px;\">Within 30 days of registration </span>",
    "fieldname": "section_break_cnwj",
-   "fieldtype": "Section Break",
-   "label": "Form INC-22 \u2013 Registered office Address - MCA"
+   "fieldtype": "Section Break"
   },
   {
    "description": "<span style=\"font-size:13.5px;\">Within 30 days of registration</span>",
    "fieldname": "section_break_klzi",
-   "fieldtype": "Section Break",
-   "label": "Form ADT-1 \u2013 Auditor Appointment for First year"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "adt_1_due_date",
@@ -173,7 +173,8 @@
    "default": "Pending",
    "fieldname": "adt_1_status",
    "fieldtype": "Autocomplete",
-   "label": "Status",
+   "in_list_view": 1,
+   "label": "ADT-1 Status",
    "options": "Pending\nCompleted"
   },
   {
@@ -185,12 +186,12 @@
   {
    "fieldname": "form_inc_20a_tab",
    "fieldtype": "Tab Break",
-   "label": "Form INC-20A"
+   "label": "Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-13 15:58:07.944194",
+ "modified": "2024-06-14 10:41:28.588388",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "One Time Organization Registration Forms",
