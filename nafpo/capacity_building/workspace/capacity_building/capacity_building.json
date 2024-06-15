@@ -1,11 +1,6 @@
 {
- "charts": [
-  {
-   "chart_name": "First Year",
-   "label": "First Year"
-  }
- ],
- "content": "[{\"id\":\"BsZlXri6c9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Capacity Building</span>\",\"col\":12}},{\"id\":\"h2gO58Q2LG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Capacity\",\"col\":3}},{\"id\":\"wtlDbIyGbm\",\"type\":\"chart\",\"data\":{\"chart_name\":\"First Year\",\"col\":12}}]",
+ "charts": [],
+ "content": "[{\"id\":\"BsZlXri6c9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Capacity Building</span>\",\"col\":12}},{\"id\":\"_pFQ-sXtjc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Capacity\",\"col\":4}}]",
  "creation": "2024-05-10 14:16:08.795574",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,11 +13,16 @@
  "is_hidden": 0,
  "label": "Capacity Building",
  "links": [],
- "modified": "2024-06-14 10:58:37.522186",
+ "modified": "2024-06-15 11:11:52.520150",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity Building",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Capacity",
+   "number_card_name": "Capacity"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
@@ -45,15 +45,6 @@
   }
  ],
  "sequence_id": 7.0,
- "shortcuts": [
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Capacity",
-   "link_to": "Capacity",
-   "stats_filter": "[]",
-   "type": "DocType"
-  }
- ],
+ "shortcuts": [],
  "title": "Capacity Building"
 }

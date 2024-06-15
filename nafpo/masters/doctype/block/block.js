@@ -11,5 +11,8 @@ frappe.ui.form.on("Block", {
     state: function (frm) {
         apply_filter('district', 'state', frm, frm.doc.state)
         truncate_multiple_fields_value(frm, ['district'])
-    }
+    },
+    onload(frm) {
+        hide_list_view_in_useless_data(frm)
+    },
 });

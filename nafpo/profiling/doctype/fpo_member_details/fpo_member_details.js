@@ -56,5 +56,8 @@ frappe.ui.form.on("FPO member details", {
     },
     consent_image(frm) {
         disable_Attachment_autosave(frm);
-    }
+    },
+    onload(frm) {
+        hide_list_view_in_useless_data(frm)
+    },
 });

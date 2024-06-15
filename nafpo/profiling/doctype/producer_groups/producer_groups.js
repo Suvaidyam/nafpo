@@ -10,5 +10,8 @@ frappe.ui.form.on("Producer Groups", {
     state: function (frm) {
         apply_filter('fpo', 'state', frm, frm.doc.state)
         truncate_multiple_fields_value(frm, ['fpo'])
+    },
+    onload(frm) {
+        hide_list_view_in_useless_data(frm)
     }
 });

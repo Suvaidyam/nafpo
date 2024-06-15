@@ -54,5 +54,14 @@ frappe.ui.form.on("Capacity", {
         let total_days = Math.ceil(Math.abs(new Date(frm.doc.end_date) - new Date(frm.doc.start_date)) / (1000 * 3600 * 24));
         frm.set_value('total_days', !isNaN(total_days) && total_days >= 0 ? total_days : 0);
         frm.set_df_property('total_days', 'read_only', true);
-    }
+    },
+    onload: function (frm) {
+        hide_list_view_in_useless_data(frm)
+    },
+    ...['training_document_if_needed'].reduce((acc, field) => {
+        acc[field] = function (frm) {
+            disable_Attachment_autosave(frm);
+        };
+        return acc;
+    }, {})
 });

@@ -24,6 +24,9 @@ frappe.ui.form.on("One Time Organization Registration Forms", {
     financial_year: async function (frm) {
         check_fpo(frm)
     },
+    onload: function (frm) {
+        hide_list_view_in_useless_data(frm)
+    },
     ...['inc_20_bank_statement', 'inc_20_bank_statement', 'inc_22_noc', 'inc_22_rent_agreement', 'inc_22_electricity_bill', 'adt_1_fpo_resolution'].reduce((acc, field) => {
         acc[field] = function (frm) {
             disable_Attachment_autosave(frm);

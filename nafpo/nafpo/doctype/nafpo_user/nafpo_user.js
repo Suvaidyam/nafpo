@@ -54,5 +54,8 @@ frappe.ui.form.on("Nafpo User", {
     },
     level: function (frm) {
         truncate_multiple_fields_value(frm, ['cbbo', 'fpo', 'ia'])
-    }
+    },
+    onload(frm) {
+        hide_list_view_in_useless_data(frm)
+    },
 });
