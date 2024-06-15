@@ -79,3 +79,31 @@ function disable_Attachment_autosave(frm) {
     }
     this.set_value(frm.file_url);
 }
+
+// Disable autosave on doctype to attach image
+function hide_list_view_in_useless_data(frm) {
+    const comments_section = frm.wrapper.querySelector('.comment-input-wrapper');
+    if (comments_section) {
+        comments_section.style.display = 'none';
+    }
+    const side_section = frm.wrapper.querySelector('.layout-side-section');
+    if (side_section) {
+        side_section.style.display = 'none';
+    }
+    const side_section_content = frm.wrapper.querySelector('.form-sidebar');
+    if (side_section_content) {
+        side_section_content.style.display = 'none';
+    }
+    const hide_activity = frm.wrapper.querySelector('.timeline-item');
+    if (hide_activity) {
+        hide_activity.style.display = 'none';
+    }
+    const hide_activity_timeline = frm.wrapper.querySelector('.new-timeline');
+    if (hide_activity_timeline) {
+        hide_activity_timeline.style.display = 'none';
+    }
+    const hide_up_scroll_icon = frm.wrapper.querySelector('.scroll-to-top');
+    if (hide_up_scroll_icon) {
+        hide_up_scroll_icon.style.display = 'none';
+    }
+}

@@ -3,6 +3,9 @@
 
 frappe.ui.form.on("Financial Year", {
 	refresh(frm) {
-        frm.is_new() && hide_print_button(frm)
+		frm.is_new() && hide_print_button(frm)
+	},
+	onload(frm) {
+		hide_list_view_in_useless_data(frm)
 	},
 });

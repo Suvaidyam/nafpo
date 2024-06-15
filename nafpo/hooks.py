@@ -115,6 +115,15 @@ doctype_js = {
     "State" : [
         "public/js/utils/utils.js"
     ],
+    "One Time Organization Registration Forms" : [
+        "public/js/utils/utils.js"
+    ],
+    "Annual Compliance Forms" : [
+        "public/js/utils/utils.js"
+    ],
+    "Board of Directors Meeting Forms" : [
+        "public/js/utils/utils.js"
+    ],
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}

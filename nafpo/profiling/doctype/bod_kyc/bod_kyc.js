@@ -11,6 +11,9 @@ frappe.ui.form.on("BOD KYC", {
         await apply_filter('fpo_name', 'state', frm, frm.doc.state_name)
         truncate_multiple_fields_value(frm, ['fpo_name'])
     },
+    onload(frm) {
+        hide_list_view_in_useless_data(frm)
+    },
     ...['din_document', 'address_proof_status', 'address_proof', 'upload_aadhar_document'].reduce((acc, field) => {
         acc[field] = function (frm) {
             disable_Attachment_autosave(frm);

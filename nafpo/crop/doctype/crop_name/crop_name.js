@@ -15,5 +15,8 @@ frappe.ui.form.on("Crop Name", {
     name_of_fpo: function (frm) {
         apply_filter('type_of_crop', 'fpo', frm, frm.doc.name_of_fpo)
         truncate_multiple_fields_value(frm, ['type_of_crop'])
+    },
+    onload(frm) {
+        hide_list_view_in_useless_data(frm)
     }
 });

@@ -21,5 +21,8 @@ frappe.ui.form.on("Village", {
     block: function (frm) {
         apply_filter('grampanchayat', 'block', frm, frm.doc.block)
         truncate_multiple_fields_value(frm, ['grampanchayat'])
-    }
+    },
+    onload(frm) {
+        hide_list_view_in_useless_data(frm)
+    },
 });

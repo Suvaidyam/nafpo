@@ -27,6 +27,9 @@ frappe.ui.form.on("Annual Compliance Forms", {
     financial_year: async function (frm) {
         check_fpo(frm)
     },
+    onload: function (frm) {
+        hide_list_view_in_useless_data(frm)
+    },
     ...['aoc_4_audit_report', 'mgt_7_director_list', 'mgt_7_shareholder_list', 'adt_1_fpo_resolution', 'd_kyc_bod_aadhar', 'd_kyc_pan_card_verification', 'd_kyc_otp', 'it_return'].reduce((acc, field) => {
         acc[field] = function (frm) {
             disable_Attachment_autosave(frm);
