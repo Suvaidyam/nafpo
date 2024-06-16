@@ -14,18 +14,19 @@ frappe.ui.form.on("One Time Organization Registration Forms", {
                 console.error('User data fetch error:', e);
             }
         }
+    },
+    financial_year: async function (frm) {
+        check_fpo(frm)
+    },
+    onload: function (frm) {
+        hide_list_view_in_useless_data(frm);
         let date = new Date();
         date.setDate(date.getDate() + 180);
         frm.set_value('inc_20_due_date', date.toISOString().split('T')[0]);
         date.setDate(date.getDate() + 30);
         frm.set_value('inc_22_due_date', date.toISOString().split('T')[0]);
         frm.set_value('adt_1_due_date', date.toISOString().split('T')[0]);
-    },
-    financial_year: async function (frm) {
-        check_fpo(frm)
-    },
-    onload: function (frm) {
-        hide_list_view_in_useless_data(frm)
+        frm.save()
     },
     ...['inc_20_bank_statement', 'inc_20_bank_statement', 'inc_22_noc', 'inc_22_rent_agreement', 'inc_22_electricity_bill', 'adt_1_fpo_resolution'].reduce((acc, field) => {
         acc[field] = function (frm) {
@@ -48,11 +49,11 @@ async function check_fpo(frm) {
         let exists = data.length > 0;
         if (exists) {
             await frappe.throw(`FPO already exists for the Financial Year ${frm.doc.financial_year}`);
-            return false; // Prevent form from saving
+            return false;
         }
-        return true; // Allow form to save
+        return true;
     } catch (err) {
         console.error('Error fetching data:', err);
-        return false; // Prevent form from saving on error
+        return false;
     }
 }

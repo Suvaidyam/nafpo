@@ -14,6 +14,12 @@ frappe.ui.form.on("Annual Compliance Forms", {
                 console.error('User data fetch error:', e);
             }
         }
+    },
+    financial_year: async function (frm) {
+        check_fpo(frm)
+    },
+    onload: function (frm) {
+        hide_list_view_in_useless_data(frm)
         let date = new Date();
         date.setFullYear(date.getFullYear() + 1);
         let formattedDate = date.toISOString().split('T')[0];
@@ -23,12 +29,7 @@ frappe.ui.form.on("Annual Compliance Forms", {
         frm.set_value('d_kyc_due_date', formattedDate);
         frm.set_value('it_return_due_date', formattedDate);
         frm.set_value('agm_due_date', formattedDate);
-    },
-    financial_year: async function (frm) {
-        check_fpo(frm)
-    },
-    onload: function (frm) {
-        hide_list_view_in_useless_data(frm)
+        frm.save();
     },
     ...['aoc_4_audit_report', 'mgt_7_director_list', 'mgt_7_shareholder_list', 'adt_1_fpo_resolution', 'd_kyc_bod_aadhar', 'd_kyc_pan_card_verification', 'd_kyc_otp', 'it_return'].reduce((acc, field) => {
         acc[field] = function (frm) {
