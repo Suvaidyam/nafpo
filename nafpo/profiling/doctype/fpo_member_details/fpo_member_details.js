@@ -9,6 +9,7 @@ frappe.ui.form.on("FPO member details", {
         await apply_filter('block_name', 'district', frm, frm.doc.district_name)
         await apply_filter('fpo', 'block', frm, frm.doc.block_name)
         await apply_filter('grampanchayat_name', 'block', frm, frm.doc.block_name)
+        await apply_filter('producer_group', 'fpo', frm, frm.doc.fpo)
     },
     validate(frm) {
         integer_length_validator(frm.doc.aadhar_number, 12, 'Aadhar Card');

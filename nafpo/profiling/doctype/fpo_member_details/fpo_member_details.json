@@ -109,7 +109,6 @@
   {
    "fieldname": "producer_group",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Producer Group",
    "options": "Producer Groups"
   },
@@ -144,6 +143,7 @@
   {
    "fieldname": "category",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Category",
    "options": "Category",
    "reqd": 1
@@ -382,7 +382,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-12 12:45:15.629446",
+ "modified": "2024-06-17 19:06:12.204458",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO member details",
@@ -445,7 +445,9 @@
    "share": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "member_name"
 }

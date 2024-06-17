@@ -16,7 +16,6 @@
   "column_break_xnnk",
   "aoc_4_status",
   "aoc_4_submitted_on",
-  "tab_2_tab",
   "form_mgt_7_section",
   "mgt_7_due_date",
   "mgt_7_director_list",
@@ -24,14 +23,12 @@
   "column_break_qjtx",
   "mgt_7_status",
   "mgt_7_submitted_on",
-  "form_adt_1_tab",
   "form_adt_1_section",
   "adt_1_due_date",
   "adt_1_fpo_resolution",
   "column_break_gxxm",
   "adt_1_status",
   "adt_1_submitted_on",
-  "director_kyc_tab",
   "director_kyc_section",
   "d_kyc_due_date",
   "d_kyc_bod_aadhar",
@@ -40,14 +37,12 @@
   "d_kyc_otp",
   "d_kyc_status",
   "d_kyc_submitted_on",
-  "it_return_tab",
   "it_return_section",
   "it_return_due_date",
   "it_return",
   "column_break_uqwf",
   "it_return_status",
   "it_return_submitted_on",
-  "agm_tab",
   "agm_section",
   "agm_due_date",
   "agm_status",
@@ -78,17 +73,13 @@
   {
    "description": "<span style=\"font-size:13.5px;\">1 financial year</span>",
    "fieldname": "section_break_fjls",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "FORM AOC-4 \u2013 Filing of Financial Statements"
   },
   {
    "fieldname": "form_aoc_4_tab",
    "fieldtype": "Tab Break",
-   "label": "FORM AOC-4 \u2013 Filing of Financial Statements"
-  },
-  {
-   "fieldname": "tab_2_tab",
-   "fieldtype": "Tab Break",
-   "label": "Form MGT-7 - Filing of Annual Return"
+   "label": "FORM"
   },
   {
    "fieldname": "aoc_4_due_date",
@@ -116,7 +107,8 @@
   {
    "description": "<span style=\"font-size:13.5px;\">After agm 60 days</span>",
    "fieldname": "form_mgt_7_section",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Form MGT-7 - Filing of Annual Return"
   },
   {
    "fieldname": "mgt_7_due_date",
@@ -135,11 +127,11 @@
    "label": "Shareholder List"
   },
   {
+   "depends_on": "eval:doc.aoc_4_status == \"Completed\"",
    "fieldname": "aoc_4_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.aoc_4_status == \"Completed\"",
-   "read_only_depends_on": "eval:doc.aoc_4_status == \"Pending\""
+   "mandatory_depends_on": "eval:doc.aoc_4_status == \"Completed\""
   },
   {
    "fieldname": "column_break_qjtx",
@@ -154,21 +146,17 @@
    "options": "Pending\nCompleted"
   },
   {
+   "depends_on": "eval:doc.mgt_7_status == \"Completed\"",
    "fieldname": "mgt_7_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.mgt_7_status == \"Completed\"",
-   "read_only_depends_on": "eval:doc.mgt_7_status == \"Pending\""
-  },
-  {
-   "fieldname": "form_adt_1_tab",
-   "fieldtype": "Tab Break",
-   "label": "Form ADT-1 \u2013 Auditor Appointment for Five year"
+   "mandatory_depends_on": "eval:doc.mgt_7_status == \"Completed\""
   },
   {
    "description": "<span style=\"font-size:13.5px;\">After 1st AGM</span>",
    "fieldname": "form_adt_1_section",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Form ADT-1 \u2013 Auditor Appointment for Five year"
   },
   {
    "fieldname": "adt_1_due_date",
@@ -194,16 +182,11 @@
    "options": "Pending\nCompleted"
   },
   {
+   "depends_on": "eval:doc.adt_1_status == \"Completed\"",
    "fieldname": "adt_1_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.adt_1_status == \"Completed\"",
-   "read_only_depends_on": "eval:doc.adt_1_status == \"Pending\""
-  },
-  {
-   "fieldname": "director_kyc_tab",
-   "fieldtype": "Tab Break",
-   "label": "DIRECTOR KYC"
+   "mandatory_depends_on": "eval:doc.adt_1_status == \"Completed\""
   },
   {
    "description": "<span style=\"font-size:13.5px;>Once in a year</span>",
@@ -245,16 +228,11 @@
    "options": "Pending\nCompleted"
   },
   {
+   "depends_on": "eval:doc.d_kyc_status == \"Completed\"",
    "fieldname": "d_kyc_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.d_kyc_status == \"Completed\"",
-   "read_only_depends_on": "eval:doc.d_kyc_status == \"Pending\""
-  },
-  {
-   "fieldname": "it_return_tab",
-   "fieldtype": "Tab Break",
-   "label": "IT Return"
+   "mandatory_depends_on": "eval:doc.d_kyc_status == \"Completed\""
   },
   {
    "description": "<span style=\"font-size:13.5px;>30th September every year</span>",
@@ -286,16 +264,11 @@
    "options": "Pending\nCompleted"
   },
   {
+   "depends_on": "eval:doc.it_return_status == \"Completed\"",
    "fieldname": "it_return_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.it_return_status == \"Completed\"",
-   "read_only_depends_on": "eval:doc.it_return_status == \"Pending\""
-  },
-  {
-   "fieldname": "agm_tab",
-   "fieldtype": "Tab Break",
-   "label": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda"
+   "mandatory_depends_on": "eval:doc.it_return_status == \"Completed\""
   },
   {
    "fieldname": "agm_section",
@@ -321,16 +294,16 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.agm_status == \"Completed\"",
    "fieldname": "agm_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.agm_status == \"Completed\"",
-   "read_only_depends_on": "eval:doc.agm_status == \"Pending\""
+   "mandatory_depends_on": "eval:doc.agm_status == \"Completed\""
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-14 12:18:38.714032",
+ "modified": "2024-06-17 19:56:16.569631",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Annual Compliance Forms",

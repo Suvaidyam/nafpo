@@ -8,9 +8,9 @@
  "field_order": [
   "fpo",
   "financial_year",
-  "column_break_tevg",
   "status",
-  "date"
+  "date",
+  "fpo_member"
  ],
  "fields": [
   {
@@ -30,11 +30,11 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval:doc.status == \"Completed\"",
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Metting Date",
-   "mandatory_depends_on": "eval:doc.status == \"Completed\"",
-   "read_only_depends_on": "eval:doc.status == \"Pending\""
+   "mandatory_depends_on": "eval:doc.status == \"Completed\""
   },
   {
    "default": "Pending",
@@ -42,16 +42,20 @@
    "fieldtype": "Autocomplete",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Pending\nCompleted"
+   "options": "Pending\nCompleted",
+   "reqd": 1
   },
   {
-   "fieldname": "column_break_tevg",
-   "fieldtype": "Column Break"
+   "fieldname": "fpo_member",
+   "fieldtype": "Table MultiSelect",
+   "label": "FPO member",
+   "options": "FPO member details Child",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-14 12:20:46.605322",
+ "modified": "2024-06-17 20:41:49.381311",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Board of Directors Meeting Forms",
