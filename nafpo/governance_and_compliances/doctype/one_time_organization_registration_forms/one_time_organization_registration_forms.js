@@ -14,19 +14,34 @@ frappe.ui.form.on("One Time Organization Registration Forms", {
                 console.error('User data fetch error:', e);
             }
         }
-    },
-    financial_year: async function (frm) {
-        check_fpo(frm)
-    },
-    onload: function (frm) {
-        hide_list_view_in_useless_data(frm);
         let date = new Date();
         date.setDate(date.getDate() + 180);
         frm.set_value('inc_20_due_date', date.toISOString().split('T')[0]);
         date.setDate(date.getDate() + 30);
         frm.set_value('inc_22_due_date', date.toISOString().split('T')[0]);
         frm.set_value('adt_1_due_date', date.toISOString().split('T')[0]);
-        frm.save()
+        // frm.save()
+        const submitted_on_fields = ['inc_20_submitted_on', 'inc_22_submitted_on', 'adt_1_submitted_on'];
+        submitted_on_fields.forEach(field => {
+            frm.fields_dict[field].$input.datepicker({ maxDate: new Date() });
+        });
+    },
+    financial_year: async function (frm) {
+        check_fpo(frm)
+    },
+    inc_20_status: function (frm) {
+        blank_submitted_on(frm, 'inc_20_status', 'inc_20_submitted_on');
+    },
+
+    inc_22_status: function (frm) {
+        blank_submitted_on(frm, 'inc_22_status', 'inc_22_submitted_on');
+    },
+
+    adt_1_status: function (frm) {
+        blank_submitted_on(frm, 'adt_1_status', 'adt_1_submitted_on');
+    },
+    onload: function (frm) {
+        hide_list_view_in_useless_data(frm);
     },
     ...['inc_20_bank_statement', 'inc_20_bank_statement', 'inc_22_noc', 'inc_22_rent_agreement', 'inc_22_electricity_bill', 'adt_1_fpo_resolution'].reduce((acc, field) => {
         acc[field] = function (frm) {
@@ -55,5 +70,11 @@ async function check_fpo(frm) {
     } catch (err) {
         console.error('Error fetching data:', err);
         return false;
+    }
+}
+
+function blank_submitted_on(frm, status_field, date_field) {
+    if (frm.doc[status_field] == "Pending") {
+        frm.set_value(date_field, '');
     }
 }

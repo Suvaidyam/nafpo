@@ -8,8 +8,6 @@
  "field_order": [
   "form_inc_20a_tab",
   "fpo",
-  "column_break_lkhy",
-  "financial_year",
   "inc_20a_section",
   "inc_20_due_date",
   "inc_20_bank_statement",
@@ -17,7 +15,6 @@
   "column_break_viht",
   "inc_20_status",
   "inc_20_submitted_on",
-  "tab_2_tab",
   "section_break_cnwj",
   "inc_22_due_date",
   "inc_22_noc",
@@ -26,7 +23,6 @@
   "inc_22_electricity_bill",
   "inc_22_status",
   "inc_22_submitted_on",
-  "adt_1_tab",
   "section_break_klzi",
   "adt_1_due_date",
   "adt_1_fpo_resolution",
@@ -44,32 +40,10 @@
    "reqd": 1
   },
   {
-   "fieldname": "column_break_lkhy",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "financial_year",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Financial Year",
-   "options": "Financial Year",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
    "description": "<span style=\"font-size:13.5px;\">Within 180 days of registration</span>",
    "fieldname": "inc_20a_section",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "tab_2_tab",
-   "fieldtype": "Tab Break",
-   "label": "Form INC-22 \u2013 Registered office Address - MCA"
-  },
-  {
-   "fieldname": "adt_1_tab",
-   "fieldtype": "Tab Break",
-   "label": "Form ADT-1 \u2013 Auditor Appointment for First year"
+   "fieldtype": "Section Break",
+   "label": "Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA"
   },
   {
    "fieldname": "inc_22_due_date",
@@ -99,14 +73,15 @@
    "fieldtype": "Autocomplete",
    "in_list_view": 1,
    "label": "INC-20A Status",
-   "options": "Pending\nCompleted"
+   "options": "Pending\nCompleted",
+   "reqd": 1
   },
   {
+   "depends_on": "eval:doc.inc_20_status == \"Completed\"",
    "fieldname": "inc_20_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.inc_20_status == \"Completed\"",
-   "read_only_depends_on": "eval:doc.inc_20_status == \"Pending\""
+   "mandatory_depends_on": "eval:doc.inc_20_status == \"Completed\""
   },
   {
    "fieldname": "column_break_viht",
@@ -133,14 +108,15 @@
    "fieldtype": "Autocomplete",
    "in_list_view": 1,
    "label": "INC-22 Status",
-   "options": "Pending\nCompleted"
+   "options": "Pending\nCompleted",
+   "reqd": 1
   },
   {
+   "depends_on": "eval:doc.inc_22_status == \"Completed\"",
    "fieldname": "inc_22_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.inc_22_status == \"Completed\"",
-   "read_only_depends_on": "eval:doc.inc_22_status == \"Pending\""
+   "mandatory_depends_on": "eval:doc.inc_22_status == \"Completed\""
   },
   {
    "fieldname": "column_break_hkbk",
@@ -149,12 +125,14 @@
   {
    "description": "<span style=\"font-size:13.5px;\">Within 30 days of registration </span>",
    "fieldname": "section_break_cnwj",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Form INC-22 \u2013 Registered office Address - MCA"
   },
   {
    "description": "<span style=\"font-size:13.5px;\">Within 30 days of registration</span>",
    "fieldname": "section_break_klzi",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Form ADT-1 \u2013 Auditor Appointment for First year"
   },
   {
    "fieldname": "adt_1_due_date",
@@ -177,14 +155,15 @@
    "fieldtype": "Autocomplete",
    "in_list_view": 1,
    "label": "ADT-1 Status",
-   "options": "Pending\nCompleted"
+   "options": "Pending\nCompleted",
+   "reqd": 1
   },
   {
+   "depends_on": "eval:doc.adt_1_status == \"Completed\"",
    "fieldname": "adt_1_submitted_on",
    "fieldtype": "Date",
    "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.adt_1_status == \"Completed\"",
-   "read_only_depends_on": "eval:doc.adt_1_status == \"Pending\""
+   "mandatory_depends_on": "eval:doc.adt_1_status == \"Completed\""
   },
   {
    "fieldname": "form_inc_20a_tab",
@@ -194,7 +173,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-14 12:13:30.761264",
+ "modified": "2024-06-17 19:49:37.804770",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "One Time Organization Registration Forms",
