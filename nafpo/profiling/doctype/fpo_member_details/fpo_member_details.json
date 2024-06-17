@@ -12,19 +12,21 @@
   "block_name",
   "fpo",
   "cbbo",
+  "column_break_nsyz",
   "ia",
   "grampanchayat_name",
   "village_name",
   "producer_group",
+  "section_break_cvsh",
   "member_name",
   "father__husbands_name",
   "gender",
   "age",
   "category",
-  "column_break_xgko",
   "tribe",
   "member_of_shg",
   "name_of_the_shg",
+  "column_break_qvkr",
   "bpl_status",
   "have_you_received_aadhar_card_consent",
   "aadhar_number",
@@ -334,10 +336,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_xgko",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "section_break_tjir",
    "fieldtype": "Section Break"
   },
@@ -378,11 +376,23 @@
    "hidden": 1,
    "label": "IA",
    "options": "IA"
+  },
+  {
+   "fieldname": "column_break_nsyz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_cvsh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_qvkr",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-17 19:06:12.204458",
+ "modified": "2024-06-17 21:18:49.502845",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO member details",
