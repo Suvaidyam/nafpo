@@ -1,0 +1,355 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-18 07:34:30.266305",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "fpo",
+  "cbbo",
+  "ia",
+  "appointment_letter_of_ceo",
+  "remuneration_details_of_ceo",
+  "kyc_documents_of_ceo",
+  "appointment_letter_of_accountant",
+  "remuneration_details_of_accountant",
+  "fpo_registration_cost_bill",
+  "rent_agreement_in_the_name_of_fpo",
+  "rent_receipts_of_last_six_months",
+  "board_approved_business_plan",
+  "supporting_bills_for_fpo_office",
+  "supporting_bills_for_furniture",
+  "supporting_bills_for_equipment",
+  "supporting_bills_for_maintenance",
+  "letter_on_performance",
+  "details_of_equity_grant_application_if_applied",
+  "list_of_shareholders_with_shared_money_collection",
+  "number_of_shareholders",
+  "amount_of_share_capital_mobilised",
+  "commencement_of_business_certificate",
+  "utilization_certificate_for_1st_instalment_ca_certified",
+  "amount_received_by_fpo",
+  "amount_utilised_by_fpo",
+  "column_break_wifc",
+  "upload_appointment_letter_of_ceo",
+  "upload_kyc_documents_of_ceo",
+  "upload_appointment_letter_of_accountant",
+  "upload_fpo_registration_cost_bill",
+  "upload_rent_agreement_in_the_name_of_fpo",
+  "upload_rent_receipts_of_last_six_months",
+  "upload_board_approved_business_plan",
+  "upload_supporting_bills_for_fpo_office",
+  "upload_supporting_bills_for_furniture",
+  "upload_supporting_bills_for_equipment",
+  "upload_supporting_bills_for_maintenance",
+  "upload_letter_on_performance",
+  "upload_details_of_equity_grant_application_if_applied",
+  "upload_list_of_shareholders_with_shared_money_collection",
+  "upload_commencement_of_business_certificate",
+  "upload_utilization_certificate_for_1st_instalment_ca_certified"
+ ],
+ "fields": [
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "FPO",
+   "options": "FPO",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "fpo.cbbo_name",
+   "fieldname": "cbbo",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "CBBO",
+   "options": "CBBO"
+  },
+  {
+   "fetch_from": "cbbo.ia_name",
+   "fieldname": "ia",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "IA",
+   "options": "IA"
+  },
+  {
+   "fieldname": "appointment_letter_of_ceo",
+   "fieldtype": "Autocomplete",
+   "label": "Appointment letter of CEO",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.appointment_letter_of_ceo == \"Yes\"",
+   "fieldname": "upload_appointment_letter_of_ceo",
+   "fieldtype": "Attach Image",
+   "label": "Upload Appointment letter of CEO"
+  },
+  {
+   "fieldname": "remuneration_details_of_ceo",
+   "fieldtype": "Autocomplete",
+   "label": " Remuneration details of CEO",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "kyc_documents_of_ceo",
+   "fieldtype": "Autocomplete",
+   "label": "KYC Documents of CEO",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.kyc_documents_of_ceo == \"Yes\"",
+   "fieldname": "upload_kyc_documents_of_ceo",
+   "fieldtype": "Attach Image",
+   "label": "Upload KYC Documents of CEO"
+  },
+  {
+   "fieldname": "appointment_letter_of_accountant",
+   "fieldtype": "Autocomplete",
+   "label": "Appointment letter of Accountant",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.appointment_letter_of_accountant == \"Yes\"",
+   "fieldname": "upload_appointment_letter_of_accountant",
+   "fieldtype": "Attach Image",
+   "label": "Upload Appointment letter of Accountant"
+  },
+  {
+   "fieldname": "remuneration_details_of_accountant",
+   "fieldtype": "Autocomplete",
+   "label": "Remuneration details of Accountant",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fpo_registration_cost_bill",
+   "fieldtype": "Autocomplete",
+   "label": "FPO Registration cost - Bill",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.fpo_registration_cost_bill == \"Yes\"",
+   "fieldname": "upload_fpo_registration_cost_bill",
+   "fieldtype": "Attach Image",
+   "label": "Upload FPO Registration cost - Bill"
+  },
+  {
+   "fieldname": "rent_agreement_in_the_name_of_fpo",
+   "fieldtype": "Autocomplete",
+   "label": "Rent agreement in the name of FPO",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.rent_agreement_in_the_name_of_fpo == \"Yes\"",
+   "fieldname": "upload_rent_agreement_in_the_name_of_fpo",
+   "fieldtype": "Attach Image",
+   "label": "Upload Rent agreement in the name of FPO"
+  },
+  {
+   "fieldname": "rent_receipts_of_last_six_months",
+   "fieldtype": "Autocomplete",
+   "label": " Rent receipts of last six months",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "board_approved_business_plan",
+   "fieldtype": "Autocomplete",
+   "label": "Board Approved Business Plan",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.board_approved_business_plan == \"Yes\"",
+   "fieldname": "upload_board_approved_business_plan",
+   "fieldtype": "Attach Image",
+   "label": "Upload Board Approved Business Plan"
+  },
+  {
+   "depends_on": "eval:doc.rent_receipts_of_last_six_months == \"Yes\"",
+   "fieldname": "upload_rent_receipts_of_last_six_months",
+   "fieldtype": "Attach Image",
+   "label": "Upload Rent receipts of last six months"
+  },
+  {
+   "fieldname": "supporting_bills_for_fpo_office",
+   "fieldtype": "Autocomplete",
+   "label": "Supporting bills for FPO Office",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.supporting_bills_for_fpo_office == \"Yes\"",
+   "fieldname": "upload_supporting_bills_for_fpo_office",
+   "fieldtype": "Attach Image",
+   "label": "Upload Supporting bills for FPO Office"
+  },
+  {
+   "fieldname": "supporting_bills_for_furniture",
+   "fieldtype": "Autocomplete",
+   "label": "Supporting bills for Furniture",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.supporting_bills_for_furniture == \"Yes\"",
+   "fieldname": "upload_supporting_bills_for_furniture",
+   "fieldtype": "Attach Image",
+   "label": "Upload Supporting bills for Furniture"
+  },
+  {
+   "fieldname": "column_break_wifc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supporting_bills_for_equipment",
+   "fieldtype": "Autocomplete",
+   "label": "Supporting bills for Equipment",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.supporting_bills_for_equipment == \"Yes\"",
+   "fieldname": "upload_supporting_bills_for_equipment",
+   "fieldtype": "Attach Image",
+   "label": "Upload Supporting bills for Equipment"
+  },
+  {
+   "fieldname": "supporting_bills_for_maintenance",
+   "fieldtype": "Autocomplete",
+   "label": "Supporting bills for Maintenance",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.supporting_bills_for_maintenance == \"Yes\"",
+   "fieldname": "upload_supporting_bills_for_maintenance",
+   "fieldtype": "Attach Image",
+   "label": "Upload Supporting bills for Maintenance"
+  },
+  {
+   "fieldname": "letter_on_performance",
+   "fieldtype": "Autocomplete",
+   "label": "Letter on performance of CEO and Accountant from FPO & CBBO",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.letter_on_performance == \"Yes\"",
+   "fieldname": "upload_letter_on_performance",
+   "fieldtype": "Attach Image",
+   "label": "Letter on performance of CEO and Accountant from FPO & CBBO"
+  },
+  {
+   "fieldname": "details_of_equity_grant_application_if_applied",
+   "fieldtype": "Autocomplete",
+   "label": "Details of Equity Grant Application (If Applied)",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.details_of_equity_grant_application_if_applied == \"Yes\"",
+   "fieldname": "upload_details_of_equity_grant_application_if_applied",
+   "fieldtype": "Attach Image",
+   "label": "Upload Details of Equity Grant Application (If Applied)"
+  },
+  {
+   "fieldname": "list_of_shareholders_with_shared_money_collection",
+   "fieldtype": "Autocomplete",
+   "label": "List of shareholders with shared money collection",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.list_of_shareholders_with_shared_money_collection == \"Yes\"",
+   "fieldname": "upload_list_of_shareholders_with_shared_money_collection",
+   "fieldtype": "Attach Image",
+   "label": "Upload List of shareholders with shared money collection"
+  },
+  {
+   "fieldname": "number_of_shareholders",
+   "fieldtype": "Int",
+   "label": "Number of shareholders",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount_of_share_capital_mobilised",
+   "fieldtype": "Int",
+   "label": "Amount of share capital mobilised",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "commencement_of_business_certificate",
+   "fieldtype": "Autocomplete",
+   "label": "Commencement of Business Certificate",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.commencement_of_business_certificate == \"Yes\"",
+   "fieldname": "upload_commencement_of_business_certificate",
+   "fieldtype": "Attach Image",
+   "label": "Upload Commencement of Business Certificate"
+  },
+  {
+   "fieldname": "utilization_certificate_for_1st_instalment_ca_certified",
+   "fieldtype": "Autocomplete",
+   "label": "Utilization Certificate for 1st instalment (CA Certified)",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.utilization_certificate_for_1st_instalment_ca_certified == \"Yes\"",
+   "fieldname": "upload_utilization_certificate_for_1st_instalment_ca_certified",
+   "fieldtype": "Attach Image",
+   "label": "Upload Utilization Certificate for 1st instalment (CA Certified)"
+  },
+  {
+   "fieldname": "amount_received_by_fpo",
+   "fieldtype": "Int",
+   "label": "Amount received by FPO",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount_utilised_by_fpo",
+   "fieldtype": "Int",
+   "label": "Amount utilised by FPO",
+   "non_negative": 1,
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-18 11:01:16.646011",
+ "modified_by": "Administrator",
+ "module": "SFAC Reporting",
+ "name": "Second Installment FPOs",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

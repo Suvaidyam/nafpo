@@ -7,7 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_bldc",
-  "select_fpo",
+  "fpo",
   "cbbo",
   "ia",
   "allocation_year",
@@ -28,14 +28,6 @@
   "amount_utilised_by_fpo"
  ],
  "fields": [
-  {
-   "fieldname": "select_fpo",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Select FPO",
-   "options": "FPO",
-   "reqd": 1
-  },
   {
    "fieldname": "allocation_year",
    "fieldtype": "Link",
@@ -160,11 +152,19 @@
    "in_list_view": 1,
    "label": "IA",
    "options": "IA"
+  },
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "FPO",
+   "options": "FPO",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-11 11:25:39.899107",
+ "modified": "2024-06-18 07:36:59.037564",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "First Installment Fpos",
