@@ -124,7 +124,13 @@ doctype_js = {
     "Board of Directors Meeting Forms" : [
         "public/js/utils/utils.js"
     ],
+    "First Installment FPOs" : [
+        "public/js/utils/utils.js"
+    ],
     "Second Installment FPOs" : [
+        "public/js/utils/utils.js"
+    ],
+    "Third Installment FPOs" : [
         "public/js/utils/utils.js"
     ],
 }

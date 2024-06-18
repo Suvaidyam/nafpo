@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class FirstInstallmentFPOs(Document):
+class ThirdInstallmentFPOs(Document):
 	pass

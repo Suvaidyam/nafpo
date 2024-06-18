@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestFirstInstallmentFPOs(FrappeTestCase):
+class TestThirdInstallmentFPOs(FrappeTestCase):
 	pass

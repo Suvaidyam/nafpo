@@ -2,9 +2,7 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Second Installment FPOs", {
-    refresh(frm) {
-
-    },
+    refresh(frm) { },
     ...['upload_appointment_letter_of_ceo',
         'upload_kyc_documents_of_ceo',
         'upload_appointment_letter_of_accountant',
