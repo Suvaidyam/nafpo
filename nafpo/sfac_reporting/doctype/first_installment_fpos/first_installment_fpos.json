@@ -39,7 +39,6 @@
   {
    "fieldname": "recommendation_letter_of_cbbo",
    "fieldtype": "Autocomplete",
-   "in_list_view": 1,
    "label": "Recommendation letter of CBBO",
    "options": "Yes\nNo",
    "reqd": 1
@@ -47,7 +46,6 @@
   {
    "fieldname": "certificate_of_incorporation",
    "fieldtype": "Autocomplete",
-   "in_list_view": 1,
    "label": "Certificate of Incorporation",
    "options": "Yes\nNo",
    "reqd": 1
@@ -67,7 +65,6 @@
   {
    "fieldname": "moa_memorandum_of_association",
    "fieldtype": "Autocomplete",
-   "in_list_view": 1,
    "label": "MoA (Memorandum of Association)",
    "options": "Yes\nNo",
    "reqd": 1
@@ -120,6 +117,7 @@
   {
    "fieldname": "amount_received_by_fpo",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Amount received by FPO",
    "non_negative": 1,
    "reqd": 1
@@ -127,6 +125,7 @@
   {
    "fieldname": "amount_utilised_by_fpo",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Amount utilised by FPO",
    "non_negative": 1,
    "reqd": 1
@@ -167,7 +166,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-18 12:56:53.956710",
+ "modified": "2024-06-18 14:19:15.892853",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "First Installment FPOs",

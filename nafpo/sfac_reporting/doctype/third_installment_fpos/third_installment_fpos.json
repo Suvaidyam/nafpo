@@ -93,7 +93,6 @@
   {
    "fieldname": "audited_financial_statements",
    "fieldtype": "Autocomplete",
-   "in_list_view": 1,
    "label": "Audited financial Statements",
    "options": "Yes\nNo",
    "reqd": 1
@@ -107,7 +106,6 @@
   {
    "fieldname": "fpo_office_rent_receipt_for_previous_6_months",
    "fieldtype": "Autocomplete",
-   "in_list_view": 1,
    "label": "FPO office rent receipt for previous 6 months",
    "options": "Yes\nNo",
    "reqd": 1
@@ -121,7 +119,6 @@
   {
    "fieldname": "output_of_business_activities_performed",
    "fieldtype": "Autocomplete",
-   "in_list_view": 1,
    "label": "Output of business activities performed",
    "options": "Yes\nNo",
    "reqd": 1
@@ -135,7 +132,6 @@
   {
    "fieldname": "details_of_convergence_with_other_scheme",
    "fieldtype": "Autocomplete",
-   "in_list_view": 1,
    "label": "Details of convergence with other scheme",
    "options": "Yes\nNo",
    "reqd": 1
@@ -149,7 +145,6 @@
   {
    "fieldname": "retail_tie_up_details",
    "fieldtype": "Autocomplete",
-   "in_list_view": 1,
    "label": "Retail tie up-details",
    "options": "Yes\nNo",
    "reqd": 1
@@ -228,6 +223,7 @@
   {
    "fieldname": "number_of_shareholders",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Number of shareholders",
    "non_negative": 1,
    "reqd": 1
@@ -235,6 +231,7 @@
   {
    "fieldname": "amount_of_share_capital_mobilised",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Amount of share capital mobilised",
    "non_negative": 1,
    "reqd": 1
@@ -255,6 +252,7 @@
   {
    "fieldname": "amount_received_by_fpo",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Amount received by FPO",
    "non_negative": 1,
    "reqd": 1
@@ -262,6 +260,7 @@
   {
    "fieldname": "amount_utilised_by_fpo",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Amount utilised by FPO",
    "non_negative": 1,
    "reqd": 1
@@ -270,7 +269,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-18 12:10:51.933946",
+ "modified": "2024-06-18 14:23:33.732479",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "Third Installment FPOs",
