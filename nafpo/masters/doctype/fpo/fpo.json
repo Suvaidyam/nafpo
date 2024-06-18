@@ -55,8 +55,13 @@
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-06-17 19:33:36.133846",
+ "links": [
+  {
+   "link_doctype": "FPO Profiling",
+   "link_fieldname": "name_of_the_fpo"
+  }
+ ],
+ "modified": "2024-06-17 21:57:05.474307",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "FPO",
