@@ -78,7 +78,6 @@
   {
    "fieldname": "appointment_letter_of_ceo",
    "fieldtype": "Autocomplete",
-   "in_list_view": 1,
    "label": "Appointment letter of CEO",
    "options": "Yes\nNo",
    "reqd": 1
@@ -92,7 +91,6 @@
   {
    "fieldname": "remuneration_details_of_ceo",
    "fieldtype": "Autocomplete",
-   "in_list_view": 1,
    "label": " Remuneration details of CEO",
    "options": "Yes\nNo",
    "reqd": 1
@@ -100,7 +98,6 @@
   {
    "fieldname": "kyc_documents_of_ceo",
    "fieldtype": "Autocomplete",
-   "in_list_view": 1,
    "label": "KYC Documents of CEO",
    "options": "Yes\nNo",
    "reqd": 1
@@ -281,6 +278,7 @@
   {
    "fieldname": "number_of_shareholders",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Number of shareholders",
    "non_negative": 1,
    "reqd": 1
@@ -288,6 +286,7 @@
   {
    "fieldname": "amount_of_share_capital_mobilised",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Amount of share capital mobilised",
    "non_negative": 1,
    "reqd": 1
@@ -321,6 +320,7 @@
   {
    "fieldname": "amount_received_by_fpo",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Amount received by FPO",
    "non_negative": 1,
    "reqd": 1
@@ -328,6 +328,7 @@
   {
    "fieldname": "amount_utilised_by_fpo",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Amount utilised by FPO",
    "non_negative": 1,
    "reqd": 1
@@ -344,7 +345,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-18 12:47:28.924979",
+ "modified": "2024-06-18 14:20:15.818253",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "Second Installment FPOs",

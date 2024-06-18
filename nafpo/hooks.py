@@ -133,6 +133,9 @@ doctype_js = {
     "Third Installment FPOs" : [
         "public/js/utils/utils.js"
     ],
+    "Fourth Installment FPOs" : [
+        "public/js/utils/utils.js"
+    ],
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}

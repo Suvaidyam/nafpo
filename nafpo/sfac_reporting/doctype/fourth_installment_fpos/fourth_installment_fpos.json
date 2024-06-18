@@ -1,0 +1,205 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:4IF-{####}",
+ "creation": "2024-06-18 13:03:55.112066",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "fpo",
+  "cbbo",
+  "ia",
+  "allocation_year",
+  "performance_report_of_the_ceo",
+  "fpo_office_rent_receipt_for_last_6_months",
+  "output_of_business_activities_performed",
+  "details_of_equity_grant_eg_application_if_receivedapplied",
+  "list_of_shareholders_with_share_money",
+  "number_of_shareholders",
+  "amount_of_share_capital_mobilised",
+  "utilization_certificate_for_3rd_instalment_ca_certified",
+  "amount_received_by_fpo",
+  "amount_utilised_by_fpo",
+  "column_break_qcji",
+  "upload_performance_report_of_the_ceo",
+  "upload_fpo_office_rent_receipt_for_last_6_months",
+  "upload_output_of_business_activities_performed",
+  "upload_details_of_equity",
+  "upload_list_of_shareholders_with_share_money",
+  "upload_utilization_certificate_for_3rd_instalment_ca_certified"
+ ],
+ "fields": [
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "FPO",
+   "options": "FPO",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "fpo.cbbo_name",
+   "fieldname": "cbbo",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "CBBO",
+   "options": "CBBO"
+  },
+  {
+   "fetch_from": "cbbo.ia_name",
+   "fieldname": "ia",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "IA",
+   "options": "IA"
+  },
+  {
+   "fieldname": "allocation_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Allocation Year",
+   "options": "Financial Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "performance_report_of_the_ceo",
+   "fieldtype": "Autocomplete",
+   "label": "Performance report of the CEO and Accountant -letter certified by the Chairman of FPO & CBBO",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_qcji",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.performance_report_of_the_ceo == \"Yes\"",
+   "fieldname": "upload_performance_report_of_the_ceo",
+   "fieldtype": "Attach Image",
+   "label": "Upload Performance report of the CEO and Accountant -letter certified by the Chairman of FPO & CBBO"
+  },
+  {
+   "fieldname": "fpo_office_rent_receipt_for_last_6_months",
+   "fieldtype": "Autocomplete",
+   "label": "FPO office rent receipt for last 6 months",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.fpo_office_rent_receipt_for_last_6_months == \"Yes\"",
+   "fieldname": "upload_fpo_office_rent_receipt_for_last_6_months",
+   "fieldtype": "Attach Image",
+   "label": "Upload FPO office rent receipt for last 6 months"
+  },
+  {
+   "fieldname": "output_of_business_activities_performed",
+   "fieldtype": "Autocomplete",
+   "label": "Output of business activities performed (Mention the start date of business activities vis-a-vis projections)",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.output_of_business_activities_performed == \"Yes\"",
+   "fieldname": "upload_output_of_business_activities_performed",
+   "fieldtype": "Attach Image",
+   "label": "Upload Output of business activities performed (Mention the start date of business activities vis-a-vis projections)"
+  },
+  {
+   "fieldname": "details_of_equity_grant_eg_application_if_receivedapplied",
+   "fieldtype": "Autocomplete",
+   "label": "Details of Equity Grant (EG) application if received/applied",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.details_of_equity_grant_eg_application_if_receivedapplied == \"Yes\"",
+   "fieldname": "upload_details_of_equity",
+   "fieldtype": "Attach Image",
+   "label": "Upload Details of Equity Grant (EG) application if received/applied"
+  },
+  {
+   "fieldname": "list_of_shareholders_with_share_money",
+   "fieldtype": "Autocomplete",
+   "label": "List of shareholders with share money",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.list_of_shareholders_with_share_money == \"Yes\"",
+   "fieldname": "upload_list_of_shareholders_with_share_money",
+   "fieldtype": "Attach Image",
+   "label": "Upload List of shareholders with share money"
+  },
+  {
+   "fieldname": "number_of_shareholders",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Number of shareholders",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount_of_share_capital_mobilised",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Amount of share capital mobilised",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "utilization_certificate_for_3rd_instalment_ca_certified",
+   "fieldtype": "Autocomplete",
+   "label": "Utilization Certificate for 3rd instalment (CA certified)",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.utilization_certificate_for_3rd_instalment_ca_certified == \"Yes\"",
+   "fieldname": "upload_utilization_certificate_for_3rd_instalment_ca_certified",
+   "fieldtype": "Attach Image",
+   "label": "Upload Utilization Certificate for 3rd instalment (CA certified)"
+  },
+  {
+   "fieldname": "amount_received_by_fpo",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Amount received by FPO",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount_utilised_by_fpo",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Amount utilised by FPO",
+   "non_negative": 1,
+   "reqd": 1
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-18 14:13:39.880744",
+ "modified_by": "Administrator",
+ "module": "SFAC Reporting",
+ "name": "Fourth Installment FPOs",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
