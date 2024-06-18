@@ -1,11 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:SIF-{####}",
  "creation": "2024-06-18 07:34:30.266305",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "fpo",
+  "allocation_year",
   "cbbo",
   "ia",
   "appointment_letter_of_ceo",
@@ -76,6 +78,7 @@
   {
    "fieldname": "appointment_letter_of_ceo",
    "fieldtype": "Autocomplete",
+   "in_list_view": 1,
    "label": "Appointment letter of CEO",
    "options": "Yes\nNo",
    "reqd": 1
@@ -89,6 +92,7 @@
   {
    "fieldname": "remuneration_details_of_ceo",
    "fieldtype": "Autocomplete",
+   "in_list_view": 1,
    "label": " Remuneration details of CEO",
    "options": "Yes\nNo",
    "reqd": 1
@@ -96,6 +100,7 @@
   {
    "fieldname": "kyc_documents_of_ceo",
    "fieldtype": "Autocomplete",
+   "in_list_view": 1,
    "label": "KYC Documents of CEO",
    "options": "Yes\nNo",
    "reqd": 1
@@ -326,14 +331,24 @@
    "label": "Amount utilised by FPO",
    "non_negative": 1,
    "reqd": 1
+  },
+  {
+   "fieldname": "allocation_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Allocation Year",
+   "options": "Financial Year",
+   "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-18 11:01:16.646011",
+ "modified": "2024-06-18 12:47:28.924979",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "Second Installment FPOs",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

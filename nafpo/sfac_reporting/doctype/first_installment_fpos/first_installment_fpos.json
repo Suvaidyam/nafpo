@@ -12,25 +12,26 @@
   "ia",
   "allocation_year",
   "recommendation_letter_of_cbbo",
-  "upload_recommendation_letter_of_cbbo",
   "certificate_of_incorporation",
-  "upload_certificate_of_incorporation",
   "moa_memorandum_of_association",
-  "upload_moa_memorandum_of_association",
   "aoa_articles_of_association",
-  "upload_aoa_articles_of_association",
-  "column_break_gnde",
   "list_of_bods_with_din_no",
-  "upload_list_of_bods_with_din_no",
   "board_resolutions_of_fpo_authorized_signatory",
-  "upload_board_resolutions_of_fpo_authorized_signatory",
+  "amount_utilised_by_fpo",
   "amount_received_by_fpo",
-  "amount_utilised_by_fpo"
+  "column_break_gnde",
+  "upload_recommendation_letter_of_cbbo",
+  "upload_certificate_of_incorporation",
+  "upload_moa_memorandum_of_association",
+  "upload_aoa_articles_of_association",
+  "upload_list_of_bods_with_din_no",
+  "upload_board_resolutions_of_fpo_authorized_signatory"
  ],
  "fields": [
   {
    "fieldname": "allocation_year",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Allocation Year",
    "options": "Financial Year",
    "reqd": 1
@@ -38,6 +39,7 @@
   {
    "fieldname": "recommendation_letter_of_cbbo",
    "fieldtype": "Autocomplete",
+   "in_list_view": 1,
    "label": "Recommendation letter of CBBO",
    "options": "Yes\nNo",
    "reqd": 1
@@ -45,6 +47,7 @@
   {
    "fieldname": "certificate_of_incorporation",
    "fieldtype": "Autocomplete",
+   "in_list_view": 1,
    "label": "Certificate of Incorporation",
    "options": "Yes\nNo",
    "reqd": 1
@@ -64,6 +67,7 @@
   {
    "fieldname": "moa_memorandum_of_association",
    "fieldtype": "Autocomplete",
+   "in_list_view": 1,
    "label": "MoA (Memorandum of Association)",
    "options": "Yes\nNo",
    "reqd": 1
@@ -140,7 +144,6 @@
    "fieldname": "cbbo",
    "fieldtype": "Link",
    "hidden": 1,
-   "in_list_view": 1,
    "label": "CBBO",
    "options": "CBBO"
   },
@@ -149,7 +152,6 @@
    "fieldname": "ia",
    "fieldtype": "Link",
    "hidden": 1,
-   "in_list_view": 1,
    "label": "IA",
    "options": "IA"
   },
@@ -162,12 +164,13 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-18 07:36:59.037564",
+ "modified": "2024-06-18 12:56:53.956710",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
- "name": "First Installment Fpos",
+ "name": "First Installment FPOs",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
