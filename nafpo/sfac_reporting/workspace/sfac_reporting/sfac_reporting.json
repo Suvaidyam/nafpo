@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"UU7YUYvR6m\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">SFAC Reporting</span>\",\"col\":12}},{\"id\":\"2MgcVL6zPG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"CBBO Management\",\"col\":3}},{\"id\":\"ghurFM0PQx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"First Installment Fpos\",\"col\":3}}]",
+ "content": "[{\"id\":\"UU7YUYvR6m\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">SFAC Reporting</span>\",\"col\":12}},{\"id\":\"iAF9NBTxqj\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"CBBO Management\",\"col\":4}},{\"id\":\"67vPB8Alyo\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"First Installment FPOs\",\"col\":4}},{\"id\":\"owNwy8JQIf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Second Installment FPOs\",\"col\":4}},{\"id\":\"wO_EhiurXd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Third Installment FPOs\",\"col\":4}},{\"id\":\"n5CG3soq3G\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Fourth Installment FPOs\",\"col\":4}},{\"id\":\"dQVAJaksUx\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Six Installment Fpo\",\"col\":4}}]",
  "creation": "2024-05-10 12:05:43.301892",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,11 +13,36 @@
  "is_hidden": 0,
  "label": "SFAC Reporting",
  "links": [],
- "modified": "2024-05-27 18:10:21.965606",
+ "modified": "2024-06-18 16:54:21.472798",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "SFAC Reporting",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "CBBO Management",
+   "number_card_name": "CBBO Management"
+  },
+  {
+   "label": "First Installment FPOs",
+   "number_card_name": "First Installment FPOs"
+  },
+  {
+   "label": "Second Installment FPOs",
+   "number_card_name": "Second Installment FPOs"
+  },
+  {
+   "label": "Third Installment FPOs",
+   "number_card_name": "Third Installment FPOs"
+  },
+  {
+   "label": "Fourth Installment FPOs",
+   "number_card_name": "Fourth Installment FPOs"
+  },
+  {
+   "label": "Six Installment Fpo",
+   "number_card_name": "Six Installment Fpo"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
@@ -40,23 +65,6 @@
   }
  ],
  "sequence_id": 5.0,
- "shortcuts": [
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "CBBO Management",
-   "link_to": "CBBO Management",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "First Installment Fpos",
-   "link_to": "First Installment Fpos",
-   "stats_filter": "[]",
-   "type": "DocType"
-  }
- ],
+ "shortcuts": [],
  "title": "SFAC Reporting"
 }

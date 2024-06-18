@@ -69,6 +69,7 @@
   {
    "fieldname": "baseline_survey_done",
    "fieldtype": "Autocomplete",
+   "in_list_view": 1,
    "label": "Baseline Survey Done",
    "options": "Yes\nNo",
    "reqd": 1
@@ -76,6 +77,7 @@
   {
    "fieldname": "report_submitted",
    "fieldtype": "Autocomplete",
+   "in_list_view": 1,
    "label": "Report Submitted",
    "options": "Yes\nNo",
    "reqd": 1
@@ -83,6 +85,7 @@
   {
    "fieldname": "aggregation_activities_undertaken_for_fpo_formation",
    "fieldtype": "Autocomplete",
+   "in_list_view": 1,
    "label": "Aggregation activities undertaken for FPO Formation",
    "options": "Yes\nNo",
    "reqd": 1
@@ -362,9 +365,10 @@
    "options": "IA"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-11 11:15:38.438937",
+ "modified": "2024-06-18 17:10:25.243478",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "CBBO Management",
