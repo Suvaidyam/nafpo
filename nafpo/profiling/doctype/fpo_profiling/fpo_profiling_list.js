@@ -20,9 +20,8 @@ frappe.listview_settings['FPO Profiling'] = {
         $("ql-editor").hide()
         $("ql-blank").hide()
     },
-    // add_fields: [
-    //     'name_of_the_beneficiary', 'date_of_visit', 'contact_number',
-    //     'select_primary_member', 'overall_status', 'numeric_overall_status'
-    // ],
+    add_fields: [
+        'fpo', 'state_name', 'district_name', 'name_of_the_fpo', 'cbbo', 'type_of_organization', 'date_of_incorporation'
+    ],
     hide_name_column: true,
 };

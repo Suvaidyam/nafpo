@@ -19,7 +19,7 @@ frappe.ui.form.on("FPO Profiling", {
         extend_options_length(frm, ['district_name', 'name_of_the_fpo', 'bod_kyc_name', 'name_of_cbbo', 'cbbo'])
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
         await apply_filter('block_name', 'district', frm, frm.doc.district_name)
-        // await apply_filter('name_of_the_fpo', 'block', frm, frm.doc.block_name, true)
+        await apply_filter('name_of_the_fpo', 'district', frm, frm.doc.district_name)
         await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)
     },
     validate(frm) {
@@ -32,6 +32,7 @@ frappe.ui.form.on("FPO Profiling", {
     },
     district_name: async function (frm) {
         await apply_filter('block_name', 'district', frm, frm.doc.district_name)
+        await apply_filter('name_of_the_fpo', 'district', frm, frm.doc.district_name)
         truncate_multiple_fields_value(frm, ['block_name', 'name_of_the_fpo'])
     },
     block_name: async function (frm) {
@@ -39,7 +40,8 @@ frappe.ui.form.on("FPO Profiling", {
         truncate_multiple_fields_value(frm, ['name_of_the_fpo'])
     },
     name_of_the_fpo: async function (frm) {
-        await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)
+        // await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)
+        await apply_filter('block_name', 'fpo_name', frm, frm.doc.name_of_the_fpo);
         truncate_multiple_fields_value(frm, ['bod_kyc_name', 'fpos_address', 'fpos_pincode'])
     },
     ceo_contact_number(frm) {
