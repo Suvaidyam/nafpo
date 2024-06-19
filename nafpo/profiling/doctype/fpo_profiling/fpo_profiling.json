@@ -132,6 +132,7 @@
   {
    "fieldname": "type_of_organization",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Type of Organization",
    "options": "Type of Organization",
    "reqd": 1
@@ -462,6 +463,7 @@
    "fetch_from": "name_of_the_fpo.cbbo_name",
    "fieldname": "cbbo",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Name of CBBO",
    "options": "CBBO",
    "read_only_depends_on": "eval:(doc.name_of_the_fpo && doc.name_of_the_fpo.length > 0) ",
@@ -482,9 +484,29 @@
    "link_doctype": "One Time Organization Registration Forms",
    "link_fieldname": "fpo",
    "table_fieldname": "name_of_the_fpo"
+  },
+  {
+   "link_doctype": "Second Installment FPOs",
+   "link_fieldname": "fpo"
+  },
+  {
+   "link_doctype": "Third Installment FPOs",
+   "link_fieldname": "fpo"
+  },
+  {
+   "link_doctype": "Fourth Installment FPOs",
+   "link_fieldname": "fpo"
+  },
+  {
+   "link_doctype": "Fifth Installment FPOs",
+   "link_fieldname": "fpo"
+  },
+  {
+   "link_doctype": "Six Installment Fpo",
+   "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-06-19 10:23:45.048025",
+ "modified": "2024-06-19 13:42:58.486930",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
