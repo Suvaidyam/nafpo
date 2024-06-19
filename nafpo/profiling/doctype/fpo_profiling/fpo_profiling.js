@@ -16,7 +16,7 @@ frappe.ui.form.on("FPO Profiling", {
         hide_advance_search(frm, ['bod_kyc_name', 'name_of_cbbo', 'state_name',
             'block_name', 'district_name', 'name_of_the_fpo', 'type_of_organization'
         ])
-        extend_options_length(frm, ['fpo_name', 'fpo_name', 'district_name', 'name_of_the_fpo', 'bod_kyc_name', 'name_of_cbbo', 'cbbo'])
+        extend_options_length(frm, ['district_name', 'name_of_the_fpo', 'bod_kyc_name', 'name_of_cbbo', 'cbbo'])
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
         await apply_filter('block_name', 'district', frm, frm.doc.district_name)
         await apply_filter('name_of_the_fpo', 'block', frm, frm.doc.block_name, true)

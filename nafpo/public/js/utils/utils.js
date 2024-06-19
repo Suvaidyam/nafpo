@@ -18,6 +18,7 @@ async function apply_filter(field_name, filter_on, frm, filter_value, multiSelec
     frm.fields_dict[field_name].get_query = () => {
         if (multiSelectParent) {
             let values = filter_value.map(val => val[filter_on]) || frm.doc[filter_on].map(val => val[filter_on]);
+            console.log('values :>> ', values);
             return {
                 filters: [
                     [filter_on, 'IN', values],
