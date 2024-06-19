@@ -7,7 +7,7 @@ frappe.ui.form.on("FPO member details", {
         await extend_options_length(frm, ['fpo_name', 'fpo_name', 'district_name', 'fpo', 'producer_group', 'tribe', 'category'])
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
         await apply_filter('block_name', 'district', frm, frm.doc.district_name)
-        // await apply_filter('fpo', 'block', frm, frm.doc.block_name)
+        await apply_filter('fpo', 'district', frm, frm.doc.district_name)
         await apply_filter('grampanchayat_name', 'block', frm, frm.doc.block_name)
         await apply_filter('producer_group', 'fpo', frm, frm.doc.fpo)
     },
@@ -23,11 +23,11 @@ frappe.ui.form.on("FPO member details", {
         truncate_multiple_fields_value(frm, ['district_name', 'block_name', 'fpo', 'grampanchayat_name', 'village_name'])
     },
     district_name: async function (frm) {
+        await apply_filter('fpo', 'district', frm, frm.doc.district_name)
         await apply_filter('block_name', 'district', frm, frm.doc.district_name)
         truncate_multiple_fields_value(frm, ['block_name', 'fpo', 'grampanchayat_name', 'village_name'])
     },
     block_name: async function (frm) {
-        // await apply_filter('fpo', 'block', frm, frm.doc.block_name)
         await apply_filter('grampanchayat_name', 'block', frm, frm.doc.block_name)
         truncate_multiple_fields_value(frm, ['fpo', 'grampanchayat_name', 'village_name'])
     },
