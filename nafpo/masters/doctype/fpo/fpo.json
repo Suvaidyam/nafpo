@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:{block}-FPO-{###}",
+ "autoname": "format:FPO-{###}",
  "creation": "2024-05-09 07:58:33.629244",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -61,7 +61,7 @@
    "link_fieldname": "name_of_the_fpo"
   }
  ],
- "modified": "2024-06-17 21:57:05.474307",
+ "modified": "2024-06-19 10:41:35.491279",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "FPO",
