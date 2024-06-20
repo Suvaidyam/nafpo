@@ -10,14 +10,27 @@
  "idx": 12,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-20 09:03:56.732319",
+ "modified": "2024-06-20 10:20:28.993241",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Form INC-22 \u2013 Registered office Address - MCA",
  "number_of_groups": 0,
  "owner": "Administrator",
  "report_name": "Form INC-22 \u2013 Registered office Address - MCA",
- "roles": [],
+ "roles": [
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
+  },
+  {
+   "role": "FPO"
+  }
+ ],
  "time_interval": "Yearly",
  "timeseries": 0,
  "timespan": "Last Year",
