@@ -56,19 +56,21 @@
    "fieldname": "cbbo",
    "fieldtype": "Link",
    "label": "CBBO",
-   "options": "CBBO"
+   "options": "CBBO",
+   "read_only_depends_on": "eval:doc.fpo && doc.fpo.length > 0"
   },
   {
    "fetch_from": "cbbo.ia_name",
    "fieldname": "ia",
    "fieldtype": "Link",
    "label": "IA",
-   "options": "IA"
+   "options": "IA",
+   "read_only_depends_on": "eval:doc.fpo && doc.fpo.length > 0"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-11 11:09:10.126984",
+ "modified": "2024-06-20 09:32:59.936711",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop Type",
