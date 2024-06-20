@@ -31,7 +31,7 @@
    "fieldname": "name_of_fpo",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Name of FPO",
+   "label": "FPO",
    "options": "FPO",
    "reqd": 1
   },
@@ -83,19 +83,21 @@
    "fieldname": "cbbo",
    "fieldtype": "Link",
    "label": "CBBO",
-   "options": "CBBO"
+   "options": "CBBO",
+   "read_only_depends_on": "eval:doc.name_of_fpo && doc.name_of_fpo.length > 0"
   },
   {
    "fetch_from": "cbbo.ia_name",
    "fieldname": "ia",
    "fieldtype": "Link",
    "label": "IA",
-   "options": "IA"
+   "options": "IA",
+   "read_only_depends_on": "eval:doc.name_of_fpo && doc.name_of_fpo.length > 0"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-11 11:09:34.731402",
+ "modified": "2024-06-20 09:36:51.778159",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop Name",
