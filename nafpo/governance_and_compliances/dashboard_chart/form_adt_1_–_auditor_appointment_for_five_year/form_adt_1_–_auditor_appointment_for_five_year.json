@@ -10,14 +10,27 @@
  "idx": 8,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-20 08:56:30.132541",
+ "modified": "2024-06-20 10:22:02.585000",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Form ADT-1 \u2013 Auditor Appointment for Five year",
  "number_of_groups": 0,
  "owner": "Administrator",
  "report_name": "Form ADT-1 \u2013 Auditor Appointment for Five year",
- "roles": [],
+ "roles": [
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
+  },
+  {
+   "role": "FPO"
+  }
+ ],
  "time_interval": "Yearly",
  "timeseries": 0,
  "timespan": "Last Year",

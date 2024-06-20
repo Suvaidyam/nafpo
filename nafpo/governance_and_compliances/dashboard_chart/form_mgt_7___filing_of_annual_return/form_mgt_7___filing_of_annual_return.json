@@ -10,14 +10,27 @@
  "idx": 9,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-20 08:56:22.701899",
+ "modified": "2024-06-20 10:21:38.664946",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Form MGT-7 - Filing of Annual Return",
  "number_of_groups": 0,
  "owner": "Administrator",
  "report_name": "Form MGT-7 - Filing of Annual Return",
- "roles": [],
+ "roles": [
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
+  },
+  {
+   "role": "FPO"
+  }
+ ],
  "time_interval": "Yearly",
  "timeseries": 0,
  "timespan": "Last Year",
