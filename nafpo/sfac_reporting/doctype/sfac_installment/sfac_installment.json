@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "fpo",
+  "fpo_copy",
   "first_installment_section",
   "are_you_received_1st_installment_fund",
   "1st_installment_due_date",
@@ -54,7 +55,6 @@
   {
    "fieldname": "fpo",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "FPO",
    "options": "FPO",
    "reqd": 1,
@@ -305,12 +305,20 @@
    "fieldname": "6th_installment_proof_of_document",
    "fieldtype": "Attach Image",
    "label": "Proof of document"
+  },
+  {
+   "fieldname": "fpo_copy",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "FPO",
+   "unique": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-21 09:49:41.870491",
+ "modified": "2024-06-21 12:15:24.755748",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "SFAC Installment",
@@ -330,7 +338,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "fpo_copy"
 }
