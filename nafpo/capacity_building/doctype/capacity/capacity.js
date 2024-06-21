@@ -1,30 +1,30 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
 
-async function set_bod_kyc_name(frm) {
-    if (frm.doc.category === "Governance System (BOD)") {
-        try {
-            let response = await callAPI({
-                method: "nafpo.apis.api.get_fpo_profile",
-                args: {
-                    name: frm.doc.fpo,
-                }
-            });
-            if (Array.isArray(response)) {
-                let extractedValue = response[0];
-                if (extractedValue) {
-                    frm.set_value('bod_kyc_name', extractedValue);
-                } else {
-                    console.warn('No valid data found in the response.');
-                }
-            } else {
-                frm.set_value('bod_kyc_name', response);
-            }
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    }
-}
+// async function set_bod_kyc_name(frm) {
+//     if (frm.doc.category === "Governance System (BOD)") {
+//         try {
+//             let response = await callAPI({
+//                 method: "nafpo.apis.api.get_fpo_profile",
+//                 args: {
+//                     name: frm.doc.fpo,
+//                 }
+//             });
+//             if (Array.isArray(response)) {
+//                 let extractedValue = response[0];
+//                 if (extractedValue) {
+//                     frm.set_value('bod_kyc_name', extractedValue);
+//                 } else {
+//                     console.warn('No valid data found in the response.');
+//                 }
+//             } else {
+//                 frm.set_value('bod_kyc_name', response);
+//             }
+//         } catch (error) {
+//             console.error('Error fetching data:', error);
+//         }
+//     }
+// }
 
 frappe.ui.form.on("Capacity", {
     refresh: async function (frm) {
@@ -39,9 +39,22 @@ frappe.ui.form.on("Capacity", {
                 console.error('User data fetch error:', e);
             }
         }
+        hide_advance_search(frm, ['fpo_member', 'bod_kyc',
+        ])
     },
     category(frm) {
-        set_bod_kyc_name(frm);
+        if (frm.doc.category !== "Membership System (FPO Member)") {
+            frm.set_value('fpo_member', '')
+        }
+        if (frm.doc.category !== "Governance System (BOD)") {
+            frm.set_value('bod_kyc', '')
+        }
+        // if (frm.doc.category !== "Operation System (CEO/Account/other staff)") {
+        //     frm.set_value('bod_kyc', '')
+        // }
+        if (frm.doc.category !== "Other") {
+            frm.set_value('other', '')
+        }
     },
     start_date(frm) {
         let total_days = Math.ceil(Math.abs(new Date(frm.doc.end_date) - new Date(frm.doc.start_date)) / (1000 * 3600 * 24));

@@ -1,0 +1,23 @@
+{
+ "creation": "2024-06-21 16:32:44.044053",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "Pending Fund Members Details",
+ "modified": "2024-06-21 16:32:44.044053",
+ "modified_by": "Administrator",
+ "module": "SFAC Reporting",
+ "name": "Pending Fund Members Details",
+ "owner": "Administrator",
+ "report_field": "total_pending_count",
+ "report_function": "Sum",
+ "report_name": "Pending Fund Members Details",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}

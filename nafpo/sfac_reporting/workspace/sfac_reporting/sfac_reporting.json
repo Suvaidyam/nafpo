@@ -25,7 +25,7 @@
    "label": "Six Installment"
   }
  ],
- "content": "[{\"id\":\"40dtVVqaSl\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">SFAC Reporting</span>\",\"col\":12}},{\"id\":\"6sj5A2Azh2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"SFAC Installment\",\"col\":4}},{\"id\":\"NQ6aoiXtL_\",\"type\":\"spacer\",\"data\":{\"col\":8}},{\"id\":\"ZNUuy0CoqL\",\"type\":\"chart\",\"data\":{\"chart_name\":\"First Installment\",\"col\":6}},{\"id\":\"gLW4fA_PIN\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Second Installment\",\"col\":6}},{\"id\":\"GTKaQAB-Eq\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Third Installment\",\"col\":6}},{\"id\":\"Dv1wzXcqsh\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fourth Installment\",\"col\":6}},{\"id\":\"Nvcq-9CGJi\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fifth Installment\",\"col\":6}},{\"id\":\"fFiQ7v5d-K\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Six Installment\",\"col\":6}}]",
+ "content": "[{\"id\":\"40dtVVqaSl\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">SFAC Reporting</span>\",\"col\":12}},{\"id\":\"6sj5A2Azh2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"SFAC Installment\",\"col\":4}},{\"id\":\"A27OTYvk-y\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Fund Members Details\",\"col\":4}},{\"id\":\"ZNUuy0CoqL\",\"type\":\"chart\",\"data\":{\"chart_name\":\"First Installment\",\"col\":6}},{\"id\":\"gLW4fA_PIN\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Second Installment\",\"col\":6}},{\"id\":\"GTKaQAB-Eq\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Third Installment\",\"col\":6}},{\"id\":\"Dv1wzXcqsh\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fourth Installment\",\"col\":6}},{\"id\":\"Nvcq-9CGJi\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fifth Installment\",\"col\":6}},{\"id\":\"fFiQ7v5d-K\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Six Installment\",\"col\":6}}]",
  "creation": "2024-06-19 19:00:54.705445",
  "custom_blocks": [],
  "docstatus": 0,
@@ -38,11 +38,15 @@
  "is_hidden": 0,
  "label": "SFAC Reporting",
  "links": [],
- "modified": "2024-06-21 15:54:19.537559",
+ "modified": "2024-06-21 16:33:37.253405",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "SFAC Reporting",
  "number_cards": [
+  {
+   "label": "Pending Fund Members Details",
+   "number_card_name": "Pending Fund Members Details"
+  },
   {
    "label": "SFAC Installment",
    "number_card_name": "SFAC Installment"
