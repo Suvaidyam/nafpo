@@ -1,0 +1,38 @@
+{
+ "chart_name": "Second Installment",
+ "chart_type": "Report",
+ "creation": "2024-06-21 11:20:58.623574",
+ "custom_options": "{\"x_field\": \"name\", \"chart_type\": \"Bar\", \"y_axis_fields\": [{\"idx\": 1, \"__islocal\": true, \"y_field\": \"pending_count\", \"name\": \"row 1\"}, {\"idx\": 2, \"__islocal\": true, \"y_field\": \"fund_was_received_before_due_date\", \"name\": \"row 2\"}, {\"idx\": 3, \"__islocal\": true, \"y_field\": \"fund_was_received_after_due_date\", \"name\": \"row 3\"}], \"y_fields\": [\"pending_count\", \"fund_was_received_before_due_date\", \"fund_was_received_after_due_date\"], \"colors\": [null, null, null]}",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2024-06-21 11:26:45.253156",
+ "modified_by": "Administrator",
+ "module": "SFAC Reporting",
+ "name": "Second Installment",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Second Installment",
+ "roles": [],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "x_field": "name",
+ "y_axis": [
+  {
+   "y_field": "pending_count"
+  },
+  {
+   "y_field": "fund_was_received_before_due_date"
+  },
+  {
+   "y_field": "fund_was_received_after_due_date"
+  }
+ ]
+}

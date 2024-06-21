@@ -53,9 +53,10 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-17 20:41:49.381311",
+ "modified": "2024-06-21 10:25:05.477157",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Board of Directors Meeting Forms",

@@ -301,9 +301,10 @@
    "mandatory_depends_on": "eval:doc.agm_status == \"Completed\""
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-17 19:56:16.569631",
+ "modified": "2024-06-21 10:22:57.178747",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Annual Compliance Forms",
