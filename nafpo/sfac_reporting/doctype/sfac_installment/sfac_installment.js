@@ -15,18 +15,23 @@ frappe.ui.form.on("SFAC Installment", {
                 console.error('User data fetch error:', e);
             }
         }
+
     },
     are_you_received_1st_installment_fund(frm) {
-        if (frm.doc.are_you_received_1st_installment_fund === "Yes") {
-            frm.set_value('1st_installment_date', new Date())
+        if (frm.doc.are_you_received_1st_installment_fund == "Yes") {
+            let today_date = new Date();
+            today_date.setMonth(today_date.getMonth());
+            frm.set_value('1st_installment_date', today_date.toISOString().split('T')[0])
             frm.set_df_property('1st_installment_date', 'read_only', 1);
-        } else if (frm.doc.are_you_received_1st_installment_fund === "No") {
+        } else if (frm.doc.are_you_received_1st_installment_fund == "No") {
             frm.set_value('1st_installment_date', '')
         }
     },
     are_you_received_2nd_installment_fund(frm) {
         if (frm.doc.are_you_received_2nd_installment_fund === "Yes") {
-            frm.set_value('2nd_installment_date', new Date())
+            let today_date = new Date();
+            today_date.setMonth(today_date.getMonth());
+            frm.set_value('2nd_installment_date', today_date.toISOString().split('T')[0])
             frm.set_df_property('2nd_installment_date', 'read_only', 1);
         } else if (frm.doc.are_you_received_2nd_installment_fund === "No") {
             frm.set_value('2nd_installment_date', '')
@@ -34,7 +39,9 @@ frappe.ui.form.on("SFAC Installment", {
     },
     are_you_received_3rd_installment_fund(frm) {
         if (frm.doc.are_you_received_3rd_installment_fund === "Yes") {
-            frm.set_value('3rd_installment_date', new Date())
+            let today_date = new Date();
+            today_date.setMonth(today_date.getMonth());
+            frm.set_value('3rd_installment_date', today_date.toISOString().split('T')[0])
             frm.set_df_property('3rd_installment_date', 'read_only', 1);
         } else if (frm.doc.are_you_received_3rd_installment_fund === "No") {
             frm.set_value('3rd_installment_date', '')
@@ -42,7 +49,9 @@ frappe.ui.form.on("SFAC Installment", {
     },
     are_you_received_4th_installment_fund(frm) {
         if (frm.doc.are_you_received_4th_installment_fund === "Yes") {
-            frm.set_value('4th_installment_date', new Date())
+            let today_date = new Date();
+            today_date.setMonth(today_date.getMonth());
+            frm.set_value('4th_installment_date', today_date.toISOString().split('T')[0])
             frm.set_df_property('4th_installment_date', 'read_only', 1);
         } else if (frm.doc.are_you_received_4th_installment_fund === "No") {
             frm.set_value('4th_installment_date', '')
@@ -50,7 +59,9 @@ frappe.ui.form.on("SFAC Installment", {
     },
     are_you_received_5th_installment_fund(frm) {
         if (frm.doc.are_you_received_5th_installment_fund === "Yes") {
-            frm.set_value('5th_installment_date', new Date())
+            let today_date = new Date();
+            today_date.setMonth(today_date.getMonth());
+            frm.set_value('5th_installment_date', today_date.toISOString().split('T')[0])
             frm.set_df_property('5th_installment_date', 'read_only', 1);
         } else if (frm.doc.are_you_received_5th_installment_fund === "No") {
             frm.set_value('5th_installment_date', '')
@@ -58,7 +69,9 @@ frappe.ui.form.on("SFAC Installment", {
     },
     are_you_received_6th_installment_fund(frm) {
         if (frm.doc.are_you_received_6th_installment_fund === "Yes") {
-            frm.set_value('6th_installment_date', new Date())
+            let today_date = new Date();
+            today_date.setMonth(today_date.getMonth());
+            frm.set_value('6th_installment_date', today_date.toISOString().split('T')[0])
             frm.set_df_property('6th_installment_date', 'read_only', 1);
         } else if (frm.doc.are_you_received_6th_installment_fund === "No") {
             frm.set_value('6th_installment_date', '')

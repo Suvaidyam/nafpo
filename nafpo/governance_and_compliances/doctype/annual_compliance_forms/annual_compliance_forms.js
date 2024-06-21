@@ -23,7 +23,6 @@ frappe.ui.form.on("Annual Compliance Forms", {
         check_fpo(frm)
     },
     onload: function (frm) {
-        hide_list_view_in_useless_data(frm)
         let date = new Date();
         date.setFullYear(date.getFullYear() + 1);
         let formattedDate = date.toISOString().split('T')[0];

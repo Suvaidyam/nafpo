@@ -37,7 +37,6 @@ frappe.ui.form.on("FPO Profiling", {
         truncate_multiple_fields_value(frm, ['block_name', 'name_of_the_fpo'])
     },
     block_name: async function (frm) {
-        // await apply_filter('name_of_the_fpo', 'block', frm, frm.doc.block_name, true)
         truncate_multiple_fields_value(frm, ['name_of_the_fpo'])
     },
     name_of_the_fpo: async function (frm) {
