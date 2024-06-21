@@ -5,6 +5,7 @@ frappe.ui.form.on("FPO Profiling", {
     async refresh(frm) {
         const today = new Date();
         frm.fields_dict.date_of_incorporation.$input.datepicker({ maxDate: today });
+        frm.fields_dict.date_of_registration.$input.datepicker({ maxDate: today });
         frm.fields_dict.ceo_date_of_joining.$input.datepicker({ maxDate: today });
         frm.fields_dict.accountant_date_of_joining.$input.datepicker({ maxDate: today });
         frm.fields_dict.ceo_dob.$input.datepicker({ maxDate: new Date(today.getFullYear() - 18, today.getMonth(), today.getDate()) });

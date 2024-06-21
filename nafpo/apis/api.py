@@ -16,3 +16,9 @@ def get_fpo_profile(name=None, fields=["*"]):
         name = frappe.db.get_value('BOD KYC',d.bod_kyc,'name1')
         final_fpo_data.append(name)
     return final_fpo_data
+
+@frappe.whitelist()
+def get_fpo_profile_doc(doctype_name,filter):
+    return frappe.db.get_value(doctype_name, {'name_of_the_fpo':filter },['date_of_registration'],as_dict=1)
+
+
