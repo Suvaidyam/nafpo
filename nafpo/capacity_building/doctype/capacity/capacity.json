@@ -11,7 +11,7 @@
   "topic",
   "category",
   "fpo_member",
-  "bod_kyc_name",
+  "bod_kyc",
   "other",
   "start_date",
   "end_date",
@@ -73,16 +73,11 @@
    "reqd": 1
   },
   {
-   "depends_on": "eval:doc.category == \"Governance System (BOD)\"",
-   "fieldname": "bod_kyc_name",
-   "fieldtype": "Data",
-   "label": "BOD KYC Name"
-  },
-  {
    "depends_on": "eval:doc.category == \"Membership System (FPO Member)\"",
    "fieldname": "fpo_member",
-   "fieldtype": "Data",
-   "label": "FPO Member"
+   "fieldtype": "Table MultiSelect",
+   "label": "FPO Member",
+   "options": "FPO member details Child"
   },
   {
    "depends_on": "eval:doc.category == \"Other\"",
@@ -114,11 +109,18 @@
   {
    "fieldname": "column_break_sfuz",
    "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.category == \"Governance System (BOD)\"",
+   "fieldname": "bod_kyc",
+   "fieldtype": "Table MultiSelect",
+   "label": "BOD KYC",
+   "options": "BOD KYC Child"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-21 12:56:47.579016",
+ "modified": "2024-06-21 16:43:35.730254",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity",
