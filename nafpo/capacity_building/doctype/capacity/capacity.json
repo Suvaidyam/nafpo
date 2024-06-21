@@ -6,7 +6,6 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "training_details",
   "section_break_feyi",
   "fpo",
   "topic",
@@ -25,11 +24,6 @@
   "training_document_if_needed"
  ],
  "fields": [
-  {
-   "fieldname": "training_details",
-   "fieldtype": "Button",
-   "label": "Training Details - Display training details of this FPO"
-  },
   {
    "fieldname": "section_break_feyi",
    "fieldtype": "Section Break"
@@ -124,7 +118,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-11 12:53:01.630462",
+ "modified": "2024-06-21 12:56:47.579016",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity",

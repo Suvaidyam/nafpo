@@ -31,9 +31,9 @@ def execute(filters=None):
     sql_query = """
         SELECT
             'First Installment' AS name,
-            COUNT(CASE WHEN are_you_received_1st_installment_fund = 'No' THEN 1 END) AS pending_count,
-            COUNT(CASE WHEN are_you_received_1st_installment_fund = 'Yes' AND 1st_installment_date <= 1st_installment_due_date THEN 1 END) AS fund_was_received_before_due_date,
-            COUNT(CASE WHEN are_you_received_1st_installment_fund = 'Yes' AND 1st_installment_date > 1st_installment_due_date THEN 1 END) AS fund_was_received_after_due_date
+            SUM(CASE WHEN are_you_received_1st_installment_fund = 'No' AND 1st_installment_due_date < CURDATE() THEN 1 ELSE 0 END) AS pending_count,
+            SUM(CASE WHEN are_you_received_1st_installment_fund = 'Yes' AND 1st_installment_date <= 1st_installment_due_date THEN 1 ELSE 0 END) AS fund_was_received_before_due_date,
+            SUM(CASE WHEN are_you_received_1st_installment_fund = 'Yes' AND 1st_installment_date > 1st_installment_due_date THEN 1 ELSE 0 END) AS fund_was_received_after_due_date
         FROM
             `tabSFAC Installment`
     """
