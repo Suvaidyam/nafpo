@@ -21,6 +21,7 @@
   "column_break_zdzq",
   "type_of_organization",
   "date_of_incorporation",
+  "date_of_registration",
   "registration_no",
   "gst_status",
   "gst_no",
@@ -108,8 +109,7 @@
    "in_list_view": 1,
    "label": "FPO",
    "options": "FPO",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "fpos_address",
@@ -476,37 +476,17 @@
    "in_list_view": 1,
    "label": "Name of the FPO",
    "options": "FPO"
+  },
+  {
+   "fieldname": "date_of_registration",
+   "fieldtype": "Date",
+   "label": "Date of Registration",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [
-  {
-   "link_doctype": "One Time Organization Registration Forms",
-   "link_fieldname": "fpo",
-   "table_fieldname": "name_of_the_fpo"
-  },
-  {
-   "link_doctype": "Second Installment FPOs",
-   "link_fieldname": "fpo"
-  },
-  {
-   "link_doctype": "Third Installment FPOs",
-   "link_fieldname": "fpo"
-  },
-  {
-   "link_doctype": "Fourth Installment FPOs",
-   "link_fieldname": "fpo"
-  },
-  {
-   "link_doctype": "Fifth Installment FPOs",
-   "link_fieldname": "fpo"
-  },
-  {
-   "link_doctype": "Six Installment Fpo",
-   "link_fieldname": "fpo"
-  }
- ],
- "modified": "2024-06-20 09:17:31.046680",
+ "links": [],
+ "modified": "2024-06-20 21:29:28.999718",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",

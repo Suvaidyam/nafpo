@@ -121,25 +121,7 @@ doctype_js = {
     "Annual Compliance Forms" : [
         "public/js/utils/utils.js"
     ],
-    "Board of Directors Meeting Forms" : [
-        "public/js/utils/utils.js"
-    ],
-    "First Installment FPOs" : [
-        "public/js/utils/utils.js"
-    ],
-    "Second Installment FPOs" : [
-        "public/js/utils/utils.js"
-    ],
-    "Third Installment FPOs" : [
-        "public/js/utils/utils.js"
-    ],
-    "Fourth Installment FPOs" : [
-        "public/js/utils/utils.js"
-    ],
-    "Fifth Installment FPOs" : [
-        "public/js/utils/utils.js"
-    ],
-    "Six Installment Fpo" : [
+    "SFAC Installment" : [
         "public/js/utils/utils.js"
     ],
 }

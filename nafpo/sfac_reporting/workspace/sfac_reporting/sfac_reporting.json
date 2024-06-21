@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"40dtVVqaSl\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">SFAC Reporting</span>\",\"col\":12}},{\"id\":\"utv14IjQxC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"CBBO Management\",\"col\":4}},{\"id\":\"eenF0ddKw8\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"First Installment FPOs\",\"col\":4}},{\"id\":\"KPmLU5-32R\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Second Installment FPOs\",\"col\":4}},{\"id\":\"-KM4owOjwr\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Third Installment FPOs\",\"col\":4}},{\"id\":\"kXJVTF9P3i\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Fourth Installment FPOs\",\"col\":4}},{\"id\":\"5P7LbCTBpY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Fifth Installment FPOs\",\"col\":4}},{\"id\":\"8KjQ4dnJIY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Six Installment Fpo\",\"col\":4}}]",
+ "content": "[{\"id\":\"40dtVVqaSl\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">SFAC Reporting</span>\",\"col\":12}},{\"id\":\"6sj5A2Azh2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"SFAC Installment\",\"col\":4}}]",
  "creation": "2024-06-19 19:00:54.705445",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,38 +13,14 @@
  "is_hidden": 0,
  "label": "SFAC Reporting",
  "links": [],
- "modified": "2024-06-19 19:02:51.674483",
+ "modified": "2024-06-20 18:10:57.530460",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "SFAC Reporting",
  "number_cards": [
   {
-   "label": "CBBO Management",
-   "number_card_name": "CBBO Management"
-  },
-  {
-   "label": "First Installment FPOs",
-   "number_card_name": "First Installment FPOs"
-  },
-  {
-   "label": "Second Installment FPOs",
-   "number_card_name": "Second Installment FPOs"
-  },
-  {
-   "label": "Third Installment FPOs",
-   "number_card_name": "Third Installment FPOs"
-  },
-  {
-   "label": "Fourth Installment FPOs",
-   "number_card_name": "Fourth Installment FPOs"
-  },
-  {
-   "label": "Fifth Installment FPOs",
-   "number_card_name": "Fifth Installment FPOs"
-  },
-  {
-   "label": "Six Installment Fpo",
-   "number_card_name": "Six Installment Fpo"
+   "label": "SFAC Installment",
+   "number_card_name": "SFAC Installment"
   }
  ],
  "owner": "Administrator",
