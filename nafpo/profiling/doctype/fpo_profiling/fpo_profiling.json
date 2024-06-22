@@ -182,6 +182,7 @@
    "fieldtype": "Data",
    "label": "Contact Detail of FPO",
    "length": 10,
+   "non_negative": 1,
    "reqd": 1
   },
   {
@@ -471,12 +472,11 @@
   },
   {
    "fieldname": "name_of_the_fpo_copy",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "hidden": 1,
    "ignore_user_permissions": 1,
    "in_list_view": 1,
-   "label": "Name of the FPO",
-   "options": "FPO"
+   "label": "Name of the FPO"
   },
   {
    "fieldname": "date_of_registration",
@@ -487,7 +487,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-21 10:11:18.799178",
+ "modified": "2024-06-21 18:37:23.050514",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
