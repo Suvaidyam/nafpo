@@ -1,7 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"OIj9JaG8jO\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Business Planning</span>\",\"col\":12}},{\"id\":\"bxRTkO8TKh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Business Planning\",\"col\":3}}]",
- "creation": "2024-05-11 19:53:22.072209",
+ "creation": "2024-06-19 09:58:09.034151",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Business Planning",
  "links": [],
- "modified": "2024-06-13 12:10:17.954201",
+ "modified": "2024-06-22 11:42:19.880442",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Business Planning",
@@ -39,7 +39,7 @@
    "role": "IA"
   }
  ],
- "sequence_id": 9.0,
+ "sequence_id": 11.0,
  "shortcuts": [
   {
    "color": "Grey",
