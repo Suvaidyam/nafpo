@@ -1,7 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"MCUzdlJ9B9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\" style=\\\"\\\">Geographical Reach (FPO Profile)</span>\",\"col\":12}},{\"id\":\"L94VgzoGYE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State Cover\",\"col\":4}},{\"id\":\"O-2kSZF0XQ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District Cover\",\"col\":4}},{\"id\":\"FJkubRnyzd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block Cover\",\"col\":4}},{\"id\":\"PwS95sT0Qf\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\">FPO</span>\",\"col\":12}},{\"id\":\"oAOsdHB5T5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No. of FPO (Total FPO)\",\"col\":4}},{\"id\":\"lYU1vxnzvV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No. of FPO (FPO Profile)\",\"col\":4}},{\"id\":\"sgS27P5TrE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"BOD\",\"col\":4}},{\"id\":\"nI-1fx8nwb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Producer Group\",\"col\":6}},{\"id\":\"WbjftSkge4\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Members\",\"col\":6}}]",
- "creation": "2024-05-11 06:50:42.682799",
+ "creation": "2024-06-19 09:58:08.323392",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-05-27 18:09:34.403815",
+ "modified": "2024-06-22 11:42:19.030799",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Dashboards",
@@ -72,7 +72,7 @@
    "role": "IA"
   }
  ],
- "sequence_id": 1.0,
+ "sequence_id": 2.0,
  "shortcuts": [],
  "title": "Dashboards"
 }

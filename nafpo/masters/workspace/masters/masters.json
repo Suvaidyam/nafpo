@@ -1,7 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"PzXFEezwZo\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Geo Masters</span>\",\"col\":12}},{\"id\":\"OSZuhvOv17\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State\",\"col\":4}},{\"id\":\"-CuOvgLsC3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District\",\"col\":4}},{\"id\":\"WrsPbp20XM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block\",\"col\":4}},{\"id\":\"ohemT5PYOi\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Grampanchayat\",\"col\":4}},{\"id\":\"WRofSgKarf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Village\",\"col\":4}},{\"id\":\"vhXdidEDDV\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>NAFPO Masters</b></span>\",\"col\":12}},{\"id\":\"IkNon-Zm0k\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Financial Year\",\"col\":4}},{\"id\":\"da9qU8xNZg\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"IA\",\"col\":4}},{\"id\":\"v72lbqCo3S\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"CBBO\",\"col\":4}},{\"id\":\"1ObLhE4Rgw\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO\",\"col\":4}},{\"id\":\"QvimP965HE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Category\",\"col\":4}}]",
- "creation": "2024-05-09 07:37:57.599460",
+ "creation": "2024-06-19 09:58:07.707303",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Masters",
  "links": [],
- "modified": "2024-06-12 09:30:15.414980",
+ "modified": "2024-06-22 11:42:19.224471",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Masters",
@@ -77,7 +77,7 @@
    "role": "IA"
   }
  ],
- "sequence_id": 2.0,
+ "sequence_id": 4.0,
  "shortcuts": [],
  "title": "Masters"
 }
