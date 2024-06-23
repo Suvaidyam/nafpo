@@ -25,7 +25,7 @@
    "label": "Six Installment"
   }
  ],
- "content": "[{\"id\":\"EHkbFMk4GR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">SFAC Reporting</span>\",\"col\":12}},{\"id\":\"MH7iSuSkP2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"SFAC Installment\",\"col\":4}},{\"id\":\"77MVh8QkJA\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Fund Members Details\",\"col\":4}},{\"id\":\"i76n_0W780\",\"type\":\"chart\",\"data\":{\"chart_name\":\"First Installment\",\"col\":6}},{\"id\":\"S9pF1KA-e-\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Second Installment\",\"col\":6}},{\"id\":\"Xk61TKcrek\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Third Installment\",\"col\":6}},{\"id\":\"oSmXBVFR8I\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fourth Installment\",\"col\":6}},{\"id\":\"l2MyR7xLYo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fifth Installment\",\"col\":6}},{\"id\":\"3VlqcJLloh\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Six Installment\",\"col\":6}}]",
+ "content": "[{\"id\":\"EHkbFMk4GR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">SFAC Reporting</span>\",\"col\":12}},{\"id\":\"MH7iSuSkP2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"SFAC Installment\",\"col\":4}},{\"id\":\"o2yPv9V-3F\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Fund Members Details\",\"col\":4}},{\"id\":\"i76n_0W780\",\"type\":\"chart\",\"data\":{\"chart_name\":\"First Installment\",\"col\":6}},{\"id\":\"S9pF1KA-e-\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Second Installment\",\"col\":6}},{\"id\":\"Xk61TKcrek\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Third Installment\",\"col\":6}},{\"id\":\"oSmXBVFR8I\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fourth Installment\",\"col\":6}},{\"id\":\"l2MyR7xLYo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fifth Installment\",\"col\":6}},{\"id\":\"3VlqcJLloh\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Six Installment\",\"col\":6}}]",
  "creation": "2024-06-22 11:10:51.364717",
  "custom_blocks": [],
  "docstatus": 0,
@@ -38,7 +38,7 @@
  "is_hidden": 0,
  "label": "SFAC Reporting",
  "links": [],
- "modified": "2024-06-23 13:06:32.244030",
+ "modified": "2024-06-23 16:36:15.758268",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "SFAC Reporting",
