@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-06-22 11:42:19.030799",
+ "modified": "2024-06-23 13:06:31.417626",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Dashboards",
@@ -72,7 +72,7 @@
    "role": "IA"
   }
  ],
- "sequence_id": 2.0,
+ "sequence_id": 1.0,
  "shortcuts": [],
  "title": "Dashboards"
 }

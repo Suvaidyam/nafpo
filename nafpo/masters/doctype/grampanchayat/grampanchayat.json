@@ -18,6 +18,7 @@
   {
    "fieldname": "state",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "State",
    "options": "State",
    "reqd": 1
@@ -33,6 +34,7 @@
   {
    "fieldname": "block",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Block",
    "options": "Block",
    "reqd": 1
@@ -40,12 +42,14 @@
   {
    "fieldname": "grampanchayat_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Grampanchayat Name",
    "reqd": 1
   },
   {
    "fieldname": "grampanchayat_code",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Grampanchayat Code",
    "unique": 1
   },
@@ -53,6 +57,7 @@
    "default": "Active",
    "fieldname": "status",
    "fieldtype": "Autocomplete",
+   "in_list_view": 1,
    "label": "Status",
    "options": "Active\nInactive"
   }
@@ -60,7 +65,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-12 16:06:22.885285",
+ "modified": "2024-06-23 13:04:00.189689",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Grampanchayat",
