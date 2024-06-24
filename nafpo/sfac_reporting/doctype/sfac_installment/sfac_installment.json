@@ -61,6 +61,7 @@
    "unique": 1
   },
   {
+   "description": "<span style=\"font-size:12px; color:gray;\">Registration Date</span>",
    "fieldname": "first_installment_section",
    "fieldtype": "Section Break",
    "label": "First Installment"
@@ -96,6 +97,7 @@
    "non_negative": 1
   },
   {
+   "description": "<span style=\"font-size:12px; color:gray;\">Registration Date +6 Months</span>",
    "fieldname": "second_installment_section",
    "fieldtype": "Section Break",
    "label": "Second Installment"
@@ -123,6 +125,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "description": "<span style=\"font-size:12px; color:gray;\">Registration Date +12 Months</span>",
    "fieldname": "third_installment_section",
    "fieldtype": "Section Break",
    "label": "Third Installment"
@@ -150,6 +153,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "description": "<span style=\"font-size:12px; color:gray;\">Registration Date +18 Months</span>",
    "fieldname": "fourth_installment_section",
    "fieldtype": "Section Break",
    "label": "Fourth Installment"
@@ -201,6 +205,7 @@
    "label": "Proof of Document"
   },
   {
+   "description": "<span style=\"font-size:12px; color:gray;\">Registration Date\n+24 Months</span>",
    "fieldname": "fifth_installment_section",
    "fieldtype": "Section Break",
    "label": "Fifth Installment"
@@ -234,6 +239,7 @@
    "label": "Proof of document"
   },
   {
+   "description": "<span style=\"font-size:12px; color:gray;\">Registration Date +30 Months</span>",
    "fieldname": "six_installment_section",
    "fieldtype": "Section Break",
    "label": "Six Installment"
@@ -318,7 +324,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-21 12:15:24.755748",
+ "modified": "2024-06-24 11:03:21.469725",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "SFAC Installment",

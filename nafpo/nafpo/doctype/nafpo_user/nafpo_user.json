@@ -105,9 +105,10 @@
    "options": "<div id=\"datatable\"></div>"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-10 12:13:28.515350",
+ "modified": "2024-06-24 11:13:30.971774",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Nafpo User",
