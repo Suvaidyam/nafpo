@@ -37,6 +37,7 @@
    "default": "Active",
    "fieldname": "status",
    "fieldtype": "Autocomplete",
+   "hidden": 1,
    "label": "Status",
    "options": "Active\nInactive"
   }
@@ -44,7 +45,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-11 10:58:45.570842",
+ "modified": "2024-06-24 14:17:07.664169",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "District",

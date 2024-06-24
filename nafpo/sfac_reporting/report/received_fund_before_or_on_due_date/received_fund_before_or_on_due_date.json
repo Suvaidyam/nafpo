@@ -1,0 +1,27 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-06-24 16:16:23.181627",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{}",
+ "letterhead": null,
+ "modified": "2024-06-24 16:16:35.981984",
+ "modified_by": "Administrator",
+ "module": "SFAC Reporting",
+ "name": "Received Fund before or on due date",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "SFAC Installment",
+ "report_name": "Received Fund before or on due date",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}
