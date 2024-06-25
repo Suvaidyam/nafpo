@@ -8,6 +8,8 @@
  "field_order": [
   "fpo",
   "fpo_copy",
+  "cbbo",
+  "ia",
   "first_installment_section",
   "are_you_received_1st_installment_fund",
   "1st_installment_due_date",
@@ -319,12 +321,28 @@
    "in_list_view": 1,
    "label": "FPO",
    "unique": 1
+  },
+  {
+   "fetch_from": "fpo.cbbo_name",
+   "fieldname": "cbbo",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "CBBO",
+   "options": "CBBO"
+  },
+  {
+   "fetch_from": "cbbo.ia_name",
+   "fieldname": "ia",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "IA",
+   "options": "IA"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-24 11:03:21.469725",
+ "modified": "2024-06-25 11:27:07.898655",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "SFAC Installment",
