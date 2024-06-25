@@ -23,7 +23,7 @@ def execute(filters=None):
         },
         {
             "fieldname": "due_date",
-            "label": "Due Date",
+            "label": "Eligible Date",
             "fieldtype": "Date",
             "width": 300
         }
