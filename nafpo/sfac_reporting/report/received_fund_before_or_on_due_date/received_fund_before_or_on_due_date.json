@@ -10,7 +10,7 @@
  "is_standard": "Yes",
  "json": "{}",
  "letterhead": null,
- "modified": "2024-06-24 16:16:35.981984",
+ "modified": "2024-06-25 11:17:21.732810",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "Received Fund before or on due date",
@@ -22,6 +22,9 @@
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "FPO"
   }
  ]
 }

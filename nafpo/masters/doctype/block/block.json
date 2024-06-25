@@ -52,7 +52,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-11 11:00:32.047722",
+ "modified": "2024-06-25 12:43:51.670287",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Block",
@@ -73,7 +73,6 @@
   },
   {
    "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,
@@ -85,7 +84,6 @@
    "write": 1
   },
   {
-   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
@@ -106,7 +104,6 @@
    "share": 1
   },
   {
-   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
