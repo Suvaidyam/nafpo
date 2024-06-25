@@ -1,0 +1,42 @@
+{
+ "charts": [],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Business Planning\"}}]",
+ "creation": "2024-06-25 12:18:22.529271",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "buying",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Business Planning",
+ "links": [],
+ "modified": "2024-06-25 12:19:12.034500",
+ "modified_by": "Administrator",
+ "module": "Business Planning",
+ "name": "Business Planning",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "FPO"
+  },
+  {
+   "role": "CBBO"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "Admin"
+  }
+ ],
+ "sequence_id": 11.0,
+ "shortcuts": [],
+ "title": "Business Planning"
+}

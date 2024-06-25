@@ -166,7 +166,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-19 15:19:14.051415",
+ "modified": "2024-06-25 12:10:09.779649",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "BOD KYC",
@@ -220,7 +220,6 @@
    "write": 1
   },
   {
-   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,

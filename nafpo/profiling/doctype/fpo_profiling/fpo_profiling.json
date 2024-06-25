@@ -487,7 +487,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-21 18:37:23.050514",
+ "modified": "2024-06-25 12:11:30.104560",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
@@ -514,7 +514,8 @@
    "report": 1,
    "role": "Admin",
    "select": 1,
-   "share": 1
+   "share": 1,
+   "write": 1
   },
   {
    "create": 1,
@@ -529,6 +530,7 @@
    "write": 1
   },
   {
+   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
@@ -547,7 +549,8 @@
    "report": 1,
    "role": "IA",
    "select": 1,
-   "share": 1
+   "share": 1,
+   "write": 1
   }
  ],
  "show_title_field_in_link": 1,

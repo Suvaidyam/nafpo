@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Crop",
  "links": [],
- "modified": "2024-06-23 13:06:31.984156",
+ "modified": "2024-06-25 12:18:32.493236",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop",
@@ -32,7 +32,7 @@
  "public": 1,
  "quick_lists": [],
  "roles": [],
- "sequence_id": 6.0,
+ "sequence_id": 7.0,
  "shortcuts": [],
  "title": "Crop"
 }
