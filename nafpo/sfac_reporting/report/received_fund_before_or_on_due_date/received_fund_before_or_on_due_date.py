@@ -23,13 +23,13 @@ def execute(filters=None):
         },
         {
             "fieldname": "installment_date",
-            "label": "Receive Installment",
+            "label": "Received Installment",
             "fieldtype": "Date",
             "width": 300
         },
         {
             "fieldname": "due_date",
-            "label": "Due Date",
+            "label": "Eligible Date",
             "fieldtype": "Date",
             "width": 300
         }

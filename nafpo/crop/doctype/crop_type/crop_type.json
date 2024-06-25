@@ -10,9 +10,8 @@
   "fpo",
   "cbbo",
   "ia",
-  "column_break_gnqh",
   "name1",
-  "status"
+  "column_break_gnqh"
  ],
  "fields": [
   {
@@ -43,18 +42,10 @@
    "reqd": 1
   },
   {
-   "default": "Active",
-   "fieldname": "status",
-   "fieldtype": "Autocomplete",
-   "in_list_view": 1,
-   "label": "Status",
-   "options": "Active\nInactive",
-   "reqd": 1
-  },
-  {
    "fetch_from": "fpo.cbbo_name",
    "fieldname": "cbbo",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "CBBO",
    "options": "CBBO",
    "read_only_depends_on": "eval:doc.fpo && doc.fpo.length > 0"
@@ -63,6 +54,7 @@
    "fetch_from": "cbbo.ia_name",
    "fieldname": "ia",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "IA",
    "options": "IA",
    "read_only_depends_on": "eval:doc.fpo && doc.fpo.length > 0"
@@ -70,7 +62,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-20 09:32:59.936711",
+ "modified": "2024-06-25 10:34:02.987072",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop Type",
