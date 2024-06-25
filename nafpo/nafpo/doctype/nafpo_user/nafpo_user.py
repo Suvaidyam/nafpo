@@ -137,7 +137,7 @@ def fpo_perm(self):
 
 	fpo_list = frappe.get_doc('FPO',
 			self.fpo,
-			fields=['cbbo_name']
+			fields=['*']
 		)
 
 	cbbo_list = frappe.get_doc('CBBO',
@@ -176,3 +176,55 @@ def fpo_perm(self):
 		perm_doc = frappe.get_doc(cbbo_perm_doc)
 		perm_doc.for_value=fpo_list.cbbo_name
 		perm_doc.insert(ignore_permissions=True)
+
+	# Set State user permission directly within fpo_perm
+	state_perm_doc = {
+		'doctype': "User Permission",
+		'allow': 'State',
+		'user':self.email
+	}
+	state_perm_exist  = frappe.db.exists(state_perm_doc)
+	if state_perm_exist:
+		existing_doc = frappe.get_doc("User Permission",state_perm_exist)
+		existing_doc.for_value=fpo_list.state
+		existing_doc.save(ignore_permissions=True)
+	else:
+		perm_doc = frappe.get_doc(state_perm_doc)
+		perm_doc.for_value=fpo_list.state
+		perm_doc.insert(ignore_permissions=True)
+
+	# Set District user permission directly within fpo_perm
+	district_perm_doc = {
+		'doctype': "User Permission",
+		'allow': 'District',
+		'user':self.email
+	}
+	district_perm_exist  = frappe.db.exists(district_perm_doc)
+	if district_perm_exist:
+		existing_doc = frappe.get_doc("User Permission",district_perm_exist)
+		existing_doc.for_value=fpo_list.district
+		existing_doc.save(ignore_permissions=True)
+	else:
+		perm_doc = frappe.get_doc(district_perm_doc)
+		perm_doc.for_value=fpo_list.district
+		perm_doc.insert(ignore_permissions=True)
+
+
+	# Set Block user permission directly within fpo_perm
+	block_perm_doc = {
+		'doctype': "User Permission",
+		'allow': 'Block',
+		'user':self.email
+	}
+	block_perm_exist  = frappe.db.exists(block_perm_doc)
+	for b in fpo_list.block:
+		# if b.length > 0:
+		print('/////////////////////////////////',b.block)
+		if block_perm_exist:
+			existing_doc = frappe.get_doc("User Permission",block_perm_exist)
+			existing_doc.for_value=b.block
+			existing_doc.save(ignore_permissions=True)
+		else:
+			perm_doc = frappe.get_doc(block_perm_doc)
+			perm_doc.for_value=b.block
+			perm_doc.insert(ignore_permissions=True)

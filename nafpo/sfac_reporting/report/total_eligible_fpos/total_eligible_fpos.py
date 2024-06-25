@@ -28,12 +28,12 @@ def execute(filters=None):
             "fieldtype": "Date",
             "width": 300
         },
-        {
-            "fieldname": "total_fpo_count",
-            "label": "Total Fpo Count",
-            "fieldtype": "Int",
-            "width": 300
-        }
+        # {
+        #     "fieldname": "total_fpo_count",
+        #     "label": "Total Fpo Count",
+        #     "fieldtype": "Int",
+        #     "width": 300
+        # }
     ]
     cond_str = ReportFilter.rport_filter_by_user_permissions(table='sfac_inst')
     print('=================================cond_str', cond_str)
@@ -141,14 +141,14 @@ def execute(filters=None):
     print('=====================',total_count)
     
 
-    # Append total count row
-    data.append({
-        'fpo_name': 'Total FPO Count',
-        'fpo_contact_number': '',
-        'installment': '',
-        'due_date': '',
-        'total_fpo_count': total_count
-    })
+    # # Append total count row
+    # data.append({
+    #     'fpo_name': 'Total FPO Count',
+    #     'fpo_contact_number': '',
+    #     'installment': '',
+    #     'due_date': '',
+    #     'total_fpo_count': total_count
+    # })
 
     # Return columns and data
     return columns, data

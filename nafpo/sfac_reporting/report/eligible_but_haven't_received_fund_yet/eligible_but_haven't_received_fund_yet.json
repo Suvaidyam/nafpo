@@ -9,7 +9,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-06-24 14:49:25.730433",
+ "modified": "2024-06-25 13:48:58.392648",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "Eligible but haven't received fund yet",
@@ -18,5 +18,15 @@
  "ref_doctype": "SFAC Installment",
  "report_name": "Eligible but haven't received fund yet",
  "report_type": "Script Report",
- "roles": []
+ "roles": [
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
+  }
+ ]
 }
