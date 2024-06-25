@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"5kNU2zqVkL\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Governance &amp; Compliance</span>\",\"col\":12}},{\"id\":\"8Ff4R5Jf2N\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"One Time Organization Registration Forms\",\"col\":4}},{\"id\":\"0IHs_i5kS2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Annual Compliance Forms\",\"col\":4}},{\"id\":\"oe1xGZNo-9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Board of Directors (BOD) Meeting Forms\",\"col\":4}}]",
+ "content": "[{\"id\":\"8Ff4R5Jf2N\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"One Time Organization Registration Forms\",\"col\":4}},{\"id\":\"0IHs_i5kS2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Annual Compliance Forms\",\"col\":4}},{\"id\":\"oe1xGZNo-9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Board of Directors (BOD) Meeting Forms\",\"col\":4}}]",
  "creation": "2024-06-22 10:57:03.537908",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Governance & Compliance",
  "links": [],
- "modified": "2024-06-25 12:18:32.556136",
+ "modified": "2024-06-25 17:13:51.375122",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Governance & Compliance",
