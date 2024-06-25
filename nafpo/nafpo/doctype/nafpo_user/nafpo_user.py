@@ -208,23 +208,20 @@ def fpo_perm(self):
 		perm_doc = frappe.get_doc(district_perm_doc)
 		perm_doc.for_value=fpo_list.district
 		perm_doc.insert(ignore_permissions=True)
-
-
 	# Set Block user permission directly within fpo_perm
-	block_perm_doc = {
-		'doctype': "User Permission",
-		'allow': 'Block',
-		'user':self.email
-	}
-	block_perm_exist  = frappe.db.exists(block_perm_doc)
-	for b in fpo_list.block:
-		# if b.length > 0:
-		print('/////////////////////////////////',b.block)
-		if block_perm_exist:
-			existing_doc = frappe.get_doc("User Permission",block_perm_exist)
-			existing_doc.for_value=b.block
-			existing_doc.save(ignore_permissions=True)
-		else:
-			perm_doc = frappe.get_doc(block_perm_doc)
-			perm_doc.for_value=b.block
-			perm_doc.insert(ignore_permissions=True)
+	block_perms = frappe.db.get_list('User Permission',filters={'allow': 'Block','user':self.email},pluck='name')
+	if len(block_perms):
+		for bp in block_perms:
+			frappe.delete_doc("User Permission",bp,ignore_permissions=True)
+	if len(fpo_list.block):
+		for b in fpo_list.block:
+			block_perm_doc = {
+				'doctype': "User Permission",
+				'allow': 'Block',
+				'user':self.email,
+				'for_value':b.block
+			}
+			block_perm_exist = frappe.db.exists(block_perm_doc)
+			if not block_perm_exist:
+				perm_doc = frappe.get_doc(block_perm_doc)
+				perm_doc.insert(ignore_permissions=True)
