@@ -3,13 +3,14 @@
 
 frappe.ui.form.on("One Time Organization Registration Forms", {
     refresh: async function (frm) {
-        if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
+        if (frappe.user.has_role('FPO') && frm.is_new(frm) && !frappe.user.has_role('Administrator')) {
             try {
                 let { message: { fpo } } = await frappe.call({
                     method: "frappe.client.get",
                     args: { doctype: "Nafpo User", name: frappe.session.user }
                 });
                 frm.set_value('fpo', fpo)
+                set_due_date(frm)
             } catch (e) {
                 console.error('User data fetch error:', e);
             }
@@ -33,14 +34,8 @@ frappe.ui.form.on("One Time Organization Registration Forms", {
     adt_1_status: function (frm) {
         blank_submitted_on(frm, 'adt_1_status', 'adt_1_submitted_on');
     },
-    onload: function (frm) {
-        let date = new Date();
-        date.setDate(date.getDate() + 180);
-        frm.set_value('inc_20_due_date', date.toISOString().split('T')[0]);
-        date.setDate(date.getDate() + 30);
-        frm.set_value('inc_22_due_date', date.toISOString().split('T')[0]);
-        frm.set_value('adt_1_due_date', date.toISOString().split('T')[0]);
-        // frm.save()
+    fpo(frm) {
+        set_due_date(frm)
     },
     ...['inc_20_bank_statement', 'inc_20_bank_statement', 'inc_22_noc', 'inc_22_rent_agreement', 'inc_22_electricity_bill', 'adt_1_fpo_resolution'].reduce((acc, field) => {
         acc[field] = function (frm) {
@@ -70,6 +65,55 @@ async function check_fpo(frm) {
         console.error('Error fetching data:', err);
         return false;
     }
+}
+
+function blank_submitted_on(frm, status_field, date_field) {
+    if (frm.doc[status_field] == "Pending") {
+        frm.set_value(date_field, '');
+    }
+}
+
+
+function set_due_date(frm) {
+    frappe.call({
+        method: "nafpo.apis.api.get_fpo_profile_doc",
+        args: {
+            doctype_name: 'FPO Profiling',
+            filter: frm.doc.fpo
+        },
+        callback: function (response) {
+            let date = new Date(response.message.date_of_registration);
+            date.setDate(date.getDate() + 180);
+            frm.set_value('inc_20_due_date', date.toISOString().split('T')[0]);
+            date.setDate(date.getDate() + 30);
+            frm.set_value('inc_22_due_date', date.toISOString().split('T')[0]);
+            frm.set_value('adt_1_due_date', date.toISOString().split('T')[0]);
+        },
+        error: function (error) {
+            console.log("An error occurred: ", error);
+        }
+    });
+}
+
+function check_fpo(frm) {
+    frappe.call({
+        method: "nafpo.apis.api.check_multiple",
+        args: {
+            doctype_name: 'One Time Organization Registration Forms',
+            filter: frm.doc.fpo
+        },
+        callback: function (response) {
+            let date = new Date(response.message.date_of_registration);
+            date.setDate(date.getDate() + 180);
+            frm.set_value('inc_20_due_date', date.toISOString().split('T')[0]);
+            date.setDate(date.getDate() + 30);
+            frm.set_value('inc_22_due_date', date.toISOString().split('T')[0]);
+            frm.set_value('adt_1_due_date', date.toISOString().split('T')[0]);
+        },
+        error: function (error) {
+            console.log("An error occurred: ", error);
+        }
+    });
 }
 
 function blank_submitted_on(frm, status_field, date_field) {

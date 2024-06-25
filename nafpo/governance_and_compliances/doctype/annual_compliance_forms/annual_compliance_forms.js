@@ -3,7 +3,7 @@
 
 frappe.ui.form.on("Annual Compliance Forms", {
     refresh: async function (frm) {
-        if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
+        if (frappe.user.has_role('FPO') && frm.is_new(frm) && !frappe.user.has_role('Administrator')) {
             try {
                 let { message: { fpo } } = await frappe.call({
                     method: "frappe.client.get",
