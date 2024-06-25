@@ -25,7 +25,7 @@
    "label": "Six Installment"
   }
  ],
- "content": "[{\"id\":\"EHkbFMk4GR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">SFAC Reporting</span>\",\"col\":12}},{\"id\":\"MH7iSuSkP2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"SFAC Installment\",\"col\":4}},{\"id\":\"uF_xMKbT_i\",\"type\":\"spacer\",\"data\":{\"col\":7}},{\"id\":\"i76n_0W780\",\"type\":\"chart\",\"data\":{\"chart_name\":\"First Installment\",\"col\":6}},{\"id\":\"S9pF1KA-e-\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Second Installment\",\"col\":6}},{\"id\":\"Xk61TKcrek\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Third Installment\",\"col\":6}},{\"id\":\"oSmXBVFR8I\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fourth Installment\",\"col\":6}},{\"id\":\"l2MyR7xLYo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fifth Installment\",\"col\":6}},{\"id\":\"3VlqcJLloh\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Six Installment\",\"col\":6}}]",
+ "content": "[{\"id\":\"EHkbFMk4GR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">SFAC Reporting</span>\",\"col\":12}},{\"id\":\"jwXnO7zBpC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Total Eligible FPOs\",\"col\":3}},{\"id\":\"6pqHtbdA5S\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Received Fund before or on due date\",\"col\":3}},{\"id\":\"W-O-Nq0vZF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Received Fund after Due Date\",\"col\":3}},{\"id\":\"aQp5hHaIHf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Eligible but haven't received fund yet\",\"col\":3}},{\"id\":\"MH7iSuSkP2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"SFAC Installment\",\"col\":3}},{\"id\":\"MpGlRNobWF\",\"type\":\"spacer\",\"data\":{\"col\":9}},{\"id\":\"i76n_0W780\",\"type\":\"chart\",\"data\":{\"chart_name\":\"First Installment\",\"col\":6}},{\"id\":\"S9pF1KA-e-\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Second Installment\",\"col\":6}},{\"id\":\"Xk61TKcrek\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Third Installment\",\"col\":6}},{\"id\":\"oSmXBVFR8I\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fourth Installment\",\"col\":6}},{\"id\":\"l2MyR7xLYo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fifth Installment\",\"col\":6}},{\"id\":\"3VlqcJLloh\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Six Installment\",\"col\":6}}]",
  "creation": "2024-06-22 11:10:51.364717",
  "custom_blocks": [],
  "docstatus": 0,
@@ -38,7 +38,7 @@
  "is_hidden": 0,
  "label": "SFAC Reporting",
  "links": [],
- "modified": "2024-06-25 12:18:32.696033",
+ "modified": "2024-06-25 13:47:36.870983",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "SFAC Reporting",
@@ -54,6 +54,35 @@
  "quick_lists": [],
  "roles": [],
  "sequence_id": 10.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Total Eligible FPOs",
+   "link_to": "Total Eligible FPOs",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Received Fund after Due Date",
+   "link_to": "Received Fund after Due Date",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Eligible but haven't received fund yet",
+   "link_to": "Eligible but haven't received fund yet",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Received Fund before or on due date",
+   "link_to": "Received Fund before or on due date",
+   "type": "Report"
+  }
+ ],
  "title": "SFAC Reporting"
 }
