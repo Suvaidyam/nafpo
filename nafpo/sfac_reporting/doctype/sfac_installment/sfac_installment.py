@@ -9,3 +9,12 @@ class SFACInstallment(Document):
     def before_save(self):
         fpo_profile_name = frappe.get_doc('FPO', self.fpo)
         self.fpo_copy = fpo_profile_name.fpo_name
+    
+    def before_validate(self):
+        exists = frappe.db.exists({
+            "doctype": "SFAC Installment", 
+            "fpo": self.fpo
+        })
+        data_exists = bool(exists)
+        if data_exists and exists != self.name:
+            frappe.throw(f"FPO already exists in SFAC Installment")

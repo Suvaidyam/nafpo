@@ -1,0 +1,32 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"Xaiv0zN5YT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Capacity Building Dashboard</span>\",\"col\":12}}]",
+ "creation": "2024-06-25 11:38:16.793083",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Capacity Building Dashboard",
+ "links": [],
+ "modified": "2024-06-26 08:57:57.186382",
+ "modified_by": "Administrator",
+ "module": "Capacity Building",
+ "name": "Capacity Building Dashboard",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "Dashboards",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "FPO"
+  }
+ ],
+ "sequence_id": 3.0,
+ "shortcuts": [],
+ "title": "Capacity Building Dashboard"
+}

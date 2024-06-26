@@ -48,6 +48,7 @@
   {
    "fieldname": "cbbo_name",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "CBBO Name",
    "options": "CBBO",
    "reqd": 1
@@ -61,7 +62,7 @@
    "link_fieldname": "name_of_the_fpo"
   }
  ],
- "modified": "2024-06-19 10:41:35.491279",
+ "modified": "2024-06-26 16:39:14.811931",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "FPO",

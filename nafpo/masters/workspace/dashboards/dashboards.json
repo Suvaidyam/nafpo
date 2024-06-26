@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"7bSsz6IBL0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Dashboards</span>\",\"col\":12}}]",
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Dashboards\"}}]",
  "creation": "2024-06-25 11:27:09.963063",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-06-25 17:11:53.506153",
+ "modified": "2024-06-26 08:57:56.991069",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Dashboards",

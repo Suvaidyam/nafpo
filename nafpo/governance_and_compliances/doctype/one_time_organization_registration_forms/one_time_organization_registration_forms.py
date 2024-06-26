@@ -2,7 +2,6 @@ import frappe
 from frappe.model.document import Document
 
 class OneTimeOrganizationRegistrationForms(Document):
-    pass
     def before_validate(self):
         exists = frappe.db.exists({
             "doctype": "One Time Organization Registration Forms", 

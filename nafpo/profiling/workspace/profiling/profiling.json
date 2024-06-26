@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"q4LdvlFN4M\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"BOD KYC\",\"col\":4}},{\"id\":\"gKfVM86HqS\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO Profiling\",\"col\":4}},{\"id\":\"RG6Di_lr4m\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Producer Groups\",\"col\":4}},{\"id\":\"w5vQ7wiR3r\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO member details\",\"col\":4}}]",
+ "content": "[{\"id\":\"WHY3552wHi\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Profiling</span>\",\"col\":12}},{\"id\":\"q4LdvlFN4M\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"BOD KYC\",\"col\":4}},{\"id\":\"gKfVM86HqS\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO Profiling\",\"col\":4}},{\"id\":\"RG6Di_lr4m\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Producer Groups\",\"col\":4}},{\"id\":\"w5vQ7wiR3r\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO member details\",\"col\":4}}]",
  "creation": "2024-06-19 09:58:07.824654",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Profiling",
  "links": [],
- "modified": "2024-06-25 17:13:26.977883",
+ "modified": "2024-06-26 08:57:57.461296",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Profiling",
