@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-26 19:15:37.961597",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "fpo",
+  "position_designation",
+  "name1",
+  "joining_date",
+  "aadhar_no",
+  "phone_no"
+ ],
+ "fields": [
+  {
+   "fieldname": "position_designation",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Position (Designation)",
+   "options": "\nCEO\nAccountant"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name"
+  },
+  {
+   "fieldname": "joining_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Joining Date"
+  },
+  {
+   "fieldname": "aadhar_no",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Aadhar No"
+  },
+  {
+   "fieldname": "phone_no",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Phone No"
+  },
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "FPO",
+   "options": "FPO"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-06-26 19:24:53.751630",
+ "modified_by": "Administrator",
+ "module": "Profiling",
+ "name": "FPO Staff Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

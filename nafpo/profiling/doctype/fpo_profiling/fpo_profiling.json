@@ -46,6 +46,8 @@
   "accountant_age",
   "accountant_date_of_joining",
   "accountant_contact_number",
+  "section_break_zufi",
+  "staff_details_table",
   "licence_details_for_seeds_section",
   "licence_number_for_seeds",
   "date_of_expiry_for_seeds",
@@ -334,11 +336,13 @@
   {
    "fieldname": "details_of_ceo_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Details of CEO"
   },
   {
    "fieldname": "details_of_accountant_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Details of Accountant"
   },
   {
@@ -483,11 +487,21 @@
    "fieldtype": "Date",
    "label": "Date of Registration",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_break_zufi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "staff_details_table",
+   "fieldtype": "Table",
+   "label": "Staff Details Table",
+   "options": "FPO Staff Child"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-25 12:11:30.104560",
+ "modified": "2024-06-26 19:18:08.547703",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
