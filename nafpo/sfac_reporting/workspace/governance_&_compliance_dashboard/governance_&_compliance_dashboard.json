@@ -1,66 +1,66 @@
 {
- "charts": [
-  {
-   "chart_name": "Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA",
-   "label": "Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA"
-  },
-  {
-   "chart_name": "Form INC-22 \u2013 Registered office Address - MCA",
-   "label": "Form INC-22 \u2013 Registered office Address - MCA"
-  },
-  {
-   "chart_name": "FORM AOC-4 \u2013 Filing of Financial Statements",
-   "label": "FORM AOC-4 \u2013 Filing of Financial Statements"
-  },
-  {
-   "chart_name": "Form ADT-1 \u2013 Auditor Appointment for Five year",
-   "label": "Form ADT-1 \u2013 Auditor Appointment for Five year"
-  },
-  {
-   "chart_name": "IT Return",
-   "label": "IT Return"
-  },
-  {
-   "chart_name": "Form ADT-1 \u2013 Auditor Appointment for First year",
-   "label": "Form ADT-1 \u2013 Auditor Appointment for First year"
-  },
-  {
-   "chart_name": "Form MGT-7 - Filing of Annual Return",
-   "label": "Form MGT-7 - Filing of Annual Return"
-  },
-  {
-   "chart_name": "DIRECTOR KYC",
-   "label": "DIRECTOR KYC"
-  },
-  {
-   "chart_name": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda",
-   "label": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda"
-  }
- ],
- "content": "[{\"id\":\"_fYF9G9gGS\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">One Time Organization Registration Forms</span>\",\"col\":12}},{\"id\":\"QmVoplmAlp\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA\",\"col\":6}},{\"id\":\"MlH47ah1Ln\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Form INC-22 \u2013 Registered office Address - MCA\",\"col\":6}},{\"id\":\"T61kPoj5ed\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Form ADT-1 \u2013 Auditor Appointment for First year\",\"col\":12}},{\"id\":\"eWGF5AYdoo\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Annual Compliance Forms</b></span>\",\"col\":12}},{\"id\":\"Pkcim-u5HB\",\"type\":\"chart\",\"data\":{\"chart_name\":\"FORM AOC-4 \u2013 Filing of Financial Statements\",\"col\":6}},{\"id\":\"x-CUZZUbZX\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Form MGT-7 - Filing of Annual Return\",\"col\":6}},{\"id\":\"SVMzwDlTeR\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Form ADT-1 \u2013 Auditor Appointment for Five year\",\"col\":6}},{\"id\":\"IYTpVKxPD3\",\"type\":\"chart\",\"data\":{\"chart_name\":\"DIRECTOR KYC\",\"col\":6}},{\"id\":\"0psMX7xE0Q\",\"type\":\"chart\",\"data\":{\"chart_name\":\"IT Return\",\"col\":6}},{\"id\":\"AEPlqr01MX\",\"type\":\"chart\",\"data\":{\"chart_name\":\"AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda\",\"col\":6}}]",
- "creation": "2024-06-19 17:25:36.249931",
- "custom_blocks": [],
- "docstatus": 0,
- "doctype": "Workspace",
- "for_user": "",
- "hide_custom": 0,
- "icon": "dashboard",
- "idx": 0,
- "indicator_color": "green",
- "is_hidden": 0,
- "label": "Governance & Compliance Dashboard",
- "links": [],
- "modified": "2024-06-26 08:57:57.099918",
- "modified_by": "Administrator",
- "module": "SFAC Reporting",
- "name": "Governance & Compliance Dashboard",
- "number_cards": [],
- "owner": "Administrator",
- "parent_page": "Dashboards",
- "public": 1,
- "quick_lists": [],
- "roles": [],
- "sequence_id": 2.0,
- "shortcuts": [],
- "title": "Governance & Compliance Dashboard"
+    "charts": [
+        {
+            "chart_name": "Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA",
+            "label": "Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA"
+        },
+        {
+            "chart_name": "Form INC-22 \u2013 Registered office Address - MCA",
+            "label": "Form INC-22 \u2013 Registered office Address - MCA"
+        },
+        {
+            "chart_name": "FORM AOC-4 \u2013 Filing of Financial Statements",
+            "label": "FORM AOC-4 \u2013 Filing of Financial Statements"
+        },
+        {
+            "chart_name": "Form ADT-1 \u2013 Auditor Appointment for Five year",
+            "label": "Form ADT-1 \u2013 Auditor Appointment for Five year"
+        },
+        {
+            "chart_name": "IT Return",
+            "label": "IT Return"
+        },
+        {
+            "chart_name": "Form ADT-1 \u2013 Auditor Appointment for First year",
+            "label": "Form ADT-1 \u2013 Auditor Appointment for First year"
+        },
+        {
+            "chart_name": "Form MGT-7 - Filing of Annual Return",
+            "label": "Form MGT-7 - Filing of Annual Return"
+        },
+        {
+            "chart_name": "DIRECTOR KYC",
+            "label": "DIRECTOR KYC"
+        },
+        {
+            "chart_name": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda",
+            "label": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda"
+        }
+    ],
+    "content": "[{\"id\":\"_fYF9G9gGS\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">One Time Organization Registration Forms</span>\",\"col\":12}},{\"id\":\"QmVoplmAlp\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA\",\"col\":6}},{\"id\":\"MlH47ah1Ln\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Form INC-22 \u2013 Registered office Address - MCA\",\"col\":6}},{\"id\":\"T61kPoj5ed\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Form ADT-1 \u2013 Auditor Appointment for First year\",\"col\":12}},{\"id\":\"eWGF5AYdoo\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Annual Compliance Forms</b></span>\",\"col\":12}},{\"id\":\"Pkcim-u5HB\",\"type\":\"chart\",\"data\":{\"chart_name\":\"FORM AOC-4 \u2013 Filing of Financial Statements\",\"col\":6}},{\"id\":\"x-CUZZUbZX\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Form MGT-7 - Filing of Annual Return\",\"col\":6}},{\"id\":\"SVMzwDlTeR\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Form ADT-1 \u2013 Auditor Appointment for Five year\",\"col\":6}},{\"id\":\"IYTpVKxPD3\",\"type\":\"chart\",\"data\":{\"chart_name\":\"DIRECTOR KYC\",\"col\":6}},{\"id\":\"0psMX7xE0Q\",\"type\":\"chart\",\"data\":{\"chart_name\":\"IT Return\",\"col\":6}},{\"id\":\"AEPlqr01MX\",\"type\":\"chart\",\"data\":{\"chart_name\":\"AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda\",\"col\":6}}]",
+    "creation": "2024-06-19 17:25:36.249931",
+    "custom_blocks": [],
+    "docstatus": 0,
+    "doctype": "Workspace",
+    "for_user": "",
+    "hide_custom": 0,
+    "icon": "dashboard",
+    "idx": 0,
+    "indicator_color": "green",
+    "is_hidden": 0,
+    "label": "Governance & Compliance Dashboard",
+    "links": [],
+    "modified": "2024-06-26 08:57:57.099918",
+    "modified_by": "Administrator",
+    "module": "SFAC Reporting",
+    "name": "Governance & Compliance Dashboard",
+    "number_cards": [],
+    "owner": "Administrator",
+    "parent_page": "Dashboards",
+    "public": 1,
+    "quick_lists": [],
+    "roles": [],
+    "sequence_id": 2.0,
+    "shortcuts": [],
+    "title": "Governance & Compliance Dashboard"
 }
