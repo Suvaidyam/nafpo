@@ -63,6 +63,7 @@
   {
    "fieldname": "level",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Level",
    "options": "Role Profile",
    "reqd": 1
@@ -108,7 +109,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-24 11:13:30.971774",
+ "modified": "2024-06-26 16:42:05.238747",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Nafpo User",

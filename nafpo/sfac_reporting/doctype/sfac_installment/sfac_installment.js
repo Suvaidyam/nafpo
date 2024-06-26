@@ -15,7 +15,9 @@ frappe.ui.form.on("SFAC Installment", {
                 console.error('User data fetch error:', e);
             }
         }
-
+    },
+    fpo(frm) {
+        set_due_date(frm)
     },
     are_you_received_1st_installment_fund(frm) {
         if (frm.doc.are_you_received_1st_installment_fund == "Yes") {

@@ -6,30 +6,33 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "data",
+  "item",
   "value"
  ],
  "fields": [
   {
-   "fieldname": "data",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Data"
-  },
-  {
    "fieldname": "value",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Value"
+   "label": "Value",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-11 19:56:46.212877",
+ "modified": "2024-06-26 12:35:10.571066",
  "modified_by": "Administrator",
  "module": "Business Planning",
- "name": "Fixed Capital Child",
+ "name": "FPO Fixed Capital Child",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "creation",

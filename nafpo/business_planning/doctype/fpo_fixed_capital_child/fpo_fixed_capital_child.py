@@ -5,5 +5,6 @@
 from frappe.model.document import Document
 
 
-class FixedCapitalChild(Document):
-	pass
+class FPOFixedCapitalChild(Document):
+	def before_save(self):
+		print('==========================================',self.value)
