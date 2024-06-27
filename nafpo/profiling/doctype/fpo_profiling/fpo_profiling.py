@@ -9,21 +9,24 @@ class FPOProfiling(Document):
     def before_save(self):
         fpo_profile_name = frappe.get_doc('FPO', self.name_of_the_fpo)
         self.name_of_the_fpo_copy = fpo_profile_name.fpo_name
-        
+
         staff_details = self.staff_details_table
         for row in staff_details:
-            new_fpo_staff = frappe.new_doc("FPO Staff")
-            new_fpo_staff.fpo = self.name_of_the_fpo
-            new_fpo_staff.position_designation = row.position_designation
-            new_fpo_staff.name1 = row.name1 + " - " + row.position_designation
-            new_fpo_staff.joining_date = row.joining_date
-            new_fpo_staff.aadhar_no = row.aadhar_no
-            new_fpo_staff.phone_no = row.phone_no
-            new_fpo_staff.save()
-    
+            existing_staff_name = frappe.db.exists("FPO Staff Child", {"name": row.name})
+            if not existing_staff_name:
+                new_fpo_staff = frappe.new_doc("FPO Staff")
+                new_fpo_staff.name = row.name
+                new_fpo_staff.fpo = self.name_of_the_fpo
+                new_fpo_staff.position_designation = row.position_designation
+                new_fpo_staff.name1 = f"{row.name1} - {row.position_designation}"
+                new_fpo_staff.joining_date = row.joining_date
+                new_fpo_staff.aadhar_no = row.aadhar_no
+                new_fpo_staff.phone_no = row.phone_no
+                new_fpo_staff.save()
+
     def before_validate(self):
         exists = frappe.db.exists({
-            "doctype": "FPO Profiling", 
+            "doctype": "FPO Profiling",
             "name_of_the_fpo": self.name_of_the_fpo
         })
         data_exists = bool(exists)

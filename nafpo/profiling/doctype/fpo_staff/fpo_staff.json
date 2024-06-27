@@ -34,15 +34,17 @@
   },
   {
    "fieldname": "aadhar_no",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Aadhar No"
+   "label": "Aadhar No",
+   "length": 12
   },
   {
    "fieldname": "phone_no",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Phone No"
+   "label": "Phone No",
+   "length": 10
   },
   {
    "fieldname": "fpo",
@@ -55,7 +57,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-27 11:18:23.276608",
+ "modified": "2024-06-27 12:37:45.392185",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Staff",
