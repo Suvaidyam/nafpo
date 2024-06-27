@@ -16,7 +16,6 @@ class NafpoUser(Document):
 		new_user.new_password = self.password
 		new_user.save()
 
-
 	def on_update(self):
 		user_doc = frappe.get_doc("User", self.email)
 		user_doc.email = self.email

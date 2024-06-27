@@ -18,6 +18,9 @@ frappe.ui.form.on("FPO Fixed Capital", {
             frm.refresh_field('table_nprj')
         }
     },
+    staff_details_table(frm) {
+        console.log(frm)
+    }
 });
 
 // frappe.ui.form.on('FPO Fixed Capital ', {

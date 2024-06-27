@@ -16,10 +16,9 @@
  "fields": [
   {
    "fieldname": "position_designation",
-   "fieldtype": "Select",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Position (Designation)",
-   "options": "\nCEO\nAccountant"
+   "label": "Position (Designation)"
   },
   {
    "fieldname": "name1",
@@ -53,12 +52,13 @@
    "options": "FPO"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-26 19:22:57.813797",
+ "modified": "2024-06-27 11:18:23.276608",
  "modified_by": "Administrator",
  "module": "Profiling",
- "name": "Fpo Staff",
+ "name": "FPO Staff",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
@@ -71,11 +71,59 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IA",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CBBO",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "FPO",
+   "select": 1,
    "share": 1,
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "name1"
 }
