@@ -26,6 +26,9 @@ frappe.ui.form.on("FPO Profiling", {
     validate(frm) {
         integer_length_validator(frm.doc.accountant_contact_number, 10, 'Accountant Contact Number');
         integer_length_validator(frm.doc.ceo_contact_number, 10, 'CEO Contact Number');
+        frm.doc.staff_details_table.forEach(row => {
+            // console.log('Row during validate:', row);
+        });
     },
     state_name: async function (frm) {
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
@@ -59,4 +62,12 @@ frappe.ui.form.on("FPO Profiling", {
         };
         return acc;
     }, {})
+});
+
+frappe.ui.form.on('FPO Staff Child', {
+    refresh(frm) {
+        frm.doc.staff_details_table.forEach(row => {
+            console.log('row :>> ', row);
+        });
+    }
 });

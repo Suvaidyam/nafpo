@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class FPOStaff(Document):
+class FPOStaffSelectChild(Document):
 	pass
