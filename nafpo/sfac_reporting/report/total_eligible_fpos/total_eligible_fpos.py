@@ -29,8 +29,8 @@ def execute(filters=None):
             "width": 300
         },
         {
-            "fieldname": "total_fpo_count",
-            "label": "Total FPO Count",
+            "fieldname": "total_fpo",
+            "label": "Total FPO",
             "fieldtype": "int",
             "width": 300
         }
@@ -148,18 +148,16 @@ def execute(filters=None):
     """
 
     total_fpo_count = frappe.db.sql(total_fpo_count_query, as_dict=True)[0]['total_fpo_count']
-
-    # Print total count for debugging
-    print('=====================', total_fpo_count)
+    print('=========================',total_fpo_count)
 
     # Append total count row
     if data:
         data.append({
-            'fpo_name': 'Total FPO Count',
+            'fpo_name': '',
             'fpo_contact_number': '',
             'installment': '',
             'due_date': '',
-            'total_fpo_count': total_fpo_count
+            'total_fpo': total_fpo_count
         })
 
     # Return columns and data

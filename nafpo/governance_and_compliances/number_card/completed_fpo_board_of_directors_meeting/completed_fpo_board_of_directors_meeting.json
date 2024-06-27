@@ -1,0 +1,23 @@
+{
+ "creation": "2024-06-27 17:43:54.522471",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "Completed FPO Board of Directors Meeting",
+ "modified": "2024-06-27 17:43:54.522471",
+ "modified_by": "Administrator",
+ "module": "Governance and compliances",
+ "name": "Completed FPO Board of Directors Meeting",
+ "owner": "Administrator",
+ "report_field": "total_meeting",
+ "report_function": "Sum",
+ "report_name": "Completed FPO Board of Directors Meeting",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}
