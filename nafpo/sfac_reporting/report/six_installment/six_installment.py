@@ -35,7 +35,7 @@ def execute(filters=None):
             SUM(CASE WHEN are_you_received_6th_installment_fund = 'Yes' AND 6th_installment_date <= 6th_installment_due_date THEN 1 ELSE 0 END) AS fund_was_received_before_due_date,
             SUM(CASE WHEN are_you_received_6th_installment_fund = 'Yes' AND 6th_installment_date > 6th_installment_due_date THEN 1 ELSE 0 END) AS fund_was_received_after_due_date
         FROM
-            `tabSFAC Installment`
+            `tabFPO MFR 10K`
     """
 
     data = frappe.db.sql(sql_query, as_dict=True)

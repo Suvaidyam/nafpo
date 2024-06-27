@@ -1,5 +1,5 @@
 
-frappe.listview_settings['SFAC Installment'] = {
+frappe.listview_settings['FPO MFR 10K'] = {
     refresh: function () {
         $('use.like-icon').hide();
         $('.list-row-activity').hide();
