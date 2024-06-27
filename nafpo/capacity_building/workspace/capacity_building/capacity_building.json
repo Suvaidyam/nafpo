@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"PYe0xDwSbS\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Capacity Building</span>\",\"col\":12}},{\"id\":\"_79g4Hj6R5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Capacity\",\"col\":4}}]",
+ "content": "[{\"id\":\"_79g4Hj6R5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Capacity\",\"col\":4}}]",
  "creation": "2024-06-22 10:59:40.640048",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Capacity Building",
  "links": [],
- "modified": "2024-06-26 08:57:57.726171",
+ "modified": "2024-06-27 11:23:57.634054",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity Building",
