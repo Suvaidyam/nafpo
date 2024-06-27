@@ -1,7 +1,7 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on("SFAC Installment", {
+frappe.ui.form.on("FPO MFR 10K", {
     refresh: async function (frm) {
         if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
             try {
@@ -24,7 +24,6 @@ frappe.ui.form.on("SFAC Installment", {
             let today_date = new Date();
             today_date.setMonth(today_date.getMonth());
             frm.set_value('1st_installment_date', today_date.toISOString().split('T')[0])
-            frm.set_df_property('1st_installment_date', 'read_only', 1);
         } else if (frm.doc.are_you_received_1st_installment_fund == "No") {
             frm.set_value('1st_installment_date', '')
         }
@@ -34,7 +33,6 @@ frappe.ui.form.on("SFAC Installment", {
             let today_date = new Date();
             today_date.setMonth(today_date.getMonth());
             frm.set_value('2nd_installment_date', today_date.toISOString().split('T')[0])
-            frm.set_df_property('2nd_installment_date', 'read_only', 1);
         } else if (frm.doc.are_you_received_2nd_installment_fund === "No") {
             frm.set_value('2nd_installment_date', '')
         }
@@ -44,7 +42,6 @@ frappe.ui.form.on("SFAC Installment", {
             let today_date = new Date();
             today_date.setMonth(today_date.getMonth());
             frm.set_value('3rd_installment_date', today_date.toISOString().split('T')[0])
-            frm.set_df_property('3rd_installment_date', 'read_only', 1);
         } else if (frm.doc.are_you_received_3rd_installment_fund === "No") {
             frm.set_value('3rd_installment_date', '')
         }
@@ -54,7 +51,6 @@ frappe.ui.form.on("SFAC Installment", {
             let today_date = new Date();
             today_date.setMonth(today_date.getMonth());
             frm.set_value('4th_installment_date', today_date.toISOString().split('T')[0])
-            frm.set_df_property('4th_installment_date', 'read_only', 1);
         } else if (frm.doc.are_you_received_4th_installment_fund === "No") {
             frm.set_value('4th_installment_date', '')
         }
@@ -64,7 +60,6 @@ frappe.ui.form.on("SFAC Installment", {
             let today_date = new Date();
             today_date.setMonth(today_date.getMonth());
             frm.set_value('5th_installment_date', today_date.toISOString().split('T')[0])
-            frm.set_df_property('5th_installment_date', 'read_only', 1);
         } else if (frm.doc.are_you_received_5th_installment_fund === "No") {
             frm.set_value('5th_installment_date', '')
         }
@@ -74,7 +69,6 @@ frappe.ui.form.on("SFAC Installment", {
             let today_date = new Date();
             today_date.setMonth(today_date.getMonth());
             frm.set_value('6th_installment_date', today_date.toISOString().split('T')[0])
-            frm.set_df_property('6th_installment_date', 'read_only', 1);
         } else if (frm.doc.are_you_received_6th_installment_fund === "No") {
             frm.set_value('6th_installment_date', '')
         }
@@ -118,6 +112,13 @@ function set_due_date(frm) {
             frm.set_df_property('4th_installment_due_date', 'read_only', 1);
             frm.set_df_property('5th_installment_due_date', 'read_only', 1);
             frm.set_df_property('6th_installment_due_date', 'read_only', 1);
+
+            frm.set_df_property('1st_installment_date', 'read_only', 1);
+            frm.set_df_property('2nd_installment_date', 'read_only', 1);
+            frm.set_df_property('3rd_installment_date', 'read_only', 1);
+            frm.set_df_property('4th_installment_date', 'read_only', 1);
+            frm.set_df_property('5th_installment_date', 'read_only', 1);
+            frm.set_df_property('6th_installment_date', 'read_only', 1);
         },
         error: function (error) {
             console.log("An error occurred: ", error);

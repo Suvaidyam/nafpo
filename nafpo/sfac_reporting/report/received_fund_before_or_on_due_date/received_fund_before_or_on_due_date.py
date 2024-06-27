@@ -33,12 +33,6 @@ def execute(filters=None):
             "fieldtype": "Date",
             "width": 300
         },
-        {
-            "fieldname": "total_fpo",
-            "label": "Total FPO",
-            "fieldtype": "Int",
-            "width": 300
-        }
     ]
 
     # SQL Query to fetch the data
@@ -50,7 +44,7 @@ def execute(filters=None):
                 sfac_inst.1st_installment_date AS `Installment Date`,
                 'First Installment' AS Installment
             FROM
-                `tabSFAC Installment` AS sfac_inst
+                `tabFPO MFR 10K` AS sfac_inst
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
@@ -65,7 +59,7 @@ def execute(filters=None):
                 sfac_inst.2nd_installment_date AS `Installment Date`,
                 'Second Installment' AS Installment
             FROM
-                `tabSFAC Installment` AS sfac_inst
+                `tabFPO MFR 10K` AS sfac_inst
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
@@ -80,7 +74,7 @@ def execute(filters=None):
                 sfac_inst.3rd_installment_date AS `Installment Date`,
                 'Third Installment' AS Installment
             FROM
-                `tabSFAC Installment` AS sfac_inst
+                `tabFPO MFR 10K` AS sfac_inst
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
@@ -95,7 +89,7 @@ def execute(filters=None):
                 sfac_inst.4th_installment_date AS `Installment Date`,
                 'Fourth Installment' AS Installment
             FROM
-                `tabSFAC Installment` AS sfac_inst
+                `tabFPO MFR 10K` AS sfac_inst
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
@@ -110,7 +104,7 @@ def execute(filters=None):
                 sfac_inst.5th_installment_date AS `Installment Date`,
                 'Fifth Installment' AS Installment
             FROM
-                `tabSFAC Installment` AS sfac_inst
+                `tabFPO MFR 10K` AS sfac_inst
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
@@ -125,7 +119,7 @@ def execute(filters=None):
                 sfac_inst.6th_installment_date AS `Installment Date`,
                 'Sixth Installment' AS Installment
             FROM
-                `tabSFAC Installment` AS sfac_inst
+                `tabFPO MFR 10K` AS sfac_inst
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
@@ -151,27 +145,6 @@ def execute(filters=None):
 
     # Fetch the data
     data = frappe.db.sql(sql_query, as_dict=True)
-
-    # Get the total distinct count of FPOs
-    total_fpo_count_query = f"""
-        SELECT COUNT(DISTINCT `fpo_name`) AS total_fpo_count
-        FROM (
-            {sql_query}
-        ) AS unique_fpos
-    """
-
-    total_fpo_count = frappe.db.sql(total_fpo_count_query, as_dict=True)[0]['total_fpo_count']
-    
-    # Append total count row
-    if data:
-        data.append({
-            'fpo_name': 'Total FPO Count',
-            'fpo_contact_number': '',
-            'installment': '',
-            'installment_date': '',
-            'eligible': '',
-            'total_fpo': total_fpo_count
-        })
 
     # Return columns and data
     return columns, data

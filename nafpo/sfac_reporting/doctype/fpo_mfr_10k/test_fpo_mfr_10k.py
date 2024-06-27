@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestSFACInstallment(FrappeTestCase):
+class TestFPOMFR10K(FrappeTestCase):
 	pass

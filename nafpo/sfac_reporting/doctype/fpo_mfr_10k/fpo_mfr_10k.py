@@ -5,7 +5,7 @@ import frappe
 from frappe.model.document import Document
 
 
-class SFACInstallment(Document):
+class FPOMFR10K(Document):
     def before_save(self):
         fpo_profile_name = frappe.get_doc('FPO', self.fpo)
         self.fpo_copy = fpo_profile_name.fpo_name
