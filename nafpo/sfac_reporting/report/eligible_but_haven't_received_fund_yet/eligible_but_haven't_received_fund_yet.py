@@ -26,6 +26,12 @@ def execute(filters=None):
             "label": "Eligible Date",
             "fieldtype": "Date",
             "width": 300
+        },
+        {
+            "fieldname": "total_fpo",
+            "label": "Total FPO",
+            "fieldtype": "Int",
+            "width": 300
         }
     ]
 
@@ -124,14 +130,32 @@ def execute(filters=None):
             pending_dates pd
         INNER JOIN
             `tabFPO Profiling` AS fpo_profiling ON pd.`FPO Name` = fpo_profiling.name_of_the_fpo_copy
-        """
+    """
 
     # Applying filters
-    if filters.get("installment_"):
+    if filters and filters.get("installment_"):
         sql_query += f" WHERE pd.Installment = '{filters['installment_']}'"
 
     # Fetch the data
     data = frappe.db.sql(sql_query, as_dict=True)
+
+    # Get the total distinct count of FPOs
+    total_fpo_count_query = f"""
+        SELECT COUNT(DISTINCT `fpo_name`) AS total_fpo_count
+        FROM ({sql_query}) AS unique_fpos
+    """
+
+    total_fpo_count = frappe.db.sql(total_fpo_count_query, as_dict=True)[0]['total_fpo_count']
+    
+    # Append total count row
+    if data:
+        data.append({
+            'fpo_name': 'Total FPO Count',
+            'fpo_contact_number': '',
+            'installment': '',
+            'due_date': '',
+            'total_fpo': total_fpo_count
+        })
 
     # Return columns and data
     return columns, data

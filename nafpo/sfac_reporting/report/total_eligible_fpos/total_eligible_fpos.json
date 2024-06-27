@@ -1,10 +1,10 @@
 {
- "add_total_row": 1,
+ "add_total_row": 0,
  "columns": [
   {
-   "fieldname": "total_fpo_count",
+   "fieldname": "total_fpo",
    "fieldtype": "Int",
-   "label": "Total FPO Count",
+   "label": "Total FPO",
    "width": 0
   }
  ],
@@ -17,7 +17,7 @@
  "is_standard": "Yes",
  "letter_head": "",
  "letterhead": null,
- "modified": "2024-06-26 17:01:42.564180",
+ "modified": "2024-06-27 16:05:02.517598",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "Total Eligible FPOs",
