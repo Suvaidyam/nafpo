@@ -1,15 +1,27 @@
 {
  "charts": [
   {
-   "chart_name": "Membership System Capacity Building (Accountant)",
-   "label": "Membership System Capacity Building (Accountant)"
+   "chart_name": "No of FPO participated at least 1 training",
+   "label": "No of FPO participated at least 1 training"
   },
   {
-   "chart_name": "Membership System Capacity Building (CEO)",
-   "label": "Membership System Capacity Building (CEO)"
+   "chart_name": "Is FPO trained Accountant",
+   "label": "Is FPO trained Accountant"
+  },
+  {
+   "chart_name": "Is FPO trained CEO",
+   "label": "Is FPO trained CEO"
+  },
+  {
+   "chart_name": "No of FPO which has trained BOD",
+   "label": "No of FPO which has trained BOD"
+  },
+  {
+   "chart_name": "No. of FPOs which has trained CEO",
+   "label": "No. of FPOs which has trained CEO"
   }
  ],
- "content": "[{\"id\":\"_79g4Hj6R5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Capacity\",\"col\":4}},{\"id\":\"5qkhXQNxWK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"JJMPEwTWg-\",\"type\":\"paragraph\",\"data\":{\"text\":\"<b>Membership System Capacity Buidling</b>\",\"col\":12}},{\"id\":\"1IbhQluQr5\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Membership System Capacity Buidling\",\"col\":12}},{\"id\":\"wIEAcHVCdX\",\"type\":\"paragraph\",\"data\":{\"text\":\"<b>Governance System Capacity Building</b>\",\"col\":12}},{\"id\":\"XKHHoh0WCB\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Governance System Capacity Building\",\"col\":12}},{\"id\":\"_djZtWUUsE\",\"type\":\"paragraph\",\"data\":{\"text\":\"<b>Operation system Capacity Building</b>\",\"col\":12}},{\"id\":\"iAr_NnRC5-\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Operation system Capacity Building\",\"col\":12}},{\"id\":\"8yg_bEpZ_d\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Membership System Capacity Building (CEO)\",\"col\":6}},{\"id\":\"hxvi1f8Jar\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Membership System Capacity Building (Accountant)\",\"col\":6}}]",
+ "content": "[{\"id\":\"_79g4Hj6R5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Capacity\",\"col\":4}},{\"id\":\"5qkhXQNxWK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"1IbhQluQr5\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Membership System Capacity Buidling\",\"col\":6}},{\"id\":\"9bY8I7x0w8\",\"type\":\"chart\",\"data\":{\"chart_name\":\"No of FPO participated at least 1 training\",\"col\":6}},{\"id\":\"XKHHoh0WCB\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Governance System Capacity Building\",\"col\":6}},{\"id\":\"Bo9ocxzmU0\",\"type\":\"chart\",\"data\":{\"chart_name\":\"No of FPO which has trained BOD\",\"col\":6}},{\"id\":\"iAr_NnRC5-\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Operation system Capacity Building\",\"col\":6}},{\"id\":\"fwfVYa_dnH\",\"type\":\"chart\",\"data\":{\"chart_name\":\"No. of FPOs which has trained CEO\",\"col\":6}},{\"id\":\"k_5anDF-80\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Is FPO trained Accountant\",\"col\":6}},{\"id\":\"c4DvmCpzql\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Is FPO trained CEO\",\"col\":6}}]",
  "creation": "2024-06-22 10:59:40.640048",
  "custom_blocks": [
   {
@@ -35,7 +47,7 @@
  "is_hidden": 0,
  "label": "Capacity Building",
  "links": [],
- "modified": "2024-06-28 13:06:18.132034",
+ "modified": "2024-06-28 16:45:33.439477",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity Building",

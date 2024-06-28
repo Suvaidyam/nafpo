@@ -1,0 +1,36 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-06-28 14:20:34.992438",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-06-28 15:03:42.615509",
+ "modified_by": "Administrator",
+ "module": "Capacity Building",
+ "name": "Operation system Capacity Building Count",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \n    (SELECT COUNT(*)\n     FROM (\n         SELECT\n             _fpo.name\n         FROM\n             `tabCapacity` AS _cap\n         INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent\n         INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name\n         INNER JOIN `tabFPO` AS _fpo ON _fs.fpo = _fpo.name\n         GROUP BY _fpo.name\n     ) AS has_trained) AS count, 'Yes' AS trained\n\nUNION ALL\n\nSELECT \n    (SELECT COUNT(*)\n     FROM (\n         SELECT\n             fpo.name\n         FROM\n             `tabFPO` AS fpo\n         WHERE\n             fpo.name NOT IN (\n                 SELECT DISTINCT _fs.fpo\n                 FROM `tabCapacity` AS _cap\n                 INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent\n                 INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name\n             )\n     ) AS has_not_trained) AS count, 'No' AS trained;\n",
+ "ref_doctype": "Capacity",
+ "report_name": "Operation system Capacity Building Count",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
+  },
+  {
+   "role": "Admin"
+  }
+ ]
+}

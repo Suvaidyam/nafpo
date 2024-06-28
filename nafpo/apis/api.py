@@ -85,7 +85,22 @@ def get_Eligible_but_not_received_fund_yet():
     """
     count = frappe.db.sql(query, {'current_date': current_date})
     return count[0][0] if count and count[0] else 0
+@frappe.whitelist()
+def get_incomplete_fpo_board_of_directors_meeting_count():
+    query = """
+        SELECT COUNT(DISTINCT fpo) AS total_fpo_count
+        FROM `tabBoard of Directors Meeting Forms`
+        WHERE status = 'Completed'
+        GROUP BY financial_year
+        HAVING COUNT(*) <= 3
+    """
+    count= frappe.db.sql(query, as_dict=1)
+    return count[0]
 
+
+
+
+# Aniket
 
 @frappe.whitelist()
 def membership_system_capacity_buidling_count():
@@ -101,27 +116,28 @@ def membership_system_capacity_buidling_count():
 
 
 @frappe.whitelist()
-def governance_system_capacity_building_count():
-    queary = """
-    SELECT
-    COUNT(CASE WHEN subquery.training_count > 0 THEN 1 END) AS FPOs_With_Training,
-    COUNT(CASE WHEN subquery.training_count = 0 THEN 1 END) AS FPOs_Without_Training
-FROM (
-    SELECT
-        f.name AS fpo_name,
-        COUNT(b.parent) AS training_count
-    FROM
-        `tabFPO` f
-    LEFT JOIN
-        `tabCapacity` c ON f.name = c.fpo
-    LEFT JOIN
-        `tabBOD KYC Child` b ON c.name = b.parent
-    GROUP BY
-        f.name
-) AS subquery;
+def get_incomplete_fpo_count():
+    query = """
+SELECT
+    COUNT(DISTINCT fpo_profiling.name_of_the_fpo_copy) AS fpo_count
+FROM
+    `tabBoard of Directors Meeting Forms`
+INNER JOIN
+    `tabFPO Profiling` AS fpo_profiling ON `tabBoard of Directors Meeting Forms`.fpo = fpo_profiling.name_of_the_fpo
+WHERE
+    `tabBoard of Directors Meeting Forms`.status = 'Completed'
+GROUP BY
+    fpo_profiling.name_of_the_fpo_copy
+HAVING
+    COUNT(`tabBoard of Directors Meeting Forms`.name) <= 3
     """
-    count= frappe.db.sql(queary, as_dict=1)
-    return count[0]
+
+    # Execute the query
+    result = frappe.db.sql(query, as_dict=True)
+
+    # Extract the count from the result
+    return result[0]['fpo_count'] if result else 0
+
 
 
 @frappe.whitelist()
@@ -160,28 +176,5 @@ def operation_system_capacity_building():
     """
     count= frappe.db.sql(queary, as_dict=1)
     return count[0]
-@frappe.whitelist()
-def get_incomplete_fpo_board_of_directors_meeting_count():
-    query = """
-        SELECT
-            COUNT(*) AS fpo_count
-        FROM (
-            SELECT
-                fpo
-            FROM
-                `tabBoard of Directors Meeting Forms`
-            WHERE
-                `status` = 'Completed'
-            GROUP BY
-                fpo
-            HAVING
-                COUNT(*) <= 3
-        ) AS subquery
-    """
 
-    # Execute the query
-    result = frappe.db.sql(query, as_dict=True)
-
-    # Extract the count from the result
-    return result[0]['fpo_count'] if result else 0
 

@@ -1,0 +1,42 @@
+{
+ "chart_name": "No of FPO participated at least 1 training",
+ "chart_type": "Report",
+ "creation": "2024-06-28 14:08:41.112934",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2024-06-28 14:11:45.581838",
+ "modified_by": "Administrator",
+ "module": "Capacity Building",
+ "name": "No of FPO participated at least 1 training",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Membership System Capacity Building Count",
+ "roles": [
+  {
+   "role": "IA"
+  },
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "CBBO"
+  }
+ ],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Pie",
+ "use_report_chart": 0,
+ "x_field": "trained_status",
+ "y_axis": [
+  {
+   "y_field": "count"
+  }
+ ]
+}
