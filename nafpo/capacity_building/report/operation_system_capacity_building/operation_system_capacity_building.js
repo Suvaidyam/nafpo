@@ -9,6 +9,5 @@ frappe.query_reports["Operation system Capacity Building"] = {
 			"fieldtype": "Select",
 			"options": ["","Yes", "No"]
 		}
-
 	]
 };

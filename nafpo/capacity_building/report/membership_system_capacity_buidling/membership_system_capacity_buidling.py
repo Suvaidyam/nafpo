@@ -6,18 +6,18 @@ import frappe
 
 def execute(filters=None):
 	query = """ SELECT
-    f.fpo_name AS FPO_Name,
-    CASE 
-        WHEN COUNT(DISTINCT CASE WHEN c.fpo IS NOT NULL THEN f.name END) > 0 THEN 'Yes'
-        ELSE 'No'
-    END AS FPO_with_Training,
-    
-    p.fpo_email_id AS FPO_email_id,
-    p.contact_detail_of_fpo AS FPO_Contact_Detail
-FROM `tabFPO` f
-LEFT JOIN `tabCapacity` c ON f.name = c.fpo
-LEFT JOIN `tabFPO Profiling` p ON f.name = p.name_of_the_fpo
-GROUP BY f.fpo_name, p.fpo_email_id, p.contact_detail_of_fpo;
+		f.fpo_name AS FPO_Name,
+		CASE 
+			WHEN COUNT(DISTINCT CASE WHEN c.fpo IS NOT NULL THEN f.name END) > 0 THEN 'Yes'
+			ELSE 'No'
+		END AS FPO_with_Training,
+		
+		p.fpo_email_id AS FPO_email_id,
+		p.contact_detail_of_fpo AS FPO_Contact_Detail
+	FROM `tabFPO` f
+	LEFT JOIN `tabCapacity` c ON f.name = c.fpo
+	LEFT JOIN `tabFPO Profiling` p ON f.name = p.name_of_the_fpo
+	GROUP BY f.fpo_name, p.fpo_email_id, p.contact_detail_of_fpo;
 	"""
 	columns = [
 		{
