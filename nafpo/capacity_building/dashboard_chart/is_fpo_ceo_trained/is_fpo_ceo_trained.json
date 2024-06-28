@@ -1,0 +1,39 @@
+{
+ "chart_name": "Is FPO CEO trained",
+ "chart_type": "Report",
+ "creation": "2024-06-28 16:09:14.633673",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2024-06-28 16:26:38.920440",
+ "modified_by": "Administrator",
+ "module": "Capacity Building",
+ "name": "Is FPO CEO trained",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Operation System Capacity Building FPO (CEO)",
+ "roles": [
+  {
+   "role": "FPO"
+  },
+  {
+   "role": "Administrator"
+  }
+ ],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Donut",
+ "use_report_chart": 0,
+ "x_field": "has_trained_ceo",
+ "y_axis": [
+  {
+   "y_field": "count"
+  }
+ ]
+}
