@@ -7,17 +7,27 @@
  "doctype": "Dashboard Chart",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 17,
+ "idx": 27,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-26 08:53:41.671194",
+ "modified": "2024-06-28 11:05:08.973491",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "Fifth Installment",
  "number_of_groups": 0,
  "owner": "Administrator",
  "report_name": "Fifth Installment",
- "roles": [],
+ "roles": [
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
+  }
+ ],
  "time_interval": "Yearly",
  "timeseries": 0,
  "timespan": "Last Year",

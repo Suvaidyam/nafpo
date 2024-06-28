@@ -10,7 +10,7 @@
  "idx": 12,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-20 10:20:51.664869",
+ "modified": "2024-06-28 11:07:24.864951",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Form ADT-1 \u2013 Auditor Appointment for First year",
@@ -26,9 +26,6 @@
   },
   {
    "role": "CBBO"
-  },
-  {
-   "role": "FPO"
   }
  ],
  "time_interval": "Yearly",
