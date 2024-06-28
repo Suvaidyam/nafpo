@@ -2,27 +2,9 @@
  "add_total_row": 0,
  "columns": [
   {
-   "fieldname": "FPO Name",
-   "fieldtype": "Data",
-   "label": "FPO Name",
-   "width": 0
-  },
-  {
-   "fieldname": "FPO Contact Number",
-   "fieldtype": "Data",
-   "label": "FPO Contact Number",
-   "width": 0
-  },
-  {
-   "fieldname": "Installment",
-   "fieldtype": "Data",
-   "label": "Installment",
-   "width": 0
-  },
-  {
-   "fieldname": "Eligible Date",
-   "fieldtype": "Date",
-   "label": "Eligible Date",
+   "fieldname": "total_fpo",
+   "fieldtype": "Int",
+   "label": "Total FPO",
    "width": 0
   }
  ],
@@ -31,17 +13,17 @@
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
- "idx": 0,
+ "idx": 2,
  "is_standard": "Yes",
  "letter_head": "",
  "letterhead": null,
- "modified": "2024-06-25 13:51:41.603168",
+ "modified": "2024-06-28 09:27:26.414878",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "Total Eligible FPOs",
  "owner": "Administrator",
  "prepared_report": 0,
- "ref_doctype": "SFAC Installment",
+ "ref_doctype": "FPO MFR 10K",
  "report_name": "Total Eligible FPOs",
  "report_type": "Script Report",
  "roles": [

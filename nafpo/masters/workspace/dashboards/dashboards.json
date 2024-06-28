@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"7bSsz6IBL0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Dashboards</span>\",\"col\":12}}]",
+ "content": "[{\"id\":\"kT0tplWpX4\",\"type\":\"header\",\"data\":{\"text\":\"<b>Geographical reach</b><br>\",\"col\":12}},{\"id\":\"WiZxjnSoIs\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State\",\"col\":4}},{\"id\":\"Cd1foSonVV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District Cover\",\"col\":4}},{\"id\":\"Rre2fv0xE-\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block Cover\",\"col\":4}}]",
  "creation": "2024-06-25 11:27:09.963063",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,11 +13,24 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-06-25 17:11:53.506153",
+ "modified": "2024-06-28 00:50:47.135970",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Dashboards",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "State",
+   "number_card_name": "State Cover"
+  },
+  {
+   "label": "District Cover",
+   "number_card_name": "District Cover"
+  },
+  {
+   "label": "Block Cover",
+   "number_card_name": "Block Cover"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,

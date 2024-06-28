@@ -1,0 +1,38 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-06-27 16:34:25.320253",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-06-27 16:34:25.320253",
+ "modified_by": "Administrator",
+ "module": "Capacity Building",
+ "name": "Membership System Capacity Buidling",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Capacity",
+ "report_name": "Membership System Capacity Buidling",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "FPO"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
+  },
+  {
+   "role": "Admin"
+  }
+ ]
+}

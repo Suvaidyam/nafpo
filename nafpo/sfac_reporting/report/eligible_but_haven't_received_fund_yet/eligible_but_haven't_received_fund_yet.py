@@ -26,7 +26,7 @@ def execute(filters=None):
             "label": "Eligible Date",
             "fieldtype": "Date",
             "width": 300
-        }
+        },
     ]
 
     # SQL Query to fetch the data
@@ -37,7 +37,7 @@ def execute(filters=None):
                 sfac_inst.1st_installment_due_date AS `Due Date`,
                 'First Installment' AS Installment
             FROM
-                `tabSFAC Installment` AS sfac_inst
+                `tabFPO MFR 10K` AS sfac_inst
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
@@ -51,7 +51,7 @@ def execute(filters=None):
                 sfac_inst.2nd_installment_due_date AS `Due Date`,
                 'Second Installment' AS Installment
             FROM
-                `tabSFAC Installment` AS sfac_inst
+                `tabFPO MFR 10K` AS sfac_inst
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
@@ -65,7 +65,7 @@ def execute(filters=None):
                 sfac_inst.3rd_installment_due_date AS `Due Date`,
                 'Third Installment' AS Installment
             FROM
-                `tabSFAC Installment` AS sfac_inst
+                `tabFPO MFR 10K` AS sfac_inst
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
@@ -79,7 +79,7 @@ def execute(filters=None):
                 sfac_inst.4th_installment_due_date AS `Due Date`,
                 'Fourth Installment' AS Installment
             FROM
-                `tabSFAC Installment` AS sfac_inst
+                `tabFPO MFR 10K` AS sfac_inst
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
@@ -93,7 +93,7 @@ def execute(filters=None):
                 sfac_inst.5th_installment_due_date AS `Due Date`,
                 'Fifth Installment' AS Installment
             FROM
-                `tabSFAC Installment` AS sfac_inst
+                `tabFPO MFR 10K` AS sfac_inst
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
@@ -107,7 +107,7 @@ def execute(filters=None):
                 sfac_inst.6th_installment_due_date AS `Due Date`,
                 'Sixth Installment' AS Installment
             FROM
-                `tabSFAC Installment` AS sfac_inst
+                `tabFPO MFR 10K` AS sfac_inst
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
@@ -124,10 +124,10 @@ def execute(filters=None):
             pending_dates pd
         INNER JOIN
             `tabFPO Profiling` AS fpo_profiling ON pd.`FPO Name` = fpo_profiling.name_of_the_fpo_copy
-        """
+    """
 
     # Applying filters
-    if filters.get("installment_"):
+    if filters and filters.get("installment_"):
         sql_query += f" WHERE pd.Installment = '{filters['installment_']}'"
 
     # Fetch the data

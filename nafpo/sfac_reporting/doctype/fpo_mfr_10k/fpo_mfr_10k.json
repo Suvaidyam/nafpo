@@ -1,0 +1,411 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SFACI-{####}",
+ "creation": "2024-06-20 16:19:40.738029",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "fpo",
+  "fpo_copy",
+  "cbbo",
+  "ia",
+  "first_installment_section",
+  "are_you_received_1st_installment_fund",
+  "1st_installment_due_date",
+  "1st_installment_date",
+  "1st_installment_amount",
+  "column_break_fhsl",
+  "1st_installment_proof_of_document",
+  "second_installment_section",
+  "are_you_received_2nd_installment_fund",
+  "2nd_installment_due_date",
+  "2nd_installment_date",
+  "2nd_installment_amount",
+  "column_break_eabk",
+  "2nd_installment_proof_of_document",
+  "third_installment_section",
+  "are_you_received_3rd_installment_fund",
+  "3rd_installment_due_date",
+  "3rd_installment_date",
+  "amount",
+  "column_break_yumf",
+  "3rd_installment_proof_of_document",
+  "fourth_installment_section",
+  "are_you_received_4th_installment_fund",
+  "4th_installment_due_date",
+  "4th_installment_date",
+  "4th_installment_amount",
+  "column_break_maxg",
+  "4th_installment_proof_of_document",
+  "fifth_installment_section",
+  "are_you_received_5th_installment_fund",
+  "5th_installment_due_date",
+  "5th_installment_date",
+  "5th_installment_amount",
+  "column_break_tdjf",
+  "5th_installment_proof_of_document",
+  "six_installment_section",
+  "are_you_received_6th_installment_fund",
+  "6th_installment_due_date",
+  "6th_installment_date",
+  "6th_installment_amount",
+  "column_break_pwao",
+  "6th_installment_proof_of_document"
+ ],
+ "fields": [
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "label": "FPO",
+   "options": "FPO",
+   "reqd": 1
+  },
+  {
+   "description": "<span style=\"font-size:12px; color:gray;\">Registration Date</span>",
+   "fieldname": "first_installment_section",
+   "fieldtype": "Section Break",
+   "label": "First Installment"
+  },
+  {
+   "default": "No",
+   "fieldname": "are_you_received_1st_installment_fund",
+   "fieldtype": "Autocomplete",
+   "in_list_view": 1,
+   "label": "Are you Received 1st Installment Fund ?",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_fhsl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "1st_installment_due_date",
+   "fieldtype": "Date",
+   "label": "Eligible Date"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_1st_installment_fund == \"Yes\"",
+   "fieldname": "1st_installment_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_1st_installment_fund == \"Yes\"",
+   "fieldname": "1st_installment_amount",
+   "fieldtype": "Int",
+   "label": "Amount",
+   "non_negative": 1
+  },
+  {
+   "description": "<span style=\"font-size:12px; color:gray;\">Registration Date +6 Months</span>",
+   "fieldname": "second_installment_section",
+   "fieldtype": "Section Break",
+   "label": "Second Installment"
+  },
+  {
+   "fieldname": "2nd_installment_due_date",
+   "fieldtype": "Date",
+   "label": "Eligible Date"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_2nd_installment_fund == \"Yes\"",
+   "fieldname": "2nd_installment_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_2nd_installment_fund == \"Yes\"",
+   "fieldname": "2nd_installment_amount",
+   "fieldtype": "Int",
+   "label": "Amount",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_eabk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "<span style=\"font-size:12px; color:gray;\">Registration Date +12 Months</span>",
+   "fieldname": "third_installment_section",
+   "fieldtype": "Section Break",
+   "label": "Third Installment"
+  },
+  {
+   "fieldname": "3rd_installment_due_date",
+   "fieldtype": "Date",
+   "label": "Eligible Date"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_3rd_installment_fund == \"Yes\"",
+   "fieldname": "3rd_installment_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_3rd_installment_fund == \"Yes\"",
+   "fieldname": "amount",
+   "fieldtype": "Int",
+   "label": "Amount",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_yumf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "<span style=\"font-size:12px; color:gray;\">Registration Date +18 Months</span>",
+   "fieldname": "fourth_installment_section",
+   "fieldtype": "Section Break",
+   "label": "Fourth Installment"
+  },
+  {
+   "fieldname": "4th_installment_due_date",
+   "fieldtype": "Date",
+   "label": "Eligible Date"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_4th_installment_fund == \"Yes\"",
+   "fieldname": "4th_installment_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_4th_installment_fund == \"Yes\"",
+   "fieldname": "4th_installment_amount",
+   "fieldtype": "Int",
+   "label": "Amount",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_maxg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_4th_installment_fund == \"Yes\"",
+   "fieldname": "4th_installment_proof_of_document",
+   "fieldtype": "Attach Image",
+   "label": "Proof of document"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_3rd_installment_fund == \"Yes\"",
+   "fieldname": "3rd_installment_proof_of_document",
+   "fieldtype": "Attach Image",
+   "label": "Proof of document"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_2nd_installment_fund == \"Yes\"",
+   "fieldname": "2nd_installment_proof_of_document",
+   "fieldtype": "Attach Image",
+   "label": "Proof of Document"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_1st_installment_fund == \"Yes\"",
+   "fieldname": "1st_installment_proof_of_document",
+   "fieldtype": "Attach Image",
+   "label": "Proof of Document"
+  },
+  {
+   "description": "<span style=\"font-size:12px; color:gray;\">Registration Date\n+24 Months</span>",
+   "fieldname": "fifth_installment_section",
+   "fieldtype": "Section Break",
+   "label": "Fifth Installment"
+  },
+  {
+   "fieldname": "5th_installment_due_date",
+   "fieldtype": "Date",
+   "label": "Eligible Date"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_5th_installment_fund == \"Yes\"",
+   "fieldname": "5th_installment_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_5th_installment_fund == \"Yes\"",
+   "fieldname": "5th_installment_amount",
+   "fieldtype": "Int",
+   "label": "Amount",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_tdjf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_5th_installment_fund == \"Yes\"",
+   "fieldname": "5th_installment_proof_of_document",
+   "fieldtype": "Attach Image",
+   "label": "Proof of document"
+  },
+  {
+   "description": "<span style=\"font-size:12px; color:gray;\">Registration Date +30 Months</span>",
+   "fieldname": "six_installment_section",
+   "fieldtype": "Section Break",
+   "label": "Six Installment"
+  },
+  {
+   "default": "No",
+   "fieldname": "are_you_received_5th_installment_fund",
+   "fieldtype": "Autocomplete",
+   "in_list_view": 1,
+   "label": "Are you Received 5th Installment Fund ?",
+   "options": "Yes\nNo"
+  },
+  {
+   "default": "No",
+   "fieldname": "are_you_received_6th_installment_fund",
+   "fieldtype": "Autocomplete",
+   "in_list_view": 1,
+   "label": "Are you Received 6th Installment Fund ?",
+   "options": "Yes\nNo"
+  },
+  {
+   "default": "No",
+   "fieldname": "are_you_received_4th_installment_fund",
+   "fieldtype": "Autocomplete",
+   "in_list_view": 1,
+   "label": "Are you Received 4th Installment Fund ?",
+   "options": "Yes\nNo"
+  },
+  {
+   "default": "No",
+   "fieldname": "are_you_received_3rd_installment_fund",
+   "fieldtype": "Autocomplete",
+   "in_list_view": 1,
+   "label": "Are you Received 3rd Installment Fund ?",
+   "options": "Yes\nNo"
+  },
+  {
+   "default": "No",
+   "fieldname": "are_you_received_2nd_installment_fund",
+   "fieldtype": "Autocomplete",
+   "in_list_view": 1,
+   "label": "Are you Received 2nd Installment Fund ?",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "6th_installment_due_date",
+   "fieldtype": "Date",
+   "label": "Eligible Date"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_6th_installment_fund == \"Yes\"",
+   "fieldname": "6th_installment_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_6th_installment_fund == \"Yes\"",
+   "fieldname": "6th_installment_amount",
+   "fieldtype": "Int",
+   "label": "Amount",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_pwao",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.are_you_received_6th_installment_fund == \"Yes\"",
+   "fieldname": "6th_installment_proof_of_document",
+   "fieldtype": "Attach Image",
+   "label": "Proof of document"
+  },
+  {
+   "fieldname": "fpo_copy",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "FPO",
+   "unique": 1
+  },
+  {
+   "fetch_from": "fpo.cbbo_name",
+   "fieldname": "cbbo",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "CBBO",
+   "options": "CBBO"
+  },
+  {
+   "fetch_from": "cbbo.ia_name",
+   "fieldname": "ia",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "IA",
+   "options": "IA"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-26 16:14:40.171016",
+ "modified_by": "Administrator",
+ "module": "SFAC Reporting",
+ "name": "FPO MFR 10K",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "FPO",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IA",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CBBO",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "fpo_copy"
+}

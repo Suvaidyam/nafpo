@@ -12,7 +12,8 @@ fixtures = [
     "Financial Year",
     "IA",
     "CBBO",
-    "Type of Organization"
+    "Type of Organization",
+    "Custom HTML Block"
 ]
 
 # Includes in <head>
@@ -20,11 +21,11 @@ fixtures = [
 
 # include js, css files in header of desk.html
 app_include_css = "/assets/nafpo/css/nafpo.css"
-# app_include_js = "/assets/nafpo/js/nafpo.js"
+app_include_js = "/assets/nafpo/js/nafpo.js"
 
 # include js, css files in header of web template
 web_include_css = "/assets/nafpo/css/nafpo.css"
-# web_include_js = "/assets/nafpo/js/nafpo.js"
+web_include_js = "/assets/nafpo/js/nafpo.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "nafpo/public/scss/website"
@@ -122,7 +123,7 @@ doctype_js = {
     "Annual Compliance Forms" : [
         "public/js/utils/utils.js"
     ],
-    "SFAC Installment" : [
+    "FPO MFR 10K" : [
         "public/js/utils/utils.js"
     ],
 }

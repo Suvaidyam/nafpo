@@ -39,8 +39,7 @@ frappe.ui.form.on("Capacity", {
                 console.error('User data fetch error:', e);
             }
         }
-        hide_advance_search(frm, ['fpo_member', 'bod_kyc',
-        ])
+        hide_advance_search(frm, ['fpo_member', 'bod_kyc', 'fpo', 'operation_system'])
     },
     category(frm) {
         if (frm.doc.category !== "Membership System (FPO Member)") {
@@ -49,9 +48,9 @@ frappe.ui.form.on("Capacity", {
         if (frm.doc.category !== "Governance System (BOD)") {
             frm.set_value('bod_kyc', '')
         }
-        // if (frm.doc.category !== "Operation System (CEO/Account/other staff)") {
-        //     frm.set_value('bod_kyc', '')
-        // }
+        if (frm.doc.category !== "Operation System (CEO/Account/other staff)") {
+            frm.set_value('operation_system', '')
+        }
         if (frm.doc.category !== "Other") {
             frm.set_value('other', '')
         }

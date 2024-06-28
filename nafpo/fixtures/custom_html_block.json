@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=Yes\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px;\">No. of FPOs participated at least 1 training</div>\n      <div class=\"data\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=No\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px;\">No. of FPOs not participated at training</div>\n      <div class=\"data1\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n\n\n\n\n",
+  "modified": "2024-06-28 10:00:15.144671",
+  "name": "Membership System Capacity Buidling",
+  "private": 0,
+  "roles": [],
+  "script": " frappe.call({\n    method: \"nafpo.apis.api.membership_system_capacity_buidling_count\",\n    \n             callback(r) {\n                console.log(r,\"erheoiuhr\")\n                let some_class_element = root_element.querySelector('.data');\n                some_class_element.textContent = r.message.FPO_with_Training;\n                 let some_class_element1 = root_element.querySelector('.data1');\n                some_class_element1.textContent = r.message.FPO_without_Training;\n             }\n});",
+  "style": null
+ }
+]
