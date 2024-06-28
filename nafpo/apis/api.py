@@ -38,6 +38,11 @@ def get_total_eligible_fpos_count():
 
 
 @frappe.whitelist()
+def one_time_organization_registration_forms_fpo_count():
+    return frappe.db.count('One Time Organization Registration Forms')
+
+
+@frappe.whitelist()
 def get_received_fund_before_or_on_due_date():
     query = """
         SELECT COUNT(*)
@@ -85,19 +90,85 @@ def get_Eligible_but_not_received_fund_yet():
     """
     count = frappe.db.sql(query, {'current_date': current_date})
     return count[0][0] if count and count[0] else 0
+
+@frappe.whitelist()
+def get_annual_compliance_forms_fpo_count():
+    sql_query = """
+        SELECT
+            COUNT(DISTINCT sub_query.fpo_id) AS count
+        FROM
+            (
+            SELECT
+                fpo_profiling.name_of_the_fpo_copy AS fpo_name,
+                fpo_profiling.contact_detail_of_fpo AS fpo_contact_number,
+                `tabAnnual Compliance Forms`.financial_year AS financial_year,
+                `tabAnnual Compliance Forms`.fpo AS fpo_id,
+                COUNT(*) AS total_meeting
+            FROM
+                `tabAnnual Compliance Forms`
+            INNER JOIN
+                `tabFPO Profiling` AS fpo_profiling ON `tabAnnual Compliance Forms`.fpo = fpo_profiling.name_of_the_fpo
+            GROUP BY
+                fpo_name, fpo_contact_number, financial_year
+            HAVING
+                COUNT(*) <= 3) AS sub_query
+        """
+    data = frappe.db.sql(sql_query, as_dict=True)
+    return data[0]
+
 @frappe.whitelist()
 def get_incomplete_fpo_board_of_directors_meeting_count():
-    query = """
-        SELECT COUNT(DISTINCT fpo) AS total_fpo_count
-        FROM `tabBoard of Directors Meeting Forms`
-        WHERE status = 'Completed'
-        GROUP BY financial_year
-        HAVING COUNT(*) <= 3
-    """
-    count= frappe.db.sql(query, as_dict=1)
-    return count[0]
+    sql_query = """
+        SELECT
+            COUNT(DISTINCT sub_query.fpo_id) AS count
+        FROM
+            (
+            SELECT
+                fpo_profiling.name_of_the_fpo_copy AS fpo_name,
+                fpo_profiling.contact_detail_of_fpo AS fpo_contact_number,
+                `tabBoard of Directors Meeting Forms`.financial_year AS financial_year,
+                `tabBoard of Directors Meeting Forms`.fpo AS fpo_id,
+                COUNT(*) AS total_meeting
+            FROM
+                `tabBoard of Directors Meeting Forms`
+            INNER JOIN
+                `tabFPO Profiling` AS fpo_profiling ON `tabBoard of Directors Meeting Forms`.fpo = fpo_profiling.name_of_the_fpo
+            WHERE
+                `tabBoard of Directors Meeting Forms`.status = 'Completed'
+            GROUP BY
+                fpo_name, fpo_contact_number, financial_year
+            HAVING
+                COUNT(*) <= 3) AS sub_query
+        """
+    data = frappe.db.sql(sql_query, as_dict=True)
+    return data[0]
 
-
+@frappe.whitelist()
+def get_complete_fpo_board_of_directors_meeting_count():
+    sql_query = """
+        SELECT
+            COUNT(DISTINCT sub_query.fpo_id) AS count
+        FROM
+            (
+            SELECT
+                fpo_profiling.name_of_the_fpo_copy AS fpo_name,
+                fpo_profiling.contact_detail_of_fpo AS fpo_contact_number,
+                `tabBoard of Directors Meeting Forms`.financial_year AS financial_year,
+                `tabBoard of Directors Meeting Forms`.fpo AS fpo_id,
+                COUNT(*) AS total_meeting
+            FROM
+                `tabBoard of Directors Meeting Forms`
+            INNER JOIN
+                `tabFPO Profiling` AS fpo_profiling ON `tabBoard of Directors Meeting Forms`.fpo = fpo_profiling.name_of_the_fpo
+            WHERE
+                `tabBoard of Directors Meeting Forms`.status = 'Completed'
+            GROUP BY
+                fpo_name, fpo_contact_number, financial_year
+            HAVING
+                COUNT(*) >= 4) AS sub_query
+        """
+    data = frappe.db.sql(sql_query, as_dict=True)
+    return data[0]
 
 
 # Aniket
