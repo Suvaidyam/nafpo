@@ -1,0 +1,23 @@
+{
+ "creation": "2024-06-28 17:10:10.365319",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "State Cover",
+ "modified": "2024-06-28 17:12:31.768937",
+ "modified_by": "Administrator",
+ "module": "Profiling",
+ "name": "State Covered",
+ "owner": "Administrator",
+ "report_field": "state_count",
+ "report_function": "Sum",
+ "report_name": "Geographical Reach(FPO Profile)",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}
