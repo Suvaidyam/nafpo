@@ -10,7 +10,7 @@
  "idx": 7,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-20 10:22:53.018841",
+ "modified": "2024-06-28 11:08:03.356068",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda",
@@ -26,9 +26,6 @@
   },
   {
    "role": "CBBO"
-  },
-  {
-   "role": "FPO"
   }
  ],
  "time_interval": "Yearly",

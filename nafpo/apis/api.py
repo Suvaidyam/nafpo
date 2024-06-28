@@ -36,25 +36,9 @@ def get_total_eligible_fpos_count():
     count = frappe.db.sql(query, {'current_date': current_date}, as_dict=False)
     return count[0][0] if count else 0
 
-@frappe.whitelist()
-def get_received_fund_before_or_on_due_date():
-    current_date = nowdate()
-    query = """
-        SELECT COUNT(*)
-        FROM `tabFPO MFR 10K`
-        WHERE `1st_installment_due_date` <= %(current_date)s
-        OR `2nd_installment_due_date` <= %(current_date)s
-        OR `3rd_installment_due_date` <= %(current_date)s
-        OR `4th_installment_due_date` <= %(current_date)s
-        OR `5th_installment_due_date` <= %(current_date)s
-        OR `6th_installment_due_date` <= %(current_date)s
-    """
-    count = frappe.db.sql(query, {'current_date': current_date}, as_dict=False)
-    return count[0][0] if count else 0
 
 @frappe.whitelist()
 def get_received_fund_before_or_on_due_date():
-    current_date = nowdate()
     query = """
         SELECT COUNT(*)
         FROM `tabFPO MFR 10K`
@@ -71,12 +55,16 @@ def get_received_fund_before_or_on_due_date():
 
 @frappe.whitelist()
 def get_received_fund_after_due_date():
-    current_date = nowdate()
     query = """
         SELECT COUNT(*)
         FROM `tabFPO MFR 10K`
         WHERE 
-            (`status` = 'Completed' AND `1st_installment_due_date` <= `1st_installment_date`)
+            (`are_you_received_1st_installment_fund` = 'Yes' AND `1st_installment_due_date` <= `1st_installment_date`) OR
+            (`are_you_received_2nd_installment_fund` = 'Yes' AND `2nd_installment_due_date` <= `2nd_installment_date`) OR
+            (`are_you_received_3rd_installment_fund` = 'Yes' AND `3rd_installment_due_date` <= `3rd_installment_date`) OR
+            (`are_you_received_4th_installment_fund` = 'Yes' AND `4th_installment_due_date` <= `4th_installment_date`) OR
+            (`are_you_received_5th_installment_fund` = 'Yes' AND `5th_installment_due_date` <= `5th_installment_date`) OR
+            (`are_you_received_6th_installment_fund` = 'Yes' AND `6th_installment_due_date` <= `6th_installment_date`)
     """
     count = frappe.db.sql(query)
     return count[0][0] if count else 0
@@ -139,35 +127,35 @@ FROM (
 @frappe.whitelist()
 def operation_system_capacity_building():
     queary = """
-    SELECT COUNT(*) as count, 'Yes' as has_trained
-FROM (
-    SELECT
-        _fs.position_designation,
-        _fpo.fpo_name
-    FROM
-        `tabCapacity` AS _cap
-    INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
-    INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
-    INNER JOIN `tabFPO` AS _fpo ON _fs.fpo = _fpo.name
-    GROUP BY _fpo.fpo_name
-) AS has_trained
+    SELECT 
+    (SELECT COUNT(*)
+     FROM (
+         SELECT
+             _fs.position_designation,
+             _fpo.fpo_name
+         FROM
+             `tabCapacity` AS _cap
+         INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
+         INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
+         INNER JOIN `tabFPO` AS _fpo ON _fs.fpo = _fpo.name
+         GROUP BY _fpo.fpo_name
+     ) AS has_trained) AS has_trained_count,
 
-UNION ALL
+    (SELECT COUNT(*)
+     FROM (
+         SELECT
+             fpo.name
+         FROM
+             `tabFPO` AS fpo
+         WHERE
+             fpo.name NOT IN (
+                 SELECT DISTINCT _fs.fpo
+                 FROM `tabCapacity` AS _cap
+                 INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
+                 INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
+             )
+     ) AS has_not_trained) AS has_not_trained_count;
 
-SELECT COUNT(*) as count, 'No' as has_trained
-FROM (
-    SELECT
-        fpo.name
-    FROM
-        `tabFPO` AS fpo
-    WHERE
-        fpo.name NOT IN (
-            SELECT DISTINCT _fs.fpo
-            FROM `tabCapacity` AS _cap
-            INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
-            INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
-        )
-) AS has_not_trained;
 
     """
     count= frappe.db.sql(queary, as_dict=1)
