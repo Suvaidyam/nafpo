@@ -6,11 +6,11 @@
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
- "idx": 0,
+ "idx": 1,
  "is_standard": "Yes",
  "json": "{}",
  "letterhead": null,
- "modified": "2024-06-27 17:33:46.527867",
+ "modified": "2024-06-28 11:27:16.192005",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Completed FPO Board of Directors Meeting",
@@ -19,5 +19,15 @@
  "ref_doctype": "Board of Directors Meeting Forms",
  "report_name": "Completed FPO Board of Directors Meeting",
  "report_type": "Script Report",
- "roles": []
+ "roles": [
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
+  }
+ ]
 }

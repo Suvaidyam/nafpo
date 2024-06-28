@@ -10,7 +10,7 @@
  "idx": 16,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-25 11:22:33.781524",
+ "modified": "2024-06-28 11:07:07.649044",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA",
@@ -26,9 +26,6 @@
   },
   {
    "role": "CBBO"
-  },
-  {
-   "role": "FPO"
   }
  ],
  "time_interval": "Yearly",

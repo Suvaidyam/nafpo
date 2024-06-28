@@ -10,7 +10,7 @@
  "idx": 12,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-20 10:20:28.993241",
+ "modified": "2024-06-28 11:07:16.809547",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Form INC-22 \u2013 Registered office Address - MCA",
@@ -26,9 +26,6 @@
   },
   {
    "role": "CBBO"
-  },
-  {
-   "role": "FPO"
   }
  ],
  "time_interval": "Yearly",

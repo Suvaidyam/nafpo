@@ -10,7 +10,7 @@
  "idx": 9,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-20 10:21:16.448421",
+ "modified": "2024-06-28 11:07:32.165554",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "FORM AOC-4 \u2013 Filing of Financial Statements",
@@ -26,9 +26,6 @@
   },
   {
    "role": "CBBO"
-  },
-  {
-   "role": "FPO"
   }
  ],
  "time_interval": "Yearly",
