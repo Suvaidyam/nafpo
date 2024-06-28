@@ -4,10 +4,16 @@ def execute(filters=None):
     # Define the columns for the report
     columns = [
         {
-            "fieldname": "fpo",
-            "label": "FPO",
+            "fieldname": "fpo_name",
+            "label": "FPO Name",
             "fieldtype": "Data",
             "width": 300
+        },
+        {
+            "fieldname": "fpo_contact_number",
+            "label": "FPO Contact Number",
+            "fieldtype": "Data",
+            "width": 200
         },
         {
             "fieldname": "financial_year",
@@ -17,65 +23,34 @@ def execute(filters=None):
         },
         {
             "fieldname": "total_meeting",
-            "label": "Total Meeting",
-            "fieldtype": "Int",
-            "width": 200
-        },
-        {
-            "fieldname": "total_fpo",
-            "label": "Total FPOs",
+            "label": "Total Meetings",
             "fieldtype": "Int",
             "width": 200
         }
     ]
 
-    # SQL query to fetch FPOs and their meeting counts
     sql_query = """
         SELECT
-            fpo,
-            financial_year,
+            fpo_profiling.name_of_the_fpo_copy AS fpo_name,
+            fpo_profiling.contact_detail_of_fpo AS fpo_contact_number,
+            `tabBoard of Directors Meeting Forms`.financial_year AS financial_year,
             COUNT(*) AS total_meeting
         FROM
             `tabBoard of Directors Meeting Forms`
+        INNER JOIN
+            `tabFPO Profiling` AS fpo_profiling ON `tabBoard of Directors Meeting Forms`.fpo = fpo_profiling.name_of_the_fpo
         WHERE
-            status = 'Completed'
+            `tabBoard of Directors Meeting Forms`.status = 'Completed'
         GROUP BY
-            fpo, financial_year
+            fpo_name, fpo_contact_number, financial_year
         HAVING
             COUNT(*) >= 4
     """
 
-    # Execute the query to fetch the data
-    data = frappe.db.sql(sql_query, as_dict=True)
-
-    # SQL query to count the number of unique FPOs
-    fpo_count_query = """
-        SELECT
-            COUNT(DISTINCT fpo) AS fpo_count
-        FROM
-            `tabBoard of Directors Meeting Forms`
-        WHERE
-            status = 'Completed'
-        GROUP BY
-            fpo
-        HAVING
-            COUNT(*) >= 4
-    """
-
-    # Execute the query to count unique FPOs
-    fpo_count_data = frappe.db.sql(fpo_count_query, as_dict=True)
-    # Add a summary row for the count of unique FPOs
-    fpo_count = len(fpo_count_data)
-    print('============================ fpo_count_data',fpo_count)
+    try:
+        data = frappe.db.sql(sql_query, as_dict=True)
+        return columns, data
     
-    # fpo_count = fpo_count_data[0]['fpo_count'] if fpo_count_data else 0
-    summary_row = {
-        "fpo": "",
-        "financial_year": "",
-        "total_meeting": "",
-        "total_fpo": fpo_count
-    }
-    data.append(summary_row)
-    
-    # Return the columns and data
-    return columns, data
+    except Exception as e:
+        frappe.log_error(f"Error in executing report: {e}")
+        return columns, []
