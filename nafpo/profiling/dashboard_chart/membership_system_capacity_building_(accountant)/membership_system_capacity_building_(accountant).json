@@ -1,0 +1,37 @@
+{
+ "chart_name": "Membership System Capacity Building (Accountant)",
+ "chart_type": "Report",
+ "creation": "2024-06-28 12:15:41.234632",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2024-06-28 12:51:28.824304",
+ "modified_by": "Administrator",
+ "module": "Profiling",
+ "name": "Membership System Capacity Building (Accountant)",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Membership System Capacity Building FPO Count",
+ "roles": [
+  {
+   "role": "FPO"
+  }
+ ],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Donut",
+ "use_report_chart": 0,
+ "x_field": "count",
+ "y_axis": [
+  {
+   "color": "",
+   "y_field": "has_trained_accountant"
+  }
+ ]
+}
