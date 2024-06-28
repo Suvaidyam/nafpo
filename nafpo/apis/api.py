@@ -178,3 +178,115 @@ def operation_system_capacity_building():
     return count[0]
 
 
+@frappe.whitelist()
+def governance_system_capacity_building_count():
+    queary = """
+    SELECT
+    COUNT(CASE WHEN subquery.training_count > 0 THEN 1 END) AS FPOs_With_Training,
+    COUNT(CASE WHEN subquery.training_count = 0 THEN 1 END) AS FPOs_Without_Training
+FROM (
+    SELECT
+        f.name AS fpo_name,
+        COUNT(b.parent) AS training_count
+    FROM
+        `tabFPO` f
+    LEFT JOIN
+        `tabCapacity` c ON f.name = c.fpo
+    LEFT JOIN
+        `tabBOD KYC Child` b ON c.name = b.parent
+    GROUP BY
+        f.name
+) AS subquery;
+    """
+    count= frappe.db.sql(queary, as_dict=1)
+    return count[0]
+
+
+
+@frappe.whitelist()
+def membership_system_capacity_building_fpo_mamber_count():
+    queary = """
+    WITH TrainingAttendance AS (
+    SELECT
+        "Yes" AS attended_training,
+        _fpo.name AS fpo_id
+    FROM
+        `tabFPO member details` AS _fmd
+    INNER JOIN `tabFPO` AS _fpo ON _fmd.fpo = _fpo.name
+    WHERE
+        _fmd.name IN (SELECT
+            _fmdc.fpo_member
+        FROM
+            `tabFPO member details Child` AS _fmdc
+        WHERE
+            _fmdc.parenttype = 'Capacity')
+    UNION ALL
+    SELECT
+        "No" AS attended_training,
+        _fpo.name AS fpo_id
+    FROM
+        `tabFPO member details` AS _fmd
+    INNER JOIN `tabFPO` AS _fpo ON _fmd.fpo = _fpo.name
+    WHERE
+        _fmd.name NOT IN (SELECT
+            _fmdc.fpo_member
+        FROM
+            `tabFPO member details Child` AS _fmdc
+        WHERE
+            _fmdc.parenttype = 'Capacity')
+)
+SELECT
+    COALESCE(SUM(CASE WHEN attended_training = 'Yes' THEN 1 ELSE 0 END), 0) AS Yes,
+    COALESCE(SUM(CASE WHEN attended_training = 'No' THEN 1 ELSE 0 END), 0) AS No
+FROM
+    TrainingAttendance;
+    """
+    count= frappe.db.sql(queary, as_dict=1)
+    return count[0]
+
+
+@frappe.whitelist()
+def governance_system_capacity_building_fpo_bod_count():
+    queary = """
+WITH TrainingAttendance AS (
+    SELECT
+        "Yes" AS attended_training,
+        _bk.mobile_number,
+        _fpo.fpo_name,
+        _bk.name1 AS bod_name
+    FROM
+        `tabBOD KYC` AS _bk
+    INNER JOIN `tabFPO` AS _fpo ON _bk.fpo_name = _fpo.name
+    WHERE
+        _bk.name IN (SELECT
+            _bkc.bod_kyc
+        FROM
+            `tabBOD KYC Child` AS _bkc
+        WHERE
+            _bkc.parenttype = 'Capacity')
+    UNION ALL
+    SELECT
+        "No" AS attended_training,
+        _bk.mobile_number,
+        _fpo.fpo_name,
+        _bk.name1 AS bod_name
+    FROM
+        `tabBOD KYC` AS _bk
+    INNER JOIN `tabFPO` AS _fpo ON _bk.fpo_name = _fpo.name
+    WHERE
+        _bk.name NOT IN (SELECT
+            _bkc.bod_kyc
+        FROM
+            `tabBOD KYC Child` AS _bkc
+        WHERE
+            _bkc.parenttype = 'Capacity')
+)
+SELECT
+    SUM(CASE WHEN attended_training = 'Yes' THEN 1 ELSE 0 END) AS Yes,
+    SUM(CASE WHEN attended_training = 'No' THEN 1 ELSE 0 END) AS No
+FROM
+    TrainingAttendance;
+    """
+    count= frappe.db.sql(queary, as_dict=1)
+    return count[0]
+
