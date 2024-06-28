@@ -35,7 +35,7 @@ class FPOProfiling(Document):
 
     def on_update(self):
         if self.date_of_registration:
-            sfac_ins = frappe.db.exists("SFAC Installment", {'fpo': self.name_of_the_fpo})
+            sfac_ins = frappe.db.exists("FPO MFR 10K", {'fpo': self.name_of_the_fpo})
             if sfac_ins:
                 registration_date_str = self.date_of_registration
                 registration_date = datetime.strptime(registration_date_str, '%Y-%m-%d').date()
@@ -54,7 +54,7 @@ class FPOProfiling(Document):
                 fifth_due_date_str = fifth_due_date.isoformat()
                 six_due_date_str = six_due_date.isoformat()
                 
-                frappe.db.set_value('SFAC Installment',sfac_ins,
+                frappe.db.set_value('FPO MFR 10K',sfac_ins,
                                     {
                                         '1st_installment_due_date':first_due_date_str,
                                         '2nd_installment_due_date':second_due_date_str,
