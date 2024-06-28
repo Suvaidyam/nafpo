@@ -9,6 +9,5 @@ frappe.query_reports["Membership System Capacity Buidling"] = {
 			"fieldtype": "Select",
 			"options": ["","Yes", "No"]
 		}
-
 	]
 };
