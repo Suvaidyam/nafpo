@@ -139,35 +139,35 @@ FROM (
 @frappe.whitelist()
 def operation_system_capacity_building():
     queary = """
-    SELECT COUNT(*) as count, 'Yes' as has_trained
-FROM (
-    SELECT
-        _fs.position_designation,
-        _fpo.fpo_name
-    FROM
-        `tabCapacity` AS _cap
-    INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
-    INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
-    INNER JOIN `tabFPO` AS _fpo ON _fs.fpo = _fpo.name
-    GROUP BY _fpo.fpo_name
-) AS has_trained
+    SELECT 
+    (SELECT COUNT(*)
+     FROM (
+         SELECT
+             _fs.position_designation,
+             _fpo.fpo_name
+         FROM
+             `tabCapacity` AS _cap
+         INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
+         INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
+         INNER JOIN `tabFPO` AS _fpo ON _fs.fpo = _fpo.name
+         GROUP BY _fpo.fpo_name
+     ) AS has_trained) AS has_trained_count,
 
-UNION ALL
+    (SELECT COUNT(*)
+     FROM (
+         SELECT
+             fpo.name
+         FROM
+             `tabFPO` AS fpo
+         WHERE
+             fpo.name NOT IN (
+                 SELECT DISTINCT _fs.fpo
+                 FROM `tabCapacity` AS _cap
+                 INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
+                 INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
+             )
+     ) AS has_not_trained) AS has_not_trained_count;
 
-SELECT COUNT(*) as count, 'No' as has_trained
-FROM (
-    SELECT
-        fpo.name
-    FROM
-        `tabFPO` AS fpo
-    WHERE
-        fpo.name NOT IN (
-            SELECT DISTINCT _fs.fpo
-            FROM `tabCapacity` AS _cap
-            INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
-            INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
-        )
-) AS has_not_trained;
 
     """
     count= frappe.db.sql(queary, as_dict=1)
