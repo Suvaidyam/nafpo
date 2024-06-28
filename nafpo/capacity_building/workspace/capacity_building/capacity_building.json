@@ -9,9 +9,13 @@
    "label": "Membership System Capacity Building (CEO)"
   }
  ],
- "content": "[{\"id\":\"_79g4Hj6R5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Capacity\",\"col\":4}},{\"id\":\"5qkhXQNxWK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"JJMPEwTWg-\",\"type\":\"paragraph\",\"data\":{\"text\":\"<b>Membership System Capacity Buidling</b>\",\"col\":12}},{\"id\":\"1IbhQluQr5\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Membership System Capacity Buidling\",\"col\":12}},{\"id\":\"wIEAcHVCdX\",\"type\":\"paragraph\",\"data\":{\"text\":\"<b>Governance System Capacity Building</b>\",\"col\":12}},{\"id\":\"XKHHoh0WCB\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Governance System Capacity Building\",\"col\":12}},{\"id\":\"8yg_bEpZ_d\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Membership System Capacity Building (CEO)\",\"col\":6}},{\"id\":\"hxvi1f8Jar\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Membership System Capacity Building (Accountant)\",\"col\":6}}]",
+ "content": "[{\"id\":\"_79g4Hj6R5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Capacity\",\"col\":4}},{\"id\":\"5qkhXQNxWK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"JJMPEwTWg-\",\"type\":\"paragraph\",\"data\":{\"text\":\"<b>Membership System Capacity Buidling</b>\",\"col\":12}},{\"id\":\"1IbhQluQr5\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Membership System Capacity Buidling\",\"col\":12}},{\"id\":\"wIEAcHVCdX\",\"type\":\"paragraph\",\"data\":{\"text\":\"<b>Governance System Capacity Building</b>\",\"col\":12}},{\"id\":\"XKHHoh0WCB\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Governance System Capacity Building\",\"col\":12}},{\"id\":\"_djZtWUUsE\",\"type\":\"paragraph\",\"data\":{\"text\":\"<b>Operation system Capacity Building</b>\",\"col\":12}},{\"id\":\"iAr_NnRC5-\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Operation system Capacity Building\",\"col\":12}},{\"id\":\"8yg_bEpZ_d\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Membership System Capacity Building (CEO)\",\"col\":6}},{\"id\":\"hxvi1f8Jar\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Membership System Capacity Building (Accountant)\",\"col\":6}}]",
  "creation": "2024-06-22 10:59:40.640048",
  "custom_blocks": [
+  {
+   "custom_block_name": "Operation system Capacity Building",
+   "label": "Operation system Capacity Building"
+  },
   {
    "custom_block_name": "Membership System Capacity Buidling",
    "label": "Membership System Capacity Buidling"
@@ -31,7 +35,7 @@
  "is_hidden": 0,
  "label": "Capacity Building",
  "links": [],
- "modified": "2024-06-28 12:21:07.740893",
+ "modified": "2024-06-28 13:06:18.132034",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity Building",
