@@ -7,17 +7,27 @@
  "doctype": "Dashboard Chart",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 19,
+ "idx": 29,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-26 08:43:38.261675",
+ "modified": "2024-06-28 11:06:24.228173",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "First Installment",
  "number_of_groups": 0,
  "owner": "Administrator",
  "report_name": "First Installment",
- "roles": [],
+ "roles": [
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
+  }
+ ],
  "time_interval": "Yearly",
  "timeseries": 0,
  "timespan": "Last Year",

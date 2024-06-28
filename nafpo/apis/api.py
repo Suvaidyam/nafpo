@@ -36,25 +36,9 @@ def get_total_eligible_fpos_count():
     count = frappe.db.sql(query, {'current_date': current_date}, as_dict=False)
     return count[0][0] if count else 0
 
-@frappe.whitelist()
-def get_received_fund_before_or_on_due_date():
-    current_date = nowdate()
-    query = """
-        SELECT COUNT(*)
-        FROM `tabFPO MFR 10K`
-        WHERE `1st_installment_due_date` <= %(current_date)s
-        OR `2nd_installment_due_date` <= %(current_date)s
-        OR `3rd_installment_due_date` <= %(current_date)s
-        OR `4th_installment_due_date` <= %(current_date)s
-        OR `5th_installment_due_date` <= %(current_date)s
-        OR `6th_installment_due_date` <= %(current_date)s
-    """
-    count = frappe.db.sql(query, {'current_date': current_date}, as_dict=False)
-    return count[0][0] if count else 0
 
 @frappe.whitelist()
 def get_received_fund_before_or_on_due_date():
-    current_date = nowdate()
     query = """
         SELECT COUNT(*)
         FROM `tabFPO MFR 10K`
@@ -71,12 +55,16 @@ def get_received_fund_before_or_on_due_date():
 
 @frappe.whitelist()
 def get_received_fund_after_due_date():
-    current_date = nowdate()
     query = """
         SELECT COUNT(*)
         FROM `tabFPO MFR 10K`
         WHERE 
-            (`status` = 'Completed' AND `1st_installment_due_date` <= `1st_installment_date`)
+            (`are_you_received_1st_installment_fund` = 'Yes' AND `1st_installment_due_date` <= `1st_installment_date`) OR
+            (`are_you_received_2nd_installment_fund` = 'Yes' AND `2nd_installment_due_date` <= `2nd_installment_date`) OR
+            (`are_you_received_3rd_installment_fund` = 'Yes' AND `3rd_installment_due_date` <= `3rd_installment_date`) OR
+            (`are_you_received_4th_installment_fund` = 'Yes' AND `4th_installment_due_date` <= `4th_installment_date`) OR
+            (`are_you_received_5th_installment_fund` = 'Yes' AND `5th_installment_due_date` <= `5th_installment_date`) OR
+            (`are_you_received_6th_installment_fund` = 'Yes' AND `6th_installment_due_date` <= `6th_installment_date`)
     """
     count = frappe.db.sql(query)
     return count[0][0] if count else 0
