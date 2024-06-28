@@ -1,0 +1,23 @@
+{
+ "creation": "2024-06-28 17:14:48.091003",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "District Cover",
+ "modified": "2024-06-28 17:14:48.091003",
+ "modified_by": "Administrator",
+ "module": "Profiling",
+ "name": "District Cover",
+ "owner": "Administrator",
+ "report_field": "district_count",
+ "report_function": "Sum",
+ "report_name": "Geographical Reach(FPO Profile)",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}

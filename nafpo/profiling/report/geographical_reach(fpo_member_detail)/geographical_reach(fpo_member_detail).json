@@ -1,0 +1,39 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-06-28 17:25:55.025646",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-06-28 17:25:55.025646",
+ "modified_by": "Administrator",
+ "module": "Profiling",
+ "name": "Geographical Reach(FPO Member Detail)",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\n    COUNT(DISTINCT CASE WHEN state_name != '' THEN state_name ELSE NULL END) AS state_count,\n    COUNT(DISTINCT CASE WHEN district_name != '' THEN district_name ELSE NULL END) AS district_count,\n    COUNT(DISTINCT CASE WHEN block_name != '' THEN block_name ELSE NULL END) AS block_count,\n    COUNT(DISTINCT CASE WHEN grampanchayat_name != '' THEN grampanchayat_name ELSE NULL END) AS grampanchayat_count,\n    COUNT(DISTINCT CASE WHEN village_name != '' THEN village_name ELSE NULL END) AS village_count\nFROM\n    `tabFPO member details`",
+ "ref_doctype": "FPO member details",
+ "report_name": "Geographical Reach(FPO Member Detail)",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "CBBO"
+  },
+  {
+   "role": "FPO"
+  },
+  {
+   "role": "IA"
+  }
+ ]
+}

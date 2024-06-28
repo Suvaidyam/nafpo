@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"kT0tplWpX4\",\"type\":\"header\",\"data\":{\"text\":\"<b>Geographical reach</b><br>\",\"col\":12}},{\"id\":\"WiZxjnSoIs\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State\",\"col\":4}},{\"id\":\"Cd1foSonVV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District Cover\",\"col\":4}},{\"id\":\"Rre2fv0xE-\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block Cover\",\"col\":4}}]",
+ "content": "[{\"id\":\"7te4fKkLXb\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Geographical Reach(FPO Profile)<b></b></span>\",\"col\":12}},{\"id\":\"dlIXc0AFDg\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State Cover\",\"col\":4}},{\"id\":\"uRnpS1NXXy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District Cover\",\"col\":4}},{\"id\":\"NHaxDmG-Am\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block Cover\",\"col\":4}},{\"id\":\"tNzAHcv1-t\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Geographical Reach(FPO Member Detail)<b></b></span>\",\"col\":12}},{\"id\":\"-Kpx5wz-H-\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State Cover\",\"col\":4}},{\"id\":\"X8qhz2hQc6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District Cover\",\"col\":4}},{\"id\":\"SDOEm9YK-t\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block Cover\",\"col\":4}},{\"id\":\"2nxEMqKhu-\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Grampanchayat Cover\",\"col\":4}},{\"id\":\"kUPsYccSqV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Village Cover\",\"col\":4}},{\"id\":\"JnDP76c_65\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">FPO<b></b></span>\",\"col\":12}},{\"id\":\"J6XGIAj2cG\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No. of FPO (Total FPO)\",\"col\":4}},{\"id\":\"TfDD8SfCq1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No. of FPO (FPO Profile)\",\"col\":4}},{\"id\":\"jsvNZnr44O\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"BOD\",\"col\":4}},{\"id\":\"8xTeWrxYcV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Producer Group\",\"col\":4}},{\"id\":\"vHIlydq6ER\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Members\",\"col\":4}}]",
  "creation": "2024-06-25 11:27:09.963063",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,22 +13,50 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-06-28 00:50:47.135970",
+ "modified": "2024-06-28 17:41:07.020990",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Dashboards",
  "number_cards": [
   {
-   "label": "State",
-   "number_card_name": "State Cover"
+   "label": "State Cover",
+   "number_card_name": "State Cover(FPO Member Detail)"
+  },
+  {
+   "label": "No. of FPO (Total FPO)",
+   "number_card_name": "No. of FPO (Total FPO)"
   },
   {
    "label": "District Cover",
-   "number_card_name": "District Cover"
+   "number_card_name": "District Cover(FPO Member Detail)"
+  },
+  {
+   "label": "No. of FPO (FPO Profile)",
+   "number_card_name": "No. of FPO (FPO Profile)"
   },
   {
    "label": "Block Cover",
-   "number_card_name": "Block Cover"
+   "number_card_name": "Block Cover(FPO Member Detail)"
+  },
+  {
+   "label": "BOD",
+   "number_card_name": "BOD"
+  },
+  {
+   "label": "Grampanchayat Cover",
+   "number_card_name": "Grampanchayat Cover(FPO Member Detail)"
+  },
+  {
+   "label": "Producer Group",
+   "number_card_name": "Producer Group"
+  },
+  {
+   "label": "Village Cover",
+   "number_card_name": "Village Cover(FPO Member Detail)"
+  },
+  {
+   "label": "Members",
+   "number_card_name": "Members"
   }
  ],
  "owner": "Administrator",

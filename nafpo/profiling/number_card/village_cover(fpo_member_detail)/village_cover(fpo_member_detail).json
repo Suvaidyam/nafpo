@@ -1,0 +1,23 @@
+{
+ "creation": "2024-06-28 17:29:38.230164",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "Village Cover(FPO Member Detail)",
+ "modified": "2024-06-28 17:29:38.230164",
+ "modified_by": "Administrator",
+ "module": "Profiling",
+ "name": "Village Cover(FPO Member Detail)",
+ "owner": "Administrator",
+ "report_field": "village_count",
+ "report_function": "Sum",
+ "report_name": "Geographical Reach(FPO Member Detail)",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}
