@@ -12,7 +12,8 @@ fixtures = [
     "Financial Year",
     "IA",
     "CBBO",
-    "Type of Organization"
+    "Type of Organization",
+    "Custom HTML Block"
 ]
 
 # Includes in <head>
