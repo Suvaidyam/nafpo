@@ -110,7 +110,8 @@
    "fieldtype": "Link",
    "label": "FPO",
    "options": "FPO",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "fpos_address",
@@ -500,7 +501,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-27 06:41:01.855627",
+ "modified": "2024-06-28 10:59:57.636085",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
