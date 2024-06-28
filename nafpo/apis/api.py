@@ -1,5 +1,5 @@
 import frappe
-
+from frappe.utils import nowdate
 @frappe.whitelist()
 def get_fpo_profile(name=None, fields=["*"]):
     parent = frappe.db.exists({'doctype':'FPO Profiling','name_of_the_fpo':name})
@@ -22,7 +22,6 @@ def get_fpo_profile_doc(doctype_name,filter):
 
 @frappe.whitelist()
 def get_total_eligible_fpos_count():
-    from frappe.utils import nowdate
     current_date = nowdate()
     query = """
         SELECT COUNT(*)
@@ -39,7 +38,6 @@ def get_total_eligible_fpos_count():
 
 @frappe.whitelist()
 def get_received_fund_before_or_on_due_date():
-    from frappe.utils import nowdate
     current_date = nowdate()
     query = """
         SELECT COUNT(*)
@@ -56,7 +54,6 @@ def get_received_fund_before_or_on_due_date():
 
 @frappe.whitelist()
 def get_received_fund_before_or_on_due_date():
-    from frappe.utils import nowdate
     current_date = nowdate()
     query = """
         SELECT COUNT(*)
@@ -74,7 +71,6 @@ def get_received_fund_before_or_on_due_date():
 
 @frappe.whitelist()
 def get_received_fund_after_due_date():
-    from frappe.utils import nowdate
     current_date = nowdate()
     query = """
         SELECT COUNT(*)
@@ -87,7 +83,6 @@ def get_received_fund_after_due_date():
 
 @frappe.whitelist()
 def get_Eligible_but_not_received_fund_yet():
-    from frappe.utils import nowdate
     current_date = nowdate()
     query = """
         SELECT COUNT(*)
@@ -103,6 +98,80 @@ def get_Eligible_but_not_received_fund_yet():
     count = frappe.db.sql(query, {'current_date': current_date})
     return count[0][0] if count and count[0] else 0
 
+
+@frappe.whitelist()
+def membership_system_capacity_buidling_count():
+    queary = """
+    SELECT
+        COUNT(DISTINCT CASE WHEN c.fpo IS NOT NULL THEN f.name END) AS FPO_with_Training,
+        COUNT(DISTINCT CASE WHEN c.fpo IS NULL THEN f.name END) AS FPO_without_Training
+    FROM tabFPO f
+    LEFT JOIN tabCapacity c ON f.name = c.fpo;
+    """
+    count= frappe.db.sql(queary, as_dict=1)
+    return count[0]
+
+
+@frappe.whitelist()
+def governance_system_capacity_building_count():
+    queary = """
+    SELECT
+    COUNT(CASE WHEN subquery.training_count > 0 THEN 1 END) AS FPOs_With_Training,
+    COUNT(CASE WHEN subquery.training_count = 0 THEN 1 END) AS FPOs_Without_Training
+FROM (
+    SELECT
+        f.name AS fpo_name,
+        COUNT(b.parent) AS training_count
+    FROM
+        `tabFPO` f
+    LEFT JOIN
+        `tabCapacity` c ON f.name = c.fpo
+    LEFT JOIN
+        `tabBOD KYC Child` b ON c.name = b.parent
+    GROUP BY
+        f.name
+) AS subquery;
+    """
+    count= frappe.db.sql(queary, as_dict=1)
+    return count[0]
+
+
+@frappe.whitelist()
+def operation_system_capacity_building():
+    queary = """
+    SELECT COUNT(*) as count, 'Yes' as has_trained
+FROM (
+    SELECT
+        _fs.position_designation,
+        _fpo.fpo_name
+    FROM
+        `tabCapacity` AS _cap
+    INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
+    INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
+    INNER JOIN `tabFPO` AS _fpo ON _fs.fpo = _fpo.name
+    GROUP BY _fpo.fpo_name
+) AS has_trained
+
+UNION ALL
+
+SELECT COUNT(*) as count, 'No' as has_trained
+FROM (
+    SELECT
+        fpo.name
+    FROM
+        `tabFPO` AS fpo
+    WHERE
+        fpo.name NOT IN (
+            SELECT DISTINCT _fs.fpo
+            FROM `tabCapacity` AS _cap
+            INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
+            INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
+        )
+) AS has_not_trained;
+
+    """
+    count= frappe.db.sql(queary, as_dict=1)
+    return count[0]
 @frappe.whitelist()
 def get_incomplete_fpo_board_of_directors_meeting_count():
     query = """

@@ -1,8 +1,13 @@
 {
  "charts": [],
- "content": "[{\"id\":\"_79g4Hj6R5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Capacity\",\"col\":4}}]",
+ "content": "[{\"id\":\"_79g4Hj6R5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Capacity\",\"col\":4}},{\"id\":\"5qkhXQNxWK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"JJMPEwTWg-\",\"type\":\"paragraph\",\"data\":{\"text\":\"<b>Membership System Capacity Buidling</b>\",\"col\":12}},{\"id\":\"1IbhQluQr5\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Membership System Capacity Buidling\",\"col\":12}}]",
  "creation": "2024-06-22 10:59:40.640048",
- "custom_blocks": [],
+ "custom_blocks": [
+  {
+   "custom_block_name": "Membership System Capacity Buidling",
+   "label": "Membership System Capacity Buidling"
+  }
+ ],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
@@ -13,7 +18,7 @@
  "is_hidden": 0,
  "label": "Capacity Building",
  "links": [],
- "modified": "2024-06-27 11:23:57.634054",
+ "modified": "2024-06-28 10:01:38.361111",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity Building",

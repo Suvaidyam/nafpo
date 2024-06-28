@@ -123,7 +123,7 @@ doctype_js = {
     "Annual Compliance Forms" : [
         "public/js/utils/utils.js"
     ],
-    "SFAC Installment" : [
+    "FPO MFR 10K" : [
         "public/js/utils/utils.js"
     ],
 }

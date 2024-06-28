@@ -1,7 +1,7 @@
 {
  "add_total_row": 0,
  "columns": [],
- "creation": "2024-06-21 11:11:47.089756",
+ "creation": "2024-06-27 16:40:44.233192",
  "disabled": 0,
  "docstatus": 0,
  "doctype": "Report",
@@ -9,24 +9,30 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-06-28 09:24:31.857304",
+ "modified": "2024-06-27 18:33:49.576033",
  "modified_by": "Administrator",
- "module": "SFAC Reporting",
- "name": "Third Installment",
+ "module": "Capacity Building",
+ "name": "Governance System Capacity Building",
  "owner": "Administrator",
  "prepared_report": 0,
- "ref_doctype": "FPO MFR 10K",
- "report_name": "Third Installment",
+ "ref_doctype": "Capacity",
+ "report_name": "Governance System Capacity Building",
  "report_type": "Script Report",
  "roles": [
   {
-   "role": "Admin"
+   "role": "System Manager"
+  },
+  {
+   "role": "FPO"
   },
   {
    "role": "IA"
   },
   {
    "role": "CBBO"
+  },
+  {
+   "role": "Admin"
   }
  ]
 }

@@ -12,9 +12,9 @@ class FPOMFR10K(Document):
     
     def before_validate(self):
         exists = frappe.db.exists({
-            "doctype": "SFAC Installment", 
+            "doctype": "FPO MFR 10K", 
             "fpo": self.fpo
         })
         data_exists = bool(exists)
         if data_exists and exists != self.name:
-            frappe.throw(f"FPO already exists in SFAC Installment")
+            frappe.throw(f"FPO already exists in FPO MFR 10K")
