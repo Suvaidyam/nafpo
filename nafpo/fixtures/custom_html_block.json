@@ -1,582 +1,582 @@
 [
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Membership System Capacity Buidling</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Building%20FPO%20Mamber\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">FPO Members who has attended at least 1 training</div>\n      <div class=\"fpo1\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Building%20FPO%20Mamber\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">FPO Members who has not attended training</div>\n      <div class=\"fpo2\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>",
-        "modified": "2024-06-28 18:18:41.359220",
-        "name": "Membership System Capacity Building FPO",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "Membership System Capacity Building FPO",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "FPO"
-            }
-        ],
-        "script": " frappe.call({\n    method: \"nafpo.apis.api.membership_system_capacity_building_fpo_mamber_count\",\n    \n             callback(r) {\n                console.log(r,\"erheoiuhr\")\n                let some_class_element = root_element.querySelector('.fpo1');\n                some_class_element.textContent = r.message.Yes;\n                 let some_class_element1 = root_element.querySelector('.fpo2');\n                some_class_element1.textContent = r.message.No;\n             }\n});",
-        "style": null
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Governance System Capacity Building</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Governance%20System%20Capacity%20Building%20FPO%20BOD\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No. of FPOs which has trained BOD</div>\n      <div class=\"dataa\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Governance%20System%20Capacity%20Building%20FPO%20BOD\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No of FPOs which has not trained BOD</div>\n      <div class=\"dataaa\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n",
-        "modified": "2024-06-28 18:34:38.236588",
-        "name": "Governance System Capacity Building FPO",
-        "private": 0,
-        "roles": [],
-        "script": " frappe.call({\n    method: \"nafpo.apis.api.governance_system_capacity_building_fpo_bod_count\",\n    \n             callback(r) {\n                console.log(r,\"098\")\n                let some_class_element = root_element.querySelector('.dataa');\n                some_class_element.textContent = r.message.Yes;\n                 let some_class_element1 = root_element.querySelector('.dataaa');\n                some_class_element1.textContent = r.message.No;\n             }\n});",
-        "style": null
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Operation system Capacity Building</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Operation%20system%20Capacity%20Building?has_trained=Yes\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No.of FPO who has performed atleast 1 CEO/ Accountant training </div>\n      <div class=\"data4\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Operation%20system%20Capacity%20Building?has_trained=No\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No.of FPO who has performed atleast 1 CEO/ Accountant training</div>\n      <div class=\"data5\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n",
-        "modified": "2024-06-28 16:51:23.946012",
-        "name": "Operation system Capacity Building",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "Operation system Capacity Building",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "Operation system Capacity Building",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "Operation system Capacity Building",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": " frappe.call({\n    method: \"nafpo.apis.api.operation_system_capacity_building\",\n    \n             callback(r) {\n                console.log(r,\"iuy\")\n                let some_class_element = root_element.querySelector('.data4');\n                some_class_element.textContent = r.message.has_trained_count;\n                 let some_class_element1 = root_element.querySelector('.data5');\n                some_class_element1.textContent = r.message.has_not_trained_count;\n             }\n});",
-        "style": null
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Incomplete%20FPO%20Board%20of%20Directors%20Meeting\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Incomplete FPO Board of Directors Meeting</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
-        "modified": "2024-06-28 18:42:26.851285",
-        "name": "Incomplete FPO Board of Directors Meeting",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "Incomplete FPO Board of Directors Meeting",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "Incomplete FPO Board of Directors Meeting",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "Incomplete FPO Board of Directors Meeting",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_incomplete_fpo_board_of_directors_meeting_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists.count !== undefined ? forms_lists.count : 0;\n});",
-        "style": ""
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Membership System Capacity Buidling</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=Yes\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px;\">No. of FPOs participated at least 1 training</div>\n      <div class=\"data\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=No\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px;\">No. of FPOs not participated at training</div>\n      <div class=\"data1\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n\n\n\n\n\n",
-        "modified": "2024-06-28 19:47:06.042110",
-        "name": "Membership System Capacity Buidling",
-        "private": 0,
-        "roles": [],
-        "script": " frappe.call({\n    method: \"nafpo.apis.api.membership_system_capacity_buidling_count\",\n    \n             callback(r) {\n                console.log(r,\"erheoiuhr\")\n                let some_class_element = root_element.querySelector('.data');\n                some_class_element.textContent = r.message.FPO_with_Training;\n                 let some_class_element1 = root_element.querySelector('.data1');\n                some_class_element1.textContent = r.message.FPO_without_Training;\n             }\n});",
-        "style": null
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Completed%20FPO%20Board%20of%20Directors%20Meeting\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Complete FPO Board of Directors Meeting</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
-        "modified": "2024-06-28 18:41:31.126362",
-        "name": "Complete FPO Board of Directors Meeting",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "Complete FPO Board of Directors Meeting",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "Complete FPO Board of Directors Meeting",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "Complete FPO Board of Directors Meeting",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_complete_fpo_board_of_directors_meeting_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists.count !== undefined ? forms_lists.count : 0;\n});",
-        "style": ""
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<h4>Dashboard</h4>",
-        "modified": "2024-06-28 11:23:31.431846",
-        "name": "Dashboard",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "Dashboard",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "Dashboard",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "Dashboard",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": null,
-        "style": null
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Eligible%20but%20haven't%20received%20fund%20yet\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Eligible but haven't received fund yet</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
-        "modified": "2024-06-28 18:41:03.207588",
-        "name": "Eligible but haven't received fund yet",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "Eligible but haven't received fund yet",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "Eligible but haven't received fund yet",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "Eligible but haven't received fund yet",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_Eligible_but_not_received_fund_yet',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists : 0;\n});",
-        "style": ""
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Received%20Fund%20after%20Due%20Date\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Received Fund after Due Date</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
-        "modified": "2024-06-28 18:40:47.009937",
-        "name": "Received Fund after Due Date",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "Received Fund after Due Date",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "Received Fund after Due Date",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "Received Fund after Due Date",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_received_fund_after_due_date',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists : 0;\n});",
-        "style": ""
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Received%20Fund%20before%20or%20on%20due%20date\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Received Fund before or on due date</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
-        "modified": "2024-06-28 18:40:28.196790",
-        "name": "Received Fund before or on due date",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "Received Fund before or on due date",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "Received Fund before or on due date",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "Received Fund before or on due date",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_received_fund_before_or_on_due_date',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists : 0;\n});",
-        "style": "* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */\n}"
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Total%20Eligible%20FPOs\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Total Eligible FPOs</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
-        "modified": "2024-06-28 18:39:58.607842",
-        "name": "Total Eligible FPOs",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "Total Eligible FPOs",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "Total Eligible FPOs",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "Total Eligible FPOs",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_total_eligible_fpos_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists : 0;\n});",
-        "style": "* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */\n}"
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/FORM%20AOC-4%20–%20Filing%20of%20Financial%20Statements%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">FORM AOC-4 – Filing of Financial Statements</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
-        "modified": "2024-06-28 18:38:54.138520",
-        "name": "FORM AOC-4 – Filing of Financial Statements",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "FORM AOC-4 – Filing of Financial Statements",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "FORM AOC-4 – Filing of Financial Statements",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "FORM AOC-4 – Filing of Financial Statements",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": "frappe.call({\n    method: \"nafpo.apis.api.governance_system_capacity_building_count\",\n    \n             callback(r) {\n                console.log(r,\"iuy\")\n                let some_class_element = root_element.querySelector('.dataa');\n                some_class_element.textContent = r.message.FPOs_With_Training;\n                 let some_class_element1 = root_element.querySelector('.dataaa');\n                some_class_element1.textContent = r.message.FPOs_Without_Training;\n             }\n});",
-        "style": ""
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Form%20MGT-7%20-%20Filing%20of%20Annual%20Return%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Form MGT-7 - Filing of Annual Return</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
-        "modified": "2024-06-28 18:38:04.845788",
-        "name": "Form MGT-7 - Filing of Annual Return",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "Form MGT-7 - Filing of Annual Return",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "Form MGT-7 - Filing of Annual Return",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "Form MGT-7 - Filing of Annual Return",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_annual_compliance_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists.count !== undefined ? forms_lists.count : 0;\n});",
-        "style": ""
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Form%20ADT-1%20–%20Auditor%20Appointment%20for%20Five%20Year%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Form ADT-1 – Auditor Appointment for Five year</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
-        "modified": "2024-06-28 18:37:48.241524",
-        "name": "Form ADT-1 – Auditor Appointment for Five year",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "Form ADT-1 – Auditor Appointment for Five year",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "Form ADT-1 – Auditor Appointment for Five year",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "Form ADT-1 – Auditor Appointment for Five year",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_annual_compliance_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists.count !== undefined ? forms_lists.count : 0;\n});",
-        "style": ""
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/DIRECTOR%20KYC%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">DIRECTOR KYC</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
-        "modified": "2024-06-28 18:37:34.603107",
-        "name": "DIRECTOR KYC",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "DIRECTOR KYC",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "DIRECTOR KYC",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "DIRECTOR KYC",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_annual_compliance_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists.count !== undefined ? forms_lists.count : 0;\n});",
-        "style": ""
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/IT%20Return%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">IT Return</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
-        "modified": "2024-06-28 18:37:16.073725",
-        "name": "IT Return",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "IT Return",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "IT Return",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "IT Return",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_annual_compliance_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists.count !== undefined ? forms_lists.count : 0;\n});",
-        "style": ""
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/AGM%20-%20Once%20in%20a%20year%20fpo%20need%20to%20organize%20AGM%20and%20pass%20the%20Audit%20report%20and%20other%20agenda%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
-        "modified": "2024-06-28 18:36:59.456233",
-        "name": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_annual_compliance_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists.count !== undefined ? forms_lists.count : 0;\n});",
-        "style": ""
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Form%20ADT-1%20–%20Auditor%20Appointment%20for%20First%20Year%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Form ADT-1 – Auditor Appointment for First Year</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
-        "modified": "2024-06-28 18:39:08.990121",
-        "name": "Form ADT-1 – Auditor Appointment for First year",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "Form ADT-1 – Auditor Appointment for First year",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "Form ADT-1 – Auditor Appointment for First year",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "Form ADT-1 – Auditor Appointment for First year",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.one_time_organization_registration_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists : 0;\n});",
-        "style": "* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */\n}"
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Form%20INC-22%20–%20Registered%20office%20Address%20-%20MCA%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Form INC-22 – Registered office Address - MCA</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
-        "modified": "2024-06-28 18:51:16.038634",
-        "name": "Form INC-22 – Registered office Address - MCA",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "Form INC-22 – Registered office Address - MCA",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "Form INC-22 – Registered office Address - MCA",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "Form INC-22 – Registered office Address - MCA",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.one_time_organization_registration_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists : 0;\n});",
-        "style": "* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */\n}"
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<h4>Reports</h4>",
-        "modified": "2024-06-28 11:23:47.913422",
-        "name": "Reports",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "Reports",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "Reports",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "Reports",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": null,
-        "style": null
-    },
-    {
-        "docstatus": 0,
-        "doctype": "Custom HTML Block",
-        "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Form%20INC-20A%20–%20BUSINESS%20COMMENCEMENT-%20MCA%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Form INC-20A – BUSINESS COMMENCEMENT- MCA</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
-        "modified": "2024-06-28 18:39:39.230000",
-        "name": "Form INC-20A – BUSINESS COMMENCEMENT- MCA",
-        "private": 0,
-        "roles": [
-            {
-                "parent": "Form INC-20A – BUSINESS COMMENCEMENT- MCA",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "Admin"
-            },
-            {
-                "parent": "Form INC-20A – BUSINESS COMMENCEMENT- MCA",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "IA"
-            },
-            {
-                "parent": "Form INC-20A – BUSINESS COMMENCEMENT- MCA",
-                "parentfield": "roles",
-                "parenttype": "Custom HTML Block",
-                "role": "CBBO"
-            }
-        ],
-        "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.one_time_organization_registration_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists : 0;\n});",
-        "style": "* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */\n}"
-    }
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Membership System Capacity Buidling</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Building%20FPO%20Mamber\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">FPO Members who has attended at least 1 training</div>\n      <div class=\"fpo1\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Building%20FPO%20Mamber\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">FPO Members who has not attended training</div>\n      <div class=\"fpo2\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>",
+  "modified": "2024-06-28 18:18:41.359220",
+  "name": "Membership System Capacity Building FPO",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Membership System Capacity Building FPO",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "FPO"
+   }
+  ],
+  "script": " frappe.call({\n    method: \"nafpo.apis.api.membership_system_capacity_building_fpo_mamber_count\",\n    \n             callback(r) {\n                console.log(r,\"erheoiuhr\")\n                let some_class_element = root_element.querySelector('.fpo1');\n                some_class_element.textContent = r.message.Yes;\n                 let some_class_element1 = root_element.querySelector('.fpo2');\n                some_class_element1.textContent = r.message.No;\n             }\n});",
+  "style": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Governance System Capacity Building</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Governance%20System%20Capacity%20Building%20FPO%20BOD\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No. of FPOs which has trained BOD</div>\n      <div class=\"dataa\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Governance%20System%20Capacity%20Building%20FPO%20BOD\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No of FPOs which has not trained BOD</div>\n      <div class=\"dataaa\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n",
+  "modified": "2024-06-28 18:34:38.236588",
+  "name": "Governance System Capacity Building FPO",
+  "private": 0,
+  "roles": [],
+  "script": " frappe.call({\n    method: \"nafpo.apis.api.governance_system_capacity_building_fpo_bod_count\",\n    \n             callback(r) {\n                console.log(r,\"098\")\n                let some_class_element = root_element.querySelector('.dataa');\n                some_class_element.textContent = r.message.Yes;\n                 let some_class_element1 = root_element.querySelector('.dataaa');\n                some_class_element1.textContent = r.message.No;\n             }\n});",
+  "style": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Operation system Capacity Building</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Operation%20system%20Capacity%20Building?has_trained=Yes\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No.of FPO who has performed atleast 1 CEO/ Accountant training </div>\n      <div class=\"data4\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Operation%20system%20Capacity%20Building?has_trained=No\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No.of FPO who has performed atleast 1 CEO/ Accountant training</div>\n      <div class=\"data5\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n",
+  "modified": "2024-06-28 16:51:23.946012",
+  "name": "Operation system Capacity Building",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Operation system Capacity Building",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "Operation system Capacity Building",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Operation system Capacity Building",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": " frappe.call({\n    method: \"nafpo.apis.api.operation_system_capacity_building\",\n    \n             callback(r) {\n                console.log(r,\"iuy\")\n                let some_class_element = root_element.querySelector('.data4');\n                some_class_element.textContent = r.message.has_trained_count;\n                 let some_class_element1 = root_element.querySelector('.data5');\n                some_class_element1.textContent = r.message.has_not_trained_count;\n             }\n});",
+  "style": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Incomplete%20FPO%20Board%20of%20Directors%20Meeting\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Incomplete FPO Board of Directors Meeting</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
+  "modified": "2024-06-28 18:42:26.851285",
+  "name": "Incomplete FPO Board of Directors Meeting",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Incomplete FPO Board of Directors Meeting",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Incomplete FPO Board of Directors Meeting",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "Incomplete FPO Board of Directors Meeting",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_incomplete_fpo_board_of_directors_meeting_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists.count !== undefined ? forms_lists.count : 0;\n});",
+  "style": ""
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Membership System Capacity Buidling</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=Yes\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px;\">No. of FPOs participated at least 1 training</div>\n      <div class=\"data\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=No\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px;\">No. of FPOs not participated at training</div>\n      <div class=\"data1\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n\n\n\n\n\n",
+  "modified": "2024-06-28 19:47:06.042110",
+  "name": "Membership System Capacity Buidling",
+  "private": 0,
+  "roles": [],
+  "script": " frappe.call({\n    method: \"nafpo.apis.api.membership_system_capacity_buidling_count\",\n    \n             callback(r) {\n                console.log(r,\"erheoiuhr\")\n                let some_class_element = root_element.querySelector('.data');\n                some_class_element.textContent = r.message.FPO_with_Training;\n                 let some_class_element1 = root_element.querySelector('.data1');\n                some_class_element1.textContent = r.message.FPO_without_Training;\n             }\n});",
+  "style": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Completed%20FPO%20Board%20of%20Directors%20Meeting\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Complete FPO Board of Directors Meeting</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
+  "modified": "2024-06-28 18:41:31.126362",
+  "name": "Complete FPO Board of Directors Meeting",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Complete FPO Board of Directors Meeting",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Complete FPO Board of Directors Meeting",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "Complete FPO Board of Directors Meeting",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_complete_fpo_board_of_directors_meeting_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists.count !== undefined ? forms_lists.count : 0;\n});",
+  "style": ""
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<h4>Dashboard</h4>",
+  "modified": "2024-06-28 11:23:31.431846",
+  "name": "Dashboard",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Dashboard",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Dashboard",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "Dashboard",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": null,
+  "style": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Eligible%20but%20haven't%20received%20fund%20yet\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Eligible but haven't received fund yet</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
+  "modified": "2024-06-28 18:41:03.207588",
+  "name": "Eligible but haven't received fund yet",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Eligible but haven't received fund yet",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Eligible but haven't received fund yet",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "Eligible but haven't received fund yet",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_Eligible_but_not_received_fund_yet',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists : 0;\n});",
+  "style": ""
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Received%20Fund%20after%20Due%20Date\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Received Fund after Due Date</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
+  "modified": "2024-06-28 18:40:47.009937",
+  "name": "Received Fund after Due Date",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Received Fund after Due Date",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Received Fund after Due Date",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "Received Fund after Due Date",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_received_fund_after_due_date',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists : 0;\n});",
+  "style": ""
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Received%20Fund%20before%20or%20on%20due%20date\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Received Fund before or on due date</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
+  "modified": "2024-06-28 18:40:28.196790",
+  "name": "Received Fund before or on due date",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Received Fund before or on due date",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Received Fund before or on due date",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "Received Fund before or on due date",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_received_fund_before_or_on_due_date',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists : 0;\n});",
+  "style": "* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Total%20Eligible%20FPOs\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Total Eligible FPOs</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
+  "modified": "2024-06-28 18:39:58.607842",
+  "name": "Total Eligible FPOs",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Total Eligible FPOs",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Total Eligible FPOs",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "Total Eligible FPOs",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_total_eligible_fpos_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists : 0;\n});",
+  "style": "* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/FORM%20AOC-4%20–%20Filing%20of%20Financial%20Statements%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">FORM AOC-4 – Filing of Financial Statements</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
+  "modified": "2024-06-28 18:38:54.138520",
+  "name": "FORM AOC-4 – Filing of Financial Statements",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "FORM AOC-4 – Filing of Financial Statements",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "FORM AOC-4 – Filing of Financial Statements",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "FORM AOC-4 – Filing of Financial Statements",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "frappe.call({\n    method: \"nafpo.apis.api.governance_system_capacity_building_count\",\n    \n             callback(r) {\n                console.log(r,\"iuy\")\n                let some_class_element = root_element.querySelector('.dataa');\n                some_class_element.textContent = r.message.FPOs_With_Training;\n                 let some_class_element1 = root_element.querySelector('.dataaa');\n                some_class_element1.textContent = r.message.FPOs_Without_Training;\n             }\n});",
+  "style": ""
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Form%20MGT-7%20-%20Filing%20of%20Annual%20Return%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Form MGT-7 - Filing of Annual Return</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
+  "modified": "2024-06-28 18:38:04.845788",
+  "name": "Form MGT-7 - Filing of Annual Return",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Form MGT-7 - Filing of Annual Return",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Form MGT-7 - Filing of Annual Return",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "Form MGT-7 - Filing of Annual Return",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_annual_compliance_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists.count !== undefined ? forms_lists.count : 0;\n});",
+  "style": ""
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Form%20ADT-1%20–%20Auditor%20Appointment%20for%20Five%20Year%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Form ADT-1 – Auditor Appointment for Five year</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
+  "modified": "2024-06-28 18:37:48.241524",
+  "name": "Form ADT-1 – Auditor Appointment for Five year",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Form ADT-1 – Auditor Appointment for Five year",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Form ADT-1 – Auditor Appointment for Five year",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "Form ADT-1 – Auditor Appointment for Five year",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_annual_compliance_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists.count !== undefined ? forms_lists.count : 0;\n});",
+  "style": ""
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/DIRECTOR%20KYC%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">DIRECTOR KYC</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
+  "modified": "2024-06-28 18:37:34.603107",
+  "name": "DIRECTOR KYC",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "DIRECTOR KYC",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "DIRECTOR KYC",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "DIRECTOR KYC",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_annual_compliance_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists.count !== undefined ? forms_lists.count : 0;\n});",
+  "style": ""
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/IT%20Return%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">IT Return</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
+  "modified": "2024-06-28 18:37:16.073725",
+  "name": "IT Return",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "IT Return",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "IT Return",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "IT Return",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_annual_compliance_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists.count !== undefined ? forms_lists.count : 0;\n});",
+  "style": ""
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/AGM%20-%20Once%20in%20a%20year%20fpo%20need%20to%20organize%20AGM%20and%20pass%20the%20Audit%20report%20and%20other%20agenda%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n",
+  "modified": "2024-06-28 18:36:59.456233",
+  "name": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "AGM - Once in a year fpo need to organize AGM and pass the Audit report and other agenda",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.get_annual_compliance_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists.count !== undefined ? forms_lists.count : 0;\n});",
+  "style": ""
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Form%20ADT-1%20–%20Auditor%20Appointment%20for%20First%20Year%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Form ADT-1 – Auditor Appointment for First Year</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
+  "modified": "2024-06-28 18:39:08.990121",
+  "name": "Form ADT-1 – Auditor Appointment for First year",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Form ADT-1 – Auditor Appointment for First year",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Form ADT-1 – Auditor Appointment for First year",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "Form ADT-1 – Auditor Appointment for First year",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.one_time_organization_registration_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists : 0;\n});",
+  "style": "* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<h4>Reports</h4>",
+  "modified": "2024-06-28 11:23:47.913422",
+  "name": "Reports",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Reports",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Reports",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "Reports",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": null,
+  "style": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Form%20INC-20A%20–%20BUSINESS%20COMMENCEMENT-%20MCA%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Form INC-20A – BUSINESS COMMENCEMENT- MCA</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
+  "modified": "2024-06-28 18:39:39.230000",
+  "name": "Form INC-20A – BUSINESS COMMENCEMENT- MCA",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Form INC-20A – BUSINESS COMMENCEMENT- MCA",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Form INC-20A – BUSINESS COMMENCEMENT- MCA",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "Form INC-20A – BUSINESS COMMENCEMENT- MCA",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.one_time_organization_registration_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists : 0;\n});",
+  "style": "* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Form%20INC-22%20–%20Registered%20office%20Address%20-%20MCA%20Report\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">Form INC-22 – Registered office Address - MCA</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
+  "modified": "2024-06-29 14:19:50.910172",
+  "name": "Form INC-22 – Registered office Address - MCA.",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Form INC-22 – Registered office Address - MCA.",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Form INC-22 – Registered office Address - MCA.",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "Form INC-22 – Registered office Address - MCA.",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.one_time_organization_registration_forms_fpo_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  forms_lists !== undefined ? forms_lists : 0;\n});",
+  "style": ""
+ }
 ]
