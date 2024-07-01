@@ -1,5 +1,7 @@
 import frappe
 from frappe.utils import nowdate
+from nafpo.utils.rport_filter import ReportFilter
+
 @frappe.whitelist(allow_guest=True)
 def get_fpo_profile(name=None, fields=["*"]):
     parent = frappe.db.exists({'doctype':'FPO Profiling','name_of_the_fpo':name})
@@ -20,21 +22,48 @@ def get_fpo_profile(name=None, fields=["*"]):
 def get_fpo_profile_doc(doctype_name,filter):
     return frappe.db.get_value(doctype_name, {'name_of_the_fpo':filter },['date_of_registration'],as_dict=1)
 
+
 @frappe.whitelist(allow_guest=True)
 def get_total_eligible_fpos_count():
     current_date = nowdate()
-    query = """
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+        mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
+        selected_filters=['CBBO', 'IA']
+    )
+    
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
+    
+    query = f"""
         SELECT COUNT(*)
         FROM `tabFPO MFR 10K`
-        WHERE `1st_installment_due_date` <= %(current_date)s
-        OR `2nd_installment_due_date` <= %(current_date)s
-        OR `3rd_installment_due_date` <= %(current_date)s
-        OR `4th_installment_due_date` <= %(current_date)s
-        OR `5th_installment_due_date` <= %(current_date)s
-        OR `6th_installment_due_date` <= %(current_date)s
+        WHERE (
+            `1st_installment_due_date` <= %(current_date)s
+            OR `2nd_installment_due_date` <= %(current_date)s
+            OR `3rd_installment_due_date` <= %(current_date)s
+            OR `4th_installment_due_date` <= %(current_date)s
+            OR `5th_installment_due_date` <= %(current_date)s
+            OR `6th_installment_due_date` <= %(current_date)s
+        ) {cond_str}
     """
     count = frappe.db.sql(query, {'current_date': current_date}, as_dict=False)
     return count[0][0] if count else 0
+
+# @frappe.whitelist(allow_guest=True)
+# def get_total_eligible_fpos_count():
+
+#     current_date = nowdate()
+#     query = """
+#         SELECT COUNT(*)
+#         FROM `tabFPO MFR 10K`
+#         WHERE `1st_installment_due_date` <= %(current_date)s
+#         OR `2nd_installment_due_date` <= %(current_date)s
+#         OR `3rd_installment_due_date` <= %(current_date)s
+#         OR `4th_installment_due_date` <= %(current_date)s
+#         OR `5th_installment_due_date` <= %(current_date)s
+#         OR `6th_installment_due_date` <= %(current_date)s
+#     """
+#     count = frappe.db.sql(query, {'current_date': current_date}, as_dict=False)
+#     return count[0][0] if count else 0
 
 
 @frappe.whitelist(allow_guest=True)
