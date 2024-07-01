@@ -1,16 +1,20 @@
-# Copyright (c) 2024, dhwaniris and contributors
-# For license information, please see license.txt
-
 import frappe
 from frappe.model.document import Document
-
+from frappe import _
 
 class AnnualComplianceForms(Document):
-    def before_validate(self):
-        exists = frappe.db.exists({
-            "doctype": "Annual Compliance Forms", 
-            "financial_year": self.financial_year
-        })
-        data_exists = bool(exists)
-        if data_exists and exists != self.name:
-            frappe.throw(f"FPO already exists for the Financial Year {self.financial_year}")
+    def validate(self):
+        self.check_fpo()
+
+    def check_fpo(self):
+        try:
+            exists = frappe.db.exists({
+                "doctype": "Annual Compliance Forms",
+                "financial_year": self.financial_year,
+                "name": ["!=", self.name]
+            })
+            if exists:
+                frappe.throw(_('FPO already exists for the Financial Year {0}').format(self.financial_year))
+        except Exception as e:
+            frappe.log_error(frappe.get_traceback(), 'Annual Compliance Forms Check FPO Error')
+            raise e

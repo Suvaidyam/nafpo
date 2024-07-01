@@ -30,10 +30,9 @@ def execute(filters=None):
         },
     ]
 
-    cond_str = ReportFilter.rport_filter_by_user_permissions(table='sfac_inst')
-    # print('=================================cond_str', cond_str)
-
-    # SQL Query to fetch the data
+    cond_str = ""
+    cond_str = (" AND " + ReportFilter.rport_filter_by_user_permissions(mappings = {'FPO': ('sfac_inst', 'fpo')},selected_filters=['FPO'])) if ReportFilter.rport_filter_by_user_permissions(mappings = {'FPO': ('sfac_inst', 'fpo')},selected_filters=['FPO']) is not None else ""
+    
     sql_query = f"""
         WITH pending_dates AS (
             SELECT
@@ -46,7 +45,7 @@ def execute(filters=None):
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                sfac_inst.1st_installment_due_date <= CURDATE() {cond_str}
+                sfac_inst.1st_installment_due_date <= CURDATE()
 
             UNION ALL
 
@@ -60,7 +59,7 @@ def execute(filters=None):
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                sfac_inst.2nd_installment_due_date <= CURDATE() {cond_str}
+                sfac_inst.2nd_installment_due_date <= CURDATE()
 
             UNION ALL
 
@@ -74,7 +73,7 @@ def execute(filters=None):
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                sfac_inst.3rd_installment_due_date <= CURDATE() {cond_str}
+                sfac_inst.3rd_installment_due_date <= CURDATE()
 
             UNION ALL
 
@@ -88,7 +87,7 @@ def execute(filters=None):
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                sfac_inst.4th_installment_due_date <= CURDATE() {cond_str}
+                sfac_inst.4th_installment_due_date <= CURDATE()
 
             UNION ALL
 
@@ -102,7 +101,7 @@ def execute(filters=None):
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                sfac_inst.5th_installment_due_date <= CURDATE() {cond_str}
+                sfac_inst.5th_installment_due_date <= CURDATE()
 
             UNION ALL
 
@@ -116,7 +115,7 @@ def execute(filters=None):
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                sfac_inst.6th_installment_due_date <= CURDATE() {cond_str}
+                sfac_inst.6th_installment_due_date <= CURDATE()
         )
 
         SELECT

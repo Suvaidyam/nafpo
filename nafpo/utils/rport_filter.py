@@ -1,18 +1,20 @@
 import frappe
 class ReportFilter:
-    def rport_filter_by_user_permissions(table=None,ia_key='ia',cbbo_key='cbbo'):
+    def rport_filter_by_user_permissions(mappings, selected_filters):
         permissions = frappe.db.get_list("User Permission",filters={'user':frappe.session.user},fields=['allow','for_value'],ignore_permissions=True)
-        perm_arr = []
+        conditions = []
         final_cond = None
-        if(len(permissions)):
-            perm_dict = {perm['allow']: perm['for_value'] for perm in permissions}
-            ia = perm_dict.get('IA') or None
-            cbbo = perm_dict.get('CBBO') or None
-            perm_str = ''
-            if ia is not None:
-                perm_str = f"{ia_key if table is None else f'{table}.{ia_key}'} = '{ia}'"
-            if cbbo is not None:
-                perm_str = f"{cbbo_key if table is None else f'{table}.{cbbo_key}'} = '{cbbo}'"
-            perm_arr.append(perm_str)
-            final_cond = " AND ".join(perm_arr)
-        return f"AND {final_cond}" if final_cond is not None else ""
+        perm_dict = {}
+        if len(permissions):
+            for perm in permissions:
+                perm_dict.setdefault(perm['allow'], []).append(perm['for_value'])
+        for key, values in perm_dict.items():
+            if key in mappings and key in selected_filters and values:
+                alias, column = mappings[key]
+                if alias == 'no_alias':
+                    formatted_values = ', '.join(f"'{value}'" for value in values)
+                    conditions.append(f"{column} IN ({formatted_values})")
+                else:
+                    formatted_values = ', '.join(f"'{value}'" for value in values)
+                    conditions.append(f"{alias}.{column} IN ({formatted_values})")
+        return ' AND '.join(conditions) if len(conditions) else None

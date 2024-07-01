@@ -38,6 +38,11 @@ def get_total_eligible_fpos_count():
 
 
 @frappe.whitelist()
+def one_time_organization_registration_forms_fpo_count():
+    return frappe.db.count('One Time Organization Registration Forms')
+
+
+@frappe.whitelist()
 def get_received_fund_before_or_on_due_date():
     query = """
         SELECT COUNT(*)
@@ -85,19 +90,85 @@ def get_Eligible_but_not_received_fund_yet():
     """
     count = frappe.db.sql(query, {'current_date': current_date})
     return count[0][0] if count and count[0] else 0
+
+@frappe.whitelist()
+def get_annual_compliance_forms_fpo_count():
+    sql_query = """
+        SELECT
+            COUNT(DISTINCT sub_query.fpo_id) AS count
+        FROM
+            (
+            SELECT
+                fpo_profiling.name_of_the_fpo_copy AS fpo_name,
+                fpo_profiling.contact_detail_of_fpo AS fpo_contact_number,
+                `tabAnnual Compliance Forms`.financial_year AS financial_year,
+                `tabAnnual Compliance Forms`.fpo AS fpo_id,
+                COUNT(*) AS total_meeting
+            FROM
+                `tabAnnual Compliance Forms`
+            INNER JOIN
+                `tabFPO Profiling` AS fpo_profiling ON `tabAnnual Compliance Forms`.fpo = fpo_profiling.name_of_the_fpo
+            GROUP BY
+                fpo_name, fpo_contact_number, financial_year
+            HAVING
+                COUNT(*) <= 3) AS sub_query
+        """
+    data = frappe.db.sql(sql_query, as_dict=True)
+    return data[0]
+
 @frappe.whitelist()
 def get_incomplete_fpo_board_of_directors_meeting_count():
-    query = """
-        SELECT COUNT(DISTINCT fpo) AS total_fpo_count
-        FROM `tabBoard of Directors Meeting Forms`
-        WHERE status = 'Completed'
-        GROUP BY financial_year
-        HAVING COUNT(*) <= 3
-    """
-    count= frappe.db.sql(query, as_dict=1)
-    return count[0]
+    sql_query = """
+        SELECT
+            COUNT(DISTINCT sub_query.fpo_id) AS count
+        FROM
+            (
+            SELECT
+                fpo_profiling.name_of_the_fpo_copy AS fpo_name,
+                fpo_profiling.contact_detail_of_fpo AS fpo_contact_number,
+                `tabBoard of Directors Meeting Forms`.financial_year AS financial_year,
+                `tabBoard of Directors Meeting Forms`.fpo AS fpo_id,
+                COUNT(*) AS total_meeting
+            FROM
+                `tabBoard of Directors Meeting Forms`
+            INNER JOIN
+                `tabFPO Profiling` AS fpo_profiling ON `tabBoard of Directors Meeting Forms`.fpo = fpo_profiling.name_of_the_fpo
+            WHERE
+                `tabBoard of Directors Meeting Forms`.status = 'Completed'
+            GROUP BY
+                fpo_name, fpo_contact_number, financial_year
+            HAVING
+                COUNT(*) <= 3) AS sub_query
+        """
+    data = frappe.db.sql(sql_query, as_dict=True)
+    return data[0]
 
-
+@frappe.whitelist()
+def get_complete_fpo_board_of_directors_meeting_count():
+    sql_query = """
+        SELECT
+            COUNT(DISTINCT sub_query.fpo_id) AS count
+        FROM
+            (
+            SELECT
+                fpo_profiling.name_of_the_fpo_copy AS fpo_name,
+                fpo_profiling.contact_detail_of_fpo AS fpo_contact_number,
+                `tabBoard of Directors Meeting Forms`.financial_year AS financial_year,
+                `tabBoard of Directors Meeting Forms`.fpo AS fpo_id,
+                COUNT(*) AS total_meeting
+            FROM
+                `tabBoard of Directors Meeting Forms`
+            INNER JOIN
+                `tabFPO Profiling` AS fpo_profiling ON `tabBoard of Directors Meeting Forms`.fpo = fpo_profiling.name_of_the_fpo
+            WHERE
+                `tabBoard of Directors Meeting Forms`.status = 'Completed'
+            GROUP BY
+                fpo_name, fpo_contact_number, financial_year
+            HAVING
+                COUNT(*) >= 4) AS sub_query
+        """
+    data = frappe.db.sql(sql_query, as_dict=True)
+    return data[0]
 
 
 # Aniket
@@ -177,4 +248,116 @@ def operation_system_capacity_building():
     count= frappe.db.sql(queary, as_dict=1)
     return count[0]
 
+
+@frappe.whitelist()
+def governance_system_capacity_building_count():
+    queary = """
+    SELECT
+    COUNT(CASE WHEN subquery.training_count > 0 THEN 1 END) AS FPOs_With_Training,
+    COUNT(CASE WHEN subquery.training_count = 0 THEN 1 END) AS FPOs_Without_Training
+FROM (
+    SELECT
+        f.name AS fpo_name,
+        COUNT(b.parent) AS training_count
+    FROM
+        `tabFPO` f
+    LEFT JOIN
+        `tabCapacity` c ON f.name = c.fpo
+    LEFT JOIN
+        `tabBOD KYC Child` b ON c.name = b.parent
+    GROUP BY
+        f.name
+) AS subquery;
+    """
+    count= frappe.db.sql(queary, as_dict=1)
+    return count[0]
+
+
+
+@frappe.whitelist()
+def membership_system_capacity_building_fpo_mamber_count():
+    queary = """
+    WITH TrainingAttendance AS (
+    SELECT
+        "Yes" AS attended_training,
+        _fpo.name AS fpo_id
+    FROM
+        `tabFPO member details` AS _fmd
+    INNER JOIN `tabFPO` AS _fpo ON _fmd.fpo = _fpo.name
+    WHERE
+        _fmd.name IN (SELECT
+            _fmdc.fpo_member
+        FROM
+            `tabFPO member details Child` AS _fmdc
+        WHERE
+            _fmdc.parenttype = 'Capacity')
+    UNION ALL
+    SELECT
+        "No" AS attended_training,
+        _fpo.name AS fpo_id
+    FROM
+        `tabFPO member details` AS _fmd
+    INNER JOIN `tabFPO` AS _fpo ON _fmd.fpo = _fpo.name
+    WHERE
+        _fmd.name NOT IN (SELECT
+            _fmdc.fpo_member
+        FROM
+            `tabFPO member details Child` AS _fmdc
+        WHERE
+            _fmdc.parenttype = 'Capacity')
+)
+SELECT
+    COALESCE(SUM(CASE WHEN attended_training = 'Yes' THEN 1 ELSE 0 END), 0) AS Yes,
+    COALESCE(SUM(CASE WHEN attended_training = 'No' THEN 1 ELSE 0 END), 0) AS No
+FROM
+    TrainingAttendance;
+    """
+    count= frappe.db.sql(queary, as_dict=1)
+    return count[0]
+
+
+@frappe.whitelist()
+def governance_system_capacity_building_fpo_bod_count():
+    queary = """
+WITH TrainingAttendance AS (
+    SELECT
+        "Yes" AS attended_training,
+        _bk.mobile_number,
+        _fpo.fpo_name,
+        _bk.name1 AS bod_name
+    FROM
+        `tabBOD KYC` AS _bk
+    INNER JOIN `tabFPO` AS _fpo ON _bk.fpo_name = _fpo.name
+    WHERE
+        _bk.name IN (SELECT
+            _bkc.bod_kyc
+        FROM
+            `tabBOD KYC Child` AS _bkc
+        WHERE
+            _bkc.parenttype = 'Capacity')
+    UNION ALL
+    SELECT
+        "No" AS attended_training,
+        _bk.mobile_number,
+        _fpo.fpo_name,
+        _bk.name1 AS bod_name
+    FROM
+        `tabBOD KYC` AS _bk
+    INNER JOIN `tabFPO` AS _fpo ON _bk.fpo_name = _fpo.name
+    WHERE
+        _bk.name NOT IN (SELECT
+            _bkc.bod_kyc
+        FROM
+            `tabBOD KYC Child` AS _bkc
+        WHERE
+            _bkc.parenttype = 'Capacity')
+)
+SELECT
+    SUM(CASE WHEN attended_training = 'Yes' THEN 1 ELSE 0 END) AS Yes,
+    SUM(CASE WHEN attended_training = 'No' THEN 1 ELSE 0 END) AS No
+FROM
+    TrainingAttendance;
+    """
+    count= frappe.db.sql(queary, as_dict=1)
+    return count[0]
 
