@@ -30,8 +30,8 @@ def execute(filters=None):
         },
     ]
 
-    # cond_str = 
-    # cond_str = ReportFilter.rport_filter_by_user_permissions(mappings = {'FPO': ('sfac_inst', 'fpo')},selected_filters=['FPO'])
+    cond_str = ""
+    cond_str = (" AND " + ReportFilter.rport_filter_by_user_permissions(mappings = {'FPO': ('sfac_inst', 'fpo')},selected_filters=['FPO'])) if ReportFilter.rport_filter_by_user_permissions(mappings = {'FPO': ('sfac_inst', 'fpo')},selected_filters=['FPO']) is not None else ""
     
     sql_query = f"""
         WITH pending_dates AS (
