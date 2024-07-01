@@ -31,8 +31,15 @@ def execute(filters=None):
     ]
 
     cond_str = ""
-    cond_str = (" AND " + ReportFilter.rport_filter_by_user_permissions(mappings = {'FPO': ('sfac_inst', 'fpo')},selected_filters=['FPO'])) if ReportFilter.rport_filter_by_user_permissions(mappings = {'FPO': ('sfac_inst', 'fpo')},selected_filters=['FPO']) is not None else ""
-    
+    cond_str = (" AND " + ReportFilter.rport_filter_by_user_permissions(mappings = {'CBBO': ('sfac_inst', 'cbbo'),'IA': ('sfac_inst', 'ia')},selected_filters=['CBBO','IA'])) if ReportFilter.rport_filter_by_user_permissions(mappings = {'CBBO': ('sfac_inst', 'cbbo'),'IA': ('sfac_inst', 'ia')},selected_filters=['CBBO','IA']) is not None else ""
+#     mappings = {
+#     'Block': ('b', 'block_id'),
+#     'CBBO': ('c', 'cbbo_code'),
+#     'IA': ('i', 'ia_code'),
+#     'FPO': ('f', 'fpo_code'),
+#     'District': ('d', 'district_id'),
+#     'State': ('s', 'state_id')
+# }
     sql_query = f"""
         WITH pending_dates AS (
             SELECT
