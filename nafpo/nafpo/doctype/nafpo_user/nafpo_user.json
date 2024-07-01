@@ -109,7 +109,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-26 16:42:05.238747",
+ "modified": "2024-06-29 14:46:03.364595",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Nafpo User",
@@ -125,6 +125,7 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "write": 1
   },
@@ -137,39 +138,6 @@
    "read": 1,
    "report": 1,
    "role": "Admin",
-   "select": 1,
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "CBBO",
-   "select": 1,
-   "share": 1,
-   "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "FPO",
-   "select": 1,
-   "share": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "IA",
    "select": 1,
    "share": 1,
    "write": 1
