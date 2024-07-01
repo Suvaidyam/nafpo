@@ -2,25 +2,55 @@
  {
   "docstatus": 0,
   "doctype": "Custom HTML Block",
-  "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Governance System Capacity Building</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=Yes\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No. of FPOs which has trained BOD</div>\n      <div class=\"dataa\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=No\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No of FPOs which has not trained BOD</div>\n      <div class=\"dataaa\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n",
-  "modified": "2024-06-28 19:45:45.104528",
-  "name": "Governance System Capacity Building",
+  "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Operation system Capacity Building</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Operation%20system%20Capacity%20Building?has_trained=Yes\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No.of FPO who has performed atleast 1 CEO/ Accountant training </div>\n      <div class=\"data4\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Operation%20system%20Capacity%20Building?has_trained=No\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No.of FPO who has performed atleast 1 CEO/ Accountant training</div>\n      <div class=\"data5\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n",
+  "modified": "2024-06-28 16:51:23.946012",
+  "name": "Operation system Capacity Building.",
   "private": 0,
   "roles": [
    {
-    "parent": "Governance System Capacity Building",
-    "parentfield": "roles",
-    "parenttype": "Custom HTML Block",
-    "role": "Admin"
-   },
-   {
-    "parent": "Governance System Capacity Building",
+    "parent": "Operation system Capacity Building.",
     "parentfield": "roles",
     "parenttype": "Custom HTML Block",
     "role": "IA"
    },
    {
-    "parent": "Governance System Capacity Building",
+    "parent": "Operation system Capacity Building.",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Operation system Capacity Building.",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": " frappe.call({\n    method: \"nafpo.apis.api.operation_system_capacity_building\",\n    \n             callback(r) {\n                console.log(r,\"iuy\")\n                let some_class_element = root_element.querySelector('.data4');\n                some_class_element.textContent = r.message.has_trained_count;\n                 let some_class_element1 = root_element.querySelector('.data5');\n                some_class_element1.textContent = r.message.has_not_trained_count;\n             }\n});",
+  "style": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Governance System Capacity Building</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=Yes\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No. of FPOs which has trained BOD</div>\n      <div class=\"dataa\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=No\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No of FPOs which has not trained BOD</div>\n      <div class=\"dataaa\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n",
+  "modified": "2024-06-28 19:45:45.104528",
+  "name": "Governance System Capacity Building.",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Governance System Capacity Building.",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "Governance System Capacity Building.",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "Governance System Capacity Building.",
     "parentfield": "roles",
     "parenttype": "Custom HTML Block",
     "role": "CBBO"
@@ -50,8 +80,8 @@
  {
   "docstatus": 0,
   "doctype": "Custom HTML Block",
-  "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Governance System Capacity Building</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Governance%20System%20Capacity%20Building%20FPO%20BOD\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No. of FPOs which has trained BOD</div>\n      <div class=\"dataa\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Governance%20System%20Capacity%20Building%20FPO%20BOD\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No of FPOs which has not trained BOD</div>\n      <div class=\"dataaa\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n",
-  "modified": "2024-06-28 18:34:38.236588",
+  "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Governance System Capacity Building</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Governance%20System%20Capacity%20Building%20FPO%20BOD\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">FPO BOD who has attended atleast 1 training</div>\n      <div class=\"dataa\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Governance%20System%20Capacity%20Building%20FPO%20BOD\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">FPO BOD who has not attended training</div>\n      <div class=\"dataaa\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n",
+  "modified": "2024-07-01 11:21:06.752255",
   "name": "Governance System Capacity Building FPO",
   "private": 0,
   "roles": [],
@@ -123,23 +153,23 @@
   "doctype": "Custom HTML Block",
   "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Membership System Capacity Buidling</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=Yes\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px;\">No. of FPOs participated at least 1 training</div>\n      <div class=\"data\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=No\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px;\">No. of FPOs not participated at training</div>\n      <div class=\"data1\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n\n\n\n\n\n",
   "modified": "2024-06-29 10:56:00.443909",
-  "name": "Membership System Capacity Buidling",
+  "name": "Membership System Capacity Buidling.",
   "private": 0,
   "roles": [
    {
-    "parent": "Membership System Capacity Buidling",
+    "parent": "Membership System Capacity Buidling.",
     "parentfield": "roles",
     "parenttype": "Custom HTML Block",
     "role": "IA"
    },
    {
-    "parent": "Membership System Capacity Buidling",
+    "parent": "Membership System Capacity Buidling.",
     "parentfield": "roles",
     "parenttype": "Custom HTML Block",
     "role": "CBBO"
    },
    {
-    "parent": "Membership System Capacity Buidling",
+    "parent": "Membership System Capacity Buidling.",
     "parentfield": "roles",
     "parenttype": "Custom HTML Block",
     "role": "Admin"
