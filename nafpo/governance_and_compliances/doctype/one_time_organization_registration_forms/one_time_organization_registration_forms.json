@@ -8,6 +8,8 @@
  "field_order": [
   "form_inc_20a_tab",
   "fpo",
+  "cbbo",
+  "ia",
   "inc_20a_section",
   "inc_20_due_date",
   "inc_20_status",
@@ -169,12 +171,28 @@
    "fieldname": "form_inc_20a_tab",
    "fieldtype": "Tab Break",
    "label": "Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA"
+  },
+  {
+   "fetch_from": "fpo.cbbo_name",
+   "fieldname": "cbbo",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "CBBO",
+   "options": "CBBO"
+  },
+  {
+   "fetch_from": "cbbo.ia_name",
+   "fieldname": "ia",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "IA",
+   "options": "IA"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-25 17:57:39.974663",
+ "modified": "2024-07-01 12:08:29.548380",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "One Time Organization Registration Forms",
@@ -195,7 +213,6 @@
   },
   {
    "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,
