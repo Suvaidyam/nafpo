@@ -19,6 +19,9 @@ frappe.ui.form.on("Annual Compliance Forms", {
             frm.fields_dict[field].$input.datepicker({ maxDate: new Date() });
         });
     },
+    // validate(frm) {
+    //     check_fpo(frm)
+    // },
     financial_year: async function (frm) {
         check_fpo(frm)
     },

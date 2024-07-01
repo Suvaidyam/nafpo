@@ -17,4 +17,4 @@ class ReportFilter:
                 else:
                     formatted_values = ', '.join(f"'{value}'" for value in values)
                     conditions.append(f"{alias}.{column} IN ({formatted_values})")
-        return ' AND '.join(conditions)
+        return ' AND '.join(conditions) if len(conditions) else None
