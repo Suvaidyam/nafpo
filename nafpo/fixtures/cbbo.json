@@ -74,14 +74,6 @@
  {
   "docstatus": 0,
   "doctype": "CBBO",
-  "ia_name": "FDRVC",
-  "modified": "2024-06-01 19:06:38.055837",
-  "name": "FDRVC-ASRLM",
-  "name_of_cbbo": "ASRLM"
- },
- {
-  "docstatus": 0,
-  "doctype": "CBBO",
   "ia_name": "SFAC",
   "modified": "2024-06-03 13:28:17.288886",
   "name": "SFAC-SFAC test",
@@ -94,5 +86,13 @@
   "modified": "2024-06-03 13:15:19.849935",
   "name": "Test IA-Test Cbbo",
   "name_of_cbbo": "Test Cbbo"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "CBBO",
+  "ia_name": "FDRVC",
+  "modified": "2024-06-01 19:06:38.055837",
+  "name": "FDRVC-ASRLM",
+  "name_of_cbbo": "ASRLM"
  }
 ]

@@ -65,9 +65,9 @@ frappe.ui.form.on("FPO Profiling", {
 });
 
 frappe.ui.form.on('FPO Staff Child', {
-    refresh(frm) {
-        frm.doc.staff_details_table.forEach(row => {
-            console.log('row :>> ', row);
-        });
+    form_render(frm, cdt, cdn) {
+        console.log(frm)
+        let row = frappe.get_doc(cdt, cdn);
+        console.log('row :>> ', row);
     }
 });

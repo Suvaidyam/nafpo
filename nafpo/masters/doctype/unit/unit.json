@@ -13,14 +13,16 @@
   {
    "fieldname": "unit_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Unit Name",
+   "reqd": 1,
    "unique": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-01 19:17:34.993137",
+ "modified": "2024-07-02 12:43:06.995742",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Unit",

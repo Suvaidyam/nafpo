@@ -1,4 +1,5 @@
 import frappe
+from nafpo.utils.rport_filter import ReportFilter
 
 def execute(filters=None):
     # Define columns
@@ -34,9 +35,15 @@ def execute(filters=None):
             "width": 300
         },
     ]
+    
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+    mappings={'CBBO': ('sfac_inst', 'cbbo'), 'IA': ('sfac_inst', 'ia')},
+    selected_filters=['CBBO', 'IA']
+    )
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
 
     # SQL Query to fetch the data
-    sql_query = """
+    sql_query = f"""
         WITH pending_dates AS (
             SELECT
                 fpo_profiling.name_of_the_fpo_copy AS `FPO Name`,
