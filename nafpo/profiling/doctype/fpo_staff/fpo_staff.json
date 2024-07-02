@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "fpo",
+  "child_reference",
   "position_designation",
   "name1",
   "joining_date",
@@ -52,12 +53,20 @@
    "in_list_view": 1,
    "label": "FPO",
    "options": "FPO"
+  },
+  {
+   "fieldname": "child_reference",
+   "fieldtype": "Link",
+   "label": "Child Reference",
+   "options": "FPO Staff Child",
+   "read_only": 1,
+   "unique": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-27 12:37:45.392185",
+ "modified": "2024-07-02 14:51:24.871548",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Staff",
