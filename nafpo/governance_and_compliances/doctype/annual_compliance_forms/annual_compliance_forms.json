@@ -8,6 +8,8 @@
  "field_order": [
   "form_aoc_4_tab",
   "fpo",
+  "cbbo",
+  "ia",
   "column_break_pvex",
   "financial_year",
   "section_break_fjls",
@@ -299,12 +301,28 @@
    "fieldtype": "Date",
    "label": "Submitted On",
    "mandatory_depends_on": "eval:doc.agm_status == \"Completed\""
+  },
+  {
+   "fetch_from": "fpo.cbbo_name",
+   "fieldname": "cbbo",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "CBBO",
+   "options": "CBBO"
+  },
+  {
+   "fetch_from": "cbbo.ia_name",
+   "fieldname": "ia",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "IA",
+   "options": "IA"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-29 12:05:10.533874",
+ "modified": "2024-07-01 10:49:14.616169",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Annual Compliance Forms",

@@ -9,7 +9,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-06-28 17:25:49.871599",
+ "modified": "2024-07-01 12:13:32.186636",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Governance System Capacity Building FPO BOD",
@@ -21,6 +21,12 @@
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "CBBO"
   },
   {
    "role": "FPO"
