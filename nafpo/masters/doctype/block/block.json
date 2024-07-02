@@ -25,6 +25,7 @@
   {
    "fieldname": "district",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "District",
    "options": "District",
    "reqd": 1
@@ -32,6 +33,7 @@
   {
    "fieldname": "block_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Block Name",
    "reqd": 1
   },
@@ -45,6 +47,7 @@
    "default": "Active",
    "fieldname": "status",
    "fieldtype": "Autocomplete",
+   "hidden": 1,
    "label": "Status",
    "options": "Active\nInactive"
   }
@@ -52,7 +55,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-25 12:43:51.670287",
+ "modified": "2024-07-02 12:39:26.770281",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Block",

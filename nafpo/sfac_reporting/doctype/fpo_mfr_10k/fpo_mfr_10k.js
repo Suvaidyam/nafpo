@@ -15,6 +15,20 @@ frappe.ui.form.on("FPO MFR 10K", {
                 console.error('User data fetch error:', e);
             }
         }
+
+        frm.set_df_property('1st_installment_due_date', 'read_only', 1);
+        frm.set_df_property('2nd_installment_due_date', 'read_only', 1);
+        frm.set_df_property('3rd_installment_due_date', 'read_only', 1);
+        frm.set_df_property('4th_installment_due_date', 'read_only', 1);
+        frm.set_df_property('5th_installment_due_date', 'read_only', 1);
+        frm.set_df_property('6th_installment_due_date', 'read_only', 1);
+
+        frm.set_df_property('1st_installment_date', 'read_only', 1);
+        frm.set_df_property('2nd_installment_date', 'read_only', 1);
+        frm.set_df_property('3rd_installment_date', 'read_only', 1);
+        frm.set_df_property('4th_installment_date', 'read_only', 1);
+        frm.set_df_property('5th_installment_date', 'read_only', 1);
+        frm.set_df_property('6th_installment_date', 'read_only', 1);
     },
     fpo(frm) {
         set_due_date(frm)
@@ -105,20 +119,6 @@ function set_due_date(frm) {
             frm.set_value('4th_installment_due_date', fourth_due_date.toISOString().split('T')[0]);
             frm.set_value('5th_installment_due_date', fifth_due_date.toISOString().split('T')[0]);
             frm.set_value('6th_installment_due_date', sixth_due_date.toISOString().split('T')[0]);
-
-            frm.set_df_property('1st_installment_due_date', 'read_only', 1);
-            frm.set_df_property('2nd_installment_due_date', 'read_only', 1);
-            frm.set_df_property('3rd_installment_due_date', 'read_only', 1);
-            frm.set_df_property('4th_installment_due_date', 'read_only', 1);
-            frm.set_df_property('5th_installment_due_date', 'read_only', 1);
-            frm.set_df_property('6th_installment_due_date', 'read_only', 1);
-
-            frm.set_df_property('1st_installment_date', 'read_only', 1);
-            frm.set_df_property('2nd_installment_date', 'read_only', 1);
-            frm.set_df_property('3rd_installment_date', 'read_only', 1);
-            frm.set_df_property('4th_installment_date', 'read_only', 1);
-            frm.set_df_property('5th_installment_date', 'read_only', 1);
-            frm.set_df_property('6th_installment_date', 'read_only', 1);
         },
         error: function (error) {
             console.log("An error occurred: ", error);

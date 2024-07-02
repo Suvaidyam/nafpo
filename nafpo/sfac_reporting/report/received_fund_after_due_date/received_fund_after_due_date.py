@@ -1,4 +1,5 @@
 import frappe
+from nafpo.utils.rport_filter import ReportFilter
 
 def execute(filters=None):
     # Define columns
@@ -34,9 +35,15 @@ def execute(filters=None):
             "width": 300
         },
     ]
+    
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+    mappings={'CBBO': ('sfac_inst', 'cbbo'), 'IA': ('sfac_inst', 'ia')},
+    selected_filters=['CBBO', 'IA']
+    )
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
 
     # SQL Query to fetch the data
-    sql_query = """
+    sql_query = f"""
         WITH pending_dates AS (
             SELECT
                 fpo_profiling.name_of_the_fpo_copy AS `FPO Name`,
@@ -49,7 +56,7 @@ def execute(filters=None):
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
                 sfac_inst.are_you_received_1st_installment_fund = 'Yes'
-                AND sfac_inst.1st_installment_due_date < CURDATE()
+                AND sfac_inst.1st_installment_due_date > sfac_inst.1st_installment_date {cond_str}
 
             UNION ALL
 
@@ -64,7 +71,7 @@ def execute(filters=None):
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
                 sfac_inst.are_you_received_2nd_installment_fund = 'Yes'
-                AND sfac_inst.2nd_installment_due_date < CURDATE()
+                AND sfac_inst.2nd_installment_due_date > sfac_inst.2nd_installment_date {cond_str}
 
             UNION ALL
 
@@ -79,7 +86,7 @@ def execute(filters=None):
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
                 sfac_inst.are_you_received_3rd_installment_fund = 'Yes'
-                AND sfac_inst.3rd_installment_due_date < CURDATE()
+                AND sfac_inst.3rd_installment_due_date > sfac_inst.3rd_installment_date {cond_str}
 
             UNION ALL
 
@@ -94,7 +101,7 @@ def execute(filters=None):
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
                 sfac_inst.are_you_received_4th_installment_fund = 'Yes'
-                AND sfac_inst.4th_installment_due_date < CURDATE()
+                AND sfac_inst.4th_installment_due_date > sfac_inst.4th_installment_date {cond_str}
 
             UNION ALL
 
@@ -109,7 +116,7 @@ def execute(filters=None):
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
                 sfac_inst.are_you_received_5th_installment_fund = 'Yes'
-                AND sfac_inst.5th_installment_due_date < CURDATE()
+                AND sfac_inst.5th_installment_due_date > sfac_inst.5th_installment_date {cond_str}
 
             UNION ALL
 
@@ -124,7 +131,7 @@ def execute(filters=None):
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
                 sfac_inst.are_you_received_6th_installment_fund = 'Yes'
-                AND sfac_inst.6th_installment_due_date < CURDATE()
+                AND sfac_inst.6th_installment_due_date > sfac_inst.6th_installment_date {cond_str}
         )
 
         SELECT
