@@ -1,4 +1,5 @@
 import frappe
+from nafpo.utils.rport_filter import ReportFilter
 
 def execute(filters=None):
     columns = [
@@ -28,7 +29,13 @@ def execute(filters=None):
         }
     ]
 
-    sql_query = """
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+    mappings={'CBBO': ('sfac_inst', 'cbbo'), 'IA': ('sfac_inst', 'ia')},
+    selected_filters=['CBBO', 'IA']
+    )
+    cond_str = f"{user_filter_conditions}" if user_filter_conditions else "1=1"
+
+    sql_query = f"""
         SELECT
             'Second Installment' AS name,
             SUM(CASE WHEN are_you_received_2nd_installment_fund = 'No' AND 2nd_installment_due_date < CURDATE() THEN 1 ELSE 0 END) AS eligible_fpo,
@@ -36,6 +43,8 @@ def execute(filters=None):
             SUM(CASE WHEN are_you_received_2nd_installment_fund = 'Yes' AND 2nd_installment_date > 2nd_installment_due_date THEN 1 ELSE 0 END) AS fund_was_received_after_due_date
         FROM
             `tabFPO MFR 10K`
+        WHERE
+            {cond_str}
     """
 
     data = frappe.db.sql(sql_query, as_dict=True)
