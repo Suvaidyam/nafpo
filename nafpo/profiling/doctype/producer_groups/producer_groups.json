@@ -26,6 +26,7 @@
   {
    "fieldname": "fpo",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "FPO",
    "options": "FPO",
    "reqd": 1
@@ -33,6 +34,7 @@
   {
    "fieldname": "name1",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Name",
    "reqd": 1
   },
@@ -48,6 +50,7 @@
   {
    "fieldname": "name_of_contact_person",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Name Of Contact Person",
    "reqd": 1
   },
@@ -60,6 +63,7 @@
    "fieldname": "ia",
    "fieldtype": "Link",
    "hidden": 1,
+   "in_list_view": 1,
    "label": "IA",
    "options": "IA"
   },
@@ -68,13 +72,14 @@
    "fieldname": "cbbo",
    "fieldtype": "Link",
    "hidden": 1,
+   "in_list_view": 1,
    "label": "CBBO",
    "options": "CBBO"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-25 12:12:24.869215",
+ "modified": "2024-07-01 14:55:46.577962",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Producer Groups",
