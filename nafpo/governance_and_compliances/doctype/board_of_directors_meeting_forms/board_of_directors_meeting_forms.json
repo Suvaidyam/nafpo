@@ -50,9 +50,9 @@
   {
    "fieldname": "fpo_member",
    "fieldtype": "Table MultiSelect",
+   "hidden": 1,
    "label": "FPO member",
-   "options": "FPO member details Child",
-   "reqd": 1
+   "options": "FPO member details Child"
   },
   {
    "fetch_from": "fpo.cbbo_name",
@@ -74,7 +74,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-01 10:58:06.262819",
+ "modified": "2024-07-02 16:28:24.869691",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Board of Directors Meeting Forms",
