@@ -51,6 +51,7 @@
   {
    "fieldname": "village_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Village Name",
    "reqd": 1
   },
@@ -64,6 +65,7 @@
    "default": "Active",
    "fieldname": "status",
    "fieldtype": "Autocomplete",
+   "hidden": 1,
    "label": "Status",
    "options": "Active\nInactive"
   }
@@ -71,7 +73,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-11 11:01:27.817459",
+ "modified": "2024-07-02 12:40:35.595302",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Village",
