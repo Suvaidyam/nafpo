@@ -60,9 +60,21 @@
   {
    "link_doctype": "FPO Profiling",
    "link_fieldname": "name_of_the_fpo"
+  },
+  {
+   "link_doctype": "BOD KYC",
+   "link_fieldname": "fpo_name"
+  },
+  {
+   "link_doctype": "Producer Groups",
+   "link_fieldname": "fpo"
+  },
+  {
+   "link_doctype": "FPO member details",
+   "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-06-26 16:39:14.811931",
+ "modified": "2024-07-02 15:55:29.392651",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "FPO",
