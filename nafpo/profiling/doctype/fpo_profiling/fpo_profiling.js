@@ -69,9 +69,12 @@ frappe.ui.form.on("FPO Profiling", {
 
 frappe.ui.form.on('FPO Staff Child', {
     form_render(frm, cdt, cdn) {
-        console.log(frm)
-        let row = frappe.get_doc(cdt, cdn);
-        console.log('row :>> ', row);
+        let options = ["CEO","Accountant","Other Staff"]
+        let existing = frm.doc.staff_details_table.map(row => {return row.position_designation})
+        if (existing.length){
+            options = options.filter(option => !existing.includes(option))
+        }
+        frm.cur_grid.grid_form.fields_dict.position_designation.set_data(options)
     },
     staff_details_table_remove:function(frm, cdt, cdn){
         deleted_staff.push(cdn);
