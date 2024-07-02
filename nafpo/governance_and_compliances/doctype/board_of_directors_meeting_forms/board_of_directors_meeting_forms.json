@@ -50,7 +50,6 @@
   {
    "fieldname": "fpo_member",
    "fieldtype": "Table MultiSelect",
-   "hidden": 1,
    "label": "FPO member",
    "options": "FPO member details Child"
   },
@@ -74,7 +73,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-02 16:28:24.869691",
+ "modified": "2024-07-02 17:40:03.218430",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Board of Directors Meeting Forms",
