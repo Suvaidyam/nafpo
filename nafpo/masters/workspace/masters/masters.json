@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Masters",
  "links": [],
- "modified": "2024-06-28 17:36:32.660714",
+ "modified": "2024-07-02 15:05:57.118280",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Masters",
@@ -23,12 +23,20 @@
    "number_card_name": "State"
   },
   {
-   "label": "Grampanchayat",
-   "number_card_name": "Grampanchayat"
+   "label": "District",
+   "number_card_name": "District"
+  },
+  {
+   "label": "Block",
+   "number_card_name": "Block"
   },
   {
    "label": "Village",
    "number_card_name": "Village"
+  },
+  {
+   "label": "Grampanchayat",
+   "number_card_name": "Grampanchayat"
   },
   {
    "label": "Financial Year",
@@ -41,14 +49,6 @@
   {
    "label": "CBBO",
    "number_card_name": "CBBO"
-  },
-  {
-   "label": "District",
-   "number_card_name": "District Cover"
-  },
-  {
-   "label": "Block",
-   "number_card_name": "Block Cover"
   }
  ],
  "owner": "Administrator",
