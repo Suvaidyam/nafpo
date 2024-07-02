@@ -1,6 +1,6 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
-
+let deleted_staff = [];
 frappe.ui.form.on("FPO Profiling", {
     async refresh(frm) {
         const today = new Date();
@@ -29,6 +29,9 @@ frappe.ui.form.on("FPO Profiling", {
         frm.doc.staff_details_table.forEach(row => {
             // console.log('Row during validate:', row);
         });
+    },
+    before_save(frm) {
+        frm.doc.deleted_staff_rows = deleted_staff;
     },
     state_name: async function (frm) {
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
@@ -66,8 +69,14 @@ frappe.ui.form.on("FPO Profiling", {
 
 frappe.ui.form.on('FPO Staff Child', {
     form_render(frm, cdt, cdn) {
-        console.log(frm)
-        let row = frappe.get_doc(cdt, cdn);
-        console.log('row :>> ', row);
+        let options = ["CEO","Accountant","Other Staff"]
+        let existing = frm.doc.staff_details_table.map(row => {return row.position_designation})
+        if (existing.length){
+            options = options.filter(option => !existing.includes(option))
+        }
+        frm.cur_grid.grid_form.fields_dict.position_designation.set_data(options)
+    },
+    staff_details_table_remove:function(frm, cdt, cdn){
+        deleted_staff.push(cdn);
     }
 });

@@ -10,20 +10,6 @@ class FPOProfiling(Document):
         fpo_profile_name = frappe.get_doc('FPO', self.name_of_the_fpo)
         self.name_of_the_fpo_copy = fpo_profile_name.fpo_name
 
-        staff_details = self.staff_details_table
-        for row in staff_details:
-            existing_staff_name = frappe.db.exists("FPO Staff Child", {"name": row.name})
-            if not existing_staff_name:
-                new_fpo_staff = frappe.new_doc("FPO Staff")
-                new_fpo_staff.name = row.name
-                new_fpo_staff.fpo = self.name_of_the_fpo
-                new_fpo_staff.position_designation = row.position_designation
-                new_fpo_staff.name1 = f"{row.name1} - {row.position_designation}"
-                new_fpo_staff.joining_date = row.joining_date
-                new_fpo_staff.aadhar_no = row.aadhar_no
-                new_fpo_staff.phone_no = row.phone_no
-                new_fpo_staff.save()
-
     def before_validate(self):
         exists = frappe.db.exists({
             "doctype": "FPO Profiling",
@@ -34,6 +20,36 @@ class FPOProfiling(Document):
             frappe.throw(f"FPO already exists in FPO Profiling")
 
     def on_update(self):
+        if len(self.deleted_staff_rows) > 0:
+            for row_id in self.deleted_staff_rows:
+                existing_staff_name = frappe.db.exists("FPO Staff", {"child_reference": row_id})
+                if existing_staff_name:
+                    frappe.delete_doc("FPO Staff", existing_staff_name)
+            
+        staff_details = self.staff_details_table
+        for row in staff_details:
+            existing_staff_name = frappe.db.exists("FPO Staff", {"child_reference": row.name})
+            if not existing_staff_name:
+                new_fpo_staff = frappe.new_doc("FPO Staff")
+                new_fpo_staff.fpo = self.name_of_the_fpo
+                new_fpo_staff.position_designation = row.position_designation
+                new_fpo_staff.name1 = f"{row.name1} - {row.position_designation}"
+                new_fpo_staff.joining_date = row.joining_date
+                new_fpo_staff.child_reference = row.name
+                new_fpo_staff.aadhar_no = row.aadhar_no
+                new_fpo_staff.phone_no = row.phone_no
+                new_fpo_staff.insert()
+            else:
+                new_fpo_staff = frappe.get_doc("FPO Staff",existing_staff_name)
+                new_fpo_staff.fpo = self.name_of_the_fpo
+                new_fpo_staff.position_designation = row.position_designation
+                new_fpo_staff.name1 = f"{row.name1} - {row.position_designation}"
+                new_fpo_staff.joining_date = row.joining_date
+                new_fpo_staff.child_reference = row.name
+                new_fpo_staff.aadhar_no = row.aadhar_no
+                new_fpo_staff.phone_no = row.phone_no
+                new_fpo_staff.save()
+                
         if self.date_of_registration:
             sfac_ins = frappe.db.exists("FPO MFR 10K", {'fpo': self.name_of_the_fpo})
             if sfac_ins:
