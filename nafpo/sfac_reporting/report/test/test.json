@@ -22,7 +22,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-06-27 23:53:59.966163",
+ "modified": "2024-07-01 12:16:54.812293",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "TEST",
@@ -32,5 +32,15 @@
  "ref_doctype": "FPO MFR 10K",
  "report_name": "TEST",
  "report_type": "Query Report",
- "roles": []
+ "roles": [
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
+  }
+ ]
 }

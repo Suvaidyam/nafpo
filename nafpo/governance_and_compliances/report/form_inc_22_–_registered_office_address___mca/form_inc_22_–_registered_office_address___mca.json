@@ -9,7 +9,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-06-25 11:18:07.628944",
+ "modified": "2024-07-01 12:20:55.083160",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Form INC-22 \u2013 Registered office Address - MCA",
@@ -20,7 +20,13 @@
  "report_type": "Script Report",
  "roles": [
   {
-   "role": "FPO"
+   "role": "Admin"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
   }
  ]
 }

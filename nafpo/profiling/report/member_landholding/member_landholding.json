@@ -9,7 +9,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-06-28 19:11:24.130654",
+ "modified": "2024-07-01 12:12:34.345458",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Member Landholding",
@@ -18,5 +18,15 @@
  "ref_doctype": "FPO member details",
  "report_name": "Member Landholding",
  "report_type": "Script Report",
- "roles": []
+ "roles": [
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
+  }
+ ]
 }

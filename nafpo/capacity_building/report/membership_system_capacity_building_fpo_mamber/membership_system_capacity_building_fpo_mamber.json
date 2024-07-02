@@ -10,7 +10,7 @@
  "is_standard": "Yes",
  "json": "{}",
  "letterhead": null,
- "modified": "2024-06-28 17:26:04.181023",
+ "modified": "2024-07-01 12:13:55.023416",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Membership System Capacity Building FPO Mamber",
@@ -22,6 +22,15 @@
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
   },
   {
    "role": "FPO"

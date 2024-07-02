@@ -1,6 +1,8 @@
 import frappe
 from frappe.utils import nowdate
-@frappe.whitelist()
+from nafpo.utils.rport_filter import ReportFilter
+
+@frappe.whitelist(allow_guest=True)
 def get_fpo_profile(name=None, fields=["*"]):
     parent = frappe.db.exists({'doctype':'FPO Profiling','name_of_the_fpo':name})
     child_filter = {'parent': parent,'parenttype': 'FPO Profiling','parentfield': 'bod_kyc_name'}
@@ -16,33 +18,60 @@ def get_fpo_profile(name=None, fields=["*"]):
         final_fpo_data.append(name)
     return final_fpo_data
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_fpo_profile_doc(doctype_name,filter):
     return frappe.db.get_value(doctype_name, {'name_of_the_fpo':filter },['date_of_registration'],as_dict=1)
 
-@frappe.whitelist()
+
+@frappe.whitelist(allow_guest=True)
 def get_total_eligible_fpos_count():
     current_date = nowdate()
-    query = """
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+        mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
+        selected_filters=['CBBO', 'IA']
+    )
+    
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
+    
+    query = f"""
         SELECT COUNT(*)
         FROM `tabFPO MFR 10K`
-        WHERE `1st_installment_due_date` <= %(current_date)s
-        OR `2nd_installment_due_date` <= %(current_date)s
-        OR `3rd_installment_due_date` <= %(current_date)s
-        OR `4th_installment_due_date` <= %(current_date)s
-        OR `5th_installment_due_date` <= %(current_date)s
-        OR `6th_installment_due_date` <= %(current_date)s
+        WHERE (
+            `1st_installment_due_date` <= %(current_date)s
+            OR `2nd_installment_due_date` <= %(current_date)s
+            OR `3rd_installment_due_date` <= %(current_date)s
+            OR `4th_installment_due_date` <= %(current_date)s
+            OR `5th_installment_due_date` <= %(current_date)s
+            OR `6th_installment_due_date` <= %(current_date)s
+        ) {cond_str}
     """
     count = frappe.db.sql(query, {'current_date': current_date}, as_dict=False)
     return count[0][0] if count else 0
 
+# @frappe.whitelist(allow_guest=True)
+# def get_total_eligible_fpos_count():
 
-@frappe.whitelist()
+#     current_date = nowdate()
+#     query = """
+#         SELECT COUNT(*)
+#         FROM `tabFPO MFR 10K`
+#         WHERE `1st_installment_due_date` <= %(current_date)s
+#         OR `2nd_installment_due_date` <= %(current_date)s
+#         OR `3rd_installment_due_date` <= %(current_date)s
+#         OR `4th_installment_due_date` <= %(current_date)s
+#         OR `5th_installment_due_date` <= %(current_date)s
+#         OR `6th_installment_due_date` <= %(current_date)s
+#     """
+#     count = frappe.db.sql(query, {'current_date': current_date}, as_dict=False)
+#     return count[0][0] if count else 0
+
+
+@frappe.whitelist(allow_guest=True)
 def one_time_organization_registration_forms_fpo_count():
     return frappe.db.count('One Time Organization Registration Forms')
 
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_received_fund_before_or_on_due_date():
     query = """
         SELECT COUNT(*)
@@ -58,7 +87,7 @@ def get_received_fund_before_or_on_due_date():
     count = frappe.db.sql(query)
     return count[0][0] if count else 0
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_received_fund_after_due_date():
     query = """
         SELECT COUNT(*)
@@ -74,7 +103,7 @@ def get_received_fund_after_due_date():
     count = frappe.db.sql(query)
     return count[0][0] if count else 0
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_Eligible_but_not_received_fund_yet():
     current_date = nowdate()
     query = """
@@ -91,7 +120,7 @@ def get_Eligible_but_not_received_fund_yet():
     count = frappe.db.sql(query, {'current_date': current_date})
     return count[0][0] if count and count[0] else 0
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_annual_compliance_forms_fpo_count():
     sql_query = """
         SELECT
@@ -116,7 +145,7 @@ def get_annual_compliance_forms_fpo_count():
     data = frappe.db.sql(sql_query, as_dict=True)
     return data[0]
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_incomplete_fpo_board_of_directors_meeting_count():
     sql_query = """
         SELECT
@@ -143,7 +172,7 @@ def get_incomplete_fpo_board_of_directors_meeting_count():
     data = frappe.db.sql(sql_query, as_dict=True)
     return data[0]
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_complete_fpo_board_of_directors_meeting_count():
     sql_query = """
         SELECT

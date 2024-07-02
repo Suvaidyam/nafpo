@@ -10,7 +10,7 @@
  "is_standard": "Yes",
  "json": "{}",
  "letterhead": null,
- "modified": "2024-06-27 18:38:03.361747",
+ "modified": "2024-07-01 12:17:31.391443",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Incomplete FPO Board of Directors Meeting",
@@ -19,5 +19,15 @@
  "ref_doctype": "Board of Directors Meeting Forms",
  "report_name": "Incomplete FPO Board of Directors Meeting",
  "report_type": "Script Report",
- "roles": []
+ "roles": [
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
+  }
+ ]
 }
