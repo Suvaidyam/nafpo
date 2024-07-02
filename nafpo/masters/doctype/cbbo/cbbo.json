@@ -22,6 +22,7 @@
   {
    "fieldname": "ia_name",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "IA Name",
    "options": "IA",
    "reqd": 1
@@ -30,7 +31,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 20:33:01.940256",
+ "modified": "2024-07-02 12:42:32.744387",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "CBBO",

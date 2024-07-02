@@ -24,6 +24,7 @@
   {
    "fieldname": "district_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "District Name",
    "reqd": 1
   },
@@ -45,7 +46,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-25 12:43:16.670568",
+ "modified": "2024-07-02 12:38:51.275376",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "District",

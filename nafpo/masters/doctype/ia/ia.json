@@ -13,14 +13,16 @@
   {
    "fieldname": "name1",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Name",
+   "reqd": 1,
    "unique": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-04 10:31:31.405468",
+ "modified": "2024-07-02 12:42:19.465118",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "IA",
