@@ -186,8 +186,9 @@
   {
    "depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
    "fieldname": "aadhar_number",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Aadhar Number",
+   "length": 12,
    "mandatory_depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
    "non_negative": 1
   },
@@ -201,13 +202,14 @@
   {
    "depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
    "fieldname": "register_aadhar_mobile_number",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Register Aadhar Mobile Number",
+   "length": 10,
    "non_negative": 1
   },
   {
    "fieldname": "bank_ac_number",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Bank Ac Number",
    "non_negative": 1
   },
@@ -392,7 +394,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-25 12:14:28.507642",
+ "modified": "2024-07-02 15:28:30.819935",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO member details",
