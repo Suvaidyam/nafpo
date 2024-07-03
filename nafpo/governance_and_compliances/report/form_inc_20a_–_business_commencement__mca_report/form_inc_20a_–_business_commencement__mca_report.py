@@ -33,10 +33,10 @@ def execute(filters=None):
     # Initialize conditions list
     conditions = []
     user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
-    mappings={'CBBO': ('sfac_inst', 'cbbo'), 'IA': ('sfac_inst', 'ia')},
+    mappings={'CBBO': ('otorf', 'cbbo'), 'IA': ('otorf', 'ia')},
     selected_filters=['CBBO', 'IA']
     )
-    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else "1=1"
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
 
     # Construct conditions based on filters
     if filters:
@@ -60,7 +60,7 @@ def execute(filters=None):
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON otorf.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                {' AND '.join(conditions)} {cond_str}
+                {' AND '.join(conditions)} 
             GROUP BY
                 fpo_profiling.name_of_the_fpo_copy
         """
@@ -74,8 +74,6 @@ def execute(filters=None):
                 otorf.inc_20_status AS status
             FROM
                 `tabOne Time Organization Registration Forms` AS otorf
-            WHERE
-                {cond_str}
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON otorf.fpo = fpo_profiling.name_of_the_fpo
             GROUP BY

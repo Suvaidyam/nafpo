@@ -42,8 +42,8 @@ def execute(filters=None):
             COUNT(CASE WHEN inc_20_status = 'Completed' AND inc_20_submitted_on > inc_20_due_date THEN 1 END) AS completed_after_due_date_count
         FROM
             `tabOne Time Organization Registration Forms`
-        WHERE
-            {cond_str}
+        # WHERE
+        #     {cond_str}
     """
 
     # Execute the SQL query and fetch data
