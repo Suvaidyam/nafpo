@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:Capacity {####}",
  "creation": "2024-06-09 12:20:53.446650",
@@ -144,6 +145,7 @@
    "options": "IA"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
  "modified": "2024-07-03 12:00:08.586394",

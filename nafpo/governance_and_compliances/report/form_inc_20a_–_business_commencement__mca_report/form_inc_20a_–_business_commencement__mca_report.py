@@ -1,4 +1,5 @@
 import frappe
+from nafpo.utils.rport_filter import ReportFilter
 
 def execute(filters=None):
     # Define columns for the report
@@ -31,6 +32,11 @@ def execute(filters=None):
 
     # Initialize conditions list
     conditions = []
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+    mappings={'CBBO': ('otorf', 'cbbo'), 'IA': ('otorf', 'ia')},
+    selected_filters=['CBBO', 'IA']
+    )
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
 
     # Construct conditions based on filters
     if filters:
@@ -54,13 +60,13 @@ def execute(filters=None):
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON otorf.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                {' AND '.join(conditions)}
+                {' AND '.join(conditions)}  {cond_str}
             GROUP BY
                 fpo_profiling.name_of_the_fpo_copy
         """
     else:
         # If no filters provided, retrieve all records
-        sql_query = """
+        sql_query = f"""
             SELECT
                 fpo_profiling.name_of_the_fpo_copy AS fpo_name,
                 fpo_profiling.contact_detail_of_fpo AS fpo_contact_number,
@@ -70,6 +76,8 @@ def execute(filters=None):
                 `tabOne Time Organization Registration Forms` AS otorf
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON otorf.fpo = fpo_profiling.name_of_the_fpo
+            WHERE
+                1=1 {cond_str}
             GROUP BY
                 fpo_profiling.name_of_the_fpo_copy
         """

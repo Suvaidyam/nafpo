@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:FMD-{####}",
  "creation": "2024-05-10 10:25:32.806796",
@@ -394,7 +395,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-02 15:28:30.819935",
+ "modified": "2024-07-03 10:48:57.966675",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO member details",

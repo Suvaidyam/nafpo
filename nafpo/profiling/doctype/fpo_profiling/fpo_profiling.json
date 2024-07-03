@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:FPO-P-{#####}",
  "creation": "2024-05-09 11:20:29.637489",
@@ -501,7 +502,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-28 10:59:57.636085",
+ "modified": "2024-07-03 10:47:48.577900",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
