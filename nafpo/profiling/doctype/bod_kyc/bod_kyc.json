@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:BOD-{#####}",
  "creation": "2024-05-10 09:53:22.793813",
@@ -166,7 +167,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-25 12:10:09.779649",
+ "modified": "2024-07-03 10:47:30.901296",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "BOD KYC",

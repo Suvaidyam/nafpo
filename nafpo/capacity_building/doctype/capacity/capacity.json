@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:Capacity {####}",
  "creation": "2024-06-09 12:20:53.446650",
@@ -126,9 +127,10 @@
    "options": "FPO Staff Select Child"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-27 10:54:37.983905",
+ "modified": "2024-07-03 10:49:44.326620",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity",
