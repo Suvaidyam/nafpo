@@ -43,8 +43,8 @@ def execute(filters=None):
             SUM(CASE WHEN are_you_received_4th_installment_fund = 'Yes' AND 4th_installment_date > 4th_installment_due_date THEN 1 ELSE 0 END) AS fund_was_received_after_due_date
         FROM
             `tabFPO MFR 10K`
-        WHERE
-            {cond_str}
+        # WHERE
+        #     {cond_str}
     """
 
     data = frappe.db.sql(sql_query, as_dict=True)
