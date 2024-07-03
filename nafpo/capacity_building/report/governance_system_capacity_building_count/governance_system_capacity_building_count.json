@@ -9,7 +9,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-06-28 14:38:28.082663",
+ "modified": "2024-07-03 11:47:04.317768",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Governance System Capacity Building Count",
@@ -18,7 +18,7 @@
  "query": "SELECT COUNT(*) AS count, 'Yes' AS trained\nFROM (\n    SELECT\n        fpo.name\n    FROM\n        `tabFPO` AS fpo\n    WHERE\n        fpo.name NOT IN (\n            SELECT DISTINCT _fs.fpo\n            FROM `tabCapacity` AS _cap\n            INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent\n            INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name\n        )\n) AS has_not_trained\n\nUNION ALL\n\nSELECT COUNT(*) AS count, 'No' AS trained\nFROM (\n    SELECT\n        fpo.name\n    FROM\n        `tabFPO` AS fpo\n    LEFT JOIN\n        `tabCapacity` AS _cap ON fpo.name = _cap.fpo\n    LEFT JOIN\n        `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent\n    LEFT JOIN\n        `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name\n    WHERE\n        _fs.fpo IS NOT NULL\n    GROUP BY\n        fpo.name\n) AS has_trained;\n",
  "ref_doctype": "Capacity",
  "report_name": "Governance System Capacity Building Count",
- "report_type": "Query Report",
+ "report_type": "Script Report",
  "roles": [
   {
    "role": "System Manager"

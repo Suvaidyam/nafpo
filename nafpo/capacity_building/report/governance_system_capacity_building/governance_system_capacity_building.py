@@ -11,10 +11,10 @@ def execute(filters=None):
     elif filters.get("Has_Trained_Bod") == "No":
         cond_str = "HAVING training_count = 0"
     user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
-    mappings={'CBBO': ('sfac_inst', 'cbbo'), 'IA': ('sfac_inst', 'ia')},
-    selected_filters=['CBBO', 'IA']
+        mappings={'CBBO': ('f', 'cbbo_name'), 'State': ('f', 'state'), 'District': ('f', 'district'), 'FPO': ('fp', 'name_of_the_fpo'), 'IA': ('fp', 'ia')},
+        selected_filters=['CBBO','State','FPO','District','IA']
     )
-    user_cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
+    user_cond_str = f"WHERE {user_filter_conditions}" if user_filter_conditions else ""
     
     query = f""" 
     SELECT
@@ -36,6 +36,7 @@ def execute(filters=None):
             `tabBOD KYC Child` b ON c.name = b.parent
         LEFT JOIN
             `tabFPO Profiling` fp ON f.name = fp.name_of_the_fpo
+        {user_cond_str}
         GROUP BY
             f.name, fp.contact_detail_of_fpo, fp.fpo_email_id
         {cond_str}
