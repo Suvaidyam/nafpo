@@ -19,12 +19,6 @@ frappe.ui.form.on("Annual Compliance Forms", {
             frm.fields_dict[field].$input.datepicker({ maxDate: new Date() });
         });
     },
-    // validate(frm) {
-    //     check_fpo(frm)
-    // },
-    financial_year: async function (frm) {
-        // check_fpo(frm)
-    },
     onload: function (frm) {
         let date = new Date();
         date.setFullYear(date.getFullYear() + 1);
@@ -35,7 +29,7 @@ frappe.ui.form.on("Annual Compliance Forms", {
         frm.set_value('d_kyc_due_date', formattedDate);
         frm.set_value('it_return_due_date', formattedDate);
         frm.set_value('agm_due_date', formattedDate);
-        // frm.save();
+        frm.save();
     },
     aoc_4_status(frm) {
         blank_submitted_on(frm, 'aoc_4_status', 'aoc_4_submitted_on');
@@ -62,28 +56,6 @@ frappe.ui.form.on("Annual Compliance Forms", {
         return acc;
     }, {})
 });
-
-async function check_fpo(frm) {
-    let filters = {
-        'financial_year': frm.doc.financial_year,
-        'name': ['!=', frm.doc.name]
-    };
-    let fields = ['name', 'financial_year'];
-    let limit = 1;
-
-    try {
-        let data = await frappe.db.get_list('Annual Compliance Forms', { filters, fields, limit });
-        let exists = data.length > 0;
-        if (exists) {
-            await frappe.throw(`FPO already exists for the Financial Year ${frm.doc.financial_year}`);
-            return false;
-        }
-        return true;
-    } catch (err) {
-        console.error('Error fetching data:', err);
-        return false;
-    }
-}
 
 function blank_submitted_on(frm, status_field, date_field) {
     if (frm.doc[status_field] == "Pending") {

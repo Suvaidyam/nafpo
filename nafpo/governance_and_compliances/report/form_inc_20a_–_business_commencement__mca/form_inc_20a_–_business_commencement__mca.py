@@ -33,7 +33,7 @@ def execute(filters=None):
     mappings={'CBBO': ('sfac_inst', 'cbbo'), 'IA': ('sfac_inst', 'ia')},
     selected_filters=['CBBO', 'IA']
     )
-    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else "1=1"
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
     sql_query = f"""
         SELECT
             'Form INC-20A – BUSINESS COMMENCEMENT- MCA' AS name,
@@ -42,8 +42,8 @@ def execute(filters=None):
             COUNT(CASE WHEN inc_20_status = 'Completed' AND inc_20_submitted_on > inc_20_due_date THEN 1 END) AS completed_after_due_date_count
         FROM
             `tabOne Time Organization Registration Forms`
-        # WHERE
-        #     {cond_str}
+        WHERE
+            1=1 {cond_str}
     """
 
     # Execute the SQL query and fetch data
