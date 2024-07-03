@@ -2,7 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
-
+from nafpo.utils.rport_filter import ReportFilter
 
 def execute(filters=None):
     cond_str = ""
@@ -10,6 +10,11 @@ def execute(filters=None):
         cond_str = "HAVING training_count > 0"
     elif filters.get("Has_Trained_Bod") == "No":
         cond_str = "HAVING training_count = 0"
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+    mappings={'CBBO': ('sfac_inst', 'cbbo'), 'IA': ('sfac_inst', 'ia')},
+    selected_filters=['CBBO', 'IA']
+    )
+    user_cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
     
     query = f""" 
     SELECT
