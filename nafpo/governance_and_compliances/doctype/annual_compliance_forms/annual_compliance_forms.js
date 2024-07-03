@@ -23,7 +23,7 @@ frappe.ui.form.on("Annual Compliance Forms", {
     //     check_fpo(frm)
     // },
     financial_year: async function (frm) {
-        check_fpo(frm)
+        // check_fpo(frm)
     },
     onload: function (frm) {
         let date = new Date();
