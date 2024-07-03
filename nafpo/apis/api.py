@@ -2,12 +2,12 @@ import frappe
 from frappe.utils import nowdate
 from nafpo.utils.rport_filter import ReportFilter
 
-user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
-    mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
-    selected_filters=['CBBO', 'IA']
-)
+# user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+#     mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
+#     selected_filters=['CBBO', 'IA']
+# )
 
-cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
+# cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
 
 @frappe.whitelist(allow_guest=True)
 def get_fpo_profile(name=None, fields=["*"]):
@@ -44,7 +44,7 @@ def get_total_eligible_fpos_count():
             OR `4th_installment_due_date` <= %(current_date)s
             OR `5th_installment_due_date` <= %(current_date)s
             OR `6th_installment_due_date` <= %(current_date)s
-        ) {cond_str}
+        )
     """
     count = frappe.db.sql(query, {'current_date': current_date}, as_dict=False)
     return count[0][0] if count else 0
