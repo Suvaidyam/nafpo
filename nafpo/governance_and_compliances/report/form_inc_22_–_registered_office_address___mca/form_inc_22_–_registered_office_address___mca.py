@@ -1,4 +1,5 @@
 import frappe
+from nafpo.utils.rport_filter import ReportFilter
 
 def execute(filters=None):
     # Define the columns for the report
@@ -29,8 +30,14 @@ def execute(filters=None):
         }
     ]
 
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+    mappings={'CBBO': ('sfac_inst', 'cbbo'), 'IA': ('sfac_inst', 'ia')},
+    selected_filters=['CBBO', 'IA']
+    )
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else "1=1"
+
     # SQL query to fetch the counts of different statuses
-    sql_query = """
+    sql_query = f"""
         SELECT
             'Form INC-22 - Registered office Address - MCA' AS name,
             COUNT(CASE WHEN inc_22_status = 'Pending' THEN 1 END) AS pending_count,
@@ -38,14 +45,8 @@ def execute(filters=None):
             COUNT(CASE WHEN inc_22_status = 'Completed' AND inc_22_submitted_on > inc_22_due_date THEN 1 END) AS completed_after_due_date_count
         FROM
             `tabOne Time Organization Registration Forms`
-        # UNION ALL
-        # SELECT
-        #     'Form ADT-1 - Auditor Appointment - MCA' AS name,
-        #     COUNT(CASE WHEN adt_1_status = 'Pending' THEN 1 END) AS pending_count,
-        #     COUNT(CASE WHEN adt_1_status = 'Completed' AND adt_1_submitted_on <= adt_1_due_date THEN 1 END) AS completed_before_due_date_count,
-        #     COUNT(CASE WHEN adt_1_status = 'Completed' AND adt_1_submitted_on > adt_1_due_date THEN 1 END) AS completed_after_due_date_count
-        # FROM
-        #     `tabOne Time Organization Registration Forms`
+        WHERE
+            {cond_str}
     """
 
     # Execute the SQL query and fetch data

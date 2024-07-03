@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:OTORF-{###}",
  "creation": "2024-06-13 12:17:14.894131",
@@ -192,7 +193,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-01 12:08:29.548380",
+ "modified": "2024-07-03 10:50:58.935020",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "One Time Organization Registration Forms",

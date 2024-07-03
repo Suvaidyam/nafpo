@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:SFACI-{####}",
  "creation": "2024-06-20 16:19:40.738029",
@@ -341,7 +342,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-26 16:14:40.171016",
+ "modified": "2024-07-03 10:49:14.350204",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "FPO MFR 10K",

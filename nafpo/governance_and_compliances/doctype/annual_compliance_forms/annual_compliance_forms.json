@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:ACF-{###}",
  "creation": "2024-06-13 12:55:11.049287",
@@ -322,7 +323,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-01 10:49:14.616169",
+ "modified": "2024-07-03 10:50:25.097455",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Annual Compliance Forms",
