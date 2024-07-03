@@ -3,6 +3,11 @@
 
 frappe.query_reports["Governance System Capacity Building FPO BOD"] = {
 	"filters": [
-
+		{ 
+			"fieldname":"attended_training",
+			"label": __("Attended training"),
+			"fieldtype": "Select",
+			"options": ["","Yes", "No"]
+		}
 	]
 };

@@ -9,16 +9,16 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-07-01 12:14:54.167402",
+ "modified": "2024-07-03 14:05:41.697376",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Operation System Capacity Building FPO (Accountant)",
  "owner": "Administrator",
  "prepared_report": 0,
- "query": "SELECT\n    COUNT(_fpo.name) AS fpo_count, \n    \"Yes\" AS has_trained_accountant\nFROM\n    `tabFPO` AS _fpo\nWHERE\n    _fpo.name IN (\n        SELECT DISTINCT _fs.fpo\n        FROM `tabCapacity` AS _cap\n        INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent\n        INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name AND _fs.position_designation = \"Accountant\"\n    )\n \nUNION ALL\n \nSELECT\n    COUNT(_fpo.name) AS fpo_count, \n    \"No\" AS has_trained_accountant\nFROM\n    `tabFPO` AS _fpo\nWHERE\n    _fpo.name NOT IN (\n        SELECT DISTINCT _fs.fpo\n        FROM `tabCapacity` AS _cap\n        INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent\n        INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name AND _fs.position_designation = \"Accountant\"\n    );",
+ "query": "",
  "ref_doctype": "Capacity",
  "report_name": "Operation System Capacity Building FPO (Accountant)",
- "report_type": "Query Report",
+ "report_type": "Script Report",
  "roles": [
   {
    "role": "System Manager"
