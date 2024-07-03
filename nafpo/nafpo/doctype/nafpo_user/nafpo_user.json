@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:email",
  "creation": "2024-05-27 09:57:58.123730",
@@ -109,7 +110,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-01 12:47:22.593410",
+ "modified": "2024-07-03 11:30:03.807306",
  "modified_by": "Administrator",
  "module": "Nafpo",
  "name": "Nafpo User",
