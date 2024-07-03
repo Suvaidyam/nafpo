@@ -45,7 +45,7 @@ def execute(filters=None):
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                sfac_inst.1st_installment_due_date <= CURDATE() {cond_str}
+                sfac_inst.1st_installment_due_date <= CURDATE()
 
             UNION ALL
 
@@ -59,7 +59,7 @@ def execute(filters=None):
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                sfac_inst.2nd_installment_due_date <= CURDATE() {cond_str}
+                sfac_inst.2nd_installment_due_date <= CURDATE()
 
             UNION ALL
 
@@ -73,7 +73,7 @@ def execute(filters=None):
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                sfac_inst.3rd_installment_due_date <= CURDATE() {cond_str}
+                sfac_inst.3rd_installment_due_date <= CURDATE()
 
             UNION ALL
 
@@ -87,7 +87,7 @@ def execute(filters=None):
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                sfac_inst.4th_installment_due_date <= CURDATE() {cond_str}
+                sfac_inst.4th_installment_due_date <= CURDATE()
 
             UNION ALL
 
@@ -101,7 +101,7 @@ def execute(filters=None):
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                sfac_inst.5th_installment_due_date <= CURDATE() {cond_str}
+                sfac_inst.5th_installment_due_date <= CURDATE()
 
             UNION ALL
 
@@ -115,7 +115,7 @@ def execute(filters=None):
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON sfac_inst.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                sfac_inst.6th_installment_due_date <= CURDATE() {cond_str}
+                sfac_inst.6th_installment_due_date <= CURDATE()
         )
 
         SELECT
