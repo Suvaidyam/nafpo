@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:PG-{###}",
  "creation": "2024-05-10 10:11:13.734827",
@@ -79,7 +80,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-01 14:55:46.577962",
+ "modified": "2024-07-03 10:48:16.302487",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Producer Groups",
