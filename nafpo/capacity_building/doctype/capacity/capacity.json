@@ -8,6 +8,8 @@
  "field_order": [
   "section_break_feyi",
   "fpo",
+  "cbbo",
+  "ia",
   "topic",
   "category",
   "fpo_member",
@@ -124,11 +126,27 @@
    "fieldtype": "Table MultiSelect",
    "label": "Operation System",
    "options": "FPO Staff Select Child"
+  },
+  {
+   "fetch_from": "fpo.cbbo_name",
+   "fieldname": "cbbo",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "CBBO",
+   "options": "CBBO"
+  },
+  {
+   "fetch_from": "cbbo.ia_name",
+   "fieldname": "ia",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "IA",
+   "options": "IA"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-27 10:54:37.983905",
+ "modified": "2024-07-03 12:00:08.586394",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity",
