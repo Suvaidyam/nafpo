@@ -16,6 +16,12 @@ def execute(filters=None):
             "width": 300
         },
         {
+            "fieldname": "eligible_but_have_received_fund_yet",
+            "label": "Eligible but haven't received fund yet",
+            "fieldtype": "Int",
+            "width": 300
+        },
+        {
             "fieldname": "fund_was_received_before_due_date",
             "label": "Fund was received before due date",
             "fieldtype": "Int",
@@ -30,21 +36,22 @@ def execute(filters=None):
     ]
 
     user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
-    mappings={'CBBO': ('sfac_inst', 'cbbo'), 'IA': ('sfac_inst', 'ia')},
-    selected_filters=['CBBO', 'IA']
+        mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
+        selected_filters=['CBBO', 'IA']
     )
-    cond_str = f"{user_filter_conditions}" if user_filter_conditions else "1=1"
+    cond_str = f"AND {user_filter_conditions}" if user_filter_conditions else ""
 
     sql_query = f"""
         SELECT
             'First Installment' AS name,
-            SUM(CASE WHEN are_you_received_1st_installment_fund = 'No' AND 1st_installment_due_date <= CURDATE() THEN 1 ELSE 0 END) AS eligible_fpo,
-            SUM(CASE WHEN are_you_received_1st_installment_fund = 'Yes' AND 1st_installment_date <= 1st_installment_due_date THEN 1 ELSE 0 END) AS fund_was_received_before_due_date,
-            SUM(CASE WHEN are_you_received_1st_installment_fund = 'Yes' AND 1st_installment_date > 1st_installment_due_date THEN 1 ELSE 0 END) AS fund_was_received_after_due_date
+            COUNT(DISTINCT CASE WHEN 1st_installment_due_date <= CURDATE() THEN fpo END) AS eligible_fpo,
+            COUNT(DISTINCT CASE WHEN are_you_received_1st_installment_fund = 'Yes' AND 1st_installment_due_date <= CURDATE() THEN fpo END) AS eligible_but_have_received_fund_yet,
+            COUNT(DISTINCT CASE WHEN are_you_received_1st_installment_fund = 'Yes' AND 1st_installment_due_date >= 1st_installment_date THEN fpo END) AS fund_was_received_before_due_date,
+            COUNT(DISTINCT CASE WHEN are_you_received_1st_installment_fund = 'Yes' AND 1st_installment_due_date < 1st_installment_date THEN fpo END) AS fund_was_received_after_due_date
         FROM
             `tabFPO MFR 10K`
-        # WHERE
-        #     {cond_str}
+        WHERE
+            1=1 {cond_str}
     """
 
     data = frappe.db.sql(sql_query, as_dict=True)

@@ -8,18 +8,21 @@ frappe.ui.form.on("BOD KYC", {
         await apply_filter('fpo_name', 'state', frm, frm.doc.state_name)
     },
     validate(frm) {
-        validate_numeric_field(frm, 'mobile_number', 'Mobile Number');
-        validate_numeric_field(frm, 'aadhar_number', 'Aadhar Number');
+        validate_string(frm, 'mobile_number', 'Mobile Number');
+        validate_string(frm, 'aadhar_number', 'Aadhar Number');
     },
     state_name: async function (frm) {
         await apply_filter('fpo_name', 'state', frm, frm.doc.state_name)
         truncate_multiple_fields_value(frm, ['fpo_name'])
     },
+    director_identification_number(frm) {
+        validate_string(frm, 'director_identification_number', 'Director Identification Number');
+    },
     mobile_number(frm) {
-        validate_numeric_field(frm, 'mobile_number', 'Mobile Number');
+        validate_string(frm, 'mobile_number', 'Mobile Number');
     },
     aadhar_number(frm) {
-        validate_numeric_field(frm, 'aadhar_number', 'Aadhar Number');
+        validate_string(frm, 'aadhar_number', 'Aadhar Number');
     },
     onload(frm) {
         hide_list_view_in_useless_data(frm)
@@ -32,10 +35,11 @@ frappe.ui.form.on("BOD KYC", {
     }, {})
 });
 
-function validate_numeric_field(frm, field_name, field_label) {
-    const field_value = frm.doc[field_name];
-    if (typeof field_value === 'string' && isNaN(Number(field_value))) {
-        frappe.throw(__(`Please enter a valid ${field_label}.`));
-        frm.set_value(field_name, '');
-    }
-}
+// Validate Data field 
+// function validate_string(frm, field_name, field_label) {
+//     const field_value = frm.doc[field_name];
+//     if (typeof field_value === 'string' && isNaN(Number(field_value))) {
+//         frappe.throw(__(`Please enter a valid ${field_label}.`));
+//         frm.set_value(field_name, '');
+//     }
+// }

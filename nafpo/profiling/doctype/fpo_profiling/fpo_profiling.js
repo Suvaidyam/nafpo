@@ -69,6 +69,7 @@ frappe.ui.form.on("FPO Profiling", {
 
 frappe.ui.form.on('FPO Staff Child', {
     form_render(frm, cdt, cdn) {
+        $('.row-actions').remove()
         let options = ["CEO", "Accountant", "Other Staff"]
         let existing = frm.doc.staff_details_table.map(row => {
             if (row.position_designation != "Other Staff") return row.position_designation

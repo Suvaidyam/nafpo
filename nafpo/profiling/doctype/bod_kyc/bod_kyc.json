@@ -15,7 +15,7 @@
   "section_break_xbpn",
   "name1",
   "mobile_number",
-  "director_identifiation_number",
+  "director_identification_number",
   "din_document",
   "address_proof_status",
   "address_proof_other",
@@ -51,13 +51,6 @@
    "in_list_view": 1,
    "label": "Mobile Number",
    "length": 10,
-   "non_negative": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "director_identifiation_number",
-   "fieldtype": "Int",
-   "label": "Director Identifiation Number",
    "non_negative": 1,
    "reqd": 1
   },
@@ -163,11 +156,23 @@
    "hidden": 1,
    "label": "IA",
    "options": "IA"
+  },
+  {
+   "fieldname": "director_identification_number",
+   "fieldtype": "Data",
+   "label": "Director Identification Number",
+   "non_negative": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-07-03 10:47:30.901296",
+ "links": [
+  {
+   "link_doctype": "FPO Profiling",
+   "link_fieldname": "name_of_the_fpo"
+  }
+ ],
+ "modified": "2024-07-04 10:34:36.943138",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "BOD KYC",

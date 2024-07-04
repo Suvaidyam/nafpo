@@ -10,7 +10,7 @@
  "idx": 27,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-28 11:05:25.745004",
+ "modified": "2024-07-04 14:08:11.365804",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "Fourth Installment",
@@ -43,6 +43,9 @@
   },
   {
    "y_field": "fund_was_received_after_due_date"
+  },
+  {
+   "y_field": "eligible_but_have_received_fund_yet"
   }
  ]
 }
