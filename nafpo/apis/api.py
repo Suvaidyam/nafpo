@@ -2,12 +2,12 @@ import frappe
 from frappe.utils import nowdate
 from nafpo.utils.rport_filter import ReportFilter
 
-# user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
-#     mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
-#     selected_filters=['CBBO', 'IA']
-# )
+user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+    mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
+    selected_filters=['CBBO', 'IA']
+)
 
-# cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
+cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
 
 @frappe.whitelist(allow_guest=True)
 def get_fpo_profile(name=None, fields=["*"]):
@@ -29,81 +29,102 @@ def get_fpo_profile(name=None, fields=["*"]):
 def get_fpo_profile_doc(doctype_name,filter):
     return frappe.db.get_value(doctype_name, {'name_of_the_fpo':filter },['date_of_registration'],as_dict=1)
 
-
+# SFAC Module FPO Filter Count
 @frappe.whitelist(allow_guest=True)
 def get_total_eligible_fpos_count():
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+        mappings={'CBBO': ('sfac_inst', 'cbbo'), 'IA': ('sfac_inst', 'ia')},
+        selected_filters=['CBBO', 'IA']
+    )
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
     current_date = nowdate()
-        
     query = f"""
-        SELECT COUNT(*)
-        FROM `tabFPO MFR 10K`
-        WHERE (
-            `1st_installment_due_date` <= %(current_date)s
-            OR `2nd_installment_due_date` <= %(current_date)s
-            OR `3rd_installment_due_date` <= %(current_date)s
-            OR `4th_installment_due_date` <= %(current_date)s
-            OR `5th_installment_due_date` <= %(current_date)s
-            OR `6th_installment_due_date` <= %(current_date)s
-        )
+        SELECT
+            COUNT(DISTINCT sfac_inst.fpo) AS `fpo_count`
+        FROM
+            `tabFPO MFR 10K` AS sfac_inst
+        WHERE
+            sfac_inst.1st_installment_due_date <= CURDATE() {cond_str} OR
+            sfac_inst.2nd_installment_due_date <= CURDATE() {cond_str} OR
+            sfac_inst.3rd_installment_due_date <= CURDATE() {cond_str} OR
+            sfac_inst.4th_installment_due_date <= CURDATE() {cond_str} OR
+            sfac_inst.5th_installment_due_date <= CURDATE() {cond_str} OR
+            sfac_inst.6th_installment_due_date <= CURDATE() {cond_str};
     """
     count = frappe.db.sql(query, {'current_date': current_date}, as_dict=False)
     return count[0][0] if count else 0
 
 @frappe.whitelist(allow_guest=True)
-def one_time_organization_registration_forms_fpo_count():
-    return frappe.db.count('One Time Organization Registration Forms')
-
-@frappe.whitelist(allow_guest=True)
 def get_received_fund_before_or_on_due_date():
-    
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+        mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
+        selected_filters=['CBBO', 'IA']
+    )
+
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
     query = f"""
-        SELECT COUNT(*)
+        SELECT COUNT(DISTINCT `fpo`)
         FROM `tabFPO MFR 10K`
         WHERE 
-            (`are_you_received_1st_installment_fund` = 'Yes' AND `1st_installment_due_date` <= `1st_installment_date`) OR
-            (`are_you_received_2nd_installment_fund` = 'Yes' AND `2nd_installment_due_date` <= `2nd_installment_date`) OR
-            (`are_you_received_3rd_installment_fund` = 'Yes' AND `3rd_installment_due_date` <= `3rd_installment_date`) OR
-            (`are_you_received_4th_installment_fund` = 'Yes' AND `4th_installment_due_date` <= `4th_installment_date`) OR
-            (`are_you_received_5th_installment_fund` = 'Yes' AND `5th_installment_due_date` <= `5th_installment_date`) OR
-            (`are_you_received_6th_installment_fund` = 'Yes' AND `6th_installment_due_date` <= `6th_installment_date`)
+            (`are_you_received_1st_installment_fund` = 'Yes' AND `1st_installment_due_date` >= `1st_installment_date` {cond_str}) OR
+            (`are_you_received_2nd_installment_fund` = 'Yes' AND `2nd_installment_due_date` >= `2nd_installment_date` {cond_str}) OR
+            (`are_you_received_3rd_installment_fund` = 'Yes' AND `3rd_installment_due_date` >= `3rd_installment_date` {cond_str}) OR
+            (`are_you_received_4th_installment_fund` = 'Yes' AND `4th_installment_due_date` >= `4th_installment_date` {cond_str}) OR
+            (`are_you_received_5th_installment_fund` = 'Yes' AND `5th_installment_due_date` >= `5th_installment_date` {cond_str}) OR
+            (`are_you_received_6th_installment_fund` = 'Yes' AND `6th_installment_due_date` >= `6th_installment_date` {cond_str})
     """
     count = frappe.db.sql(query)
     return count[0][0] if count else 0
 
 @frappe.whitelist(allow_guest=True)
 def get_received_fund_after_due_date():
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+        mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
+        selected_filters=['CBBO', 'IA']
+    )
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
     
     query = f"""
-        SELECT COUNT(*)
+        SELECT COUNT(DISTINCT `fpo`)
         FROM `tabFPO MFR 10K`
         WHERE 
-            (`are_you_received_1st_installment_fund` = 'Yes' AND `1st_installment_due_date` > `1st_installment_date`) OR
-            (`are_you_received_2nd_installment_fund` = 'Yes' AND `2nd_installment_due_date` > `2nd_installment_date`) OR
-            (`are_you_received_3rd_installment_fund` = 'Yes' AND `3rd_installment_due_date` > `3rd_installment_date`) OR
-            (`are_you_received_4th_installment_fund` = 'Yes' AND `4th_installment_due_date` > `4th_installment_date`) OR
-            (`are_you_received_5th_installment_fund` = 'Yes' AND `5th_installment_due_date` > `5th_installment_date`) OR
-            (`are_you_received_6th_installment_fund` = 'Yes' AND `6th_installment_due_date` > `6th_installment_date`)
+            (`are_you_received_1st_installment_fund` = 'Yes' AND `1st_installment_due_date` < `1st_installment_date` {cond_str}) OR
+            (`are_you_received_2nd_installment_fund` = 'Yes' AND `2nd_installment_due_date` < `2nd_installment_date` {cond_str}) OR
+            (`are_you_received_3rd_installment_fund` = 'Yes' AND `3rd_installment_due_date` < `3rd_installment_date` {cond_str}) OR
+            (`are_you_received_4th_installment_fund` = 'Yes' AND `4th_installment_due_date` < `4th_installment_date` {cond_str}) OR
+            (`are_you_received_5th_installment_fund` = 'Yes' AND `5th_installment_due_date` < `5th_installment_date` {cond_str}) OR
+            (`are_you_received_6th_installment_fund` = 'Yes' AND `6th_installment_due_date` < `6th_installment_date` {cond_str})
     """
     count = frappe.db.sql(query)
     return count[0][0] if count else 0
 
 @frappe.whitelist(allow_guest=True)
 def get_Eligible_but_not_received_fund_yet():
-
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+        mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
+        selected_filters=['CBBO', 'IA']
+    )
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
     current_date = nowdate()
+    
     query = f"""
-        SELECT COUNT(*)
+        SELECT COUNT(DISTINCT `fpo`)
         FROM `tabFPO MFR 10K`
         WHERE 
-            (`are_you_received_1st_installment_fund` = 'No' AND `1st_installment_due_date` <= %(current_date)s) OR
-            (`are_you_received_2nd_installment_fund` = 'No' AND `2nd_installment_due_date` <= %(current_date)s) OR
-            (`are_you_received_3rd_installment_fund` = 'No' AND `3rd_installment_due_date` <= %(current_date)s) OR
-            (`are_you_received_4th_installment_fund` = 'No' AND `4th_installment_due_date` <= %(current_date)s) OR
-            (`are_you_received_5th_installment_fund` = 'No' AND `5th_installment_due_date` <= %(current_date)s) OR
-            (`are_you_received_6th_installment_fund` = 'No' AND `6th_installment_due_date` <= %(current_date)s)
+            (`are_you_received_1st_installment_fund` = 'No' AND `1st_installment_due_date` <= %(current_date)s {cond_str}) OR
+            (`are_you_received_2nd_installment_fund` = 'No' AND `2nd_installment_due_date` <= %(current_date)s {cond_str}) OR
+            (`are_you_received_3rd_installment_fund` = 'No' AND `3rd_installment_due_date` <= %(current_date)s {cond_str}) OR
+            (`are_you_received_4th_installment_fund` = 'No' AND `4th_installment_due_date` <= %(current_date)s {cond_str}) OR
+            (`are_you_received_5th_installment_fund` = 'No' AND `5th_installment_due_date` <= %(current_date)s {cond_str}) OR
+            (`are_you_received_6th_installment_fund` = 'No' AND `6th_installment_due_date` <= %(current_date)s {cond_str})
     """
     count = frappe.db.sql(query, {'current_date': current_date})
     return count[0][0] if count and count[0] else 0
+
+# Governance & Compliance Module FPO Filter Count
+@frappe.whitelist(allow_guest=True)
+def one_time_organization_registration_forms_fpo_count():
+    return frappe.db.count('One Time Organization Registration Forms')
 
 @frappe.whitelist(allow_guest=True)
 def get_annual_compliance_forms_fpo_count():

@@ -501,8 +501,13 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-07-03 10:47:48.577900",
+ "links": [
+  {
+   "link_doctype": "FPO MFR 10K",
+   "link_fieldname": "fpo"
+  }
+ ],
+ "modified": "2024-07-04 11:19:06.036831",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",

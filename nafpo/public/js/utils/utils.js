@@ -107,3 +107,12 @@ function hide_list_view_in_useless_data(frm) {
         hide_up_scroll_icon.style.display = 'none';
     }
 }
+
+// Validate Data field 
+function validate_string(frm, field_name, field_label) {
+    const field_value = frm.doc[field_name];
+    if (typeof field_value === 'string' && isNaN(Number(field_value))) {
+        frappe.throw(__(`Please enter a valid ${field_label}.`));
+        frm.set_value(field_name, '');
+    }
+}
