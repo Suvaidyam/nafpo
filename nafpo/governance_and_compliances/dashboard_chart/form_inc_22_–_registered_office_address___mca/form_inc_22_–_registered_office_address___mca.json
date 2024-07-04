@@ -10,7 +10,7 @@
  "idx": 12,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-28 11:07:16.809547",
+ "modified": "2024-07-04 15:38:51.284095",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Form INC-22 \u2013 Registered office Address - MCA",
@@ -36,13 +36,13 @@
  "x_field": "name",
  "y_axis": [
   {
-   "y_field": "pending_count"
+   "y_field": "pending"
   },
   {
-   "y_field": "completed_before_due_date_count"
+   "y_field": "completed_before_due_date"
   },
   {
-   "y_field": "completed_after_due_date_count"
+   "y_field": "completed_after_due_date"
   }
  ]
 }
