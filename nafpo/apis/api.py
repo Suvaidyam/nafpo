@@ -124,11 +124,30 @@ def get_Eligible_but_not_received_fund_yet():
 # Governance & Compliance Module FPO Filter Count
 @frappe.whitelist(allow_guest=True)
 def one_time_organization_registration_forms_fpo_count():
-    return frappe.db.count('One Time Organization Registration Forms')
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+        mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
+        selected_filters=['CBBO', 'IA']
+    )
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
+    
+    sql_query = f"""
+        SELECT COUNT(DISTINCT `fpo`) AS count
+        FROM `tabOne Time Organization Registration Forms`
+        WHERE
+            1=1 {cond_str}
+    """
+    data = frappe.db.sql(sql_query, as_dict=True)
+    return data[0].count
 
 @frappe.whitelist(allow_guest=True)
 def get_annual_compliance_forms_fpo_count():
-    sql_query = """
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+        mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
+        selected_filters=['CBBO', 'IA']
+    )
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
+    
+    sql_query = f"""
         SELECT
             COUNT(DISTINCT sub_query.fpo_id) AS count
         FROM
@@ -143,6 +162,8 @@ def get_annual_compliance_forms_fpo_count():
                 `tabAnnual Compliance Forms`
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON `tabAnnual Compliance Forms`.fpo = fpo_profiling.name_of_the_fpo
+            # WHERE
+            #     1=1 {cond_str}
             GROUP BY
                 fpo_name, fpo_contact_number, financial_year
             HAVING

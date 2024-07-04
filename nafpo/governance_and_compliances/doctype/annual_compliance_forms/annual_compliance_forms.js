@@ -29,7 +29,7 @@ frappe.ui.form.on("Annual Compliance Forms", {
         frm.set_value('d_kyc_due_date', formattedDate);
         frm.set_value('it_return_due_date', formattedDate);
         frm.set_value('agm_due_date', formattedDate);
-        frm.save();
+        // frm.save();
     },
     aoc_4_status(frm) {
         blank_submitted_on(frm, 'aoc_4_status', 'aoc_4_submitted_on');
