@@ -10,6 +10,9 @@
   "fpo_name",
   "cbbo",
   "ia",
+  "column_break_ggkk",
+  "financial_year",
+  "section_break_pktz",
   "table_nprj"
  ],
  "fields": [
@@ -27,6 +30,7 @@
    "fieldname": "cbbo",
    "fieldtype": "Link",
    "hidden": 1,
+   "in_list_view": 1,
    "label": "CBBO",
    "options": "CBBO"
   },
@@ -35,6 +39,7 @@
    "fieldname": "ia",
    "fieldtype": "Link",
    "hidden": 1,
+   "in_list_view": 1,
    "label": "IA",
    "options": "IA"
   },
@@ -47,14 +52,30 @@
    "fieldname": "fpo_name",
    "fieldtype": "Data",
    "hidden": 1,
-   "label": "FPO Name",
+   "label": "FPO",
    "unique": 1
+  },
+  {
+   "fieldname": "financial_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Financial Year",
+   "options": "Financial Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ggkk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_pktz",
+   "fieldtype": "Section Break"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-26 13:00:16.496569",
+ "modified": "2024-07-04 18:42:21.670239",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "FPO Fixed Capital",

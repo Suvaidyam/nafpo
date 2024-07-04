@@ -15,8 +15,6 @@ class FPOFixedCapital(Document):
 		if data_exists and exists != self.name:
 			frappe.throw(f"FPO already exists in FPO Fixed Capital")
 
-	# def before_save(self):
-	# 	fpo_profile_name = frappe.get_doc('FPO', self.fpo)
-	# 	self.fpo_name = fpo_profile_name.fpo_name
-	# def before_save(self):
-	# 	print('==========================================',self.value)
+	def before_save(self):
+		fpo_profile_name = frappe.get_doc('FPO', self.fpo)
+		self.fpo_name = fpo_profile_name.fpo_name
