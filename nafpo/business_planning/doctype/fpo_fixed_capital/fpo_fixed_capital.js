@@ -11,12 +11,21 @@ frappe.ui.form.on("FPO Fixed Capital", {
             "Computer & accessories"
         ];
         // frm.clear_table('table_nprj');
+        // Ensure items are added only once when the form is new
         if (frm.is_new()) {
-            for (item of fixedCapitalItems) {
-                frm.add_child('table_nprj', { 'item': item })
+            if (!frm.doc.table_nprj || frm.doc.table_nprj.length === 0) {
+                for (const item of fixedCapitalItems) {
+                    frm.add_child('table_nprj', { 'item': item });
+                }
+                frm.refresh_field('table_nprj');
             }
-            frm.refresh_field('table_nprj')
         }
+        // if (frm.is_new()) {
+        //     for (item of fixedCapitalItems) {
+        //         frm.add_child('table_nprj', { 'item': item })
+        //     }
+        //     frm.refresh_field('table_nprj')
+        // }
     },
     staff_details_table(frm) {
         console.log(frm)

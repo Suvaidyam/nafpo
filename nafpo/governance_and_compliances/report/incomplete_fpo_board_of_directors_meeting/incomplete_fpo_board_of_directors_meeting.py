@@ -1,4 +1,5 @@
 import frappe
+from nafpo.utils.rport_filter import ReportFilter
 
 def execute(filters=None):
     # Define the columns for the report
@@ -29,7 +30,13 @@ def execute(filters=None):
         }
     ]
 
-    sql_query = """
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+    mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
+    selected_filters=['CBBO', 'IA']
+    )
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
+    
+    sql_query = f"""
         SELECT
             fpo_profiling.name_of_the_fpo_copy AS fpo_name,
             fpo_profiling.contact_detail_of_fpo AS fpo_contact_number,
@@ -40,7 +47,7 @@ def execute(filters=None):
         INNER JOIN
             `tabFPO Profiling` AS fpo_profiling ON `tabBoard of Directors Meeting Forms`.fpo = fpo_profiling.name_of_the_fpo
         WHERE
-            `tabBoard of Directors Meeting Forms`.status = 'Completed'
+            `tabBoard of Directors Meeting Forms`.status = 'Completed' {cond_str}
         GROUP BY
             fpo_name, fpo_contact_number, financial_year
         HAVING
