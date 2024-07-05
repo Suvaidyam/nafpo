@@ -6,12 +6,11 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "financial_year_tab",
   "fpo_name",
   "column_break_fkwg",
   "financial_year",
-  "section_break_cxcc",
-  "fixed_capital",
-  "financial_year_tab",
+  "section_break_gbyg",
   "output_side",
   "input_side",
   "variable_cost_section",
@@ -59,15 +58,9 @@
    "unique": 1
   },
   {
-   "fieldname": "fixed_capital",
-   "fieldtype": "Table",
-   "label": "Fixed Capital",
-   "options": "FPO Fixed Capital Child"
-  },
-  {
    "fieldname": "financial_year_tab",
    "fieldtype": "Tab Break",
-   "label": "Financial Year"
+   "label": "Business Planning"
   },
   {
    "fieldname": "financial_year",
@@ -80,10 +73,6 @@
   {
    "fieldname": "column_break_fkwg",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_cxcc",
-   "fieldtype": "Section Break"
   },
   {
    "fieldname": "output_side",
@@ -257,11 +246,15 @@
   {
    "fieldname": "column_break_ubrl",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_gbyg",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-01 11:59:42.782060",
+ "modified": "2024-07-04 18:34:23.275719",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",

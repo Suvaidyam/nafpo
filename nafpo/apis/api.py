@@ -142,7 +142,7 @@ def one_time_organization_registration_forms_fpo_count():
 @frappe.whitelist(allow_guest=True)
 def get_annual_compliance_forms_fpo_count():
     user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
-        mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
+        mappings={'CBBO': ('ACF', 'cbbo'), 'IA': ('ACF', 'ia')},
         selected_filters=['CBBO', 'IA']
     )
     cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
@@ -155,13 +155,13 @@ def get_annual_compliance_forms_fpo_count():
             SELECT
                 fpo_profiling.name_of_the_fpo_copy AS fpo_name,
                 fpo_profiling.contact_detail_of_fpo AS fpo_contact_number,
-                `tabAnnual Compliance Forms`.financial_year AS financial_year,
-                `tabAnnual Compliance Forms`.fpo AS fpo_id,
+                ACF.financial_year AS financial_year,
+                ACF.fpo AS fpo_id,
                 COUNT(*) AS total_meeting
             FROM
-                `tabAnnual Compliance Forms`
+                `tabAnnual Compliance Forms` AS ACF
             INNER JOIN
-                `tabFPO Profiling` AS fpo_profiling ON `tabAnnual Compliance Forms`.fpo = fpo_profiling.name_of_the_fpo
+                `tabFPO Profiling` AS fpo_profiling ON ACF.fpo = fpo_profiling.name_of_the_fpo
             # WHERE
             #     1=1 {cond_str}
             GROUP BY
@@ -174,7 +174,13 @@ def get_annual_compliance_forms_fpo_count():
 
 @frappe.whitelist(allow_guest=True)
 def get_incomplete_fpo_board_of_directors_meeting_count():
-    sql_query = """
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+        mappings={'CBBO': ('bodmf', 'cbbo'), 'IA': ('bodmf', 'ia')},
+        selected_filters=['CBBO', 'IA']
+    )
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
+    
+    sql_query = f"""
         SELECT
             COUNT(DISTINCT sub_query.fpo_id) AS count
         FROM
@@ -182,15 +188,15 @@ def get_incomplete_fpo_board_of_directors_meeting_count():
             SELECT
                 fpo_profiling.name_of_the_fpo_copy AS fpo_name,
                 fpo_profiling.contact_detail_of_fpo AS fpo_contact_number,
-                `tabBoard of Directors Meeting Forms`.financial_year AS financial_year,
-                `tabBoard of Directors Meeting Forms`.fpo AS fpo_id,
+                bodmf.financial_year AS financial_year,
+                bodmf.fpo AS fpo_id,
                 COUNT(*) AS total_meeting
             FROM
-                `tabBoard of Directors Meeting Forms`
+                `tabBoard of Directors Meeting Forms` AS bodmf
             INNER JOIN
-                `tabFPO Profiling` AS fpo_profiling ON `tabBoard of Directors Meeting Forms`.fpo = fpo_profiling.name_of_the_fpo
+                `tabFPO Profiling` AS fpo_profiling ON bodmf.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                `tabBoard of Directors Meeting Forms`.status = 'Completed'
+                bodmf.status = 'Completed' {cond_str}
             GROUP BY
                 fpo_name, fpo_contact_number, financial_year
             HAVING
@@ -201,7 +207,13 @@ def get_incomplete_fpo_board_of_directors_meeting_count():
 
 @frappe.whitelist(allow_guest=True)
 def get_complete_fpo_board_of_directors_meeting_count():
-    sql_query = """
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+        mappings={'CBBO': ('bodmf', 'cbbo'), 'IA': ('bodmf', 'ia')},
+        selected_filters=['CBBO', 'IA']
+    )
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
+    
+    sql_query = f"""
         SELECT
             COUNT(DISTINCT sub_query.fpo_id) AS count
         FROM
@@ -209,15 +221,15 @@ def get_complete_fpo_board_of_directors_meeting_count():
             SELECT
                 fpo_profiling.name_of_the_fpo_copy AS fpo_name,
                 fpo_profiling.contact_detail_of_fpo AS fpo_contact_number,
-                `tabBoard of Directors Meeting Forms`.financial_year AS financial_year,
-                `tabBoard of Directors Meeting Forms`.fpo AS fpo_id,
+                bodmf.financial_year AS financial_year,
+                bodmf.fpo AS fpo_id,
                 COUNT(*) AS total_meeting
             FROM
-                `tabBoard of Directors Meeting Forms`
+                `tabBoard of Directors Meeting Forms` AS bodmf
             INNER JOIN
-                `tabFPO Profiling` AS fpo_profiling ON `tabBoard of Directors Meeting Forms`.fpo = fpo_profiling.name_of_the_fpo
+                `tabFPO Profiling` AS fpo_profiling ON bodmf.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                `tabBoard of Directors Meeting Forms`.status = 'Completed'
+                bodmf.status = 'Completed' {cond_str}
             GROUP BY
                 fpo_name, fpo_contact_number, financial_year
             HAVING

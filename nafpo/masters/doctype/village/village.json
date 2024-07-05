@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "hash",
+ "autoname": "format:V-{######}",
  "creation": "2024-05-09 07:44:03.140601",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -73,11 +73,11 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-02 12:40:35.595302",
+ "modified": "2024-07-05 11:45:04.866483",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Village",
- "naming_rule": "Random",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
