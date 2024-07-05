@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:type_of_organization",
  "creation": "2024-06-05 10:30:59.993380",
@@ -18,9 +19,10 @@
    "unique": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-25 12:22:59.484254",
+ "modified": "2024-07-05 12:44:24.230293",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Type of Organization",

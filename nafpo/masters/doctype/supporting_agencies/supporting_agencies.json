@@ -22,7 +22,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-05 11:54:26.736657",
+ "modified": "2024-07-05 12:34:01.324165",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Supporting Agencies",
@@ -76,7 +76,9 @@
    "share": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "name1"
 }
