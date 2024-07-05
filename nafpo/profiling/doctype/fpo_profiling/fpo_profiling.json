@@ -31,22 +31,6 @@
   "contact_detail_of_fpo",
   "supporting_aggencies_section",
   "supporting_agencies_table",
-  "details_of_ceo_section",
-  "ceo_name",
-  "ceo_gender",
-  "ceo_dob",
-  "column_break_rtbs",
-  "ceo_age",
-  "ceo_date_of_joining",
-  "ceo_contact_number",
-  "details_of_accountant_section",
-  "accountant_name",
-  "accountant_gender",
-  "accountant_dob",
-  "column_break_zrsk",
-  "accountant_age",
-  "accountant_date_of_joining",
-  "accountant_contact_number",
   "section_break_zufi",
   "staff_details_table",
   "licence_details_for_seeds_section",
@@ -231,72 +215,6 @@
    "label": "Date of expiry"
   },
   {
-   "fieldname": "ceo_name",
-   "fieldtype": "Data",
-   "label": "CEO Name"
-  },
-  {
-   "fieldname": "ceo_gender",
-   "fieldtype": "Select",
-   "label": "CEO Gender",
-   "options": "\nMale\nFemale\nOthers"
-  },
-  {
-   "fieldname": "ceo_dob",
-   "fieldtype": "Date",
-   "label": "CEO DOB"
-  },
-  {
-   "fieldname": "ceo_age",
-   "fieldtype": "Int",
-   "label": "CEO Age",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "ceo_date_of_joining",
-   "fieldtype": "Date",
-   "label": "CEO date of joining"
-  },
-  {
-   "fieldname": "ceo_contact_number",
-   "fieldtype": "Int",
-   "label": "CEO Contact Number",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "accountant_name",
-   "fieldtype": "Data",
-   "label": "Accountant Name"
-  },
-  {
-   "fieldname": "accountant_gender",
-   "fieldtype": "Select",
-   "label": "Accountant Gender",
-   "options": "\nMale\nFemale\nOthers"
-  },
-  {
-   "fieldname": "accountant_dob",
-   "fieldtype": "Date",
-   "label": "Accountant DOB"
-  },
-  {
-   "fieldname": "accountant_age",
-   "fieldtype": "Int",
-   "label": "Accountant Age",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "accountant_date_of_joining",
-   "fieldtype": "Date",
-   "label": "Accountant date of joining"
-  },
-  {
-   "fieldname": "accountant_contact_number",
-   "fieldtype": "Int",
-   "label": "Accountant Contact Number",
-   "non_negative": 1
-  },
-  {
    "fieldname": "do_you_have_logo",
    "fieldtype": "Autocomplete",
    "label": "Do You Have Logo?",
@@ -319,32 +237,12 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_rtbs",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_zrsk",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "section_break_lxef",
    "fieldtype": "Section Break"
   },
   {
    "fieldname": "column_break_zdzq",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "details_of_ceo_section",
-   "fieldtype": "Section Break",
-   "hidden": 1,
-   "label": "Details of CEO"
-  },
-  {
-   "fieldname": "details_of_accountant_section",
-   "fieldtype": "Section Break",
-   "hidden": 1,
-   "label": "Details of Accountant"
   },
   {
    "fieldname": "section_break_cnwm",
@@ -491,7 +389,8 @@
   },
   {
    "fieldname": "section_break_zufi",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Staff Details"
   },
   {
    "fieldname": "staff_details_table",
@@ -507,7 +406,7 @@
    "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-07-04 11:19:06.036831",
+ "modified": "2024-07-05 12:51:14.462484",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
