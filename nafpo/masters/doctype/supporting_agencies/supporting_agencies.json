@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:name1",
+ "autoname": "format:SA-{####}",
  "creation": "2024-05-26 14:11:38.177129",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -22,11 +22,11 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-01 19:17:18.020170",
+ "modified": "2024-07-05 11:54:26.736657",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Supporting Agencies",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
