@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "hash",
+ "autoname": "format:G-{######}",
  "creation": "2024-05-09 07:42:25.466358",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -64,11 +64,11 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-02 12:40:00.743918",
+ "modified": "2024-07-05 11:44:19.526502",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Grampanchayat",
- "naming_rule": "Random",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
