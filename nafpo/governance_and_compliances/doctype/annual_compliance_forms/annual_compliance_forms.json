@@ -323,7 +323,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-03 10:50:25.097455",
+ "modified": "2024-07-05 12:12:24.611229",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Annual Compliance Forms",
@@ -371,6 +371,19 @@
    "read": 1,
    "report": 1,
    "role": "FPO",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
    "select": 1,
    "share": 1,
    "write": 1
