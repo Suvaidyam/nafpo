@@ -3,12 +3,12 @@
 
 frappe.ui.form.on("Crop Type", {
     refresh(frm) {
-        hide_advance_search(frm, ['state_name', 'fpo'])
-        extend_options_length(frm, ['state_name', 'fpo'])
-        apply_filter('fpo', 'state', frm, frm.doc.state_name)
+        hide_advance_search(frm, ['state', 'fpo'])
+        extend_options_length(frm, ['state', 'fpo'])
+        apply_filter('fpo', 'state', frm, frm.doc.state, multiSelectParent = true)
     },
-    state_name: function (frm) {
-        apply_filter('fpo', 'state', frm, frm.doc.state_name)
+    state: function (frm) {
+        apply_filter('fpo', 'state', frm, frm.doc.state, multiSelectParent = true)
         truncate_multiple_fields_value(frm, ['fpo'])
     },
     onload(frm) {

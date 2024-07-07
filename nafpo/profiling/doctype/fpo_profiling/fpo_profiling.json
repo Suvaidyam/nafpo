@@ -404,9 +404,17 @@
   {
    "link_doctype": "FPO MFR 10K",
    "link_fieldname": "fpo"
+  },
+  {
+   "link_doctype": "FPO Fixed Capital",
+   "link_fieldname": "fpo"
+  },
+  {
+   "link_doctype": "Business Plannings",
+   "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-07-05 12:56:39.345354",
+ "modified": "2024-07-07 08:09:00.381922",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
