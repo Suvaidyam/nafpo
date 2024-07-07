@@ -93,7 +93,7 @@
   {
    "fieldname": "inc_22_noc",
    "fieldtype": "Attach Image",
-   "label": "Noc"
+   "label": "NOC"
   },
   {
    "fieldname": "inc_22_rent_agreement",
@@ -193,7 +193,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-03 10:50:58.935020",
+ "modified": "2024-07-07 13:44:09.384434",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "One Time Organization Registration Forms",

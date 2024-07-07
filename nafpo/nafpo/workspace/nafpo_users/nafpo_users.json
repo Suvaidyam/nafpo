@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"c_y1mJcZjL\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Nafpo Users\",\"col\":12}}]",
+ "content": "[{\"id\":\"c_y1mJcZjL\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"NAFPO Users\",\"col\":12}}]",
  "creation": "2024-06-19 09:58:08.521796",
  "custom_blocks": [],
  "docstatus": 0,
@@ -9,22 +9,22 @@
  "hide_custom": 0,
  "icon": "share",
  "idx": 0,
- "indicator_color": "green",
+ "indicator_color": "",
  "is_hidden": 0,
- "label": "Nafpo Users",
+ "label": "NAFPO Users",
  "links": [],
- "modified": "2024-06-29 14:45:12.599967",
+ "modified": "2024-07-07 13:26:36.483247",
  "modified_by": "Administrator",
- "module": "Nafpo",
- "name": "Nafpo Users",
+ "module": "nafpo",
+ "name": "NAFPO Users",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
  "quick_lists": [
   {
-   "document_type": "Nafpo User",
-   "label": "Nafpo Users",
+   "document_type": "NAFPO User",
+   "label": "NAFPO Users",
    "quick_list_filter": "[]"
   }
  ],
@@ -38,5 +38,5 @@
  ],
  "sequence_id": 4.0,
  "shortcuts": [],
- "title": "Nafpo Users"
+ "title": "NAFPO Users"
 }

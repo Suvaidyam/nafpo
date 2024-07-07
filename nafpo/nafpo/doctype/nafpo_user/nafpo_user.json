@@ -31,8 +31,6 @@
   {
    "fieldname": "username",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Username",
    "no_copy": 1,
    "reqd": 1,
@@ -48,6 +46,7 @@
    "fieldname": "email",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Email",
    "options": "Email",
    "reqd": 1,
@@ -65,6 +64,7 @@
    "fieldname": "level",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Level",
    "options": "Role Profile",
    "reqd": 1
@@ -110,10 +110,10 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-05 11:53:25.947494",
+ "modified": "2024-07-07 13:28:03.067826",
  "modified_by": "Administrator",
  "module": "nafpo",
- "name": "Nafpo User",
+ "name": "NAFPO User",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

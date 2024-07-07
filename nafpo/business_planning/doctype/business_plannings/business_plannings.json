@@ -32,15 +32,21 @@
   "utilities",
   "miscellanious",
   "collection_centre_rent",
-  "column_break_tjcs",
   "intangible_assetspre_operating_expenses_written_off",
+  "column_break_tjcs",
   "depreciation",
   "interest_on_loan",
   "total_work_capital",
   "net_profit_per_year_section",
   "annual_turnover_total_income",
-  "total_cost",
-  "net_profit",
+  "total_expence",
+  "gross_profit_loss",
+  "total_income_including_input_and_output_side",
+  "total_fixed_and_variable_cost",
+  "gross_profit_loss_total_income_total_cost",
+  "private_partner_linkage_developed_section",
+  "input",
+  "output",
   "variable_cost_rate_tab",
   "gradingassying_weigning_packingbagging_at_collection_point_rate",
   "local_transport_include_loading_unloading_rate",
@@ -86,22 +92,22 @@
   {
    "fieldname": "gradingassying_weigning_packingbagging_at_collection_point",
    "fieldtype": "Currency",
-   "label": "Grading/assying, weigning, packing/bagging at collection point"
+   "label": "Grading/assying, weigning, packing/bagging at collection point (Rs.Y/Quintal)"
   },
   {
    "fieldname": "local_transport_include_loading_unloading_collection_point",
    "fieldtype": "Currency",
-   "label": "Local transport (Include loading & unloading)- collection point to warehouse"
+   "label": "Local transport (Include loading & unloading)- collection point to warehouse (Rs.Z/Quintal)"
   },
   {
    "fieldname": "storing_warehousing_costs",
    "fieldtype": "Currency",
-   "label": "Storing/ Warehousing Costs"
+   "label": "Storing/ Warehousing Costs (Rs.A/ Quintal)"
   },
   {
    "fieldname": "transport_to_market_include_loading__unloading",
    "fieldtype": "Currency",
-   "label": "Transport to market (Include loading & unloading)"
+   "label": "Transport to market (Include loading & unloading) (Rs.B/ Quintal)"
   },
   {
    "fieldname": "total_variable_cost",
@@ -199,17 +205,7 @@
   {
    "fieldname": "annual_turnover_total_income",
    "fieldtype": "Currency",
-   "label": "Annual Turnover (Total Income)"
-  },
-  {
-   "fieldname": "total_cost",
-   "fieldtype": "Currency",
-   "label": "Total Cost"
-  },
-  {
-   "fieldname": "net_profit",
-   "fieldtype": "Currency",
-   "label": "Net Profit"
+   "label": "Total Sales"
   },
   {
    "fieldname": "variable_cost_rate_tab",
@@ -219,22 +215,22 @@
   {
    "fieldname": "gradingassying_weigning_packingbagging_at_collection_point_rate",
    "fieldtype": "Currency",
-   "label": "Grading/assying, weigning, packing/bagging at collection point rate"
+   "label": "Grading/assying, weigning, packing/bagging at collection point rate (Rs.Y/Quintal)"
   },
   {
    "fieldname": "local_transport_include_loading_unloading_rate",
    "fieldtype": "Currency",
-   "label": "Local transport (Include loading & unloading)- collection point to warehouse rate"
+   "label": "Local transport (Include loading & unloading)- collection point rate to warehouse (Rs.Z/Quintal)"
   },
   {
    "fieldname": "storing_warehousing_costs_rate",
    "fieldtype": "Currency",
-   "label": "Storing/ Warehousing Costs rate"
+   "label": "Storing/ Warehousing Costs Rate (Rs.A/ Quintal)"
   },
   {
    "fieldname": "transport_to_market_include_loading_unloading_rate",
    "fieldtype": "Currency",
-   "label": "Transport to market (Include loading & unloading) rate"
+   "label": "Transport to market rate (Include loading & unloading) (Rs.B/ Quintal)"
   },
   {
    "fieldname": "column_break_ubrl",
@@ -252,12 +248,52 @@
    "options": "FPO Profiling",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "gross_profit_loss",
+   "fieldtype": "Currency",
+   "label": "Gross Profit /Loss (Total Sales- Total Expence)"
+  },
+  {
+   "fieldname": "total_expence",
+   "fieldtype": "Currency",
+   "label": "Total Expence"
+  },
+  {
+   "fieldname": "total_income_including_input_and_output_side",
+   "fieldtype": "Currency",
+   "label": "Total Income (Including Input and Output Side)"
+  },
+  {
+   "fieldname": "total_fixed_and_variable_cost",
+   "fieldtype": "Currency",
+   "label": "Total Fixed and Variable Cost"
+  },
+  {
+   "fieldname": "gross_profit_loss_total_income_total_cost",
+   "fieldtype": "Currency",
+   "label": "Gross Profit /Loss (Total Income- Total Cost)"
+  },
+  {
+   "fieldname": "private_partner_linkage_developed_section",
+   "fieldtype": "Section Break",
+   "label": "Private Partner Linkage Developed"
+  },
+  {
+   "fieldname": "input",
+   "fieldtype": "Data",
+   "label": "Input"
+  },
+  {
+   "fieldname": "output",
+   "fieldtype": "Data",
+   "label": "Output"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-07 12:03:44.770328",
+ "modified": "2024-07-07 15:36:30.638209",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",

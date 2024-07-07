@@ -105,7 +105,7 @@ doctype_js = {
     "Other Format" : [
         "public/js/utils/utils.js"
     ],
-    "Nafpo User" : [
+    "NAFPO User" : [
         "public/js/utils/utils.js"
     ],
     "Financial Year" : [

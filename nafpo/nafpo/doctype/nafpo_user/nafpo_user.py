@@ -5,7 +5,7 @@ import frappe
 from frappe.model.document import Document
 
 
-class NafpoUser(Document):
+class NAFPOUser(Document):
 	def after_insert(self):
 		new_user = frappe.new_doc("User")
 		new_user.email = self.email

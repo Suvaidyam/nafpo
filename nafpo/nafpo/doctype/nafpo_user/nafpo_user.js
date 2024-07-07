@@ -46,7 +46,7 @@ const render_tables = async (frm) => {
     document.getElementById('datatable').innerHTML = list?.length ? tables : '';
 }
 
-frappe.ui.form.on("Nafpo User", {
+frappe.ui.form.on("NAFPO User", {
     async refresh(frm) {
         !frm.is_new() && await render_tables(frm);
         hide_advance_search(frm, ['level', 'cbbo', 'fpo', 'ia'])
@@ -54,8 +54,5 @@ frappe.ui.form.on("Nafpo User", {
     },
     level: function (frm) {
         truncate_multiple_fields_value(frm, ['cbbo', 'fpo', 'ia'])
-    },
-    onload(frm) {
-        hide_list_view_in_useless_data(frm)
     },
 });
