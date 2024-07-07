@@ -1,92 +1,106 @@
 {
- "actions": [],
- "allow_rename": 1,
- "creation": "2024-05-12 06:47:41.237790",
- "doctype": "DocType",
- "engine": "InnoDB",
- "field_order": [
-  "crop_name",
-  "input_name",
-  "total_no_of_fpo_members",
-  "total_cropping_area_of_fpo_members_acre",
-  "_input_to_be_sold_by_fpo",
-  "column_break_jwwf",
-  "expected_purchase_price_per_acre_rs",
-  "total_purchase_price_rs",
-  "expected_unit_selling_price_per_acre_rs",
-  "total_income_of_fpo_from_input"
- ],
- "fields": [
-  {
-   "fieldname": "crop_name",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Crop Name",
-   "options": "Crop Name"
-  },
-  {
-   "fieldname": "input_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Input Name"
-  },
-  {
-   "fieldname": "total_no_of_fpo_members",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Total no. of FPO members"
-  },
-  {
-   "fieldname": "total_cropping_area_of_fpo_members_acre",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Total cropping area of FPO members (Acre)"
-  },
-  {
-   "fieldname": "_input_to_be_sold_by_fpo",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "% input to be sold by FPO"
-  },
-  {
-   "fieldname": "expected_purchase_price_per_acre_rs",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Expected Purchase price per Acre (RS)"
-  },
-  {
-   "fieldname": "total_purchase_price_rs",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Total Purchase price (RS)"
-  },
-  {
-   "fieldname": "expected_unit_selling_price_per_acre_rs",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Expected Unit selling price per Acre (RS)"
-  },
-  {
-   "fieldname": "total_income_of_fpo_from_input",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Total Income of FPO from Input"
-  },
-  {
-   "fieldname": "column_break_jwwf",
-   "fieldtype": "Column Break"
-  }
- ],
- "index_web_pages_for_search": 1,
- "istable": 1,
- "links": [],
- "modified": "2024-07-01 12:07:13.167276",
- "modified_by": "Administrator",
- "module": "Business Planning",
- "name": "Input Side Child",
- "owner": "Administrator",
- "permissions": [],
- "sort_field": "modified",
- "sort_order": "DESC",
- "states": []
+  "actions": [],
+  "allow_rename": 1,
+  "creation": "2024-05-12 06:47:41.237790",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "crop_name",
+    "input_name",
+    "total_no_of_fpo_members",
+    "total_cropping_area_of_fpo_members_acre",
+    "percentage_of_total_cropping_area",
+    "total_area_for_which_input_name_shall_be_utilized",
+    "column_break_jwwf",
+    "expected_purchase_price_per_acre_rs",
+    "total_purchase_price_rs",
+    "expected_unit_selling_price_per_acre_rs",
+    "total_selling_priceincome_rs",
+    "total_income_of_fpo_from_input"
+  ],
+  "fields": [
+    {
+      "fieldname": "crop_name",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Crop Name",
+      "options": "Crop Name"
+    },
+    {
+      "fieldname": "input_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Input Name"
+    },
+    {
+      "fieldname": "total_no_of_fpo_members",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Total no. of FPO members"
+    },
+    {
+      "fieldname": "total_cropping_area_of_fpo_members_acre",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Total cropping area of FPO members (Acre)"
+    },
+    {
+      "fieldname": "expected_purchase_price_per_acre_rs",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Expected Purchase price per Acre (Rs)"
+    },
+    {
+      "fieldname": "total_purchase_price_rs",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Total Purchase price (Rs)"
+    },
+    {
+      "fieldname": "expected_unit_selling_price_per_acre_rs",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Expected Unit selling price per Acre (Rs)"
+    },
+    {
+      "fieldname": "column_break_jwwf",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "percentage_of_total_cropping_area",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Percentage of Total Cropping Area for which Input Name Shall be Provided By FPO"
+    },
+    {
+      "fieldname": "total_area_for_which_input_name_shall_be_utilized",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Total Area For Which Input Name Shall be Utilized"
+    },
+    {
+      "fieldname": "total_selling_priceincome_rs",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Total selling price/income (Rs)"
+    },
+    {
+      "fieldname": "total_income_of_fpo_from_input",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Total Income of FPO from Input"
+    }
+  ],
+  "index_web_pages_for_search": 1,
+  "istable": 1,
+  "links": [],
+  "modified": "2024-07-07 15:18:33.327315",
+  "modified_by": "Administrator",
+  "module": "Business Planning",
+  "name": "Input Side Child",
+  "owner": "Administrator",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
 }

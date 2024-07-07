@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestNAFPOUser(FrappeTestCase):
+class TestSeason(FrappeTestCase):
 	pass

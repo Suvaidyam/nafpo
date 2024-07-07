@@ -1,321 +1,357 @@
 {
- "actions": [],
- "allow_import": 1,
- "allow_rename": 1,
- "autoname": "format:BP-{####}",
- "creation": "2024-05-11 13:13:11.154099",
- "doctype": "DocType",
- "engine": "InnoDB",
- "field_order": [
-  "financial_year_tab",
-  "fpo",
-  "column_break_fkwg",
-  "financial_year",
-  "section_break_gbyg",
-  "output_side",
-  "input_side",
-  "variable_cost_section",
-  "gradingassying_weigning_packingbagging_at_collection_point",
-  "local_transport_include_loading_unloading_collection_point",
-  "storing_warehousing_costs",
-  "column_break_lsau",
-  "transport_to_market_include_loading__unloading",
-  "total_variable_cost",
-  "fixed_cost_yearly_section",
-  "ceo_salary",
-  "accountant_salary",
-  "store_keeper_salary",
-  "staff_travel",
-  "store_rent",
-  "column_break_krow",
-  "office_rent",
-  "utilities",
-  "miscellanious",
-  "collection_centre_rent",
-  "column_break_tjcs",
-  "intangible_assetspre_operating_expenses_written_off",
-  "depreciation",
-  "interest_on_loan",
-  "total_work_capital",
-  "net_profit_per_year_section",
-  "annual_turnover_total_income",
-  "total_cost",
-  "net_profit",
-  "variable_cost_rate_tab",
-  "gradingassying_weigning_packingbagging_at_collection_point_rate",
-  "local_transport_include_loading_unloading_rate",
-  "column_break_ubrl",
-  "storing_warehousing_costs_rate",
-  "transport_to_market_include_loading_unloading_rate"
- ],
- "fields": [
-  {
-   "fieldname": "financial_year_tab",
-   "fieldtype": "Tab Break",
-   "label": "Business Planning"
-  },
-  {
-   "fieldname": "financial_year",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Financial Year",
-   "options": "Financial Year",
-   "reqd": 1
-  },
-  {
-   "fieldname": "column_break_fkwg",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "output_side",
-   "fieldtype": "Table",
-   "label": "Output Side",
-   "options": "Output Side Child"
-  },
-  {
-   "fieldname": "input_side",
-   "fieldtype": "Table",
-   "label": "Input Side",
-   "options": "Input Side Child"
-  },
-  {
-   "fieldname": "variable_cost_section",
-   "fieldtype": "Section Break",
-   "label": "Variable cost"
-  },
-  {
-   "fieldname": "gradingassying_weigning_packingbagging_at_collection_point",
-   "fieldtype": "Currency",
-   "label": "Grading/assying, weigning, packing/bagging at collection point"
-  },
-  {
-   "fieldname": "local_transport_include_loading_unloading_collection_point",
-   "fieldtype": "Currency",
-   "label": "Local transport (Include loading & unloading)- collection point to warehouse"
-  },
-  {
-   "fieldname": "storing_warehousing_costs",
-   "fieldtype": "Currency",
-   "label": "Storing/ Warehousing Costs"
-  },
-  {
-   "fieldname": "transport_to_market_include_loading__unloading",
-   "fieldtype": "Currency",
-   "label": "Transport to market (Include loading & unloading)"
-  },
-  {
-   "fieldname": "total_variable_cost",
-   "fieldtype": "Currency",
-   "label": "Total Variable Cost",
-   "read_only_depends_on": "eval:doc.total_variable_cost > 0;"
-  },
-  {
-   "fieldname": "column_break_lsau",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "fixed_cost_yearly_section",
-   "fieldtype": "Section Break",
-   "label": "Fixed Cost (yearly)"
-  },
-  {
-   "fieldname": "ceo_salary",
-   "fieldtype": "Currency",
-   "label": "CEO Salary"
-  },
-  {
-   "fieldname": "accountant_salary",
-   "fieldtype": "Currency",
-   "label": "Accountant Salary"
-  },
-  {
-   "fieldname": "store_keeper_salary",
-   "fieldtype": "Currency",
-   "label": "Store Keeper Salary"
-  },
-  {
-   "fieldname": "staff_travel",
-   "fieldtype": "Currency",
-   "label": "Staff Travel"
-  },
-  {
-   "fieldname": "store_rent",
-   "fieldtype": "Currency",
-   "label": "Store Rent"
-  },
-  {
-   "fieldname": "office_rent",
-   "fieldtype": "Currency",
-   "label": "Office Rent"
-  },
-  {
-   "fieldname": "utilities",
-   "fieldtype": "Currency",
-   "label": "Utilities"
-  },
-  {
-   "fieldname": "miscellanious",
-   "fieldtype": "Currency",
-   "label": "Miscellanious"
-  },
-  {
-   "fieldname": "collection_centre_rent",
-   "fieldtype": "Currency",
-   "label": "Collection centre rent"
-  },
-  {
-   "fieldname": "intangible_assetspre_operating_expenses_written_off",
-   "fieldtype": "Currency",
-   "label": "Intangible assets/Pre-operating expenses written off"
-  },
-  {
-   "fieldname": "depreciation",
-   "fieldtype": "Currency",
-   "label": "Depreciation"
-  },
-  {
-   "fieldname": "interest_on_loan",
-   "fieldtype": "Currency",
-   "label": "Interest on Loan"
-  },
-  {
-   "fieldname": "total_work_capital",
-   "fieldtype": "Currency",
-   "label": "Total Work Capital"
-  },
-  {
-   "fieldname": "column_break_krow",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_tjcs",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "net_profit_per_year_section",
-   "fieldtype": "Section Break",
-   "label": "Net Profit (Per Year)"
-  },
-  {
-   "fieldname": "annual_turnover_total_income",
-   "fieldtype": "Currency",
-   "label": "Annual Turnover (Total Income)"
-  },
-  {
-   "fieldname": "total_cost",
-   "fieldtype": "Currency",
-   "label": "Total Cost"
-  },
-  {
-   "fieldname": "net_profit",
-   "fieldtype": "Currency",
-   "label": "Net Profit"
-  },
-  {
-   "fieldname": "variable_cost_rate_tab",
-   "fieldtype": "Tab Break",
-   "label": "Variable cost (Rate)"
-  },
-  {
-   "fieldname": "gradingassying_weigning_packingbagging_at_collection_point_rate",
-   "fieldtype": "Currency",
-   "label": "Grading/assying, weigning, packing/bagging at collection point rate"
-  },
-  {
-   "fieldname": "local_transport_include_loading_unloading_rate",
-   "fieldtype": "Currency",
-   "label": "Local transport (Include loading & unloading)- collection point to warehouse rate"
-  },
-  {
-   "fieldname": "storing_warehousing_costs_rate",
-   "fieldtype": "Currency",
-   "label": "Storing/ Warehousing Costs rate"
-  },
-  {
-   "fieldname": "transport_to_market_include_loading_unloading_rate",
-   "fieldtype": "Currency",
-   "label": "Transport to market (Include loading & unloading) rate"
-  },
-  {
-   "fieldname": "column_break_ubrl",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_gbyg",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "fpo",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "FPO Name",
-   "options": "FPO Profiling",
-   "reqd": 1,
-   "unique": 1
-  }
- ],
- "hide_toolbar": 1,
- "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-07-07 12:03:44.770328",
- "modified_by": "Administrator",
- "module": "Business Planning",
- "name": "Business Plannings",
- "naming_rule": "Expression",
- "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Admin",
-   "share": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "CBBO",
-   "share": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "FPO",
-   "select": 1,
-   "share": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "IA",
-   "select": 1,
-   "share": 1
-  }
- ],
- "sort_field": "creation",
- "sort_order": "DESC",
- "states": []
+   "actions": [],
+   "allow_import": 1,
+   "allow_rename": 1,
+   "autoname": "format:BP-{####}",
+   "creation": "2024-05-11 13:13:11.154099",
+   "doctype": "DocType",
+   "engine": "InnoDB",
+   "field_order": [
+      "financial_year_tab",
+      "fpo",
+      "column_break_fkwg",
+      "financial_year",
+      "section_break_gbyg",
+      "output_side",
+      "input_side",
+      "variable_cost_section",
+      "gradingassying_weigning_packingbagging_at_collection_point",
+      "local_transport_include_loading_unloading_collection_point",
+      "storing_warehousing_costs",
+      "column_break_lsau",
+      "transport_to_market_include_loading__unloading",
+      "total_variable_cost",
+      "fixed_cost_yearly_section",
+      "ceo_salary",
+      "accountant_salary",
+      "store_keeper_salary",
+      "staff_travel",
+      "store_rent",
+      "column_break_krow",
+      "office_rent",
+      "utilities",
+      "miscellanious",
+      "collection_centre_rent",
+      "intangible_assetspre_operating_expenses_written_off",
+      "column_break_tjcs",
+      "depreciation",
+      "interest_on_loan",
+      "total_work_capital",
+      "net_profit_per_year_section",
+      "annual_turnover_total_income",
+      "total_expence",
+      "gross_profit_loss",
+      "total_income_including_input_and_output_side",
+      "total_fixed_and_variable_cost",
+      "gross_profit_loss_total_income_total_cost",
+      "private_partner_linkage_developed_section",
+      "input",
+      "output",
+      "variable_cost_rate_tab",
+      "gradingassying_weigning_packingbagging_at_collection_point_rate",
+      "local_transport_include_loading_unloading_rate",
+      "column_break_ubrl",
+      "storing_warehousing_costs_rate",
+      "transport_to_market_include_loading_unloading_rate"
+   ],
+   "fields": [
+      {
+         "fieldname": "financial_year_tab",
+         "fieldtype": "Tab Break",
+         "label": "Business Planning"
+      },
+      {
+         "fieldname": "financial_year",
+         "fieldtype": "Link",
+         "in_list_view": 1,
+         "label": "Financial Year",
+         "options": "Financial Year",
+         "reqd": 1
+      },
+      {
+         "fieldname": "column_break_fkwg",
+         "fieldtype": "Column Break"
+      },
+      {
+         "fieldname": "output_side",
+         "fieldtype": "Table",
+         "label": "Output Side",
+         "options": "Output Side Child"
+      },
+      {
+         "fieldname": "input_side",
+         "fieldtype": "Table",
+         "label": "Input Side",
+         "options": "Input Side Child"
+      },
+      {
+         "fieldname": "variable_cost_section",
+         "fieldtype": "Section Break",
+         "label": "Variable cost"
+      },
+      {
+         "fieldname": "gradingassying_weigning_packingbagging_at_collection_point",
+         "fieldtype": "Currency",
+         "label": "Grading/assying, weigning, packing/bagging at collection point (Rs.Y/Quintal)"
+      },
+      {
+         "fieldname": "local_transport_include_loading_unloading_collection_point",
+         "fieldtype": "Currency",
+         "label": "Local transport (Include loading & unloading)- collection point to warehouse (Rs.Z/Quintal)"
+      },
+      {
+         "fieldname": "storing_warehousing_costs",
+         "fieldtype": "Currency",
+         "label": "Storing/ Warehousing Costs (Rs.A/ Quintal)"
+      },
+      {
+         "fieldname": "transport_to_market_include_loading__unloading",
+         "fieldtype": "Currency",
+         "label": "Transport to market (Include loading & unloading) (Rs.B/ Quintal)"
+      },
+      {
+         "fieldname": "total_variable_cost",
+         "fieldtype": "Currency",
+         "label": "Total Variable Cost",
+         "read_only_depends_on": "eval:doc.total_variable_cost > 0;"
+      },
+      {
+         "fieldname": "column_break_lsau",
+         "fieldtype": "Column Break"
+      },
+      {
+         "fieldname": "fixed_cost_yearly_section",
+         "fieldtype": "Section Break",
+         "label": "Fixed Cost (yearly)"
+      },
+      {
+         "fieldname": "ceo_salary",
+         "fieldtype": "Currency",
+         "label": "CEO Salary"
+      },
+      {
+         "fieldname": "accountant_salary",
+         "fieldtype": "Currency",
+         "label": "Accountant Salary"
+      },
+      {
+         "fieldname": "store_keeper_salary",
+         "fieldtype": "Currency",
+         "label": "Store Keeper Salary"
+      },
+      {
+         "fieldname": "staff_travel",
+         "fieldtype": "Currency",
+         "label": "Staff Travel"
+      },
+      {
+         "fieldname": "store_rent",
+         "fieldtype": "Currency",
+         "label": "Store Rent"
+      },
+      {
+         "fieldname": "office_rent",
+         "fieldtype": "Currency",
+         "label": "Office Rent"
+      },
+      {
+         "fieldname": "utilities",
+         "fieldtype": "Currency",
+         "label": "Utilities"
+      },
+      {
+         "fieldname": "miscellanious",
+         "fieldtype": "Currency",
+         "label": "Miscellanious"
+      },
+      {
+         "fieldname": "collection_centre_rent",
+         "fieldtype": "Currency",
+         "label": "Collection centre rent"
+      },
+      {
+         "fieldname": "intangible_assetspre_operating_expenses_written_off",
+         "fieldtype": "Currency",
+         "label": "Intangible assets/Pre-operating expenses written off"
+      },
+      {
+         "fieldname": "depreciation",
+         "fieldtype": "Currency",
+         "label": "Depreciation"
+      },
+      {
+         "fieldname": "interest_on_loan",
+         "fieldtype": "Currency",
+         "label": "Interest on Loan"
+      },
+      {
+         "fieldname": "total_work_capital",
+         "fieldtype": "Currency",
+         "label": "Total Work Capital"
+      },
+      {
+         "fieldname": "column_break_krow",
+         "fieldtype": "Column Break"
+      },
+      {
+         "fieldname": "column_break_tjcs",
+         "fieldtype": "Column Break"
+      },
+      {
+         "fieldname": "net_profit_per_year_section",
+         "fieldtype": "Section Break",
+         "label": "Net Profit (Per Year)"
+      },
+      {
+         "fieldname": "annual_turnover_total_income",
+         "fieldtype": "Currency",
+         "label": "Total Sales"
+      },
+      {
+         "fieldname": "variable_cost_rate_tab",
+         "fieldtype": "Tab Break",
+         "label": "Variable cost (Rate)"
+      },
+      {
+         "fieldname": "gradingassying_weigning_packingbagging_at_collection_point_rate",
+         "fieldtype": "Currency",
+         "label": "Grading/assying, weigning, packing/bagging at collection point rate (Rs.Y/Quintal)"
+      },
+      {
+         "fieldname": "local_transport_include_loading_unloading_rate",
+         "fieldtype": "Currency",
+         "label": "Local transport (Include loading & unloading)- collection point rate to warehouse (Rs.Z/Quintal)"
+      },
+      {
+         "fieldname": "storing_warehousing_costs_rate",
+         "fieldtype": "Currency",
+         "label": "Storing/ Warehousing Costs Rate (Rs.A/ Quintal)"
+      },
+      {
+         "fieldname": "transport_to_market_include_loading_unloading_rate",
+         "fieldtype": "Currency",
+         "label": "Transport to market rate (Include loading & unloading) (Rs.B/ Quintal)"
+      },
+      {
+         "fieldname": "column_break_ubrl",
+         "fieldtype": "Column Break"
+      },
+      {
+         "fieldname": "section_break_gbyg",
+         "fieldtype": "Section Break"
+      },
+      {
+         "fieldname": "fpo",
+         "fieldtype": "Link",
+         "in_list_view": 1,
+         "label": "FPO Name",
+         "options": "FPO Profiling",
+         "reqd": 1,
+         "unique": 1
+      },
+      {
+         "fieldname": "gross_profit_loss",
+         "fieldtype": "Currency",
+         "label": "Gross Profit /Loss (Total Sales- Total Expence)"
+      },
+      {
+         "fieldname": "total_expence",
+         "fieldtype": "Currency",
+         "label": "Total Expence"
+      },
+      {
+         "fieldname": "total_income_including_input_and_output_side",
+         "fieldtype": "Currency",
+         "label": "Total Income (Including Input and Output Side)"
+      },
+      {
+         "fieldname": "total_fixed_and_variable_cost",
+         "fieldtype": "Currency",
+         "label": "Total Fixed and Variable Cost"
+      },
+      {
+         "fieldname": "gross_profit_loss_total_income_total_cost",
+         "fieldtype": "Currency",
+         "label": "Gross Profit /Loss (Total Income- Total Cost)"
+      },
+      {
+         "fieldname": "private_partner_linkage_developed_section",
+         "fieldtype": "Section Break",
+         "label": "Private Partner Linkage Developed"
+      },
+      {
+         "fieldname": "input",
+         "fieldtype": "Data",
+         "label": "Input"
+      },
+      {
+         "fieldname": "output",
+         "fieldtype": "Data",
+         "label": "Output"
+      }
+   ],
+   "hide_toolbar": 1,
+   "index_web_pages_for_search": 1,
+   "links": [],
+   "modified": "2024-07-07 15:36:30.638209",
+   "modified_by": "Administrator",
+   "module": "Business Planning",
+   "name": "Business Plannings",
+   "naming_rule": "Expression",
+   "owner": "Administrator",
+   "permissions": [
+      {
+         "create": 1,
+         "delete": 1,
+         "email": 1,
+         "export": 1,
+         "print": 1,
+         "read": 1,
+         "report": 1,
+         "role": "System Manager",
+         "share": 1,
+         "write": 1
+      },
+      {
+         "email": 1,
+         "export": 1,
+         "print": 1,
+         "read": 1,
+         "report": 1,
+         "role": "Admin",
+         "share": 1
+      },
+      {
+         "email": 1,
+         "export": 1,
+         "print": 1,
+         "read": 1,
+         "report": 1,
+         "role": "CBBO",
+         "share": 1
+      },
+      {
+         "email": 1,
+         "export": 1,
+         "print": 1,
+         "read": 1,
+         "report": 1,
+         "role": "FPO",
+         "select": 1,
+         "share": 1
+      },
+      {
+         "email": 1,
+         "export": 1,
+         "print": 1,
+         "read": 1,
+         "report": 1,
+         "role": "IA",
+         "select": 1,
+         "share": 1
+      }
+   ],
+   "sort_field": "creation",
+   "sort_order": "DESC",
+   "states": []
 }
