@@ -32,6 +32,7 @@
    "fetch_from": "fpo.cbbo_name",
    "fieldname": "cbbo",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "CBBO",
    "options": "CBBO",
    "read_only_depends_on": "eval:doc.fpo && doc.fpo.length > 0"
@@ -40,6 +41,7 @@
    "fetch_from": "cbbo.ia_name",
    "fieldname": "ia",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "IA",
    "options": "IA",
    "read_only_depends_on": "eval:doc.fpo && doc.fpo.length > 0"
@@ -55,7 +57,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-06 11:34:29.628898",
+ "modified": "2024-07-07 16:45:21.470308",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop Type",
