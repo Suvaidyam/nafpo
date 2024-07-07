@@ -1,260 +1,260 @@
 {
- "actions": [],
- "allow_import": 1,
- "allow_rename": 1,
- "autoname": "format:OTORF-{###}",
- "creation": "2024-06-13 12:17:14.894131",
- "doctype": "DocType",
- "engine": "InnoDB",
- "field_order": [
-  "form_inc_20a_tab",
-  "fpo",
-  "cbbo",
-  "ia",
-  "inc_20a_section",
-  "inc_20_due_date",
-  "inc_20_status",
-  "inc_20_submitted_on",
-  "column_break_viht",
-  "inc_20_fpo_banner_with_bod_photo",
-  "inc_20_bank_statement",
-  "section_break_cnwj",
-  "inc_22_due_date",
-  "inc_22_status",
-  "inc_22_submitted_on",
-  "column_break_hkbk",
-  "inc_22_noc",
-  "inc_22_rent_agreement",
-  "inc_22_electricity_bill",
-  "section_break_klzi",
-  "adt_1_due_date",
-  "adt_1_status",
-  "adt_1_submitted_on",
-  "column_break_ccga",
-  "adt_1_fpo_resolution"
- ],
- "fields": [
-  {
-   "fieldname": "fpo",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "FPO",
-   "options": "FPO",
-   "reqd": 1
-  },
-  {
-   "description": "<span style=\"font-size:13.5px;\">Within 180 days of registration</span>",
-   "fieldname": "inc_20a_section",
-   "fieldtype": "Section Break",
-   "label": "Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA"
-  },
-  {
-   "fieldname": "inc_22_due_date",
-   "fieldtype": "Date",
-   "label": "Due Date",
-   "read_only_depends_on": "eval:doc.inc_22_due_date && doc.inc_22_due_date.length > 0 "
-  },
-  {
-   "fieldname": "inc_20_due_date",
-   "fieldtype": "Date",
-   "label": "Due Date",
-   "read_only_depends_on": "eval:doc.inc_20_due_date && doc.inc_20_due_date.length > 0 "
-  },
-  {
-   "fieldname": "inc_20_bank_statement",
-   "fieldtype": "Attach Image",
-   "label": "Bank Statement"
-  },
-  {
-   "fieldname": "inc_20_fpo_banner_with_bod_photo",
-   "fieldtype": "Attach Image",
-   "label": "FPO Banner with BOD photo"
-  },
-  {
-   "default": "Pending",
-   "fieldname": "inc_20_status",
-   "fieldtype": "Autocomplete",
-   "in_list_view": 1,
-   "label": "INC-20A Status",
-   "options": "Pending\nCompleted",
-   "reqd": 1
-  },
-  {
-   "depends_on": "eval:doc.inc_20_status == \"Completed\"",
-   "fieldname": "inc_20_submitted_on",
-   "fieldtype": "Date",
-   "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.inc_20_status == \"Completed\""
-  },
-  {
-   "fieldname": "column_break_viht",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "inc_22_noc",
-   "fieldtype": "Attach Image",
-   "label": "NOC"
-  },
-  {
-   "fieldname": "inc_22_rent_agreement",
-   "fieldtype": "Attach Image",
-   "label": "Rent agreement"
-  },
-  {
-   "fieldname": "inc_22_electricity_bill",
-   "fieldtype": "Attach Image",
-   "label": "Electricity Bill"
-  },
-  {
-   "default": "Pending",
-   "fieldname": "inc_22_status",
-   "fieldtype": "Autocomplete",
-   "in_list_view": 1,
-   "label": "INC-22 Status",
-   "options": "Pending\nCompleted",
-   "reqd": 1
-  },
-  {
-   "depends_on": "eval:doc.inc_22_status == \"Completed\"",
-   "fieldname": "inc_22_submitted_on",
-   "fieldtype": "Date",
-   "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.inc_22_status == \"Completed\""
-  },
-  {
-   "fieldname": "column_break_hkbk",
-   "fieldtype": "Column Break"
-  },
-  {
-   "description": "<span style=\"font-size:13.5px;\">Within 30 days of registration </span>",
-   "fieldname": "section_break_cnwj",
-   "fieldtype": "Section Break",
-   "label": "Form INC-22 \u2013 Registered office Address - MCA"
-  },
-  {
-   "description": "<span style=\"font-size:13.5px;\">Within 30 days of registration</span>",
-   "fieldname": "section_break_klzi",
-   "fieldtype": "Section Break",
-   "label": "Form ADT-1 \u2013 Auditor Appointment for First year"
-  },
-  {
-   "fieldname": "adt_1_due_date",
-   "fieldtype": "Date",
-   "label": "Due Date",
-   "read_only_depends_on": "eval:doc.adt_1_due_date && doc.adt_1_due_date.length > 0 "
-  },
-  {
-   "fieldname": "adt_1_fpo_resolution",
-   "fieldtype": "Attach Image",
-   "label": "FPO resolution"
-  },
-  {
-   "fieldname": "column_break_ccga",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "Pending",
-   "fieldname": "adt_1_status",
-   "fieldtype": "Autocomplete",
-   "in_list_view": 1,
-   "label": "ADT-1 Status",
-   "options": "Pending\nCompleted",
-   "reqd": 1
-  },
-  {
-   "depends_on": "eval:doc.adt_1_status == \"Completed\"",
-   "fieldname": "adt_1_submitted_on",
-   "fieldtype": "Date",
-   "label": "Submitted On",
-   "mandatory_depends_on": "eval:doc.adt_1_status == \"Completed\""
-  },
-  {
-   "fieldname": "form_inc_20a_tab",
-   "fieldtype": "Tab Break",
-   "label": "Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA"
-  },
-  {
-   "fetch_from": "fpo.cbbo_name",
-   "fieldname": "cbbo",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "CBBO",
-   "options": "CBBO"
-  },
-  {
-   "fetch_from": "cbbo.ia_name",
-   "fieldname": "ia",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "IA",
-   "options": "IA"
-  }
- ],
- "hide_toolbar": 1,
- "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-07-07 13:44:09.384434",
- "modified_by": "Administrator",
- "module": "Governance and compliances",
- "name": "One Time Organization Registration Forms",
- "naming_rule": "Expression",
- "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "FPO",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "IA",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "CBBO",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Admin",
-   "share": 1,
-   "write": 1
-  }
- ],
- "sort_field": "creation",
- "sort_order": "DESC",
- "states": []
+   "actions": [],
+   "allow_import": 1,
+   "allow_rename": 1,
+   "autoname": "format:OTORF-{###}",
+   "creation": "2024-06-13 12:17:14.894131",
+   "doctype": "DocType",
+   "engine": "InnoDB",
+   "field_order": [
+      "form_inc_20a_tab",
+      "fpo",
+      "cbbo",
+      "ia",
+      "inc_20a_section",
+      "inc_20_due_date",
+      "inc_20_status",
+      "inc_20_submitted_on",
+      "column_break_viht",
+      "inc_20_fpo_banner_with_bod_photo",
+      "inc_20_bank_statement",
+      "section_break_cnwj",
+      "inc_22_due_date",
+      "inc_22_status",
+      "inc_22_submitted_on",
+      "column_break_hkbk",
+      "inc_22_noc",
+      "inc_22_rent_agreement",
+      "inc_22_electricity_bill",
+      "section_break_klzi",
+      "adt_1_due_date",
+      "adt_1_status",
+      "adt_1_submitted_on",
+      "column_break_ccga",
+      "adt_1_fpo_resolution"
+   ],
+   "fields": [
+      {
+         "fieldname": "fpo",
+         "fieldtype": "Link",
+         "in_list_view": 1,
+         "label": "FPO",
+         "options": "FPO",
+         "reqd": 1
+      },
+      {
+         "description": "<span style=\"font-size:13.5px;\">Within 180 days of registration</span>",
+         "fieldname": "inc_20a_section",
+         "fieldtype": "Section Break",
+         "label": "Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA"
+      },
+      {
+         "fieldname": "inc_22_due_date",
+         "fieldtype": "Date",
+         "label": "Due Date",
+         "read_only_depends_on": "eval:doc.inc_22_due_date && doc.inc_22_due_date.length > 0 "
+      },
+      {
+         "fieldname": "inc_20_due_date",
+         "fieldtype": "Date",
+         "label": "Due Date",
+         "read_only_depends_on": "eval:doc.inc_20_due_date && doc.inc_20_due_date.length > 0 "
+      },
+      {
+         "fieldname": "inc_20_bank_statement",
+         "fieldtype": "Attach Image",
+         "label": "Bank Statement"
+      },
+      {
+         "fieldname": "inc_20_fpo_banner_with_bod_photo",
+         "fieldtype": "Attach Image",
+         "label": "FPO Banner with BOD photo"
+      },
+      {
+         "default": "Pending",
+         "fieldname": "inc_20_status",
+         "fieldtype": "Autocomplete",
+         "in_list_view": 1,
+         "label": "INC-20A Status",
+         "options": "Pending\nCompleted",
+         "reqd": 1
+      },
+      {
+         "depends_on": "eval:doc.inc_20_status == \"Completed\"",
+         "fieldname": "inc_20_submitted_on",
+         "fieldtype": "Date",
+         "label": "Submitted On",
+         "mandatory_depends_on": "eval:doc.inc_20_status == \"Completed\""
+      },
+      {
+         "fieldname": "column_break_viht",
+         "fieldtype": "Column Break"
+      },
+      {
+         "fieldname": "inc_22_noc",
+         "fieldtype": "Attach Image",
+         "label": "NOC"
+      },
+      {
+         "fieldname": "inc_22_rent_agreement",
+         "fieldtype": "Attach Image",
+         "label": "Rent agreement"
+      },
+      {
+         "fieldname": "inc_22_electricity_bill",
+         "fieldtype": "Attach Image",
+         "label": "Electricity Bill"
+      },
+      {
+         "default": "Pending",
+         "fieldname": "inc_22_status",
+         "fieldtype": "Autocomplete",
+         "in_list_view": 1,
+         "label": "INC-22 Status",
+         "options": "Pending\nCompleted",
+         "reqd": 1
+      },
+      {
+         "depends_on": "eval:doc.inc_22_status == \"Completed\"",
+         "fieldname": "inc_22_submitted_on",
+         "fieldtype": "Date",
+         "label": "Submitted On",
+         "mandatory_depends_on": "eval:doc.inc_22_status == \"Completed\""
+      },
+      {
+         "fieldname": "column_break_hkbk",
+         "fieldtype": "Column Break"
+      },
+      {
+         "description": "<span style=\"font-size:13.5px;\">Within 30 days of registration </span>",
+         "fieldname": "section_break_cnwj",
+         "fieldtype": "Section Break",
+         "label": "Form INC-22 \u2013 Registered office Address - MCA"
+      },
+      {
+         "description": "<span style=\"font-size:13.5px;\">Within 30 days of registration</span>",
+         "fieldname": "section_break_klzi",
+         "fieldtype": "Section Break",
+         "label": "Form ADT-1 \u2013 Auditor Appointment for First year"
+      },
+      {
+         "fieldname": "adt_1_due_date",
+         "fieldtype": "Date",
+         "label": "Due Date",
+         "read_only_depends_on": "eval:doc.adt_1_due_date && doc.adt_1_due_date.length > 0 "
+      },
+      {
+         "fieldname": "adt_1_fpo_resolution",
+         "fieldtype": "Attach Image",
+         "label": "FPO resolution"
+      },
+      {
+         "fieldname": "column_break_ccga",
+         "fieldtype": "Column Break"
+      },
+      {
+         "default": "Pending",
+         "fieldname": "adt_1_status",
+         "fieldtype": "Autocomplete",
+         "in_list_view": 1,
+         "label": "ADT-1 Status",
+         "options": "Pending\nCompleted",
+         "reqd": 1
+      },
+      {
+         "depends_on": "eval:doc.adt_1_status == \"Completed\"",
+         "fieldname": "adt_1_submitted_on",
+         "fieldtype": "Date",
+         "label": "Submitted On",
+         "mandatory_depends_on": "eval:doc.adt_1_status == \"Completed\""
+      },
+      {
+         "fieldname": "form_inc_20a_tab",
+         "fieldtype": "Tab Break",
+         "label": "Form INC-20A \u2013 BUSINESS COMMENCEMENT- MCA"
+      },
+      {
+         "fetch_from": "fpo.cbbo_name",
+         "fieldname": "cbbo",
+         "fieldtype": "Link",
+         "hidden": 1,
+         "label": "CBBO",
+         "options": "CBBO"
+      },
+      {
+         "fetch_from": "cbbo.ia_name",
+         "fieldname": "ia",
+         "fieldtype": "Link",
+         "hidden": 1,
+         "label": "IA",
+         "options": "IA"
+      }
+   ],
+   "hide_toolbar": 1,
+   "index_web_pages_for_search": 1,
+   "links": [],
+   "modified": "2024-07-07 13:44:09.384434",
+   "modified_by": "Administrator",
+   "module": "Governance and compliances",
+   "name": "One Time Organization Registration Forms",
+   "naming_rule": "Expression",
+   "owner": "Administrator",
+   "permissions": [
+      {
+         "create": 1,
+         "delete": 1,
+         "email": 1,
+         "export": 1,
+         "print": 1,
+         "read": 1,
+         "report": 1,
+         "role": "System Manager",
+         "share": 1,
+         "write": 1
+      },
+      {
+         "create": 1,
+         "email": 1,
+         "export": 1,
+         "print": 1,
+         "read": 1,
+         "report": 1,
+         "role": "FPO",
+         "share": 1,
+         "write": 1
+      },
+      {
+         "email": 1,
+         "export": 1,
+         "print": 1,
+         "read": 1,
+         "report": 1,
+         "role": "IA",
+         "share": 1,
+         "write": 1
+      },
+      {
+         "email": 1,
+         "export": 1,
+         "print": 1,
+         "read": 1,
+         "report": 1,
+         "role": "CBBO",
+         "share": 1,
+         "write": 1
+      },
+      {
+         "email": 1,
+         "export": 1,
+         "print": 1,
+         "read": 1,
+         "report": 1,
+         "role": "Admin",
+         "share": 1,
+         "write": 1
+      }
+   ],
+   "sort_field": "creation",
+   "sort_order": "DESC",
+   "states": []
 }
