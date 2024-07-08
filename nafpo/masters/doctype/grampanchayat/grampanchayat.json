@@ -49,8 +49,7 @@
   {
    "fieldname": "grampanchayat_code",
    "fieldtype": "Data",
-   "label": "Grampanchayat Code",
-   "unique": 1
+   "label": "Grampanchayat Code"
   },
   {
    "default": "Active",
@@ -64,7 +63,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-05 11:44:19.526502",
+ "modified": "2024-07-06 13:03:36.933730",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Grampanchayat",

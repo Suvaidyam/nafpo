@@ -40,8 +40,7 @@
   {
    "fieldname": "block_code",
    "fieldtype": "Data",
-   "label": "Block Code",
-   "unique": 1
+   "label": "Block Code"
   },
   {
    "default": "Active",
@@ -55,7 +54,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-05 11:43:23.939154",
+ "modified": "2024-07-06 11:28:28.373648",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Block",

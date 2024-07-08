@@ -43,8 +43,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "FPO Name",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "cbbo_name",
@@ -83,7 +82,7 @@
    "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-07-05 11:46:36.958907",
+ "modified": "2024-07-06 20:11:21.022843",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "FPO",
