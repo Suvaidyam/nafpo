@@ -28,6 +28,7 @@
 
 frappe.ui.form.on("Capacity", {
     refresh: async function (frm) {
+        frm.image_uploaded = false;
         if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
             try {
                 let { message: { fpo } } = await frappe.call({
@@ -55,6 +56,15 @@ frappe.ui.form.on("Capacity", {
             frm.set_value('other', '')
         }
     },
+    validate: function (frm) {
+        if (frm.image_uploaded) {
+            frappe.validated = false;
+            frm.image_uploaded = false;
+        }
+    },
+    training_document_if_needed: function (frm) {
+        frm.image_uploaded = true;
+    },
     start_date(frm) {
         let total_days = Math.ceil(Math.abs(new Date(frm.doc.end_date) - new Date(frm.doc.start_date)) / (1000 * 3600 * 24));
         console.log('total_days', total_days)
@@ -67,13 +77,13 @@ frappe.ui.form.on("Capacity", {
         frm.set_value('total_days', !isNaN(total_days) && total_days >= 0 ? total_days : 0);
         frm.set_df_property('total_days', 'read_only', true);
     },
-    onload: function (frm) {
-        hide_list_view_in_useless_data(frm)
-    },
-    ...['training_document_if_needed'].reduce((acc, field) => {
-        acc[field] = function (frm) {
-            disable_Attachment_autosave(frm);
-        };
-        return acc;
-    }, {})
+    // ...['training_document_if_needed'].reduce((acc, field) => {
+    //     acc[field] = function (frm) {
+    //         disable_Attachment_autosave(frm);
+    //     };
+    //     return acc;
+    // }, {})
 });
+
+
+
