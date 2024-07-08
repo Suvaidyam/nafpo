@@ -13,7 +13,7 @@ fixtures = [
     "IA",
     "CBBO",
     "Type of Organization",
-    "Custom HTML Block"
+    "Custom HTML Block",
 ]
 
 # Includes in <head>
