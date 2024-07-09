@@ -13,7 +13,9 @@
   "financial_year",
   "section_break_gbyg",
   "output_side",
+  "total_income_of_fpo_from_output",
   "input_side",
+  "total_income_of_fpo_from_input",
   "variable_cost_section",
   "gradingassying_weigning_packingbagging_at_collection_point",
   "local_transport_include_loading_unloading_collection_point",
@@ -248,7 +250,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "FPO Name",
-   "options": "FPO Profiling",
+   "options": "FPO",
    "reqd": 1,
    "unique": 1
   },
@@ -306,12 +308,24 @@
    "fieldname": "weight_loss_percent",
    "fieldtype": "Percent",
    "label": "Weight Loss Percent"
+  },
+  {
+   "fieldname": "total_income_of_fpo_from_output",
+   "fieldtype": "Currency",
+   "label": "Total Income of FPO from Output",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_income_of_fpo_from_input",
+   "fieldtype": "Currency",
+   "label": "Total Income of FPO from Input",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-09 12:46:48.756618",
+ "modified": "2024-07-09 16:53:09.004102",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",

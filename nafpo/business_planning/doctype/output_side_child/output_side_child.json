@@ -29,9 +29,9 @@
   },
   {
    "fieldname": "season",
-   "fieldtype": "Link",
+   "fieldtype": "Autocomplete",
    "label": "Season",
-   "options": "Season",
+   "options": "Kharif\nMonsoon\nRabi\nSummer",
    "reqd": 1
   },
   {
@@ -43,18 +43,18 @@
   },
   {
    "fieldname": "total_cropping_area_of_fpo_members_acre",
-   "fieldtype": "Currency",
+   "fieldtype": "Float",
    "label": "Total cropping area of FPO members (Acre)",
    "non_negative": 1,
    "reqd": 1
   },
   {
    "fieldname": "total_harvest_by_fpo_members_quintals",
-   "fieldtype": "Currency",
+   "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Total harvest by FPO members (Quintals)",
    "non_negative": 1,
-   "read_only_depends_on": "eval:doc.total_harvest_by_fpo_members_quintals && doc.total_harvest_by_fpo_members_quintals.length > 0"
+   "read_only": 1
   },
   {
    "fieldname": "expected_purchase_pricers",
@@ -81,14 +81,16 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Total Purchase price (Rs)",
-   "non_negative": 1
+   "non_negative": 1,
+   "read_only": 1
   },
   {
    "fieldname": "quantity_available_for_sale_default_deducted_x_for_weight_loss",
-   "fieldtype": "Currency",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Quantity available for sale (default deducted X% for weight loss)",
-   "non_negative": 1
+   "non_negative": 1,
+   "read_only": 1
   },
   {
    "fieldname": "expected_unit_selling_price_per_quintals",
@@ -103,19 +105,21 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Total selling price/income (Rs)",
-   "non_negative": 1
+   "non_negative": 1,
+   "read_only": 1
   },
   {
    "fieldname": "total_income_of_fpo_from_output",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Total Income of FPO from Output"
+   "label": "Total Income of FPO from Output",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-09 12:32:18.824144",
+ "modified": "2024-07-09 15:18:13.350440",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Output Side Child",
