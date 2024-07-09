@@ -26,9 +26,9 @@ frappe.ui.form.on("FPO Profiling", {
     validate(frm) {
         integer_length_validator(frm.doc.accountant_contact_number, 10, 'Accountant Contact Number');
         integer_length_validator(frm.doc.ceo_contact_number, 10, 'CEO Contact Number');
-        frm.doc.staff_details_table.forEach(row => {
-            // console.log('Row during validate:', row);
-        });
+        // frm.doc.staff_details_table.forEach(row => {
+        //     // console.log('Row during validate:', row);
+        // });
     },
     before_save(frm) {
         frm.doc.deleted_staff_rows = deleted_staff;

@@ -26,3 +26,18 @@ class BusinessPlannings(Document):
 
         # Calculate total variable cost
         self.total_variable_cost = sum(getattr(self, field, 0) for field in fields_and_rates)
+        
+        # Output Side
+        # Total harvest by FPO members (Quintals)
+        output_side_row = self.output_side
+        for row in output_side_row:
+            expected_yields = frappe.db.get_value("Crop Name",row.crop_name,'expected_yields_quintal_per_acre')
+            row.total_harvest_by_fpo_members_quintals = row.total_cropping_area_of_fpo_members_acre * expected_yields
+        # Total Purchase Price 
+            row.total_purchase_price_rs = row.quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals * row.expected_purchase_pricers
+        # Quantity available for sale (default deducted X% for weight loss)
+            row.quantity_available_for_sale_default_deducted_x_for_weight_loss = (1 - (self.weight_loss_percent / 100)) * row.quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals
+        # Total selling price/income (Rs)
+            row.total_selling_priceincome_rs = row.quantity_available_for_sale_default_deducted_x_for_weight_loss * row.expected_unit_selling_price_per_quintals
+        # Total Income of FPO from Output
+            row.total_income_of_fpo_from_output = row.total_selling_priceincome_rs * row.total_purchase_price_rs
