@@ -9,9 +9,6 @@ app_license = "mit"
 fixtures = [
     "Role",
     "Role Profile",
-    "Financial Year",
-    "IA",
-    "CBBO",
     "Type of Organization",
     "Custom HTML Block",
 ]

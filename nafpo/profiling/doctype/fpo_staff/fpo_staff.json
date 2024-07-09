@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:FPO-Staff-{####}",
  "creation": "2024-06-26 19:04:29.960629",
@@ -52,7 +53,8 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "FPO",
-   "options": "FPO"
+   "options": "FPO",
+   "read_only": 1
   },
   {
    "fieldname": "child_reference",
@@ -66,7 +68,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-02 14:51:24.871548",
+ "modified": "2024-07-09 11:50:05.254546",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Staff",
