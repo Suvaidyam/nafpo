@@ -18,15 +18,6 @@ frappe.ui.form.on("BOD KYC", {
     director_identification_number(frm) {
         validate_string(frm, 'director_identification_number', 'Director Identification Number');
     },
-    mobile_number(frm) {
-        validate_string(frm, 'mobile_number', 'Mobile Number');
-    },
-    aadhar_number(frm) {
-        validate_string(frm, 'aadhar_number', 'Aadhar Number');
-    },
-    onload(frm) {
-        hide_list_view_in_useless_data(frm)
-    },
     ...['din_document', 'address_proof_status', 'address_proof', 'upload_aadhar_document'].reduce((acc, field) => {
         acc[field] = function (frm) {
             disable_Attachment_autosave(frm);
@@ -34,12 +25,3 @@ frappe.ui.form.on("BOD KYC", {
         return acc;
     }, {})
 });
-
-// Validate Data field 
-// function validate_string(frm, field_name, field_label) {
-//     const field_value = frm.doc[field_name];
-//     if (typeof field_value === 'string' && isNaN(Number(field_value))) {
-//         frappe.throw(__(`Please enter a valid ${field_label}.`));
-//         frm.set_value(field_name, '');
-//     }
-// }
