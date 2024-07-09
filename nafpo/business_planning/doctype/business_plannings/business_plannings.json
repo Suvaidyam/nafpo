@@ -14,6 +14,7 @@
   "section_break_gbyg",
   "output_side",
   "total_income_of_fpo_from_output",
+  "total_weight_loss_",
   "input_side",
   "total_income_of_fpo_from_input",
   "variable_cost_section",
@@ -95,30 +96,39 @@
    "label": "Variable cost"
   },
   {
+   "default": "0",
    "fieldname": "gradingassying_weigning_packingbagging_at_collection_point",
-   "fieldtype": "Currency",
-   "label": "Grading/assying, weigning, packing/bagging at collection point (Rs.Y/Quintal)"
+   "fieldtype": "Int",
+   "label": "Grading/assying, weigning, packing/bagging at collection point (Rs.Y/Quintal)",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "local_transport_include_loading_unloading_collection_point",
-   "fieldtype": "Currency",
-   "label": "Local transport (Include loading & unloading)- collection point to warehouse (Rs.Z/Quintal)"
+   "fieldtype": "Int",
+   "label": "Local transport (Include loading & unloading)- collection point to warehouse (Rs.Z/Quintal)",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "storing_warehousing_costs",
-   "fieldtype": "Currency",
-   "label": "Storing/ Warehousing Costs (Rs.A/ Quintal)"
+   "fieldtype": "Int",
+   "label": "Storing/ Warehousing Costs (Rs.A/ Quintal)",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "transport_to_market_include_loading__unloading",
-   "fieldtype": "Currency",
-   "label": "Transport to market (Include loading & unloading) (Rs.B/ Quintal)"
+   "fieldtype": "Int",
+   "label": "Transport to market (Include loading & unloading) (Rs.B/ Quintal)",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_variable_cost",
    "fieldtype": "Currency",
    "label": "Total Variable Cost",
-   "read_only_depends_on": "eval:doc.total_variable_cost > 0;"
+   "read_only": 1
   },
   {
    "fieldname": "column_break_lsau",
@@ -218,24 +228,32 @@
    "label": "Variable cost (Rate)"
   },
   {
+   "default": "0",
    "fieldname": "gradingassying_weigning_packingbagging_at_collection_point_rate",
-   "fieldtype": "Currency",
-   "label": "Grading/assying, weigning, packing/bagging at collection point rate (Rs.Y/Quintal)"
+   "fieldtype": "Int",
+   "label": "Grading/assying, weigning, packing/bagging at collection point rate (Rs.Y/Quintal)",
+   "non_negative": 1
   },
   {
+   "default": "0",
    "fieldname": "local_transport_include_loading_unloading_rate",
-   "fieldtype": "Currency",
-   "label": "Local transport (Include loading & unloading)- collection point rate to warehouse (Rs.Z/Quintal)"
+   "fieldtype": "Int",
+   "label": "Local transport (Include loading & unloading)- collection point rate to warehouse (Rs.Z/Quintal)",
+   "non_negative": 1
   },
   {
+   "default": "0",
    "fieldname": "storing_warehousing_costs_rate",
-   "fieldtype": "Currency",
-   "label": "Storing/ Warehousing Costs Rate (Rs.A/ Quintal)"
+   "fieldtype": "Int",
+   "label": "Storing/ Warehousing Costs Rate (Rs.A/ Quintal)",
+   "non_negative": 1
   },
   {
+   "default": "0",
    "fieldname": "transport_to_market_include_loading_unloading_rate",
-   "fieldtype": "Currency",
-   "label": "Transport to market rate (Include loading & unloading) (Rs.B/ Quintal)"
+   "fieldtype": "Int",
+   "label": "Transport to market rate (Include loading & unloading) (Rs.B/ Quintal)",
+   "non_negative": 1
   },
   {
    "fieldname": "column_break_ubrl",
@@ -305,9 +323,11 @@
    "label": "Variable cost (Rate)"
   },
   {
+   "default": "0",
    "fieldname": "weight_loss_percent",
-   "fieldtype": "Percent",
-   "label": "Weight Loss Percent"
+   "fieldtype": "Int",
+   "label": "Weight Loss Percent",
+   "non_negative": 1
   },
   {
    "fieldname": "total_income_of_fpo_from_output",
@@ -320,12 +340,19 @@
    "fieldtype": "Currency",
    "label": "Total Income of FPO from Input",
    "read_only": 1
+  },
+  {
+   "fieldname": "total_weight_loss_",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Total weight Loss",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-09 16:53:09.004102",
+ "modified": "2024-07-09 23:49:54.894938",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",
