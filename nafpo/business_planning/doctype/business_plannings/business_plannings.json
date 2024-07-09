@@ -48,11 +48,14 @@
   "input",
   "output",
   "variable_cost_rate_tab",
+  "variable_cost_rate_section",
   "gradingassying_weigning_packingbagging_at_collection_point_rate",
   "local_transport_include_loading_unloading_rate",
   "column_break_ubrl",
   "storing_warehousing_costs_rate",
-  "transport_to_market_include_loading_unloading_rate"
+  "transport_to_market_include_loading_unloading_rate",
+  "loss_percent_details_section",
+  "weight_loss_percent"
  ],
  "fields": [
   {
@@ -288,12 +291,27 @@
    "fieldname": "output",
    "fieldtype": "Data",
    "label": "Output"
+  },
+  {
+   "fieldname": "loss_percent_details_section",
+   "fieldtype": "Section Break",
+   "label": "Weight Loss Percent Details"
+  },
+  {
+   "fieldname": "variable_cost_rate_section",
+   "fieldtype": "Section Break",
+   "label": "Variable cost (Rate)"
+  },
+  {
+   "fieldname": "weight_loss_percent",
+   "fieldtype": "Percent",
+   "label": "Weight Loss Percent"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-08 10:24:16.137318",
+ "modified": "2024-07-09 12:46:48.756618",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",
