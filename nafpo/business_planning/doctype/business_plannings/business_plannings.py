@@ -3,10 +3,13 @@ from frappe.model.document import Document
 
 class BusinessPlannings(Document):
     def before_save(self):
-        # total_quantity_available_for_sale_default_deducted_x_for_weight_loss = 0
         total_weight_loss = 0
         total_output_income = 0
         total_input_income = 0
+        total_output_selling_priceincome_rs = 0
+        total_input_selling_priceincome_rs = 0
+        total_output_purchase_price_rs = 0
+        total_input_purchase_price_rs = 0
     # Output Side Logic
         # Total harvest by FPO members (Quintals)
         output_side_row = self.output_side
@@ -25,9 +28,13 @@ class BusinessPlannings(Document):
         # Total  
             total_output_income += row.total_income_of_fpo_from_output
             total_weight_loss += row.quantity_available_for_sale_default_deducted_x_for_weight_loss
+            total_output_selling_priceincome_rs += row.total_selling_priceincome_rs
+            total_output_purchase_price_rs += row.total_purchase_price_rs
         self.total_income_of_fpo_from_output = total_output_income
         self.total_weight_loss_ = total_weight_loss
-        print('/'*60,total_weight_loss)
+        self.total_output_purchase_price_rs = total_output_purchase_price_rs
+        # Total Output selling price/income (Rs)
+        self.total_output_selling_priceincome_rs = total_output_selling_priceincome_rs
         
     # Input Side Logic
         input_side_row = self.input_side
@@ -39,10 +46,14 @@ class BusinessPlannings(Document):
         # Total selling price/income (Rs)
             row.total_selling_priceincome_rs = row.total_area_for_which_input_name_shall_be_utilized * row.expected_unit_selling_price_per_acre_rs
         # Total Income of FPO from Input
-            row.total_income_of_fpo_from_input = row.total_selling_priceincome_rs - row.total_purchase_price_rs
+            row.total_income_of_fpo_from_input = row.total_purchase_price_rs - row.total_selling_priceincome_rs
         
             total_input_income += row.total_income_of_fpo_from_input
+            total_input_selling_priceincome_rs += row.total_selling_priceincome_rs
+            total_input_purchase_price_rs += row.total_purchase_price_rs
         self.total_income_of_fpo_from_input = total_input_income
+        self.total_input_selling_priceincome_rs = total_input_selling_priceincome_rs
+        self.total_input_purchase_price_rs = total_input_purchase_price_rs
         
     # Variable Cost Logic
         self.gradingassying_weigning_packingbagging_at_collection_point = self.total_weight_loss_ * self.gradingassying_weigning_packingbagging_at_collection_point_rate
@@ -55,3 +66,46 @@ class BusinessPlannings(Document):
             self.storing_warehousing_costs +
             self.transport_to_market_include_loading__unloading
         )
+    # Fixed Cost (yearly) Logic
+        get_total_value = frappe.db.get_list('FPO Fixed Capital',
+                        filters={
+                            'fpo': self.fpo,
+                            'financial_year': self.financial_year
+                        },
+                        fields=['total_value'],
+                        as_list=True
+                    )
+        total_value = get_total_value[0][0] if get_total_value else 0
+        self.total_work_capital = (
+            self.ceo_salary + 
+            self.accountant_salary + 
+            self.store_keeper_salary + 
+            self.staff_travel + 
+            self.store_rent + 
+            self.office_rent + 
+            self.utilities +
+            self.miscellanious +
+            self.collection_centre_rent +
+            self.intangible_assetspre_operating_expenses_written_off +
+            self.depreciation +
+            self.interest_on_loan
+        )
+        # Depreciation
+        self.depreciation = total_value / self.depreciation_percent
+        self.total_fixed_and_variable_cost = self.total_variable_cost
+        
+# Net Profit (Per Year) Logic
+    
+    # Total Sales
+        self.total_sales =  (self.total_output_selling_priceincome_rs + self.total_input_selling_priceincome_rs) * (self.total_income_of_fpo_from_output + self.total_income_of_fpo_from_input)
+    # Total Expense
+        self.total_expense = self.total_variable_cost + self.total_work_capital + self.total_output_purchase_price_rs + self.total_input_purchase_price_rs
+    # Gross Profit /Loss (Total Sales- Total Expence)
+        self.gross_profit_loss = (self.total_output_selling_priceincome_rs + self.total_input_selling_priceincome_rs) - self.total_expense
+    
+    # Total Income (Including Input and Output Side)
+        self.total_income_including_input_and_output_side = self.total_income_of_fpo_from_output + self.total_income_of_fpo_from_input
+    # Total Fixed and Variable Cost
+        self.total_fixed_and_variable_cost = self.total_variable_cost + self.total_work_capital
+    # Gross Profit /Loss (Total Income- Total Cost)
+        self.gross_profit_loss_total_income_total_cost = (self.total_output_selling_priceincome_rs + self.total_input_selling_priceincome_rs) - self.total_fixed_and_variable_cost
