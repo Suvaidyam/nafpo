@@ -9,11 +9,8 @@ app_license = "mit"
 fixtures = [
     "Role",
     "Role Profile",
-    "Financial Year",
-    "IA",
-    "CBBO",
     "Type of Organization",
-    "Custom HTML Block"
+    "Custom HTML Block",
 ]
 
 # Includes in <head>
@@ -105,7 +102,7 @@ doctype_js = {
     "Other Format" : [
         "public/js/utils/utils.js"
     ],
-    "Nafpo User" : [
+    "NAFPO User" : [
         "public/js/utils/utils.js"
     ],
     "Financial Year" : [
@@ -124,6 +121,9 @@ doctype_js = {
         "public/js/utils/utils.js"
     ],
     "FPO MFR 10K" : [
+        "public/js/utils/utils.js"
+    ],
+    "Business Plannings" : [
         "public/js/utils/utils.js"
     ],
 }

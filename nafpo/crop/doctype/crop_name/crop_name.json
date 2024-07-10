@@ -7,16 +7,19 @@
  "engine": "InnoDB",
  "field_order": [
   "state_name",
-  "name_of_fpo",
+  "fpo",
   "cbbo",
   "ia",
+  "column_break_jrjj",
   "type_of_crop",
+  "section_break_crop_name",
   "name_of_crop",
-  "column_break_bari",
   "expected_yields_quintal_per_acre",
+  "column_break_uths",
   "target_market_1",
   "target_market_2",
-  "status"
+  "section_break_table_crop_name_child",
+  "table_crop_name_child"
  ],
  "fields": [
   {
@@ -28,14 +31,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "name_of_fpo",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "FPO",
-   "options": "FPO",
-   "reqd": 1
-  },
-  {
    "fieldname": "type_of_crop",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -44,42 +39,35 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval:!doc.__islocal",
    "fieldname": "name_of_crop",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Name of Crop",
-   "reqd": 1
+   "mandatory_depends_on": "eval:!doc.__islocal"
   },
   {
-   "fieldname": "column_break_bari",
-   "fieldtype": "Column Break"
-  },
-  {
+   "depends_on": "eval:!doc.__islocal",
    "fieldname": "expected_yields_quintal_per_acre",
    "fieldtype": "Int",
    "label": "Expected Yields (Quintal per Acre)",
-   "non_negative": 1,
-   "reqd": 1
+   "mandatory_depends_on": "eval:!doc.__islocal",
+   "non_negative": 1
   },
   {
+   "depends_on": "eval:!doc.__islocal",
    "fieldname": "target_market_1",
    "fieldtype": "Data",
    "label": "Target Market 1"
   },
   {
+   "depends_on": "eval:!doc.__islocal",
    "fieldname": "target_market_2",
    "fieldtype": "Data",
    "label": "Target Market 2"
   },
   {
-   "default": "Active",
-   "fieldname": "status",
-   "fieldtype": "Autocomplete",
-   "label": "Status",
-   "options": "Active\nInactive"
-  },
-  {
-   "fetch_from": "name_of_fpo.cbbo_name",
+   "fetch_from": "fpo.cbbo_name",
    "fieldname": "cbbo",
    "fieldtype": "Link",
    "hidden": 1,
@@ -95,11 +83,43 @@
    "label": "IA",
    "options": "IA",
    "read_only_depends_on": "eval:doc.name_of_fpo && doc.name_of_fpo.length > 0"
+  },
+  {
+   "fieldname": "column_break_uths",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.__islocal == 1",
+   "fieldname": "table_crop_name_child",
+   "fieldtype": "Table",
+   "label": "Crop Details Table",
+   "mandatory_depends_on": "eval:doc.__islocal == 1",
+   "options": "Crop Name Child"
+  },
+  {
+   "fieldname": "section_break_table_crop_name_child",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_crop_name",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_jrjj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "FPO",
+   "options": "FPO",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-25 10:35:58.445556",
+ "modified": "2024-07-08 18:27:20.846419",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop Name",

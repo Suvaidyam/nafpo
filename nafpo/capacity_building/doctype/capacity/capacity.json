@@ -48,9 +48,11 @@
    "label": "Palce"
   },
   {
+   "default": "0",
    "fieldname": "no_of_participants",
-   "fieldtype": "Data",
-   "label": "No of participants who attended  the training from your FPO\u2013 10"
+   "fieldtype": "Int",
+   "label": "No of participants who attended  the training from your FPO",
+   "read_only": 1
   },
   {
    "fieldname": "training_partnerorganisation_name",
@@ -148,7 +150,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-03 12:00:08.586394",
+ "modified": "2024-07-10 16:41:15.502807",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity",

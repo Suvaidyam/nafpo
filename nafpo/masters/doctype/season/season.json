@@ -2,19 +2,19 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:SA-{####}",
- "creation": "2024-05-26 14:11:38.177129",
+ "autoname": "format:S-{#}",
+ "creation": "2024-07-07 14:34:15.984569",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "name1"
+  "season_name"
  ],
  "fields": [
   {
-   "fieldname": "name1",
+   "fieldname": "season_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Name",
+   "label": "Season Name",
    "reqd": 1,
    "unique": 1
   }
@@ -22,10 +22,10 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-05 12:34:01.324165",
+ "modified": "2024-07-07 14:42:51.325266",
  "modified_by": "Administrator",
  "module": "Masters",
- "name": "Supporting Agencies",
+ "name": "Season",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
@@ -40,45 +40,11 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Admin",
-   "select": 1,
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "CBBO",
-   "select": 1,
-   "share": 1,
-   "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "report": 1,
-   "role": "FPO",
-   "select": 1,
-   "share": 1
   }
  ],
  "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "name1"
+ "title_field": "season_name"
 }

@@ -12,7 +12,7 @@
  "fields": [
   {
    "fieldname": "value",
-   "fieldtype": "Int",
+   "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Value",
    "non_negative": 1,
@@ -29,7 +29,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-26 12:35:10.571066",
+ "modified": "2024-07-09 23:59:21.802224",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "FPO Fixed Capital Child",

@@ -26,9 +26,9 @@ frappe.ui.form.on("FPO Profiling", {
     validate(frm) {
         integer_length_validator(frm.doc.accountant_contact_number, 10, 'Accountant Contact Number');
         integer_length_validator(frm.doc.ceo_contact_number, 10, 'CEO Contact Number');
-        frm.doc.staff_details_table.forEach(row => {
-            // console.log('Row during validate:', row);
-        });
+        // frm.doc.staff_details_table.forEach(row => {
+        //     // console.log('Row during validate:', row);
+        // });
     },
     before_save(frm) {
         frm.doc.deleted_staff_rows = deleted_staff;
@@ -47,7 +47,7 @@ frappe.ui.form.on("FPO Profiling", {
     },
     name_of_the_fpo: async function (frm) {
         await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)
-        await apply_filter('block_name', 'fpo_name', frm, frm.doc.name_of_the_fpo);
+        // await apply_filter('block_name', 'fpo_name', frm, frm.doc.name_of_the_fpo);
         truncate_multiple_fields_value(frm, ['bod_kyc_name', 'fpos_address', 'fpos_pincode'])
     },
     ceo_contact_number(frm) {

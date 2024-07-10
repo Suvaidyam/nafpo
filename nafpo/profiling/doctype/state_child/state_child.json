@@ -1,29 +1,30 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-05-26 14:05:10.002162",
+ "creation": "2024-07-05 15:40:28.101537",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "bod_kyc"
+  "state"
  ],
  "fields": [
   {
-   "fieldname": "bod_kyc",
+   "fieldname": "state",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "BOD KYC",
-   "options": "BOD KYC",
+   "label": "State",
+   "options": "State",
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-09 11:02:48.414939",
+ "modified": "2024-07-05 15:40:52.238058",
  "modified_by": "Administrator",
  "module": "Profiling",
- "name": "BOD KYC Child",
+ "name": "State Child",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "creation",
