@@ -120,6 +120,9 @@ doctype_js = {
     "Annual Compliance Forms" : [
         "public/js/utils/utils.js"
     ],
+    "Board of Directors Meeting Forms" : [
+        "public/js/utils/utils.js"
+    ],
     "FPO MFR 10K" : [
         "public/js/utils/utils.js"
     ],

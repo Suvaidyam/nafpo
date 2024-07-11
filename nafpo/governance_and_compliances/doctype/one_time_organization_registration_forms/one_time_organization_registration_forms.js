@@ -20,9 +20,9 @@ frappe.ui.form.on("One Time Organization Registration Forms", {
             frm.fields_dict[field].$input.datepicker({ maxDate: new Date() });
         });
     },
-    financial_year: async function (frm) {
-        check_fpo(frm)
-    },
+    // financial_year: async function (frm) {
+    //     check_fpo(frm)
+    // },
     inc_20_status: function (frm) {
         blank_submitted_on(frm, 'inc_20_status', 'inc_20_submitted_on');
     },
@@ -36,6 +36,8 @@ frappe.ui.form.on("One Time Organization Registration Forms", {
     },
     fpo(frm) {
         set_due_date(frm)
+        // data = get_exists_doc('FPO Profiling', frm.doc.fpo)
+        // print('==================', data)
     },
     ...['inc_20_bank_statement', 'inc_20_bank_statement', 'inc_22_noc', 'inc_22_rent_agreement', 'inc_22_electricity_bill', 'adt_1_fpo_resolution'].reduce((acc, field) => {
         acc[field] = function (frm) {
@@ -44,28 +46,6 @@ frappe.ui.form.on("One Time Organization Registration Forms", {
         return acc;
     }, {})
 });
-
-async function check_fpo(frm) {
-    let filters = {
-        'financial_year': frm.doc.financial_year,
-        'name': ['!=', frm.doc.name] // Exclude current document
-    };
-    let fields = ['name', 'financial_year'];
-    let limit = 1;
-
-    try {
-        let data = await frappe.db.get_list('One Time Organization Registration Forms', { filters, fields, limit });
-        let exists = data.length > 0;
-        if (exists) {
-            await frappe.throw(`FPO already exists for the Financial Year ${frm.doc.financial_year}`);
-            return false;
-        }
-        return true;
-    } catch (err) {
-        console.error('Error fetching data:', err);
-        return false;
-    }
-}
 
 function blank_submitted_on(frm, status_field, date_field) {
     if (frm.doc[status_field] == "Pending") {
@@ -82,6 +62,9 @@ function set_due_date(frm) {
             filter: frm.doc.fpo
         },
         callback: function (response) {
+            if (response.message == undefined) {
+                frappe.throw("FPO Profile doesn't exist. Please create FPO Profiling.")
+            }
             let date = new Date(response.message.date_of_registration);
             date.setDate(date.getDate() + 180);
             frm.set_value('inc_20_due_date', date.toISOString().split('T')[0]);
@@ -93,31 +76,4 @@ function set_due_date(frm) {
             console.log("An error occurred: ", error);
         }
     });
-}
-
-function check_fpo(frm) {
-    frappe.call({
-        method: "nafpo.apis.api.check_multiple",
-        args: {
-            doctype_name: 'One Time Organization Registration Forms',
-            filter: frm.doc.fpo
-        },
-        callback: function (response) {
-            let date = new Date(response.message.date_of_registration);
-            date.setDate(date.getDate() + 180);
-            frm.set_value('inc_20_due_date', date.toISOString().split('T')[0]);
-            date.setDate(date.getDate() + 30);
-            frm.set_value('inc_22_due_date', date.toISOString().split('T')[0]);
-            frm.set_value('adt_1_due_date', date.toISOString().split('T')[0]);
-        },
-        error: function (error) {
-            console.log("An error occurred: ", error);
-        }
-    });
-}
-
-function blank_submitted_on(frm, status_field, date_field) {
-    if (frm.doc[status_field] == "Pending") {
-        frm.set_value(date_field, '');
-    }
 }
