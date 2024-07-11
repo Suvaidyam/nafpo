@@ -147,67 +147,80 @@
    "label": "Fixed Cost (yearly)"
   },
   {
+   "default": "0",
    "fieldname": "ceo_salary",
    "fieldtype": "Currency",
    "label": "CEO Salary"
   },
   {
+   "default": "0",
    "fieldname": "accountant_salary",
    "fieldtype": "Currency",
    "label": "Accountant Salary"
   },
   {
+   "default": "0",
    "fieldname": "store_keeper_salary",
    "fieldtype": "Currency",
    "label": "Store Keeper Salary"
   },
   {
+   "default": "0",
    "fieldname": "staff_travel",
    "fieldtype": "Currency",
    "label": "Staff Travel"
   },
   {
+   "default": "0",
    "fieldname": "store_rent",
    "fieldtype": "Currency",
    "label": "Store Rent"
   },
   {
+   "default": "0",
    "fieldname": "office_rent",
    "fieldtype": "Currency",
    "label": "Office Rent"
   },
   {
+   "default": "0",
    "fieldname": "utilities",
    "fieldtype": "Currency",
    "label": "Utilities"
   },
   {
+   "default": "0",
    "fieldname": "miscellanious",
    "fieldtype": "Currency",
    "label": "Miscellanious"
   },
   {
+   "default": "0",
    "fieldname": "collection_centre_rent",
    "fieldtype": "Currency",
    "label": "Collection centre rent"
   },
   {
+   "default": "0",
    "fieldname": "intangible_assetspre_operating_expenses_written_off",
    "fieldtype": "Currency",
    "label": "Intangible assets/Pre-operating expenses written off"
   },
   {
+   "default": "0",
    "fieldname": "depreciation",
    "fieldtype": "Currency",
    "label": "Depreciation",
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "interest_on_loan",
    "fieldtype": "Currency",
    "label": "Interest on Loan"
   },
   {
+   "default": "0",
    "fieldname": "total_work_capital",
    "fieldtype": "Currency",
    "label": "Total Work Capital",
@@ -309,12 +322,15 @@
    "label": "Private Partner Linkage Developed"
   },
   {
+   "bold": 1,
+   "default": "0",
    "fieldname": "input",
    "fieldtype": "Int",
    "label": "Input",
    "non_negative": 1
   },
   {
+   "default": "0",
    "fieldname": "output",
    "fieldtype": "Int",
    "label": "Output",
@@ -338,18 +354,21 @@
    "non_negative": 1
   },
   {
+   "default": "0",
    "fieldname": "total_income_of_fpo_from_output",
    "fieldtype": "Currency",
    "label": "Total Income of FPO from Output",
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_income_of_fpo_from_input",
    "fieldtype": "Currency",
    "label": "Total Income of FPO from Input",
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_weight_loss_",
    "fieldtype": "Int",
    "hidden": 1,
@@ -380,6 +399,7 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_output_selling_priceincome_rs",
    "fieldtype": "Currency",
    "hidden": 1,
@@ -387,6 +407,7 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_input_selling_priceincome_rs",
    "fieldtype": "Currency",
    "hidden": 1,
@@ -401,12 +422,14 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_output_purchase_price_rs",
    "fieldtype": "Currency",
    "label": "Total Output Purchase price (Rs)",
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_input_purchase_price_rs",
    "fieldtype": "Currency",
    "label": "Total Input Purchase price (Rs)",
@@ -416,7 +439,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-10 15:22:30.894301",
+ "modified": "2024-07-11 10:48:28.886520",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",
