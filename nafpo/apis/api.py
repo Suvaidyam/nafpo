@@ -29,6 +29,11 @@ def get_fpo_profile(name=None, fields=["*"]):
 def get_fpo_profile_doc(doctype_name,filter):
     return frappe.db.get_value(doctype_name, {'name_of_the_fpo':filter },['date_of_registration'],as_dict=1)
 
+@frappe.whitelist(allow_guest=True)
+def get_exists_doc(doctype,value):
+    exists = frappe.db.exists({"doctype": doctype,"fpo": value})
+    return bool(exists)
+
 # SFAC Module FPO Filter Count
 @frappe.whitelist(allow_guest=True)
 def get_total_eligible_fpos_count():
