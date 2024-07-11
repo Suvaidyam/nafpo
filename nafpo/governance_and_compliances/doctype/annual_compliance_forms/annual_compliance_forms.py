@@ -12,3 +12,10 @@ class AnnualComplianceForms(Document):
         if exists and exists != self.name:
             fpo = frappe.get_doc('FPO',self.fpo)
             frappe.throw(_(f'Financial Year {self.financial_year} already exists for the {fpo.fpo_name}'))
+        
+        check_exist_profile = frappe.db.exists({
+            "doctype": "FPO Profiling", 
+            "name_of_the_fpo": self.fpo
+        })
+        if check_exist_profile == None:
+            frappe.throw(f"FPO Profile doesn't exist. Please create FPO Profiling.")
