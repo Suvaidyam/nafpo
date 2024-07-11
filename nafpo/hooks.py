@@ -123,6 +123,9 @@ doctype_js = {
     "FPO MFR 10K" : [
         "public/js/utils/utils.js"
     ],
+    "Business Plannings" : [
+        "public/js/utils/utils.js"
+    ],
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}

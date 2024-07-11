@@ -7,13 +7,13 @@
  "engine": "InnoDB",
  "field_order": [
   "fpo",
-  "fpo_name",
   "cbbo",
   "ia",
   "column_break_ggkk",
   "financial_year",
   "section_break_pktz",
-  "table_nprj"
+  "fixed_capital_details_table",
+  "total_value"
  ],
  "fields": [
   {
@@ -22,8 +22,7 @@
    "in_list_view": 1,
    "label": "FPO",
    "options": "FPO",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fetch_from": "fpo.cbbo_name",
@@ -44,18 +43,6 @@
    "options": "IA"
   },
   {
-   "fieldname": "table_nprj",
-   "fieldtype": "Table",
-   "options": "FPO Fixed Capital Child"
-  },
-  {
-   "fieldname": "fpo_name",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "FPO",
-   "unique": 1
-  },
-  {
    "fieldname": "financial_year",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -70,12 +57,26 @@
   {
    "fieldname": "section_break_pktz",
    "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_value",
+   "fieldtype": "Currency",
+   "label": "Total Value",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "fixed_capital_details_table",
+   "fieldtype": "Table",
+   "label": "Fixed Capital Details",
+   "options": "FPO Fixed Capital Child"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-04 18:42:21.670239",
+ "modified": "2024-07-10 00:14:37.800621",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "FPO Fixed Capital",

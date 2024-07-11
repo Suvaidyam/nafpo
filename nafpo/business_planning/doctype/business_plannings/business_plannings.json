@@ -13,7 +13,14 @@
   "financial_year",
   "section_break_gbyg",
   "output_side",
+  "total_income_of_fpo_from_output",
+  "total_weight_loss_",
+  "total_output_selling_priceincome_rs",
+  "total_output_purchase_price_rs",
   "input_side",
+  "total_income_of_fpo_from_input",
+  "total_input_selling_priceincome_rs",
+  "total_input_purchase_price_rs",
   "variable_cost_section",
   "gradingassying_weigning_packingbagging_at_collection_point",
   "local_transport_include_loading_unloading_collection_point",
@@ -38,9 +45,10 @@
   "interest_on_loan",
   "total_work_capital",
   "net_profit_per_year_section",
-  "annual_turnover_total_income",
-  "total_expence",
+  "total_sales",
+  "total_expense",
   "gross_profit_loss",
+  "column_break_gvkh",
   "total_income_including_input_and_output_side",
   "total_fixed_and_variable_cost",
   "gross_profit_loss_total_income_total_cost",
@@ -48,11 +56,16 @@
   "input",
   "output",
   "variable_cost_rate_tab",
+  "variable_cost_rate_section",
   "gradingassying_weigning_packingbagging_at_collection_point_rate",
   "local_transport_include_loading_unloading_rate",
   "column_break_ubrl",
   "storing_warehousing_costs_rate",
-  "transport_to_market_include_loading_unloading_rate"
+  "transport_to_market_include_loading_unloading_rate",
+  "loss_percent_details_section",
+  "weight_loss_percent",
+  "fixed_cost_yearly__section",
+  "depreciation_percent"
  ],
  "fields": [
   {
@@ -90,30 +103,39 @@
    "label": "Variable cost"
   },
   {
+   "default": "0",
    "fieldname": "gradingassying_weigning_packingbagging_at_collection_point",
    "fieldtype": "Currency",
-   "label": "Grading/assying, weigning, packing/bagging at collection point (Rs.Y/Quintal)"
+   "label": "Grading/assying, weigning, packing/bagging at collection point (Rs.Y/Quintal)",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "local_transport_include_loading_unloading_collection_point",
    "fieldtype": "Currency",
-   "label": "Local transport (Include loading & unloading)- collection point to warehouse (Rs.Z/Quintal)"
+   "label": "Local transport (Include loading & unloading)- collection point to warehouse (Rs.Z/Quintal)",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "storing_warehousing_costs",
    "fieldtype": "Currency",
-   "label": "Storing/ Warehousing Costs (Rs.A/ Quintal)"
+   "label": "Storing/ Warehousing Costs (Rs.A/ Quintal)",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "transport_to_market_include_loading__unloading",
    "fieldtype": "Currency",
-   "label": "Transport to market (Include loading & unloading) (Rs.B/ Quintal)"
+   "label": "Transport to market (Include loading & unloading) (Rs.B/ Quintal)",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_variable_cost",
    "fieldtype": "Currency",
    "label": "Total Variable Cost",
-   "read_only_depends_on": "eval:doc.total_variable_cost > 0;"
+   "read_only": 1
   },
   {
    "fieldname": "column_break_lsau",
@@ -125,69 +147,84 @@
    "label": "Fixed Cost (yearly)"
   },
   {
+   "default": "0",
    "fieldname": "ceo_salary",
    "fieldtype": "Currency",
    "label": "CEO Salary"
   },
   {
+   "default": "0",
    "fieldname": "accountant_salary",
    "fieldtype": "Currency",
    "label": "Accountant Salary"
   },
   {
+   "default": "0",
    "fieldname": "store_keeper_salary",
    "fieldtype": "Currency",
    "label": "Store Keeper Salary"
   },
   {
+   "default": "0",
    "fieldname": "staff_travel",
    "fieldtype": "Currency",
    "label": "Staff Travel"
   },
   {
+   "default": "0",
    "fieldname": "store_rent",
    "fieldtype": "Currency",
    "label": "Store Rent"
   },
   {
+   "default": "0",
    "fieldname": "office_rent",
    "fieldtype": "Currency",
    "label": "Office Rent"
   },
   {
+   "default": "0",
    "fieldname": "utilities",
    "fieldtype": "Currency",
    "label": "Utilities"
   },
   {
+   "default": "0",
    "fieldname": "miscellanious",
    "fieldtype": "Currency",
    "label": "Miscellanious"
   },
   {
+   "default": "0",
    "fieldname": "collection_centre_rent",
    "fieldtype": "Currency",
    "label": "Collection centre rent"
   },
   {
+   "default": "0",
    "fieldname": "intangible_assetspre_operating_expenses_written_off",
    "fieldtype": "Currency",
    "label": "Intangible assets/Pre-operating expenses written off"
   },
   {
+   "default": "0",
    "fieldname": "depreciation",
    "fieldtype": "Currency",
-   "label": "Depreciation"
+   "label": "Depreciation",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "interest_on_loan",
    "fieldtype": "Currency",
    "label": "Interest on Loan"
   },
   {
+   "default": "0",
    "fieldname": "total_work_capital",
    "fieldtype": "Currency",
-   "label": "Total Work Capital"
+   "label": "Total Work Capital",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_krow",
@@ -203,34 +240,37 @@
    "label": "Net Profit (Per Year)"
   },
   {
-   "fieldname": "annual_turnover_total_income",
-   "fieldtype": "Currency",
-   "label": "Total Sales"
-  },
-  {
    "fieldname": "variable_cost_rate_tab",
    "fieldtype": "Tab Break",
    "label": "Variable cost (Rate)"
   },
   {
+   "default": "0",
    "fieldname": "gradingassying_weigning_packingbagging_at_collection_point_rate",
-   "fieldtype": "Currency",
-   "label": "Grading/assying, weigning, packing/bagging at collection point rate (Rs.Y/Quintal)"
+   "fieldtype": "Int",
+   "label": "Grading/assying, weigning, packing/bagging at collection point rate (Rs.Y/Quintal)",
+   "non_negative": 1
   },
   {
+   "default": "0",
    "fieldname": "local_transport_include_loading_unloading_rate",
-   "fieldtype": "Currency",
-   "label": "Local transport (Include loading & unloading)- collection point rate to warehouse (Rs.Z/Quintal)"
+   "fieldtype": "Int",
+   "label": "Local transport (Include loading & unloading)- collection point rate to warehouse (Rs.Z/Quintal)",
+   "non_negative": 1
   },
   {
+   "default": "0",
    "fieldname": "storing_warehousing_costs_rate",
-   "fieldtype": "Currency",
-   "label": "Storing/ Warehousing Costs Rate (Rs.A/ Quintal)"
+   "fieldtype": "Int",
+   "label": "Storing/ Warehousing Costs Rate (Rs.A/ Quintal)",
+   "non_negative": 1
   },
   {
+   "default": "0",
    "fieldname": "transport_to_market_include_loading_unloading_rate",
-   "fieldtype": "Currency",
-   "label": "Transport to market rate (Include loading & unloading) (Rs.B/ Quintal)"
+   "fieldtype": "Int",
+   "label": "Transport to market rate (Include loading & unloading) (Rs.B/ Quintal)",
+   "non_negative": 1
   },
   {
    "fieldname": "column_break_ubrl",
@@ -245,34 +285,36 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "FPO Name",
-   "options": "FPO Profiling",
-   "reqd": 1,
-   "unique": 1
+   "options": "FPO",
+   "reqd": 1
   },
   {
+   "default": "0",
    "fieldname": "gross_profit_loss",
    "fieldtype": "Currency",
-   "label": "Gross Profit /Loss (Total Sales- Total Expence)"
+   "label": "Gross Profit /Loss (Total Sales- Total Expence)",
+   "read_only": 1
   },
   {
-   "fieldname": "total_expence",
-   "fieldtype": "Currency",
-   "label": "Total Expence"
-  },
-  {
+   "default": "0",
    "fieldname": "total_income_including_input_and_output_side",
    "fieldtype": "Currency",
-   "label": "Total Income (Including Input and Output Side)"
+   "label": "Total Income (Including Input and Output Side)",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_fixed_and_variable_cost",
    "fieldtype": "Currency",
-   "label": "Total Fixed and Variable Cost"
+   "label": "Total Fixed and Variable Cost",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "gross_profit_loss_total_income_total_cost",
    "fieldtype": "Currency",
-   "label": "Gross Profit /Loss (Total Income- Total Cost)"
+   "label": "Gross Profit /Loss (Total Income- Total Cost)",
+   "read_only": 1
   },
   {
    "fieldname": "private_partner_linkage_developed_section",
@@ -280,20 +322,124 @@
    "label": "Private Partner Linkage Developed"
   },
   {
+   "bold": 1,
+   "default": "0",
    "fieldname": "input",
-   "fieldtype": "Data",
-   "label": "Input"
+   "fieldtype": "Int",
+   "label": "Input",
+   "non_negative": 1
   },
   {
+   "default": "0",
    "fieldname": "output",
-   "fieldtype": "Data",
-   "label": "Output"
+   "fieldtype": "Int",
+   "label": "Output",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "loss_percent_details_section",
+   "fieldtype": "Section Break",
+   "label": "Weight Loss Percent Details"
+  },
+  {
+   "fieldname": "variable_cost_rate_section",
+   "fieldtype": "Section Break",
+   "label": "Variable cost (Rate)"
+  },
+  {
+   "default": "0",
+   "fieldname": "weight_loss_percent",
+   "fieldtype": "Int",
+   "label": "Weight Loss Percent",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_income_of_fpo_from_output",
+   "fieldtype": "Currency",
+   "label": "Total Income of FPO from Output",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_income_of_fpo_from_input",
+   "fieldtype": "Currency",
+   "label": "Total Income of FPO from Input",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_weight_loss_",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Total weight Loss",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gvkh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fixed_cost_yearly__section",
+   "fieldtype": "Section Break",
+   "label": "Fixed Cost (yearly)"
+  },
+  {
+   "default": "3",
+   "fieldname": "depreciation_percent",
+   "fieldtype": "Int",
+   "label": "Depreciation Percent",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_sales",
+   "fieldtype": "Currency",
+   "label": "Total Sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_output_selling_priceincome_rs",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total Output selling price/income (Rs)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_input_selling_priceincome_rs",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total Input selling price/income (Rs)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_expense",
+   "fieldtype": "Currency",
+   "label": "Total Expense",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_output_purchase_price_rs",
+   "fieldtype": "Currency",
+   "label": "Total Output Purchase price (Rs)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_input_purchase_price_rs",
+   "fieldtype": "Currency",
+   "label": "Total Input Purchase price (Rs)",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-08 10:24:16.137318",
+ "modified": "2024-07-11 10:48:28.886520",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",
