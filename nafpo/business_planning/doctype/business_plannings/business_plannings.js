@@ -18,13 +18,24 @@ const apply_fpo_filter_on_child_crop_name = async (table, crop_name_field) => {
 }
 frappe.ui.form.on("Business Plannings", {
     async refresh(frm) {
+        apply_filter('operation_system', 'fpo', frm, frm.doc.financial_year)
         await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
         await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
     },
+    // validate(frm) {
+    //     if (frm.doc.weight_loss_percent > 100) {
+    //         frappe.throw('Weight loss percentage cannot be greater than 100.')
+    //     }
+    // },
     async fpo(frm) {
         await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
         await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
-    }
+    },
+    // weight_loss_percent(frm) {
+    //     if (frm.doc.weight_loss_percent > 100) {
+    //         frappe.throw('Weight loss percentage cannot be greater than 100.')
+    //     }
+    // }
 });
 
 frappe.ui.form.on('Output Side Child', {
@@ -65,3 +76,20 @@ frappe.ui.form.on('Input Side Child', {
         }
     }
 })
+
+
+async function filter_financial_year(field_name, filter_on, frm, first_value = '01-01-2022', second_value = '01-01-2025') {
+    frm.fields_dict[field_name].get_query = () => {
+        // Ensure both first_value and second_value are provided
+        if (first_value === undefined || second_value === undefined) {
+            throw new Error('Both first_value and second_value must be provided for BETWEEN filter.');
+        }
+
+        return {
+            filters: [
+                [filter_on, 'BETWEEN', [first_value, second_value]]
+            ],
+            page_length: 1000
+        };
+    };
+};
