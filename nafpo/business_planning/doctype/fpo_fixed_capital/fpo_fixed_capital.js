@@ -10,8 +10,6 @@ frappe.ui.form.on("FPO Fixed Capital", {
             "Office Furniture",
             "Computer & accessories"
         ];
-        // frm.clear_table('fixed_capital_details_table');
-        // Ensure items are added only once when the form is new
         if (frm.is_new()) {
             if (!frm.doc.fixed_capital_details_table || frm.doc.fixed_capital_details_table.length === 0) {
                 for (const item of fixedCapitalItems) {
@@ -20,20 +18,5 @@ frappe.ui.form.on("FPO Fixed Capital", {
                 frm.refresh_field('fixed_capital_details_table');
             }
         }
-        // if (frm.is_new()) {
-        //     for (item of fixedCapitalItems) {
-        //         frm.add_child('fixed_capital_details_table', { 'item': item })
-        //     }
-        //     frm.refresh_field('fixed_capital_details_table')
-        // }
     },
-    staff_details_table(frm) {
-        console.log(frm)
-    }
 });
-
-// frappe.ui.form.on('FPO Fixed Capital ', {
-//     fixed_capital_details_table_add: function (frm) {
-//         console.log(frm)
-//     }
-// })

@@ -110,3 +110,15 @@ class BusinessPlannings(Document):
         self.total_fixed_and_variable_cost = self.total_variable_cost + self.total_work_capital
     # Gross Profit /Loss (Total Income- Total Cost)
         self.gross_profit_loss_total_income_total_cost = (self.total_output_selling_priceincome_rs + self.total_input_selling_priceincome_rs) - self.total_fixed_and_variable_cost
+        
+    # Check if FPO Fixed Capital already exists for this financial year and FPO
+        exists = frappe.db.exists({
+            "doctype": "Business Plannings",
+            "financial_year": self.financial_year,
+            "fpo": self.fpo
+        })
+        if exists and exists != self.name:
+            fpo = frappe.get_doc('FPO', self.fpo)
+            fy = frappe.get_doc('Financial Year', self.financial_year)
+            frappe.throw(f'Financial Year {fy.financial_year_name} already exists for the {fpo.fpo_name}')
+
