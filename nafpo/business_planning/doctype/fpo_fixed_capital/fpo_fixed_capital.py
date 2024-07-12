@@ -2,6 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
+from frappe import _
 from frappe.model.document import Document
 
 
@@ -20,4 +21,5 @@ class FPOFixedCapital(Document):
 			})
 		if exists and exists != self.name:
 			fpo = frappe.get_doc('FPO',self.fpo)
-			frappe.throw(_(f'Financial Year {self.financial_year} already exists for the {fpo.fpo_name}'))
+			fy = frappe.get_doc('Financial Year', self.financial_year)
+			frappe.throw(_(f'Financial Year {fy.financial_year_name} already exists for the {fpo.fpo_name}'))

@@ -23,35 +23,12 @@ frappe.ui.form.on("Business Plannings", {
         await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
         await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
     },
-    // validate(frm) {
-    //     if (frm.doc.weight_loss_percent > 100) {
-    //         frappe.throw('Weight loss percentage cannot be greater than 100.')
-    //     }
-    // },
     async fpo(frm) {
         await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
         await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
     },
-    // weight_loss_percent(frm) {
-    //     if (frm.doc.weight_loss_percent > 100) {
-    //         frappe.throw('Weight loss percentage cannot be greater than 100.')
-    //     }
-    // }
     onload: function (frm) {
         filter_financial_year('financial_year', 'start_date', frm)
-        // var currentYear = new Date().getFullYear();
-        // var startYear = currentYear - 2;
-        // var endYear = currentYear + 4;
-        // frm.fields_dict['financial_year'].get_query = function () {
-        //     return {
-        //         filters: {
-        //             'start_date': ['>', `${startYear}-01-01`],
-        //             'end_date': ['<', `${endYear}-01-01`],
-        //         },
-        //         page_length: 1000
-
-        //     };
-        // };
     }
 });
 async function filter_financial_year(field_name, filter_on, frm) {
@@ -62,7 +39,7 @@ async function filter_financial_year(field_name, filter_on, frm) {
     frm.fields_dict[field_name].get_query = () => {
         return {
             filters: [
-                [filter_on, 'BETWEEN', [`${startYear}-01-01`, `${endYear}-01-01`]]
+                [filter_on, 'BETWEEN', [`${startYear}-04-01`, `${endYear}-3-31`]]
             ],
             page_length: 1000
         };
