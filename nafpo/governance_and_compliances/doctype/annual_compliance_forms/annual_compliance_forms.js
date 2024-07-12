@@ -20,18 +20,6 @@ frappe.ui.form.on("Annual Compliance Forms", {
             frm.fields_dict[field].$input.datepicker({ maxDate: new Date() });
         });
     },
-    onload: function (frm) {
-        // let date = new Date();
-        // date.setFullYear(date.getFullYear() + 1);
-        // let formattedDate = date.toISOString().split('T')[0];
-        // frm.set_value('aoc_4_due_date', formattedDate);
-        // frm.set_value('mgt_7_due_date', formattedDate);
-        // frm.set_value('adt_1_due_date', formattedDate);
-        // frm.set_value('d_kyc_due_date', formattedDate);
-        // frm.set_value('it_return_due_date', formattedDate);
-        // frm.set_value('agm_due_date', formattedDate);
-        // frm.save();
-    },
     fpo(frm) {
         set_due_date(frm)
     },

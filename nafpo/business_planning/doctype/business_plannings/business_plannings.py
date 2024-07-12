@@ -1,5 +1,6 @@
 import frappe
 from frappe.model.document import Document
+from frappe.utils import today
 
 class BusinessPlannings(Document):
     def before_save(self):
