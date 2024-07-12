@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_copy": 1,
  "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:FPO-P-{#####}",
@@ -35,9 +36,9 @@
   "staff_details_table",
   "licence_details_for_seeds_section",
   "licence_number_for_seeds",
-  "license_doc_for_seed",
   "date_of_expiry_for_seeds",
   "column_break_nycb",
+  "license_doc_for_seed",
   "licence_details_for_fertilizer_section",
   "licence_number_for_fertilizer",
   "date_of_expiry_for_fertilizer",
@@ -184,7 +185,7 @@
   },
   {
    "fieldname": "licence_number_for_fertilizer",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Licence Number",
    "non_negative": 1
   },
@@ -195,7 +196,7 @@
   },
   {
    "fieldname": "licence_number_for_pesticide",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Licence number",
    "non_negative": 1
   },
@@ -307,7 +308,7 @@
   },
   {
    "fieldname": "licence_number_for_seed_production",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Licence number"
   },
   {
@@ -414,7 +415,7 @@
    "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-07-09 10:39:00.164595",
+ "modified": "2024-07-11 17:23:53.120058",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
