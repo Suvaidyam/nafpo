@@ -185,7 +185,7 @@
   },
   {
    "fieldname": "licence_number_for_fertilizer",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Licence Number",
    "non_negative": 1
   },
@@ -196,7 +196,7 @@
   },
   {
    "fieldname": "licence_number_for_pesticide",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Licence number",
    "non_negative": 1
   },
@@ -308,7 +308,7 @@
   },
   {
    "fieldname": "licence_number_for_seed_production",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Licence number"
   },
   {
@@ -415,7 +415,7 @@
    "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-07-11 17:23:53.120058",
+ "modified": "2024-07-12 18:57:36.620269",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
