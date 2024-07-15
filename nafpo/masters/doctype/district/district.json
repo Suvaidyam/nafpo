@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "hash",
+ "autoname": "format:D-{####}",
  "creation": "2024-05-09 07:39:34.744974",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -46,11 +46,11 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-02 12:38:51.275376",
+ "modified": "2024-07-05 11:42:00.205128",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "District",
- "naming_rule": "Random",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

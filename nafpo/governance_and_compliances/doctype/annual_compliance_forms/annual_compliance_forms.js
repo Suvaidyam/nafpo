@@ -10,6 +10,7 @@ frappe.ui.form.on("Annual Compliance Forms", {
                     args: { doctype: "Nafpo User", name: frappe.session.user }
                 });
                 frm.set_value('fpo', fpo)
+                set_due_date(frm)
             } catch (e) {
                 console.error('User data fetch error:', e);
             }
@@ -19,17 +20,8 @@ frappe.ui.form.on("Annual Compliance Forms", {
             frm.fields_dict[field].$input.datepicker({ maxDate: new Date() });
         });
     },
-    onload: function (frm) {
-        let date = new Date();
-        date.setFullYear(date.getFullYear() + 1);
-        let formattedDate = date.toISOString().split('T')[0];
-        frm.set_value('aoc_4_due_date', formattedDate);
-        frm.set_value('mgt_7_due_date', formattedDate);
-        frm.set_value('adt_1_due_date', formattedDate);
-        frm.set_value('d_kyc_due_date', formattedDate);
-        frm.set_value('it_return_due_date', formattedDate);
-        frm.set_value('agm_due_date', formattedDate);
-        frm.save();
+    fpo(frm) {
+        set_due_date(frm)
     },
     aoc_4_status(frm) {
         blank_submitted_on(frm, 'aoc_4_status', 'aoc_4_submitted_on');
@@ -61,4 +53,31 @@ function blank_submitted_on(frm, status_field, date_field) {
     if (frm.doc[status_field] == "Pending") {
         frm.set_value(date_field, '');
     }
+}
+
+function set_due_date(frm) {
+    frappe.call({
+        method: "nafpo.apis.api.get_fpo_profile_doc",
+        args: {
+            doctype_name: 'FPO Profiling',
+            filter: frm.doc.fpo
+        },
+        callback: function (response) {
+            if (response.message == undefined) {
+                frappe.throw("FPO Profile doesn't exist. Please create FPO Profiling.")
+            }
+            let date = new Date(response.message.date_of_registration);
+            date.setFullYear(date.getFullYear() + 1);
+            let formattedDate = date.toISOString().split('T')[0];
+            frm.set_value('aoc_4_due_date', formattedDate);
+            frm.set_value('mgt_7_due_date', formattedDate);
+            frm.set_value('adt_1_due_date', formattedDate);
+            frm.set_value('d_kyc_due_date', formattedDate);
+            frm.set_value('it_return_due_date', formattedDate);
+            frm.set_value('agm_due_date', formattedDate);
+        },
+        error: function (error) {
+            console.log("An error occurred: ", error);
+        }
+    });
 }

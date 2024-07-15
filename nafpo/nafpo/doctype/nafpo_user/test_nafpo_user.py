@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestNafpoUser(FrappeTestCase):
+class TestNAFPOUser(FrappeTestCase):
 	pass

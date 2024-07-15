@@ -7,10 +7,13 @@
  "engine": "InnoDB",
  "field_order": [
   "fpo",
-  "fpo_name",
   "cbbo",
   "ia",
-  "table_nprj"
+  "column_break_ggkk",
+  "financial_year",
+  "section_break_pktz",
+  "fixed_capital_details_table",
+  "total_value"
  ],
  "fields": [
   {
@@ -19,14 +22,14 @@
    "in_list_view": 1,
    "label": "FPO",
    "options": "FPO",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fetch_from": "fpo.cbbo_name",
    "fieldname": "cbbo",
    "fieldtype": "Link",
    "hidden": 1,
+   "in_list_view": 1,
    "label": "CBBO",
    "options": "CBBO"
   },
@@ -35,26 +38,45 @@
    "fieldname": "ia",
    "fieldtype": "Link",
    "hidden": 1,
+   "in_list_view": 1,
    "label": "IA",
    "options": "IA"
   },
   {
-   "fieldname": "table_nprj",
-   "fieldtype": "Table",
-   "options": "FPO Fixed Capital Child"
+   "fieldname": "financial_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Financial Year",
+   "options": "Financial Year",
+   "reqd": 1
   },
   {
-   "fieldname": "fpo_name",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "FPO Name",
-   "unique": 1
+   "fieldname": "column_break_ggkk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_pktz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_value",
+   "fieldtype": "Currency",
+   "label": "Total Value",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "fixed_capital_details_table",
+   "fieldtype": "Table",
+   "label": "Fixed Capital Details",
+   "options": "FPO Fixed Capital Child"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-26 13:00:16.496569",
+ "modified": "2024-07-12 13:43:23.603926",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "FPO Fixed Capital",
@@ -70,6 +92,47 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IA",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CBBO",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "FPO",
    "share": 1,
    "write": 1
   }

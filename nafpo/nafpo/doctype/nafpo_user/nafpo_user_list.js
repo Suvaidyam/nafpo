@@ -1,5 +1,5 @@
 
-frappe.listview_settings['Nafpo User'] = {
+frappe.listview_settings['NAFPO User'] = {
     refresh: function (listview) {
         $('use.like-icon').hide();
         $('.list-row-activity').hide();

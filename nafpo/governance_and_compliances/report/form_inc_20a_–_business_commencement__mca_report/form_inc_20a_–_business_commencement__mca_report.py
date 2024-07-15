@@ -60,7 +60,7 @@ def execute(filters=None):
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON otorf.fpo = fpo_profiling.name_of_the_fpo
             WHERE
-                {' AND '.join(conditions)}  {cond_str}
+                {' AND '.join(conditions)} {cond_str}
             GROUP BY
                 fpo_profiling.name_of_the_fpo_copy
         """

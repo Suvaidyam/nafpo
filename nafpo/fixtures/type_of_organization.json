@@ -2,13 +2,6 @@
  {
   "docstatus": 0,
   "doctype": "Type of Organization",
-  "modified": "2024-06-25 12:25:21.655596",
-  "name": "Producer Company",
-  "type_of_organization": "Producer Company"
- },
- {
-  "docstatus": 0,
-  "doctype": "Type of Organization",
   "modified": "2024-06-25 12:26:56.844335",
   "name": "Trust",
   "type_of_organization": "Trust"
@@ -19,5 +12,12 @@
   "modified": "2024-06-25 12:26:46.072448",
   "name": "Co operative",
   "type_of_organization": "Co operative"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Type of Organization",
+  "modified": "2024-06-25 12:25:21.655596",
+  "name": "Producer Company",
+  "type_of_organization": "Producer Company"
  }
 ]
