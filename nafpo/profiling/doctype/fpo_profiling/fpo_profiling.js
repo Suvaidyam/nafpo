@@ -3,6 +3,10 @@
 let deleted_staff = [];
 frappe.ui.form.on("FPO Profiling", {
     async refresh(frm) {
+        await apply_filter('district_name', 'state', frm, frm.doc.state_name)
+        await apply_filter('block_name', 'district', frm, frm.doc.district_name)
+        await apply_filter('name_of_the_fpo', 'district', frm, frm.doc.district_name)
+        await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)
         const today = new Date();
         frm.fields_dict.date_of_incorporation.$input.datepicker({ maxDate: today });
         frm.fields_dict.date_of_registration.$input.datepicker({ maxDate: today });
@@ -18,17 +22,13 @@ frappe.ui.form.on("FPO Profiling", {
             'block_name', 'district_name', 'name_of_the_fpo', 'type_of_organization'
         ])
         extend_options_length(frm, ['district_name', 'name_of_the_fpo', 'bod_kyc_name', 'name_of_cbbo', 'cbbo'])
-        await apply_filter('district_name', 'state', frm, frm.doc.state_name)
-        await apply_filter('block_name', 'district', frm, frm.doc.district_name)
-        await apply_filter('name_of_the_fpo', 'district', frm, frm.doc.district_name)
-        await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)
     },
     validate(frm) {
         integer_length_validator(frm.doc.accountant_contact_number, 10, 'Accountant Contact Number');
         integer_length_validator(frm.doc.ceo_contact_number, 10, 'CEO Contact Number');
-        frm.doc.staff_details_table.forEach(row => {
-            // console.log('Row during validate:', row);
-        });
+        // frm.doc.staff_details_table.forEach(row => {
+        //     // console.log('Row during validate:', row);
+        // });
     },
     before_save(frm) {
         frm.doc.deleted_staff_rows = deleted_staff;
