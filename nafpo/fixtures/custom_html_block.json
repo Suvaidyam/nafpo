@@ -194,23 +194,23 @@
   "doctype": "Custom HTML Block",
   "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Membership System Capacity Buidling</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=Yes\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px;\">No. of FPOs participated at least 1 training</div>\n      <div class=\"data\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=No\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px;\">No. of FPOs not participated at training</div>\n      <div class=\"data1\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n\n\n\n\n\n",
   "modified": "2024-06-29 10:56:00.443909",
-  "name": "Membership System Capacity Buidling.",
+  "name": "Membership System Capacity Building.",
   "private": 0,
   "roles": [
    {
-    "parent": "Membership System Capacity Buidling.",
+    "parent": "Membership System Capacity Building.",
     "parentfield": "roles",
     "parenttype": "Custom HTML Block",
     "role": "IA"
    },
    {
-    "parent": "Membership System Capacity Buidling.",
+    "parent": "Membership System Capacity Building.",
     "parentfield": "roles",
     "parenttype": "Custom HTML Block",
     "role": "CBBO"
    },
    {
-    "parent": "Membership System Capacity Buidling.",
+    "parent": "Membership System Capacity Building.",
     "parentfield": "roles",
     "parenttype": "Custom HTML Block",
     "role": "Admin"

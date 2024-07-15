@@ -6,6 +6,7 @@ frappe.ui.form.on("Crop Type", {
         hide_advance_search(frm, ['state', 'fpo', 'single_state', 'single_fpo'])
         extend_options_length(frm, ['state', 'fpo', 'single_state', 'single_fpo'])
         apply_filter('fpo', 'state', frm, frm.doc.state, multiSelectParent = true)
+        apply_filter('single_fpo', 'state', frm, frm.doc.single_state)
     },
     before_save: function (frm) {
         if (frm.doc.__islocal) {
