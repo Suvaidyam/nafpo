@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:name1",
+ "autoname": "format:SA-{####}",
  "creation": "2024-05-26 14:11:38.177129",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -22,11 +22,11 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-01 19:17:18.020170",
+ "modified": "2024-07-05 12:34:01.324165",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Supporting Agencies",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -76,7 +76,9 @@
    "share": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "name1"
 }

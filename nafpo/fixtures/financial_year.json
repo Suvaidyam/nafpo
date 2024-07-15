@@ -2,19 +2,91 @@
  {
   "docstatus": 0,
   "doctype": "Financial Year",
-  "end": "2025-03-31",
-  "modified": "2024-06-01 18:56:49.234733",
-  "name": "2024-25",
-  "start": "2024-04-01",
-  "year": "2024-25"
+  "end_date": "2021-03-31",
+  "financial_year_name": "2020-21",
+  "modified": "2024-07-12 11:23:27.849569",
+  "name": "FY-130",
+  "start_date": "2020-04-01"
  },
  {
   "docstatus": 0,
   "doctype": "Financial Year",
-  "end": "2024-03-31",
-  "modified": "2024-06-01 18:57:04.672118",
-  "name": "2023-24",
-  "start": "2023-04-01",
-  "year": "2023-24"
+  "end_date": "2022-04-01",
+  "financial_year_name": "2021-22",
+  "modified": "2024-07-12 11:23:53.613009",
+  "name": "FY-131",
+  "start_date": "2021-04-01"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Financial Year",
+  "end_date": "2023-04-01",
+  "financial_year_name": "2022-23",
+  "modified": "2024-07-12 12:02:32.323219",
+  "name": "FY-132",
+  "start_date": "2022-04-01"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Financial Year",
+  "end_date": "2024-04-01",
+  "financial_year_name": "2023-24",
+  "modified": "2024-07-12 12:02:40.734352",
+  "name": "FY-133",
+  "start_date": "2023-04-01"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Financial Year",
+  "end_date": "2025-04-01",
+  "financial_year_name": "2024-25",
+  "modified": "2024-07-12 12:02:49.627671",
+  "name": "FY-134",
+  "start_date": "2024-04-01"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Financial Year",
+  "end_date": "2026-04-01",
+  "financial_year_name": "2025-26",
+  "modified": "2024-07-12 12:02:59.903607",
+  "name": "FY-135",
+  "start_date": "2025-04-01"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Financial Year",
+  "end_date": "2027-04-01",
+  "financial_year_name": "2026-27",
+  "modified": "2024-07-12 12:03:09.503609",
+  "name": "FY-136",
+  "start_date": "2026-04-01"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Financial Year",
+  "end_date": "2028-04-01",
+  "financial_year_name": "2027-28",
+  "modified": "2024-07-12 12:03:18.180144",
+  "name": "FY-137",
+  "start_date": "2027-04-01"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Financial Year",
+  "end_date": "2029-04-01",
+  "financial_year_name": "2028-29",
+  "modified": "2024-07-12 12:03:25.881050",
+  "name": "FY-138",
+  "start_date": "2028-04-01"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Financial Year",
+  "end_date": "2030-04-01",
+  "financial_year_name": "2029-30",
+  "modified": "2024-07-12 12:03:32.733629",
+  "name": "FY-139",
+  "start_date": "2029-04-01"
  }
 ]

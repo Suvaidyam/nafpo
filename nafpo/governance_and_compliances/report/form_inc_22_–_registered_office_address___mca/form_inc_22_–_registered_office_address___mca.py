@@ -11,19 +11,19 @@ def execute(filters=None):
             "width": 400
         },
         {
-            "fieldname": "pending_count",
+            "fieldname": "pending",
             "label": "Pending",
             "fieldtype": "Int",
             "width": 300
         },
         {
-            "fieldname": "completed_before_due_date_count",
+            "fieldname": "completed_before_due_date",
             "label": "Completed Before Due Date",
             "fieldtype": "Int",
             "width": 300
         },
         {
-            "fieldname": "completed_after_due_date_count",
+            "fieldname": "completed_after_due_date",
             "label": "Completed After Due Date",
             "fieldtype": "Int",
             "width": 300
@@ -40,13 +40,13 @@ def execute(filters=None):
     sql_query = f"""
         SELECT
             'Form INC-22 - Registered office Address - MCA' AS name,
-            COUNT(CASE WHEN inc_22_status = 'Pending' THEN 1 END) AS pending_count,
-            COUNT(CASE WHEN inc_22_status = 'Completed' AND inc_22_submitted_on <= inc_22_due_date THEN 1 END) AS completed_before_due_date_count,
-            COUNT(CASE WHEN inc_22_status = 'Completed' AND inc_22_submitted_on > inc_22_due_date THEN 1 END) AS completed_after_due_date_count
+            COUNT(CASE WHEN inc_22_status = 'Pending' THEN fpo END) AS pending,
+            COUNT(CASE WHEN inc_22_status = 'Completed' AND inc_22_submitted_on <= inc_22_due_date THEN fpo END) AS completed_before_due_date,
+            COUNT(CASE WHEN inc_22_status = 'Completed' AND inc_22_submitted_on > inc_22_due_date THEN fpo END) AS completed_after_due_date
         FROM
             `tabOne Time Organization Registration Forms`
-        WHERE
-            {cond_str}
+        # WHERE
+        #     {cond_str}
     """
 
     # Execute the SQL query and fetch data

@@ -1,143 +1,145 @@
 {
-    "actions": [],
-    "allow_import": 1,
-    "allow_rename": 1,
-    "autoname": "format:BOD-{###}",
-    "creation": "2024-06-13 14:57:14.469653",
-    "doctype": "DocType",
-    "engine": "InnoDB",
-    "field_order": [
-        "fpo",
-        "cbbo",
-        "ia",
-        "financial_year",
-        "status",
-        "date",
-        "fpo_member"
-    ],
-    "fields": [
-        {
-            "fieldname": "fpo",
-            "fieldtype": "Link",
-            "in_list_view": 1,
-            "label": "FPO",
-            "options": "FPO",
-            "reqd": 1
-        },
-        {
-            "fieldname": "financial_year",
-            "fieldtype": "Link",
-            "in_list_view": 1,
-            "label": "Financial Year",
-            "options": "Financial Year",
-            "reqd": 1
-        },
-        {
-            "depends_on": "eval:doc.status == \"Completed\"",
-            "fieldname": "date",
-            "fieldtype": "Date",
-            "label": "Metting Date",
-            "mandatory_depends_on": "eval:doc.status == \"Completed\""
-        },
-        {
-            "default": "Pending",
-            "fieldname": "status",
-            "fieldtype": "Autocomplete",
-            "in_list_view": 1,
-            "label": "Status",
-            "options": "Pending\nCompleted",
-            "reqd": 1
-        },
-        {
-            "fieldname": "fpo_member",
-            "fieldtype": "Table MultiSelect",
-            "label": "FPO member",
-            "options": "FPO member details Child"
-        },
-        {
-            "fetch_from": "fpo.cbbo_name",
-            "fieldname": "cbbo",
-            "fieldtype": "Link",
-            "hidden": 1,
-            "label": "CBBO",
-            "options": "CBBO"
-        },
-        {
-            "fetch_from": "cbbo.ia_name",
-            "fieldname": "ia",
-            "fieldtype": "Link",
-            "hidden": 1,
-            "label": "IA",
-            "options": "IA"
-        }
-    ],
-    "hide_toolbar": 1,
-    "index_web_pages_for_search": 1,
-    "links": [],
-    "modified": "2024-07-03 10:50:07.779948",
-    "modified_by": "Administrator",
-    "module": "Governance and compliances",
-    "name": "Board of Directors Meeting Forms",
-    "naming_rule": "Expression",
-    "owner": "Administrator",
-    "permissions": [
-        {
-            "create": 1,
-            "delete": 1,
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "System Manager",
-            "share": 1,
-            "write": 1
-        },
-        {
-            "create": 1,
-            "delete": 1,
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "FPO",
-            "share": 1,
-            "write": 1
-        },
-        {
-            "create": 1,
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "IA",
-            "share": 1,
-            "write": 1
-        },
-        {
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "Admin",
-            "share": 1,
-            "write": 1
-        },
-        {
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "CBBO",
-            "share": 1,
-            "write": 1
-        }
-    ],
-    "sort_field": "creation",
-    "sort_order": "DESC",
-    "states": []
+ "actions": [],
+ "allow_copy": 1,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:BOD-{###}",
+ "creation": "2024-06-13 14:57:14.469653",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "fpo",
+  "cbbo",
+  "ia",
+  "financial_year",
+  "status",
+  "date",
+  "fpo_member"
+ ],
+ "fields": [
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "FPO",
+   "options": "FPO",
+   "reqd": 1
+  },
+  {
+   "fieldname": "financial_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Financial Year",
+   "options": "Financial Year",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.status == \"Completed\"",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Metting Date",
+   "mandatory_depends_on": "eval:doc.status == \"Completed\""
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Autocomplete",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Pending\nCompleted",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fpo_member",
+   "fieldtype": "Table MultiSelect",
+   "label": "FPO member",
+   "options": "FPO member details Child",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "fpo.cbbo_name",
+   "fieldname": "cbbo",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "CBBO",
+   "options": "CBBO"
+  },
+  {
+   "fetch_from": "cbbo.ia_name",
+   "fieldname": "ia",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "IA",
+   "options": "IA"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-11 18:20:19.772821",
+ "modified_by": "Administrator",
+ "module": "Governance and compliances",
+ "name": "Board of Directors Meeting Forms",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "FPO",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IA",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CBBO",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
 }

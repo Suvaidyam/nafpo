@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "hash",
+ "autoname": "format:B-{#####}",
  "creation": "2024-05-09 07:40:59.701107",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -40,8 +40,7 @@
   {
    "fieldname": "block_code",
    "fieldtype": "Data",
-   "label": "Block Code",
-   "unique": 1
+   "label": "Block Code"
   },
   {
    "default": "Active",
@@ -55,11 +54,11 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-02 12:39:26.770281",
+ "modified": "2024-07-06 11:28:28.373648",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Block",
- "naming_rule": "Random",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

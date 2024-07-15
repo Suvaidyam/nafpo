@@ -2,21 +2,24 @@
 # For license information, please see license.txt
 
 import frappe
+from frappe import _
 from frappe.model.document import Document
 
 
 class FPOFixedCapital(Document):
-	def before_validate(self):
+	def before_save(self):
+		total_value = 0
+		fixed_capital_details_row = self.fixed_capital_details_table
+		for row in fixed_capital_details_row:
+			total_value += row.value
+		self.total_value = total_value
+	# Check FPO
 		exists = frappe.db.exists({
-			"doctype": "FPO Fixed Capital", 
-			"fpo": self.fpo
-		})
-		data_exists = bool(exists)
-		if data_exists and exists != self.name:
-			frappe.throw(f"FPO already exists in FPO Fixed Capital")
-
-	# def before_save(self):
-	# 	fpo_profile_name = frappe.get_doc('FPO', self.fpo)
-	# 	self.fpo_name = fpo_profile_name.fpo_name
-	# def before_save(self):
-	# 	print('==========================================',self.value)
+				"doctype": "FPO Fixed Capital",
+				"financial_year": self.financial_year,
+				"fpo":self.fpo
+			})
+		if exists and exists != self.name:
+			fpo = frappe.get_doc('FPO',self.fpo)
+			fy = frappe.get_doc('Financial Year', self.financial_year)
+			frappe.throw(_(f'Financial Year {fy.financial_year_name} already exists for the {fpo.fpo_name}'))
