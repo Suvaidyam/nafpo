@@ -25,7 +25,7 @@ class BusinessPlannings(Document):
         # Total selling price/income (Rs)
             row.total_selling_priceincome_rs = row.quantity_available_for_sale_default_deducted_x_for_weight_loss * row.expected_unit_selling_price_per_quintals
         # Total Income of FPO from Output
-            row.total_income_of_fpo_from_output = row.total_selling_priceincome_rs * row.total_purchase_price_rs
+            row.total_income_of_fpo_from_output = row.total_selling_priceincome_rs - row.total_purchase_price_rs
         # Total  
             total_output_income += row.total_income_of_fpo_from_output
             total_weight_loss += row.quantity_available_for_sale_default_deducted_x_for_weight_loss

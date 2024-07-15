@@ -12,7 +12,9 @@ frappe.ui.form.on("Capacity", {
             try {
                 let { message: { fpo } } = await frappe.call({
                     method: "frappe.client.get",
-                    args: { doctype: "Nafpo User", name: frappe.session.user }
+                    args: {
+                        doctype: "NAFPO User", name: frappe.session.user
+                    }
                 });
                 frm.set_value('fpo', fpo)
             } catch (e) {
