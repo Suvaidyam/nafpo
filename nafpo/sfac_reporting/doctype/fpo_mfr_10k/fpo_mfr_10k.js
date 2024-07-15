@@ -7,10 +7,12 @@ frappe.ui.form.on("FPO MFR 10K", {
             try {
                 let { message: { fpo } } = await frappe.call({
                     method: "frappe.client.get",
-                    args: { doctype: "Nafpo User", name: frappe.session.user }
+                    args: {
+                        doctype: "NAFPO User", name: frappe.session.user
+                    }
                 });
-                frm.set_value('fpo', fpo)
-                set_due_date(frm)
+                frm.set_value('fpo', fpo);
+                set_due_date(frm);
             } catch (e) {
                 console.error('User data fetch error:', e);
             }
