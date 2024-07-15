@@ -3,14 +3,17 @@
 
 frappe.ui.form.on("FPO MFR 10K", {
     refresh: async function (frm) {
+        console.log('OUT :>> ', frappe.session.user);
         if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
+            console.log('frappe.session.user :>> ', frappe.session.user);
             try {
-                let { message: { fpo } } = await frappe.call({
-                    method: "frappe.client.get",
+                let fpo = await frappe.call({
+                    method: "frappe.client.get_single_value",
                     args: {
-                        doctype: "NAFPO User", name: frappe.session.user
+                        doctype: "NAFPO User", name: frappe.session.user, field: 'name'
                     }
                 });
+                console.log('fpo :>> ', fpo);
                 frm.set_value('fpo', fpo);
                 set_due_date(frm);
             } catch (e) {

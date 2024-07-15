@@ -7,7 +7,9 @@ frappe.ui.form.on("Annual Compliance Forms", {
             try {
                 let { message: { fpo } } = await frappe.call({
                     method: "frappe.client.get",
-                    args: { doctype: "Nafpo User", name: frappe.session.user }
+                    args: {
+                        doctype: "NAFPO User", email: frappe.session.user
+                    }
                 });
                 frm.set_value('fpo', fpo)
                 set_due_date(frm)
