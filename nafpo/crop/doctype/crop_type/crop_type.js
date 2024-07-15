@@ -1,5 +1,28 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
+
+async function apply_filter(field_name, filter_on, frm, filter_value, multiSelectParent = false) {
+    frm.fields_dict[field_name].get_query = () => {
+        if (multiSelectParent) {
+            let values = filter_value.map(val => val[filter_on]) || frm.doc[filter_on].map(val => val[filter_on]);
+            return {
+                filters: [
+                    [filter_on, 'IN', values],
+                ],
+                page_length: 1000
+            };
+        } else {
+            let filter = filter_value || frm.doc[filter_on] || `please select ${filter_on}`;
+            return {
+                filters: {
+                    [filter_on]: filter,
+                },
+                page_length: 1000
+            };
+        }
+    };
+};
+
 let new_entry = false;
 frappe.ui.form.on("Crop Type", {
     refresh(frm) {
