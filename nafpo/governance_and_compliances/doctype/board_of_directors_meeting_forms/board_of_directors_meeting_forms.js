@@ -3,13 +3,17 @@
 
 frappe.ui.form.on("Board of Directors Meeting Forms", {
     async refresh(frm) {
-        if (frappe.user.has_role('FPO') && frm.is_new(frm) && !frappe.user.has_role('Administrator')) {
+        if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
             try {
-                let { message: { fpo } } = await frappe.call({
-                    method: "frappe.client.get",
-                    args: { doctype: "Nafpo User", name: frappe.session.user }
+                let fpo = await frappe.call({
+                    method: "nafpo.apis.api.get_fpo_doc",
+                    args: {
+                        doctype_name: "NAFPO User",
+                        value: frappe.session.user,
+                    }
                 });
-                frm.set_value('fpo', fpo)
+                frm.set_value('fpo', fpo.message.fpo);
+                set_due_date(frm);
             } catch (e) {
                 console.error('User data fetch error:', e);
             }
