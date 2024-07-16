@@ -1,6 +1,19 @@
 {
- "charts": [],
- "content": "[{\"id\":\"q4LdvlFN4M\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"BOD KYC\",\"col\":4}},{\"id\":\"gKfVM86HqS\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO Profiling\",\"col\":4}},{\"id\":\"RG6Di_lr4m\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Producer Groups\",\"col\":4}},{\"id\":\"w5vQ7wiR3r\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO member details\",\"col\":4}}]",
+ "charts": [
+  {
+   "chart_name": "Gender Distribution Of Fpo Members",
+   "label": "Gender Distribution Of Fpo Members"
+  },
+  {
+   "chart_name": "Member Landholding",
+   "label": "Member Landholding"
+  },
+  {
+   "chart_name": "Gender Wise Land Holding",
+   "label": "Gender Wise Land Holding"
+  }
+ ],
+ "content": "[{\"id\":\"q4LdvlFN4M\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"BOD KYC\",\"col\":4}},{\"id\":\"gKfVM86HqS\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO Profiling\",\"col\":4}},{\"id\":\"RG6Di_lr4m\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Producer Groups\",\"col\":4}},{\"id\":\"w5vQ7wiR3r\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO member details\",\"col\":4}},{\"id\":\"xnsiUyO8Vu\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"gmGNlRxVzx\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender Distribution Of Fpo Members\",\"col\":6}},{\"id\":\"PDxmeH29qG\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender Wise Land Holding\",\"col\":6}},{\"id\":\"4dMugv_jcz\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Member Landholding\",\"col\":12}}]",
  "creation": "2024-06-19 09:58:07.824654",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +26,7 @@
  "is_hidden": 0,
  "label": "Profiling",
  "links": [],
- "modified": "2024-07-16 10:18:00.692034",
+ "modified": "2024-07-16 14:46:16.313305",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Profiling",

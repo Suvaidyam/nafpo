@@ -1,0 +1,36 @@
+{
+ "chart_name": "Gender Distribution Of Gender",
+ "chart_type": "Report",
+ "creation": "2024-07-16 13:48:43.019526",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2024-07-16 13:48:51.552754",
+ "modified_by": "Administrator",
+ "module": "Profiling",
+ "name": "Gender Distribution Of Gender",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Gender Distribution Of Gender",
+ "roles": [
+  {
+   "role": "FPO"
+  }
+ ],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Percentage",
+ "use_report_chart": 0,
+ "x_field": "gender",
+ "y_axis": [
+  {
+   "y_field": "count"
+  }
+ ]
+}
