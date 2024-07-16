@@ -1,0 +1,26 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2024-07-15 17:53:38.515462",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 2,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-07-16 12:37:23.035792",
+ "modified_by": "Administrator",
+ "module": "Business Planning",
+ "name": "Input Gross Trunover",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Business Plannings",
+ "report_name": "Input Gross Trunover",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "FPO"
+  }
+ ]
+}

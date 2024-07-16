@@ -353,7 +353,13 @@ FROM (
 
 @frappe.whitelist()
 def membership_system_capacity_building_fpo_mamber_count():
-    queary = """
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+        mappings={'FPO': ('_fpo', 'name')},
+        selected_filters=['FPO']
+    )
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
+
+    queary = f"""
     WITH TrainingAttendance AS (
     SELECT
         "Yes" AS attended_training,
@@ -368,6 +374,7 @@ def membership_system_capacity_building_fpo_mamber_count():
             `tabFPO member details Child` AS _fmdc
         WHERE
             _fmdc.parenttype = 'Capacity')
+    {cond_str}
     UNION ALL
     SELECT
         "No" AS attended_training,
@@ -382,6 +389,7 @@ def membership_system_capacity_building_fpo_mamber_count():
             `tabFPO member details Child` AS _fmdc
         WHERE
             _fmdc.parenttype = 'Capacity')
+    {cond_str}
 )
 SELECT
     COALESCE(SUM(CASE WHEN attended_training = 'Yes' THEN 1 ELSE 0 END), 0) AS Yes,
@@ -395,7 +403,13 @@ FROM
 
 @frappe.whitelist()
 def governance_system_capacity_building_fpo_bod_count():
-    queary = """
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+        mappings={'FPO': ('_fpo', 'name')},
+        selected_filters=['FPO']
+    )
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
+
+    queary = f"""
 WITH TrainingAttendance AS (
     SELECT
         "Yes" AS attended_training,
@@ -412,6 +426,7 @@ WITH TrainingAttendance AS (
             `tabBOD KYC Child` AS _bkc
         WHERE
             _bkc.parenttype = 'Capacity')
+        {cond_str}
     UNION ALL
     SELECT
         "No" AS attended_training,
@@ -428,6 +443,7 @@ WITH TrainingAttendance AS (
             `tabBOD KYC Child` AS _bkc
         WHERE
             _bkc.parenttype = 'Capacity')
+    {cond_str}
 )
 SELECT
     SUM(CASE WHEN attended_training = 'Yes' THEN 1 ELSE 0 END) AS Yes,
