@@ -63,6 +63,38 @@ frappe.ui.form.on('Output Side Child', {
             frappe.throw('Quantity of produce to be bought by FPO for marketing cannot exceed the total harvest by FPO members.');
         }
     },
+    crop_name: async function (frm, cdt, cdn) {
+        let row = frappe.get_doc(cdt, cdn);
+        try {
+            let crop = await frappe.call({
+                method: "nafpo.apis.api.get_crop_doc",
+                args: {
+                    doctype_name: "Crop Name",
+                    value: row.crop_name,
+                }
+            });
+            row.total_harvest_by_fpo_members_quintals = isNaN(row.total_cropping_area_of_fpo_members_acre * crop.message) ? 0 : row.total_cropping_area_of_fpo_members_acre * crop.message;
+            frm.cur_grid.refresh_field('total_harvest_by_fpo_members_quintals');
+        } catch (e) {
+            console.error('User data fetch error:', e);
+        }
+    },
+    total_cropping_area_of_fpo_members_acre: async function (frm, cdt, cdn) {
+        let row = frappe.get_doc(cdt, cdn);
+        try {
+            let crop = await frappe.call({
+                method: "nafpo.apis.api.get_crop_doc",
+                args: {
+                    doctype_name: "Crop Name",
+                    value: row.crop_name,
+                }
+            });
+            row.total_harvest_by_fpo_members_quintals = row.total_cropping_area_of_fpo_members_acre * crop.message
+            frm.cur_grid.refresh_field('total_harvest_by_fpo_members_quintals');
+        } catch (e) {
+            console.error('User data fetch error:', e);
+        }
+    }
 
 })
 
