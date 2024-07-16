@@ -17,9 +17,14 @@
    "label": "Expected Net income (Profit/Loss) (In Rs.) (Input)"
   }
  ],
- "content": "[{\"id\":\"uqBwB4AqeY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO Fixed Capital\",\"col\":4}},{\"id\":\"EGuJpoCFKd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Business Plannings\",\"col\":4}},{\"id\":\"lQ5JzAAPvu\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"alBzK0CuS0\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Fixed Capital\",\"col\":4}},{\"id\":\"rDKnX6sSK3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Private partner Linkages Output Side\",\"col\":4}},{\"id\":\"kI9OCW6LTJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Private partner Linkages Input Side\",\"col\":4}},{\"id\":\"0OT0U3x7cT\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Output Gross Trunover\",\"col\":6}},{\"id\":\"yUMi7HB9yR\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Input Gross Trunover\",\"col\":6}},{\"id\":\"btyh1k3VXu\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Expected Net income (Profit/Loss) (In Rs.) (Output)\",\"col\":6}},{\"id\":\"ZPSH-tE7vd\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Expected Net income (Profit/Loss) (In Rs.) (Input)\",\"col\":6}}]",
+ "content": "[{\"id\":\"uqBwB4AqeY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO Fixed Capital\",\"col\":4}},{\"id\":\"EGuJpoCFKd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Business Plannings\",\"col\":4}},{\"id\":\"hrql-TNGDL\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"FPO Count With Current Year Business Planning\",\"col\":4}},{\"id\":\"lQ5JzAAPvu\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"alBzK0CuS0\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Fixed Capital\",\"col\":4}},{\"id\":\"rDKnX6sSK3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Private partner Linkages Output Side\",\"col\":4}},{\"id\":\"kI9OCW6LTJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Private partner Linkages Input Side\",\"col\":4}},{\"id\":\"0OT0U3x7cT\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Output Gross Trunover\",\"col\":6}},{\"id\":\"yUMi7HB9yR\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Input Gross Trunover\",\"col\":6}},{\"id\":\"btyh1k3VXu\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Expected Net income (Profit/Loss) (In Rs.) (Output)\",\"col\":6}},{\"id\":\"ZPSH-tE7vd\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Expected Net income (Profit/Loss) (In Rs.) (Input)\",\"col\":6}}]",
  "creation": "2024-06-25 12:18:22.529271",
- "custom_blocks": [],
+ "custom_blocks": [
+  {
+   "custom_block_name": "FPO Count With Current Year Business Planning",
+   "label": "FPO Count With Current Year Business Planning"
+  }
+ ],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
@@ -30,7 +35,7 @@
  "is_hidden": 0,
  "label": "Business Planning",
  "links": [],
- "modified": "2024-07-16 16:55:10.970062",
+ "modified": "2024-07-16 20:16:10.660381",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Planning",
@@ -57,7 +62,7 @@
   }
  ],
  "owner": "Administrator",
- "parent_page": "Governance & Compliance",
+ "parent_page": "",
  "public": 1,
  "quick_lists": [],
  "roles": [
@@ -74,7 +79,7 @@
    "role": "Admin"
   }
  ],
- "sequence_id": 9.0,
+ "sequence_id": 10.0,
  "shortcuts": [],
  "title": "Business Planning"
 }
