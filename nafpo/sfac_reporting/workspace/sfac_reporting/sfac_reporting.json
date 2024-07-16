@@ -59,14 +59,14 @@
  "hide_custom": 0,
  "icon": "table",
  "idx": 0,
- "indicator_color": "",
+ "indicator_color": "green",
  "is_hidden": 0,
- "label": "FPO MFR 10K.",
+ "label": "SFAC Reporting",
  "links": [],
- "modified": "2024-07-16 10:18:02.408251",
+ "modified": "2024-07-16 10:18:03.860618",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
- "name": "FPO MFR 10K.",
+ "name": "SFAC Reporting",
  "number_cards": [
   {
    "label": "FPO MFR 10K",
@@ -91,7 +91,7 @@
    "role": "FPO"
   }
  ],
- "sequence_id": 7.0,
+ "sequence_id": 9.0,
  "shortcuts": [],
- "title": "FPO MFR 10K."
+ "title": "SFAC Reporting"
 }
