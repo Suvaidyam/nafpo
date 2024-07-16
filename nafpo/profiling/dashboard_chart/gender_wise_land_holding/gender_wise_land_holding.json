@@ -1,0 +1,45 @@
+{
+ "chart_name": "Gender Wise Land Holding",
+ "chart_type": "Report",
+ "creation": "2024-07-16 14:45:01.095628",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2024-07-16 14:45:01.095628",
+ "modified_by": "Administrator",
+ "module": "Profiling",
+ "name": "Gender Wise Land Holding",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Gender Wise Land Holding",
+ "roles": [
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
+  },
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "FPO"
+  }
+ ],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Pie",
+ "use_report_chart": 0,
+ "x_field": "gender",
+ "y_axis": [
+  {
+   "y_field": "percentage"
+  }
+ ]
+}

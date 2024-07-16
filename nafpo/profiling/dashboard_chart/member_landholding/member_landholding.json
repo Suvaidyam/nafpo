@@ -1,0 +1,45 @@
+{
+ "chart_name": "Member Landholding",
+ "chart_type": "Report",
+ "creation": "2024-07-16 14:21:41.185603",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2024-07-16 14:21:41.185603",
+ "modified_by": "Administrator",
+ "module": "Profiling",
+ "name": "Member Landholding",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Member Landholding",
+ "roles": [
+  {
+   "role": "FPO"
+  },
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
+  }
+ ],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "x_field": "landholding_category",
+ "y_axis": [
+  {
+   "y_field": "farmer_count"
+  }
+ ]
+}
