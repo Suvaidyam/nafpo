@@ -9,7 +9,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-07-01 12:12:34.345458",
+ "modified": "2024-07-16 14:16:10.416731",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Member Landholding",
@@ -27,6 +27,9 @@
   },
   {
    "role": "CBBO"
+  },
+  {
+   "role": "FPO"
   }
  ]
 }

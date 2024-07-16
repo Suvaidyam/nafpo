@@ -11,6 +11,7 @@
   "district",
   "block",
   "cbbo_name",
+  "ia",
   "fpo_name",
   "status"
  ],
@@ -60,6 +61,15 @@
    "label": "Status",
    "options": "Active\nInactive",
    "reqd": 1
+  },
+  {
+   "fetch_from": "cbbo_name.ia_name",
+   "fieldname": "ia",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "IA",
+   "options": "IA",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
@@ -82,7 +92,7 @@
    "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-07-06 20:11:21.022843",
+ "modified": "2024-07-16 15:26:11.956662",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "FPO",
