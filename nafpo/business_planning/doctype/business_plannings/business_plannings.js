@@ -16,20 +16,53 @@ const apply_fpo_filter_on_child_crop_name = async (table, crop_name_field) => {
         }
     }
 }
+
+async function check_capital_for_fpo(frm) {
+    let response = await frappe.call({
+        method: "nafpo.apis.api.get_exists_event",
+        args: {
+            doctype_name: "FPO Fixed Capital",
+            filterName: "fpo",
+            value: frm.doc.fpo,
+        }
+    });
+    if (response.message == undefined) {
+        frappe.throw('Please create FPO Fixed Capital for this FPO');
+    }
+}
 frappe.ui.form.on("Business Plannings", {
     async refresh(frm) {
         filter_financial_year('financial_year_name', 'Financial Year', frm)
         apply_filter('operation_system', 'fpo', frm, frm.doc.financial_year)
         await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
         await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
+        if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
+            try {
+                let fpo = await frappe.call({
+                    method: "nafpo.apis.api.get_fpo_doc",
+                    args: {
+                        doctype_name: "NAFPO User",
+                        value: frappe.session.user,
+                    }
+                });
+                frm.set_value('fpo', fpo.message.fpo);
+                check_capital_for_fpo(frm)
+            } catch (e) {
+                console.error('User data fetch error:', e);
+            }
+        }
     },
     async fpo(frm) {
         await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
         await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
+        check_capital_for_fpo(frm)
     },
     onload: function (frm) {
         filter_financial_year('financial_year', 'start_date', frm)
-    }
+    },
+    // validate(frm) {
+    //     check_capital_for_fpo(frm)
+    // }
 });
 async function filter_financial_year(field_name, filter_on, frm) {
     var currentYear = new Date().getFullYear();
@@ -67,13 +100,13 @@ frappe.ui.form.on('Output Side Child', {
         let row = frappe.get_doc(cdt, cdn);
         try {
             let crop = await frappe.call({
-                method: "nafpo.apis.api.get_crop_doc",
+                method: "nafpo.apis.api.get_value_event",
                 args: {
                     doctype_name: "Crop Name",
                     value: row.crop_name,
                 }
             });
-            row.total_harvest_by_fpo_members_quintals = isNaN(row.total_cropping_area_of_fpo_members_acre * crop.message) ? 0 : row.total_cropping_area_of_fpo_members_acre * crop.message;
+            row.total_harvest_by_fpo_members_quintals = isNaN(row.total_cropping_area_of_fpo_members_acre * crop.message.expected_yields_quintal_per_acre) ? 0 : row.total_cropping_area_of_fpo_members_acre * crop.message.expected_yields_quintal_per_acre;
             frm.cur_grid.refresh_field('total_harvest_by_fpo_members_quintals');
         } catch (e) {
             console.error('User data fetch error:', e);
@@ -83,13 +116,13 @@ frappe.ui.form.on('Output Side Child', {
         let row = frappe.get_doc(cdt, cdn);
         try {
             let crop = await frappe.call({
-                method: "nafpo.apis.api.get_crop_doc",
+                method: "nafpo.apis.api.get_value_event",
                 args: {
                     doctype_name: "Crop Name",
                     value: row.crop_name,
                 }
             });
-            row.total_harvest_by_fpo_members_quintals = row.total_cropping_area_of_fpo_members_acre * crop.message
+            row.total_harvest_by_fpo_members_quintals = row.total_cropping_area_of_fpo_members_acre * crop.message.expected_yields_quintal_per_acre
             frm.cur_grid.refresh_field('total_harvest_by_fpo_members_quintals');
         } catch (e) {
             console.error('User data fetch error:', e);
