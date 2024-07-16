@@ -14,6 +14,11 @@ def get_fpo_doc(doctype_name,value):
     return frappe.get_doc(doctype_name, {'email': value})
 
 @frappe.whitelist(allow_guest=True)
+def get_crop_doc(doctype_name,value):
+    return frappe.db.get_value(doctype_name,value,'expected_yields_quintal_per_acre')
+    # return frappe.get_doc(doctype_name, {'email': value})
+
+@frappe.whitelist(allow_guest=True)
 def get_fpo_profile(name=None, fields=["*"]):
     parent = frappe.db.exists({'doctype':'FPO Profiling','name_of_the_fpo':name})
     child_filter = {'parent': parent,'parenttype': 'FPO Profiling','parentfield': 'bod_kyc_name'}

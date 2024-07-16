@@ -4,7 +4,7 @@ from frappe.utils import today
 
 class BusinessPlannings(Document):
     def before_save(self):
-        total_weight_loss = 0
+        calculate_total_quantity_available_for_sale_after_weight_loss = 0
         total_output_income = 0
         total_input_income = 0
         total_output_selling_priceincome_rs = 0
@@ -15,9 +15,10 @@ class BusinessPlannings(Document):
         # Total harvest by FPO members (Quintals)
         output_side_row = self.output_side
         for row in output_side_row:
-        # Total harvest by FPO members (Quintals)
-            expected_yields = frappe.db.get_value("Crop Name",row.crop_name,'expected_yields_quintal_per_acre')
-            row.total_harvest_by_fpo_members_quintals = row.total_cropping_area_of_fpo_members_acre * expected_yields
+        # # Total harvest by FPO members (Quintals)
+        #     expected_yields = frappe.db.get_value("Crop Name",row.crop_name,'expected_yields_quintal_per_acre')
+        #     row.total_harvest_by_fpo_members_quintals = row.total_cropping_area_of_fpo_members_acre * expected_yields
+        
         # Total Purchase Price 
             row.total_purchase_price_rs = row.quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals * row.expected_purchase_pricers
         # Quantity available for sale (default deducted X% for weight loss)
@@ -28,11 +29,11 @@ class BusinessPlannings(Document):
             row.total_income_of_fpo_from_output = row.total_selling_priceincome_rs - row.total_purchase_price_rs
         # Total  
             total_output_income += row.total_income_of_fpo_from_output
-            total_weight_loss += row.quantity_available_for_sale_default_deducted_x_for_weight_loss
+            calculate_total_quantity_available_for_sale_after_weight_loss += row.quantity_available_for_sale_default_deducted_x_for_weight_loss
             total_output_selling_priceincome_rs += row.total_selling_priceincome_rs
             total_output_purchase_price_rs += row.total_purchase_price_rs
         self.total_income_of_fpo_from_output = total_output_income
-        self.total_weight_loss_ = total_weight_loss
+        self.quantity_available_for_sale_after_weight_loss = calculate_total_quantity_available_for_sale_after_weight_loss
         self.total_output_purchase_price_rs = total_output_purchase_price_rs
         # Total Output selling price/income (Rs)
         self.total_output_selling_priceincome_rs = total_output_selling_priceincome_rs
@@ -47,7 +48,7 @@ class BusinessPlannings(Document):
         # Total selling price/income (Rs)
             row.total_selling_priceincome_rs = row.total_area_for_which_input_name_shall_be_utilized * row.expected_unit_selling_price_per_acre_rs
         # Total Income of FPO from Input
-            row.total_income_of_fpo_from_input = row.total_purchase_price_rs - row.total_selling_priceincome_rs
+            row.total_income_of_fpo_from_input = row.total_selling_priceincome_rs - row.total_purchase_price_rs 
         
             total_input_income += row.total_income_of_fpo_from_input
             total_input_selling_priceincome_rs += row.total_selling_priceincome_rs
@@ -57,10 +58,10 @@ class BusinessPlannings(Document):
         self.total_input_purchase_price_rs = total_input_purchase_price_rs
         
     # Variable Cost Logic
-        self.gradingassying_weigning_packingbagging_at_collection_point = self.total_weight_loss_ * self.gradingassying_weigning_packingbagging_at_collection_point_rate
-        self.local_transport_include_loading_unloading_collection_point = self.total_weight_loss_ * self.local_transport_include_loading_unloading_rate
-        self.storing_warehousing_costs = self.total_weight_loss_ * self.storing_warehousing_costs_rate
-        self.transport_to_market_include_loading__unloading = self.total_weight_loss_ * self.transport_to_market_include_loading_unloading_rate
+        self.gradingassying_weigning_packingbagging_at_collection_point = self.quantity_available_for_sale_after_weight_loss * self.gradingassying_weigning_packingbagging_at_collection_point_rate
+        self.local_transport_include_loading_unloading_collection_point = self.quantity_available_for_sale_after_weight_loss * self.local_transport_include_loading_unloading_rate
+        self.storing_warehousing_costs = self.quantity_available_for_sale_after_weight_loss * self.storing_warehousing_costs_rate
+        self.transport_to_market_include_loading__unloading = self.quantity_available_for_sale_after_weight_loss * self.transport_to_market_include_loading_unloading_rate
         self.total_variable_cost = (
             self.gradingassying_weigning_packingbagging_at_collection_point +
             self.local_transport_include_loading_unloading_collection_point +
