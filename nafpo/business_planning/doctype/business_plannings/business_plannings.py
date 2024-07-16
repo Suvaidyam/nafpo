@@ -72,7 +72,6 @@ class BusinessPlannings(Document):
         get_total_value = frappe.db.get_list('FPO Fixed Capital',
                         filters={
                             'fpo': self.fpo,
-                            'financial_year': self.financial_year
                         },
                         fields=['total_value'],
                         as_list=True
@@ -94,23 +93,22 @@ class BusinessPlannings(Document):
         )
         # Depreciation
         self.depreciation = total_value / self.depreciation_percent
-        self.total_fixed_and_variable_cost = self.total_variable_cost
         
 # Net Profit (Per Year) Logic
     
     # Total Sales
-        self.total_sales =  (self.total_output_selling_priceincome_rs + self.total_input_selling_priceincome_rs) * (self.total_income_of_fpo_from_output + self.total_income_of_fpo_from_input)
+        self.total_sales =  self.total_output_selling_priceincome_rs + self.total_input_selling_priceincome_rs
     # Total Expense
         self.total_expense = self.total_variable_cost + self.total_work_capital + self.total_output_purchase_price_rs + self.total_input_purchase_price_rs
     # Gross Profit /Loss (Total Sales- Total Expence)
-        self.gross_profit_loss = (self.total_output_selling_priceincome_rs + self.total_input_selling_priceincome_rs) - self.total_expense
+        self.gross_profit_loss = self.total_sales - self.total_expense 
     
     # Total Income (Including Input and Output Side)
         self.total_income_including_input_and_output_side = self.total_income_of_fpo_from_output + self.total_income_of_fpo_from_input
     # Total Fixed and Variable Cost
         self.total_fixed_and_variable_cost = self.total_variable_cost + self.total_work_capital
     # Gross Profit /Loss (Total Income- Total Cost)
-        self.gross_profit_loss_total_income_total_cost = (self.total_output_selling_priceincome_rs + self.total_input_selling_priceincome_rs) - self.total_fixed_and_variable_cost
+        self.gross_profit_loss_total_income_total_cost = self.total_income_including_input_and_output_side - self.total_fixed_and_variable_cost
         
     # Check if FPO Fixed Capital already exists for this financial year and FPO
         exists = frappe.db.exists({

@@ -16,10 +16,8 @@ class FPOFixedCapital(Document):
 	# Check FPO
 		exists = frappe.db.exists({
 				"doctype": "FPO Fixed Capital",
-				"financial_year": self.financial_year,
 				"fpo":self.fpo
 			})
 		if exists and exists != self.name:
 			fpo = frappe.get_doc('FPO',self.fpo)
-			fy = frappe.get_doc('Financial Year', self.financial_year)
-			frappe.throw(_(f'Financial Year {fy.financial_year_name} already exists for the {fpo.fpo_name}'))
+			frappe.throw(_(f'{fpo.fpo_name} already exists for the Fpo Fixed Capital '))
