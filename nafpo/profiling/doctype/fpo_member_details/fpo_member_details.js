@@ -50,11 +50,27 @@ frappe.ui.form.on("FPO member details", {
     register_aadhar_mobile_number(frm) {
         integer_length_validator(frm.doc.register_aadhar_mobile_number, 10, 'Register Aadhar Mobile Number');
     },
-    total_own_irrigated_land(frm) {
+    total_own_land: async function (frm) {
+        await frm.set_value('total_owned_in_hectare', frm.doc.total_own_land * 0.404686)
+    },
+    total_own_irrigated_land: async function (frm) {
         if (frm.doc.total_own_land < frm.doc.total_own_irrigated_land) {
             frappe.throw(`Total owned irrigated land cannot exceed the total owned land.`)
         }
+        await frm.set_value('total_own_irrigated_land_in_hectare', frm.doc.total_own_irrigated_land * 0.404686)
     },
+    do_you_have_any_leased_land_area_in_acre(frm) {
+        if (frm.doc.do_you_have_any_leased_land_area_in_acre == "No") {
+            frm.set_value('how_much_irrigated_leased_land_area_in_acre', 0)
+            frm.set_value('how_much_irrigated_leased_land_in_hectare', 0)
+        }
+    },
+    how_much_irrigated_leased_land_area_in_acre: async function (frm) {
+        if (frm.doc.do_you_have_any_leased_land_area_in_acre == "Yes") {
+            await frm.set_value('how_much_irrigated_leased_land_in_hectare', frm.doc.how_much_irrigated_leased_land_area_in_acre * 0.404686)
+        }
+    }
+    ,
     consent_image(frm) {
         disable_Attachment_autosave(frm);
     },
