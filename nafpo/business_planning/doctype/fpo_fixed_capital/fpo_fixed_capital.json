@@ -18,6 +18,7 @@
    "fieldname": "fpo",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "FPO",
    "options": "FPO",
    "reqd": 1
@@ -62,7 +63,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-16 17:00:30.166821",
+ "modified": "2024-07-16 19:12:36.675392",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "FPO Fixed Capital",

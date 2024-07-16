@@ -77,6 +77,7 @@ class BusinessPlannings(Document):
                         as_list=True
                     )
         total_value = get_total_value[0][0] if get_total_value else 0
+        # print('//'*40,total_value)
         self.total_work_capital = (
             self.ceo_salary + 
             self.accountant_salary + 
@@ -120,4 +121,19 @@ class BusinessPlannings(Document):
             fpo = frappe.get_doc('FPO', self.fpo)
             fy = frappe.get_doc('Financial Year', self.financial_year)
             frappe.throw(f'Financial Year {fy.financial_year_name} already exists for the {fpo.fpo_name}')
-
+        
+        exists_fixed_capital = frappe.db.exists({
+            "doctype": "FPO Fixed Capital",
+            "fpo": self.fpo
+        })
+        if exists_fixed_capital == None:
+            frappe.throw('Please create FPO Fixed Capital for this FPO')
+        
+        if (
+            self.gradingassying_weigning_packingbagging_at_collection_point_rate == 0 or 
+            self.local_transport_include_loading_unloading_rate == 0 or 
+            self.weight_loss_percent == 0 or 
+            self.local_transport_include_loading_unloading_rate is None or 
+            self.transport_to_market_include_loading_unloading_rate == 0
+        ):
+            frappe.throw('Please fill Variable cost (Rate) & Weight Loss Percent Details')
