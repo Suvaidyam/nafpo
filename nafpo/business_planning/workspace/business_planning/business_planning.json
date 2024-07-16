@@ -1,6 +1,23 @@
 {
- "charts": [],
- "content": "[{\"id\":\"uqBwB4AqeY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO Fixed Capital\",\"col\":4}},{\"id\":\"EGuJpoCFKd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Business Plannings\",\"col\":4}}]",
+ "charts": [
+  {
+   "chart_name": "Output Gross Trunover",
+   "label": "Output Gross Trunover"
+  },
+  {
+   "chart_name": "Input Gross Trunover",
+   "label": "Input Gross Trunover"
+  },
+  {
+   "chart_name": "Expected Output Net income",
+   "label": "Expected Net income (Profit/Loss) (In Rs.) (Output)"
+  },
+  {
+   "chart_name": "Expected Input Net income",
+   "label": "Expected Net income (Profit/Loss) (In Rs.) (Input)"
+  }
+ ],
+ "content": "[{\"id\":\"uqBwB4AqeY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO Fixed Capital\",\"col\":4}},{\"id\":\"EGuJpoCFKd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Business Plannings\",\"col\":4}},{\"id\":\"lQ5JzAAPvu\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"alBzK0CuS0\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Fixed Capital\",\"col\":4}},{\"id\":\"rDKnX6sSK3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Private partner Linkages Output Side\",\"col\":4}},{\"id\":\"kI9OCW6LTJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Private partner Linkages Input Side\",\"col\":4}},{\"id\":\"0OT0U3x7cT\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Output Gross Trunover\",\"col\":6}},{\"id\":\"yUMi7HB9yR\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Input Gross Trunover\",\"col\":6}},{\"id\":\"btyh1k3VXu\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Expected Net income (Profit/Loss) (In Rs.) (Output)\",\"col\":6}},{\"id\":\"ZPSH-tE7vd\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Expected Net income (Profit/Loss) (In Rs.) (Input)\",\"col\":6}}]",
  "creation": "2024-06-25 12:18:22.529271",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +30,7 @@
  "is_hidden": 0,
  "label": "Business Planning",
  "links": [],
- "modified": "2024-07-04 18:29:19.317875",
+ "modified": "2024-07-16 15:09:27.014634",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Planning",
@@ -23,8 +40,20 @@
    "number_card_name": "FPO Fixed Capital"
   },
   {
+   "label": "Total Fixed Capital",
+   "number_card_name": "Total Fixed Capital"
+  },
+  {
+   "label": "Private partner Linkages Output Side",
+   "number_card_name": "Private partner Linkages Output Side"
+  },
+  {
    "label": "Business Plannings",
    "number_card_name": "Business Plannings"
+  },
+  {
+   "label": "Private partner Linkages Input Side",
+   "number_card_name": "Private partner Linkages Input Side"
   }
  ],
  "owner": "Administrator",

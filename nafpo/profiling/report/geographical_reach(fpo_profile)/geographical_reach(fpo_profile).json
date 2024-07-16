@@ -9,16 +9,16 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2024-06-28 17:08:34.122937",
+ "modified": "2024-07-16 16:07:49.327223",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Geographical Reach(FPO Profile)",
  "owner": "Administrator",
  "prepared_report": 0,
- "query": "SELECT\n    COUNT(DISTINCT CASE WHEN _fp.state_name != '' THEN _fp.state_name ELSE NULL END) AS state_count,\n    COUNT(DISTINCT CASE WHEN _fp.district_name != '' THEN _fp.district_name ELSE NULL END) AS district_count,\n    COUNT(DISTINCT _bc.block) AS block_count\nFROM\n    `tabFPO Profiling` AS _fp\nINNER JOIN `tabBlock Child` AS _bc ON _fp.name = _bc.parent\nWHERE\n    _bc.parenttype = 'FPO Profiling';",
+ "query": "",
  "ref_doctype": "FPO Profiling",
  "report_name": "Geographical Reach(FPO Profile)",
- "report_type": "Query Report",
+ "report_type": "Script Report",
  "roles": [
   {
    "role": "System Manager"

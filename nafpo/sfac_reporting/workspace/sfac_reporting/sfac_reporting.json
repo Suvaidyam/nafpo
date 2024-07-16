@@ -1,0 +1,97 @@
+{
+ "charts": [
+  {
+   "chart_name": "First Installment",
+   "label": "First Installment"
+  },
+  {
+   "chart_name": "Second Installment",
+   "label": "Second Installment"
+  },
+  {
+   "chart_name": "Third Installment",
+   "label": "Third Installment"
+  },
+  {
+   "chart_name": "Fourth Installment",
+   "label": "Fourth Installment"
+  },
+  {
+   "chart_name": "Fifth Installment",
+   "label": "Fifth Installment"
+  },
+  {
+   "chart_name": "Six Installment",
+   "label": "Six Installment"
+  }
+ ],
+ "content": "[{\"id\":\"MH7iSuSkP2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO MFR 10K\",\"col\":3}},{\"id\":\"5P2EXpwe38\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Report\",\"col\":12}},{\"id\":\"p-qY5QV9_C\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Total Eligible FPOs\",\"col\":3}},{\"id\":\"mqX4-zeAC1\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Received Fund before or on due date\",\"col\":3}},{\"id\":\"0NBBasYtdG\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Received Fund after Due Date\",\"col\":3}},{\"id\":\"hgfrwldxuf\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Eligible but haven't received fund yet\",\"col\":3}},{\"id\":\"_fhBCXd3N-\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Dashboard\",\"col\":12}},{\"id\":\"i76n_0W780\",\"type\":\"chart\",\"data\":{\"chart_name\":\"First Installment\",\"col\":6}},{\"id\":\"S9pF1KA-e-\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Second Installment\",\"col\":6}},{\"id\":\"Xk61TKcrek\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Third Installment\",\"col\":6}},{\"id\":\"oSmXBVFR8I\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fourth Installment\",\"col\":6}},{\"id\":\"l2MyR7xLYo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fifth Installment\",\"col\":6}},{\"id\":\"3VlqcJLloh\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Six Installment\",\"col\":6}}]",
+ "creation": "2024-06-22 11:10:51.364717",
+ "custom_blocks": [
+  {
+   "custom_block_name": "Total Eligible FPOs",
+   "label": "Total Eligible FPOs"
+  },
+  {
+   "custom_block_name": "Received Fund before or on due date",
+   "label": "Received Fund before or on due date"
+  },
+  {
+   "custom_block_name": "Received Fund after Due Date",
+   "label": "Received Fund after Due Date"
+  },
+  {
+   "custom_block_name": "Eligible but haven't received fund yet",
+   "label": "Eligible but haven't received fund yet"
+  },
+  {
+   "custom_block_name": "Reports",
+   "label": "Report"
+  },
+  {
+   "custom_block_name": "Dashboard",
+   "label": "Dashboard"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "table",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "SFAC Reporting",
+ "links": [],
+ "modified": "2024-07-16 10:18:03.860618",
+ "modified_by": "Administrator",
+ "module": "SFAC Reporting",
+ "name": "SFAC Reporting",
+ "number_cards": [
+  {
+   "label": "FPO MFR 10K",
+   "number_card_name": "SFAC Installment"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Admin"
+  },
+  {
+   "role": "IA"
+  },
+  {
+   "role": "CBBO"
+  },
+  {
+   "role": "FPO"
+  }
+ ],
+ "sequence_id": 9.0,
+ "shortcuts": [],
+ "title": "SFAC Reporting"
+}
