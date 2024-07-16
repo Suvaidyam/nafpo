@@ -48,10 +48,13 @@
   "total_income",
   "availability_of_land_area_in_acre_section",
   "total_own_land",
+  "total_owned_in_hectare",
   "total_own_irrigated_land",
+  "total_own_irrigated_land_in_hectare",
   "column_break_pels",
   "do_you_have_any_leased_land_area_in_acre",
   "how_much_irrigated_leased_land_area_in_acre",
+  "how_much_irrigated_leased_land_in_hectare",
   "section_break_tjir",
   "column_break_kejv",
   "year_of_share_issued",
@@ -292,6 +295,7 @@
    "options": "Yes\nNo"
   },
   {
+   "default": "0",
    "depends_on": "eval:doc.do_you_have_any_leased_land_area_in_acre == \"Yes\"",
    "fieldname": "how_much_irrigated_leased_land_area_in_acre",
    "fieldtype": "Int",
@@ -391,11 +395,36 @@
   {
    "fieldname": "column_break_qvkr",
    "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_owned_in_hectare",
+   "fieldtype": "Float",
+   "label": "Total Owned in Hectare",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_own_irrigated_land_in_hectare",
+   "fieldtype": "Float",
+   "label": "Total own irrigated land in Hectare",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.do_you_have_any_leased_land_area_in_acre == \"Yes\"",
+   "fieldname": "how_much_irrigated_leased_land_in_hectare",
+   "fieldtype": "Float",
+   "label": "How Much Irrigated Leased Land in Hectare",
+   "non_negative": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-05 11:51:05.993685",
+ "modified": "2024-07-16 12:37:36.582201",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO member details",
