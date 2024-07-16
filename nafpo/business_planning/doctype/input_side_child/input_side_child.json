@@ -11,7 +11,6 @@
   "total_cropping_area_of_fpo_members_acre",
   "percentage_of_total_cropping_area",
   "total_area_for_which_input_name_shall_be_utilized",
-  "column_break_jwwf",
   "expected_purchase_price_per_acre_rs",
   "total_purchase_price_rs",
   "expected_unit_selling_price_per_acre_rs",
@@ -60,6 +59,7 @@
    "reqd": 1
   },
   {
+   "default": "0",
    "fieldname": "total_purchase_price_rs",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -75,25 +75,23 @@
    "reqd": 1
   },
   {
-   "fieldname": "column_break_jwwf",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "percentage_of_total_cropping_area",
-   "fieldtype": "Int",
+   "fieldtype": "Percent",
    "in_list_view": 1,
    "label": "Percentage of Total Cropping Area for which Input Name Shall be Provided By FPO",
    "non_negative": 1,
    "reqd": 1
   },
   {
+   "default": "0",
    "fieldname": "total_area_for_which_input_name_shall_be_utilized",
-   "fieldtype": "Int",
+   "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Total Area For Which Input Name Shall be Utilized",
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_selling_priceincome_rs",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -101,6 +99,7 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_income_of_fpo_from_input",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -111,7 +110,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-15 15:33:26.844731",
+ "modified": "2024-07-16 15:41:52.426369",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Input Side Child",

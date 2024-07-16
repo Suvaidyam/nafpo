@@ -13,14 +13,14 @@
   "financial_year",
   "section_break_gbyg",
   "output_side",
-  "total_income_of_fpo_from_output",
-  "total_weight_loss_",
-  "total_output_selling_priceincome_rs",
   "total_output_purchase_price_rs",
+  "total_output_selling_priceincome_rs",
+  "total_income_of_fpo_from_output",
+  "quantity_available_for_sale_after_weight_loss",
   "input_side",
-  "total_income_of_fpo_from_input",
-  "total_input_selling_priceincome_rs",
   "total_input_purchase_price_rs",
+  "total_input_selling_priceincome_rs",
+  "total_income_of_fpo_from_input",
   "variable_cost_section",
   "gradingassying_weigning_packingbagging_at_collection_point",
   "local_transport_include_loading_unloading_collection_point",
@@ -357,22 +357,14 @@
    "default": "0",
    "fieldname": "total_income_of_fpo_from_output",
    "fieldtype": "Currency",
-   "label": "Total Income of FPO from Output",
+   "label": "Output Side: Total Income",
    "read_only": 1
   },
   {
    "default": "0",
    "fieldname": "total_income_of_fpo_from_input",
    "fieldtype": "Currency",
-   "label": "Total Income of FPO from Input",
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "total_weight_loss_",
-   "fieldtype": "Int",
-   "hidden": 1,
-   "label": "Total weight Loss",
+   "label": "Input Side: Total Income",
    "read_only": 1
   },
   {
@@ -402,16 +394,14 @@
    "default": "0",
    "fieldname": "total_output_selling_priceincome_rs",
    "fieldtype": "Currency",
-   "hidden": 1,
-   "label": "Total Output selling price/income (Rs)",
+   "label": "Output Side: Total Selling Price",
    "read_only": 1
   },
   {
    "default": "0",
    "fieldname": "total_input_selling_priceincome_rs",
    "fieldtype": "Currency",
-   "hidden": 1,
-   "label": "Total Input selling price/income (Rs)",
+   "label": "Input Side: Total Selling Price",
    "read_only": 1
   },
   {
@@ -425,21 +415,28 @@
    "default": "0",
    "fieldname": "total_output_purchase_price_rs",
    "fieldtype": "Currency",
-   "label": "Total Output Purchase price (Rs)",
+   "label": "Output Side: Total Purchase/Cost Price",
    "read_only": 1
   },
   {
    "default": "0",
    "fieldname": "total_input_purchase_price_rs",
    "fieldtype": "Currency",
-   "label": "Total Input Purchase price (Rs)",
+   "label": "Input Side: Total Purchase/Cost Price",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "quantity_available_for_sale_after_weight_loss",
+   "fieldtype": "Float",
+   "label": "Quantity available for sale after X% weight loss",
    "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-12 13:42:17.278422",
+ "modified": "2024-07-16 16:06:21.408285",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",
