@@ -12,7 +12,6 @@ fixtures = [
     "Type of Organization",
     "Custom HTML Block",
     "Financial Year",
-    "NAFPO User"
 ]
 
 # Includes in <head>
