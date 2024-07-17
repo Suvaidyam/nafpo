@@ -14,9 +14,15 @@ def get_fpo_doc(doctype_name,value):
     return frappe.get_doc(doctype_name, {'email': value})
 
 @frappe.whitelist(allow_guest=True)
-def get_crop_doc(doctype_name,value):
-    return frappe.db.get_value(doctype_name,value,'expected_yields_quintal_per_acre')
-    # return frappe.get_doc(doctype_name, {'email': value})
+def get_value_event(doctype_name,value):
+    return frappe.db.get_value(doctype_name,value,'*')
+
+@frappe.whitelist(allow_guest=True)
+def get_exists_event(doctype_name,filterName,value):
+        return frappe.db.exists({
+            "doctype": doctype_name,
+            filterName: value
+        })
 
 @frappe.whitelist(allow_guest=True)
 def get_fpo_profile(name=None, fields=["*"]):
