@@ -17,4 +17,4 @@ class FPOMFR10K(Document):
         })
         data_exists = bool(exists)
         if data_exists and exists != self.name:
-            frappe.throw(f"FPO already exists in FPO MFR 10K")
+            frappe.throw(f"This FPO are already exists in FPO MFR 10K")
