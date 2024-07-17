@@ -62,8 +62,13 @@
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-07-16 19:12:36.675392",
+ "links": [
+  {
+   "link_doctype": "Business Plannings",
+   "link_fieldname": "fpo"
+  }
+ ],
+ "modified": "2024-07-17 13:41:28.660104",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "FPO Fixed Capital",
