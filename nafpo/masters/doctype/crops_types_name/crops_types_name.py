@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class FinancialYear(Document):
-    pass
+class CropsTypesName(Document):
+	pass
