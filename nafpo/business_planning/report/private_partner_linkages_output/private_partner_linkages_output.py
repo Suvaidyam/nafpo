@@ -18,14 +18,14 @@ def execute(filters=None):
 		{
 			"fieldname": "output_side",
 			"label": "Output Side",
-			"fieldtype": "Data",
+			"fieldtype": "Currency",
 			"width": 300
 		}
 	]
 
 	sql_query = f"""
 	SELECT
-   		SUM(bp.output) AS output_side
+   		COALESCE(SUM(bp.output),0) AS output_side
 	FROM
     	`tabBusiness Plannings` AS bp
 	INNER JOIN `tabFPO` AS fpo ON bp.fpo = fpo.name
