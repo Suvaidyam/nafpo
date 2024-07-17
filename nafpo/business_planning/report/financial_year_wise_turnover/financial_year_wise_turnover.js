@@ -15,7 +15,7 @@ frappe.query_reports["Financial Year Wise Turnover"] = {
 			"fieldname": "turnover",
 			"label": __("Turnover"),
 			"fieldtype": "Select",
-			"options": "\nLess than 1 Lakh\n1-10 Lakhs\n10-25 Lakhs\n25-50 Lakhs\nMore than 50 Lakhs\nNo Sales Data"
+			"options": "\nLess than 1 Lakh\n1-10 Lakhs\n10-25 Lakhs\n25-50 Lakhs\nMore than 50 Lakhs"
 		},
 		{
 			"fieldname": "profitability",
