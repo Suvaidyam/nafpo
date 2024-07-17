@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{state_name}-{name_of_crop}",
+ "autoname": "format:C-{####}",
  "creation": "2024-05-10 11:14:55.721742",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -120,7 +120,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-16 17:09:31.556814",
+ "modified": "2024-07-17 15:54:09.618429",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop Name",
