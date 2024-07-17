@@ -46,7 +46,6 @@ frappe.ui.form.on("Business Plannings", {
                     }
                 });
                 frm.set_value('fpo', fpo.message.fpo);
-                check_capital_for_fpo(frm)
             } catch (e) {
                 console.error('User data fetch error:', e);
             }

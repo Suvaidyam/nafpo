@@ -2,7 +2,21 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("FPO Fixed Capital", {
-    refresh(frm) {
+    async refresh(frm) {
+        if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
+            try {
+                let fpo = await frappe.call({
+                    method: "nafpo.apis.api.get_fpo_doc",
+                    args: {
+                        doctype_name: "NAFPO User",
+                        value: frappe.session.user,
+                    }
+                });
+                frm.set_value('fpo', fpo.message.fpo);
+            } catch (e) {
+                console.error('User data fetch error:', e);
+            }
+        }
         const fixedCapitalItems = [
             "Preoperative Expenses-Registration fee",
             "Hardware & software",
