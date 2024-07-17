@@ -20,18 +20,9 @@ def execute(filters=None):
 	turnover_range = filters.get('turnover') or None
 	if financial_year is not None:
 		financial_year_cond = f" AND bp.financial_year = '{financial_year}'"
-	if profitability is not None:
-		if profitability == 'Profit':
-			profitability_cond = f"AND bp.total_sales > 0"
-		elif profitability == 'Loss':
-			profitability_cond = f"AND bp.total_sales < 0"
-		elif profitability == 'Not Filled':
-			profitability_cond = f"AND bp.fpo IS NULL"
-			financial_year_cond = ""
+	
 	if turnover_range is not None:
-		if turnover_range == 'No Sales Data':
-			turnover_cond = f" AND bp.total_sales IS NULL"
-		elif turnover_range == 'Less than 1 Lakh':
+		if turnover_range == 'Less than 1 Lakh':
 			turnover_cond = f" AND bp.total_sales < 100000"
 		elif turnover_range == '1-10 Lakhs':
 			turnover_cond = f" AND bp.total_sales >= 100000 AND bp.total_sales < 1000000"
@@ -41,6 +32,16 @@ def execute(filters=None):
 			turnover_cond = f" AND bp.total_sales >= 2500000 AND bp.total_sales < 5000000"
 		else:
 			turnover_cond = f" AND bp.total_sales >= 5000000"
+		
+		if profitability is not None:
+			if profitability == 'Profit':
+				profitability_cond = f"AND bp.total_sales > 0"
+			elif profitability == 'Loss':
+				profitability_cond = f"AND bp.total_sales < 0"
+			elif profitability == 'Not Filled':
+				profitability_cond = f"AND bp.fpo IS NULL"
+				turnover_cond = ""
+				financial_year_cond = ""
 	
 
 	query = f"""

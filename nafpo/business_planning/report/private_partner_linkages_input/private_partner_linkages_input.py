@@ -16,17 +16,17 @@ def execute(filters=None):
 		{
 			"fieldname": "input_side",
 			"label": "Input Side",
-			"fieldtype": "Data",
+			"fieldtype": "Currency",
 			"width": 300
 		}
 	]
 
 	sql_query = f"""
 	SELECT
-    SUM(bp.input) AS input_side
-FROM
-    `tabBusiness Plannings` AS bp
-	INNER JOIN `tabFPO` AS fpo ON bp.fpo = fpo.name
+		COALESCE(SUM(bp.input), 0) AS input_side
+	FROM
+		`tabBusiness Plannings` AS bp
+		INNER JOIN `tabFPO` AS fpo ON bp.fpo = fpo.name
 	{cond_str}
 
 	"""
