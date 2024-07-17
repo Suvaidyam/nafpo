@@ -1,6 +1,20 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
 
+async function check_exists_fpo_in_form(frm) {
+    let response = await frappe.call({
+        method: "nafpo.apis.api.get_exists_event",
+        args: {
+            doctype_name: "FPO MFR 10K",
+            filterName: "fpo",
+            value: frm.doc.fpo,
+        }
+    });
+    if (response.message) {
+        frappe.throw('This FPO are already exists in FPO MFR 10K');
+    }
+}
+
 frappe.ui.form.on("FPO MFR 10K", {
     refresh: async function (frm) {
         if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
@@ -36,6 +50,7 @@ frappe.ui.form.on("FPO MFR 10K", {
     },
     fpo(frm) {
         set_due_date(frm)
+        check_exists_fpo_in_form(frm)
     },
     are_you_received_1st_installment_fund(frm) {
         if (frm.doc.are_you_received_1st_installment_fund == "Yes") {
