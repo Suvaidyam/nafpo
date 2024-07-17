@@ -319,8 +319,7 @@
    "fieldtype": "Data",
    "hidden": 1,
    "in_list_view": 1,
-   "label": "FPO",
-   "unique": 1
+   "label": "FPO"
   },
   {
    "fetch_from": "fpo.cbbo_name",
@@ -342,7 +341,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-03 10:49:14.350204",
+ "modified": "2024-07-17 16:35:43.841462",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "FPO MFR 10K",

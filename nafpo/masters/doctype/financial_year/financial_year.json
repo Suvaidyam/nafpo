@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:FY-{###}",
+ "autoname": "field:financial_year_name",
  "creation": "2024-05-09 07:53:22.776337",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -15,7 +15,6 @@
   {
    "fieldname": "financial_year_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Financial Year Name",
    "non_negative": 1,
    "read_only": 1,
@@ -25,25 +24,24 @@
    "fieldname": "start_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Start Date ",
+   "label": "Financial Year",
    "reqd": 1
   },
   {
    "fieldname": "end_date",
    "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "End Date",
-   "reqd": 1
+   "hidden": 1,
+   "label": "End Date"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-12 11:24:34.184805",
+ "modified": "2024-07-17 15:12:13.753966",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Financial Year",
- "naming_rule": "Expression",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -60,6 +58,7 @@
   },
   {
    "create": 1,
+   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,
@@ -84,6 +83,7 @@
    "email": 1,
    "export": 1,
    "print": 1,
+   "read": 1,
    "report": 1,
    "role": "FPO",
    "select": 1,
@@ -100,9 +100,7 @@
    "share": 1
   }
  ],
- "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "title_field": "financial_year_name"
+ "states": []
 }

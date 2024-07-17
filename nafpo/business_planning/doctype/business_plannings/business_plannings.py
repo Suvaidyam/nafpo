@@ -103,6 +103,19 @@ class BusinessPlannings(Document):
         self.total_expense = self.total_variable_cost + self.total_work_capital + self.total_output_purchase_price_rs + self.total_input_purchase_price_rs
     # Gross Profit /Loss (Total Sales- Total Expence)
         self.gross_profit_loss = self.total_sales - self.total_expense 
+    # Closing Cash Balance
+        get_gross_profit_loss = frappe.db.get_list('Business Plannings',
+                filters={
+                    'fpo': self.fpo,
+                    'financial_year': ['<', self.financial_year]
+                },
+                fields=['name', 'fpo','gross_profit_loss','financial_year'],
+            )
+        store_gross_profit_loss = 0
+        for gross_profit in get_gross_profit_loss:
+            print('||'*50,gross_profit.gross_profit_loss)
+            store_gross_profit_loss +=  gross_profit.gross_profit_loss
+        self.closing_cash_balance = store_gross_profit_loss + self.gross_profit_loss
     
     # Total Income (Including Input and Output Side)
         self.total_income_including_input_and_output_side = self.total_income_of_fpo_from_output + self.total_income_of_fpo_from_input
