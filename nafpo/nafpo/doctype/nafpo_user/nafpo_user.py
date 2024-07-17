@@ -17,22 +17,14 @@ class NAFPOUser(Document):
 		new_user.save()
 
 	def on_update(self):
-		new_user = frappe.new_doc("User")
-		new_user.email = self.email
-		new_user.first_name = self.name1
-		new_user.username = self.username
-		new_user.mobile_no = self.mobile
-		new_user.role_profile_name = self.level
-		new_user.new_password = self.password
-		new_user.save(ignore_permissions=True)
-		# user_doc = frappe.get_doc("User", self.email)
-		# user_doc.email = self.email
-		# user_doc.first_name = self.name1
-		# user_doc.username = self.username
-		# user_doc.mobile_no = self.mobile
-		# user_doc.role_profile_name = self.level
-		# user_doc.new_password = self.password
-		# user_doc.save()
+		user_doc = frappe.get_doc("User", self.email)
+		user_doc.email = self.email
+		user_doc.first_name = self.name1
+		user_doc.username = self.username
+		user_doc.mobile_no = self.mobile
+		user_doc.role_profile_name = self.level
+		user_doc.new_password = self.password
+		user_doc.save()
 		if(self.level == "IA" and self.ia):
 			ia_perm(self)
 		if(self.level == "FPO" and self.fpo):
