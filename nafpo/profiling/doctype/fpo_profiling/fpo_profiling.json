@@ -337,12 +337,11 @@
   {
    "fieldname": "supporting_aggencies_section",
    "fieldtype": "Section Break",
-   "label": "Supporting Aggencies"
+   "label": "Supporting Agencies"
   },
   {
    "fieldname": "supporting_agencies_table",
    "fieldtype": "Table",
-   "label": "Supporting Agencies Table",
    "options": "Supporting Agencies Child"
   },
   {
@@ -396,7 +395,6 @@
   {
    "fieldname": "staff_details_table",
    "fieldtype": "Table",
-   "label": "Staff Details Table",
    "options": "FPO Staff Child"
   }
  ],
@@ -415,7 +413,7 @@
    "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-07-12 18:57:36.620269",
+ "modified": "2024-07-18 12:28:14.834586",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
