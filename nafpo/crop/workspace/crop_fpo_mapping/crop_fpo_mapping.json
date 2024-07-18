@@ -9,14 +9,14 @@
  "hide_custom": 0,
  "icon": "branch",
  "idx": 0,
- "indicator_color": "green",
+ "indicator_color": "",
  "is_hidden": 0,
- "label": "Crop",
+ "label": "Crop-FPO Mapping",
  "links": [],
- "modified": "2024-07-16 20:16:09.453490",
+ "modified": "2024-07-17 17:46:43.407323",
  "modified_by": "Administrator",
  "module": "Crop",
- "name": "Crop",
+ "name": "Crop-FPO Mapping",
  "number_cards": [
   {
    "label": "Crop Type",
@@ -34,5 +34,5 @@
  "roles": [],
  "sequence_id": 5.0,
  "shortcuts": [],
- "title": "Crop"
+ "title": "Crop-FPO Mapping"
 }
