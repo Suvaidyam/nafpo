@@ -8,6 +8,7 @@ frappe.query_reports["AGM - Once in a year fpo need to organize AGM and pass the
 			"label": __("Status"),
 			"fieldtype": "Autocomplete",
 			"options": ["Pending", "Completed Before Due Date", "Completed After Due Date"],
+			"default": "Completed Before Due Date"
 		}
 	]
 };
