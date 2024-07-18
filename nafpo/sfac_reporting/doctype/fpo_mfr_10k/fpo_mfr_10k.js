@@ -1,7 +1,7 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
 
-async function check_exists_fpo_in_form(frm) {
+async function check_exists_fpo_in_mfr(frm) {
     let response = await frappe.call({
         method: "nafpo.apis.api.get_exists_event",
         args: {
@@ -11,8 +11,58 @@ async function check_exists_fpo_in_form(frm) {
         }
     });
     if (response.message) {
-        frappe.throw('This FPO are already exists in FPO MFR 10K');
+        frm.set_value('fpo', '')
+        return frappe.throw('This FPO are already exists in FPO MFR 10K');
     }
+}
+async function check_fpo_profile(frm) {
+    let response = await frappe.call({
+        method: "nafpo.apis.api.get_exists_event",
+        args: {
+            doctype_name: "FPO Profiling",
+            filterName: "name_of_the_fpo",
+            value: frm.doc.fpo,
+        }
+    });
+    if (response.message == undefined) {
+        frm.set_value('fpo', '')
+        return frappe.throw('Please Create FPO Profiling for this FPO');
+    }
+}
+function set_due_date(frm) {
+    frappe.call({
+        method: "nafpo.apis.api.get_fpo_profile_doc",
+        args: {
+            doctype_name: 'FPO Profiling',
+            filter: frm.doc.fpo
+        },
+        callback: function (response) {
+            let registration_date = new Date(response.message.date_of_registration);
+            let first_due_date = new Date(registration_date);
+            let second_due_date = new Date(registration_date);
+            let third_due_date = new Date(registration_date);
+            let fourth_due_date = new Date(registration_date);
+            let fifth_due_date = new Date(registration_date);
+            let sixth_due_date = new Date(registration_date);
+
+            first_due_date.setMonth(first_due_date.getMonth());
+            second_due_date.setMonth(second_due_date.getMonth() + 6);
+            third_due_date.setMonth(third_due_date.getMonth() + 12);
+            fourth_due_date.setMonth(fourth_due_date.getMonth() + 18);
+            fifth_due_date.setMonth(fifth_due_date.getMonth() + 24);
+            sixth_due_date.setMonth(sixth_due_date.getMonth() + 30);
+
+            frm.set_value('1st_installment_due_date', first_due_date.toISOString().split('T')[0]);
+            frm.set_value('2nd_installment_due_date', second_due_date.toISOString().split('T')[0]);
+            frm.set_value('3rd_installment_due_date', third_due_date.toISOString().split('T')[0]);
+            frm.set_value('4th_installment_due_date', fourth_due_date.toISOString().split('T')[0]);
+            frm.set_value('5th_installment_due_date', fifth_due_date.toISOString().split('T')[0]);
+            frm.set_value('6th_installment_due_date', sixth_due_date.toISOString().split('T')[0]);
+        },
+        error: function (error) {
+            console.log("An error occurred: ", error);
+        }
+    });
 }
 
 frappe.ui.form.on("FPO MFR 10K", {
@@ -33,7 +83,6 @@ frappe.ui.form.on("FPO MFR 10K", {
             }
         }
 
-
         frm.set_df_property('1st_installment_due_date', 'read_only', 1);
         frm.set_df_property('2nd_installment_due_date', 'read_only', 1);
         frm.set_df_property('3rd_installment_due_date', 'read_only', 1);
@@ -47,10 +96,30 @@ frappe.ui.form.on("FPO MFR 10K", {
         frm.set_df_property('4th_installment_date', 'read_only', 1);
         frm.set_df_property('5th_installment_date', 'read_only', 1);
         frm.set_df_property('6th_installment_date', 'read_only', 1);
+        // Replace code in Future
+        // ['1st', '2nd', '3rd', '4th', '5th', '6th'].forEach(installment => {
+        //     frm.set_df_property(`${installment}_installment_due_date`, 'read_only', 1);
+        //     frm.set_df_property(`${installment}_installment_date`, 'read_only', 1);
+        // });
     },
-    fpo(frm) {
+    validate(frm) {
+        if (frm.doc.are_you_received_1st_installment_fund !== 'Yes' &&
+            frm.doc.are_you_received_2nd_installment_fund !== 'Yes' &&
+            frm.doc.are_you_received_3rd_installment_fund !== 'Yes' &&
+            frm.doc.are_you_received_4th_installment_fund !== 'Yes' &&
+            frm.doc.are_you_received_5th_installment_fund !== 'Yes' &&
+            frm.doc.are_you_received_6th_installment_fund !== 'Yes'
+        ) {
+            frappe.throw('At least one of the installment fund conditions must be met.');
+        }
+    },
+
+    async fpo(frm) {
         set_due_date(frm)
-        check_exists_fpo_in_form(frm)
+
+        // check_fpo_profile(frm)
+
+        check_exists_fpo_in_mfr(frm)
     },
     are_you_received_1st_installment_fund(frm) {
         if (frm.doc.are_you_received_1st_installment_fund == "Yes") {
@@ -107,40 +176,3 @@ frappe.ui.form.on("FPO MFR 10K", {
         }
     },
 });
-
-
-function set_due_date(frm) {
-    frappe.call({
-        method: "nafpo.apis.api.get_fpo_profile_doc",
-        args: {
-            doctype_name: 'FPO Profiling',
-            filter: frm.doc.fpo
-        },
-        callback: function (response) {
-            let registration_date = new Date(response.message.date_of_registration);
-            let first_due_date = new Date(registration_date);
-            let second_due_date = new Date(registration_date);
-            let third_due_date = new Date(registration_date);
-            let fourth_due_date = new Date(registration_date);
-            let fifth_due_date = new Date(registration_date);
-            let sixth_due_date = new Date(registration_date);
-
-            first_due_date.setMonth(first_due_date.getMonth());
-            second_due_date.setMonth(second_due_date.getMonth() + 6);
-            third_due_date.setMonth(third_due_date.getMonth() + 12);
-            fourth_due_date.setMonth(fourth_due_date.getMonth() + 18);
-            fifth_due_date.setMonth(fifth_due_date.getMonth() + 24);
-            sixth_due_date.setMonth(sixth_due_date.getMonth() + 30);
-
-            frm.set_value('1st_installment_due_date', first_due_date.toISOString().split('T')[0]);
-            frm.set_value('2nd_installment_due_date', second_due_date.toISOString().split('T')[0]);
-            frm.set_value('3rd_installment_due_date', third_due_date.toISOString().split('T')[0]);
-            frm.set_value('4th_installment_due_date', fourth_due_date.toISOString().split('T')[0]);
-            frm.set_value('5th_installment_due_date', fifth_due_date.toISOString().split('T')[0]);
-            frm.set_value('6th_installment_due_date', sixth_due_date.toISOString().split('T')[0]);
-        },
-        error: function (error) {
-            console.log("An error occurred: ", error);
-        }
-    });
-}
