@@ -147,7 +147,7 @@ def get_Eligible_but_not_received_fund_yet():
 @frappe.whitelist(allow_guest=True)
 def one_time_organization_registration_forms_fpo_count(status_name):
     user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
-        mappings={'CBBO': ('no_alias', 'cbbo_name'), 'IA': ('no_alias', 'ia')},
+        mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
         selected_filters=['CBBO', 'IA']
     )
     cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
