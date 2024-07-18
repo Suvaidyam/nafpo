@@ -51,6 +51,19 @@ frappe.ui.form.on("Business Plannings", {
             }
         }
     },
+    validate(frm) {
+        if (frm.doc.weight_loss_percent > 100 || frm.doc.weight_loss_percent < 0) {
+            frappe.throw("Weight Loss Percent can't be greater than 100 or less than 0.");
+        }
+        if (
+            isEmpty(frm.doc.gradingassying_weigning_packingbagging_at_collection_point_rate) ||
+            isEmpty(frm.doc.local_transport_include_loading_unloading_rate) ||
+            isEmpty(frm.doc.weight_loss_percent) ||
+            isEmpty(frm.doc.transport_to_market_include_loading_unloading_rate)
+        ) {
+            frappe.throw('Please fill Variable cost (Rate) & Weight Loss Percent Details');
+        }
+    },
     async fpo(frm) {
         await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
         await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
@@ -59,9 +72,11 @@ frappe.ui.form.on("Business Plannings", {
     onload: function (frm) {
         filter_financial_year('financial_year', 'start_date', frm)
     },
-    // validate(frm) {
-    //     check_capital_for_fpo(frm)
-    // }
+    weight_loss_percent(frm) {
+        if (frm.doc.weight_loss_percent > 100 || frm.doc.weight_loss_percent < 0) {
+            frappe.throw("Weight Loss Percent can't be greater than 100 or less than 0.");
+        }
+    }
 });
 async function filter_financial_year(field_name, filter_on, frm) {
     var currentYear = new Date().getFullYear();
@@ -77,6 +92,9 @@ async function filter_financial_year(field_name, filter_on, frm) {
         };
     };
 };
+function isEmpty(value) {
+    return value === 0 || value === null;
+}
 
 frappe.ui.form.on('Output Side Child', {
     output_side_add: async function (frm, cdt, cdn) {
@@ -84,6 +102,14 @@ frappe.ui.form.on('Output Side Child', {
     },
     form_render: async function (frm, cdt, cdn) {
         await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
+        if (
+            isEmpty(frm.doc.gradingassying_weigning_packingbagging_at_collection_point_rate) ||
+            isEmpty(frm.doc.local_transport_include_loading_unloading_rate) ||
+            isEmpty(frm.doc.weight_loss_percent) ||
+            isEmpty(frm.doc.transport_to_market_include_loading_unloading_rate)
+        ) {
+            frappe.throw('Please fill Variable cost (Rate) & Weight Loss Percent Details');
+        }
     },
     item_code(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
