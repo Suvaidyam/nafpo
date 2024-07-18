@@ -23,6 +23,14 @@ frappe.ui.form.on("One Time Organization Registration Forms", {
             frm.fields_dict[field].$input.datepicker({ maxDate: new Date() });
         });
     },
+    validate(frm) {
+        if (frm.doc.inc_20_status !== 'Completed' &&
+            frm.doc.inc_22_status !== 'Completed' &&
+            frm.doc.adt_1_due_date !== 'Completed'
+        ) {
+            frappe.throw('At least one of the Status Conditions must be met.');
+        }
+    },
     // financial_year: async function (frm) {
     //     check_fpo(frm)
     // },
@@ -39,8 +47,6 @@ frappe.ui.form.on("One Time Organization Registration Forms", {
     },
     fpo(frm) {
         set_due_date(frm)
-        // data = get_exists_doc('FPO Profiling', frm.doc.fpo)
-        // print('==================', data)
     },
     ...['inc_20_bank_statement', 'inc_20_bank_statement', 'inc_22_noc', 'inc_22_rent_agreement', 'inc_22_electricity_bill', 'adt_1_fpo_resolution'].reduce((acc, field) => {
         acc[field] = function (frm) {
