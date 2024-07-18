@@ -27,3 +27,17 @@ def get_user_permission(user, join_con=[]):
         WHERE UP.user = '{user}'
     """
     return frappe.db.sql(sql_query, as_dict=True)
+
+
+@frappe.whitelist()
+def get_role_wise_users_count():
+    sql_query = f"""
+       SELECT
+            SUM(CASE WHEN level = 'FPO' THEN 1 ELSE 0 END) AS fpo_count,
+            SUM(CASE WHEN level = 'CBBO' THEN 1 ELSE 0 END) AS cbbo_count,
+            SUM(CASE WHEN level = 'IA' THEN 1 ELSE 0 END) AS ia_count,
+            SUM(CASE WHEN level = 'Admin' THEN 1 ELSE 0 END) AS admin_count
+        FROM
+            `tabNAFPO User`
+    """
+    return frappe.db.sql(sql_query, as_dict=True)

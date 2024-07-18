@@ -613,6 +613,60 @@
  {
   "docstatus": 0,
   "doctype": "Custom HTML Block",
+  "html": "\n  <div class=\"main-container\" style=\"display: flex; flex-wrap: wrap; gap: 10px;\">\n    <a href=\"/app/nafpo-user?level=Admin\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1 1 calc(50% - 10px);\">\n      <div class=\"p-3\">\n        <div style=\"font-size: 11px; font-weight: bold;\">ADMIN</div>\n        <div id=\"admin\" style=\"font-size: 20px; font-weight: bold;\"></div>\n      </div>\n    </a>\n    <a href=\"/app/nafpo-user?level=IA\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1 1 calc(50% - 10px);\">\n      <div class=\"p-3\">\n        <div style=\"font-size: 11px; font-weight: bold;\">IA</div>\n        <div id=\"ia\" style=\"font-size: 20px; font-weight: bold;\"></div>\n      </div>\n    </a>\n    <a href=\"/app/nafpo-user?level=CBBO\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1 1 calc(50% - 10px);\">\n      <div class=\"p-3\">\n        <div style=\"font-size: 11px; font-weight: bold;\">CBBO</div>\n        <div id=\"cbbo\" style=\"font-size: 20px; font-weight: bold;\"></div>\n      </div>\n    </a>\n    <a href=\"/app/nafpo-user?level=FPO\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1 1 calc(50% - 10px);\">\n      <div class=\"p-3\">\n        <div style=\"font-size: 11px; font-weight: bold;\">FPO</div>\n        <div id=\"fpo\" style=\"font-size: 20px; font-weight: bold;\"></div>\n      </div>\n    </a>\n  </div>\n\n",
+  "modified": "2024-07-18 13:22:48.768760",
+  "name": "Role Wise User Count",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Role Wise User Count",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Administrator"
+   },
+   {
+    "parent": "Role Wise User Count",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.user.get_role_wise_users_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n            let Admin = root_element.querySelector('#admin');\n            Admin.textContent = forms_lists[0].admin_count;\n             let Ia = root_element.querySelector('#ia');\n            Ia.textContent = forms_lists[0].ia_count;\n             let Cbbo = root_element.querySelector('#cbbo');\n            Cbbo.textContent = forms_lists[0].cbbo_count;\n            let FPO = root_element.querySelector('#fpo');\n            FPO.textContent = forms_lists[0].fpo_count;\n           \n           \n});",
+  "style": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Financial%20Year%20Wise%20Turnover?profitability=Profit\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">FPO Count With Current Year Business Planning</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
+  "modified": "2024-07-16 20:10:55.528317",
+  "name": "FPO Count With Current Year Business Planning",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "FPO Count With Current Year Business Planning",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "Admin"
+   },
+   {
+    "parent": "FPO Count With Current Year Business Planning",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "IA"
+   },
+   {
+    "parent": "FPO Count With Current Year Business Planning",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "CBBO"
+   }
+  ],
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.business_planning.fpo_with_current_year_business_planning',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(response => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  response !== undefined ? response?.count : 0;\n});",
+  "style": "* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
   "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Operation system Capacity Building</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Operation%20system%20Capacity%20Building?has_trained=Yes\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No.of FPO performed CEO/ Accountant training:Yes </div>\n      <div class=\"data4\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Operation%20system%20Capacity%20Building?has_trained=No\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No.of FPO performed CEO/ Accountant training:No</div>\n      <div class=\"data5\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n",
   "modified": "2024-07-18 12:01:53.887498",
   "name": "Operation system Capacity Building.",
@@ -692,10 +746,17 @@
   "docstatus": 0,
   "doctype": "Custom HTML Block",
   "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Governance System Capacity Building</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Governance%20System%20Capacity%20Building%20FPO%20BOD\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">FPO BOD who has attended atleast 1 training</div>\n      <div id=\"fpo_count_yes\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Governance%20System%20Capacity%20Building%20FPO%20BOD\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">FPO BOD who has not attended training</div>\n      <div id=\"fpo_count_no\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n",
-  "modified": "2024-07-02 13:02:36.825770",
+  "modified": "2024-07-18 12:31:22.123372",
   "name": "Governance System Capacity Building FPO",
   "private": 0,
-  "roles": [],
+  "roles": [
+   {
+    "parent": "Governance System Capacity Building FPO",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "FPO"
+   }
+  ],
   "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.governance_system_capacity_building_fpo_bod_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n            let some_class_element = root_element.querySelector('#fpo_count_yes');\n            some_class_element.textContent = forms_lists.Yes;\n             let some_class_element1 = root_element.querySelector('#fpo_count_no');\n            some_class_element1.textContent = forms_lists.No;\n});",
   "style": null
  },
@@ -728,35 +789,5 @@
   ],
   "script": " frappe.call({\n    method: \"nafpo.apis.api.membership_system_capacity_buidling_count\",\n    \n             callback(r) {\n                console.log(r,\"erheoiuhr\")\n                let some_class_element = root_element.querySelector('.data');\n                some_class_element.textContent = r.message.FPO_with_Training;\n                 let some_class_element1 = root_element.querySelector('.data1');\n                some_class_element1.textContent = r.message.FPO_without_Training;\n             }\n});",
   "style": null
- },
- {
-  "docstatus": 0,
-  "doctype": "Custom HTML Block",
-  "html": "<div class=\"main-container\" style=\"display: flex; gap: 10px;\">\n  <a href=\"/app/query-report/Financial%20Year%20Wise%20Turnover?profitability=Profit\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11.5px; font-weight: 550;\">FPO Count With Current Year Business Planning</div>\n      <div class=\"data\" id=\"fpo_count\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>",
-  "modified": "2024-07-16 20:10:55.528317",
-  "name": "FPO Count With Current Year Business Planning",
-  "private": 0,
-  "roles": [
-   {
-    "parent": "FPO Count With Current Year Business Planning",
-    "parentfield": "roles",
-    "parenttype": "Custom HTML Block",
-    "role": "Admin"
-   },
-   {
-    "parent": "FPO Count With Current Year Business Planning",
-    "parentfield": "roles",
-    "parenttype": "Custom HTML Block",
-    "role": "IA"
-   },
-   {
-    "parent": "FPO Count With Current Year Business Planning",
-    "parentfield": "roles",
-    "parenttype": "Custom HTML Block",
-    "role": "CBBO"
-   }
-  ],
-  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.business_planning.fpo_with_current_year_business_planning',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(response => {\n    var fpo_count = root_element.getElementById('fpo_count');\n    fpo_count.innerHTML =  response !== undefined ? response?.count : 0;\n});",
-  "style": "* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */\n}"
  }
 ]
