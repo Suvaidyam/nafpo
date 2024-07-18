@@ -259,20 +259,6 @@ def get_complete_fpo_board_of_directors_meeting_count():
     return data[0]
 
 
-# Aniket
-
-@frappe.whitelist()
-def membership_system_capacity_buidling_count():
-    queary = """
-    SELECT
-        COUNT(DISTINCT CASE WHEN c.fpo IS NOT NULL THEN f.name END) AS FPO_with_Training,
-        COUNT(DISTINCT CASE WHEN c.fpo IS NULL THEN f.name END) AS FPO_without_Training
-    FROM tabFPO f
-    LEFT JOIN tabCapacity c ON f.name = c.fpo;
-    """
-    count= frappe.db.sql(queary, as_dict=1)
-    return count[0]
-
 
 @frappe.whitelist()
 def get_incomplete_fpo_count():
@@ -299,9 +285,35 @@ HAVING
 
 
 
+# ??????????????????????????????????????Aniket?????????????????????????????????????????????????
+
+@frappe.whitelist()
+def membership_system_capacity_buidling_count():
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+        mappings={'CBBO': ('f', 'cbbo_name'), 'IA': ('f', 'ia') , 'FPO': ('f', 'fpo')},
+        selected_filters=['CBBO', 'IA' , 'FPO']
+    )
+    cond_str = f" WHERE {user_filter_conditions}" if user_filter_conditions else ""
+    queary = f"""
+    SELECT
+        COUNT(DISTINCT CASE WHEN c.fpo IS NOT NULL THEN f.name END) AS FPO_with_Training,
+        COUNT(DISTINCT CASE WHEN c.fpo IS NULL THEN f.name END) AS FPO_without_Training
+    FROM `tabFPO` f
+    LEFT JOIN `tabCapacity` c ON f.name = c.fpo
+    {cond_str}
+    """
+    count= frappe.db.sql(queary, as_dict=1)
+    return count[0]
+
+
 @frappe.whitelist()
 def operation_system_capacity_building():
-    queary = """
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+        mappings={'CBBO': ('_fpo', 'cbbo_name'), 'IA': ('_fpo', 'ia') , 'FPO': ('_fpo', 'fpo')},
+        selected_filters=['CBBO', 'IA' , 'FPO']
+    )
+    cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
+    queary = f"""
     SELECT 
     (SELECT COUNT(*)
      FROM (
@@ -313,22 +325,24 @@ def operation_system_capacity_building():
          INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
          INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
          INNER JOIN `tabFPO` AS _fpo ON _fs.fpo = _fpo.name
+          WHERE 1=1  {cond_str}
          GROUP BY _fpo.fpo_name
      ) AS has_trained) AS has_trained_count,
 
     (SELECT COUNT(*)
      FROM (
          SELECT
-             fpo.name
+             _fpo.name
          FROM
-             `tabFPO` AS fpo
+             `tabFPO` AS _fpo
          WHERE
-             fpo.name NOT IN (
+             _fpo.name NOT IN (
                  SELECT DISTINCT _fs.fpo
                  FROM `tabCapacity` AS _cap
                  INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
                  INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
              )
+             {cond_str}
      ) AS has_not_trained) AS has_not_trained_count;
 
 
@@ -339,7 +353,12 @@ def operation_system_capacity_building():
 
 @frappe.whitelist()
 def governance_system_capacity_building_count():
-    queary = """
+    user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
+        mappings={'CBBO': ('f', 'cbbo_name'), 'IA': ('f', 'ia') , 'FPO': ('f', 'fpo')},
+        selected_filters=['CBBO', 'IA' , 'FPO']
+    )
+    cond_str = f" WHERE {user_filter_conditions}" if user_filter_conditions else ""
+    queary = f"""
     SELECT
     COUNT(CASE WHEN subquery.training_count > 0 THEN 1 END) AS FPOs_With_Training,
     COUNT(CASE WHEN subquery.training_count = 0 THEN 1 END) AS FPOs_Without_Training
@@ -353,6 +372,7 @@ FROM (
         `tabCapacity` c ON f.name = c.fpo
     LEFT JOIN
         `tabBOD KYC Child` b ON c.name = b.parent
+    {cond_str}
     GROUP BY
         f.name
 ) AS subquery;

@@ -5,30 +5,24 @@ import frappe
 from nafpo.utils.rport_filter import ReportFilter
 
 def execute(filters=None):
-	user_filter_conditions_top = ReportFilter.rport_filter_by_user_permissions(
-		mappings={'CBBO': ('_fpo', 'cbbo_name'), 'State': ('_fpo', 'state'), 'District': ('_fpo', 'district'), 'FPO': ('_fpo', 'name'),"IA": ('_cap', 'ia')},
-		selected_filters=['CBBO','State','FPO','District',"IA"]
-	)
-	user_cond_str_top = f"WHERE {user_filter_conditions_top}" if user_filter_conditions_top else ""
 	user_filter_conditions_bottom = ReportFilter.rport_filter_by_user_permissions(
-		mappings={'CBBO': ('fpo', 'cbbo_name'), 'State': ('fpo', 'state'), 'District': ('fpo', 'district'), 'FPO': ('fpo', 'name'),"IA": ('trained_fpos', 'ia')},
+		mappings={'CBBO': ('fpo', 'cbbo_name'), 'State': ('fpo', 'state'), 'District': ('fpo', 'district'), 'FPO': ('fpo', 'name'),"IA": ('fpo', 'ia')},
 		selected_filters=['CBBO','State','FPO','District',"IA"]
 	)
-	user_cond_str_bottom = f"AND {user_filter_conditions_bottom}" if user_filter_conditions_bottom else ""
-	print("="*70,user_cond_str_top)
+	user_cond_str = f"AND {user_filter_conditions_bottom}" if user_filter_conditions_bottom else ""
 
 	query = f"""
 	SELECT 
 		(SELECT COUNT(*)
 		FROM (
 			SELECT
-				DISTINCT _fpo.name
+				DISTINCT fpo.name
 			FROM
 				`tabCapacity` AS _cap
 			INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
 			INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
-			INNER JOIN `tabFPO` AS _fpo ON _fs.fpo = _fpo.name
-			{user_cond_str_top}
+			INNER JOIN `tabFPO` AS fpo ON _fs.fpo = fpo.name
+			{user_cond_str}
 		) AS has_trained) AS count, 'Yes' AS trained
 
 	UNION ALL
@@ -41,7 +35,7 @@ def execute(filters=None):
 		INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
 		INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
 	) AS trained_fpos ON fpo.name = trained_fpos.fpo
-	WHERE trained_fpos.fpo IS NULL {user_cond_str_bottom};
+	WHERE trained_fpos.fpo IS NULL {user_cond_str};
     """
 	columns = [
 		{

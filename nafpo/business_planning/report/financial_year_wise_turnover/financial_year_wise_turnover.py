@@ -33,15 +33,15 @@ def execute(filters=None):
 		else:
 			turnover_cond = f" AND bp.total_sales >= 5000000"
 		
-		if profitability is not None:
-			if profitability == 'Profit':
-				profitability_cond = f"AND bp.total_sales > 0"
-			elif profitability == 'Loss':
-				profitability_cond = f"AND bp.total_sales < 0"
-			elif profitability == 'Not Filled':
-				profitability_cond = f"AND bp.fpo IS NULL"
-				turnover_cond = ""
-				financial_year_cond = ""
+	if profitability is not None:
+		if profitability == 'Profit':
+			profitability_cond = f"AND bp.total_sales > 0"
+		elif profitability == 'Loss':
+			profitability_cond = f"AND bp.total_sales < 0"
+		elif profitability == 'Not Filled':
+			profitability_cond = f"AND bp.fpo IS NULL"
+			turnover_cond = ""
+			financial_year_cond = ""
 	
 
 	query = f"""
