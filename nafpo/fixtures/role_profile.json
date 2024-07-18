@@ -32,21 +32,6 @@
  {
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2024-05-27 09:51:05.321771",
-  "name": "CBBO",
-  "role_profile": "CBBO",
-  "roles": [
-   {
-    "parent": "CBBO",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "CBBO"
-   }
-  ]
- },
- {
-  "docstatus": 0,
-  "doctype": "Role Profile",
   "modified": "2024-05-27 09:50:28.926389",
   "name": "Admin",
   "role_profile": "Admin",
@@ -56,6 +41,21 @@
     "parentfield": "roles",
     "parenttype": "Role Profile",
     "role": "Admin"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-05-27 09:51:05.321771",
+  "name": "CBBO",
+  "role_profile": "CBBO",
+  "roles": [
+   {
+    "parent": "CBBO",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "CBBO"
    }
   ]
  }

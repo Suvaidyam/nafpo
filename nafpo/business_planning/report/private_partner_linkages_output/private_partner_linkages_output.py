@@ -18,7 +18,7 @@ def execute(filters=None):
 		{
 			"fieldname": "output_side",
 			"label": "Output Side",
-			"fieldtype": "Currency",
+			"fieldtype": "Int",
 			"width": 300
 		}
 	]

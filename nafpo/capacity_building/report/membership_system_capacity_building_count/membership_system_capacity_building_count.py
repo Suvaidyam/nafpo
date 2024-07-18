@@ -6,19 +6,19 @@ from nafpo.utils.rport_filter import ReportFilter
 
 def execute(filters=None):
 	user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
-		mappings={'CBBO': ('f', 'cbbo_name'), 'State': ('f', 'state'), 'District': ('f', 'district'), 'FPO': ('f', 'name'), 'IA': ('c', 'ia')},
+		mappings={'CBBO': ('f', 'cbbo_name'), 'State': ('f', 'state'), 'District': ('f', 'district'), 'FPO': ('f', 'name'), 'IA': ('f', 'ia')},
 		selected_filters=['CBBO','State','FPO','District','IA']
 	)
 	user_cond_str = f"WHERE {user_filter_conditions}" if user_filter_conditions else ""
 
 	query = f"""
-	SELECT
-		CASE WHEN c.fpo IS NOT NULL THEN 'Yes' ELSE 'No' END AS trained_status,
-		COUNT(DISTINCT f.name) AS count
-	FROM tabFPO f
-	LEFT JOIN tabCapacity c ON f.name = c.fpo
-	{user_cond_str}
-	GROUP BY CASE WHEN c.fpo IS NOT NULL THEN 'Yes' ELSE 'No' END;
+		SELECT
+			CASE WHEN c.fpo IS NOT NULL THEN 'Yes' ELSE 'No' END AS trained_status,
+			COUNT(DISTINCT f.name) AS count
+		FROM tabFPO f
+		LEFT JOIN tabCapacity c ON f.name = c.fpo
+		{user_cond_str}
+		GROUP BY CASE WHEN c.fpo IS NOT NULL THEN 'Yes' ELSE 'No' END;
 	"""
 	columns = [
 		{

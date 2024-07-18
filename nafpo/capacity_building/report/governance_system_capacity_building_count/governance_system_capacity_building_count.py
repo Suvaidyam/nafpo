@@ -6,15 +6,10 @@ from nafpo.utils.rport_filter import ReportFilter
 
 def execute(filters=None):
 	user_filter_conditions_top = ReportFilter.rport_filter_by_user_permissions(
-		mappings={'CBBO': ('fpo', 'cbbo_name'), 'State': ('fpo', 'state'), 'District': ('fpo', 'district'), 'FPO': ('fpo', 'name'), 'IA': ('subquery', 'ia')},
+		mappings={'CBBO': ('fpo', 'cbbo_name'), 'State': ('fpo', 'state'), 'District': ('fpo', 'district'), 'FPO': ('fpo', 'name'), 'IA': ('fpo', 'ia')},
 		selected_filters=['CBBO','State','FPO','District','IA']
 	)
-	user_cond_str_top = f"AND {user_filter_conditions_top}" if user_filter_conditions_top else ""
-	user_filter_conditions_bottom = ReportFilter.rport_filter_by_user_permissions(
-		mappings={'CBBO': ('fpo', 'cbbo_name'), 'State': ('fpo', 'state'), 'District': ('fpo', 'district'), 'FPO': ('fpo', 'name'),'IA': ('_cap', 'ia')},
-		selected_filters=['CBBO','State','FPO','District','IA']
-	)
-	user_cond_str_bottom = f"AND {user_filter_conditions_bottom}" if user_filter_conditions_bottom else ""
+	user_cond_str = f"AND {user_filter_conditions_top}" if user_filter_conditions_top else ""
 
 	columns = [
 		{
@@ -41,7 +36,7 @@ def execute(filters=None):
 				INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
 				INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
 			) AS subquery ON fpo.name = subquery.fpo
-			WHERE subquery.fpo IS NULL {user_cond_str_top}
+			WHERE subquery.fpo IS NULL {user_cond_str}
 		) AS has_not_trained
 
 		UNION ALL
@@ -54,7 +49,7 @@ def execute(filters=None):
 			LEFT JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
 			LEFT JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
 			WHERE _fs.fpo IS NOT NULL
-			{user_cond_str_bottom}
+			{user_cond_str}
 		) AS has_trained;
 	"""
 	data = frappe.db.sql(query, as_dict=True)

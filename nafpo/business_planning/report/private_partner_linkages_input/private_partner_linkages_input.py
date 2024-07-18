@@ -16,7 +16,7 @@ def execute(filters=None):
 		{
 			"fieldname": "input_side",
 			"label": "Input Side",
-			"fieldtype": "Currency",
+			"fieldtype": "Int",
 			"width": 300
 		}
 	]
