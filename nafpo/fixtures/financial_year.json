@@ -2,24 +2,6 @@
  {
   "docstatus": 0,
   "doctype": "Financial Year",
-  "end_date": "2021-03-31",
-  "financial_year_name": "2020-21",
-  "modified": "2024-07-17 15:12:35.719537",
-  "name": "2020-21",
-  "start_date": "2020-04-01"
- },
- {
-  "docstatus": 0,
-  "doctype": "Financial Year",
-  "end_date": "2022-03-31",
-  "financial_year_name": "2021-22",
-  "modified": "2024-07-17 15:12:52.938111",
-  "name": "2021-22",
-  "start_date": "2021-04-01"
- },
- {
-  "docstatus": 0,
-  "doctype": "Financial Year",
   "end_date": "2023-03-31",
   "financial_year_name": "2022-23",
   "modified": "2024-07-17 15:12:58.797376",
@@ -34,6 +16,15 @@
   "modified": "2024-07-17 15:13:03.660123",
   "name": "2023-24",
   "start_date": "2023-04-01"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Financial Year",
+  "end_date": "2025-03-31",
+  "financial_year_name": "2024-25",
+  "modified": "2024-07-17 15:13:16.656578",
+  "name": "2024-25",
+  "start_date": "2024-04-01"
  },
  {
   "docstatus": 0,
@@ -83,109 +74,19 @@
  {
   "docstatus": 0,
   "doctype": "Financial Year",
-  "end_date": "2031-03-31",
-  "financial_year_name": "2030-31",
-  "modified": "2024-07-17 15:13:46.743439",
-  "name": "2030-31",
-  "start_date": "2030-04-01"
+  "end_date": "2022-03-31",
+  "financial_year_name": "2021-22",
+  "modified": "2024-07-17 15:12:52.938111",
+  "name": "2021-22",
+  "start_date": "2021-04-01"
  },
  {
   "docstatus": 0,
   "doctype": "Financial Year",
-  "end_date": "2032-03-31",
-  "financial_year_name": "2031-32",
-  "modified": "2024-07-17 15:14:59.601555",
-  "name": "2031-32",
-  "start_date": "2031-04-01"
- },
- {
-  "docstatus": 0,
-  "doctype": "Financial Year",
-  "end_date": "2033-03-31",
-  "financial_year_name": "2032-33",
-  "modified": "2024-07-17 15:15:24.359900",
-  "name": "2032-33",
-  "start_date": "2032-04-01"
- },
- {
-  "docstatus": 0,
-  "doctype": "Financial Year",
-  "end_date": "2034-03-31",
-  "financial_year_name": "2033-34",
-  "modified": "2024-07-17 15:15:29.085185",
-  "name": "2033-34",
-  "start_date": "2033-04-01"
- },
- {
-  "docstatus": 0,
-  "doctype": "Financial Year",
-  "end_date": "2035-03-31",
-  "financial_year_name": "2034-35",
-  "modified": "2024-07-17 15:15:33.603190",
-  "name": "2034-35",
-  "start_date": "2034-04-01"
- },
- {
-  "docstatus": 0,
-  "doctype": "Financial Year",
-  "end_date": "2036-03-31",
-  "financial_year_name": "2035-36",
-  "modified": "2024-07-17 15:15:37.755059",
-  "name": "2035-36",
-  "start_date": "2035-04-01"
- },
- {
-  "docstatus": 0,
-  "doctype": "Financial Year",
-  "end_date": "2037-03-31",
-  "financial_year_name": "2036-37",
-  "modified": "2024-07-17 15:15:42.083320",
-  "name": "2036-37",
-  "start_date": "2036-04-01"
- },
- {
-  "docstatus": 0,
-  "doctype": "Financial Year",
-  "end_date": "2038-03-31",
-  "financial_year_name": "2037-38",
-  "modified": "2024-07-17 15:15:47.133736",
-  "name": "2037-38",
-  "start_date": "2037-04-01"
- },
- {
-  "docstatus": 0,
-  "doctype": "Financial Year",
-  "end_date": "2039-03-31",
-  "financial_year_name": "2038-39",
-  "modified": "2024-07-17 15:15:54.316077",
-  "name": "2038-39",
-  "start_date": "2038-04-01"
- },
- {
-  "docstatus": 0,
-  "doctype": "Financial Year",
-  "end_date": "2040-03-31",
-  "financial_year_name": "2039-40",
-  "modified": "2024-07-17 15:15:59.745876",
-  "name": "2039-40",
-  "start_date": "2039-04-01"
- },
- {
-  "docstatus": 0,
-  "doctype": "Financial Year",
-  "end_date": "2041-03-31",
-  "financial_year_name": "2040-41",
-  "modified": "2024-07-17 15:16:05.561929",
-  "name": "2040-41",
-  "start_date": "2040-04-01"
- },
- {
-  "docstatus": 0,
-  "doctype": "Financial Year",
-  "end_date": "2025-03-31",
-  "financial_year_name": "2024-25",
-  "modified": "2024-07-17 15:13:16.656578",
-  "name": "2024-25",
-  "start_date": "2024-04-01"
+  "end_date": "2021-03-31",
+  "financial_year_name": "2020-21",
+  "modified": "2024-07-17 15:12:35.719537",
+  "name": "2020-21",
+  "start_date": "2020-04-01"
  }
 ]
