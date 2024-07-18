@@ -11,12 +11,12 @@
  "idx": 0,
  "indicator_color": "",
  "is_hidden": 0,
- "label": "NAFPO Users",
+ "label": "User Management",
  "links": [],
- "modified": "2024-07-16 20:16:08.955885",
+ "modified": "2024-07-17 17:42:06.573795",
  "modified_by": "Administrator",
  "module": "nafpo",
- "name": "NAFPO Users",
+ "name": "User Management",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
@@ -38,5 +38,5 @@
  ],
  "sequence_id": 2.0,
  "shortcuts": [],
- "title": "NAFPO Users"
+ "title": "User Management"
 }

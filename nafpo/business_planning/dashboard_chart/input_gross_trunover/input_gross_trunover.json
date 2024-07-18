@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 0,
+ "idx": 1,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-07-16 07:18:16.256645",
+ "modified": "2024-07-17 17:35:39.900488",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Input Gross Trunover",
@@ -20,15 +20,6 @@
  "roles": [
   {
    "role": "FPO"
-  },
-  {
-   "role": "Admin"
-  },
-  {
-   "role": "IA"
-  },
-  {
-   "role": "CBBO"
   }
  ],
  "time_interval": "Yearly",
