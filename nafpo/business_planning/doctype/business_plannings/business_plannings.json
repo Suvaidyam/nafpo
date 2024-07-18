@@ -251,28 +251,28 @@
    "default": "0",
    "fieldname": "gradingassying_weigning_packingbagging_at_collection_point_rate",
    "fieldtype": "Int",
-   "label": "Grading/assying, weigning, packing/bagging at collection point rate (Rs.Y/Quintal)",
+   "label": "Value of Grading/assying, weigning, packing/bagging at collection point (Rs.Y/Quintal)",
    "non_negative": 1
   },
   {
    "default": "0",
    "fieldname": "local_transport_include_loading_unloading_rate",
    "fieldtype": "Int",
-   "label": "Local transport (Include loading & unloading)- collection point rate to warehouse (Rs.Z/Quintal)",
+   "label": "Value of Local transport (Include loading & unloading)- collection point to warehouse (Rs.Z/Quintal)",
    "non_negative": 1
   },
   {
    "default": "0",
    "fieldname": "storing_warehousing_costs_rate",
    "fieldtype": "Int",
-   "label": "Storing/ Warehousing Costs Rate (Rs.A/ Quintal)",
+   "label": "Value of Storing/ Warehousing Costs (Rs.A/ Quintal)",
    "non_negative": 1
   },
   {
    "default": "0",
    "fieldname": "transport_to_market_include_loading_unloading_rate",
    "fieldtype": "Int",
-   "label": "Transport to market rate (Include loading & unloading) (Rs.B/ Quintal)",
+   "label": "Value of Transport to market (Include loading & unloading) (Rs.B/ Quintal)",
    "non_negative": 1
   },
   {
@@ -435,6 +435,7 @@
    "default": "0",
    "fieldname": "quantity_available_for_sale_after_weight_loss",
    "fieldtype": "Float",
+   "hidden": 1,
    "label": "Quantity available for sale after X% weight loss",
    "read_only": 1
   },
@@ -449,7 +450,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-17 13:44:08.817932",
+ "modified": "2024-07-18 15:44:47.865277",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",

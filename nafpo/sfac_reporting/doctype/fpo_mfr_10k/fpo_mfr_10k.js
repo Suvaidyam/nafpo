@@ -110,7 +110,7 @@ frappe.ui.form.on("FPO MFR 10K", {
             frm.doc.are_you_received_5th_installment_fund !== 'Yes' &&
             frm.doc.are_you_received_6th_installment_fund !== 'Yes'
         ) {
-            frappe.throw('At least one of the installment fund conditions must be met.');
+            frappe.throw('Installment Status Not Yet Updated');
         }
     },
 
