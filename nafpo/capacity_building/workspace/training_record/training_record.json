@@ -1,27 +1,27 @@
 {
  "charts": [
   {
+   "chart_name": "No of FPO which has trained BOD",
+   "label": "FPOs by Board of Directors Training Status"
+  },
+  {
    "chart_name": "No of FPO participated at least 1 training",
-   "label": "No of FPO participated at least 1 training"
+   "label": "FPOs by  Membership System  Training Status"
   },
   {
    "chart_name": "Is FPO trained Accountant",
    "label": "Is FPO trained Accountant"
   },
   {
+   "chart_name": "No. of FPOs which has trained CEO",
+   "label": "FPOs by  Opration System  Training Status"
+  },
+  {
    "chart_name": "Is FPO trained CEO",
    "label": "Is FPO trained CEO"
-  },
-  {
-   "chart_name": "No of FPO which has trained BOD",
-   "label": "No of FPO which has trained BOD"
-  },
-  {
-   "chart_name": "No. of FPOs which has trained CEO",
-   "label": "No. of FPOs which has trained CEO"
   }
  ],
- "content": "[{\"id\":\"N-1OH1Fsv0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Overview</b></span>\",\"col\":12}},{\"id\":\"_79g4Hj6R5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Training & Capacity Forms Overview\",\"col\":4}},{\"id\":\"5qkhXQNxWK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"VzOgmvpq7j\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Membership System Capacity Building.\",\"col\":6}},{\"id\":\"9bY8I7x0w8\",\"type\":\"chart\",\"data\":{\"chart_name\":\"No of FPO participated at least 1 training\",\"col\":6}},{\"id\":\"A6IDR77Aeq\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Governance System Capacity Building.\",\"col\":6}},{\"id\":\"Bo9ocxzmU0\",\"type\":\"chart\",\"data\":{\"chart_name\":\"No of FPO which has trained BOD\",\"col\":6}},{\"id\":\"Fh5eUsFh0X\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Operation system Capacity Building\",\"col\":6}},{\"id\":\"fwfVYa_dnH\",\"type\":\"chart\",\"data\":{\"chart_name\":\"No. of FPOs which has trained CEO\",\"col\":6}},{\"id\":\"9snb_cuN_w\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Membership System Capacity Building FPO\",\"col\":6}},{\"id\":\"k_5anDF-80\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Is FPO trained Accountant\",\"col\":6}},{\"id\":\"i57KKh1O6y\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Governance System Capacity Building FPO\",\"col\":6}},{\"id\":\"c4DvmCpzql\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Is FPO trained CEO\",\"col\":6}}]",
+ "content": "[{\"id\":\"N-1OH1Fsv0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Overview</b></span>\",\"col\":12}},{\"id\":\"_79g4Hj6R5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Training & Capacity Forms Overview\",\"col\":4}},{\"id\":\"5qkhXQNxWK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"VzOgmvpq7j\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Membership System Capacity Building.\",\"col\":6}},{\"id\":\"9bY8I7x0w8\",\"type\":\"chart\",\"data\":{\"chart_name\":\"FPOs by  Membership System  Training Status\",\"col\":6}},{\"id\":\"A6IDR77Aeq\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Governance System Capacity Building.\",\"col\":6}},{\"id\":\"Bo9ocxzmU0\",\"type\":\"chart\",\"data\":{\"chart_name\":\"FPOs by Board of Directors Training Status\",\"col\":6}},{\"id\":\"Fh5eUsFh0X\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Operation system Capacity Building\",\"col\":6}},{\"id\":\"fwfVYa_dnH\",\"type\":\"chart\",\"data\":{\"chart_name\":\"FPOs by  Opration System  Training Status\",\"col\":6}},{\"id\":\"9snb_cuN_w\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Membership System Capacity Building FPO\",\"col\":6}},{\"id\":\"k_5anDF-80\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Is FPO trained Accountant\",\"col\":6}},{\"id\":\"i57KKh1O6y\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Governance System Capacity Building FPO\",\"col\":6}},{\"id\":\"c4DvmCpzql\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Is FPO trained CEO\",\"col\":6}}]",
  "creation": "2024-06-22 10:59:40.640048",
  "custom_blocks": [
   {
@@ -55,7 +55,7 @@
  "is_hidden": 0,
  "label": "Training Record",
  "links": [],
- "modified": "2024-07-17 19:05:17.560367",
+ "modified": "2024-07-18 12:03:39.658113",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Training Record",
