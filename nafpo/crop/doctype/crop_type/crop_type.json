@@ -29,7 +29,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Name of the Crop Type (e.g. Vegetables, Fruits, Pulses , etc.)",
-   "options": "Crops Types Name",
+   "options": "Crops Types",
    "reqd": 1
   },
   {
@@ -82,7 +82,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-17 13:22:02.473043",
+ "modified": "2024-07-18 17:04:45.830075",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop Type",

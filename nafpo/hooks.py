@@ -7,9 +7,9 @@ app_license = "mit"
 # required_apps = []
 
 fixtures = [
-    # "Role",
-    # "Role Profile",
-    # "Type of Organization",
+    "Role",
+    "Role Profile",
+    "Type of Organization",
     "Custom HTML Block",
     "Financial Year",
 ]
@@ -128,6 +128,9 @@ doctype_js = {
         "public/js/utils/utils.js"
     ],
     "Business Plannings" : [
+        "public/js/utils/utils.js"
+    ],
+    "Crops Variety" : [
         "public/js/utils/utils.js"
     ],
 }
