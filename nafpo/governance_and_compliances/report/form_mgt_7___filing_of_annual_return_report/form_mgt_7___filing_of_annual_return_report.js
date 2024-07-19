@@ -8,6 +8,7 @@ frappe.query_reports["Form MGT-7 - Filing of Annual Return Report"] = {
 			"label": __("Status"),
 			"fieldtype": "Autocomplete",
 			"options": ["Pending", "Completed Before Due Date", "Completed After Due Date"],
+			"default": "Completed Before Due Date"
 		}
 	]
 };

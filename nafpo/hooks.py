@@ -130,6 +130,9 @@ doctype_js = {
     "Business Plannings" : [
         "public/js/utils/utils.js"
     ],
+    "Crops Variety" : [
+        "public/js/utils/utils.js"
+    ],
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}

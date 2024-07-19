@@ -49,7 +49,7 @@ def execute(filters=None):
         WHERE
             `tabBoard of Directors Meeting Forms`.status = 'Completed' {cond_str}
         GROUP BY
-            fpo_name, fpo_contact_number, financial_year
+            fpo_name, financial_year
         HAVING
             COUNT(*) <= 3
     """

@@ -23,6 +23,17 @@ frappe.ui.form.on("Annual Compliance Forms", {
             frm.fields_dict[field].$input.datepicker({ maxDate: new Date() });
         });
     },
+    validate(frm) {
+        if (frm.doc.aoc_4_status !== 'Completed' &&
+            frm.doc.mgt_7_status !== 'Completed' &&
+            frm.doc.adt_1_status !== 'Completed' &&
+            frm.doc.d_kyc_status !== 'Completed' &&
+            frm.doc.it_return_status !== 'Completed' &&
+            frm.doc.agm_status !== 'Completed'
+        ) {
+            frappe.throw('Form Status Not Yet Updated');
+        }
+    },
     fpo(frm) {
         set_due_date(frm)
     },

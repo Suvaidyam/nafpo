@@ -8,6 +8,7 @@ frappe.query_reports["DIRECTOR KYC Report"] = {
 			"label": __("Status"),
 			"fieldtype": "Autocomplete",
 			"options": ["Pending", "Completed Before Due Date", "Completed After Due Date"],
+			"default": "Completed Before Due Date"
 		}
 	]
 };
