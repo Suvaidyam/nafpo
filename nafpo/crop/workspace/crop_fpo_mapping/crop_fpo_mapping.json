@@ -1,38 +1,38 @@
 {
- "charts": [],
- "content": "[{\"id\":\"sE8C5ERk-E\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crop Type\",\"col\":4}},{\"id\":\"dI1W4LhT1Q\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crop Name\",\"col\":4}}]",
- "creation": "2024-06-22 10:50:14.226589",
- "custom_blocks": [],
- "docstatus": 0,
- "doctype": "Workspace",
- "for_user": "",
- "hide_custom": 0,
- "icon": "branch",
- "idx": 0,
- "indicator_color": "",
- "is_hidden": 0,
- "label": "Crop-FPO Mapping",
- "links": [],
- "modified": "2024-07-17 17:46:43.407323",
- "modified_by": "Administrator",
- "module": "Crop",
- "name": "Crop-FPO Mapping",
- "number_cards": [
-  {
-   "label": "Crop Type",
-   "number_card_name": "Crop Type"
-  },
-  {
-   "label": "Crop Name",
-   "number_card_name": "Crop Name"
-  }
- ],
- "owner": "Administrator",
- "parent_page": "",
- "public": 1,
- "quick_lists": [],
- "roles": [],
- "sequence_id": 5.0,
- "shortcuts": [],
- "title": "Crop-FPO Mapping"
+   "charts": [],
+   "content": "[{\"id\":\"sE8C5ERk-E\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crop Type\",\"col\":4}},{\"id\":\"dI1W4LhT1Q\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crop\",\"col\":4}}]",
+   "creation": "2024-06-22 10:50:14.226589",
+   "custom_blocks": [],
+   "docstatus": 0,
+   "doctype": "Workspace",
+   "for_user": "",
+   "hide_custom": 0,
+   "icon": "branch",
+   "idx": 0,
+   "indicator_color": "",
+   "is_hidden": 0,
+   "label": "Crop-FPO Mapping",
+   "links": [],
+   "modified": "2024-07-18 14:16:54.541442",
+   "modified_by": "Administrator",
+   "module": "Crop",
+   "name": "Crop-FPO Mapping",
+   "number_cards": [
+      {
+         "label": "Crop",
+         "number_card_name": "Crop Name"
+      },
+      {
+         "label": "Crop Type",
+         "number_card_name": "Crop Type"
+      }
+   ],
+   "owner": "Administrator",
+   "parent_page": "",
+   "public": 1,
+   "quick_lists": [],
+   "roles": [],
+   "sequence_id": 5.0,
+   "shortcuts": [],
+   "title": "Crop-FPO Mapping"
 }
