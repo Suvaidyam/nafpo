@@ -377,7 +377,7 @@ async function calculate_input_felids_value(frm, row) {
     frm.cur_grid.refresh_field('total_selling_priceincome_rs');
     // # Total Income of FPO from Input
     row.total_income_of_fpo_from_input =
-        (row.total_selling_priceincome_rs ? row.total_selling_priceincome_rs : 0) *
+        (row.total_selling_priceincome_rs ? row.total_selling_priceincome_rs : 0) -
         (row.total_purchase_price_rs ? row.total_purchase_price_rs : 0);
     frm.cur_grid.refresh_field('total_income_of_fpo_from_input');
     // ===================================== Total =====================================
@@ -409,19 +409,16 @@ frappe.ui.form.on('Input Side Child', {
     item_code(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
     },
-    percentage_of_total_cropping_area(frm, cdt, cdn) {
-        let row = frappe.get_doc(cdt, cdn);
-        if (row.percentage_of_total_cropping_area < 0 || row.percentage_of_total_cropping_area > 100) {
-            row.percentage_of_total_cropping_area = ''
-            frappe.throw({ message: 'Percentage of Total Cropping Area for which Input Name Shall be Provided By FPO Cannot less than 0 and cannot greater than 100.' });
-        }
-    },
     total_cropping_area_of_fpo_members_acre(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
         calculate_input_felids_value(frm, row)
     },
     percentage_of_total_cropping_area(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
+        if (row.percentage_of_total_cropping_area < 0 || row.percentage_of_total_cropping_area > 100) {
+            row.percentage_of_total_cropping_area = ''
+            frappe.throw({ message: 'Percentage of Total Cropping Area for which Input Name Shall be Provided By FPO Cannot less than 0 and cannot greater than 100.' });
+        }
         calculate_input_felids_value(frm, row)
     },
     expected_purchase_price_per_acre_rs(frm, cdt, cdn) {
