@@ -8,6 +8,7 @@ frappe.ui.form.on("FPO Profiling", {
         await apply_filter('name_of_the_fpo', 'district', frm, frm.doc.district_name)
         await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)
         const today = new Date();
+        frm.fields_dict.date_of_expiry_for_fertilizer.$input.datepicker({ maxDate: new Date() });
         frm.fields_dict.date_of_incorporation.$input.datepicker({ maxDate: today });
         frm.fields_dict.date_of_registration.$input.datepicker({ maxDate: today });
         frm.fields_dict.ceo_date_of_joining.$input.datepicker({ maxDate: today });
@@ -24,11 +25,17 @@ frappe.ui.form.on("FPO Profiling", {
         extend_options_length(frm, ['district_name', 'name_of_the_fpo', 'bod_kyc_name', 'name_of_cbbo', 'cbbo'])
     },
     validate(frm) {
-        integer_length_validator(frm.doc.accountant_contact_number, 10, 'Accountant Contact Number');
-        integer_length_validator(frm.doc.ceo_contact_number, 10, 'CEO Contact Number');
         // frm.doc.staff_details_table.forEach(row => {
         //     // console.log('Row during validate:', row);
         // });
+        validate_string(frm, 'fpos_pincode', "FPO's Pincode");
+        validate_string(frm, 'contact_detail_of_fpo', "Contact Detail of FPO");
+    },
+    fpos_pincode(frm) {
+        validate_string(frm, 'fpos_pincode', "FPO's Pincode");
+    },
+    contact_detail_of_fpo(frm) {
+        validate_string(frm, 'contact_detail_of_fpo', "Contact Detail of FPO");
     },
     before_save(frm) {
         frm.doc.deleted_staff_rows = deleted_staff;
@@ -49,12 +56,6 @@ frappe.ui.form.on("FPO Profiling", {
         await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)
         // await apply_filter('block_name', 'fpo_name', frm, frm.doc.name_of_the_fpo);
         truncate_multiple_fields_value(frm, ['bod_kyc_name', 'fpos_address', 'fpos_pincode'])
-    },
-    ceo_contact_number(frm) {
-        integer_length_validator(frm.doc.ceo_contact_number, 10, 'CEO Contact Number');
-    },
-    accountant_contact_number(frm) {
-        integer_length_validator(frm.doc.accountant_contact_number, 10, 'Accountant Contact Number');
     },
     onload(frm) {
         hide_list_view_in_useless_data(frm)
@@ -81,5 +82,17 @@ frappe.ui.form.on('FPO Staff Child', {
     },
     staff_details_table_remove: function (frm, cdt, cdn) {
         deleted_staff.push(cdn);
+    },
+    aadhar_no(frm, cdt, cdn) {
+        let row = frappe.get_doc(cdt, cdn);
+        if (typeof row.aadhar_no === 'string' && isNaN(Number(row.aadhar_no))) {
+            frappe.throw(__(`Please enter a valid Aadhar No`));
+        }
+    },
+    phone_no(frm, cdt, cdn) {
+        let row = frappe.get_doc(cdt, cdn)
+        if (typeof row.phone_no === 'string' && isNaN(Number(row.phone_no))) {
+            frappe.throw(__(`Please enter a valid Phone No`));
+        }
     }
 });

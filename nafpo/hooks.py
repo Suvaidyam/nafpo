@@ -127,7 +127,13 @@ doctype_js = {
     "FPO MFR 10K" : [
         "public/js/utils/utils.js"
     ],
+    "FPO Fixed Capital" : [
+        "public/js/utils/utils.js"
+    ],
     "Business Plannings" : [
+        "public/js/utils/utils.js"
+    ],
+    "Crops Name" : [
         "public/js/utils/utils.js"
     ],
     "Crops Variety" : [

@@ -10,10 +10,17 @@ frappe.ui.form.on("BOD KYC", {
     validate(frm) {
         validate_string(frm, 'mobile_number', 'Mobile Number');
         validate_string(frm, 'aadhar_number', 'Aadhar Number');
+        validate_string(frm, 'director_identification_number', 'Director Identification Number');
     },
     state_name: async function (frm) {
         await apply_filter('fpo_name', 'state', frm, frm.doc.state_name)
         truncate_multiple_fields_value(frm, ['fpo_name'])
+    },
+    mobile_number(frm) {
+        validate_string(frm, 'mobile_number', 'Mobile Number');
+    },
+    aadhar_number(frm) {
+        validate_string(frm, 'aadhar_number', 'Aadhar Number');
     },
     director_identification_number(frm) {
         validate_string(frm, 'director_identification_number', 'Director Identification Number');

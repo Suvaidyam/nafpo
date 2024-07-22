@@ -24,6 +24,7 @@ frappe.ui.form.on("Crop Name", {
         extend_options_length(frm, ['state_name', 'fpo', 'type_of_crop'])
         await apply_filter('fpo', 'state', frm, frm.doc.state_name)
         await apply_filter('type_of_crop', 'single_fpo', frm, frm.doc.fpo)
+        // await apply_filter('crops_name', 'crops_types', frm, frm.doc.crops_name)
         // await apply_fpo_filter_on_child_crop_name('table_crop_name_child', 'name_of_crop')
     },
     before_save: function (frm) {

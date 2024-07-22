@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"sE8C5ERk-E\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crop Type\",\"col\":4}},{\"id\":\"dI1W4LhT1Q\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crop Name\",\"col\":4}}]",
+ "content": "[{\"id\":\"sE8C5ERk-E\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crop Type\",\"col\":4}},{\"id\":\"dI1W4LhT1Q\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crop Name\",\"col\":4}},{\"id\":\"Vp5sniHVcB\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Master</b></span>\",\"col\":12}},{\"id\":\"zN5buN4Yqc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crops Types\",\"col\":4}},{\"id\":\"hGPP6qaJt6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crops Name\",\"col\":4}},{\"id\":\"K74RoEObQv\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crops Variety\",\"col\":4}}]",
  "creation": "2024-06-22 10:50:14.226589",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,18 +13,30 @@
  "is_hidden": 0,
  "label": "Crop-FPO Mapping",
  "links": [],
- "modified": "2024-07-17 17:46:43.407323",
+ "modified": "2024-07-20 11:58:37.840111",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop-FPO Mapping",
  "number_cards": [
   {
+   "label": "Crops Types",
+   "number_card_name": "Crops Types"
+  },
+  {
    "label": "Crop Type",
    "number_card_name": "Crop Type"
   },
   {
+   "label": "Crops Name",
+   "number_card_name": "Crops Name"
+  },
+  {
    "label": "Crop Name",
    "number_card_name": "Crop Name"
+  },
+  {
+   "label": "Crops Variety",
+   "number_card_name": "Crops Variety"
   }
  ],
  "owner": "Administrator",
