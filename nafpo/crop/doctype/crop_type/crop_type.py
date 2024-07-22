@@ -11,6 +11,6 @@ class CropType(Document):
 				new_crop.single_state = state
 				new_crop.fpo = []
 				new_crop.single_fpo = item.fpo
-				new_crop.name1 = self.name1
+				new_crop.crops_types = self.crops_types
 				new_crop.insert()
 			return frappe.delete_doc("Crop Type",self.name)

@@ -1,6 +1,7 @@
 import frappe
 from frappe.utils import nowdate
 from nafpo.utils.rport_filter import ReportFilter
+import json
 
 user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
     mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
@@ -18,11 +19,20 @@ def get_value_event(doctype_name,value):
     return frappe.db.get_value(doctype_name,value,'*')
 
 @frappe.whitelist(allow_guest=True)
+def value_event(doctype_name,filter_felid_name,felid_value,felids):
+    print('='*50,felids)
+    parsed_data = json.loads(felids)
+    return frappe.db.get_value(doctype_name, {filter_felid_name: felid_value},parsed_data)
+
+@frappe.whitelist(allow_guest=True)
 def get_exists_event(doctype_name,filterName,value):
         return frappe.db.exists({
             "doctype": doctype_name,
             filterName: value
         })
+@frappe.whitelist(allow_guest=True)
+def get_doc_event(doctype_name,value,):
+        return frappe.get_doc(doctype_name, value)
 
 @frappe.whitelist(allow_guest=True)
 def get_fpo_profile(name=None, fields=["*"]):

@@ -45,6 +45,7 @@
    "fieldtype": "Float",
    "label": "Total cropping area of FPO members (Acre)",
    "non_negative": 1,
+   "read_only_depends_on": "eval:doc.crop_name && doc.crop_name.length == 0",
    "reqd": 1
   },
   {
@@ -119,7 +120,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-16 14:35:17.167787",
+ "modified": "2024-07-19 11:58:38.504128",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Output Side Child",

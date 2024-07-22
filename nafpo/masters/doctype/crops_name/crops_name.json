@@ -1,12 +1,15 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:crop_name",
  "creation": "2024-07-18 16:57:19.074143",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "crops_types",
+  "state",
+  "fpo",
+  "crop_type",
   "crop_name"
  ],
  "fields": [
@@ -19,17 +22,32 @@
    "unique": 1
   },
   {
-   "fieldname": "crops_types",
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "State",
+   "options": "State"
+  },
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "FPO",
+   "options": "FPO"
+  },
+  {
+   "fieldname": "crop_type",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Crops Types",
+   "label": "Crop Type",
    "options": "Crops Types",
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-18 17:50:55.861848",
+ "modified": "2024-07-20 12:21:24.471486",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Crops Name",
