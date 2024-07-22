@@ -11,42 +11,27 @@
   "cbbo",
   "ia",
   "column_break_jrjj",
-  "type_of_crop",
   "crops_types",
   "crops_name",
   "section_break_crop_name",
-  "name_of_crop",
+  "crop_variety",
+  "crop_variety_name",
   "expected_yields_quintal_per_acre",
   "column_break_uths",
   "target_market_1",
   "target_market_2",
   "section_break_table_crop_name_child",
-  "table_crop_name_child"
+  "crop_variety_table"
  ],
  "fields": [
   {
    "fieldname": "state_name",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "State Name",
    "options": "State",
    "reqd": 1
-  },
-  {
-   "fieldname": "type_of_crop",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Crop Type",
-   "options": "Crop Type",
-   "reqd": 1
-  },
-  {
-   "depends_on": "eval:!doc.__islocal",
-   "fieldname": "name_of_crop",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Name of Crop",
-   "mandatory_depends_on": "eval:!doc.__islocal"
   },
   {
    "depends_on": "eval:!doc.__islocal",
@@ -91,14 +76,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:doc.__islocal == 1",
-   "fieldname": "table_crop_name_child",
-   "fieldtype": "Table",
-   "label": "Crop Details Table",
-   "mandatory_depends_on": "eval:doc.__islocal == 1",
-   "options": "Crop Name Child"
-  },
-  {
    "fieldname": "section_break_table_crop_name_child",
    "fieldtype": "Section Break"
   },
@@ -122,21 +99,53 @@
   {
    "fieldname": "crops_name",
    "fieldtype": "Link",
-   "hidden": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Crops Name",
-   "options": "Crops Name"
+   "options": "Crops Name",
+   "reqd": 1
   },
   {
    "fieldname": "crops_types",
    "fieldtype": "Link",
-   "hidden": 1,
+   "in_list_view": 1,
    "label": "Crops Types",
-   "options": "Crops Types"
+   "options": "Crops Types",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "crop_variety",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Crop Variety",
+   "mandatory_depends_on": "eval:!doc.__islocal",
+   "options": "Crops Variety"
+  },
+  {
+   "depends_on": "eval:doc.__islocal == 1",
+   "fieldname": "crop_variety_table",
+   "fieldtype": "Table",
+   "label": "Crop Variety Table",
+   "mandatory_depends_on": "eval:doc.__islocal == 1",
+   "options": "Crop Variety Child"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal",
+   "fetch_from": "crop_variety.variety_name",
+   "fieldname": "crop_variety_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Crop Variety Name",
+   "mandatory_depends_on": "eval:!doc.__islocal",
+   "options": "Crops Variety"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-22 11:27:44.705246",
+ "modified": "2024-07-22 18:34:10.031007",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop Name",
@@ -152,6 +161,7 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "write": 1
   },
@@ -207,5 +217,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "name_of_crop"
+ "title_field": "crop_variety_name"
 }

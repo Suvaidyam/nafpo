@@ -333,18 +333,15 @@ frappe.ui.form.on('Output Side Child', {
     },
     crop_name: async function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        frm.refresh_field('output_side');
-        await calculate_output_felids_value(frm, row)
+        calculate_output_felids_value(frm, row)
     },
     total_cropping_area_of_fpo_members_acre: async function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        frm.refresh_field('output_side');
-        await calculate_output_felids_value(frm, row)
+        calculate_output_felids_value(frm, row)
     },
     quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals: async function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        // console.log('Output Row :>> ', row);
-        await calculate_output_felids_value(frm, row)
+        calculate_output_felids_value(frm, row)
         if (row.total_harvest_by_fpo_members_quintals < row.quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals) {
             row.quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals = ''
             frappe.throw({ message: 'Quantity of produce to be bought by FPO for marketing cannot exceed the total harvest by FPO members.' });
@@ -352,13 +349,11 @@ frappe.ui.form.on('Output Side Child', {
     },
     expected_purchase_pricers: async function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        frm.refresh_field('output_side');
-        await calculate_output_felids_value(frm, row)
+        calculate_output_felids_value(frm, row)
     },
     expected_unit_selling_price_per_quintals: async function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        frm.refresh_field('output_side');
-        await calculate_output_felids_value(frm, row)
+        calculate_output_felids_value(frm, row)
     },
 })
 
@@ -386,13 +381,21 @@ async function calculate_input_felids_value(frm, row) {
         (row.total_purchase_price_rs ? row.total_purchase_price_rs : 0);
     frm.cur_grid.refresh_field('total_income_of_fpo_from_input');
     // ===================================== Total =====================================
-    const calculate_total_input_purchase_price_rs = frm.doc.output_side.reduce((total, item) => total + item.total_purchase_price_rs, 0);
+    // let data = 0;
+    // frm.doc.output_side.forEach(row => {
+    //     console.log('Row during validate:', row.total_purchase_price_rs);
+    //     data += row.total_purchase_price_rs;
+    // });
+    // console.log('data :>> ', data);
+    const calculate_total_input_purchase_price_rs = frm.doc.input_side.reduce((total, item) => total + item.total_purchase_price_rs, 0);
     frm.set_value('total_input_purchase_price_rs', calculate_total_input_purchase_price_rs);
+    console.log('calculate_total_income_of_fpo_from_input :>> ', calculate_total_input_purchase_price_rs);
 
-    const calculate_total_input_selling_priceincome_rs = frm.doc.output_side.reduce((total, item) => total + item.total_selling_priceincome_rs, 0);
+    const calculate_total_input_selling_priceincome_rs = frm.doc.input_side.reduce((total, item) => total + item.total_selling_priceincome_rs, 0);
     frm.set_value('total_input_selling_priceincome_rs', calculate_total_input_selling_priceincome_rs);
 
-    const calculate_total_income_of_fpo_from_input = frm.doc.output_side.reduce((total, item) => total + item.total_income_of_fpo_from_input, 0);
+    const calculate_total_income_of_fpo_from_input = frm.doc.input_side.reduce((total, item) => total + item.total_income_of_fpo_from_input, 0);
+    console.log('calculate_total_income_of_fpo_from_input :>> ', calculate_total_income_of_fpo_from_input);
     frm.set_value('total_income_of_fpo_from_input', calculate_total_income_of_fpo_from_input);
 }
 
