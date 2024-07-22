@@ -63,6 +63,34 @@ async function add_total_work_capital(frm) {
     );
     frm.set_value('total_work_capital', data)
 }
+// # Variable Cost Logic
+async function variable_cost_logic(frm) {
+    await frm.set_value('gradingassying_weigning_packingbagging_at_collection_point', frm.doc.quantity_available_for_sale_after_weight_loss * frm.doc.gradingassying_weigning_packingbagging_at_collection_point_rate)
+    await frm.set_value('local_transport_include_loading_unloading_collection_point', frm.doc.quantity_available_for_sale_after_weight_loss * frm.doc.local_transport_include_loading_unloading_rate)
+    await frm.set_value('storing_warehousing_costs', frm.doc.quantity_available_for_sale_after_weight_loss * frm.doc.storing_warehousing_costs_rate)
+    await frm.set_value('transport_to_market_include_loading__unloading', frm.doc.quantity_available_for_sale_after_weight_loss * frm.doc.transport_to_market_include_loading_unloading_rate)
+    frm.set_value('total_variable_cost', (
+        frm.doc.gradingassying_weigning_packingbagging_at_collection_point +
+        frm.doc.local_transport_include_loading_unloading_collection_point +
+        frm.doc.storing_warehousing_costs +
+        frm.doc.transport_to_market_include_loading__unloading
+    ))
+}
+async function net_profit_logic(frm) {
+    // # Total Sales
+    frm.set_value('total_sales', frm.doc.total_output_selling_priceincome_rs + frm.doc.total_input_selling_priceincome_rs)
+    // # Total Expense
+    frm.set_value('total_expense', frm.doc.total_variable_cost + frm.doc.total_work_capital + frm.doc.total_output_purchase_price_rs + frm.doc.total_input_purchase_price_rs)
+    // # Gross Profit / Loss(Total Sales - Total Expence)
+    frm.set_value('gross_profit_loss', frm.doc.total_sales - frm.doc.total_expense)
+
+    // # Total Income(Including Input and Output Side)
+    frm.set_value('total_income_including_input_and_output_side', frm.doc.total_income_of_fpo_from_output + frm.doc.total_income_of_fpo_from_input)
+    // # Total Fixed and Variable Cost
+    frm.set_value('total_fixed_and_variable_cost', frm.doc.total_variable_cost + frm.doc.total_work_capital)
+    // # Gross Profit / Loss(Total Income - Total Cost)
+    frm.set_value('gross_profit_loss_total_income_total_cost', frm.doc.total_income_including_input_and_output_side - frm.doc.total_fixed_and_variable_cost)
+}
 // Financial Year
 async function filter_financial_year(field_name, filter_on, frm) {
     var currentYear = new Date().getFullYear();
@@ -148,6 +176,9 @@ frappe.ui.form.on("Business Plannings", {
             row.quantity_available_for_sale_default_deducted_x_for_weight_loss = (1 - (frm.doc.weight_loss_percent / 100)) * row.quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals
             frm.refresh_field('output_side');
         });
+        const calculate_total_quantity_available_for_sale_after_weight_loss = frm.doc.output_side.reduce((total, item) => total + item.quantity_available_for_sale_default_deducted_x_for_weight_loss, 0);
+        frm.set_value('quantity_available_for_sale_after_weight_loss', calculate_total_quantity_available_for_sale_after_weight_loss);
+        variable_cost_logic(frm)
     },
     depreciation_percent(frm) {
         if (frm.doc.depreciation_percent > 100 || frm.doc.depreciation_percent < 0) {
@@ -190,6 +221,49 @@ frappe.ui.form.on("Business Plannings", {
     interest_on_loan(frm) {
         add_total_work_capital(frm)
     },
+    // 
+    gradingassying_weigning_packingbagging_at_collection_point_rate(frm) {
+        variable_cost_logic(frm)
+    },
+    local_transport_include_loading_unloading_rate(frm) {
+        variable_cost_logic(frm)
+    },
+    storing_warehousing_costs_rate(frm) {
+        variable_cost_logic(frm)
+    },
+    transport_to_market_include_loading_unloading_rate(frm) {
+        variable_cost_logic(frm)
+    },
+    total_output_selling_priceincome_rs(frm) {
+        net_profit_logic(frm)
+    },
+    total_input_selling_priceincome_rs(frm) {
+        net_profit_logic(frm)
+    },
+    total_variable_cost(frm) {
+        net_profit_logic(frm)
+    },
+    total_work_capital(frm) {
+        net_profit_logic(frm)
+    },
+    total_output_purchase_price_rs(frm) {
+        net_profit_logic(frm)
+    },
+    total_input_purchase_price_rs(frm) {
+        net_profit_logic(frm)
+    },
+    total_sales(frm) {
+        net_profit_logic(frm)
+    },
+    total_expense(frm) {
+        net_profit_logic(frm)
+    },
+    total_income_including_input_and_output_side(frm) {
+        net_profit_logic(frm)
+    },
+    total_fixed_and_variable_cost(frm) {
+        net_profit_logic(frm)
+    },
 });
 
 // ===================================== Output Side Child =====================================
@@ -199,18 +273,6 @@ function isEmpty(value) {
 }
 async function calculate_output_felids_value(frm, row) {
     // # Total harvest by FPO members(Quintals)
-    // console.log('Output row :>> ', row);
-    let calculate_total_output_purchase_price_rs = 0
-    let total = await frm.doc?.input_side?.reduce((sum, e) => e.total_purchase_price_rs, 0)
-
-    await frm.doc.output_side.forEach(row => {
-        console.log('row.total_purchase_price_rs :>> ', row.total_purchase_price_rs);
-        calculate_total_output_purchase_price_rs += row.total_purchase_price_rs
-    });
-    console.log('total Output side :>> ', total);
-    console.log('total Total Output Side  :>> ', calculate_total_output_purchase_price_rs);
-    // frm.set_value('total_output_purchase_price_rs', calculate_total_output_purchase_price_rs)
-    // frm.refresh_field('total_output_purchase_price_rs');
     try {
         let crop = await frappe.call({
             method: "nafpo.apis.api.get_value_event",
@@ -236,6 +298,18 @@ async function calculate_output_felids_value(frm, row) {
     // # Total Income of FPO from Output
     row.total_income_of_fpo_from_output = row.total_selling_priceincome_rs - row.total_purchase_price_rs
     frm.cur_grid.refresh_field('total_income_of_fpo_from_output');
+    // ===================================== Total =====================================
+    const calculate_total_output_purchase_price_rs = frm.doc.output_side.reduce((total, item) => total + item.total_purchase_price_rs, 0);
+    frm.set_value('total_output_purchase_price_rs', calculate_total_output_purchase_price_rs);
+
+    const calculate_total_output_selling_priceincome_rs = frm.doc.output_side.reduce((total, item) => total + item.total_selling_priceincome_rs, 0);
+    frm.set_value('total_output_selling_priceincome_rs', calculate_total_output_selling_priceincome_rs);
+
+    const calculate_total_income_of_fpo_from_output = frm.doc.output_side.reduce((total, item) => total + item.total_income_of_fpo_from_output, 0);
+    frm.set_value('total_income_of_fpo_from_output', calculate_total_income_of_fpo_from_output);
+
+    const calculate_total_quantity_available_for_sale_after_weight_loss = frm.doc.output_side.reduce((total, item) => total + item.quantity_available_for_sale_default_deducted_x_for_weight_loss, 0);
+    frm.set_value('quantity_available_for_sale_after_weight_loss', calculate_total_quantity_available_for_sale_after_weight_loss);
 }
 
 frappe.ui.form.on('Output Side Child', {
@@ -311,11 +385,15 @@ async function calculate_input_felids_value(frm, row) {
         (row.total_selling_priceincome_rs ? row.total_selling_priceincome_rs : 0) *
         (row.total_purchase_price_rs ? row.total_purchase_price_rs : 0);
     frm.cur_grid.refresh_field('total_income_of_fpo_from_input');
-    // let total = 0;
-    total = frm.doc?.input_side?.reduce((sum, e) => e.total_purchase_price_rs, 0)
-    console.log('total Input side :>> ', total);
-    // frm.doc.total = frm.doc?.input_side?.reduce((sum, e) => e.total_purchase_price_rs, 0)
-    // frm.doc.total = frm.doc?.input_side?.reduce((sum, e) => e.total_purchase_price_rs, 0)
+    // ===================================== Total =====================================
+    const calculate_total_input_purchase_price_rs = frm.doc.output_side.reduce((total, item) => total + item.total_purchase_price_rs, 0);
+    frm.set_value('total_input_purchase_price_rs', calculate_total_input_purchase_price_rs);
+
+    const calculate_total_input_selling_priceincome_rs = frm.doc.output_side.reduce((total, item) => total + item.total_selling_priceincome_rs, 0);
+    frm.set_value('total_input_selling_priceincome_rs', calculate_total_input_selling_priceincome_rs);
+
+    const calculate_total_income_of_fpo_from_input = frm.doc.output_side.reduce((total, item) => total + item.total_income_of_fpo_from_input, 0);
+    frm.set_value('total_income_of_fpo_from_input', calculate_total_income_of_fpo_from_input);
 }
 
 frappe.ui.form.on('Input Side Child', {
