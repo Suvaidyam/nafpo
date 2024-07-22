@@ -113,7 +113,6 @@ class BusinessPlannings(Document):
             )
         store_gross_profit_loss = 0
         for gross_profit in get_gross_profit_loss:
-            print('||'*50,gross_profit.gross_profit_loss)
             store_gross_profit_loss +=  gross_profit.gross_profit_loss
         self.closing_cash_balance = store_gross_profit_loss + self.gross_profit_loss
     
