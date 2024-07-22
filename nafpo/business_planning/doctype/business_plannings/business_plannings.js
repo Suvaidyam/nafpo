@@ -273,32 +273,33 @@ function isEmpty(value) {
 }
 async function calculate_output_felids_value(frm, row) {
     // # Total harvest by FPO members(Quintals)
-    try {
-        let crop = await frappe.call({
-            method: "nafpo.apis.api.get_value_event",
-            args: {
-                doctype_name: "Crop Name",
-                value: row.crop_name,
-            }
-        });
-        row.total_harvest_by_fpo_members_quintals = isNaN(row.total_cropping_area_of_fpo_members_acre * crop.message.expected_yields_quintal_per_acre) ? 0 : row.total_cropping_area_of_fpo_members_acre * crop.message.expected_yields_quintal_per_acre;
+    callAPI({
+        method: 'nafpo.apis.api.value_event',
+        args: {
+            doctype_name: "Crop Name",
+            filter_felid_name: row.crop_name,
+            felids: ['expected_yields_quintal_per_acre']
+        },
+        freeze: true,
+        freeze_message: __("Getting"),
+    }).then(response => {
+        row.total_harvest_by_fpo_members_quintals = (row.total_cropping_area_of_fpo_members_acre || 0) * response;
         frm.cur_grid.refresh_field('total_harvest_by_fpo_members_quintals');
-    } catch (e) {
-        console.error('User data fetch error:', e);
-    }
+    });
+
     // # Total Purchase Price
     row.total_purchase_price_rs = (row.quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals || 0) * (row.expected_purchase_pricers || 0)
     frm.cur_grid.refresh_field('total_purchase_price_rs');
     //  # Quantity available for sale(default deducted X% for weight loss)
-    row.quantity_available_for_sale_default_deducted_x_for_weight_loss = (1 - (frm.doc.weight_loss_percent / 100)) * row.quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals
+    row.quantity_available_for_sale_default_deducted_x_for_weight_loss = (1 - (frm.doc.weight_loss_percent / 100)) * row.quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals || 0
     frm.cur_grid.refresh_field('quantity_available_for_sale_default_deducted_x_for_weight_loss');
     // # Total selling price / income(Rs)
-    row.total_selling_priceincome_rs = row.quantity_available_for_sale_default_deducted_x_for_weight_loss * row.expected_unit_selling_price_per_quintals
+    row.total_selling_priceincome_rs = row.quantity_available_for_sale_default_deducted_x_for_weight_loss * (row.expected_unit_selling_price_per_quintals || 0)
     frm.cur_grid.refresh_field('total_selling_priceincome_rs');
-    // # Total Income of FPO from Output
+    // // # Total Income of FPO from Output
     row.total_income_of_fpo_from_output = row.total_selling_priceincome_rs - row.total_purchase_price_rs
     frm.cur_grid.refresh_field('total_income_of_fpo_from_output');
-    // ===================================== Total =====================================
+    // // // ===================================== Total =====================================
     const calculate_total_output_purchase_price_rs = frm.doc.output_side.reduce((total, item) => total + item.total_purchase_price_rs, 0);
     frm.set_value('total_output_purchase_price_rs', calculate_total_output_purchase_price_rs);
 

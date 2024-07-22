@@ -19,10 +19,9 @@ def get_value_event(doctype_name,value):
     return frappe.db.get_value(doctype_name,value,'*')
 
 @frappe.whitelist(allow_guest=True)
-def value_event(doctype_name,filter_felid_name,felid_value,felids):
-    print('='*50,felids)
-    parsed_data = json.loads(felids)
-    return frappe.db.get_value(doctype_name, {filter_felid_name: felid_value},parsed_data)
+def value_event(doctype_name,filter_felid_name,felids):
+    parsed_felids = json.loads(felids)
+    return frappe.db.get_value(doctype_name, filter_felid_name ,parsed_felids)
 
 @frappe.whitelist(allow_guest=True)
 def get_exists_event(doctype_name,filterName,value):
