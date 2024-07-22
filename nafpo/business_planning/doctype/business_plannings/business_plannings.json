@@ -303,7 +303,7 @@
    "default": "0",
    "fieldname": "total_income_including_input_and_output_side",
    "fieldtype": "Currency",
-   "label": "Total Income (Including Input and Output Side)",
+   "label": "Total Profit (Including Input and Output Side)",
    "read_only": 1
   },
   {
@@ -435,7 +435,6 @@
    "default": "0",
    "fieldname": "quantity_available_for_sale_after_weight_loss",
    "fieldtype": "Float",
-   "hidden": 1,
    "label": "Quantity available for sale after X% weight loss",
    "read_only": 1
   },
@@ -450,7 +449,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-18 15:44:47.865277",
+ "modified": "2024-07-22 15:12:18.307218",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",
