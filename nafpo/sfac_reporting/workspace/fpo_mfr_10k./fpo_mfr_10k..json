@@ -25,7 +25,7 @@
    "label": "Six Installment"
   }
  ],
- "content": "[{\"id\":\"_I6HGBTlOI\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Overview</b></span>\",\"col\":12}},{\"id\":\"MH7iSuSkP2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO MFR 10K Form Summary\",\"col\":3}},{\"id\":\"5P2EXpwe38\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Report\",\"col\":12}},{\"id\":\"p-qY5QV9_C\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Total Eligible FPOs\",\"col\":3}},{\"id\":\"mqX4-zeAC1\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Received Fund before or on due date\",\"col\":3}},{\"id\":\"0NBBasYtdG\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Received Fund after Due Date\",\"col\":3}},{\"id\":\"hgfrwldxuf\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Eligible but haven't received fund yet\",\"col\":3}},{\"id\":\"_fhBCXd3N-\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Dashboard\",\"col\":12}},{\"id\":\"i76n_0W780\",\"type\":\"chart\",\"data\":{\"chart_name\":\"First Installment\",\"col\":6}},{\"id\":\"S9pF1KA-e-\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Second Installment\",\"col\":6}},{\"id\":\"Xk61TKcrek\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Third Installment\",\"col\":6}},{\"id\":\"oSmXBVFR8I\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fourth Installment\",\"col\":6}},{\"id\":\"l2MyR7xLYo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fifth Installment\",\"col\":6}},{\"id\":\"3VlqcJLloh\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Six Installment\",\"col\":6}}]",
+ "content": "[{\"id\":\"_I6HGBTlOI\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Overview</b></span>\",\"col\":12}},{\"id\":\"MH7iSuSkP2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO Management fund reporting (MFR)\",\"col\":4}},{\"id\":\"5P2EXpwe38\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Report\",\"col\":12}},{\"id\":\"p-qY5QV9_C\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Total Eligible FPOs\",\"col\":3}},{\"id\":\"mqX4-zeAC1\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Received Fund before or on due date\",\"col\":3}},{\"id\":\"0NBBasYtdG\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Received Fund after Due Date\",\"col\":3}},{\"id\":\"hgfrwldxuf\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Eligible but haven't received fund yet\",\"col\":3}},{\"id\":\"_fhBCXd3N-\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Dashboard\",\"col\":12}},{\"id\":\"i76n_0W780\",\"type\":\"chart\",\"data\":{\"chart_name\":\"First Installment\",\"col\":6}},{\"id\":\"S9pF1KA-e-\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Second Installment\",\"col\":6}},{\"id\":\"Xk61TKcrek\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Third Installment\",\"col\":6}},{\"id\":\"oSmXBVFR8I\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fourth Installment\",\"col\":6}},{\"id\":\"l2MyR7xLYo\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fifth Installment\",\"col\":6}},{\"id\":\"3VlqcJLloh\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Six Installment\",\"col\":6}}]",
  "creation": "2024-06-22 11:10:51.364717",
  "custom_blocks": [
   {
@@ -63,13 +63,13 @@
  "is_hidden": 0,
  "label": "FPO MFR 10K.",
  "links": [],
- "modified": "2024-07-17 19:00:52.102168",
+ "modified": "2024-07-18 14:14:56.353671",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "FPO MFR 10K.",
  "number_cards": [
   {
-   "label": "FPO MFR 10K Form Summary",
+   "label": "FPO Management fund reporting (MFR)",
    "number_card_name": "SFAC Installment"
   }
  ],

@@ -8,6 +8,7 @@ frappe.query_reports["Form ADT-1 – Auditor Appointment for Five Year Report"] 
 			"label": __("Status"),
 			"fieldtype": "Autocomplete",
 			"options": ["Pending", "Completed Before Due Date", "Completed After Due Date"],
+			"default": "Completed Before Due Date"
 		}
 	]
 };

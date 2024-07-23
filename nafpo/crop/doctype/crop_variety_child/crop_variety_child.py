@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class CropsTypesName(Document):
+class CropVarietyChild(Document):
 	pass

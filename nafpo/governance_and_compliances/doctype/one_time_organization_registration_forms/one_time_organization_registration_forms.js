@@ -13,7 +13,7 @@ frappe.ui.form.on("One Time Organization Registration Forms", {
                     }
                 });
                 frm.set_value('fpo', fpo.message.fpo);
-                set_due_date(frm);
+                // set_due_date(frm);
             } catch (e) {
                 console.error('User data fetch error:', e);
             }
@@ -28,7 +28,7 @@ frappe.ui.form.on("One Time Organization Registration Forms", {
             frm.doc.inc_22_status !== 'Completed' &&
             frm.doc.adt_1_due_date !== 'Completed'
         ) {
-            frappe.throw('At least one of the Status Conditions must be met.');
+            frappe.throw('Form Status Not Yet Updated');
         }
     },
     // financial_year: async function (frm) {
@@ -72,7 +72,7 @@ function set_due_date(frm) {
         },
         callback: function (response) {
             if (response.message == undefined) {
-                frappe.throw("FPO Profile doesn't exist. Please create FPO Profiling.")
+                return frappe.throw("FPO Profile doesn't exist. Please create FPO Profiling.")
             }
             let date = new Date(response.message.date_of_registration);
             date.setDate(date.getDate() + 180);

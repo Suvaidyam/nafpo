@@ -22,7 +22,7 @@
    "fieldname": "crop_name",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Crop Name",
+   "label": "Crops Variety",
    "options": "Crop Name",
    "reqd": 1
   },
@@ -110,7 +110,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-16 15:41:52.426369",
+ "modified": "2024-07-23 11:21:31.510828",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Input Side Child",

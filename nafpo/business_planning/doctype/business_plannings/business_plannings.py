@@ -113,7 +113,6 @@ class BusinessPlannings(Document):
             )
         store_gross_profit_loss = 0
         for gross_profit in get_gross_profit_loss:
-            print('||'*50,gross_profit.gross_profit_loss)
             store_gross_profit_loss +=  gross_profit.gross_profit_loss
         self.closing_cash_balance = store_gross_profit_loss + self.gross_profit_loss
     
@@ -141,12 +140,3 @@ class BusinessPlannings(Document):
         })
         if exists_fixed_capital == None:
             frappe.throw('Please create FPO Fixed Capital for this FPO')
-        
-        if (
-            self.gradingassying_weigning_packingbagging_at_collection_point_rate == 0 or 
-            self.local_transport_include_loading_unloading_rate == 0 or 
-            self.weight_loss_percent == 0 or 
-            self.local_transport_include_loading_unloading_rate is None or 
-            self.transport_to_market_include_loading_unloading_rate == 0
-        ):
-            frappe.throw('Please fill Variable cost (Rate) & Weight Loss Percent Details')

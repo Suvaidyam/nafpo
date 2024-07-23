@@ -8,6 +8,7 @@ frappe.query_reports["IT Return Report"] = {
 			"label": __("Status"),
 			"fieldtype": "Autocomplete",
 			"options": ["Pending", "Completed Before Due Date", "Completed After Due Date"],
+			"default": "Completed Before Due Date"
 		}
 	]
 };

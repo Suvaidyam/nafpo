@@ -1,0 +1,23 @@
+[
+ {
+  "crops_types_name": "Vegetables",
+  "docstatus": 0,
+  "doctype": "Crops Types",
+  "modified": "2024-07-17 10:42:58.476028",
+  "name": "Vegetables"
+ },
+ {
+  "crops_types_name": "Pulses",
+  "docstatus": 0,
+  "doctype": "Crops Types",
+  "modified": "2024-07-17 10:43:15.894456",
+  "name": "Pulses"
+ },
+ {
+  "crops_types_name": "Fruits",
+  "docstatus": 0,
+  "doctype": "Crops Types",
+  "modified": "2024-07-17 10:43:08.120702",
+  "name": "Fruits"
+ }
+]

@@ -1,4 +1,6 @@
+import json
 import frappe
+from frappe import _
 from frappe.utils import nowdate
 from nafpo.utils.rport_filter import ReportFilter
 
@@ -18,11 +20,24 @@ def get_value_event(doctype_name,value):
     return frappe.db.get_value(doctype_name,value,'*')
 
 @frappe.whitelist(allow_guest=True)
+def get_list_event(doctype_name,filter,fields):
+    return frappe.get_list(doctype_name, filters=filter, fields=fields,as_list=True)
+
+@frappe.whitelist(allow_guest=True)
+def value_event(doctype_name,filter_felid_name,felids):
+    parsed_felids = json.loads(felids)
+    return frappe.db.get_value(doctype_name, filter_felid_name ,parsed_felids)
+
+@frappe.whitelist(allow_guest=True)
 def get_exists_event(doctype_name,filterName,value):
         return frappe.db.exists({
             "doctype": doctype_name,
             filterName: value
         })
+        
+@frappe.whitelist(allow_guest=True)
+def get_doc_event(doctype_name,value):
+        return frappe.get_doc(doctype_name, value)
 
 @frappe.whitelist(allow_guest=True)
 def get_fpo_profile(name=None, fields=["*"]):
@@ -142,25 +157,27 @@ def get_Eligible_but_not_received_fund_yet():
     return count[0][0] if count and count[0] else 0
 
 # Governance & Compliance Module FPO Filter Count
+
+# One Time Organization Registration Forms
 @frappe.whitelist(allow_guest=True)
-def one_time_organization_registration_forms_fpo_count():
+def one_time_organization_registration_forms_fpo_count(status_name):
     user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
         mappings={'CBBO': ('no_alias', 'cbbo'), 'IA': ('no_alias', 'ia')},
         selected_filters=['CBBO', 'IA']
     )
     cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
-    
     sql_query = f"""
         SELECT COUNT(DISTINCT `fpo`) AS count
         FROM `tabOne Time Organization Registration Forms`
         WHERE
-            1=1 {cond_str}
-    """
+            {status_name} = "Completed" {cond_str}
+        """
     data = frappe.db.sql(sql_query, as_dict=True)
     return data[0].count
 
+# Annual Compliance Forms
 @frappe.whitelist(allow_guest=True)
-def get_annual_compliance_forms_fpo_count():
+def get_annual_compliance_forms_fpo_count(status_name):
     user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
         mappings={'CBBO': ('ACF', 'cbbo'), 'IA': ('ACF', 'ia')},
         selected_filters=['CBBO', 'IA']
@@ -182,8 +199,8 @@ def get_annual_compliance_forms_fpo_count():
                 `tabAnnual Compliance Forms` AS ACF
             INNER JOIN
                 `tabFPO Profiling` AS fpo_profiling ON ACF.fpo = fpo_profiling.name_of_the_fpo
-            # WHERE
-            #     1=1 {cond_str}
+            WHERE
+                ACF.{status_name} = "Completed" {cond_str}
             GROUP BY
                 fpo_name, fpo_contact_number, financial_year
             HAVING

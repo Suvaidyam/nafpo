@@ -1,6 +1,24 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
 
+async function check_fpo(frm) {
+    callAPI({
+        method: 'nafpo.apis.api.get_exists_event',
+        args: {
+            doctype_name: 'FPO Fixed Capital',
+            filterName: 'fpo',
+            value: frm.doc.fpo,
+        },
+        freeze: true,
+        freeze_message: __("Getting"),
+    }).then(response => {
+        if (response) {
+            // frm.set_value('fpo', '')
+            return frappe.throw('This FPO already exists for the Fixed Capital')
+        }
+    });
+}
+
 frappe.ui.form.on("FPO Fixed Capital", {
     async refresh(frm) {
         if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
@@ -33,4 +51,26 @@ frappe.ui.form.on("FPO Fixed Capital", {
             }
         }
     },
+    before_save(frm) {
+        // check_fpo(frm)
+    },
+    fpo(frm) {
+        check_fpo(frm)
+    }
 });
+
+
+frappe.ui.form.on('FPO Fixed Capital Child', {
+    value(frm, cdt, cdn) {
+        let row = frappe.get_doc(cdt, cdn);
+        // Initialize data to store the sum
+        let data = 0;
+        // Loop through the child table and sum the values
+        frm.doc.fixed_capital_details_table.forEach(item => {
+            data += (item.value || 0);
+        });
+        // Set the total value and refresh the field
+        frm.set_value('total_value', data);
+        frm.refresh_field('total_value');
+    }
+})
