@@ -29,28 +29,37 @@ async function check_capital_for_fpo(frm) {
         freeze: true,
         freeze_message: __("Getting"),
     }).then(response => {
-        frm.set_value('depreciation', response[0] / frm.doc.depreciation_percent)
         if (response[0] == undefined) {
+            console.log('object :>> ', 'object');
             frappe.throw({ message: 'Please create FPO Fixed Capital for this FPO' });
         }
+        frm.set_value('depreciation', response[0].total_value / frm.doc.depreciation_percent)
     });
 }
-// 
+// Closing Cash Balance
 async function get_closing_cash_balance(frm) {
     await callAPI({
         method: 'nafpo.apis.api.get_list_event',
         args: {
-            doctype_name: "FPO Fixed Capital",
+            doctype_name: "Business Plannings",
             filter: {
                 'fpo': frm.doc.fpo,
                 'financial_year': ['<', frm.doc.financial_year]
             },
-            fields: ['name', 'fpo', 'gross_profit_loss', 'financial_year'],
+            fields: ['fpo', 'financial_year', 'gross_profit_loss'],
         },
         freeze: true,
         freeze_message: __("Getting"),
     }).then(response => {
-        console.log('response :>> ', response);
+        console.log('response Data:>> ', response);
+        let store_gross_profit_loss = 0;
+
+        for (let gross_profit of response) {
+            store_gross_profit_loss += gross_profit.gross_profit_loss;
+        }
+
+        let closing_cash_balance = store_gross_profit_loss + frm.doc.gross_profit_loss;
+        frm.set_value('closing_cash_balance', closing_cash_balance);
     });
 }
 
@@ -124,6 +133,29 @@ async function calculate_mens_of_finance(frm) {
         (frm.doc.share_capital || 0) +
         (frm.doc.equity_grant || 0) +
         (frm.doc.credit_guarantee_fund_a_composite_loan || 0)
+    )
+}
+async function calculate_total_inflow(frm) {
+    frm.set_value('total_inflow',
+        (frm.doc.sales || 0) +
+        (frm.doc.less_rise_in_debtor || 0) +
+        (frm.doc.total_subsidy_grant_for_capex_ || 0) +
+        (frm.doc.grant__for_salary_travel__office_exp || 0) +
+        (frm.doc.share_capital_inflow || 0) +
+        (frm.doc.equity_grant_inflow || 0) +
+        (frm.doc.credit_guarantee_fund_a_loan || 0)
+    )
+}
+async function calculate_total_outflow(frm) {
+    frm.set_value('total_outflow',
+        (frm.doc.variable_cost || 0) +
+        (frm.doc.less_rise_in_current_liability || 0) +
+        (frm.doc.fixed_cost_less_depreciation_and_ammortization || 0) +
+        (frm.doc.rise_in_prepaid_expenses || 0) +
+        (frm.doc.credit_guarantee_fund_principal_amount || 0) +
+        (frm.doc.capital_costs_fixed || 0) +
+        (frm.doc.tax || 0) +
+        (frm.doc.profit_distributed || 0)
     )
 }
 
@@ -249,11 +281,14 @@ frappe.ui.form.on("Business Plannings", {
     quantity_available_for_sale_after_weight_loss(frm) {
         variable_cost_logic(frm)
     },
-    total_variable_cost(frm) {
-        net_profit_logic(frm)
+    async total_variable_cost(frm) {
+        await net_profit_logic(frm)
+        await frm.set_value('variable_cost', frm.doc.total_variable_cost)
     },
-    total_work_capital(frm) {
-        net_profit_logic(frm)
+    async total_work_capital(frm) {
+        await net_profit_logic(frm)
+        await frm.set_value('fixed_cost_less_depreciation_and_ammortization', frm.doc.total_work_capital - frm.doc.depreciation)
+        await frm.set_value('capital_costs_fixed', frm.doc.total_work_capital)
     },
     total_output_purchase_price_rs(frm) {
         net_profit_logic(frm)
@@ -263,6 +298,7 @@ frappe.ui.form.on("Business Plannings", {
     },
     total_sales(frm) {
         net_profit_logic(frm)
+        frm.set_value('sales', frm.doc.total_sales)
     },
     total_expense(frm) {
         net_profit_logic(frm)
@@ -272,6 +308,9 @@ frappe.ui.form.on("Business Plannings", {
     },
     total_fixed_and_variable_cost(frm) {
         net_profit_logic(frm)
+    },
+    async gross_profit_loss(frm) {
+        await get_closing_cash_balance(frm)
     },
 
 
@@ -305,6 +344,64 @@ frappe.ui.form.on("Business Plannings", {
     // ====================================== ================= Inflow ================= ======================================
     async grant_for_working_capital(frm) {
         await frm.set_value('total_subsidy_grant_for_capex', (frm.doc.grant_for_fixed_capital || 0) + (frm.doc.grant_for_working_capital || 0))
+    },
+    async sales(frm) {
+        await calculate_total_inflow(frm)
+    },
+    async less_rise_in_debtor(frm) {
+        await calculate_total_inflow(frm)
+    },
+    async total_subsidy_grant_for_capex_(frm) {
+        await calculate_total_inflow(frm)
+    },
+    async grant__for_salary_travel__office_exp(frm) {
+        await calculate_total_inflow(frm)
+    },
+    async share_capital_inflow(frm) {
+        await calculate_total_inflow(frm)
+    },
+    async equity_grant_inflow(frm) {
+        await calculate_total_inflow(frm)
+    },
+    async credit_guarantee_fund_a_loan(frm) {
+        await calculate_total_inflow(frm)
+    },
+    async total_inflow(frm) {
+        await frm.set_value('net_inflow_inflow_outflow', frm.doc.total_inflow - frm.doc.total_outflow)
+    },
+    // ====================================== ================= Outflow ================= ======================================
+    async variable_cost(frm) {
+        await calculate_total_outflow(frm)(frm)
+    },
+    async less_rise_in_current_liability(frm) {
+        await calculate_total_outflow(frm)(frm)
+    },
+    async fixed_cost_less_depreciation_and_ammortization(frm) {
+        await calculate_total_outflow(frm)(frm)
+    },
+    async rise_in_prepaid_expenses(frm) {
+        await calculate_total_outflow(frm)(frm)
+    },
+    async credit_guarantee_fund_principal_amount(frm) {
+        await calculate_total_outflow(frm)(frm)
+    },
+    async capital_costs_fixed(frm) {
+        await calculate_total_outflow(frm)(frm)
+    },
+    async tax(frm) {
+        await calculate_total_outflow(frm)(frm)
+    },
+    async profit_distributed(frm) {
+        await calculate_total_outflow(frm)(frm)
+    },
+    async opening_cash_balance(frm) {
+        await frm.set_value('closing_cash_balance_outflow', (frm.doc.opening_cash_balance || 0) - (frm.doc.net_inflow_inflow_outflow || 0))
+    },
+    async net_inflow_inflow_outflow(frm) {
+        await frm.set_value('closing_cash_balance_outflow', (frm.doc.opening_cash_balance || 0) - (frm.doc.net_inflow_inflow_outflow || 0))
+    },
+    async total_outflow(frm) {
+        await frm.set_value('net_inflow_inflow_outflow', frm.doc.total_inflow - frm.doc.total_outflow)
     },
 });
 
