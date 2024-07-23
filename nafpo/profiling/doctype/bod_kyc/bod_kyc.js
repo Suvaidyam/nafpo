@@ -10,7 +10,7 @@ frappe.ui.form.on("BOD KYC", {
     validate(frm) {
         validate_string(frm, 'mobile_number', 'Mobile Number');
         validate_string(frm, 'aadhar_number', 'Aadhar Number');
-        validate_string(frm, 'director_identification_number', 'Director Identification Number');
+        // validate_string(frm, 'director_identification_number', 'Director Identification Number');
     },
     state_name: async function (frm) {
         await apply_filter('fpo_name', 'state', frm, frm.doc.state_name)
@@ -22,9 +22,9 @@ frappe.ui.form.on("BOD KYC", {
     aadhar_number(frm) {
         validate_string(frm, 'aadhar_number', 'Aadhar Number');
     },
-    director_identification_number(frm) {
-        validate_string(frm, 'director_identification_number', 'Director Identification Number');
-    },
+    // director_identification_number(frm) {
+    //     validate_string(frm, 'director_identification_number', 'Director Identification Number');
+    // },
     ...['din_document', 'address_proof_status', 'address_proof', 'upload_aadhar_document'].reduce((acc, field) => {
         acc[field] = function (frm) {
             disable_Attachment_autosave(frm);
