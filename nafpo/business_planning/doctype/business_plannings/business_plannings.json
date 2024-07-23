@@ -527,9 +527,11 @@
    "label": "Credit Guarantee Fund (a composite loan)"
   },
   {
+   "default": "0",
    "fieldname": "total",
    "fieldtype": "Currency",
-   "label": "Total"
+   "label": "Total",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_rphn",
@@ -656,7 +658,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-23 09:40:31.596417",
+ "modified": "2024-07-23 10:00:07.233399",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",
