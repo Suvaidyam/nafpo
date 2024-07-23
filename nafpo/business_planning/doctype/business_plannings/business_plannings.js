@@ -116,6 +116,17 @@ async function filter_financial_year(field_name, filter_on, frm) {
     };
 };
 
+// ====================================== Projected Cash Flow Functions ======================================
+async function calculate_mens_of_finance(frm) {
+    frm.set_value('total',
+        (frm.doc.total_subsidy_grant_for_capex || 0) +
+        (frm.doc.grant__for_salary_travel || 0) +
+        (frm.doc.share_capital || 0) +
+        (frm.doc.equity_grant || 0) +
+        (frm.doc.credit_guarantee_fund_a_composite_loan || 0)
+    )
+}
+
 frappe.ui.form.on("Business Plannings", {
     async refresh(frm) {
         if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
@@ -258,6 +269,39 @@ frappe.ui.form.on("Business Plannings", {
     },
     total_fixed_and_variable_cost(frm) {
         net_profit_logic(frm)
+    },
+
+
+    // ====================================== ================= Projected Cash Flow ================= ======================================
+    async grant_for_fixed_capital(frm) {
+        await frm.set_value('total_subsidy_grant_for_capex', (frm.doc.grant_for_fixed_capital || 0) + (frm.doc.grant_for_working_capital || 0))
+    },
+    async grant_for_working_capital(frm) {
+        await frm.set_value('total_subsidy_grant_for_capex', (frm.doc.grant_for_fixed_capital || 0) + (frm.doc.grant_for_working_capital || 0))
+    },
+    async total_subsidy_grant_for_capex(frm) {
+        await calculate_mens_of_finance(frm)
+        await frm.set_value('total_subsidy_grant_for_capex_', frm.doc.total_subsidy_grant_for_capex)
+    },
+    async grant__for_salary_travel(frm) {
+        await calculate_mens_of_finance(frm)
+        await frm.set_value('grant__for_salary_travel__office_exp', frm.doc.grant__for_salary_travel)
+    },
+    async share_capital(frm) {
+        await calculate_mens_of_finance(frm)
+        await frm.set_value('share_capital_inflow', frm.doc.share_capital)
+    },
+    async equity_grant(frm) {
+        await calculate_mens_of_finance(frm)
+        await frm.set_value('equity_grant_inflow', frm.doc.equity_grant)
+    },
+    async credit_guarantee_fund_a_composite_loan(frm) {
+        await calculate_mens_of_finance(frm)
+        await frm.set_value('credit_guarantee_fund_a_loan', frm.doc.credit_guarantee_fund_a_composite_loan)
+    },
+    // ====================================== ================= Inflow ================= ======================================
+    async grant_for_working_capital(frm) {
+        await frm.set_value('total_subsidy_grant_for_capex', (frm.doc.grant_for_fixed_capital || 0) + (frm.doc.grant_for_working_capital || 0))
     },
 });
 
