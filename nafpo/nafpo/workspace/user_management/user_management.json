@@ -1,8 +1,13 @@
 {
  "charts": [],
- "content": "[{\"id\":\"c_y1mJcZjL\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"NAFPO Users\",\"col\":12}}]",
+ "content": "[{\"id\":\"1SMjRT1OVo\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Role Wise User Count\",\"col\":12}}]",
  "creation": "2024-06-19 09:58:08.521796",
- "custom_blocks": [],
+ "custom_blocks": [
+  {
+   "custom_block_name": "Role Wise User Count",
+   "label": "Role Wise User Count"
+  }
+ ],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
@@ -13,7 +18,7 @@
  "is_hidden": 0,
  "label": "User Management",
  "links": [],
- "modified": "2024-07-17 17:42:06.573795",
+ "modified": "2024-07-22 19:31:21.922246",
  "modified_by": "Administrator",
  "module": "nafpo",
  "name": "User Management",
@@ -21,13 +26,7 @@
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
- "quick_lists": [
-  {
-   "document_type": "NAFPO User",
-   "label": "NAFPO Users",
-   "quick_list_filter": "[]"
-  }
- ],
+ "quick_lists": [],
  "roles": [
   {
    "role": "Administrator"
