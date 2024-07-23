@@ -19,33 +19,42 @@ const apply_fpo_filter_on_child_crop_name = async (table, crop_name_field) => {
 }
 // Check FPO
 async function check_capital_for_fpo(frm) {
-    let response = await frappe.call({
-        method: "nafpo.apis.api.get_exists_event",
+    await callAPI({
+        method: 'nafpo.apis.api.get_list_event',
         args: {
             doctype_name: "FPO Fixed Capital",
-            filterName: "fpo",
-            value: frm.doc.fpo,
+            filter: { fpo: frm.doc.fpo },
+            fields: ['total_value']
+        },
+        freeze: true,
+        freeze_message: __("Getting"),
+    }).then(response => {
+        frm.set_value('depreciation', response[0] / frm.doc.depreciation_percent)
+        if (response[0] == undefined) {
+            frappe.throw({ message: 'Please create FPO Fixed Capital for this FPO' });
         }
     });
-    if (response.message == undefined) {
-        frappe.throw({ message: 'Please create FPO Fixed Capital for this FPO' });
-    }
 }
-async function get_fixed_capital(frm) {
-    callAPI({
-        method: 'nafpo.apis.api.get_value_event',
+// 
+async function get_closing_cash_balance(frm) {
+    await callAPI({
+        method: 'nafpo.apis.api.get_list_event',
         args: {
             doctype_name: "FPO Fixed Capital",
-            value: frm.doc.fpo,
+            filter: {
+                'fpo': frm.doc.fpo,
+                'financial_year': ['<', frm.doc.financial_year]
+            },
+            fields: ['name', 'fpo', 'gross_profit_loss', 'financial_year'],
         },
         freeze: true,
         freeze_message: __("Getting"),
     }).then(response => {
         console.log('response :>> ', response);
-        console.log('response :>> ', response.name);
     });
 }
-// ADD Total Work Capital
+
+// Fixed Cost (yearly)
 async function add_total_work_capital(frm) {
     const data = (
         (frm.doc.ceo_salary || 0) +
@@ -109,10 +118,6 @@ async function filter_financial_year(field_name, filter_on, frm) {
 
 frappe.ui.form.on("Business Plannings", {
     async refresh(frm) {
-        filter_financial_year('financial_year_name', 'Financial Year', frm)
-        apply_filter('operation_system', 'fpo', frm, frm.doc.financial_year)
-        await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
-        await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
         if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
             try {
                 let fpo = await frappe.call({
@@ -144,28 +149,17 @@ frappe.ui.form.on("Business Plannings", {
             frappe.throw({ message: "Depreciation Percent can't be greater than 100 or less than 0.", })
         }
     },
+    onload: function (frm) {
+        filter_financial_year('financial_year', 'start_date', frm)
+    },
     async fpo(frm) {
         await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
         await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
-        check_capital_for_fpo(frm)
-        // get_fixed_capital(frm)
-        callAPI({
-            method: 'nafpo.apis.api.value_event',
-            args: {
-                doctype_name: "FPO Fixed Capital",
-                filter_felid_name: 'fpo',
-                felid_value: frm.doc.fpo,
-                felids: ['total_value', 'name']
-            },
-            freeze: true,
-            freeze_message: __("Getting"),
-        }).then(response => {
-            console.log('response :>> ', response);
-            console.log('response :>> ', response.name);
-        });
+        await check_capital_for_fpo(frm)
+        await get_closing_cash_balance(frm)
     },
-    onload: function (frm) {
-        filter_financial_year('financial_year', 'start_date', frm)
+    async financial_year(frm) {
+        get_closing_cash_balance(frm)
     },
     weight_loss_percent(frm) {
         if (frm.doc.weight_loss_percent > 100 || frm.doc.weight_loss_percent < 0) {
@@ -180,7 +174,8 @@ frappe.ui.form.on("Business Plannings", {
         frm.set_value('quantity_available_for_sale_after_weight_loss', calculate_total_quantity_available_for_sale_after_weight_loss);
         variable_cost_logic(frm)
     },
-    depreciation_percent(frm) {
+    async depreciation_percent(frm) {
+        await check_capital_for_fpo(frm)
         if (frm.doc.depreciation_percent > 100 || frm.doc.depreciation_percent < 0) {
             frappe.show_alert({ message: "Depreciation Percent can't be greater than 100 or less than 0.", indicator: 'red' })
         }
@@ -215,7 +210,7 @@ frappe.ui.form.on("Business Plannings", {
     intangible_assetspre_operating_expenses_written_off(frm) {
         add_total_work_capital(frm)
     },
-    interest_on_loan(frm) {
+    depreciation(frm) {
         add_total_work_capital(frm)
     },
     interest_on_loan(frm) {
@@ -273,32 +268,33 @@ function isEmpty(value) {
 }
 async function calculate_output_felids_value(frm, row) {
     // # Total harvest by FPO members(Quintals)
-    try {
-        let crop = await frappe.call({
-            method: "nafpo.apis.api.get_value_event",
-            args: {
-                doctype_name: "Crop Name",
-                value: row.crop_name,
-            }
-        });
-        row.total_harvest_by_fpo_members_quintals = isNaN(row.total_cropping_area_of_fpo_members_acre * crop.message.expected_yields_quintal_per_acre) ? 0 : row.total_cropping_area_of_fpo_members_acre * crop.message.expected_yields_quintal_per_acre;
+    callAPI({
+        method: 'nafpo.apis.api.value_event',
+        args: {
+            doctype_name: "Crop Name",
+            filter_felid_name: row.crop_name,
+            felids: ['expected_yields_quintal_per_acre']
+        },
+        freeze: true,
+        freeze_message: __("Getting"),
+    }).then(response => {
+        row.total_harvest_by_fpo_members_quintals = (row.total_cropping_area_of_fpo_members_acre || 0) * response;
         frm.cur_grid.refresh_field('total_harvest_by_fpo_members_quintals');
-    } catch (e) {
-        console.error('User data fetch error:', e);
-    }
+    });
+
     // # Total Purchase Price
     row.total_purchase_price_rs = (row.quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals || 0) * (row.expected_purchase_pricers || 0)
     frm.cur_grid.refresh_field('total_purchase_price_rs');
     //  # Quantity available for sale(default deducted X% for weight loss)
-    row.quantity_available_for_sale_default_deducted_x_for_weight_loss = (1 - (frm.doc.weight_loss_percent / 100)) * row.quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals
+    row.quantity_available_for_sale_default_deducted_x_for_weight_loss = (1 - (frm.doc.weight_loss_percent / 100)) * row.quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals || 0
     frm.cur_grid.refresh_field('quantity_available_for_sale_default_deducted_x_for_weight_loss');
     // # Total selling price / income(Rs)
-    row.total_selling_priceincome_rs = row.quantity_available_for_sale_default_deducted_x_for_weight_loss * row.expected_unit_selling_price_per_quintals
+    row.total_selling_priceincome_rs = row.quantity_available_for_sale_default_deducted_x_for_weight_loss * (row.expected_unit_selling_price_per_quintals || 0)
     frm.cur_grid.refresh_field('total_selling_priceincome_rs');
-    // # Total Income of FPO from Output
+    // // # Total Income of FPO from Output
     row.total_income_of_fpo_from_output = row.total_selling_priceincome_rs - row.total_purchase_price_rs
     frm.cur_grid.refresh_field('total_income_of_fpo_from_output');
-    // ===================================== Total =====================================
+    // // // ===================================== Total =====================================
     const calculate_total_output_purchase_price_rs = frm.doc.output_side.reduce((total, item) => total + item.total_purchase_price_rs, 0);
     frm.set_value('total_output_purchase_price_rs', calculate_total_output_purchase_price_rs);
 
@@ -333,18 +329,15 @@ frappe.ui.form.on('Output Side Child', {
     },
     crop_name: async function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        frm.refresh_field('output_side');
-        await calculate_output_felids_value(frm, row)
+        calculate_output_felids_value(frm, row)
     },
     total_cropping_area_of_fpo_members_acre: async function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        frm.refresh_field('output_side');
-        await calculate_output_felids_value(frm, row)
+        calculate_output_felids_value(frm, row)
     },
     quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals: async function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        // console.log('Output Row :>> ', row);
-        await calculate_output_felids_value(frm, row)
+        calculate_output_felids_value(frm, row)
         if (row.total_harvest_by_fpo_members_quintals < row.quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals) {
             row.quantity_of_produce_to_be_bought_by_fpo_for_marketing_quintals = ''
             frappe.throw({ message: 'Quantity of produce to be bought by FPO for marketing cannot exceed the total harvest by FPO members.' });
@@ -352,13 +345,11 @@ frappe.ui.form.on('Output Side Child', {
     },
     expected_purchase_pricers: async function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        frm.refresh_field('output_side');
-        await calculate_output_felids_value(frm, row)
+        calculate_output_felids_value(frm, row)
     },
     expected_unit_selling_price_per_quintals: async function (frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
-        frm.refresh_field('output_side');
-        await calculate_output_felids_value(frm, row)
+        calculate_output_felids_value(frm, row)
     },
 })
 
@@ -382,17 +373,18 @@ async function calculate_input_felids_value(frm, row) {
     frm.cur_grid.refresh_field('total_selling_priceincome_rs');
     // # Total Income of FPO from Input
     row.total_income_of_fpo_from_input =
-        (row.total_selling_priceincome_rs ? row.total_selling_priceincome_rs : 0) *
+        (row.total_selling_priceincome_rs ? row.total_selling_priceincome_rs : 0) -
         (row.total_purchase_price_rs ? row.total_purchase_price_rs : 0);
     frm.cur_grid.refresh_field('total_income_of_fpo_from_input');
+
     // ===================================== Total =====================================
-    const calculate_total_input_purchase_price_rs = frm.doc.output_side.reduce((total, item) => total + item.total_purchase_price_rs, 0);
+    const calculate_total_input_purchase_price_rs = frm.doc.input_side.reduce((total, item) => total + item.total_purchase_price_rs, 0);
     frm.set_value('total_input_purchase_price_rs', calculate_total_input_purchase_price_rs);
 
-    const calculate_total_input_selling_priceincome_rs = frm.doc.output_side.reduce((total, item) => total + item.total_selling_priceincome_rs, 0);
+    const calculate_total_input_selling_priceincome_rs = frm.doc.input_side.reduce((total, item) => total + item.total_selling_priceincome_rs, 0);
     frm.set_value('total_input_selling_priceincome_rs', calculate_total_input_selling_priceincome_rs);
 
-    const calculate_total_income_of_fpo_from_input = frm.doc.output_side.reduce((total, item) => total + item.total_income_of_fpo_from_input, 0);
+    const calculate_total_income_of_fpo_from_input = frm.doc.input_side.reduce((total, item) => total + item.total_income_of_fpo_from_input, 0);
     frm.set_value('total_income_of_fpo_from_input', calculate_total_income_of_fpo_from_input);
 }
 
@@ -406,19 +398,16 @@ frappe.ui.form.on('Input Side Child', {
     item_code(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
     },
-    percentage_of_total_cropping_area(frm, cdt, cdn) {
-        let row = frappe.get_doc(cdt, cdn);
-        if (row.percentage_of_total_cropping_area < 0 || row.percentage_of_total_cropping_area > 100) {
-            row.percentage_of_total_cropping_area = ''
-            frappe.throw({ message: 'Percentage of Total Cropping Area for which Input Name Shall be Provided By FPO Cannot less than 0 and cannot greater than 100.' });
-        }
-    },
     total_cropping_area_of_fpo_members_acre(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
         calculate_input_felids_value(frm, row)
     },
     percentage_of_total_cropping_area(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
+        if (row.percentage_of_total_cropping_area < 0 || row.percentage_of_total_cropping_area > 100) {
+            row.percentage_of_total_cropping_area = ''
+            frappe.throw({ message: 'Percentage of Total Cropping Area for which Input Name Shall be Provided By FPO Cannot less than 0 and cannot greater than 100.' });
+        }
         calculate_input_felids_value(frm, row)
     },
     expected_purchase_price_per_acre_rs(frm, cdt, cdn) {
