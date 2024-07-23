@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 0,
+ "idx": 3,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-06-28 14:11:45.581838",
+ "modified": "2024-07-23 12:38:09.825870",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "No of FPO participated at least 1 training",
@@ -22,10 +22,10 @@
    "role": "IA"
   },
   {
-   "role": "Admin"
+   "role": "CBBO"
   },
   {
-   "role": "CBBO"
+   "role": "Admin"
   }
  ],
  "time_interval": "Yearly",
