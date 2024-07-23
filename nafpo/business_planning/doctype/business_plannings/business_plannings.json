@@ -66,7 +66,41 @@
   "loss_percent_details_section",
   "weight_loss_percent",
   "fixed_cost_yearly__section",
-  "depreciation_percent"
+  "depreciation_percent",
+  "projected_cash_flow_tab",
+  "means_of_finance_section",
+  "grant_for_fixed_capital",
+  "grant_for_working_capital",
+  "total_subsidy_grant_for_capex",
+  "grant__for_salary_travel",
+  "column_break_rphn",
+  "share_capital",
+  "equity_grant",
+  "credit_guarantee_fund_a_composite_loan",
+  "total",
+  "projected_cash_flow_statement_section",
+  "inflow_column",
+  "sales",
+  "less_rise_in_debtor",
+  "total_subsidy_grant_for_capex_",
+  "grant__for_salary_travel__office_exp",
+  "share_capital_inflow",
+  "equity_grant_inflow",
+  "credit_guarantee_fund_a_loan",
+  "total_inflow",
+  "outflow_section",
+  "variable_cost",
+  "less_rise_in_current_liability",
+  "fixed_cost_less_depreciation_and_ammortization",
+  "rise_in_prepaid_expenses",
+  "credit_guarantee_fund_principal_amount",
+  "capital_costs_fixed",
+  "tax",
+  "profit_distributed",
+  "total_outflow",
+  "opening_cash_balance",
+  "net_inflow_inflow_outflow",
+  "closing_cash_balance_outflow"
  ],
  "fields": [
   {
@@ -444,12 +478,185 @@
    "fieldtype": "Currency",
    "label": "Closing Cash Balance ",
    "read_only": 1
+  },
+  {
+   "fieldname": "projected_cash_flow_tab",
+   "fieldtype": "Tab Break",
+   "label": "Projected Cash Flow"
+  },
+  {
+   "fieldname": "means_of_finance_section",
+   "fieldtype": "Section Break",
+   "label": "MEANS OF FINANCE"
+  },
+  {
+   "fieldname": "grant_for_fixed_capital",
+   "fieldtype": "Currency",
+   "label": "Grant for fixed capital"
+  },
+  {
+   "fieldname": "grant_for_working_capital",
+   "fieldtype": "Currency",
+   "label": "Grant for working capital"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_subsidy_grant_for_capex",
+   "fieldtype": "Currency",
+   "label": "Total Subsidy /Grant for CAPEX",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grant__for_salary_travel",
+   "fieldtype": "Currency",
+   "label": "Grant  for salary, travel & office exp."
+  },
+  {
+   "fieldname": "share_capital",
+   "fieldtype": "Currency",
+   "label": "Share Capital"
+  },
+  {
+   "fieldname": "equity_grant",
+   "fieldtype": "Currency",
+   "label": "Equity Grant"
+  },
+  {
+   "fieldname": "credit_guarantee_fund_a_composite_loan",
+   "fieldtype": "Currency",
+   "label": "Credit Guarantee Fund (a composite loan)"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total"
+  },
+  {
+   "fieldname": "column_break_rphn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "projected_cash_flow_statement_section",
+   "fieldtype": "Section Break",
+   "label": "Projected Cash Flow Statement"
+  },
+  {
+   "fieldname": "inflow_column",
+   "fieldtype": "Column Break",
+   "label": "Inflow"
+  },
+  {
+   "fieldname": "sales",
+   "fieldtype": "Currency",
+   "label": "Sales"
+  },
+  {
+   "fieldname": "less_rise_in_debtor",
+   "fieldtype": "Currency",
+   "label": "Less-Rise in Debtor"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_subsidy_grant_for_capex_",
+   "fieldtype": "Currency",
+   "label": "Total Subsidy /Grant for CAPEX",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grant__for_salary_travel__office_exp",
+   "fieldtype": "Currency",
+   "label": "Grant  for salary, travel & office exp."
+  },
+  {
+   "fieldname": "share_capital_inflow",
+   "fieldtype": "Currency",
+   "label": "Share Capital"
+  },
+  {
+   "fieldname": "equity_grant_inflow",
+   "fieldtype": "Currency",
+   "label": "Equity Grant"
+  },
+  {
+   "fieldname": "credit_guarantee_fund_a_loan",
+   "fieldtype": "Currency",
+   "label": "Credit Guarantee Fund (a loan)"
+  },
+  {
+   "fieldname": "total_inflow",
+   "fieldtype": "Currency",
+   "label": "Total Inflow"
+  },
+  {
+   "fieldname": "outflow_section",
+   "fieldtype": "Section Break",
+   "label": "Outflow"
+  },
+  {
+   "fieldname": "variable_cost",
+   "fieldtype": "Currency",
+   "label": "Variable cost"
+  },
+  {
+   "fieldname": "less_rise_in_current_liability",
+   "fieldtype": "Currency",
+   "label": "Less rise in current liability"
+  },
+  {
+   "fieldname": "fixed_cost_less_depreciation_and_ammortization",
+   "fieldtype": "Currency",
+   "label": "Fixed Cost (Less depreciation and ammortization)"
+  },
+  {
+   "fieldname": "rise_in_prepaid_expenses",
+   "fieldtype": "Currency",
+   "label": "Rise in prepaid expenses"
+  },
+  {
+   "fieldname": "credit_guarantee_fund_principal_amount",
+   "fieldtype": "Currency",
+   "label": "Credit Guarantee Fund (Principal amount)"
+  },
+  {
+   "fieldname": "capital_costs_fixed",
+   "fieldtype": "Currency",
+   "label": "Capital Costs (fixed)"
+  },
+  {
+   "fieldname": "tax",
+   "fieldtype": "Currency",
+   "label": "Tax"
+  },
+  {
+   "fieldname": "profit_distributed",
+   "fieldtype": "Currency",
+   "label": "Profit distributed"
+  },
+  {
+   "fieldname": "total_outflow",
+   "fieldtype": "Currency",
+   "label": "Total outflow"
+  },
+  {
+   "fieldname": "opening_cash_balance",
+   "fieldtype": "Currency",
+   "label": "Opening Cash Balance"
+  },
+  {
+   "fieldname": "net_inflow_inflow_outflow",
+   "fieldtype": "Currency",
+   "label": "Net inflow (Inflow-Outflow)"
+  },
+  {
+   "fieldname": "closing_cash_balance_outflow",
+   "fieldtype": "Currency",
+   "label": "Closing Cash Balance"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-22 15:12:18.307218",
+ "modified": "2024-07-23 09:40:31.596417",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",
