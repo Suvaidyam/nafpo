@@ -21,7 +21,7 @@ def get_value_event(doctype_name,value):
 
 @frappe.whitelist(allow_guest=True)
 def get_list_event(doctype_name,filter,fields):
-    return frappe.get_list(doctype_name, filters=filter, fields=fields,as_list=True)
+    return frappe.get_list(doctype_name, filters=filter, fields=fields)
 
 @frappe.whitelist(allow_guest=True)
 def value_event(doctype_name,filter_felid_name,felids):

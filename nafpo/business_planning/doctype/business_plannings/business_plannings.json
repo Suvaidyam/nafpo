@@ -549,9 +549,11 @@
    "label": "Inflow"
   },
   {
+   "default": "0",
    "fieldname": "sales",
    "fieldtype": "Currency",
-   "label": "Sales"
+   "label": "Sales",
+   "read_only": 1
   },
   {
    "fieldname": "less_rise_in_debtor",
@@ -566,29 +568,39 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "grant__for_salary_travel__office_exp",
    "fieldtype": "Currency",
-   "label": "Grant  for salary, travel & office exp."
+   "label": "Grant  for salary, travel & office exp.",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "share_capital_inflow",
    "fieldtype": "Currency",
-   "label": "Share Capital"
+   "label": "Share Capital",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "equity_grant_inflow",
    "fieldtype": "Currency",
-   "label": "Equity Grant"
+   "label": "Equity Grant",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "credit_guarantee_fund_a_loan",
    "fieldtype": "Currency",
-   "label": "Credit Guarantee Fund (a loan)"
+   "label": "Credit Guarantee Fund (a loan)",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_inflow",
    "fieldtype": "Currency",
-   "label": "Total Inflow"
+   "label": "Total Inflow",
+   "read_only": 1
   },
   {
    "fieldname": "outflow_section",
@@ -596,9 +608,11 @@
    "label": "Outflow"
   },
   {
+   "default": "0",
    "fieldname": "variable_cost",
    "fieldtype": "Currency",
-   "label": "Variable cost"
+   "label": "Variable cost",
+   "read_only": 1
   },
   {
    "fieldname": "less_rise_in_current_liability",
@@ -606,9 +620,11 @@
    "label": "Less rise in current liability"
   },
   {
+   "default": "0",
    "fieldname": "fixed_cost_less_depreciation_and_ammortization",
    "fieldtype": "Currency",
-   "label": "Fixed Cost (Less depreciation and ammortization)"
+   "label": "Fixed Cost (Less depreciation and ammortization)",
+   "read_only": 1
   },
   {
    "fieldname": "rise_in_prepaid_expenses",
@@ -621,9 +637,11 @@
    "label": "Credit Guarantee Fund (Principal amount)"
   },
   {
+   "default": "0",
    "fieldname": "capital_costs_fixed",
    "fieldtype": "Currency",
-   "label": "Capital Costs (fixed)"
+   "label": "Capital Costs (fixed)",
+   "read_only": 1
   },
   {
    "fieldname": "tax",
@@ -636,9 +654,11 @@
    "label": "Profit distributed"
   },
   {
+   "default": "0",
    "fieldname": "total_outflow",
    "fieldtype": "Currency",
-   "label": "Total outflow"
+   "label": "Total outflow",
+   "read_only": 1
   },
   {
    "fieldname": "opening_cash_balance",
@@ -646,20 +666,24 @@
    "label": "Opening Cash Balance"
   },
   {
+   "default": "0",
    "fieldname": "net_inflow_inflow_outflow",
    "fieldtype": "Currency",
-   "label": "Net inflow (Inflow-Outflow)"
+   "label": "Net inflow (Inflow-Outflow)",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "closing_cash_balance_outflow",
    "fieldtype": "Currency",
-   "label": "Closing Cash Balance"
+   "label": "Closing Cash Balance",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-23 11:20:17.373411",
+ "modified": "2024-07-23 14:19:14.854963",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",
