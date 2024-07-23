@@ -1,0 +1,29 @@
+[
+ {
+  "crops_name": "Apple",
+  "crops_types": "Fruits",
+  "docstatus": 0,
+  "doctype": "Crops Variety",
+  "modified": "2024-07-22 16:15:07.619199",
+  "name": "CV-00376",
+  "variety_name": "Honeycrisp"
+ },
+ {
+  "crops_name": "Apple",
+  "crops_types": "Fruits",
+  "docstatus": 0,
+  "doctype": "Crops Variety",
+  "modified": "2024-07-22 16:14:58.099685",
+  "name": "CV-00375",
+  "variety_name": "Gala"
+ },
+ {
+  "crops_name": "Apple",
+  "crops_types": "Fruits",
+  "docstatus": 0,
+  "doctype": "Crops Variety",
+  "modified": "2024-07-22 16:14:46.784250",
+  "name": "CV-00374",
+  "variety_name": "Fuji"
+ }
+]

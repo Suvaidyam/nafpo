@@ -67,7 +67,7 @@ frappe.ui.form.on('FPO Fixed Capital Child', {
         let data = 0;
         // Loop through the child table and sum the values
         frm.doc.fixed_capital_details_table.forEach(item => {
-            data += item.value;
+            data += (item.value || 0);
         });
         // Set the total value and refresh the field
         frm.set_value('total_value', data);
