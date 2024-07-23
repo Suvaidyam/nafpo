@@ -469,6 +469,7 @@
    "default": "0",
    "fieldname": "quantity_available_for_sale_after_weight_loss",
    "fieldtype": "Float",
+   "hidden": 1,
    "label": "Quantity available for sale after X% weight loss",
    "read_only": 1
   },
@@ -527,9 +528,11 @@
    "label": "Credit Guarantee Fund (a composite loan)"
   },
   {
+   "default": "0",
    "fieldname": "total",
    "fieldtype": "Currency",
-   "label": "Total"
+   "label": "Total",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_rphn",
@@ -656,7 +659,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-23 09:40:31.596417",
+ "modified": "2024-07-23 11:20:17.373411",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",
