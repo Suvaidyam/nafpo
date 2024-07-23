@@ -1,0 +1,37 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"XobdLd9Bw_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Projected Cash Flow</span>\",\"col\":12}},{\"id\":\"WeOLjmW-oA\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Projected Cash Flow\",\"col\":4}}]",
+ "creation": "2024-07-23 16:55:41.219321",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "expenses",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Projected Cash Flow",
+ "links": [],
+ "modified": "2024-07-23 16:56:53.131745",
+ "modified_by": "Administrator",
+ "module": "Business Planning",
+ "name": "Projected Cash Flow",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 10.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Projected Cash Flow",
+   "link_to": "Projected Cash Flow",
+   "type": "Report"
+  }
+ ],
+ "title": "Projected Cash Flow"
+}
