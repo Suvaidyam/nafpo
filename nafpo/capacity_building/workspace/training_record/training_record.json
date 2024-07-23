@@ -21,24 +21,24 @@
    "label": "FPOs by  Opration System  Training Status"
   }
  ],
- "content": "[{\"id\":\"N-1OH1Fsv0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Overview</b></span>\",\"col\":12}},{\"id\":\"_79g4Hj6R5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Training & Capacity Forms Overview\",\"col\":4}},{\"id\":\"5qkhXQNxWK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"VzOgmvpq7j\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Membership System Capacity Building.\",\"col\":6}},{\"id\":\"9bY8I7x0w8\",\"type\":\"chart\",\"data\":{\"chart_name\":\"FPOs by  Membership System  Training Status\",\"col\":6}},{\"id\":\"A6IDR77Aeq\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Governance System Capacity Building.\",\"col\":6}},{\"id\":\"Bo9ocxzmU0\",\"type\":\"chart\",\"data\":{\"chart_name\":\"FPOs by Board of Directors Training Status\",\"col\":6}},{\"id\":\"Fh5eUsFh0X\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Operation system Capacity Building\",\"col\":6}},{\"id\":\"fwfVYa_dnH\",\"type\":\"chart\",\"data\":{\"chart_name\":\"FPOs by  Opration System  Training Status\",\"col\":6}},{\"id\":\"i57KKh1O6y\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Governance System Capacity Building FPO\",\"col\":6}},{\"id\":\"9snb_cuN_w\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Membership System Capacity Building FPO\",\"col\":6}},{\"id\":\"k_5anDF-80\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Is FPO has a trained Accountant\",\"col\":6}},{\"id\":\"c4DvmCpzql\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Is FPO has a trained CEO\",\"col\":6}}]",
+ "content": "[{\"id\":\"N-1OH1Fsv0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Overview</b></span>\",\"col\":12}},{\"id\":\"_79g4Hj6R5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Training & Capacity Forms Overview\",\"col\":4}},{\"id\":\"5qkhXQNxWK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"VzOgmvpq7j\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Membership System Capacity Buidling\",\"col\":6}},{\"id\":\"9bY8I7x0w8\",\"type\":\"chart\",\"data\":{\"chart_name\":\"FPOs by  Membership System  Training Status\",\"col\":6}},{\"id\":\"A6IDR77Aeq\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Governance System Capacity Building.\",\"col\":6}},{\"id\":\"Bo9ocxzmU0\",\"type\":\"chart\",\"data\":{\"chart_name\":\"FPOs by Board of Directors Training Status\",\"col\":6}},{\"id\":\"Fh5eUsFh0X\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Operation system Capacity Building\",\"col\":6}},{\"id\":\"fwfVYa_dnH\",\"type\":\"chart\",\"data\":{\"chart_name\":\"FPOs by  Opration System  Training Status\",\"col\":6}},{\"id\":\"i57KKh1O6y\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Governance System Capacity Building FPO\",\"col\":6}},{\"id\":\"9snb_cuN_w\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Membership System Capacity Building FPO\",\"col\":6}},{\"id\":\"k_5anDF-80\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Is FPO has a trained Accountant\",\"col\":6}},{\"id\":\"c4DvmCpzql\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Is FPO has a trained CEO\",\"col\":6}}]",
  "creation": "2024-06-22 10:59:40.640048",
  "custom_blocks": [
   {
-   "custom_block_name": "Membership System Capacity Building.",
-   "label": "Membership System Capacity Building."
+   "custom_block_name": "Membership System Capacity Buidling",
+   "label": "Membership System Capacity Buidling"
   },
   {
-   "custom_block_name": "Governance System Capacity Building.",
+   "custom_block_name": "Operation system Capacity Building",
+   "label": "Operation system Capacity Building"
+  },
+  {
+   "custom_block_name": "Governance System Capacity Building",
    "label": "Governance System Capacity Building."
   },
   {
    "custom_block_name": "Membership System Capacity Building FPO",
    "label": "Membership System Capacity Building FPO"
-  },
-  {
-   "custom_block_name": "Operation system Capacity Building.",
-   "label": "Operation system Capacity Building"
   },
   {
    "custom_block_name": "Governance System Capacity Building FPO",
@@ -55,7 +55,7 @@
  "is_hidden": 0,
  "label": "Training Record",
  "links": [],
- "modified": "2024-07-18 14:49:35.486135",
+ "modified": "2024-07-23 12:44:14.817542",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Training Record",
