@@ -7,13 +7,13 @@ app_license = "mit"
 # required_apps = []
 
 fixtures = [
-    "Role",
-    "Role Profile",
-    "Type of Organization",
+    # "Role",
+    # "Role Profile",
+    # "Type of Organization",
     "Custom HTML Block",
-    "Crops Types",
-    "Crops Name",
-    "Crops Variety",
+    # "Crops Types",
+    # "Crops Name",
+    # "Crops Variety",
 ]
 
 # Includes in <head>
