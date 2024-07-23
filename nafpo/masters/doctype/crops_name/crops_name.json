@@ -7,8 +7,6 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "state",
-  "fpo",
   "crop_type",
   "crop_name"
  ],
@@ -22,20 +20,6 @@
    "unique": 1
   },
   {
-   "fieldname": "state",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "State",
-   "options": "State"
-  },
-  {
-   "fieldname": "fpo",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "FPO",
-   "options": "FPO"
-  },
-  {
    "fieldname": "crop_type",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -47,7 +31,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-20 12:21:24.471486",
+ "modified": "2024-07-23 15:20:13.714100",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Crops Name",
