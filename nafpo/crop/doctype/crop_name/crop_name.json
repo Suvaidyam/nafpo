@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:C-{####}",
  "creation": "2024-05-10 11:14:55.721742",
@@ -132,20 +133,20 @@
    "options": "Crop Variety Child"
   },
   {
-   "depends_on": "eval:!doc.__islocal",
    "fetch_from": "crop_variety.variety_name",
    "fieldname": "crop_variety_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Crop Variety Name",
-   "mandatory_depends_on": "eval:!doc.__islocal",
    "options": "Crops Variety"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-22 18:34:10.031007",
+ "modified": "2024-07-23 15:32:22.568329",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop Name",
