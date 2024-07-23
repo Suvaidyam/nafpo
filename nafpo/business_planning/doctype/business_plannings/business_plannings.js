@@ -246,6 +246,9 @@ frappe.ui.form.on("Business Plannings", {
     total_input_selling_priceincome_rs(frm) {
         net_profit_logic(frm)
     },
+    quantity_available_for_sale_after_weight_loss(frm) {
+        variable_cost_logic(frm)
+    },
     total_variable_cost(frm) {
         net_profit_logic(frm)
     },
