@@ -7,29 +7,30 @@ frappe.ui.form.on("FPO Profiling", {
         await apply_filter('block_name', 'district', frm, frm.doc.district_name)
         await apply_filter('name_of_the_fpo', 'district', frm, frm.doc.district_name)
         await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)
-        const today = new Date();
-        frm.fields_dict.date_of_expiry_for_fertilizer.$input.datepicker({ maxDate: new Date() });
-        frm.fields_dict.date_of_incorporation.$input.datepicker({ maxDate: today });
-        frm.fields_dict.date_of_registration.$input.datepicker({ maxDate: today });
-        frm.fields_dict.ceo_date_of_joining.$input.datepicker({ maxDate: today });
-        frm.fields_dict.accountant_date_of_joining.$input.datepicker({ maxDate: today });
-        frm.fields_dict.ceo_dob.$input.datepicker({ maxDate: new Date(today.getFullYear() - 18, today.getMonth(), today.getDate()) });
-        frm.fields_dict.accountant_dob.$input.datepicker({ maxDate: new Date(today.getFullYear() - 18, today.getMonth(), today.getDate()) });
-        const expiry_fields = ['date_of_expiry_for_seeds', 'date_of_expiry_for_fertilizer', 'date_of_expiry_for_pesticide', 'date_of_expiry_for_fssai', 'date_of_expiry__for_seed_production'];
-        expiry_fields.forEach(field => {
-            frm.fields_dict[field].$input.datepicker({ maxDate: today });
-        });
+        // const today = new Date();
+        // frm.fields_dict.date_of_expiry_for_fertilizer.$input.datepicker({ maxDate: new Date() });
+        // frm.fields_dict.date_of_incorporation.$input.datepicker({ maxDate: today });
+        // frm.fields_dict.date_of_registration.$input.datepicker({ maxDate: today });
+        // frm.fields_dict.ceo_date_of_joining.$input.datepicker({ maxDate: today });
+        // frm.fields_dict.accountant_date_of_joining.$input.datepicker({ maxDate: today });
+        // frm.fields_dict.ceo_dob.$input.datepicker({ maxDate: new Date(today.getFullYear() - 18, today.getMonth(), today.getDate()) });
+        // frm.fields_dict.accountant_dob.$input.datepicker({ maxDate: new Date(today.getFullYear() - 18, today.getMonth(), today.getDate()) });
+        // const expiry_fields = ['date_of_expiry_for_seeds', 'date_of_expiry_for_fertilizer', 'date_of_expiry_for_pesticide', 'date_of_expiry_for_fssai', 'date_of_expiry__for_seed_production'];
+        // expiry_fields.forEach(field => {
+        //     frm.fields_dict[field].$input.datepicker({ maxDate: today });
+        // });
         hide_advance_search(frm, ['bod_kyc_name', 'name_of_cbbo', 'state_name',
-            'block_name', 'district_name', 'name_of_the_fpo', 'type_of_organization'
+            'block_name', 'district_name', 'name_of_the_fpo', 'type_of_organization',
         ])
         extend_options_length(frm, ['district_name', 'name_of_the_fpo', 'bod_kyc_name', 'name_of_cbbo', 'cbbo'])
     },
     validate(frm) {
-        // frm.doc.staff_details_table.forEach(row => {
-        //     // console.log('Row during validate:', row);
-        // });
         validate_string(frm, 'fpos_pincode', "FPO's Pincode");
         validate_string(frm, 'contact_detail_of_fpo', "Contact Detail of FPO");
+        if (frm.image_uploaded) {
+            frappe.validated = false;
+            frm.image_uploaded = false;
+        }
     },
     fpos_pincode(frm) {
         validate_string(frm, 'fpos_pincode', "FPO's Pincode");
@@ -62,15 +63,34 @@ frappe.ui.form.on("FPO Profiling", {
     },
     ...['gst_received_upload', 'license_doc_for_seed', 'license_doc_for_fertilizer', 'license_doc_for_pesticide', 'license_doc_for_fssai', 'licence_doc_for_seed_production', 'fpo_logo', 'supporting_document'].reduce((acc, field) => {
         acc[field] = function (frm) {
-            disable_Attachment_autosave(frm);
+            frm.image_uploaded = true;
         };
         return acc;
     }, {})
 });
 
+frappe.ui.form.on('Supporting Agencies Child', {
+    form_render(frm, cdt, cdn) {
+        // $('.row-actions').remove()
+    },
+    from(frm, cdt, cdn) {
+        let row = frappe.get_doc(cdt, cdn)
+        if (row.from > row.to) {
+            row.from = ''
+            frappe.show_alert({ message: "From date should be less than To date", indicator: 'red' })
+        }
+    },
+    to(frm, cdt, cdn) {
+        let row = frappe.get_doc(cdt, cdn)
+        if (row.from > row.to) {
+            row.to = ''
+            frappe.show_alert({ message: "From date should be less than To date", indicator: 'red' })
+        }
+    }
+});
 frappe.ui.form.on('FPO Staff Child', {
     form_render(frm, cdt, cdn) {
-        $('.row-actions').remove()
+        $('.grid-duplicate-row').remove()
         let options = ["CEO", "Accountant", "Other Staff"]
         let existing = frm.doc.staff_details_table.map(row => {
             if (row.position_designation != "Other Staff") return row.position_designation
@@ -86,13 +106,15 @@ frappe.ui.form.on('FPO Staff Child', {
     aadhar_no(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn);
         if (typeof row.aadhar_no === 'string' && isNaN(Number(row.aadhar_no))) {
-            frappe.throw(__(`Please enter a valid Aadhar No`));
+            row.aadhar_no = ''
+            frappe.throw({ message: `Please enter a valid Phone No` });
         }
     },
     phone_no(frm, cdt, cdn) {
         let row = frappe.get_doc(cdt, cdn)
         if (typeof row.phone_no === 'string' && isNaN(Number(row.phone_no))) {
-            frappe.throw(__(`Please enter a valid Phone No`));
+            row.phone_no = ''
+            frappe.throw({ message: `Please enter a valid Phone No` });
         }
     }
 });
