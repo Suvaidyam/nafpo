@@ -12,6 +12,7 @@ async function check_fpo(frm) {
         freeze: true,
         freeze_message: __("Getting"),
     }).then(response => {
+        console.log('object :>> ', response);
         if (response) {
             // frm.set_value('fpo', '')
             return frappe.throw({ message: 'This FPO already exists for the Fixed Capital' })
