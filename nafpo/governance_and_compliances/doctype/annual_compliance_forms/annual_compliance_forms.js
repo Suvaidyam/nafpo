@@ -41,7 +41,7 @@ async function check_fpo(frm) {
         console.log('object :>> ', response);
         if (response) {
             // frm.set_value('fpo', '')
-            return frappe.throw({ message: 'This FPO already exists for the Fixed Capital' })
+            return frappe.throw({ message: 'Annual Compliance Forms' })
         }
     });
 }
@@ -80,7 +80,9 @@ frappe.ui.form.on("Annual Compliance Forms", {
         }
     },
     fpo(frm) {
-        set_due_date(frm)
+        if (frm.doc.fpo.length > 0) {
+            set_due_date(frm)
+        }
     },
     aoc_4_status(frm) {
         blank_submitted_on(frm, 'aoc_4_status', 'aoc_4_submitted_on');

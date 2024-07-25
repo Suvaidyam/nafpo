@@ -81,8 +81,7 @@ frappe.ui.form.on("FPO member details", {
         if (frm.doc.do_you_have_any_leased_land_area_in_acre == "Yes") {
             await frm.set_value('how_much_irrigated_leased_land_in_hectare', frm.doc.how_much_irrigated_leased_land_area_in_acre * 0.404686)
         }
-    }
-    ,
+    },
     consent_image(frm) {
         frm.image_uploaded = true;
     },
