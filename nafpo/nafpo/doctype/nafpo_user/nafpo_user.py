@@ -36,12 +36,12 @@ class NAFPOUser(Document):
 
 	def on_trash(self):
 		# Check if the user exists
-		if frappe.db.exists("User", self.name):
+		if frappe.db.exists("User", self.email):
 			# Delete the user
-			frappe.delete_doc("User", self.name, ignore_permissions=True)
-			frappe.msgprint(f"The user {self.name} has been deleted.")
+			frappe.delete_doc("User", self.email, ignore_permissions=True)
+			frappe.msgprint(f"The user {self.email} has been deleted.")
 		else:
-			frappe.msgprint(f"The user {self.name} does not exist.")
+			frappe.msgprint(f"The user {self.email} does not exist.")
 
 
 def delete_existing_permissions(self):

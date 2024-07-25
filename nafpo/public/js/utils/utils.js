@@ -112,6 +112,6 @@ function hide_list_view_in_useless_data(frm) {
 function validate_string(frm, field_name, field_label) {
     const field_value = frm.doc[field_name];
     if (typeof field_value === 'string' && isNaN(Number(field_value))) {
-        frappe.throw(__(`Please enter a valid ${field_label}.`));
+        frappe.throw({ message: `Please enter a valid ${field_label}.` });
     }
 }

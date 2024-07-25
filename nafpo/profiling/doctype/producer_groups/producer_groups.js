@@ -7,11 +7,16 @@ frappe.ui.form.on("Producer Groups", {
         extend_options_length(frm, ['state', 'fpo'])
         apply_filter('fpo', 'state', frm, frm.doc.state)
     },
+    onload(frm) {
+    },
+    validate(frm) {
+        validate_string(frm, 'contact_number', "Contact Number");
+    },
     state: function (frm) {
         apply_filter('fpo', 'state', frm, frm.doc.state)
         truncate_multiple_fields_value(frm, ['fpo'])
     },
-    onload(frm) {
-        hide_list_view_in_useless_data(frm)
+    contact_number(frm) {
+        validate_string(frm, 'contact_number', "Contact Number");
     }
 });

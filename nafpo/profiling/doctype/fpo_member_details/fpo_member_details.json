@@ -304,8 +304,9 @@
   },
   {
    "fieldname": "year_of_share_issued",
-   "fieldtype": "Date",
-   "label": "Year of Share issued"
+   "fieldtype": "Autocomplete",
+   "label": "Year of Share issued",
+   "options": "2020\n2021\n2022\n2023\n2024\n2025\n2026\n2027\n2028\n2029\n2030"
   },
   {
    "fieldname": "no_of_share_alloted",
@@ -315,13 +316,13 @@
   },
   {
    "fieldname": "distinctive_number_of_share",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Distinctive number of share",
    "non_negative": 1
   },
   {
    "fieldname": "folio_no",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Folio No.",
    "non_negative": 1
   },
@@ -334,8 +335,9 @@
   {
    "default": "+91-",
    "fieldname": "mobile_number",
-   "fieldtype": "Phone",
+   "fieldtype": "Data",
    "label": "Mobile Number",
+   "length": 10,
    "non_negative": 1
   },
   {
@@ -424,7 +426,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-16 12:37:36.582201",
+ "modified": "2024-07-25 11:23:17.784974",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO member details",
