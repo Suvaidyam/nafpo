@@ -10,14 +10,14 @@ class FPOProfiling(Document):
         fpo_profile_name = frappe.get_doc('FPO', self.name_of_the_fpo)
         self.name_of_the_fpo_copy = fpo_profile_name.fpo_name
 
-    def before_validate(self):
-        exists = frappe.db.exists({
-            "doctype": "FPO Profiling",
-            "name_of_the_fpo": self.name_of_the_fpo
-        })
-        data_exists = bool(exists)
-        if data_exists and exists != self.name:
-            frappe.throw(f"FPO already exists in FPO Profiling")
+    # def before_validate(self):
+    #     exists = frappe.db.exists({
+    #         "doctype": "FPO Profiling",
+    #         "name_of_the_fpo": self.name_of_the_fpo
+    #     })
+    #     data_exists = bool(exists)
+    #     if data_exists and exists != self.name:
+    #         frappe.throw(f"FPO already exists in FPO Profiling")
 
     def on_update(self):
         if len(self.deleted_staff_rows) > 0:

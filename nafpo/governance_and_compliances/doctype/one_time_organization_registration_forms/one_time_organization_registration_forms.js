@@ -38,7 +38,7 @@ async function check_fpo(frm) {
         console.log('object :>> ', response);
         if (response) {
             // frm.set_value('fpo', '')
-            return frappe.throw({ message: 'This FPO already exists for the Fixed Capital' })
+            return frappe.throw({ message: 'This FPO already exists for the One Time Organization Registration Forms' })
         }
     });
 }
@@ -84,7 +84,9 @@ frappe.ui.form.on("One Time Organization Registration Forms", {
         blank_submitted_on(frm, 'adt_1_status', 'adt_1_submitted_on');
     },
     fpo(frm) {
-        set_due_date(frm)
+        if (frm.doc.fpo.length > 0) {
+            set_due_date(frm)
+        }
         // debugger
         check_fpo(frm)
     },

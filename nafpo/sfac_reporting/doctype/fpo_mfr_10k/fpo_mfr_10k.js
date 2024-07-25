@@ -11,7 +11,7 @@ async function check_exists_fpo_in_mfr(frm) {
         }
     });
     if (response.message) {
-        frm.set_value('fpo', '')
+        // frm.set_value('fpo', '')
         return frappe.throw({ message: 'This FPO are already exists in FPO MFR 10K' });
     }
 }
@@ -25,7 +25,7 @@ async function check_fpo_profile(frm) {
         }
     });
     if (response.message == undefined) {
-        frm.set_value('fpo', '')
+        // frm.set_value('fpo', '')
         return frappe.throw({ message: 'Please Create FPO Profiling for this FPO' });
     }
 }
@@ -102,7 +102,7 @@ frappe.ui.form.on("FPO MFR 10K", {
         //     frm.set_df_property(`${installment}_installment_date`, 'read_only', 1);
         // });
     },
-    validate(frm) {
+    async validate(frm) {
         if (frm.doc.are_you_received_1st_installment_fund !== 'Yes' &&
             frm.doc.are_you_received_2nd_installment_fund !== 'Yes' &&
             frm.doc.are_you_received_3rd_installment_fund !== 'Yes' &&
@@ -116,9 +116,11 @@ frappe.ui.form.on("FPO MFR 10K", {
             frappe.validated = false;
             frm.image_uploaded = false;
         }
+        await check_fpo_profile(frm)
     },
 
     async fpo(frm) {
+        check_fpo_profile(frm)
         set_due_date(frm)
         check_exists_fpo_in_mfr(frm)
     },

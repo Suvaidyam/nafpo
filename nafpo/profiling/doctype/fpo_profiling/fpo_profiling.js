@@ -1,6 +1,20 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
 let deleted_staff = [];
+async function check_exists_fpo(frm) {
+    let response = await frappe.call({
+        method: "nafpo.apis.api.get_exists_event",
+        args: {
+            doctype_name: "FPO Profiling",
+            filterName: "name_of_the_fpo",
+            value: frm.doc.name_of_the_fpo,
+        }
+    });
+    if (response.message) {
+        // frm.set_value('fpo', '')
+        return frappe.throw({ message: 'This FPO are already exists in FPO Profiling' });
+    }
+}
 frappe.ui.form.on("FPO Profiling", {
     async refresh(frm) {
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
@@ -20,17 +34,21 @@ frappe.ui.form.on("FPO Profiling", {
         //     frm.fields_dict[field].$input.datepicker({ maxDate: today });
         // });
         hide_advance_search(frm, ['bod_kyc_name', 'name_of_cbbo', 'state_name',
-            'block_name', 'district_name', 'name_of_the_fpo', 'type_of_organization',
+            'block_name', 'district_name', 'name_of_the_fpo', 'type_of_organization', 'cbbo'
         ])
         extend_options_length(frm, ['district_name', 'name_of_the_fpo', 'bod_kyc_name', 'name_of_cbbo', 'cbbo'])
     },
-    validate(frm) {
+    async validate(frm) {
         validate_string(frm, 'fpos_pincode', "FPO's Pincode");
         validate_string(frm, 'contact_detail_of_fpo', "Contact Detail of FPO");
         if (frm.image_uploaded) {
             frappe.validated = false;
             frm.image_uploaded = false;
         }
+        await check_exists_fpo(frm)
+    },
+    fpos_address(frm) {
+        validate_string(frm, 'fpos_address', "FPO's Address");
     },
     fpos_pincode(frm) {
         validate_string(frm, 'fpos_pincode', "FPO's Pincode");
@@ -57,6 +75,7 @@ frappe.ui.form.on("FPO Profiling", {
         await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)
         // await apply_filter('block_name', 'fpo_name', frm, frm.doc.name_of_the_fpo);
         truncate_multiple_fields_value(frm, ['bod_kyc_name', 'fpos_address', 'fpos_pincode'])
+        await check_exists_fpo(frm)
     },
     onload(frm) {
         hide_list_view_in_useless_data(frm)

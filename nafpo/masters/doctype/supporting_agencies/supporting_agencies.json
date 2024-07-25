@@ -22,7 +22,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-05 12:34:01.324165",
+ "modified": "2024-07-25 13:08:55.158847",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Supporting Agencies",
@@ -38,6 +38,7 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "write": 1
   },
@@ -55,7 +56,6 @@
    "write": 1
   },
   {
-   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
@@ -63,13 +63,23 @@
    "report": 1,
    "role": "CBBO",
    "select": 1,
-   "share": 1,
-   "write": 1
+   "share": 1
   },
   {
    "email": 1,
    "export": 1,
    "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IA",
+   "select": 1,
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
    "report": 1,
    "role": "FPO",
    "select": 1,
