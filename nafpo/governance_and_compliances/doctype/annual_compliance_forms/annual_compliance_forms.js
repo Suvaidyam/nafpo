@@ -1,5 +1,50 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
+function set_due_date(frm) {
+    frappe.call({
+        method: "nafpo.apis.api.get_fpo_profile_doc",
+        args: {
+            doctype_name: 'FPO Profiling',
+            filter: frm.doc.fpo
+        },
+        callback: function (response) {
+            if (response.message == undefined) {
+                frappe.throw({ message: "FPO Profile doesn't exist. Please create FPO Profiling." })
+            }
+            let date = new Date(response.message.date_of_registration);
+            date.setFullYear(date.getFullYear() + 1);
+            let formattedDate = date.toISOString().split('T')[0];
+            frm.set_value('aoc_4_due_date', formattedDate);
+            frm.set_value('mgt_7_due_date', formattedDate);
+            frm.set_value('adt_1_due_date', formattedDate);
+            frm.set_value('d_kyc_due_date', formattedDate);
+            frm.set_value('it_return_due_date', formattedDate);
+            frm.set_value('agm_due_date', formattedDate);
+        },
+        error: function (error) {
+            console.log("An error occurred: ", error);
+        }
+    });
+}
+
+async function check_fpo(frm) {
+    callAPI({
+        method: 'nafpo.apis.api.get_exists_event',
+        args: {
+            doctype_name: 'Annual Compliance Forms',
+            filterName: 'fpo',
+            value: frm.doc.fpo,
+        },
+        freeze: true,
+        freeze_message: __("Getting"),
+    }).then(response => {
+        console.log('object :>> ', response);
+        if (response) {
+            // frm.set_value('fpo', '')
+            return frappe.throw({ message: 'This FPO already exists for the Fixed Capital' })
+        }
+    });
+}
 
 frappe.ui.form.on("Annual Compliance Forms", {
     refresh: async function (frm) {
@@ -31,7 +76,7 @@ frappe.ui.form.on("Annual Compliance Forms", {
             frm.doc.it_return_status !== 'Completed' &&
             frm.doc.agm_status !== 'Completed'
         ) {
-            frappe.throw('Form Status Not Yet Updated');
+            frappe.throw({ message: 'Form Status Not Yet Updated' });
         }
     },
     fpo(frm) {
@@ -69,29 +114,3 @@ function blank_submitted_on(frm, status_field, date_field) {
     }
 }
 
-function set_due_date(frm) {
-    frappe.call({
-        method: "nafpo.apis.api.get_fpo_profile_doc",
-        args: {
-            doctype_name: 'FPO Profiling',
-            filter: frm.doc.fpo
-        },
-        callback: function (response) {
-            if (response.message == undefined) {
-                frappe.throw("FPO Profile doesn't exist. Please create FPO Profiling.")
-            }
-            let date = new Date(response.message.date_of_registration);
-            date.setFullYear(date.getFullYear() + 1);
-            let formattedDate = date.toISOString().split('T')[0];
-            frm.set_value('aoc_4_due_date', formattedDate);
-            frm.set_value('mgt_7_due_date', formattedDate);
-            frm.set_value('adt_1_due_date', formattedDate);
-            frm.set_value('d_kyc_due_date', formattedDate);
-            frm.set_value('it_return_due_date', formattedDate);
-            frm.set_value('agm_due_date', formattedDate);
-        },
-        error: function (error) {
-            console.log("An error occurred: ", error);
-        }
-    });
-}

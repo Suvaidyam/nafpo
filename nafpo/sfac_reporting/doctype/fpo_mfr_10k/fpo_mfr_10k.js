@@ -12,7 +12,7 @@ async function check_exists_fpo_in_mfr(frm) {
     });
     if (response.message) {
         frm.set_value('fpo', '')
-        return frappe.throw('This FPO are already exists in FPO MFR 10K');
+        return frappe.throw({ message: 'This FPO are already exists in FPO MFR 10K' });
     }
 }
 async function check_fpo_profile(frm) {
@@ -26,7 +26,7 @@ async function check_fpo_profile(frm) {
     });
     if (response.message == undefined) {
         frm.set_value('fpo', '')
-        return frappe.throw('Please Create FPO Profiling for this FPO');
+        return frappe.throw({ message: 'Please Create FPO Profiling for this FPO' });
     }
 }
 function set_due_date(frm) {
@@ -110,15 +110,16 @@ frappe.ui.form.on("FPO MFR 10K", {
             frm.doc.are_you_received_5th_installment_fund !== 'Yes' &&
             frm.doc.are_you_received_6th_installment_fund !== 'Yes'
         ) {
-            frappe.throw('Installment Status Not Yet Updated');
+            frappe.throw({ message: 'Installment Status Not Yet Updated' });
+        }
+        if (frm.image_uploaded) {
+            frappe.validated = false;
+            frm.image_uploaded = false;
         }
     },
 
     async fpo(frm) {
         set_due_date(frm)
-
-        // check_fpo_profile(frm)
-
         check_exists_fpo_in_mfr(frm)
     },
     are_you_received_1st_installment_fund(frm) {
@@ -175,4 +176,10 @@ frappe.ui.form.on("FPO MFR 10K", {
             frm.set_value('6th_installment_date', '')
         }
     },
+    ...['1st_installment_proof_of_document', '2nd_installment_proof_of_document', '3rd_installment_proof_of_document', '4th_installment_proof_of_document', '5th_installment_proof_of_document', '6th_installment_proof_of_document'].reduce((acc, field) => {
+        acc[field] = function (frm) {
+            frm.image_uploaded = true;
+        };
+        return acc;
+    }, {})
 });

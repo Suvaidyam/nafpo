@@ -3,14 +3,18 @@
 
 frappe.ui.form.on("BOD KYC", {
     async refresh(frm) {
-        await hide_advance_search(frm, ['state_name', 'fpo_name'])
-        await extend_options_length(frm, ['state_name', 'fpo_name'])
+        hide_advance_search(frm, ['state_name', 'fpo_name'])
+        extend_options_length(frm, ['state_name', 'fpo_name'])
         await apply_filter('fpo_name', 'state', frm, frm.doc.state_name)
     },
     validate(frm) {
         validate_string(frm, 'mobile_number', 'Mobile Number');
         validate_string(frm, 'aadhar_number', 'Aadhar Number');
         validate_string(frm, 'director_identification_number', 'Director Identification Number');
+        if (frm.image_uploaded) {
+            frappe.validated = false;
+            frm.image_uploaded = false;
+        }
     },
     state_name: async function (frm) {
         await apply_filter('fpo_name', 'state', frm, frm.doc.state_name)
@@ -27,7 +31,7 @@ frappe.ui.form.on("BOD KYC", {
     },
     ...['din_document', 'address_proof_status', 'address_proof', 'upload_aadhar_document'].reduce((acc, field) => {
         acc[field] = function (frm) {
-            disable_Attachment_autosave(frm);
+            frm.image_uploaded = true;
         };
         return acc;
     }, {})

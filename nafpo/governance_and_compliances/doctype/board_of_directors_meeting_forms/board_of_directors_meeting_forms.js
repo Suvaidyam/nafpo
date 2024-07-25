@@ -11,7 +11,7 @@ async function check_fpo_profile(frm) {
     });
     if (response.message == undefined) {
         // frm.set_value('fpo', '')
-        return frappe.throw('Please Create FPO Profiling for this FPO');
+        return frappe.throw({ message: 'Please Create FPO Profiling for this FPO' });
     }
 }
 frappe.ui.form.on("Board of Directors Meeting Forms", {
