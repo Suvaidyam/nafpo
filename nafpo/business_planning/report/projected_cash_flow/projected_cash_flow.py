@@ -9,14 +9,18 @@ def execute(filters=None):
     cond_str = f" AND {user_filter_conditions}" if user_filter_conditions else ""
     
     fpo = filters.get('fpo_name', None)
-    financial_year = filters.get('financial_year', None)
+    financial_years = filters.get('financial_year', [])
     
-    financial_year_cond = f" AND bp.financial_year = '{financial_year}'" if financial_year else ""
     fpo_cond = f" AND _fpo.name = '{fpo}'" if fpo else ""
+    financial_year_cond = ""
+    if financial_years:
+        financial_year_list = "', '".join(financial_years)
+        financial_year_cond = f" AND bp.financial_year IN ('{financial_year_list}')"
 
     sql_query = f"""
         SELECT
             _fpo.fpo_name,
+            bp.financial_year,
             bp.grant_for_fixed_capital,
             bp.grant_for_working_capital,
             bp.total_subsidy_grant_for_capex,
@@ -44,8 +48,7 @@ def execute(filters=None):
             bp.total_outflow,
             bp.opening_cash_balance,
             bp.net_inflow_inflow_outflow,
-            bp.closing_cash_balance_outflow,
-            bp.financial_year
+            bp.closing_cash_balance_outflow
         FROM
             `tabBusiness Plannings` AS bp
         INNER JOIN 
@@ -58,38 +61,63 @@ def execute(filters=None):
             bp.financial_year ASC
     """
     
-    columns = [
-        {"fieldname": "fpo_name", "label": "FPO Name", "fieldtype": "Link", "options": "FPO", "width": 200},
-        {"fieldname": "financial_year", "label": "Financial Year", "fieldtype": "Data", "width": 200},
-        {"fieldname": "grant_for_fixed_capital", "label": "Grant for Fixed Capital", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "grant_for_working_capital", "label": "Grant for Working Capital", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "total_subsidy_grant_for_capex", "label": "Total Subsidy Grant for Capex", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "grant__for_salary_travel", "label": "Grant for Salary Travel", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "share_capital", "label": "Share Capital", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "equity_grant", "label": "Equity Grant", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "credit_guarantee_fund_a_composite_loan", "label": "Credit Guarantee Fund A Composite Loan", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "total", "label": "Total", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "sales", "label": "Sales", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "less_rise_in_debtor", "label": "Less Rise in Debtor", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "total_subsidy_grant_for_capex_", "label": "Total Subsidy Grant for Capex", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "grant__for_salary_travel__office_exp", "label": "Grant for Salary Travel Office Exp", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "share_capital_inflow", "label": "Share Capital Inflow", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "equity_grant_inflow", "label": "Equity Grant Inflow", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "credit_guarantee_fund_a_loan", "label": "Credit Guarantee Fund A Loan", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "total_inflow", "label": "Total Inflow", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "variable_cost", "label": "Variable Cost", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "less_rise_in_current_liability", "label": "Less Rise in Current Liability", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "fixed_cost_less_depreciation_and_ammortization", "label": "Fixed Cost Less Depreciation and Amortization", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "rise_in_prepaid_expenses", "label": "Rise in Prepaid Expenses", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "credit_guarantee_fund_principal_amount", "label": "Credit Guarantee Fund Principal Amount", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "capital_costs_fixed", "label": "Capital Costs Fixed", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "tax", "label": "Tax", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "profit_distributed", "label": "Profit Distributed", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "total_outflow", "label": "Total Outflow", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "opening_cash_balance", "label": "Opening Cash Balance", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "net_inflow_inflow_outflow", "label": "Net Inflow Inflow Outflow", "fieldtype": "Currency", "width": 200},
-        {"fieldname": "closing_cash_balance_outflow", "label": "Closing Cash Balance Outflow", "fieldtype": "Currency", "width": 200},
-    ]
-
     data = frappe.db.sql(sql_query, as_dict=True)
-    return columns, data
+    
+    # Collect all unique financial years to create dynamic columns
+    financial_years = sorted({d['financial_year'] for d in data})
+    
+    # Prepare columns for financial years
+    columns = [
+        {"fieldname": "detail", "label": "Projected Cash Flow Detail", "fieldtype": "Data", "width": 400}
+    ]
+    for year in financial_years:
+        columns.append({"fieldname": f"financial_year_{year}", "label": year, "fieldtype": "Data", "width": 200})
+    
+    # Define detail labels
+    detail_labels = {
+        'grant_for_fixed_capital': 'Grant for Fixed Capital', 
+        'grant_for_working_capital': 'Grant for Working Capital', 
+        'total_subsidy_grant_for_capex': 'Total Subsidy Grant for Capex', 
+        'grant__for_salary_travel': 'Grant for Salary Travel', 
+        'share_capital': 'Share Capital', 
+        'equity_grant': 'Equity Grant', 
+        'credit_guarantee_fund_a_composite_loan': 'Credit Guarantee Fund A Composite Loan', 
+        'total': 'Total', 
+        'sales': 'Sales', 
+        'less_rise_in_debtor': 'Less Rise in Debtor', 
+        'total_subsidy_grant_for_capex_': 'Total Subsidy Grant for Capex', 
+        'grant__for_salary_travel__office_exp': 'Grant for Salary Travel Office Exp', 
+        'share_capital_inflow': 'Share Capital Inflow', 
+        'equity_grant_inflow': 'Equity Grant Inflow', 
+        'credit_guarantee_fund_a_loan': 'Credit Guarantee Fund A Loan', 
+        'total_inflow': 'Total Inflow', 
+        'variable_cost': 'Variable Cost', 
+        'less_rise_in_current_liability': 'Less Rise in Current Liability', 
+        'fixed_cost_less_depreciation_and_ammortization': 'Fixed Cost Less Depreciation and Amortization', 
+        'rise_in_prepaid_expenses': 'Rise in Prepaid Expenses', 
+        'credit_guarantee_fund_principal_amount': 'Credit Guarantee Fund Principal Amount', 
+        'capital_costs_fixed': 'Capital Costs Fixed', 
+        'tax': 'Tax', 
+        'profit_distributed': 'Profit Distributed', 
+        'total_outflow': 'Total Outflow', 
+        'opening_cash_balance': 'Opening Cash Balance', 
+        'net_inflow_inflow_outflow': 'Net Inflow Inflow Outflow', 
+        'closing_cash_balance_outflow': 'Closing Cash Balance Outflow'
+    }
+    
+    # Initialize pivot data structure
+    pivot_data = {label: {year: 0 for year in financial_years} for label in detail_labels.values()}
+    
+    for row in data:
+        for key, label in detail_labels.items():
+            pivot_data[label][row['financial_year']] = row.get(key, 0)
+
+    # Flatten the pivot data into a list
+    formatted_data = []
+    for label, years in pivot_data.items():
+        detail_row = {"detail": label}
+        for year in financial_years:
+            detail_row[f"financial_year_{year}"] = years.get(year, 0)
+        formatted_data.append(detail_row)
+
+    return columns, formatted_data

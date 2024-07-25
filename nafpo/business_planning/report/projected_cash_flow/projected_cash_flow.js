@@ -7,16 +7,18 @@ frappe.query_reports["Projected Cash Flow"] = {
 
 		{
 			"fieldname": "fpo_name",
-			"label": __("FPO Name"),
+			"label": __("FPO"),
 			"fieldtype": "Link",
 			"options": "FPO"
 		},
 		{
-			"fieldname": "financial_year",
-			"label": __("Financial Year"),
-			"fieldtype": "Link",
-			"options": "Financial Year"
-		}
+            "fieldname": "financial_year",
+            "label": __("Financial Year"),
+            "fieldtype": "MultiSelectList",
+            "get_data": function(txt) {
+                return frappe.db.get_link_options('Financial Year', txt);
+            }
+        }
 
 
 
