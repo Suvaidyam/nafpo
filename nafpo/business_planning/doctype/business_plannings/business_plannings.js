@@ -454,9 +454,11 @@ async function calculate_output_felids_value(frm, row) {
 
 frappe.ui.form.on('Output Side Child', {
     output_side_add: async function (frm, cdt, cdn) {
+        $('.grid-duplicate-row').remove()
         await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
     },
     form_render: async function (frm, cdt, cdn) {
+        $('.grid-duplicate-row').remove()
         await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
         if (
             isEmpty(frm.doc.gradingassying_weigning_packingbagging_at_collection_point_rate) ||
@@ -534,9 +536,11 @@ async function calculate_input_felids_value(frm, row) {
 
 frappe.ui.form.on('Input Side Child', {
     input_side_add: async function (frm, cdt, cdn) {
+        $('.grid-duplicate-row').remove()
         await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
     },
     form_render: async function (frm, cdt, cdn) {
+        $('.grid-duplicate-row').remove()
         await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
     },
     item_code(frm, cdt, cdn) {
