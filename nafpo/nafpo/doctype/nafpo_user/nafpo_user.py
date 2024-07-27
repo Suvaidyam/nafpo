@@ -22,6 +22,7 @@ class NAFPOUser(Document):
 		user_doc.first_name = self.name1
 		user_doc.username = self.username
 		user_doc.mobile_no = self.mobile
+		user_doc.role_profiles = []
 		user_doc.role_profile_name = self.level
 		user_doc.new_password = self.password
 		user_doc.save()
