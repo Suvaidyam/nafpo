@@ -45,7 +45,6 @@ frappe.ui.form.on("FPO Profiling", {
             frappe.validated = false;
             frm.image_uploaded = false;
         }
-        await check_exists_fpo(frm)
     },
     fpos_address(frm) {
         validate_string(frm, 'fpos_address', "FPO's Address");
@@ -76,9 +75,6 @@ frappe.ui.form.on("FPO Profiling", {
         // await apply_filter('block_name', 'fpo_name', frm, frm.doc.name_of_the_fpo);
         truncate_multiple_fields_value(frm, ['bod_kyc_name', 'fpos_address', 'fpos_pincode'])
         await check_exists_fpo(frm)
-    },
-    onload(frm) {
-        hide_list_view_in_useless_data(frm)
     },
     ...['gst_received_upload', 'license_doc_for_seed', 'license_doc_for_fertilizer', 'license_doc_for_pesticide', 'license_doc_for_fssai', 'licence_doc_for_seed_production', 'fpo_logo', 'supporting_document'].reduce((acc, field) => {
         acc[field] = function (frm) {

@@ -52,7 +52,9 @@ frappe.ui.form.on("FPO Fixed Capital", {
         }
     },
     async validate(frm) {
-        await check_fpo(frm)
+        if (!frm.doc.fpo) {
+            await check_fpo(frm)
+        }
     },
     async fpo(frm) {
         await check_fpo(frm)
