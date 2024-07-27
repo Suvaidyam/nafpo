@@ -51,13 +51,10 @@ async function get_closing_cash_balance(frm) {
         freeze: true,
         freeze_message: __("Getting"),
     }).then(response => {
-        console.log('response Data:>> ', response);
         let store_gross_profit_loss = 0;
-
         for (let gross_profit of response) {
             store_gross_profit_loss += gross_profit.gross_profit_loss;
         }
-
         let closing_cash_balance = store_gross_profit_loss + frm.doc.gross_profit_loss;
         frm.set_value('closing_cash_balance', closing_cash_balance);
     });
@@ -255,6 +252,7 @@ frappe.ui.form.on("Business Plannings", {
     },
     depreciation(frm) {
         add_total_work_capital(frm)
+        console.log('frm.doc.depreciation :>> ', frm.doc.depreciation);
     },
     interest_on_loan(frm) {
         add_total_work_capital(frm)
@@ -286,6 +284,7 @@ frappe.ui.form.on("Business Plannings", {
         await frm.set_value('variable_cost', frm.doc.total_variable_cost)
     },
     async total_work_capital(frm) {
+        console.log('hiiiiii :>> ', 'hiiiiii');
         await net_profit_logic(frm)
         await frm.set_value('fixed_cost_less_depreciation_and_ammortization', frm.doc.total_work_capital - frm.doc.depreciation)
         await frm.set_value('capital_costs_fixed', frm.doc.total_work_capital)
@@ -371,28 +370,28 @@ frappe.ui.form.on("Business Plannings", {
     },
     // ====================================== ================= Outflow ================= ======================================
     async variable_cost(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async less_rise_in_current_liability(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async fixed_cost_less_depreciation_and_ammortization(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async rise_in_prepaid_expenses(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async credit_guarantee_fund_principal_amount(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async capital_costs_fixed(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async tax(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async profit_distributed(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async opening_cash_balance(frm) {
         await frm.set_value('closing_cash_balance_outflow', (frm.doc.opening_cash_balance || 0) - (frm.doc.net_inflow_inflow_outflow || 0))
