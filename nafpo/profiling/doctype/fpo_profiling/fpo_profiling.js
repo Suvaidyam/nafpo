@@ -21,18 +21,18 @@ frappe.ui.form.on("FPO Profiling", {
         await apply_filter('block_name', 'district', frm, frm.doc.district_name)
         await apply_filter('name_of_the_fpo', 'district', frm, frm.doc.district_name)
         await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)
-        // const today = new Date();
-        // frm.fields_dict.date_of_expiry_for_fertilizer.$input.datepicker({ maxDate: new Date() });
+        const today = new Date();
+        // frm.fields_dict.date_of_expiry_for_fertilizer.$input.datepicker({ minDate: new Date() });
         // frm.fields_dict.date_of_incorporation.$input.datepicker({ maxDate: today });
         // frm.fields_dict.date_of_registration.$input.datepicker({ maxDate: today });
         // frm.fields_dict.ceo_date_of_joining.$input.datepicker({ maxDate: today });
         // frm.fields_dict.accountant_date_of_joining.$input.datepicker({ maxDate: today });
         // frm.fields_dict.ceo_dob.$input.datepicker({ maxDate: new Date(today.getFullYear() - 18, today.getMonth(), today.getDate()) });
         // frm.fields_dict.accountant_dob.$input.datepicker({ maxDate: new Date(today.getFullYear() - 18, today.getMonth(), today.getDate()) });
-        // const expiry_fields = ['date_of_expiry_for_seeds', 'date_of_expiry_for_fertilizer', 'date_of_expiry_for_pesticide', 'date_of_expiry_for_fssai', 'date_of_expiry__for_seed_production'];
-        // expiry_fields.forEach(field => {
-        //     frm.fields_dict[field].$input.datepicker({ maxDate: today });
-        // });
+        const expiry_fields = ['date_of_expiry_for_seeds', 'date_of_expiry_for_fertilizer', 'date_of_expiry_for_pesticide', 'date_of_expiry_for_fssai', 'date_of_expiry__for_seed_production'];
+        expiry_fields.forEach(field => {
+            frm.fields_dict[field].$input.datepicker({ minDate: new Date() });
+        });
         hide_advance_search(frm, ['bod_kyc_name', 'name_of_cbbo', 'state_name',
             'block_name', 'district_name', 'name_of_the_fpo', 'type_of_organization', 'cbbo'
         ])

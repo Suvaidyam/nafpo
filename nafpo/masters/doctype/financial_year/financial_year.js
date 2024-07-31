@@ -1,6 +1,6 @@
 frappe.ui.form.on("Financial Year", {
 	refresh(frm) {
-		frm.is_new() && hide_print_button(frm);
+		frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
 	},
 	before_save(frm) {
 		// Helper function to format date to YYYY-MM-DD

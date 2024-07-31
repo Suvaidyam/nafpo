@@ -119,10 +119,10 @@ frappe.ui.form.on("FPO MFR 10K", {
         await check_fpo_profile(frm)
     },
 
-    async fpo(frm) {
-        check_fpo_profile(frm)
+    fpo: async function (frm) {
+        await check_fpo_profile(frm)
+        await check_exists_fpo_in_mfr(frm)
         set_due_date(frm)
-        check_exists_fpo_in_mfr(frm)
     },
     are_you_received_1st_installment_fund(frm) {
         if (frm.doc.are_you_received_1st_installment_fund == "Yes") {

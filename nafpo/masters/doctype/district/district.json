@@ -9,8 +9,7 @@
  "field_order": [
   "state",
   "district_name",
-  "district_code",
-  "status"
+  "district_code"
  ],
  "fields": [
   {
@@ -33,20 +32,12 @@
    "fieldtype": "Data",
    "label": "District Code",
    "unique": 1
-  },
-  {
-   "default": "Active",
-   "fieldname": "status",
-   "fieldtype": "Autocomplete",
-   "hidden": 1,
-   "label": "Status",
-   "options": "Active\nInactive"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-05 11:42:00.205128",
+ "modified": "2024-07-31 13:45:30.270559",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "District",

@@ -80,7 +80,6 @@ function disable_Attachment_autosave(frm) {
     this.set_value(frm.file_url);
 }
 
-// Disable autosave on doctype to attach image
 function hide_list_view_in_useless_data(frm) {
     const comments_section = frm.wrapper.querySelector('.comment-input-wrapper');
     if (comments_section) {

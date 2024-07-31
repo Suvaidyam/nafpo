@@ -3,9 +3,6 @@
 
 frappe.ui.form.on("IA", {
     refresh(frm) {
-
-    },
-    onload(frm) {
-        hide_list_view_in_useless_data(frm)
+        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
     },
 });

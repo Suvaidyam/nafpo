@@ -17,7 +17,7 @@ frappe.ui.form.on("FPO member details", {
         validate_string(frm, 'bank_ac_number', "Bank Account Number");
         validate_string(frm, 'mobile_number', "Mobile Number");
         if (frm.doc.total_own_land < frm.doc.total_own_irrigated_land) {
-            frappe.throw({ message: `Total owned irrigated land cannot exceed the total owned land.` })
+            frappe.throw({ message: `Total own land must be greater than or equal to "Total own irrigated land".` })
         }
         if (frm.image_uploaded) {
             frappe.validated = false;
@@ -48,11 +48,11 @@ frappe.ui.form.on("FPO member details", {
         await apply_filter('village_name', 'grampanchayat', frm, frm.doc.grampanchayat_name)
         truncate_multiple_fields_value(frm, ['village_name'])
     },
-    before_save: function (frm) {
-        if (frm.doc.mobile_number === '+91-') {
-            frm.doc.mobile_number = '';
-        }
-    },
+    // before_save: function (frm) {
+    //     if (frm.doc.mobile_number === '+91-') {
+    //         frm.doc.mobile_number = '';
+    //     }
+    // },
     aadhar_number(frm) {
         validate_string(frm, 'aadhar_number', "Aadhar Number");
     },
@@ -67,7 +67,7 @@ frappe.ui.form.on("FPO member details", {
     },
     total_own_irrigated_land: async function (frm) {
         if (frm.doc.total_own_land < frm.doc.total_own_irrigated_land) {
-            frappe.throw({ message: `Total owned irrigated land cannot exceed the total owned land.` })
+            frappe.throw({ message: `Total own land must be greater than or equal to "Total own irrigated land".` })
         }
         await frm.set_value('total_own_irrigated_land_in_hectare', frm.doc.total_own_irrigated_land * 0.404686)
     },
