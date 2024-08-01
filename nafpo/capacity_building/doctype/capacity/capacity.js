@@ -3,9 +3,10 @@
 
 frappe.ui.form.on("Capacity", {
     refresh: async function (frm) {
-        apply_filter('fpo_member', 'fpo', frm, frm.doc.fpo)
-        apply_filter('bod_kyc', 'fpo_name', frm, frm.doc.fpo)
-        apply_filter('operation_system', 'fpo', frm, frm.doc.fpo)
+        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
+        await apply_filter('fpo_member', 'fpo', frm, frm.doc.fpo)
+        await apply_filter('bod_kyc', 'fpo_name', frm, frm.doc.fpo)
+        await apply_filter('operation_system', 'fpo', frm, frm.doc.fpo)
         frm.fields_dict.end_date.$input.datepicker({ minDate: new Date(frm.doc.start_date) });
 
         frm.image_uploaded = false;
