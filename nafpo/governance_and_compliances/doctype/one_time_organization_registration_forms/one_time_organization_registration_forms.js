@@ -35,7 +35,6 @@ async function check_fpo(frm) {
         freeze: true,
         freeze_message: __("Getting"),
     }).then(response => {
-        console.log('object :>> ', response);
         if (response) {
             // frm.set_value('fpo', '')
             return frappe.throw({ message: 'This FPO already exists for the One Time Organization Registration Forms' })
@@ -59,6 +58,7 @@ frappe.ui.form.on("One Time Organization Registration Forms", {
                 console.error('User data fetch error:', e);
             }
         }
+        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
         const submitted_on_fields = ['inc_20_submitted_on', 'inc_22_submitted_on', 'adt_1_submitted_on'];
         submitted_on_fields.forEach(field => {
             frm.fields_dict[field].$input.datepicker({ maxDate: new Date() });

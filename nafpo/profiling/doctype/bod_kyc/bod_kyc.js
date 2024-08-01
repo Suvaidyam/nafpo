@@ -3,9 +3,10 @@
 
 frappe.ui.form.on("BOD KYC", {
     async refresh(frm) {
+        await apply_filter('fpo_name', 'state', frm, frm.doc.state_name)
+        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
         hide_advance_search(frm, ['state_name', 'fpo_name'])
         extend_options_length(frm, ['state_name', 'fpo_name'])
-        await apply_filter('fpo_name', 'state', frm, frm.doc.state_name)
     },
     validate(frm) {
         validate_string(frm, 'mobile_number', 'Mobile Number');

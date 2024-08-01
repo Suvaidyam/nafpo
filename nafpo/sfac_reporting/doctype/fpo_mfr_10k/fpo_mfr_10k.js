@@ -82,7 +82,7 @@ frappe.ui.form.on("FPO MFR 10K", {
                 console.error('User data fetch error:', e);
             }
         }
-
+        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
         frm.set_df_property('1st_installment_due_date', 'read_only', 1);
         frm.set_df_property('2nd_installment_due_date', 'read_only', 1);
         frm.set_df_property('3rd_installment_due_date', 'read_only', 1);

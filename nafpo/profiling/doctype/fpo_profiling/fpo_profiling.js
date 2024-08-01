@@ -21,6 +21,7 @@ frappe.ui.form.on("FPO Profiling", {
         await apply_filter('block_name', 'district', frm, frm.doc.district_name)
         await apply_filter('name_of_the_fpo', 'district', frm, frm.doc.district_name)
         await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)
+        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
         const today = new Date();
         // frm.fields_dict.date_of_expiry_for_fertilizer.$input.datepicker({ minDate: new Date() });
         // frm.fields_dict.date_of_incorporation.$input.datepicker({ maxDate: today });

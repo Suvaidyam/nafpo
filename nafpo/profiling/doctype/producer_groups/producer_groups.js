@@ -2,10 +2,11 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Producer Groups", {
-    refresh(frm) {
+    async refresh(frm) {
+        await apply_filter('fpo', 'state', frm, frm.doc.state)
+        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
         hide_advance_search(frm, ['state', 'fpo'])
         extend_options_length(frm, ['state', 'fpo'])
-        apply_filter('fpo', 'state', frm, frm.doc.state)
     },
     onload(frm) {
     },

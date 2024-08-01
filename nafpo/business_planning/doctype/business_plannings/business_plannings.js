@@ -160,8 +160,7 @@ async function calculate_total_outflow(frm) {
 
 frappe.ui.form.on("Business Plannings", {
     async refresh(frm) {
-        await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
-        await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
+        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
         if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
             try {
                 let fpo = await frappe.call({
@@ -176,6 +175,8 @@ frappe.ui.form.on("Business Plannings", {
                 console.error('User data fetch error:', e);
             }
         }
+        await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
+        await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
     },
     validate(frm) {
         if (

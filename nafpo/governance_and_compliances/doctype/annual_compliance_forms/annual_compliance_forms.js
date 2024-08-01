@@ -38,7 +38,6 @@ async function check_fpo(frm) {
         freeze: true,
         freeze_message: __("Getting"),
     }).then(response => {
-        console.log('object :>> ', response);
         if (response) {
             // frm.set_value('fpo', '')
             return frappe.throw({ message: 'Annual Compliance Forms' })
@@ -63,6 +62,7 @@ frappe.ui.form.on("Annual Compliance Forms", {
                 console.error('User data fetch error:', e);
             }
         }
+        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
         const submitted_on_fields = ['aoc_4_submitted_on', 'mgt_7_submitted_on', 'adt_1_submitted_on', 'd_kyc_submitted_on', 'it_return_submitted_on', 'agm_submitted_on'];
         submitted_on_fields.forEach(field => {
             frm.fields_dict[field].$input.datepicker({ maxDate: new Date() });
