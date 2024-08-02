@@ -20,6 +20,8 @@ const apply_fpo_filter_on_child_crop_name = async (table, crop_name_field) => {
     }
 }
 
+
+
 // Check FPO
 async function check_capital_for_fpo(frm) {
     await callAPI({
