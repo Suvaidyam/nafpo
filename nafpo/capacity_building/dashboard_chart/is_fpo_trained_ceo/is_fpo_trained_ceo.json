@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 3,
+ "idx": 4,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-07-18 14:55:53.881257",
+ "modified": "2024-07-27 18:38:42.230793",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Is FPO trained CEO",
@@ -30,6 +30,7 @@
  "x_field": "has_trained_ceo",
  "y_axis": [
   {
+   "color": "#B1C73E",
    "y_field": "count"
   }
  ]

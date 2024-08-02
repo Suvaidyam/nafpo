@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 3,
+ "idx": 4,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-07-23 12:48:10.158038",
+ "modified": "2024-07-27 18:37:49.629336",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "No of FPO which has trained BOD",
@@ -36,6 +36,7 @@
  "x_field": "trained",
  "y_axis": [
   {
+   "color": "#B1C73E",
    "y_field": "count"
   }
  ]
