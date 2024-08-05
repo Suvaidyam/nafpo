@@ -4,14 +4,12 @@
 frappe.ui.form.on("Producer Groups", {
     async refresh(frm) {
         await apply_filter('fpo', 'state', frm, frm.doc.state)
-        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
+        hide_print_button(frm)
         hide_advance_search(frm, ['state', 'fpo'])
         extend_options_length(frm, ['state', 'fpo'])
     },
-    onload(frm) {
-    },
     validate(frm) {
-        validate_string(frm, 'contact_number', "Contact Number");
+        validate_mobile_number(frm.doc.contact_number)
     },
     state: function (frm) {
         apply_filter('fpo', 'state', frm, frm.doc.state)

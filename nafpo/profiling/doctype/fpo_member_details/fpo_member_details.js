@@ -1,6 +1,5 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
-
 frappe.ui.form.on("FPO member details", {
     async refresh(frm) {
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
@@ -8,24 +7,26 @@ frappe.ui.form.on("FPO member details", {
         await apply_filter('fpo', 'district', frm, frm.doc.district_name)
         await apply_filter('grampanchayat_name', 'block', frm, frm.doc.block_name)
         await apply_filter('producer_group', 'fpo', frm, frm.doc.fpo)
-        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
+        hide_print_button(frm)
         hide_advance_search(frm, ['state_name', 'block_name', 'district_name', 'fpo', 'grampanchayat_name', 'village_name', 'producer_group', , 'category'])
         extend_options_length(frm, ['fpo_name', 'fpo_name', 'district_name', 'fpo', 'producer_group', 'tribe', 'category'])
     },
     validate(frm) {
         if (frm.image_uploaded) {
-            if (frm.doc.mobile_number === '+91-') {
-                frm.doc.mobile_number = '';
-            }
             frappe.validated = false;
             frm.image_uploaded = false;
         }
-        validate_string(frm, 'aadhar_number', "Aadhar Number");
-        validate_string(frm, 'register_aadhar_mobile_number', "Register Aadhar Mobile Number");
+        validate_mobile_number(frm.doc.register_aadhar_mobile_number)
+        validate_IFSC_Code(frm.doc.ifsc_code)
+        if (frm.doc.mobile_number) {
+            validate_mobile_number(frm.doc.mobile_number)
+        }
         validate_string(frm, 'bank_ac_number', "Bank Account Number");
-        validate_string(frm, 'mobile_number', "Mobile Number");
         if (frm.doc.total_own_land < frm.doc.total_own_irrigated_land) {
             frappe.throw({ message: `Total own land must be greater than or equal to "Total own irrigated land".` })
+        }
+        if (!isValidAadhaar(frm.doc.aadhar_number)) {
+            frappe.throw({ message: "Please enter valid Aadhar Number." });
         }
     },
     state_name: async function (frm) {
@@ -36,6 +37,9 @@ frappe.ui.form.on("FPO member details", {
         await apply_filter('fpo', 'district', frm, frm.doc.district_name)
         await apply_filter('block_name', 'district', frm, frm.doc.district_name)
         truncate_multiple_fields_value(frm, ['block_name', 'fpo', 'grampanchayat_name', 'village_name'])
+    },
+    age(frm) {
+        check_age(frm.doc.age)
     },
     bank_ac_number(frm) {
         validate_string(frm, 'bank_ac_number', "Bank Account Number");
@@ -94,8 +98,5 @@ frappe.ui.form.on("FPO member details", {
     },
     consent_image(frm) {
         frm.image_uploaded = true;
-    },
-    onload(frm) {
-        hide_list_view_in_useless_data(frm)
     },
 });
