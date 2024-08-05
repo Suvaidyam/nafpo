@@ -161,6 +161,7 @@
    "fieldname": "director_identification_number",
    "fieldtype": "Data",
    "label": "Director Identification Number",
+   "length": 20,
    "non_negative": 1,
    "reqd": 1
   }
@@ -173,7 +174,7 @@
    "link_fieldname": "name_of_the_fpo"
   }
  ],
- "modified": "2024-07-23 11:43:37.627217",
+ "modified": "2024-08-05 13:21:24.939462",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "BOD KYC",
