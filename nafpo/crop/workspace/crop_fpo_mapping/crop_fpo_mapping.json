@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Crop-FPO Mapping",
  "links": [],
- "modified": "2024-07-29 22:42:40.617674",
+ "modified": "2024-08-05 15:40:24.197653",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop-FPO Mapping",
@@ -24,7 +24,7 @@
   }
  ],
  "owner": "Administrator",
- "parent_page": "Masters",
+ "parent_page": "",
  "public": 1,
  "quick_lists": [],
  "roles": [],
