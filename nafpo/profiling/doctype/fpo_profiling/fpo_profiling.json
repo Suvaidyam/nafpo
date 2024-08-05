@@ -135,6 +135,7 @@
    "fieldname": "registration_no",
    "fieldtype": "Data",
    "label": "Registration No.",
+   "length": 25,
    "reqd": 1
   },
   {
@@ -149,6 +150,7 @@
    "fieldname": "gst_no",
    "fieldtype": "Data",
    "label": "GST No.",
+   "length": 25,
    "mandatory_depends_on": "eval:doc.gst_status == \"Received\""
   },
   {
@@ -176,7 +178,8 @@
   {
    "fieldname": "licence_number_for_seeds",
    "fieldtype": "Data",
-   "label": "Licence number"
+   "label": "Licence number",
+   "length": 25
   },
   {
    "fieldname": "date_of_expiry_for_seeds",
@@ -187,6 +190,7 @@
    "fieldname": "licence_number_for_fertilizer",
    "fieldtype": "Data",
    "label": "Licence Number",
+   "length": 25,
    "non_negative": 1
   },
   {
@@ -198,6 +202,7 @@
    "fieldname": "licence_number_for_pesticide",
    "fieldtype": "Data",
    "label": "Licence number",
+   "length": 25,
    "non_negative": 1
   },
   {
@@ -208,7 +213,8 @@
   {
    "fieldname": "licence_number_for_fssai",
    "fieldtype": "Data",
-   "label": "Licence Number"
+   "label": "Licence Number",
+   "length": 25
   },
   {
    "fieldname": "date_of_expiry_for_fssai",
@@ -309,7 +315,8 @@
   {
    "fieldname": "licence_number_for_seed_production",
    "fieldtype": "Data",
-   "label": "Licence number"
+   "label": "Licence number",
+   "length": 25
   },
   {
    "fieldname": "date_of_expiry__for_seed_production",
@@ -415,7 +422,7 @@
    "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-07-27 11:47:39.523331",
+ "modified": "2024-08-05 13:28:20.053115",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",

@@ -215,6 +215,7 @@
    "fieldname": "bank_ac_number",
    "fieldtype": "Data",
    "label": "Bank Ac Number",
+   "length": 16,
    "non_negative": 1
   },
   {
@@ -336,9 +337,8 @@
    "options": "Yes\nNo"
   },
   {
-   "default": "+91-",
    "fieldname": "mobile_number",
-   "fieldtype": "Phone",
+   "fieldtype": "Data",
    "label": "Mobile Number",
    "length": 10,
    "non_negative": 1
@@ -430,7 +430,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-31 16:22:15.770995",
+ "modified": "2024-08-05 14:18:43.626512",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO member details",
