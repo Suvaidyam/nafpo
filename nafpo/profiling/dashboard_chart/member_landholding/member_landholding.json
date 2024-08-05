@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 0,
+ "idx": 2,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-07-16 14:21:41.185603",
+ "modified": "2024-07-27 18:18:54.970011",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Member Landholding",
@@ -39,6 +39,7 @@
  "x_field": "landholding_category",
  "y_axis": [
   {
+   "color": "#9AB90F",
    "y_field": "farmer_count"
   }
  ]

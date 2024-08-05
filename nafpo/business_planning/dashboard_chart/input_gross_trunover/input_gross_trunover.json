@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 1,
+ "idx": 4,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-07-17 17:35:39.900488",
+ "modified": "2024-07-27 18:28:08.697976",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Input Gross Trunover",
@@ -30,6 +30,7 @@
  "x_field": "financial_year",
  "y_axis": [
   {
+   "color": "#DD9234",
    "y_field": "gross_input_turn_over"
   }
  ]

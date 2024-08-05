@@ -30,8 +30,9 @@ frappe.ui.form.on("Board of Directors Meeting Forms", {
                 console.error('User data fetch error:', e);
             }
         }
-        frm.fields_dict.date.$input.datepicker({ maxDate: new Date() });
+        hide_print_button(frm)
         await apply_filter('fpo_member', 'fpo', frm, frm.doc.fpo)
+        frm.fields_dict.date.$input.datepicker({ maxDate: new Date() });
     },
     status(frm) {
         if (frm.doc.status == "Pending") {

@@ -1,5 +1,7 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
+const submitted_on_fields = ['aoc_4_submitted_on', 'mgt_7_submitted_on', 'adt_1_submitted_on', 'd_kyc_submitted_on', 'it_return_submitted_on', 'agm_submitted_on'];
+
 function set_due_date(frm) {
     frappe.call({
         method: "nafpo.apis.api.get_fpo_profile_doc",
@@ -27,6 +29,22 @@ function set_due_date(frm) {
     });
 }
 
+
+function check_ACF(frm) {
+    callAPI({
+        method: 'nafpo.apis.business_planning.fpo_with_current_year_business_planning',
+        args: {
+            doctype_name: 'FPO Profiling',
+            filter: { fpo: frm.doc.fpo, financial_year: frm.doc.financial_year },
+            fields: ['name', 'fpo', 'financial_year']
+        },
+        freeze: true,
+        freeze_message: __("Getting"),
+    }).then(response => {
+        // console.log('response :>> ', response);
+    });
+}
+
 async function check_fpo(frm) {
     callAPI({
         method: 'nafpo.apis.api.get_exists_event',
@@ -38,10 +56,9 @@ async function check_fpo(frm) {
         freeze: true,
         freeze_message: __("Getting"),
     }).then(response => {
-        console.log('object :>> ', response);
         if (response) {
             // frm.set_value('fpo', '')
-            return frappe.throw({ message: 'This FPO already exists for the Fixed Capital' })
+            return frappe.throw({ message: 'Annual Compliance Forms' })
         }
     });
 }
@@ -63,7 +80,7 @@ frappe.ui.form.on("Annual Compliance Forms", {
                 console.error('User data fetch error:', e);
             }
         }
-        const submitted_on_fields = ['aoc_4_submitted_on', 'mgt_7_submitted_on', 'adt_1_submitted_on', 'd_kyc_submitted_on', 'it_return_submitted_on', 'agm_submitted_on'];
+        hide_print_button(frm)
         submitted_on_fields.forEach(field => {
             frm.fields_dict[field].$input.datepicker({ maxDate: new Date() });
         });
@@ -78,9 +95,18 @@ frappe.ui.form.on("Annual Compliance Forms", {
         ) {
             frappe.throw({ message: 'Form Status Not Yet Updated' });
         }
+        if (submitted_on_fields.some(field => new Date(frm.doc[field]).setHours(0, 0, 0, 0) > new Date().setHours(0, 0, 0, 0))) {
+            frappe.throw({ message: "Submitted On cannot be a future date. Please select a past date" });
+        }
     },
     fpo(frm) {
-        set_due_date(frm)
+        if (frm.doc.fpo.length > 0) {
+            set_due_date(frm)
+            check_ACF(frm)
+        }
+    },
+    financial_year(frm) {
+        check_ACF(frm)
     },
     aoc_4_status(frm) {
         blank_submitted_on(frm, 'aoc_4_status', 'aoc_4_submitted_on');

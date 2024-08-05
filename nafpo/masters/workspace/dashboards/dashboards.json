@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"7te4fKkLXb\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Geographical Reach(FPO Profile)<b></b></span>\",\"col\":12}},{\"id\":\"xy93MJbjdm\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State Cover\",\"col\":4}},{\"id\":\"Mirpma69_p\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District Cover\",\"col\":4}},{\"id\":\"-a_JuFYHX-\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block Cover\",\"col\":4}},{\"id\":\"tNzAHcv1-t\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Geographical Reach(FPO Member Detail)<b></b></span>\",\"col\":12}},{\"id\":\"RE4t4YwgN4\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State Covered\",\"col\":4}},{\"id\":\"dX8R3SGXa8\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District Covered\",\"col\":4}},{\"id\":\"1HTmy7gYri\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block Covered\",\"col\":4}},{\"id\":\"TRjeXMdWyx\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Grampanchayat Cover\",\"col\":4}},{\"id\":\"c20Mf0HCYO\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Village Cover\",\"col\":4}},{\"id\":\"JnDP76c_65\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">FPO<b></b></span>\",\"col\":12}},{\"id\":\"J6XGIAj2cG\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No. of FPO (Total FPO)\",\"col\":4}},{\"id\":\"TfDD8SfCq1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No. of FPO (FPO Profile)\",\"col\":4}},{\"id\":\"jsvNZnr44O\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"BOD\",\"col\":4}},{\"id\":\"8xTeWrxYcV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Producer Group\",\"col\":4}},{\"id\":\"vHIlydq6ER\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Members\",\"col\":4}}]",
+ "content": "[{\"id\":\"7te4fKkLXb\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Coverage Summary - FPO Profiling</span>\",\"col\":12}},{\"id\":\"b0Emfnm0ln\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State Covered\",\"col\":4}},{\"id\":\"NB66j3wIam\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District Coverd\",\"col\":4}},{\"id\":\"I2cDbGFnuH\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block Coverd\",\"col\":4}},{\"id\":\"tNzAHcv1-t\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Coverage Summary - FPO Member Details</span><br>\",\"col\":12}},{\"id\":\"RE4t4YwgN4\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State Covered\",\"col\":4}},{\"id\":\"dX8R3SGXa8\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District Covered\",\"col\":4}},{\"id\":\"1HTmy7gYri\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block Covered\",\"col\":4}},{\"id\":\"TRjeXMdWyx\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Grampanchayat Covered\",\"col\":4}},{\"id\":\"c20Mf0HCYO\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Village Covered\",\"col\":4}},{\"id\":\"JnDP76c_65\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">FPO Details</span>\",\"col\":12}},{\"id\":\"J6XGIAj2cG\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total FPOs\",\"col\":4}},{\"id\":\"TfDD8SfCq1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO's Profiled\",\"col\":4}},{\"id\":\"jsvNZnr44O\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Board of Directors Count\",\"col\":4}},{\"id\":\"8xTeWrxYcV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Producer Groups Count\",\"col\":4}},{\"id\":\"vHIlydq6ER\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Members Count\",\"col\":4}}]",
  "creation": "2024-06-25 11:27:09.963063",
  "custom_blocks": [],
  "docstatus": 0,
@@ -9,66 +9,62 @@
  "hide_custom": 0,
  "icon": "image-view",
  "idx": 0,
- "indicator_color": "green",
+ "indicator_color": "",
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-07-23 16:56:14.273167",
+ "modified": "2024-08-05 15:53:38.430747",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Dashboards",
  "number_cards": [
   {
-   "label": "No. of FPO (Total FPO)",
-   "number_card_name": "No. of FPO (Total FPO)"
-  },
-  {
-   "label": "State Cover",
-   "number_card_name": "State Covered"
-  },
-  {
-   "label": "State Covered",
-   "number_card_name": "State Cover(FPO Member Detail)"
-  },
-  {
-   "label": "No. of FPO (FPO Profile)",
+   "label": "FPO's Profiled",
    "number_card_name": "No. of FPO (FPO Profile)"
   },
   {
-   "label": "District Cover",
+   "label": "State Covered",
+   "number_card_name": "State Covered"
+  },
+  {
+   "label": "District Coverd",
    "number_card_name": "District Cover"
+  },
+  {
+   "label": "Block Coverd",
+   "number_card_name": "Block Cover"
   },
   {
    "label": "District Covered",
    "number_card_name": "District Cover(FPO Member Detail)"
   },
   {
-   "label": "BOD",
-   "number_card_name": "BOD"
-  },
-  {
-   "label": "Block Cover",
-   "number_card_name": "Block Cover"
-  },
-  {
    "label": "Block Covered",
    "number_card_name": "Block Cover(FPO Member Detail)"
   },
   {
-   "label": "Producer Group",
-   "number_card_name": "Producer Group"
-  },
-  {
-   "label": "Grampanchayat Cover",
+   "label": "Grampanchayat Covered",
    "number_card_name": "Grampanchayat Cover(FPO Member Detail)"
   },
   {
-   "label": "Members",
-   "number_card_name": "Members"
+   "label": "Village Covered",
+   "number_card_name": "Village Cover(FPO Member Detail)"
   },
   {
-   "label": "Village Cover",
-   "number_card_name": "Village Cover(FPO Member Detail)"
+   "label": "Total FPOs",
+   "number_card_name": "No. of FPO (Total FPO)"
+  },
+  {
+   "label": "Board of Directors Count",
+   "number_card_name": "BOD"
+  },
+  {
+   "label": "Producer Groups Count",
+   "number_card_name": "Producer Group"
+  },
+  {
+   "label": "Members Count",
+   "number_card_name": "Members"
   }
  ],
  "owner": "Administrator",

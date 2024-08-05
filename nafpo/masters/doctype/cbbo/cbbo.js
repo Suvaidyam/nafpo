@@ -3,10 +3,8 @@
 
 frappe.ui.form.on("CBBO", {
     refresh(frm) {
+        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
         hide_advance_search(frm, ['ia_name'])
         extend_options_length(frm, ['ia_name'])
-    },
-    onload(frm) {
-        hide_list_view_in_useless_data(frm)
     },
 });

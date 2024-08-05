@@ -2,7 +2,7 @@
 // For license information, please see license.txt
 
 async function check_fpo(frm) {
-    callAPI({
+    await callAPI({
         method: 'nafpo.apis.api.get_exists_event',
         args: {
             doctype_name: 'FPO Fixed Capital',
@@ -12,16 +12,16 @@ async function check_fpo(frm) {
         freeze: true,
         freeze_message: __("Getting"),
     }).then(response => {
-        console.log('object :>> ', response);
         if (response) {
             // frm.set_value('fpo', '')
-            return frappe.throw({ message: 'This FPO already exists for the Fixed Capital' })
+            frappe.throw({ message: 'This FPO already exists for the Fixed Capital' })
         }
     });
 }
 
 frappe.ui.form.on("FPO Fixed Capital", {
     async refresh(frm) {
+        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
         if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
             try {
                 let fpo = await frappe.call({
@@ -52,11 +52,13 @@ frappe.ui.form.on("FPO Fixed Capital", {
             }
         }
     },
-    before_save(frm) {
-        // check_fpo(frm)
-    },
-    fpo(frm) {
-        check_fpo(frm)
+    // async validate(frm) {
+    //     if (!frm.doc.fpo) {
+    //         await check_fpo(frm)
+    //     }
+    // },
+    async fpo(frm) {
+        await check_fpo(frm)
     }
 });
 

@@ -3,7 +3,6 @@
  "allow_rename": 1,
  "creation": "2024-07-05 15:39:09.755892",
  "doctype": "DocType",
- "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "fpo"
@@ -21,7 +20,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-05 15:39:37.648728",
+ "modified": "2024-07-31 16:19:36.309963",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Child",
