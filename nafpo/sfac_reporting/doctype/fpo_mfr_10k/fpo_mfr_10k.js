@@ -1,6 +1,5 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
-
 async function check_exists_fpo_in_mfr(frm) {
     let response = await frappe.call({
         method: "nafpo.apis.api.get_exists_event",
@@ -11,7 +10,6 @@ async function check_exists_fpo_in_mfr(frm) {
         }
     });
     if (response.message) {
-        // frm.set_value('fpo', '')
         return frappe.throw({ message: 'This FPO are already exists in FPO MFR 10K' });
     }
 }
@@ -82,25 +80,7 @@ frappe.ui.form.on("FPO MFR 10K", {
                 console.error('User data fetch error:', e);
             }
         }
-        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
-        frm.set_df_property('1st_installment_due_date', 'read_only', 1);
-        frm.set_df_property('2nd_installment_due_date', 'read_only', 1);
-        frm.set_df_property('3rd_installment_due_date', 'read_only', 1);
-        frm.set_df_property('4th_installment_due_date', 'read_only', 1);
-        frm.set_df_property('5th_installment_due_date', 'read_only', 1);
-        frm.set_df_property('6th_installment_due_date', 'read_only', 1);
-
-        frm.set_df_property('1st_installment_date', 'read_only', 1);
-        frm.set_df_property('2nd_installment_date', 'read_only', 1);
-        frm.set_df_property('3rd_installment_date', 'read_only', 1);
-        frm.set_df_property('4th_installment_date', 'read_only', 1);
-        frm.set_df_property('5th_installment_date', 'read_only', 1);
-        frm.set_df_property('6th_installment_date', 'read_only', 1);
-        // Replace code in Future
-        // ['1st', '2nd', '3rd', '4th', '5th', '6th'].forEach(installment => {
-        //     frm.set_df_property(`${installment}_installment_due_date`, 'read_only', 1);
-        //     frm.set_df_property(`${installment}_installment_date`, 'read_only', 1);
-        // });
+        hide_print_button(frm)
     },
     async validate(frm) {
         if (frm.doc.are_you_received_1st_installment_fund !== 'Yes' &&
@@ -120,9 +100,11 @@ frappe.ui.form.on("FPO MFR 10K", {
     },
 
     fpo: async function (frm) {
-        await check_fpo_profile(frm)
-        await check_exists_fpo_in_mfr(frm)
-        set_due_date(frm)
+        if (frm.is_new() && frm.doc.fpo) {
+            await check_exists_fpo_in_mfr(frm)
+            await check_fpo_profile(frm)
+        }
+        if (frm.doc.fpo) { set_due_date(frm) }
     },
     are_you_received_1st_installment_fund(frm) {
         if (frm.doc.are_you_received_1st_installment_fund == "Yes") {
