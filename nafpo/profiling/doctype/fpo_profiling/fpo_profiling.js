@@ -1,6 +1,7 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
 let deleted_staff = [];
+const expiry_fields = ['date_of_expiry_for_seeds', 'date_of_expiry_for_fertilizer', 'date_of_expiry_for_pesticide', 'date_of_expiry_for_fssai', 'date_of_expiry__for_seed_production'];
 async function check_exists_fpo(frm) {
     let response = await frappe.call({
         method: "nafpo.apis.api.get_exists_event",
@@ -14,6 +15,7 @@ async function check_exists_fpo(frm) {
         return frappe.throw({ message: 'This FPO are already exists in FPO Profiling' });
     }
 }
+
 frappe.ui.form.on("FPO Profiling", {
     async refresh(frm) {
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
@@ -21,7 +23,6 @@ frappe.ui.form.on("FPO Profiling", {
         await apply_filter('name_of_the_fpo', 'district', frm, frm.doc.district_name)
         await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)
         hide_print_button(frm)
-        const expiry_fields = ['date_of_expiry_for_seeds', 'date_of_expiry_for_fertilizer', 'date_of_expiry_for_pesticide', 'date_of_expiry_for_fssai', 'date_of_expiry__for_seed_production'];
         expiry_fields.forEach(field => {
             frm.fields_dict[field].$input.datepicker({ minDate: new Date() });
         });
@@ -36,6 +37,9 @@ frappe.ui.form.on("FPO Profiling", {
         if (frm.image_uploaded) {
             frappe.validated = false;
             frm.image_uploaded = false;
+        }
+        if (expiry_fields.some(field => new Date(frm.doc[field]).setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0))) {
+            frappe.throw({ message: "Date of expiry cannot be a past date. Please select a future date" });
         }
     },
     fpos_address(frm) {
