@@ -63,19 +63,19 @@
   {
    "depends_on": "eval:doc.inc_20_status == \"Completed\"",
    "fieldname": "inc_20_bank_statement",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "Bank Statement"
   },
   {
    "depends_on": "eval:doc.inc_20_status == \"Completed\"",
    "fieldname": "inc_20_fpo_banner_with_bod_photo",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "FPO Banner with BOD photo"
   },
   {
    "default": "Pending",
    "fieldname": "inc_20_status",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "INC-20A Status",
    "options": "Pending\nCompleted",
@@ -95,25 +95,25 @@
   {
    "depends_on": "eval:doc.inc_22_status == \"Completed\"",
    "fieldname": "inc_22_noc",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "NOC"
   },
   {
    "depends_on": "eval:doc.inc_22_status == \"Completed\"",
    "fieldname": "inc_22_rent_agreement",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "Rent agreement"
   },
   {
    "depends_on": "eval:doc.inc_22_status == \"Completed\"",
    "fieldname": "inc_22_electricity_bill",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "Electricity Bill"
   },
   {
    "default": "Pending",
    "fieldname": "inc_22_status",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "INC-22 Status",
    "options": "Pending\nCompleted",
@@ -151,7 +151,7 @@
   {
    "depends_on": "eval:doc.adt_1_status == \"Completed\"",
    "fieldname": "adt_1_fpo_resolution",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "FPO resolution"
   },
   {
@@ -161,7 +161,7 @@
   {
    "default": "Pending",
    "fieldname": "adt_1_status",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "ADT-1 Status",
    "options": "Pending\nCompleted",
@@ -199,7 +199,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-05 17:04:20.454835",
+ "modified": "2024-08-06 14:07:54.843038",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "One Time Organization Registration Forms",
