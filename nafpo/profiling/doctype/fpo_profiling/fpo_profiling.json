@@ -222,8 +222,9 @@
    "label": "Date of expiry"
   },
   {
+   "default": "No",
    "fieldname": "do_you_have_logo",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "label": "Do You Have Logo?",
    "options": "Yes\nNo"
   },
@@ -422,7 +423,7 @@
    "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-08-05 13:28:20.053115",
+ "modified": "2024-08-06 14:00:32.867484",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",

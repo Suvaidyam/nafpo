@@ -71,7 +71,7 @@
   {
    "default": "No",
    "fieldname": "are_you_received_1st_installment_fund",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Are you Received 1st Installment Fund ?",
    "options": "Yes\nNo"
@@ -189,25 +189,25 @@
   {
    "depends_on": "eval:doc.are_you_received_4th_installment_fund == \"Yes\"",
    "fieldname": "4th_installment_proof_of_document",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "Proof of document"
   },
   {
    "depends_on": "eval:doc.are_you_received_3rd_installment_fund == \"Yes\"",
    "fieldname": "3rd_installment_proof_of_document",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "Proof of document"
   },
   {
    "depends_on": "eval:doc.are_you_received_2nd_installment_fund == \"Yes\"",
    "fieldname": "2nd_installment_proof_of_document",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "Proof of Document"
   },
   {
    "depends_on": "eval:doc.are_you_received_1st_installment_fund == \"Yes\"",
    "fieldname": "1st_installment_proof_of_document",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "Proof of Document"
   },
   {
@@ -242,7 +242,7 @@
   {
    "depends_on": "eval:doc.are_you_received_5th_installment_fund == \"Yes\"",
    "fieldname": "5th_installment_proof_of_document",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "Proof of document"
   },
   {
@@ -254,7 +254,7 @@
   {
    "default": "No",
    "fieldname": "are_you_received_5th_installment_fund",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Are you Received 5th Installment Fund ?",
    "options": "Yes\nNo"
@@ -262,7 +262,7 @@
   {
    "default": "No",
    "fieldname": "are_you_received_6th_installment_fund",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Are you Received 6th Installment Fund ?",
    "options": "Yes\nNo"
@@ -270,7 +270,7 @@
   {
    "default": "No",
    "fieldname": "are_you_received_4th_installment_fund",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Are you Received 4th Installment Fund ?",
    "options": "Yes\nNo"
@@ -278,7 +278,7 @@
   {
    "default": "No",
    "fieldname": "are_you_received_3rd_installment_fund",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Are you Received 3rd Installment Fund ?",
    "options": "Yes\nNo"
@@ -286,7 +286,7 @@
   {
    "default": "No",
    "fieldname": "are_you_received_2nd_installment_fund",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Are you Received 2nd Installment Fund ?",
    "options": "Yes\nNo"
@@ -317,7 +317,7 @@
   {
    "depends_on": "eval:doc.are_you_received_6th_installment_fund == \"Yes\"",
    "fieldname": "6th_installment_proof_of_document",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "Proof of document"
   },
   {
@@ -347,7 +347,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-05 14:53:40.332511",
+ "modified": "2024-08-06 14:07:15.947171",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "FPO MFR 10K",
