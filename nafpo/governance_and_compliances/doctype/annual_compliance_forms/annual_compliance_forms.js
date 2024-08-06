@@ -28,37 +28,21 @@ function set_due_date(frm) {
         }
     });
 }
-
-
-function check_ACF(frm) {
+async function check_ACF(frm) {
     callAPI({
-        method: 'nafpo.apis.business_planning.fpo_with_current_year_business_planning',
-        args: {
-            doctype_name: 'FPO Profiling',
-            filter: { fpo: frm.doc.fpo, financial_year: frm.doc.financial_year },
-            fields: ['name', 'fpo', 'financial_year']
-        },
-        freeze: true,
-        freeze_message: __("Getting"),
-    }).then(response => {
-        // console.log('response :>> ', response);
-    });
-}
-
-async function check_fpo(frm) {
-    callAPI({
-        method: 'nafpo.apis.api.get_exists_event',
+        method: 'nafpo.apis.api.get_list_event',
         args: {
             doctype_name: 'Annual Compliance Forms',
-            filterName: 'fpo',
-            value: frm.doc.fpo,
+            filter: { fpo: frm.doc.fpo, financial_year: frm.doc.financial_year },
+            fields: ['name', 'fpo', 'financial_year'],
+            freeze: true,
+            freeze_message: __("Getting"),
         },
-        freeze: true,
-        freeze_message: __("Getting"),
     }).then(response => {
-        if (response) {
-            // frm.set_value('fpo', '')
-            return frappe.throw({ message: 'Annual Compliance Forms' })
+        console.log('response[0] :>> ', response[0].name);
+        console.log('frm.doc.name :>> ', frm.doc.name);
+        if (response[0] && response[0].name !== frm.doc.name) {
+            return frappe.throw({ message: `This FPO is already exist with the Financial Year ${response[0].financial_year}` })
         }
     });
 }
@@ -98,45 +82,56 @@ frappe.ui.form.on("Annual Compliance Forms", {
         if (submitted_on_fields.some(field => new Date(frm.doc[field]).setHours(0, 0, 0, 0) > new Date().setHours(0, 0, 0, 0))) {
             frappe.throw({ message: "Submitted On cannot be a future date. Please select a past date" });
         }
-    },
-    fpo(frm) {
-        if (frm.doc.fpo.length > 0) {
-            set_due_date(frm)
-            check_ACF(frm)
+        if (frm.image_uploaded) {
+            frappe.validated = false;
+            frm.image_uploaded = false;
         }
     },
-    financial_year(frm) {
-        check_ACF(frm)
+    async fpo(frm) {
+        if (frm.doc.fpo) {
+            set_due_date(frm)
+            if (frm.doc.financial_year) {
+                await check_ACF(frm)
+            }
+        }
+    },
+    async financial_year(frm) {
+        if (frm.doc.fpo) {
+            await check_ACF(frm)
+        }
     },
     aoc_4_status(frm) {
-        blank_submitted_on(frm, 'aoc_4_status', 'aoc_4_submitted_on');
+        blank_submitted_on(frm, 'aoc_4_status', ['aoc_4_submitted_on', 'aoc_4_audit_report']);
     },
     mgt_7_status(frm) {
-        blank_submitted_on(frm, 'mgt_7_status', 'mgt_7_submitted_on');
+        blank_submitted_on(frm, 'mgt_7_status', ['mgt_7_submitted_on', 'mgt_7_director_list', 'mgt_7_director_list']);
     },
     adt_1_status(frm) {
-        blank_submitted_on(frm, 'adt_1_status', 'adt_1_submitted_on');
+        blank_submitted_on(frm, 'adt_1_status', ['adt_1_submitted_on', 'adt_1_fpo_resolution']);
     },
     d_kyc_status(frm) {
-        blank_submitted_on(frm, 'd_kyc_status', 'd_kyc_submitted_on');
+        blank_submitted_on(frm, 'd_kyc_status', ['d_kyc_submitted_on', 'd_kyc_pan_card_verification', 'd_kyc_otp', 'd_kyc_bod_aadhar']);
     },
     it_return_status(frm) {
-        blank_submitted_on(frm, 'it_return_status', 'it_return_submitted_on');
+        blank_submitted_on(frm, 'it_return_status', ['it_return_submitted_on', 'it_return']);
     },
     agm_status(frm) {
         blank_submitted_on(frm, 'agm_status', 'agm_submitted_on');
     },
     ...['aoc_4_audit_report', 'mgt_7_director_list', 'mgt_7_shareholder_list', 'adt_1_fpo_resolution', 'd_kyc_bod_aadhar', 'd_kyc_pan_card_verification', 'd_kyc_otp', 'it_return'].reduce((acc, field) => {
         acc[field] = function (frm) {
-            disable_Attachment_autosave(frm);
+            frm.image_uploaded = true;
         };
         return acc;
     }, {})
 });
 
-function blank_submitted_on(frm, status_field, date_field) {
+function blank_submitted_on(frm, status_field, date_fields) {
     if (frm.doc[status_field] == "Pending") {
-        frm.set_value(date_field, '');
+        if (Array.isArray(date_fields)) {
+            date_fields.forEach(date_field => frm.set_value(date_field, ''));
+        } else {
+            frm.set_value(date_fields, '');
+        }
     }
 }
-
