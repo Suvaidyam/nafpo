@@ -15,7 +15,11 @@ async function check_exists_fpo(frm) {
         return frappe.throw({ message: 'This FPO are already exists in FPO Profiling' });
     }
 }
-
+function validate_expiry_felids(frm) {
+    if (expiry_fields.some(field => new Date(frm.doc[field]).setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0))) {
+        frappe.throw({ message: "Date of expiry cannot be a past date. Please select a future date" });
+    }
+}
 frappe.ui.form.on("FPO Profiling", {
     async refresh(frm) {
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
@@ -38,9 +42,9 @@ frappe.ui.form.on("FPO Profiling", {
             frappe.validated = false;
             frm.image_uploaded = false;
         }
-        if (expiry_fields.some(field => new Date(frm.doc[field]).setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0))) {
-            frappe.throw({ message: "Date of expiry cannot be a past date. Please select a future date" });
-        }
+        // if (expiry_fields.some(field => new Date(frm.doc[field]).setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0))) {
+        //     frappe.throw({ message: "Date of expiry cannot be a past date. Please select a future date" });
+        // }
     },
     fpos_address(frm) {
         validate_string(frm, 'fpos_address', "FPO's Address");
@@ -65,6 +69,21 @@ frappe.ui.form.on("FPO Profiling", {
     },
     block_name: async function (frm) {
         truncate_multiple_fields_value(frm, ['name_of_the_fpo'])
+    },
+    date_of_expiry_for_seeds(frm) {
+        validate_expiry_felids(frm)
+    },
+    date_of_expiry_for_fertilizer(frm) {
+        validate_expiry_felids(frm)
+    },
+    date_of_expiry_for_pesticide(frm) {
+        validate_expiry_felids(frm)
+    },
+    date_of_expiry_for_fssai(frm) {
+        validate_expiry_felids(frm)
+    },
+    date_of_expiry__for_seed_production(frm) {
+        validate_expiry_felids(frm)
     },
     name_of_the_fpo: async function (frm) {
         await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)

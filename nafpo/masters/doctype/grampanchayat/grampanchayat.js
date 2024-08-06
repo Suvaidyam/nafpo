@@ -3,7 +3,7 @@
 
 frappe.ui.form.on("Grampanchayat", {
     refresh(frm) {
-        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
+        hide_print_button(frm)
         hide_advance_search(frm, ['state', 'district', 'block'])
         extend_options_length(frm, ['state', 'district', 'block'])
         apply_filter('district', 'state', frm, frm.doc.state)

@@ -173,10 +173,12 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "depends_on": "eval:doc.adt_1_status == \"Completed\"",
    "fieldname": "adt_1_fpo_resolution",
    "fieldtype": "Attach",
-   "label": "FPO resolution"
+   "label": "FPO resolution",
+   "not_nullable": 1
   },
   {
    "fieldname": "column_break_gxxm",
@@ -337,7 +339,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-06 14:20:08.563277",
+ "modified": "2024-08-06 15:14:33.111344",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Annual Compliance Forms",
