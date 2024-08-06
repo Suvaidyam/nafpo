@@ -3,7 +3,7 @@
 
 frappe.ui.form.on("Block", {
     refresh(frm) {
-        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
+        hide_print_button(frm)
         hide_advance_search(frm, ['state', 'district'])
         extend_options_length(frm, ['state', 'district'])
         apply_filter('district', 'state', frm, frm.doc.state)
@@ -11,8 +11,5 @@ frappe.ui.form.on("Block", {
     state: function (frm) {
         apply_filter('district', 'state', frm, frm.doc.state)
         truncate_multiple_fields_value(frm, ['district'])
-    },
-    onload(frm) {
-        hide_list_view_in_useless_data(frm)
     },
 });
