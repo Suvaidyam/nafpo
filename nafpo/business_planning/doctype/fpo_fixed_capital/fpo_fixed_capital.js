@@ -21,7 +21,7 @@ async function check_fpo(frm) {
 
 frappe.ui.form.on("FPO Fixed Capital", {
     async refresh(frm) {
-        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
+        hide_print_button(frm)
         if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
             try {
                 let fpo = await frappe.call({

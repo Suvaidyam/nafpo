@@ -93,16 +93,17 @@
   {
    "depends_on": "eval:doc.aoc_4_status == \"Completed\"",
    "fieldname": "aoc_4_audit_report",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "Audit Report"
   },
   {
    "default": "Pending",
    "fieldname": "aoc_4_status",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "AOC-4 Status",
-   "options": "Pending\nCompleted"
+   "options": "Pending\nCompleted",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_xnnk",
@@ -123,13 +124,13 @@
   {
    "depends_on": "eval:doc.mgt_7_status == \"Completed\"",
    "fieldname": "mgt_7_director_list",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "Director List"
   },
   {
    "depends_on": "eval:doc.mgt_7_status == \"Completed\"",
    "fieldname": "mgt_7_shareholder_list",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "Shareholder List"
   },
   {
@@ -146,10 +147,11 @@
   {
    "default": "Pending",
    "fieldname": "mgt_7_status",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "MGT-7 Status",
-   "options": "Pending\nCompleted"
+   "options": "Pending\nCompleted",
+   "reqd": 1
   },
   {
    "depends_on": "eval:doc.mgt_7_status == \"Completed\"",
@@ -171,10 +173,12 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "depends_on": "eval:doc.adt_1_status == \"Completed\"",
    "fieldname": "adt_1_fpo_resolution",
-   "fieldtype": "Attach Image",
-   "label": "FPO resolution"
+   "fieldtype": "Attach",
+   "label": "FPO resolution",
+   "not_nullable": 1
   },
   {
    "fieldname": "column_break_gxxm",
@@ -183,10 +187,11 @@
   {
    "default": "Pending",
    "fieldname": "adt_1_status",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": " ADT-1 Status",
-   "options": "Pending\nCompleted"
+   "options": "Pending\nCompleted",
+   "reqd": 1
   },
   {
    "depends_on": "eval:doc.adt_1_status == \"Completed\"",
@@ -210,13 +215,13 @@
   {
    "depends_on": "eval:doc.d_kyc_status == \"Completed\"",
    "fieldname": "d_kyc_bod_aadhar",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "BOD Aadhar"
   },
   {
    "depends_on": "eval:doc.d_kyc_status == \"Completed\"",
    "fieldname": "d_kyc_pan_card_verification",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "PAN Card verification"
   },
   {
@@ -226,16 +231,17 @@
   {
    "depends_on": "eval:doc.d_kyc_status == \"Completed\"",
    "fieldname": "d_kyc_otp",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "OTP"
   },
   {
    "default": "Pending",
    "fieldname": "d_kyc_status",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Director Kyc Status",
-   "options": "Pending\nCompleted"
+   "options": "Pending\nCompleted",
+   "reqd": 1
   },
   {
    "depends_on": "eval:doc.d_kyc_status == \"Completed\"",
@@ -259,7 +265,7 @@
   {
    "depends_on": "eval:doc.it_return_status == \"Completed\"",
    "fieldname": "it_return",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Attach",
    "label": "IT Return"
   },
   {
@@ -269,10 +275,11 @@
   {
    "default": "Pending",
    "fieldname": "it_return_status",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "IT Return Status",
-   "options": "Pending\nCompleted"
+   "options": "Pending\nCompleted",
+   "reqd": 1
   },
   {
    "depends_on": "eval:doc.it_return_status == \"Completed\"",
@@ -295,10 +302,11 @@
   {
    "default": "Pending",
    "fieldname": "agm_status",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "AGM Status",
-   "options": "Pending\nCompleted"
+   "options": "Pending\nCompleted",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_tlyn",
@@ -331,7 +339,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-05 17:01:07.296844",
+ "modified": "2024-08-06 15:14:33.111344",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Annual Compliance Forms",

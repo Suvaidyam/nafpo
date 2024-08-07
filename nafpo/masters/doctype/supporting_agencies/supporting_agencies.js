@@ -3,6 +3,6 @@
 
 frappe.ui.form.on("Supporting Agencies", {
     refresh(frm) {
-        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
+        hide_print_button(frm)
     },
 });
