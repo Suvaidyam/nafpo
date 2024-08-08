@@ -20,6 +20,8 @@ function validate_expiry_felids(frm) {
         frappe.throw({ message: "Date of expiry cannot be a past date. Please select a future date" });
     }
 }
+
+
 frappe.ui.form.on("FPO Profiling", {
     async refresh(frm) {
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
@@ -30,14 +32,20 @@ frappe.ui.form.on("FPO Profiling", {
         expiry_fields.forEach(field => {
             frm.fields_dict[field].$input.datepicker({ minDate: new Date() });
         });
+        frm.fields_dict.date_of_registration.$input.datepicker({ maxDate: new Date() });
         hide_advance_search(frm, ['bod_kyc_name', 'name_of_cbbo', 'state_name',
             'block_name', 'district_name', 'name_of_the_fpo', 'type_of_organization', 'cbbo'
         ])
         extend_options_length(frm, ['district_name', 'name_of_the_fpo', 'bod_kyc_name', 'name_of_cbbo', 'cbbo'])
     },
     async validate(frm) {
+        validate_mobile_number(frm.doc.contact_detail_of_fpo, "Contact Detail of FPO")
+        if (frm.doc.fpos_pincode) {
+            if (frm.doc.fpos_pincode.length < 6) {
+                frappe.throw({ message: "Please enter a valid FPO's Pincode." })
+            }
+        }
         validate_string(frm, 'fpos_pincode', "FPO's Pincode");
-        validate_mobile_number(frm.doc.contact_detail_of_fpo)
         if (frm.image_uploaded) {
             frappe.validated = false;
             frm.image_uploaded = false;
@@ -45,9 +53,6 @@ frappe.ui.form.on("FPO Profiling", {
         // if (expiry_fields.some(field => new Date(frm.doc[field]).setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0))) {
         //     frappe.throw({ message: "Date of expiry cannot be a past date. Please select a future date" });
         // }
-    },
-    fpos_address(frm) {
-        validate_string(frm, 'fpos_address', "FPO's Address");
     },
     fpos_pincode(frm) {
         validate_string(frm, 'fpos_pincode', "FPO's Pincode");
@@ -72,19 +77,20 @@ frappe.ui.form.on("FPO Profiling", {
     },
     date_of_expiry_for_seeds(frm) {
         validate_expiry_felids(frm)
+        console.log('validate_expiry_felids(frm) :>> ', validate_expiry_felids(frm));
     },
-    date_of_expiry_for_fertilizer(frm) {
-        validate_expiry_felids(frm)
-    },
-    date_of_expiry_for_pesticide(frm) {
-        validate_expiry_felids(frm)
-    },
-    date_of_expiry_for_fssai(frm) {
-        validate_expiry_felids(frm)
-    },
-    date_of_expiry__for_seed_production(frm) {
-        validate_expiry_felids(frm)
-    },
+    // date_of_expiry_for_fertilizer(frm) {
+    //     validate_expiry_felids(frm)
+    // },
+    // date_of_expiry_for_pesticide(frm) {
+    //     validate_expiry_felids(frm)
+    // },
+    // date_of_expiry_for_fssai(frm) {
+    //     validate_expiry_felids(frm)
+    // },
+    // date_of_expiry__for_seed_production(frm) {
+    //     validate_expiry_felids(frm)
+    // },
     name_of_the_fpo: async function (frm) {
         await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)
         truncate_multiple_fields_value(frm, ['bod_kyc_name', 'fpos_address', 'fpos_pincode'])

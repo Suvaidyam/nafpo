@@ -19,8 +19,10 @@ frappe.ui.form.on("BOD KYC", {
             frappe.throw({ message: "You can't select a future date" });
         }
         check_age(frm.doc.age)
-        if (!isValidAadhaar(frm.doc.aadhar_number)) {
-            frappe.throw({ message: "Please enter valid Aadhar Number." });
+        if (frm.doc.aadhar_number) {
+            if (!isValidAadhaar(frm.doc.aadhar_number)) {
+                frappe.throw({ message: "Please enter valid Aadhar Number." });
+            }
         }
     },
     state_name: async function (frm) {

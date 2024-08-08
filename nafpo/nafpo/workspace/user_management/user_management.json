@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"NSRRZl6_bM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Admin\",\"col\":4}},{\"id\":\"oeUKVRb3wv\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"IA\",\"col\":4}},{\"id\":\"NquNNF9rIF\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"CBBO\",\"col\":4}},{\"id\":\"Dg33_17cmq\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO\",\"col\":4}}]",
+ "content": "[{\"id\":\"NSRRZl6_bM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Admin\",\"col\":6}},{\"id\":\"oeUKVRb3wv\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"IA\",\"col\":6}},{\"id\":\"NquNNF9rIF\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"CBBO\",\"col\":6}},{\"id\":\"Dg33_17cmq\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO\",\"col\":6}}]",
  "creation": "2024-06-19 09:58:08.521796",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "User Management",
  "links": [],
- "modified": "2024-08-08 11:42:47.379778",
+ "modified": "2024-08-08 12:50:07.501366",
  "modified_by": "Administrator",
  "module": "nafpo",
  "name": "User Management",

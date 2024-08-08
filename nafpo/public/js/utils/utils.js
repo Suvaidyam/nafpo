@@ -90,19 +90,24 @@ function validate_string(frm, field_name, field_label) {
     }
 }
 // Validate Mobile NUmber
-function validate_mobile_number(mobileNumber) {
-    if (!/^\+?[1-9]\d{1,14}$/.test(mobileNumber) || mobileNumber.length < 10) {
-        return frappe.throw({ message: "Please enter a valid mobile number." });
+function validate_mobile_number(mobileNumber, label = "Mobile Number") {
+    if (mobileNumber) {
+        if (!/^\+?[1-9]\d{1,14}$/.test(mobileNumber) || mobileNumber.length < 10) {
+            return frappe.throw({ message: `Please enter a valid ${label}` });
+        }
     }
+
 }
 // Validate IFSC Code
 function validate_IFSC_Code(code) {
-    const ifscRegex = /^[A-Z]{4}0[A-Z0-9]{6}$/;
-    if (!ifscRegex.test(code) || code.length > 11) {
-        frappe.throw({ message: "Please enter a valid IFSE Code." });
-        return false;
+    if (code) {
+        const ifscRegex = /^[A-Z]{4}0[A-Z0-9]{6}$/;
+        if (!ifscRegex.test(code) || code.length > 11) {
+            frappe.throw({ message: "Please enter a valid IFSE Code." });
+            return false;
+        }
+        return true;
     }
-    return true;
 }
 
 // Validate Aadhar Number

@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"PzXFEezwZo\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Geo Masters</span>\",\"col\":12}},{\"id\":\"LbjqTgHdRa\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State\",\"col\":4}},{\"id\":\"-CuOvgLsC3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District\",\"col\":4}},{\"id\":\"WrsPbp20XM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block\",\"col\":4}},{\"id\":\"ohemT5PYOi\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Grampanchayat\",\"col\":4}},{\"id\":\"WRofSgKarf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Village\",\"col\":4}},{\"id\":\"vhXdidEDDV\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>NAFPO Masters</b></span>\",\"col\":12}},{\"id\":\"IkNon-Zm0k\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Financial Year\",\"col\":6}},{\"id\":\"da9qU8xNZg\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"IA\",\"col\":6}},{\"id\":\"v72lbqCo3S\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"CBBO\",\"col\":6}},{\"id\":\"A5oYTvMDdf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO\",\"col\":6}},{\"id\":\"0OjuAssjeu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>CROP</b></span>\",\"col\":12}},{\"id\":\"-HnMFDkll9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crops Types\",\"col\":4}},{\"id\":\"CIuMrKz9G_\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crops Name\",\"col\":4}},{\"id\":\"nBMLtzKhtJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crops Variety\",\"col\":4}}]",
+ "content": "[{\"id\":\"PzXFEezwZo\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Geographical Reach</span><br>\",\"col\":12}},{\"id\":\"LbjqTgHdRa\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State\",\"col\":4}},{\"id\":\"-CuOvgLsC3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District\",\"col\":4}},{\"id\":\"WrsPbp20XM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block\",\"col\":4}},{\"id\":\"ohemT5PYOi\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Grampanchayat\",\"col\":6}},{\"id\":\"WRofSgKarf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Village\",\"col\":6}},{\"id\":\"cc_-cWbG3X\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">User Masters</span>\",\"col\":12}},{\"id\":\"da9qU8xNZg\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"IA\",\"col\":4}},{\"id\":\"v72lbqCo3S\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"CBBO\",\"col\":4}},{\"id\":\"A5oYTvMDdf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO\",\"col\":4}},{\"id\":\"0OjuAssjeu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Crop Masters</span>\",\"col\":12}},{\"id\":\"-HnMFDkll9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crops Types (E.g. Cereals,Vegetables, Fruits, Pulses , etc.)\",\"col\":4}},{\"id\":\"CIuMrKz9G_\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crops Name (E.g. Paddy, Mustard Seed, Soybean, etc.)\",\"col\":4}},{\"id\":\"nBMLtzKhtJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crops Variety (E.g. PUSA-1121, IR64, IR50 etc.)\",\"col\":4}},{\"id\":\"sJdF9sGqS5\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Crop FPO Mapping</span>\",\"col\":12}},{\"id\":\"46Q9ximwRB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Crop Name\",\"col\":5}},{\"id\":\"vhXdidEDDV\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Financial Year Master</span>\",\"col\":12}},{\"id\":\"IkNon-Zm0k\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Financial Year\",\"col\":5}}]",
  "creation": "2024-06-19 09:58:07.707303",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Masters",
  "links": [],
- "modified": "2024-08-05 15:40:23.526049",
+ "modified": "2024-08-08 17:11:24.048260",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Masters",
@@ -23,16 +23,20 @@
    "number_card_name": "State"
   },
   {
-   "label": "Crops Name",
-   "number_card_name": "Crops Name"
-  },
-  {
-   "label": "Crops Types",
+   "label": "Crops Types (E.g. Cereals,Vegetables, Fruits, Pulses , etc.)",
    "number_card_name": "Crops Types"
   },
   {
-   "label": "Crops Variety",
+   "label": "Crops Variety (E.g. PUSA-1121, IR64, IR50 etc.)",
    "number_card_name": "Crops Variety"
+  },
+  {
+   "label": "Crop Name",
+   "number_card_name": "Crop Name"
+  },
+  {
+   "label": "Crops Name (E.g. Paddy, Mustard Seed, Soybean, etc.)",
+   "number_card_name": "Crops Name"
   },
   {
    "label": "FPO",

@@ -321,7 +321,7 @@
    "fieldname": "fpo",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "FPO Name",
+   "label": "FPO",
    "options": "FPO",
    "reqd": 1
   },
@@ -683,7 +683,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-23 14:19:14.854963",
+ "modified": "2024-08-08 16:06:15.809996",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",

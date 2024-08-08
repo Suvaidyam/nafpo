@@ -30,6 +30,7 @@
   "gst_received_upload",
   "fpo_email_id",
   "contact_detail_of_fpo",
+  "under_the_central_sector_scheme_10k_fpo_formation",
   "supporting_aggencies_section",
   "supporting_agencies_table",
   "section_break_zufi",
@@ -387,8 +388,7 @@
    "fieldtype": "Data",
    "hidden": 1,
    "ignore_user_permissions": 1,
-   "in_list_view": 1,
-   "label": "Name of the FPO"
+   "label": "FPO"
   },
   {
    "fieldname": "date_of_registration",
@@ -405,6 +405,12 @@
    "fieldname": "staff_details_table",
    "fieldtype": "Table",
    "options": "FPO Staff Child"
+  },
+  {
+   "default": "0",
+   "fieldname": "under_the_central_sector_scheme_10k_fpo_formation",
+   "fieldtype": "Check",
+   "label": "Under the Central Sector Scheme 10k FPO Formation  "
   }
  ],
  "hide_toolbar": 1,
@@ -423,7 +429,7 @@
    "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-08-06 14:52:32.026721",
+ "modified": "2024-08-08 16:00:11.281423",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
