@@ -1,6 +1,7 @@
 
 frappe.listview_settings['FPO member details'] = {
     refresh: function (listview) {
+        
         $('use.like-icon').hide();
         $('.list-row-activity').hide();
         $(".comment-count").hide();
@@ -12,6 +13,7 @@ frappe.listview_settings['FPO member details'] = {
         $("ql-blank").hide()
     },
     onload: function (listview) {
+        // listview.page.set_title(__("FPO Member Details"));
         $('.layout-side-section').hide();
         $('.sidebar-section.filter-section').hide();
         $('.sidebar-section.save-filter-section').hide();
