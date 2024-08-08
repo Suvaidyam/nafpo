@@ -3,7 +3,7 @@
 
 frappe.ui.form.on("Village", {
     refresh(frm) {
-        frm.is_new() ? hide_print_button(frm) : show_print_button(frm);
+        hide_print_button(frm)
         hide_advance_search(frm, ['state', 'district', 'block', 'grampanchayat'])
         extend_options_length(frm, ['state', 'district', 'block', 'grampanchayat'])
         apply_filter('district', 'state', frm, frm.doc.state)
@@ -21,8 +21,5 @@ frappe.ui.form.on("Village", {
     block: function (frm) {
         apply_filter('grampanchayat', 'block', frm, frm.doc.block)
         truncate_multiple_fields_value(frm, ['grampanchayat'])
-    },
-    onload(frm) {
-        hide_list_view_in_useless_data(frm)
     },
 });

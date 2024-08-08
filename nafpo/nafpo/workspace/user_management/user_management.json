@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"1SMjRT1OVo\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Role Wise User Count\",\"col\":12}}]",
+ "content": "[{\"id\":\"9X2z325bU7\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Role Wise User Count\",\"col\":12}}]",
  "creation": "2024-06-19 09:58:08.521796",
  "custom_blocks": [
   {
@@ -18,7 +18,7 @@
  "is_hidden": 0,
  "label": "User Management",
  "links": [],
- "modified": "2024-07-23 16:56:14.397658",
+ "modified": "2024-08-05 15:40:23.357843",
  "modified_by": "Administrator",
  "module": "nafpo",
  "name": "User Management",

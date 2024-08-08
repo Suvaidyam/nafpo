@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 0,
+ "idx": 1,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-07-16 14:45:01.095628",
+ "modified": "2024-07-27 18:20:28.155851",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Gender Wise Land Holding",
@@ -39,6 +39,7 @@
  "x_field": "gender",
  "y_axis": [
   {
+   "color": "#DD9234",
    "y_field": "percentage"
   }
  ]

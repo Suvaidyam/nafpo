@@ -1,6 +1,8 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
+
 // Filter Child Table
+
 const apply_fpo_filter_on_child_crop_name = async (table, crop_name_field) => {
     var child_table = cur_frm.fields_dict[[table]].grid;
     if (child_table) {
@@ -17,6 +19,9 @@ const apply_fpo_filter_on_child_crop_name = async (table, crop_name_field) => {
         }
     }
 }
+
+
+
 // Check FPO
 async function check_capital_for_fpo(frm) {
     await callAPI({
@@ -30,7 +35,6 @@ async function check_capital_for_fpo(frm) {
         freeze_message: __("Getting"),
     }).then(response => {
         if (response[0] == undefined) {
-            console.log('object :>> ', 'object');
             frappe.throw({ message: 'Please create FPO Fixed Capital for this FPO' });
         }
         frm.set_value('depreciation', response[0].total_value / frm.doc.depreciation_percent)
@@ -51,13 +55,10 @@ async function get_closing_cash_balance(frm) {
         freeze: true,
         freeze_message: __("Getting"),
     }).then(response => {
-        console.log('response Data:>> ', response);
         let store_gross_profit_loss = 0;
-
         for (let gross_profit of response) {
             store_gross_profit_loss += gross_profit.gross_profit_loss;
         }
-
         let closing_cash_balance = store_gross_profit_loss + frm.doc.gross_profit_loss;
         frm.set_value('closing_cash_balance', closing_cash_balance);
     });
@@ -161,6 +162,7 @@ async function calculate_total_outflow(frm) {
 
 frappe.ui.form.on("Business Plannings", {
     async refresh(frm) {
+        hide_print_button(frm)
         if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
             try {
                 let fpo = await frappe.call({
@@ -175,6 +177,8 @@ frappe.ui.form.on("Business Plannings", {
                 console.error('User data fetch error:', e);
             }
         }
+        await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
+        await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
     },
     validate(frm) {
         if (
@@ -196,9 +200,11 @@ frappe.ui.form.on("Business Plannings", {
         filter_financial_year('financial_year', 'start_date', frm)
     },
     async fpo(frm) {
-        await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
-        await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
-        await check_capital_for_fpo(frm)
+        // await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
+        // await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
+        if (frm.doc.fpo.length > 0) {
+            await check_capital_for_fpo(frm)
+        }
         await get_closing_cash_balance(frm)
     },
     async financial_year(frm) {
@@ -371,28 +377,28 @@ frappe.ui.form.on("Business Plannings", {
     },
     // ====================================== ================= Outflow ================= ======================================
     async variable_cost(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async less_rise_in_current_liability(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async fixed_cost_less_depreciation_and_ammortization(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async rise_in_prepaid_expenses(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async credit_guarantee_fund_principal_amount(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async capital_costs_fixed(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async tax(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async profit_distributed(frm) {
-        await calculate_total_outflow(frm)(frm)
+        await calculate_total_outflow(frm)
     },
     async opening_cash_balance(frm) {
         await frm.set_value('closing_cash_balance_outflow', (frm.doc.opening_cash_balance || 0) - (frm.doc.net_inflow_inflow_outflow || 0))
@@ -455,9 +461,11 @@ async function calculate_output_felids_value(frm, row) {
 frappe.ui.form.on('Output Side Child', {
     output_side_add: async function (frm, cdt, cdn) {
         await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
+        $('.grid-duplicate-row').remove()
     },
     form_render: async function (frm, cdt, cdn) {
         await apply_fpo_filter_on_child_crop_name('output_side', 'crop_name')
+        $('.grid-duplicate-row').remove()
         if (
             isEmpty(frm.doc.gradingassying_weigning_packingbagging_at_collection_point_rate) ||
             isEmpty(frm.doc.local_transport_include_loading_unloading_rate) ||
@@ -534,9 +542,11 @@ async function calculate_input_felids_value(frm, row) {
 
 frappe.ui.form.on('Input Side Child', {
     input_side_add: async function (frm, cdt, cdn) {
+        $('.grid-duplicate-row').remove()
         await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
     },
     form_render: async function (frm, cdt, cdn) {
+        $('.grid-duplicate-row').remove()
         await apply_fpo_filter_on_child_crop_name('input_side', 'crop_name')
     },
     item_code(frm, cdt, cdn) {

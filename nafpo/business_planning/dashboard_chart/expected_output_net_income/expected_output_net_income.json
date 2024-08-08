@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 0,
+ "idx": 9,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-07-16 09:51:03.067239",
+ "modified": "2024-07-27 18:35:23.546004",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Expected Output Net income",
@@ -30,6 +30,7 @@
  "x_field": "financial_year",
  "y_axis": [
   {
+   "color": "#B1C73E",
    "y_field": "expected_output_net_income"
   }
  ]

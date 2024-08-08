@@ -141,6 +141,18 @@ doctype_js = {
     "Crops Variety" : [
         "public/js/utils/utils.js"
     ],
+    "Crops Types" : [
+        "public/js/utils/utils.js"
+    ],
+    "Supporting Agencies" : [
+        "public/js/utils/utils.js"
+    ],
+    "Category" : [
+        "public/js/utils/utils.js"
+    ],
+    "IA" : [
+        "public/js/utils/utils.js"
+    ],
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}

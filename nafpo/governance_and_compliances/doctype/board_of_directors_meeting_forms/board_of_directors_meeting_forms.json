@@ -43,7 +43,7 @@
   {
    "default": "Pending",
    "fieldname": "status",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
    "options": "Pending\nCompleted",
@@ -75,7 +75,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-18 14:49:58.422729",
+ "modified": "2024-08-06 14:22:41.407194",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Board of Directors Meeting Forms",

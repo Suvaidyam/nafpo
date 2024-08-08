@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 1,
+ "idx": 3,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-07-16 14:08:56.270073",
+ "modified": "2024-07-27 18:16:25.163234",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Gender Distribution Of Fpo Members",
@@ -39,6 +39,7 @@
  "x_field": "gender",
  "y_axis": [
   {
+   "color": "#DD9234",
    "y_field": "count"
   }
  ]

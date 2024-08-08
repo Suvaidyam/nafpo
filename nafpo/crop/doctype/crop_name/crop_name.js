@@ -20,11 +20,12 @@ const apply_fpo_filter_on_child_crop_name = async (link_doctype_name, table, fie
 let new_entry = false;
 frappe.ui.form.on("Crop Name", {
     async refresh(frm) {
-        hide_advance_search(frm, ['state_name', 'fpo',])
-        extend_options_length(frm, ['state_name', 'fpo',])
+        hide_print_button(frm)
         await apply_filter('fpo', 'state', frm, frm.doc.state_name)
         await apply_filter('crops_name', 'crop_type', frm, frm.doc.crops_types)
         await apply_fpo_filter_on_child_crop_name('Crops Variety', 'crop_variety_table', 'crop_variety');
+        hide_advance_search(frm, ['state_name', 'fpo',])
+        extend_options_length(frm, ['state_name', 'fpo',])
     },
     before_save: function (frm) {
         if (frm.doc.__islocal) {

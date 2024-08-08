@@ -49,6 +49,7 @@ const render_tables = async (frm) => {
 frappe.ui.form.on("NAFPO User", {
     async refresh(frm) {
         !frm.is_new() && await render_tables(frm);
+        hide_print_button(frm)
         hide_advance_search(frm, ['level', 'cbbo', 'fpo', 'ia'])
         extend_options_length(frm, ['level', 'cbbo', 'fpo', 'ia'])
     },

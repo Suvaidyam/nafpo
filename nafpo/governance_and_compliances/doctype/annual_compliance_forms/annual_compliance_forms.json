@@ -1,395 +1,411 @@
 {
-   "actions": [],
-   "allow_import": 1,
-   "allow_rename": 1,
-   "autoname": "format:ACF-{###}",
-   "creation": "2024-06-13 12:55:11.049287",
-   "doctype": "DocType",
-   "engine": "InnoDB",
-   "field_order": [
-      "form_aoc_4_tab",
-      "fpo",
-      "cbbo",
-      "ia",
-      "column_break_pvex",
-      "financial_year",
-      "section_break_fjls",
-      "aoc_4_due_date",
-      "aoc_4_audit_report",
-      "column_break_xnnk",
-      "aoc_4_status",
-      "aoc_4_submitted_on",
-      "form_mgt_7_section",
-      "mgt_7_due_date",
-      "mgt_7_director_list",
-      "mgt_7_shareholder_list",
-      "column_break_qjtx",
-      "mgt_7_status",
-      "mgt_7_submitted_on",
-      "form_adt_1_section",
-      "adt_1_due_date",
-      "adt_1_fpo_resolution",
-      "column_break_gxxm",
-      "adt_1_status",
-      "adt_1_submitted_on",
-      "director_kyc_section",
-      "d_kyc_due_date",
-      "d_kyc_bod_aadhar",
-      "d_kyc_pan_card_verification",
-      "column_break_fnzg",
-      "d_kyc_otp",
-      "d_kyc_status",
-      "d_kyc_submitted_on",
-      "it_return_section",
-      "it_return_due_date",
-      "it_return",
-      "column_break_uqwf",
-      "it_return_status",
-      "it_return_submitted_on",
-      "agm_section",
-      "agm_due_date",
-      "agm_status",
-      "column_break_tlyn",
-      "agm_submitted_on"
-   ],
-   "fields": [
-      {
-         "fieldname": "fpo",
-         "fieldtype": "Link",
-         "in_list_view": 1,
-         "label": "FPO",
-         "options": "FPO",
-         "reqd": 1
-      },
-      {
-         "fieldname": "financial_year",
-         "fieldtype": "Link",
-         "in_list_view": 1,
-         "label": "Financial Year",
-         "options": "Financial Year",
-         "reqd": 1
-      },
-      {
-         "fieldname": "column_break_pvex",
-         "fieldtype": "Column Break"
-      },
-      {
-         "description": "<span style=\"font-size:13.5px;\">1 financial year</span>",
-         "fieldname": "section_break_fjls",
-         "fieldtype": "Section Break",
-         "label": "FORM AOC-4 \u2013 Filing of Financial Statements"
-      },
-      {
-         "fieldname": "form_aoc_4_tab",
-         "fieldtype": "Tab Break",
-         "label": "FORM"
-      },
-      {
-         "fieldname": "aoc_4_due_date",
-         "fieldtype": "Date",
-         "label": "Due Date",
-         "read_only_depends_on": "eval:doc.aoc_4_due_date && doc.aoc_4_due_date.length > 0"
-      },
-      {
-         "fieldname": "aoc_4_audit_report",
-         "fieldtype": "Attach Image",
-         "label": "Audit Report"
-      },
-      {
-         "default": "Pending",
-         "fieldname": "aoc_4_status",
-         "fieldtype": "Autocomplete",
-         "in_list_view": 1,
-         "label": "AOC-4 Status",
-         "options": "Pending\nCompleted"
-      },
-      {
-         "fieldname": "column_break_xnnk",
-         "fieldtype": "Column Break"
-      },
-      {
-         "description": "<span style=\"font-size:13.5px;\">After agm 60 days</span>",
-         "fieldname": "form_mgt_7_section",
-         "fieldtype": "Section Break",
-         "label": "Form MGT-7 - Filing of Annual Return"
-      },
-      {
-         "fieldname": "mgt_7_due_date",
-         "fieldtype": "Date",
-         "label": "Due Date",
-         "read_only_depends_on": "eval:doc.mgt_7_due_date && doc.mgt_7_due_date.length > 0"
-      },
-      {
-         "fieldname": "mgt_7_director_list",
-         "fieldtype": "Attach Image",
-         "label": "Director List"
-      },
-      {
-         "fieldname": "mgt_7_shareholder_list",
-         "fieldtype": "Attach Image",
-         "label": "Shareholder List"
-      },
-      {
-         "depends_on": "eval:doc.aoc_4_status == \"Completed\"",
-         "fieldname": "aoc_4_submitted_on",
-         "fieldtype": "Date",
-         "label": "Submitted On",
-         "mandatory_depends_on": "eval:doc.aoc_4_status == \"Completed\""
-      },
-      {
-         "fieldname": "column_break_qjtx",
-         "fieldtype": "Column Break"
-      },
-      {
-         "default": "Pending",
-         "fieldname": "mgt_7_status",
-         "fieldtype": "Autocomplete",
-         "in_list_view": 1,
-         "label": "MGT-7 Status",
-         "options": "Pending\nCompleted"
-      },
-      {
-         "depends_on": "eval:doc.mgt_7_status == \"Completed\"",
-         "fieldname": "mgt_7_submitted_on",
-         "fieldtype": "Date",
-         "label": "Submitted On",
-         "mandatory_depends_on": "eval:doc.mgt_7_status == \"Completed\""
-      },
-      {
-         "description": "<span style=\"font-size:13.5px;\">After 1st AGM</span>",
-         "fieldname": "form_adt_1_section",
-         "fieldtype": "Section Break",
-         "label": "Form ADT-1 \u2013 Auditor Appointment for Five year"
-      },
-      {
-         "fieldname": "adt_1_due_date",
-         "fieldtype": "Date",
-         "label": "Due Date",
-         "read_only_depends_on": "eval:doc.adt_1_due_date && doc.adt_1_due_date.length > 0"
-      },
-      {
-         "fieldname": "adt_1_fpo_resolution",
-         "fieldtype": "Attach Image",
-         "label": "FPO resolution"
-      },
-      {
-         "fieldname": "column_break_gxxm",
-         "fieldtype": "Column Break"
-      },
-      {
-         "default": "Pending",
-         "fieldname": "adt_1_status",
-         "fieldtype": "Autocomplete",
-         "in_list_view": 1,
-         "label": " ADT-1 Status",
-         "options": "Pending\nCompleted"
-      },
-      {
-         "depends_on": "eval:doc.adt_1_status == \"Completed\"",
-         "fieldname": "adt_1_submitted_on",
-         "fieldtype": "Date",
-         "label": "Submitted On",
-         "mandatory_depends_on": "eval:doc.adt_1_status == \"Completed\""
-      },
-      {
-         "description": "<span style=\"font-size:13.5px;>Once in a year</span>",
-         "fieldname": "director_kyc_section",
-         "fieldtype": "Section Break",
-         "label": "DIRECTOR KYC"
-      },
-      {
-         "fieldname": "d_kyc_due_date",
-         "fieldtype": "Date",
-         "label": "Due Date",
-         "read_only_depends_on": "eval:doc.d_kyc_due_date && doc.d_kyc_due_date.length > 0"
-      },
-      {
-         "fieldname": "d_kyc_bod_aadhar",
-         "fieldtype": "Attach Image",
-         "label": "BOD Aadhar"
-      },
-      {
-         "fieldname": "d_kyc_pan_card_verification",
-         "fieldtype": "Attach Image",
-         "label": "PAN Card verification"
-      },
-      {
-         "fieldname": "column_break_fnzg",
-         "fieldtype": "Column Break"
-      },
-      {
-         "fieldname": "d_kyc_otp",
-         "fieldtype": "Attach Image",
-         "label": "OTP"
-      },
-      {
-         "default": "Pending",
-         "fieldname": "d_kyc_status",
-         "fieldtype": "Autocomplete",
-         "in_list_view": 1,
-         "label": "Director Kyc Status",
-         "options": "Pending\nCompleted"
-      },
-      {
-         "depends_on": "eval:doc.d_kyc_status == \"Completed\"",
-         "fieldname": "d_kyc_submitted_on",
-         "fieldtype": "Date",
-         "label": "Submitted On",
-         "mandatory_depends_on": "eval:doc.d_kyc_status == \"Completed\""
-      },
-      {
-         "description": "<span style=\"font-size:13.5px;>30th September every year</span>",
-         "fieldname": "it_return_section",
-         "fieldtype": "Section Break",
-         "label": "IT Return"
-      },
-      {
-         "fieldname": "it_return_due_date",
-         "fieldtype": "Date",
-         "label": "Due Date",
-         "read_only_depends_on": "eval:doc.it_return_due_date && doc.it_return_due_date.length > 0"
-      },
-      {
-         "fieldname": "it_return",
-         "fieldtype": "Attach Image",
-         "label": "IT Return"
-      },
-      {
-         "fieldname": "column_break_uqwf",
-         "fieldtype": "Column Break"
-      },
-      {
-         "default": "Pending",
-         "fieldname": "it_return_status",
-         "fieldtype": "Autocomplete",
-         "in_list_view": 1,
-         "label": "IT Return Status",
-         "options": "Pending\nCompleted"
-      },
-      {
-         "depends_on": "eval:doc.it_return_status == \"Completed\"",
-         "fieldname": "it_return_submitted_on",
-         "fieldtype": "Date",
-         "label": "Submitted On",
-         "mandatory_depends_on": "eval:doc.it_return_status == \"Completed\""
-      },
-      {
-         "fieldname": "agm_section",
-         "fieldtype": "Section Break",
-         "label": "AGM - Once in a year FPO need to organize AGM and pass the Audit report and other agenda"
-      },
-      {
-         "fieldname": "agm_due_date",
-         "fieldtype": "Date",
-         "label": "Due Date",
-         "read_only_depends_on": "eval:doc.agm_due_date && doc.agm_due_date.length > 0"
-      },
-      {
-         "default": "Pending",
-         "fieldname": "agm_status",
-         "fieldtype": "Autocomplete",
-         "in_list_view": 1,
-         "label": "AGM Status",
-         "options": "Pending\nCompleted"
-      },
-      {
-         "fieldname": "column_break_tlyn",
-         "fieldtype": "Column Break"
-      },
-      {
-         "depends_on": "eval:doc.agm_status == \"Completed\"",
-         "fieldname": "agm_submitted_on",
-         "fieldtype": "Date",
-         "label": "Submitted On",
-         "mandatory_depends_on": "eval:doc.agm_status == \"Completed\""
-      },
-      {
-         "fetch_from": "fpo.cbbo_name",
-         "fieldname": "cbbo",
-         "fieldtype": "Link",
-         "hidden": 1,
-         "label": "CBBO",
-         "options": "CBBO"
-      },
-      {
-         "fetch_from": "cbbo.ia_name",
-         "fieldname": "ia",
-         "fieldtype": "Link",
-         "hidden": 1,
-         "label": "IA",
-         "options": "IA"
-      }
-   ],
-   "hide_toolbar": 1,
-   "index_web_pages_for_search": 1,
-   "links": [],
-   "modified": "2024-07-07 13:45:23.207787",
-   "modified_by": "Administrator",
-   "module": "Governance and compliances",
-   "name": "Annual Compliance Forms",
-   "naming_rule": "Expression",
-   "owner": "Administrator",
-   "permissions": [
-      {
-         "email": 1,
-         "export": 1,
-         "print": 1,
-         "read": 1,
-         "report": 1,
-         "role": "Admin",
-         "select": 1,
-         "share": 1,
-         "write": 1
-      },
-      {
-         "email": 1,
-         "export": 1,
-         "print": 1,
-         "read": 1,
-         "report": 1,
-         "role": "IA",
-         "select": 1,
-         "share": 1,
-         "write": 1
-      },
-      {
-         "email": 1,
-         "export": 1,
-         "print": 1,
-         "read": 1,
-         "report": 1,
-         "role": "CBBO",
-         "select": 1,
-         "share": 1,
-         "write": 1
-      },
-      {
-         "create": 1,
-         "email": 1,
-         "export": 1,
-         "print": 1,
-         "read": 1,
-         "report": 1,
-         "role": "FPO",
-         "select": 1,
-         "share": 1,
-         "write": 1
-      },
-      {
-         "create": 1,
-         "delete": 1,
-         "email": 1,
-         "export": 1,
-         "print": 1,
-         "read": 1,
-         "report": 1,
-         "role": "System Manager",
-         "select": 1,
-         "share": 1,
-         "write": 1
-      }
-   ],
-   "sort_field": "creation",
-   "sort_order": "DESC",
-   "states": []
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:ACF-{###}",
+ "creation": "2024-06-13 12:55:11.049287",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "form_aoc_4_tab",
+  "fpo",
+  "cbbo",
+  "ia",
+  "column_break_pvex",
+  "financial_year",
+  "section_break_fjls",
+  "aoc_4_due_date",
+  "aoc_4_status",
+  "aoc_4_submitted_on",
+  "column_break_xnnk",
+  "aoc_4_audit_report",
+  "form_mgt_7_section",
+  "mgt_7_due_date",
+  "mgt_7_status",
+  "mgt_7_submitted_on",
+  "column_break_qjtx",
+  "mgt_7_director_list",
+  "mgt_7_shareholder_list",
+  "form_adt_1_section",
+  "adt_1_due_date",
+  "adt_1_status",
+  "adt_1_submitted_on",
+  "column_break_gxxm",
+  "adt_1_fpo_resolution",
+  "director_kyc_section",
+  "d_kyc_due_date",
+  "d_kyc_status",
+  "d_kyc_submitted_on",
+  "column_break_fnzg",
+  "d_kyc_pan_card_verification",
+  "d_kyc_otp",
+  "d_kyc_bod_aadhar",
+  "it_return_section",
+  "it_return_due_date",
+  "it_return_status",
+  "it_return_submitted_on",
+  "column_break_uqwf",
+  "it_return",
+  "agm_section",
+  "agm_due_date",
+  "agm_status",
+  "column_break_tlyn",
+  "agm_submitted_on"
+ ],
+ "fields": [
+  {
+   "fieldname": "fpo",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "FPO",
+   "options": "FPO",
+   "reqd": 1
+  },
+  {
+   "fieldname": "financial_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Financial Year",
+   "options": "Financial Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_pvex",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "<span style=\"font-size:13.5px;\">1 financial year</span>",
+   "fieldname": "section_break_fjls",
+   "fieldtype": "Section Break",
+   "label": "FORM AOC-4 \u2013 Filing of Financial Statements"
+  },
+  {
+   "fieldname": "form_aoc_4_tab",
+   "fieldtype": "Tab Break",
+   "label": "FORM"
+  },
+  {
+   "fieldname": "aoc_4_due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.aoc_4_status == \"Completed\"",
+   "fieldname": "aoc_4_audit_report",
+   "fieldtype": "Attach",
+   "label": "Audit Report"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "aoc_4_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "AOC-4 Status",
+   "options": "Pending\nCompleted",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_xnnk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "<span style=\"font-size:13.5px;\">After agm 60 days</span>",
+   "fieldname": "form_mgt_7_section",
+   "fieldtype": "Section Break",
+   "label": "Form MGT-7 - Filing of Annual Return"
+  },
+  {
+   "fieldname": "mgt_7_due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.mgt_7_status == \"Completed\"",
+   "fieldname": "mgt_7_director_list",
+   "fieldtype": "Attach",
+   "label": "Director List"
+  },
+  {
+   "depends_on": "eval:doc.mgt_7_status == \"Completed\"",
+   "fieldname": "mgt_7_shareholder_list",
+   "fieldtype": "Attach",
+   "label": "Shareholder List"
+  },
+  {
+   "depends_on": "eval:doc.aoc_4_status == \"Completed\"",
+   "fieldname": "aoc_4_submitted_on",
+   "fieldtype": "Date",
+   "label": "Submitted On",
+   "mandatory_depends_on": "eval:doc.aoc_4_status == \"Completed\""
+  },
+  {
+   "fieldname": "column_break_qjtx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "mgt_7_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "MGT-7 Status",
+   "options": "Pending\nCompleted",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.mgt_7_status == \"Completed\"",
+   "fieldname": "mgt_7_submitted_on",
+   "fieldtype": "Date",
+   "label": "Submitted On",
+   "mandatory_depends_on": "eval:doc.mgt_7_status == \"Completed\""
+  },
+  {
+   "description": "<span style=\"font-size:13.5px;\">After 1st AGM</span>",
+   "fieldname": "form_adt_1_section",
+   "fieldtype": "Section Break",
+   "label": "Form ADT-1 \u2013 Auditor Appointment for Five year"
+  },
+  {
+   "fieldname": "adt_1_due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.adt_1_status == \"Completed\"",
+   "fieldname": "adt_1_fpo_resolution",
+   "fieldtype": "Attach",
+   "label": "FPO resolution",
+   "not_nullable": 1
+  },
+  {
+   "fieldname": "column_break_gxxm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "adt_1_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": " ADT-1 Status",
+   "options": "Pending\nCompleted",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.adt_1_status == \"Completed\"",
+   "fieldname": "adt_1_submitted_on",
+   "fieldtype": "Date",
+   "label": "Submitted On",
+   "mandatory_depends_on": "eval:doc.adt_1_status == \"Completed\""
+  },
+  {
+   "description": "<span style=\"font-size:13.5px;>Once in a year</span>",
+   "fieldname": "director_kyc_section",
+   "fieldtype": "Section Break",
+   "label": "DIRECTOR KYC"
+  },
+  {
+   "fieldname": "d_kyc_due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.d_kyc_status == \"Completed\"",
+   "fieldname": "d_kyc_bod_aadhar",
+   "fieldtype": "Attach",
+   "label": "BOD Aadhar"
+  },
+  {
+   "depends_on": "eval:doc.d_kyc_status == \"Completed\"",
+   "fieldname": "d_kyc_pan_card_verification",
+   "fieldtype": "Attach",
+   "label": "PAN Card verification"
+  },
+  {
+   "fieldname": "column_break_fnzg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.d_kyc_status == \"Completed\"",
+   "fieldname": "d_kyc_otp",
+   "fieldtype": "Attach",
+   "label": "OTP"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "d_kyc_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Director Kyc Status",
+   "options": "Pending\nCompleted",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.d_kyc_status == \"Completed\"",
+   "fieldname": "d_kyc_submitted_on",
+   "fieldtype": "Date",
+   "label": "Submitted On",
+   "mandatory_depends_on": "eval:doc.d_kyc_status == \"Completed\""
+  },
+  {
+   "description": "<span style=\"font-size:13.5px;>30th September every year</span>",
+   "fieldname": "it_return_section",
+   "fieldtype": "Section Break",
+   "label": "IT Return"
+  },
+  {
+   "fieldname": "it_return_due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.it_return_status == \"Completed\"",
+   "fieldname": "it_return",
+   "fieldtype": "Attach",
+   "label": "IT Return"
+  },
+  {
+   "fieldname": "column_break_uqwf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "it_return_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "IT Return Status",
+   "options": "Pending\nCompleted",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.it_return_status == \"Completed\"",
+   "fieldname": "it_return_submitted_on",
+   "fieldtype": "Date",
+   "label": "Submitted On",
+   "mandatory_depends_on": "eval:doc.it_return_status == \"Completed\""
+  },
+  {
+   "fieldname": "agm_section",
+   "fieldtype": "Section Break",
+   "label": "AGM - Once in a year FPO need to organize AGM and pass the Audit report and other agenda"
+  },
+  {
+   "fieldname": "agm_due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "agm_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "AGM Status",
+   "options": "Pending\nCompleted",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_tlyn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.agm_status == \"Completed\"",
+   "fieldname": "agm_submitted_on",
+   "fieldtype": "Date",
+   "label": "Submitted On",
+   "mandatory_depends_on": "eval:doc.agm_status == \"Completed\""
+  },
+  {
+   "fetch_from": "fpo.cbbo_name",
+   "fieldname": "cbbo",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "CBBO",
+   "options": "CBBO"
+  },
+  {
+   "fetch_from": "cbbo.ia_name",
+   "fieldname": "ia",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "IA",
+   "options": "IA"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-06 15:14:33.111344",
+ "modified_by": "Administrator",
+ "module": "Governance and compliances",
+ "name": "Annual Compliance Forms",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IA",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CBBO",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "FPO",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
 }
