@@ -30,6 +30,7 @@
   "gst_received_upload",
   "fpo_email_id",
   "contact_detail_of_fpo",
+  "is_you_belongs_to_mfr_10_k",
   "supporting_aggencies_section",
   "supporting_agencies_table",
   "section_break_zufi",
@@ -405,6 +406,12 @@
    "fieldname": "staff_details_table",
    "fieldtype": "Table",
    "options": "FPO Staff Child"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_you_belongs_to_mfr_10_k",
+   "fieldtype": "Check",
+   "label": "Is you belongs to MFR 10 K"
   }
  ],
  "hide_toolbar": 1,
@@ -423,7 +430,7 @@
    "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-08-06 14:52:32.026721",
+ "modified": "2024-08-08 15:01:19.310741",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",

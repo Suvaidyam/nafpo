@@ -18,16 +18,15 @@ frappe.ui.form.on("FPO member details", {
         }
         validate_mobile_number(frm.doc.register_aadhar_mobile_number)
         validate_IFSC_Code(frm.doc.ifsc_code)
-        if (frm.doc.mobile_number) {
-            validate_mobile_number(frm.doc.mobile_number)
-        }
+        validate_mobile_number(frm.doc.mobile_number)
         validate_string(frm, 'bank_ac_number', "Bank Account Number");
         if (frm.doc.total_own_land < frm.doc.total_own_irrigated_land) {
             frappe.throw({ message: `Total own land must be greater than or equal to "Total own irrigated land".` })
         }
-        if (!isValidAadhaar(frm.doc.aadhar_number)) {
-            frappe.throw({ message: "Please enter valid Aadhar Number." });
+        if (frm.doc.aadhar_number && !isValidAadhaar(frm.doc.aadhar_number)) {
+            frappe.throw({ message: "Please enter a valid Aadhar Number." });
         }
+
     },
     state_name: async function (frm) {
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
