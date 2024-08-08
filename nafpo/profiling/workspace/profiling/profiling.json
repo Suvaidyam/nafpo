@@ -13,7 +13,7 @@
    "label": "FPO Member Count by Landholding Size "
   }
  ],
- "content": "[{\"id\":\"ElPIo7XXJF\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Overview</b></span>\",\"col\":12}},{\"id\":\"q4LdvlFN4M\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Board of Directors Overview\",\"col\":6}},{\"id\":\"gKfVM86HqS\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO Profile Summary\",\"col\":6}},{\"id\":\"RG6Di_lr4m\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Producer Groups\",\"col\":6}},{\"id\":\"w5vQ7wiR3r\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO member details Overview\",\"col\":6}},{\"id\":\"xnsiUyO8Vu\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"icr3XLTjaZ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Dashboard</b></span>\",\"col\":12}},{\"id\":\"gmGNlRxVzx\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender Distribution in FPO Members\",\"col\":6}},{\"id\":\"PDxmeH29qG\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender-Wise Landholding Distribution\",\"col\":6}},{\"id\":\"4dMugv_jcz\",\"type\":\"chart\",\"data\":{\"chart_name\":\"FPO Member Count by Landholding Size \",\"col\":12}}]",
+ "content": "[{\"id\":\"ElPIo7XXJF\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Overview</span>\",\"col\":12}},{\"id\":\"gKfVM86HqS\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO Profile Summary\",\"col\":6}},{\"id\":\"RG6Di_lr4m\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Producer Groups\",\"col\":6}},{\"id\":\"q4LdvlFN4M\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Board of Directors Overview\",\"col\":6}},{\"id\":\"w5vQ7wiR3r\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO member details Overview\",\"col\":6}},{\"id\":\"xnsiUyO8Vu\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"icr3XLTjaZ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Dashboard</span>\",\"col\":12}},{\"id\":\"gmGNlRxVzx\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender Distribution in FPO Members\",\"col\":6}},{\"id\":\"PDxmeH29qG\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender-Wise Landholding Distribution\",\"col\":6}},{\"id\":\"4dMugv_jcz\",\"type\":\"chart\",\"data\":{\"chart_name\":\"FPO Member Count by Landholding Size \",\"col\":12}}]",
  "creation": "2024-06-19 09:58:07.824654",
  "custom_blocks": [],
  "docstatus": 0,
@@ -26,7 +26,7 @@
  "is_hidden": 0,
  "label": "Profiling",
  "links": [],
- "modified": "2024-08-05 15:40:23.933619",
+ "modified": "2024-08-08 13:04:37.357697",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Profiling",
