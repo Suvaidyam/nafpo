@@ -16,11 +16,14 @@ class FPOProfiling(Document):
             new_otorf = frappe.get_doc("One Time Organization Registration Forms", check_otorf)
         else:
             new_otorf = frappe.new_doc("One Time Organization Registration Forms")
-        registration_date = datetime.strptime(self.date_of_registration, '%Y-%m-%d').date()
+        # registration_date = datetime.strptime(self.date_of_registration, '%Y-%m-%d').date()
         new_otorf.fpo = self.name_of_the_fpo
-        new_otorf.inc_20_due_date = registration_date + relativedelta(days=180)
-        new_otorf.inc_22_due_date = registration_date + relativedelta(days=30)
-        new_otorf.adt_1_due_date = registration_date + relativedelta(days=30)
+        new_otorf.inc_20_due_date = self.date_of_registration + relativedelta(days=180)
+        new_otorf.inc_22_due_date = self.date_of_registration + relativedelta(days=30)
+        new_otorf.adt_1_due_date = self.date_of_registration + relativedelta(days=30)
+        # new_otorf.inc_20_due_date = registration_date + relativedelta(days=180)
+        # new_otorf.inc_22_due_date = registration_date + relativedelta(days=30)
+        # new_otorf.adt_1_due_date = registration_date + relativedelta(days=30)
         new_otorf.save()
         
     def before_validate(self):
@@ -33,11 +36,11 @@ class FPOProfiling(Document):
             frappe.throw(f"FPO already exists in FPO Profiling")
 
     def on_update(self):
-        if len(self.deleted_staff_rows) > 0:
-            for row_id in self.deleted_staff_rows:
-                existing_staff_name = frappe.db.exists("FPO Staff", {"child_reference": row_id})
-                if existing_staff_name:
-                    frappe.delete_doc("FPO Staff", existing_staff_name)
+        # if len(self.deleted_staff_rows) > 0:
+        #     for row_id in self.deleted_staff_rows:
+        #         existing_staff_name = frappe.db.exists("FPO Staff", {"child_reference": row_id})
+        #         if existing_staff_name:
+        #             frappe.delete_doc("FPO Staff", existing_staff_name)
             
         staff_details = self.staff_details_table
         for row in staff_details:
