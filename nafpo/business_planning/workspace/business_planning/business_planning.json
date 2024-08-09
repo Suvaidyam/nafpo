@@ -17,7 +17,7 @@
    "label": "Expected Input Net Income Profit/Loss"
   }
  ],
- "content": "[{\"id\":\"hAZivJne4b\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Overview</span>\",\"col\":12}},{\"id\":\"uqBwB4AqeY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Fixed Capital\",\"col\":6}},{\"id\":\"EGuJpoCFKd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Annual Business Plannings\",\"col\":6}},{\"id\":\"lQ5JzAAPvu\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"alBzK0CuS0\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Fixed Capital\",\"col\":6}},{\"id\":\"rDKnX6sSK3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Private partner Linkages Output Side\",\"col\":6}},{\"id\":\"kI9OCW6LTJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Private partner Linkages Input Side\",\"col\":6}},{\"id\":\"hrql-TNGDL\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"FPO Count With Current Year Business Planning\",\"col\":6}},{\"id\":\"Au9sfDr4cV\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Dashboard</span>\",\"col\":12}},{\"id\":\"0OT0U3x7cT\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Output Gross Trunover\",\"col\":6}},{\"id\":\"yUMi7HB9yR\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Input Gross Trunover\",\"col\":6}},{\"id\":\"btyh1k3VXu\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Expected Output Net Income Profit/Loss\",\"col\":6}},{\"id\":\"ZPSH-tE7vd\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Expected Input Net Income Profit/Loss\",\"col\":6}}]",
+ "content": "[{\"id\":\"hAZivJne4b\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Overview</span>\",\"col\":12}},{\"id\":\"uqBwB4AqeY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Fixed Capital\",\"col\":6}},{\"id\":\"EGuJpoCFKd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Annual Business Plannings\",\"col\":6}},{\"id\":\"lQ5JzAAPvu\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"alBzK0CuS0\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Fixed Capital\",\"col\":6}},{\"id\":\"rDKnX6sSK3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Private partner Linkages Output Side\",\"col\":6}},{\"id\":\"kI9OCW6LTJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Private partner Linkages Input Side\",\"col\":12}},{\"id\":\"Au9sfDr4cV\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Dashboard</span>\",\"col\":12}},{\"id\":\"hrql-TNGDL\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"FPO Count With Current Year Business Planning\",\"col\":12}},{\"id\":\"0OT0U3x7cT\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Output Gross Trunover\",\"col\":6}},{\"id\":\"yUMi7HB9yR\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Input Gross Trunover\",\"col\":6}},{\"id\":\"btyh1k3VXu\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Expected Output Net Income Profit/Loss\",\"col\":6}},{\"id\":\"ZPSH-tE7vd\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Expected Input Net Income Profit/Loss\",\"col\":6}}]",
  "creation": "2024-06-25 12:18:22.529271",
  "custom_blocks": [
   {
@@ -35,7 +35,7 @@
  "is_hidden": 0,
  "label": "Business Planning",
  "links": [],
- "modified": "2024-08-08 17:25:59.070729",
+ "modified": "2024-08-09 13:41:06.269567",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Planning",
