@@ -6,10 +6,6 @@ from frappe.model.document import Document
 
 
 class FPOMFR10K(Document):
-    def before_save(self):
-        fpo_profile_name = frappe.get_doc('FPO', self.fpo)
-        self.fpo_copy = fpo_profile_name.fpo_name
-    
     def before_validate(self):
         exists = frappe.db.exists({
             "doctype": "FPO MFR 10K", 

@@ -13,20 +13,6 @@ async function check_exists_fpo_in_mfr(frm) {
         return frappe.throw({ message: 'This FPO are already exists in FPO MFR 10K' });
     }
 }
-async function check_fpo_profile(frm) {
-    let response = await frappe.call({
-        method: "nafpo.apis.api.get_exists_event",
-        args: {
-            doctype_name: "FPO Profiling",
-            filterName: "name_of_the_fpo",
-            value: frm.doc.fpo,
-        }
-    });
-    if (response.message == undefined) {
-        // frm.set_value('fpo', '')
-        return frappe.throw({ message: 'Please Create FPO Profiling for this FPO' });
-    }
-}
 function set_due_date(frm) {
     frappe.call({
         method: "nafpo.apis.api.get_fpo_profile_doc",
@@ -96,13 +82,11 @@ frappe.ui.form.on("FPO MFR 10K", {
             frappe.validated = false;
             frm.image_uploaded = false;
         }
-        await check_fpo_profile(frm)
     },
 
     fpo: async function (frm) {
         if (frm.is_new() && frm.doc.fpo) {
             await check_exists_fpo_in_mfr(frm)
-            await check_fpo_profile(frm)
         }
         if (frm.doc.fpo) { set_due_date(frm) }
     },

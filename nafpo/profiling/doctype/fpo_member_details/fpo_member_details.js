@@ -1,5 +1,16 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
+
+async function calculate_total_income(frm) {
+    frm.set_value('total_income', (
+        (frm.doc.agriculture || 0) +
+        (frm.doc.livestock || 0) +
+        (frm.doc.labour || 0) +
+        (frm.doc.ntfp || 0) +
+        (frm.doc.micro_enterprise || 0) +
+        (frm.doc.other_income || 0)
+    ))
+}
 frappe.ui.form.on("FPO member details", {
     async refresh(frm) {
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
@@ -83,6 +94,24 @@ frappe.ui.form.on("FPO member details", {
             frappe.throw({ message: `Total own land must be greater than or equal to "Total own irrigated land".` })
         }
         await frm.set_value('total_own_irrigated_land_in_hectare', frm.doc.total_own_irrigated_land * 0.404686)
+    },
+    async agriculture(frm) {
+        await calculate_total_income(frm)
+    },
+    async livestock(frm) {
+        await calculate_total_income(frm)
+    },
+    async labour(frm) {
+        await calculate_total_income(frm)
+    },
+    async ntfp(frm) {
+        await calculate_total_income(frm)
+    },
+    async micro_enterprise(frm) {
+        await calculate_total_income(frm)
+    },
+    async other_income(frm) {
+        await calculate_total_income(frm)
     },
     do_you_have_any_leased_land_area_in_acre(frm) {
         if (frm.doc.do_you_have_any_leased_land_area_in_acre == "No") {

@@ -231,45 +231,46 @@
   },
   {
    "fieldname": "agriculture",
-   "fieldtype": "Int",
+   "fieldtype": "Currency",
    "label": "Agriculture",
    "non_negative": 1
   },
   {
    "fieldname": "livestock",
-   "fieldtype": "Int",
+   "fieldtype": "Currency",
    "label": "Livestock",
    "non_negative": 1
   },
   {
    "fieldname": "labour",
-   "fieldtype": "Int",
+   "fieldtype": "Currency",
    "label": "Labour",
    "non_negative": 1
   },
   {
    "fieldname": "ntfp",
-   "fieldtype": "Int",
+   "fieldtype": "Currency",
    "label": "NTFP",
    "non_negative": 1
   },
   {
    "fieldname": "micro_enterprise",
-   "fieldtype": "Int",
+   "fieldtype": "Currency",
    "label": "Micro Enterprise",
    "non_negative": 1
   },
   {
    "fieldname": "other_income",
-   "fieldtype": "Int",
+   "fieldtype": "Currency",
    "label": "Other income",
    "non_negative": 1
   },
   {
    "fieldname": "total_income",
-   "fieldtype": "Int",
+   "fieldtype": "Currency",
    "label": "Total Income",
-   "non_negative": 1
+   "non_negative": 1,
+   "read_only": 1
   },
   {
    "fieldname": "total_own_land",
@@ -430,7 +431,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-08 14:59:16.264371",
+ "modified": "2024-08-09 11:08:32.729977",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO member details",
