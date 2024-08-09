@@ -16,14 +16,11 @@ class FPOProfiling(Document):
             new_otorf = frappe.get_doc("One Time Organization Registration Forms", check_otorf)
         else:
             new_otorf = frappe.new_doc("One Time Organization Registration Forms")
-        # registration_date = datetime.strptime(self.date_of_registration, '%Y-%m-%d').date()
+        registration_date = datetime.strptime(self.date_of_registration, '%Y-%m-%d').date()
         new_otorf.fpo = self.name_of_the_fpo
-        new_otorf.inc_20_due_date = self.date_of_registration + relativedelta(days=180)
-        new_otorf.inc_22_due_date = self.date_of_registration + relativedelta(days=30)
-        new_otorf.adt_1_due_date = self.date_of_registration + relativedelta(days=30)
-        # new_otorf.inc_20_due_date = registration_date + relativedelta(days=180)
-        # new_otorf.inc_22_due_date = registration_date + relativedelta(days=30)
-        # new_otorf.adt_1_due_date = registration_date + relativedelta(days=30)
+        new_otorf.inc_20_due_date = registration_date + relativedelta(days=180)
+        new_otorf.inc_22_due_date = registration_date + relativedelta(days=30)
+        new_otorf.adt_1_due_date = registration_date + relativedelta(days=30)
         new_otorf.save()
         
     def before_validate(self):
