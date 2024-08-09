@@ -180,7 +180,7 @@
   {
    "fieldname": "fixed_cost_yearly_section",
    "fieldtype": "Section Break",
-   "label": "Fixed Cost (yearly)"
+   "label": "Fixed Cost (Yearly in Rs)"
   },
   {
    "default": "0",
@@ -683,7 +683,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-08 16:06:15.809996",
+ "modified": "2024-08-09 11:11:52.988793",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",

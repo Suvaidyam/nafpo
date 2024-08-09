@@ -55,9 +55,10 @@ def execute(filters=None):
 		},
 		{
 			"fieldname": "fpo_count",
-			"label": "FPO Count",
+			"label": "Count",
 			"fieldtype": "Int",
 			"width": 100
+			
 		}
 	]
 	data = frappe.db.sql(query, as_dict=True)
