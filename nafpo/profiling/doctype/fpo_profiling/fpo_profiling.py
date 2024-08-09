@@ -7,17 +7,22 @@ from dateutil.relativedelta import relativedelta
 
 class FPOProfiling(Document):
     def before_save(self):
-        # print('==================',self)
-        # check_otorf = frappe.get_list('doct':"One Time Organization Registration Forms",self.name_of_the_fpo)
-        # print('=================',check_otorf)
-        new_otorf = frappe.new_doc("One Time Organization Registration Forms")
+    # Check if an entry already exists
+        check_otorf = frappe.db.exists({
+            "doctype": "One Time Organization Registration Forms",
+            'fpo': self.name_of_the_fpo
+        })
+        if check_otorf:
+            new_otorf = frappe.get_doc("One Time Organization Registration Forms", check_otorf)
+        else:
+            new_otorf = frappe.new_doc("One Time Organization Registration Forms")
         registration_date = datetime.strptime(self.date_of_registration, '%Y-%m-%d').date()
         new_otorf.fpo = self.name_of_the_fpo
         new_otorf.inc_20_due_date = registration_date + relativedelta(days=180)
         new_otorf.inc_22_due_date = registration_date + relativedelta(days=30)
         new_otorf.adt_1_due_date = registration_date + relativedelta(days=30)
         new_otorf.save()
-
+        
     def before_validate(self):
         exists = frappe.db.exists({
             "doctype": "FPO Profiling",
