@@ -250,7 +250,7 @@
   {
    "fieldname": "ntfp",
    "fieldtype": "Currency",
-   "label": "NTFP",
+   "label": "Non-Timber Forest Products (NTFP)",
    "non_negative": 1
   },
   {
@@ -355,7 +355,7 @@
   {
    "fieldname": "total_income_annually_section",
    "fieldtype": "Section Break",
-   "label": "Annual Income (in Rs)"
+   "label": "Annual Income (in Rs.)"
   },
   {
    "fieldname": "column_break_lodv",
@@ -431,7 +431,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-09 11:08:32.729977",
+ "modified": "2024-08-09 15:35:18.701243",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO member details",

@@ -8,6 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "financial_year_tab",
+  "please_mention_all_the_amount_in_inr_section",
   "fpo",
   "column_break_fkwg",
   "financial_year",
@@ -135,7 +136,7 @@
   {
    "fieldname": "variable_cost_section",
    "fieldtype": "Section Break",
-   "label": "Variable cost"
+   "label": "Variable Cost (in Rs)"
   },
   {
    "default": "0",
@@ -274,12 +275,12 @@
   {
    "fieldname": "net_profit_per_year_section",
    "fieldtype": "Section Break",
-   "label": "Net Profit (Per Year)"
+   "label": "Net Profit in INR (Per Year)"
   },
   {
    "fieldname": "variable_cost_rate_tab",
    "fieldtype": "Tab Break",
-   "label": "Variable cost (Rate)"
+   "label": "Variable Cost (Rate)"
   },
   {
    "default": "0",
@@ -357,7 +358,7 @@
   {
    "fieldname": "private_partner_linkage_developed_section",
    "fieldtype": "Section Break",
-   "label": "Private Partner Linkage Developed"
+   "label": "Private Partner Linkage Developed (in Numbers)"
   },
   {
    "bold": 1,
@@ -382,7 +383,7 @@
   {
    "fieldname": "variable_cost_rate_section",
    "fieldtype": "Section Break",
-   "label": "Variable cost (Rate)"
+   "label": "Variable Cost (Rate)"
   },
   {
    "default": "0",
@@ -414,13 +415,12 @@
   {
    "fieldname": "fixed_cost_yearly__section",
    "fieldtype": "Section Break",
-   "label": "Fixed Cost (yearly)"
+   "label": "Fixed Cost (early)"
   },
   {
    "default": "3",
    "fieldname": "depreciation_percent",
    "fieldtype": "Int",
-   "label": "Depreciation Percent",
    "non_negative": 1
   },
   {
@@ -678,12 +678,17 @@
    "fieldtype": "Currency",
    "label": "Closing Cash Balance",
    "read_only": 1
+  },
+  {
+   "fieldname": "please_mention_all_the_amount_in_inr_section",
+   "fieldtype": "Section Break",
+   "label": "Please mention all the amount in INR"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-09 11:11:52.988793",
+ "modified": "2024-08-09 15:21:14.331179",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",
