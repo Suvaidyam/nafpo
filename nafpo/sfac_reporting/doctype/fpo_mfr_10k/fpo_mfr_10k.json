@@ -59,7 +59,7 @@
    "fieldname": "fpo",
    "fieldtype": "Link",
    "label": "FPO",
-   "link_filters": "[[\"FPO Profiling\",\"is_you_belongs_to_mfr_10_k\",\"=\",1]]",
+   "link_filters": "[[\"FPO Profiling\",\"under_the_central_sector_scheme_10k_fpo_formation\",\"=\",1]]",
    "options": "FPO Profiling",
    "reqd": 1
   },
@@ -349,7 +349,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-09 10:27:05.350202",
+ "modified": "2024-08-09 11:56:45.911089",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "FPO MFR 10K",
