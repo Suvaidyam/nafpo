@@ -10,9 +10,9 @@ frappe.router.on('change', async () => {
         $('.layout-side-section').hide();
         // $('.custom-actions').hide();
     }
-    if (cur_router.length == 2 && !frappe.user_roles.includes("System Manager", "Administrator")) {
-        if (cur_router[0] == "Workspaces") {
-            $("#page-Workspaces .page-actions").html("")
-        }
-    }
+    // if (cur_router.length == 2 && !frappe.user_roles.includes("System Manager", "Administrator")) {
+    //     if (cur_router[0] == "Workspaces") {
+    //         $("#page-Workspaces .page-actions").html("")
+    //     }
+    // }
 });

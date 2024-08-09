@@ -384,9 +384,9 @@
    "reqd": 1
   },
   {
+   "fetch_from": "name_of_the_fpo.fpo_name",
    "fieldname": "name_of_the_fpo_copy",
    "fieldtype": "Data",
-   "hidden": 1,
    "ignore_user_permissions": 1,
    "in_list_view": 1,
    "label": "Name of the FPO"
@@ -430,7 +430,7 @@
    "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-08-08 15:01:19.310741",
+ "modified": "2024-08-09 10:29:56.336570",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
