@@ -35,7 +35,8 @@ def execute(filters=None):
 		INNER JOIN `tabFPO Staff Select Child` AS _fssc ON _cap.name = _fssc.parent
 		INNER JOIN `tabFPO Staff` AS _fs ON _fssc.fpo_staff = _fs.name
 	) AS trained_fpos ON fpo.name = trained_fpos.fpo
-	WHERE trained_fpos.fpo IS NULL {user_cond_str};
+	WHERE trained_fpos.fpo IS NULL {user_cond_str}
+	ORDER BY trained ASC;
     """
 	columns = [
 		{

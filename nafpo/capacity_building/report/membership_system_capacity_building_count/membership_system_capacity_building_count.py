@@ -13,12 +13,23 @@ def execute(filters=None):
 
 	query = f"""
 		SELECT
-			CASE WHEN c.fpo IS NOT NULL THEN 'Yes' ELSE 'No' END AS trained_status,
-			COUNT(DISTINCT f.name) AS count
-		FROM tabFPO f
-		LEFT JOIN tabCapacity c ON f.name = c.fpo
-		{user_cond_str}
-		GROUP BY CASE WHEN c.fpo IS NOT NULL THEN 'Yes' ELSE 'No' END;
+			all_statuses.trained_status,
+			COALESCE(subquery.count, 0) AS count
+		FROM (
+			SELECT
+				CASE WHEN c.fpo IS NOT NULL THEN 'Yes' ELSE 'No' END AS trained_status,
+				COUNT(DISTINCT f.name) AS count
+			FROM tabFPO f
+			LEFT JOIN tabCapacity c ON f.name = c.fpo
+			{user_cond_str}
+			GROUP BY CASE WHEN c.fpo IS NOT NULL THEN 'Yes' ELSE 'No' END
+		) AS subquery
+		RIGHT JOIN (
+			SELECT 'Yes' AS trained_status
+			UNION ALL
+			SELECT 'No' AS trained_status
+		) AS all_statuses ON subquery.trained_status = all_statuses.trained_status
+		ORDER BY all_statuses.trained_status ASC;
 	"""
 	columns = [
 		{

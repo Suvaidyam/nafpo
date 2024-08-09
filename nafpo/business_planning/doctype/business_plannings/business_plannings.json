@@ -180,7 +180,7 @@
   {
    "fieldname": "fixed_cost_yearly_section",
    "fieldtype": "Section Break",
-   "label": "Fixed Cost (yearly)"
+   "label": "Fixed Cost (Yearly in Rs)"
   },
   {
    "default": "0",
@@ -234,13 +234,13 @@
    "default": "0",
    "fieldname": "collection_centre_rent",
    "fieldtype": "Currency",
-   "label": "Collection centre rent"
+   "label": "Collection Centre Rent"
   },
   {
    "default": "0",
    "fieldname": "intangible_assetspre_operating_expenses_written_off",
    "fieldtype": "Currency",
-   "label": "Intangible assets/Pre-operating expenses written off"
+   "label": "Intangible Assets/Pre-Operating Expenses Written Off"
   },
   {
    "default": "0",
@@ -321,7 +321,7 @@
    "fieldname": "fpo",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "FPO Name",
+   "label": "FPO",
    "options": "FPO",
    "reqd": 1
   },
@@ -493,12 +493,12 @@
   {
    "fieldname": "grant_for_fixed_capital",
    "fieldtype": "Currency",
-   "label": "Grant for fixed capital"
+   "label": "Grant for Fixed Capital"
   },
   {
    "fieldname": "grant_for_working_capital",
    "fieldtype": "Currency",
-   "label": "Grant for working capital"
+   "label": "Grant for Working Capital"
   },
   {
    "default": "0",
@@ -510,7 +510,7 @@
   {
    "fieldname": "grant__for_salary_travel",
    "fieldtype": "Currency",
-   "label": "Grant  for salary, travel & office exp."
+   "label": "Grant  for Salary, Travel & Office Exp."
   },
   {
    "fieldname": "share_capital",
@@ -525,7 +525,7 @@
   {
    "fieldname": "credit_guarantee_fund_a_composite_loan",
    "fieldtype": "Currency",
-   "label": "Credit Guarantee Fund (a composite loan)"
+   "label": "Credit Guarantee Fund (A Composite Loan)"
   },
   {
    "default": "0",
@@ -571,7 +571,7 @@
    "default": "0",
    "fieldname": "grant__for_salary_travel__office_exp",
    "fieldtype": "Currency",
-   "label": "Grant  for salary, travel & office exp.",
+   "label": "Grant  for Salary, Travel & Office Exp.",
    "read_only": 1
   },
   {
@@ -592,7 +592,7 @@
    "default": "0",
    "fieldname": "credit_guarantee_fund_a_loan",
    "fieldtype": "Currency",
-   "label": "Credit Guarantee Fund (a loan)",
+   "label": "Credit Guarantee Fund (A Loan)",
    "read_only": 1
   },
   {
@@ -611,25 +611,25 @@
    "default": "0",
    "fieldname": "variable_cost",
    "fieldtype": "Currency",
-   "label": "Variable cost",
+   "label": "Variable Cost",
    "read_only": 1
   },
   {
    "fieldname": "less_rise_in_current_liability",
    "fieldtype": "Currency",
-   "label": "Less rise in current liability"
+   "label": "Less Rise in Current Liability"
   },
   {
    "default": "0",
    "fieldname": "fixed_cost_less_depreciation_and_ammortization",
    "fieldtype": "Currency",
-   "label": "Fixed Cost (Less depreciation and ammortization)",
+   "label": "Fixed Cost (Less Depreciation and Ammortization)",
    "read_only": 1
   },
   {
    "fieldname": "rise_in_prepaid_expenses",
    "fieldtype": "Currency",
-   "label": "Rise in prepaid expenses"
+   "label": "Rise in Prepaid Expenses"
   },
   {
    "fieldname": "credit_guarantee_fund_principal_amount",
@@ -640,7 +640,7 @@
    "default": "0",
    "fieldname": "capital_costs_fixed",
    "fieldtype": "Currency",
-   "label": "Capital Costs (fixed)",
+   "label": "Capital Costs (Fixed)",
    "read_only": 1
   },
   {
@@ -651,13 +651,13 @@
   {
    "fieldname": "profit_distributed",
    "fieldtype": "Currency",
-   "label": "Profit distributed"
+   "label": "Profit Distributed"
   },
   {
    "default": "0",
    "fieldname": "total_outflow",
    "fieldtype": "Currency",
-   "label": "Total outflow",
+   "label": "Total Outflow",
    "read_only": 1
   },
   {
@@ -683,7 +683,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-23 14:19:14.854963",
+ "modified": "2024-08-09 11:11:52.988793",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "Business Plannings",
