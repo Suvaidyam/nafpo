@@ -7,10 +7,10 @@
  "dynamic_filters_json": "{}",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 3,
+ "idx": 4,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-07-23 12:38:09.825870",
+ "modified": "2024-08-09 10:53:44.038068",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "No of FPO participated at least 1 training",
@@ -36,6 +36,7 @@
  "x_field": "trained_status",
  "y_axis": [
   {
+   "color": "#ECAD4B",
    "y_field": "count"
   }
  ]
