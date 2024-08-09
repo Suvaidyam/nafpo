@@ -1,516 +1,516 @@
 {
-    "actions": [],
-    "allow_copy": 1,
-    "allow_import": 1,
-    "allow_rename": 1,
-    "autoname": "format:FPO-P-{#####}",
-    "creation": "2024-05-09 11:20:29.637489",
-    "doctype": "DocType",
-    "engine": "InnoDB",
-    "field_order": [
-        "basic_details_tab",
-        "section_break_lxef",
-        "state_name",
-        "district_name",
-        "block_name",
-        "name_of_the_fpo",
-        "name_of_the_fpo_copy",
-        "ia",
-        "fpos_address",
-        "fpos_pincode",
-        "cbbo",
-        "bod_kyc_name",
-        "column_break_zdzq",
-        "type_of_organization",
-        "date_of_incorporation",
-        "date_of_registration",
-        "registration_no",
-        "gst_status",
-        "gst_no",
-        "gst_received_upload",
-        "fpo_email_id",
-        "contact_detail_of_fpo",
-        "under_the_central_sector_scheme_10k_fpo_formation",
-        "supporting_aggencies_section",
-        "supporting_agencies_table",
-        "section_break_zufi",
-        "staff_details_table",
-        "licence_details_for_seeds_section",
-        "licence_number_for_seeds",
-        "date_of_expiry_for_seeds",
-        "column_break_nycb",
-        "license_doc_for_seed",
-        "licence_details_for_fertilizer_section",
-        "licence_number_for_fertilizer",
-        "date_of_expiry_for_fertilizer",
-        "column_break_lxxh",
-        "license_doc_for_fertilizer",
-        "licence_details_for_pesticide_section",
-        "licence_number_for_pesticide",
-        "date_of_expiry_for_pesticide",
-        "column_break_njfx",
-        "license_doc_for_pesticide",
-        "section_break_cnwm",
-        "column_break_ayxt",
-        "licence_number_for_fssai",
-        "date_of_expiry_for_fssai",
-        "column_break_xbmr",
-        "license_doc_for_fssai",
-        "licence_details_for_seed_production_section",
-        "licence_number_for_seed_production",
-        "date_of_expiry__for_seed_production",
-        "column_break_zhah",
-        "licence_doc_for_seed_production",
-        "logo_details_section",
-        "do_you_have_logo",
-        "column_break_zkma",
-        "fpo_logo",
-        "column_break_siay",
-        "supporting_document"
-    ],
-    "fields": [
-        {
-            "fieldname": "state_name",
-            "fieldtype": "Link",
-            "in_list_view": 1,
-            "label": "State Name",
-            "options": "State",
-            "reqd": 1
-        },
-        {
-            "fieldname": "district_name",
-            "fieldtype": "Link",
-            "in_list_view": 1,
-            "label": "District Name",
-            "options": "District",
-            "reqd": 1
-        },
-        {
-            "fieldname": "block_name",
-            "fieldtype": "Table MultiSelect",
-            "label": "Block Name",
-            "options": "Block Child",
-            "reqd": 1
-        },
-        {
-            "fieldname": "name_of_the_fpo",
-            "fieldtype": "Link",
-            "label": "FPO",
-            "options": "FPO",
-            "reqd": 1,
-            "unique": 1
-        },
-        {
-            "fieldname": "fpos_address",
-            "fieldtype": "Data",
-            "label": "FPO's Address"
-        },
-        {
-            "fieldname": "fpos_pincode",
-            "fieldtype": "Data",
-            "label": "FPO's pincode",
-            "length": 6
-        },
-        {
-            "fieldname": "bod_kyc_name",
-            "fieldtype": "Table MultiSelect",
-            "label": "BOD KYC Name",
-            "options": "BOD KYC Child",
-            "reqd": 1
-        },
-        {
-            "fieldname": "type_of_organization",
-            "fieldtype": "Link",
-            "in_list_view": 1,
-            "label": "Type of Organization",
-            "options": "Type of Organization",
-            "reqd": 1
-        },
-        {
-            "fieldname": "date_of_incorporation",
-            "fieldtype": "Date",
-            "label": "Date of incorporation",
-            "reqd": 1
-        },
-        {
-            "fieldname": "registration_no",
-            "fieldtype": "Data",
-            "label": "Registration No.",
-            "length": 25,
-            "reqd": 1
-        },
-        {
-            "fieldname": "gst_status",
-            "fieldtype": "Autocomplete",
-            "label": "GST Status",
-            "options": "Applied but not receive\nNot applied\nReceived",
-            "reqd": 1
-        },
-        {
-            "depends_on": "eval:doc.gst_status == \"Received\"",
-            "fieldname": "gst_no",
-            "fieldtype": "Data",
-            "label": "GST No.",
-            "length": 25,
-            "mandatory_depends_on": "eval:doc.gst_status == \"Received\""
-        },
-        {
-            "depends_on": "eval:doc.gst_status == \"Received\"",
-            "fieldname": "gst_received_upload",
-            "fieldtype": "Attach",
-            "label": "GST Received Upload",
-            "mandatory_depends_on": "eval:doc.gst_status == \"Received\""
-        },
-        {
-            "fieldname": "fpo_email_id",
-            "fieldtype": "Data",
-            "label": "FPO Email Id",
-            "options": "Email",
-            "reqd": 1
-        },
-        {
-            "fieldname": "contact_detail_of_fpo",
-            "fieldtype": "Data",
-            "label": "Contact Detail of FPO",
-            "length": 10,
-            "non_negative": 1,
-            "reqd": 1
-        },
-        {
-            "fieldname": "licence_number_for_seeds",
-            "fieldtype": "Data",
-            "label": "Licence number",
-            "length": 25
-        },
-        {
-            "fieldname": "date_of_expiry_for_seeds",
-            "fieldtype": "Date",
-            "label": "Date of expiry"
-        },
-        {
-            "fieldname": "licence_number_for_fertilizer",
-            "fieldtype": "Data",
-            "label": "Licence Number",
-            "length": 25,
-            "non_negative": 1
-        },
-        {
-            "fieldname": "date_of_expiry_for_fertilizer",
-            "fieldtype": "Date",
-            "label": "Date of expiry"
-        },
-        {
-            "fieldname": "licence_number_for_pesticide",
-            "fieldtype": "Data",
-            "label": "Licence number",
-            "length": 25,
-            "non_negative": 1
-        },
-        {
-            "fieldname": "date_of_expiry_for_pesticide",
-            "fieldtype": "Date",
-            "label": "Date of expiry"
-        },
-        {
-            "fieldname": "licence_number_for_fssai",
-            "fieldtype": "Data",
-            "label": "Licence Number",
-            "length": 25
-        },
-        {
-            "fieldname": "date_of_expiry_for_fssai",
-            "fieldtype": "Date",
-            "label": "Date of expiry"
-        },
-        {
-            "default": "No",
-            "fieldname": "do_you_have_logo",
-            "fieldtype": "Select",
-            "label": "Do You Have Logo?",
-            "options": "Yes\nNo"
-        },
-        {
-            "depends_on": "eval:doc.do_you_have_logo == \"Yes\"",
-            "fieldname": "fpo_logo",
-            "fieldtype": "Attach Image",
-            "label": "FPO Logo",
-            "mandatory_depends_on": "eval:doc.do_you_have_logo == \"Yes\""
-        },
-        {
-            "fieldname": "basic_details_tab",
-            "fieldtype": "Tab Break",
-            "label": "Details"
-        },
-        {
-            "fieldname": "column_break_ayxt",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "section_break_lxef",
-            "fieldtype": "Section Break"
-        },
-        {
-            "fieldname": "column_break_zdzq",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "section_break_cnwm",
-            "fieldtype": "Section Break",
-            "label": "Licence Details for fssai"
-        },
-        {
-            "fieldname": "licence_details_for_seeds_section",
-            "fieldtype": "Section Break",
-            "label": "Licence Details for Seeds"
-        },
-        {
-            "fieldname": "column_break_nycb",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "license_doc_for_seed",
-            "fieldtype": "Attach",
-            "label": "License Doc"
-        },
-        {
-            "fieldname": "licence_details_for_fertilizer_section",
-            "fieldtype": "Section Break",
-            "label": "Licence Details for Fertilizer"
-        },
-        {
-            "fieldname": "column_break_lxxh",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "license_doc_for_fertilizer",
-            "fieldtype": "Attach",
-            "label": "License Doc"
-        },
-        {
-            "fieldname": "licence_details_for_pesticide_section",
-            "fieldtype": "Section Break",
-            "label": "Licence Details for Pesticide"
-        },
-        {
-            "fieldname": "column_break_njfx",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "license_doc_for_pesticide",
-            "fieldtype": "Attach",
-            "label": "License Doc"
-        },
-        {
-            "fieldname": "column_break_xbmr",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "license_doc_for_fssai",
-            "fieldtype": "Attach",
-            "label": "License Doc"
-        },
-        {
-            "fieldname": "licence_details_for_seed_production_section",
-            "fieldtype": "Section Break",
-            "label": "Licence Details for Seed Production"
-        },
-        {
-            "fieldname": "licence_number_for_seed_production",
-            "fieldtype": "Data",
-            "label": "Licence number",
-            "length": 25
-        },
-        {
-            "fieldname": "date_of_expiry__for_seed_production",
-            "fieldtype": "Date",
-            "label": "Date of expiry"
-        },
-        {
-            "fieldname": "column_break_zhah",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "licence_doc_for_seed_production",
-            "fieldtype": "Attach",
-            "label": "Licence Doc"
-        },
-        {
-            "fieldname": "logo_details_section",
-            "fieldtype": "Section Break",
-            "label": "Logo Details"
-        },
-        {
-            "fieldname": "column_break_zkma",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "supporting_aggencies_section",
-            "fieldtype": "Section Break",
-            "label": "Supporting Agencies"
-        },
-        {
-            "fieldname": "supporting_agencies_table",
-            "fieldtype": "Table",
-            "options": "Supporting Agencies Child"
-        },
-        {
-            "depends_on": "eval:doc.do_you_have_logo == \"Yes\"",
-            "fieldname": "supporting_document",
-            "fieldtype": "Attach",
-            "label": "Supporting Document",
-            "mandatory_depends_on": "eval:doc.do_you_have_logo == \"Yes\""
-        },
-        {
-            "fieldname": "column_break_siay",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fetch_from": "cbbo.ia_name",
-            "fieldname": "ia",
-            "fieldtype": "Link",
-            "hidden": 1,
-            "label": "IA",
-            "options": "IA"
-        },
-        {
-            "fetch_from": "name_of_the_fpo.cbbo_name",
-            "fieldname": "cbbo",
-            "fieldtype": "Link",
-            "in_list_view": 1,
-            "label": "Name of CBBO",
-            "options": "CBBO",
-            "read_only": 1,
-            "read_only_depends_on": "eval:(doc.name_of_the_fpo && doc.name_of_the_fpo.length > 0) ",
-            "reqd": 1
-        },
-        {
-            "fetch_from": "name_of_the_fpo.fpo_name",
-            "fieldname": "name_of_the_fpo_copy",
-            "fieldtype": "Data",
-            "ignore_user_permissions": 1,
-            "label": "FPO"
-        },
-        {
-            "fieldname": "date_of_registration",
-            "fieldtype": "Date",
-            "label": "Date of Registration",
-            "reqd": 1
-        },
-        {
-            "fieldname": "section_break_zufi",
-            "fieldtype": "Section Break",
-            "label": "Staff Details"
-        },
-        {
-            "fieldname": "staff_details_table",
-            "fieldtype": "Table",
-            "options": "FPO Staff Child"
-        },
-        {
-            "default": "0",
-            "fieldname": "under_the_central_sector_scheme_10k_fpo_formation",
-            "fieldtype": "Check",
-            "label": "Under the Central Sector Scheme 10k FPO Formation  "
-        }
-    ],
-    "hide_toolbar": 1,
-    "index_web_pages_for_search": 1,
-    "links": [
-        {
-            "link_doctype": "FPO MFR 10K",
-            "link_fieldname": "fpo"
-        },
-        {
-            "link_doctype": "FPO Fixed Capital",
-            "link_fieldname": "fpo"
-        },
-        {
-            "link_doctype": "Business Plannings",
-            "link_fieldname": "fpo"
-        }
-    ],
-    "modified": "2024-08-09 10:29:56.336570",
-    "modified_by": "Administrator",
-    "module": "Profiling",
-    "name": "FPO Profiling",
-    "naming_rule": "Expression",
-    "owner": "Administrator",
-    "permissions": [
-        {
-            "create": 1,
-            "delete": 1,
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "System Manager",
-            "share": 1,
-            "write": 1
-        },
-        {
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "Admin",
-            "select": 1,
-            "share": 1,
-            "write": 1
-        },
-        {
-            "create": 1,
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "CBBO",
-            "select": 1,
-            "share": 1,
-            "write": 1
-        },
-        {
-            "create": 1,
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "FPO",
-            "select": 1,
-            "share": 1,
-            "write": 1
-        },
-        {
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "IA",
-            "select": 1,
-            "share": 1,
-            "write": 1
-        },
-        {
-            "create": 1,
-            "delete": 1,
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "Administrator",
-            "select": 1,
-            "share": 1,
-            "write": 1
-        }
-    ],
-    "show_title_field_in_link": 1,
-    "sort_field": "modified",
-    "sort_order": "DESC",
-    "states": [],
-    "title_field": "name_of_the_fpo_copy"
+ "actions": [],
+ "allow_copy": 1,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:FPO-P-{#####}",
+ "creation": "2024-05-09 11:20:29.637489",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_details_tab",
+  "section_break_lxef",
+  "state_name",
+  "district_name",
+  "block_name",
+  "name_of_the_fpo",
+  "name_of_the_fpo_copy",
+  "ia",
+  "fpos_address",
+  "fpos_pincode",
+  "cbbo",
+  "bod_kyc_name",
+  "column_break_zdzq",
+  "type_of_organization",
+  "date_of_incorporation",
+  "date_of_registration",
+  "registration_no",
+  "gst_status",
+  "gst_no",
+  "gst_received_upload",
+  "fpo_email_id",
+  "contact_detail_of_fpo",
+  "under_the_central_sector_scheme_10k_fpo_formation",
+  "supporting_aggencies_section",
+  "supporting_agencies_table",
+  "section_break_zufi",
+  "staff_details_table",
+  "licence_details_for_seeds_section",
+  "licence_number_for_seeds",
+  "date_of_expiry_for_seeds",
+  "column_break_nycb",
+  "license_doc_for_seed",
+  "licence_details_for_fertilizer_section",
+  "licence_number_for_fertilizer",
+  "date_of_expiry_for_fertilizer",
+  "column_break_lxxh",
+  "license_doc_for_fertilizer",
+  "licence_details_for_pesticide_section",
+  "licence_number_for_pesticide",
+  "date_of_expiry_for_pesticide",
+  "column_break_njfx",
+  "license_doc_for_pesticide",
+  "section_break_cnwm",
+  "column_break_ayxt",
+  "licence_number_for_fssai",
+  "date_of_expiry_for_fssai",
+  "column_break_xbmr",
+  "license_doc_for_fssai",
+  "licence_details_for_seed_production_section",
+  "licence_number_for_seed_production",
+  "date_of_expiry__for_seed_production",
+  "column_break_zhah",
+  "licence_doc_for_seed_production",
+  "logo_details_section",
+  "do_you_have_logo",
+  "column_break_zkma",
+  "fpo_logo",
+  "column_break_siay",
+  "supporting_document"
+ ],
+ "fields": [
+  {
+   "fieldname": "state_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "State Name",
+   "options": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "district_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "District Name",
+   "options": "District",
+   "reqd": 1
+  },
+  {
+   "fieldname": "block_name",
+   "fieldtype": "Table MultiSelect",
+   "label": "Block Name",
+   "options": "Block Child",
+   "reqd": 1
+  },
+  {
+   "fieldname": "name_of_the_fpo",
+   "fieldtype": "Link",
+   "label": "FPO",
+   "options": "FPO",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "fpos_address",
+   "fieldtype": "Data",
+   "label": "FPO's Address"
+  },
+  {
+   "fieldname": "fpos_pincode",
+   "fieldtype": "Data",
+   "label": "FPO's pincode",
+   "length": 6
+  },
+  {
+   "fieldname": "bod_kyc_name",
+   "fieldtype": "Table MultiSelect",
+   "label": "BOD KYC Name",
+   "options": "BOD KYC Child",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type_of_organization",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Type of Organization",
+   "options": "Type of Organization",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_incorporation",
+   "fieldtype": "Date",
+   "label": "Date of incorporation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "registration_no",
+   "fieldtype": "Data",
+   "label": "Registration No.",
+   "length": 25,
+   "reqd": 1
+  },
+  {
+   "fieldname": "gst_status",
+   "fieldtype": "Autocomplete",
+   "label": "GST Status",
+   "options": "Applied but not receive\nNot applied\nReceived",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.gst_status == \"Received\"",
+   "fieldname": "gst_no",
+   "fieldtype": "Data",
+   "label": "GST No.",
+   "length": 25,
+   "mandatory_depends_on": "eval:doc.gst_status == \"Received\""
+  },
+  {
+   "depends_on": "eval:doc.gst_status == \"Received\"",
+   "fieldname": "gst_received_upload",
+   "fieldtype": "Attach",
+   "label": "GST Received Upload",
+   "mandatory_depends_on": "eval:doc.gst_status == \"Received\""
+  },
+  {
+   "fieldname": "fpo_email_id",
+   "fieldtype": "Data",
+   "label": "FPO Email Id",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_detail_of_fpo",
+   "fieldtype": "Data",
+   "label": "Contact Detail of FPO",
+   "length": 10,
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "licence_number_for_seeds",
+   "fieldtype": "Data",
+   "label": "Licence number",
+   "length": 25
+  },
+  {
+   "fieldname": "date_of_expiry_for_seeds",
+   "fieldtype": "Date",
+   "label": "Date of expiry"
+  },
+  {
+   "fieldname": "licence_number_for_fertilizer",
+   "fieldtype": "Data",
+   "label": "Licence Number",
+   "length": 25,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "date_of_expiry_for_fertilizer",
+   "fieldtype": "Date",
+   "label": "Date of expiry"
+  },
+  {
+   "fieldname": "licence_number_for_pesticide",
+   "fieldtype": "Data",
+   "label": "Licence number",
+   "length": 25,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "date_of_expiry_for_pesticide",
+   "fieldtype": "Date",
+   "label": "Date of expiry"
+  },
+  {
+   "fieldname": "licence_number_for_fssai",
+   "fieldtype": "Data",
+   "label": "Licence Number",
+   "length": 25
+  },
+  {
+   "fieldname": "date_of_expiry_for_fssai",
+   "fieldtype": "Date",
+   "label": "Date of expiry"
+  },
+  {
+   "default": "No",
+   "fieldname": "do_you_have_logo",
+   "fieldtype": "Select",
+   "label": "Do You Have Logo?",
+   "options": "Yes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.do_you_have_logo == \"Yes\"",
+   "fieldname": "fpo_logo",
+   "fieldtype": "Attach Image",
+   "label": "FPO Logo",
+   "mandatory_depends_on": "eval:doc.do_you_have_logo == \"Yes\""
+  },
+  {
+   "fieldname": "basic_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "column_break_ayxt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_lxef",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_zdzq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_cnwm",
+   "fieldtype": "Section Break",
+   "label": "Licence Details for fssai"
+  },
+  {
+   "fieldname": "licence_details_for_seeds_section",
+   "fieldtype": "Section Break",
+   "label": "Licence Details for Seeds"
+  },
+  {
+   "fieldname": "column_break_nycb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "license_doc_for_seed",
+   "fieldtype": "Attach",
+   "label": "License Doc"
+  },
+  {
+   "fieldname": "licence_details_for_fertilizer_section",
+   "fieldtype": "Section Break",
+   "label": "Licence Details for Fertilizer"
+  },
+  {
+   "fieldname": "column_break_lxxh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "license_doc_for_fertilizer",
+   "fieldtype": "Attach",
+   "label": "License Doc"
+  },
+  {
+   "fieldname": "licence_details_for_pesticide_section",
+   "fieldtype": "Section Break",
+   "label": "Licence Details for Pesticide"
+  },
+  {
+   "fieldname": "column_break_njfx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "license_doc_for_pesticide",
+   "fieldtype": "Attach",
+   "label": "License Doc"
+  },
+  {
+   "fieldname": "column_break_xbmr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "license_doc_for_fssai",
+   "fieldtype": "Attach",
+   "label": "License Doc"
+  },
+  {
+   "fieldname": "licence_details_for_seed_production_section",
+   "fieldtype": "Section Break",
+   "label": "Licence Details for Seed Production"
+  },
+  {
+   "fieldname": "licence_number_for_seed_production",
+   "fieldtype": "Data",
+   "label": "Licence number",
+   "length": 25
+  },
+  {
+   "fieldname": "date_of_expiry__for_seed_production",
+   "fieldtype": "Date",
+   "label": "Date of expiry"
+  },
+  {
+   "fieldname": "column_break_zhah",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "licence_doc_for_seed_production",
+   "fieldtype": "Attach",
+   "label": "Licence Doc"
+  },
+  {
+   "fieldname": "logo_details_section",
+   "fieldtype": "Section Break",
+   "label": "Logo Details"
+  },
+  {
+   "fieldname": "column_break_zkma",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supporting_aggencies_section",
+   "fieldtype": "Section Break",
+   "label": "Supporting Agencies"
+  },
+  {
+   "fieldname": "supporting_agencies_table",
+   "fieldtype": "Table",
+   "options": "Supporting Agencies Child"
+  },
+  {
+   "depends_on": "eval:doc.do_you_have_logo == \"Yes\"",
+   "fieldname": "supporting_document",
+   "fieldtype": "Attach",
+   "label": "Supporting Document",
+   "mandatory_depends_on": "eval:doc.do_you_have_logo == \"Yes\""
+  },
+  {
+   "fieldname": "column_break_siay",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "cbbo.ia_name",
+   "fieldname": "ia",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "IA",
+   "options": "IA"
+  },
+  {
+   "fetch_from": "name_of_the_fpo.cbbo_name",
+   "fieldname": "cbbo",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Name of CBBO",
+   "options": "CBBO",
+   "read_only": 1,
+   "read_only_depends_on": "eval:(doc.name_of_the_fpo && doc.name_of_the_fpo.length > 0) ",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "name_of_the_fpo.fpo_name",
+   "fieldname": "name_of_the_fpo_copy",
+   "fieldtype": "Data",
+   "ignore_user_permissions": 1,
+   "label": "FPO"
+  },
+  {
+   "fieldname": "date_of_registration",
+   "fieldtype": "Date",
+   "label": "Date of Registration",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_zufi",
+   "fieldtype": "Section Break",
+   "label": "Staff Details"
+  },
+  {
+   "fieldname": "staff_details_table",
+   "fieldtype": "Table",
+   "options": "FPO Staff Child"
+  },
+  {
+   "default": "0",
+   "fieldname": "under_the_central_sector_scheme_10k_fpo_formation",
+   "fieldtype": "Check",
+   "label": "Under the Central Sector Scheme 10k FPO Formation  "
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "FPO MFR 10K",
+   "link_fieldname": "fpo"
+  },
+  {
+   "link_doctype": "FPO Fixed Capital",
+   "link_fieldname": "fpo"
+  },
+  {
+   "link_doctype": "Business Plannings",
+   "link_fieldname": "fpo"
+  }
+ ],
+ "modified": "2024-08-09 12:55:35.427729",
+ "modified_by": "Administrator",
+ "module": "Profiling",
+ "name": "FPO Profiling",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CBBO",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "FPO",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IA",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "name_of_the_fpo_copy"
 }
