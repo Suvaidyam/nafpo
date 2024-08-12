@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:V-{######}",
  "creation": "2024-05-09 07:44:03.140601",
  "doctype": "DocType",
@@ -72,7 +71,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-06 14:09:34.080374",
+ "modified": "2024-08-11 13:26:34.496556",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Village",

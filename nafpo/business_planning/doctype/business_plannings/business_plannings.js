@@ -160,8 +160,25 @@ async function calculate_total_outflow(frm) {
     )
 }
 
+// =============================== "Business Plannings" ===============================
+
 frappe.ui.form.on("Business Plannings", {
     async refresh(frm) {
+        // let frappe_control = document.getElementsByClassName('frappe-control form-group')
+        // let form_grid = document.getElementsByClassName('form-grid')
+        // let form_popup = document.getElementsByClassName('grid-form-body')
+        // for (let el of frappe_control) {
+        //     el.style.setProperty('overflow-x', 'auto', 'important')
+        //     // grid-form-body
+        // }
+        // for (let el of form_grid) {
+        //     el.style.setProperty('width', '3000px', 'important');
+        //     el.style.setProperty('overflow-x', 'auto', 'important')
+        // }
+        // for (let el of form_popup) {
+        //     el.style.setProperty('width', '10px', 'important');
+        //     el.style.setProperty('color', 'red', 'important')
+        // }
         hide_print_button(frm)
         if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
             try {

@@ -2,31 +2,53 @@
 // For license information, please see license.txt
 const submitted_on_fields = ['aoc_4_submitted_on', 'mgt_7_submitted_on', 'adt_1_submitted_on', 'd_kyc_submitted_on', 'it_return_submitted_on', 'agm_submitted_on'];
 
-function set_due_date(frm) {
-    frappe.call({
-        method: "nafpo.apis.api.get_fpo_profile_doc",
+async function set_due_date(frm) {
+    let get_fpo_profiling = await callAPI({
+        method: "nafpo.apis.api.get_list_event",
         args: {
             doctype_name: 'FPO Profiling',
-            filter: frm.doc.fpo
+            filter: { name_of_the_fpo: frm.doc.fpo },
+            fields: ['name_of_the_fpo', 'date_of_incorporation', 'date_of_registration']
         },
-        callback: function (response) {
-            if (response.message == undefined) {
-                frappe.throw({ message: "FPO Profile doesn't exist. Please create FPO Profiling." })
-            }
-            let date = new Date(response.message.date_of_registration);
-            date.setFullYear(date.getFullYear() + 1);
-            let formattedDate = date.toISOString().split('T')[0];
-            frm.set_value('aoc_4_due_date', formattedDate);
-            frm.set_value('mgt_7_due_date', formattedDate);
-            frm.set_value('adt_1_due_date', formattedDate);
-            frm.set_value('d_kyc_due_date', formattedDate);
-            frm.set_value('it_return_due_date', formattedDate);
-            frm.set_value('agm_due_date', formattedDate);
-        },
-        error: function (error) {
-            console.log("An error occurred: ", error);
-        }
+        freeze: true,
+        freeze_message: __("Getting"),
+    }).then(response => {
+        // if (response.message == undefined) {
+        //     frappe.throw({ message: "FPO Profile doesn't exist. Please create FPO Profiling." })
+        // }
+        return response
     });
+    let financial_year_date = await callAPI({
+        method: 'nafpo.apis.api.get_list_event',
+        args: {
+            doctype_name: 'Financial Year',
+            filter: { name: frm.doc.financial_year },
+            fields: ['financial_year_name', 'start_date', 'end_date']
+        },
+        freeze: true,
+        freeze_message: __("Getting"),
+    }).then(response => {
+        return response
+    });
+    // console.log('get_fpo_profiling :>> ', get_fpo_profiling[0].date_of_incorporation);
+    console.log('financial_year_date :>> ', financial_year_date[0].end_date);
+    console.log('financial_year_date :>> ', financial_year_date[0].financial_year_name.split('-')[1]);
+    console.log('financial_year_date :>> ', parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10) + 1);
+
+    const [day1, month1] = '01-01'.split('-').map(Number);
+    const [day2, month2] = '31-03'.split('-').map(Number);
+    const [day, month] = `${get_fpo_profiling[0].date_of_incorporation.split('-')[2]}-${get_fpo_profiling[0].date_of_incorporation.split('-')[1]}`.split('-').map(Number);
+
+    if ((month > month1 || (month === month1 && day >= day1)) &&
+        (month < month2 || (month === month2 && day <= day2))) {
+        frm.set_value('adt_report_due_date', financial_year_date[0].end_date)
+
+    } else {
+        console.log('OUT')
+        let [day, month, year] = `31-03-20${parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10) + 1}`.split('-');
+        let adt_report_due_date = `${year}-${month}-${day}`;
+        frm.set_value('adt_report_due_date', adt_report_due_date)
+    }
 }
 async function check_ACF(frm) {
     callAPI({
@@ -39,10 +61,10 @@ async function check_ACF(frm) {
             freeze_message: __("Getting"),
         },
     }).then(response => {
-        console.log('response[0] :>> ', response[0].name);
-        console.log('frm.doc.name :>> ', frm.doc.name);
+        // console.log('response[0] :>> ', response[0].name);
+        // console.log('frm.doc.name :>> ', frm.doc.name);
         if (response[0] && response[0].name !== frm.doc.name) {
-            return frappe.throw({ message: `This FPO is already exist with the Financial Year ${response[0].financial_year}` })
+            return frappe.throw({ message: `This FPO is already exist with the Financial Year ${response[0].financial_year} ` })
         }
     });
 }
@@ -89,13 +111,16 @@ frappe.ui.form.on("Annual Compliance Forms", {
     },
     async fpo(frm) {
         if (frm.doc.fpo) {
-            set_due_date(frm)
             if (frm.doc.financial_year) {
+                await set_due_date(frm)
                 await check_ACF(frm)
             }
         }
     },
     async financial_year(frm) {
+        if (frm.doc.financial_year && frm.doc.fpo) {
+            await set_due_date(frm)
+        }
         if (frm.doc.fpo) {
             await check_ACF(frm)
         }

@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:C-{####}",
  "creation": "2024-05-10 11:14:55.721742",
  "doctype": "DocType",
@@ -146,7 +145,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-27 10:38:00.966023",
+ "modified": "2024-08-11 13:18:31.194280",
  "modified_by": "Administrator",
  "module": "Crop",
  "name": "Crop Name",

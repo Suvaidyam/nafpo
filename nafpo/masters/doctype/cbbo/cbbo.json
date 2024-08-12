@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:CBBO-{##}",
  "creation": "2024-05-09 07:56:18.796963",
  "doctype": "DocType",
@@ -31,7 +30,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-05 11:46:12.027653",
+ "modified": "2024-08-11 13:27:32.534825",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "CBBO",

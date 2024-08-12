@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:S-{##}",
  "creation": "2024-05-09 07:39:03.905658",
  "doctype": "DocType",
@@ -38,7 +37,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-05 11:41:23.567568",
+ "modified": "2024-08-11 13:26:59.994450",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "State",

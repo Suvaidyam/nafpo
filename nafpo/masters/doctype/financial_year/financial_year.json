@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "field:financial_year_name",
  "creation": "2024-05-09 07:53:22.776337",
  "doctype": "DocType",
@@ -37,7 +36,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-17 15:12:13.753966",
+ "modified": "2024-08-11 13:27:22.580499",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Financial Year",

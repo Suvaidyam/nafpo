@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:ACF-{###}",
  "creation": "2024-06-13 12:55:11.049287",
  "doctype": "DocType",
@@ -13,6 +12,29 @@
   "ia",
   "column_break_pvex",
   "financial_year",
+  "audit_report_section",
+  "adt_report_due_date",
+  "adt_report_status",
+  "adt_report_submitted_on",
+  "column_break_hmsk",
+  "audit_report",
+  "form_adt_1_section",
+  "adt_1_due_date",
+  "adt_1_status",
+  "adt_1_submitted_on",
+  "column_break_gxxm",
+  "adt_1_fpo_resolution",
+  "agm_section",
+  "agm_due_date",
+  "agm_status",
+  "column_break_tlyn",
+  "agm_submitted_on",
+  "it_return_section",
+  "it_return_due_date",
+  "it_return_status",
+  "it_return_submitted_on",
+  "column_break_uqwf",
+  "it_return",
   "section_break_fjls",
   "aoc_4_due_date",
   "aoc_4_status",
@@ -26,12 +48,6 @@
   "column_break_qjtx",
   "mgt_7_director_list",
   "mgt_7_shareholder_list",
-  "form_adt_1_section",
-  "adt_1_due_date",
-  "adt_1_status",
-  "adt_1_submitted_on",
-  "column_break_gxxm",
-  "adt_1_fpo_resolution",
   "director_kyc_section",
   "d_kyc_due_date",
   "d_kyc_status",
@@ -39,18 +55,7 @@
   "column_break_fnzg",
   "d_kyc_pan_card_verification",
   "d_kyc_otp",
-  "d_kyc_bod_aadhar",
-  "it_return_section",
-  "it_return_due_date",
-  "it_return_status",
-  "it_return_submitted_on",
-  "column_break_uqwf",
-  "it_return",
-  "agm_section",
-  "agm_due_date",
-  "agm_status",
-  "column_break_tlyn",
-  "agm_submitted_on"
+  "d_kyc_bod_aadhar"
  ],
  "fields": [
   {
@@ -173,7 +178,6 @@
    "read_only": 1
   },
   {
-   "default": "0",
    "depends_on": "eval:doc.adt_1_status == \"Completed\"",
    "fieldname": "adt_1_fpo_resolution",
    "fieldtype": "Attach",
@@ -334,12 +338,49 @@
    "hidden": 1,
    "label": "IA",
    "options": "IA"
+  },
+  {
+   "fieldname": "audit_report_section",
+   "fieldtype": "Section Break",
+   "label": "Audit report"
+  },
+  {
+   "fieldname": "adt_report_due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "read_only": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "adt_report_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": " Audit Report Status",
+   "options": "Pending\nCompleted",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.adt_report_status == \"Completed\"",
+   "fieldname": "adt_report_submitted_on",
+   "fieldtype": "Date",
+   "label": "Audit Report  Submitted On",
+   "mandatory_depends_on": "eval:doc.adt_report_status == \"Completed\""
+  },
+  {
+   "fieldname": "column_break_hmsk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.adt_report_status == \"Completed\"",
+   "fieldname": "audit_report",
+   "fieldtype": "Attach",
+   "label": "Audit Report "
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-06 15:14:33.111344",
+ "modified": "2024-08-12 19:00:34.254312",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Annual Compliance Forms",

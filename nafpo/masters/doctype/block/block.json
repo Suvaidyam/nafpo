@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:B-{#####}",
  "creation": "2024-05-09 07:40:59.701107",
  "doctype": "DocType",
@@ -54,7 +53,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-06 11:28:28.373648",
+ "modified": "2024-08-11 13:26:47.049285",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Block",
