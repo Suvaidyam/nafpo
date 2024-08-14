@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:G-{######}",
  "creation": "2024-05-09 07:42:25.466358",
  "doctype": "DocType",
@@ -63,7 +62,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-06 13:03:36.933730",
+ "modified": "2024-08-11 13:26:40.910047",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Grampanchayat",

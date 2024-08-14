@@ -20,7 +20,7 @@ def get_value_event(doctype_name,value):
     return frappe.db.get_value(doctype_name,value,'*')
 
 @frappe.whitelist(allow_guest=True)
-def get_list_event(doctype_name,filter,fields):
+def get_list_event(doctype_name,filter = None,fields = "*"):
     return frappe.get_list(doctype_name, filters=filter, fields=fields)
 
 @frappe.whitelist(allow_guest=True)

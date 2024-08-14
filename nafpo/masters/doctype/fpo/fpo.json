@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:FPO-{#####}",
  "creation": "2024-05-09 07:58:33.629244",
  "doctype": "DocType",
@@ -92,7 +91,7 @@
    "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-07-16 15:26:11.956662",
+ "modified": "2024-08-11 13:26:22.750482",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "FPO",

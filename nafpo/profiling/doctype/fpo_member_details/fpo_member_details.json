@@ -1,505 +1,504 @@
 {
- "actions": [],
- "allow_import": 1,
- "allow_rename": 1,
- "autoname": "format:FMD-{#######}",
- "creation": "2024-05-10 10:25:32.806796",
- "doctype": "DocType",
- "engine": "InnoDB",
- "field_order": [
-  "details_tab",
-  "state_name",
-  "district_name",
-  "block_name",
-  "fpo",
-  "cbbo",
-  "column_break_nsyz",
-  "ia",
-  "grampanchayat_name",
-  "village_name",
-  "producer_group",
-  "section_break_cvsh",
-  "member_name",
-  "father__husbands_name",
-  "gender",
-  "age",
-  "category",
-  "tribe",
-  "member_of_shg",
-  "name_of_the_shg",
-  "column_break_qvkr",
-  "bpl_status",
-  "have_you_received_aadhar_card_consent",
-  "aadhar_number",
-  "consent_image",
-  "register_aadhar_mobile_number",
-  "bank_ac_number",
-  "ifsc_code",
-  "number_of_family_member",
-  "member_of_any_other_cooperative_agriculture_societies",
-  "total_income_annually_section",
-  "agriculture",
-  "livestock",
-  "labour",
-  "ntfp",
-  "column_break_lodv",
-  "micro_enterprise",
-  "other_income",
-  "total_income",
-  "availability_of_land_area_in_acre_section",
-  "total_own_land",
-  "total_owned_in_hectare",
-  "total_own_irrigated_land",
-  "total_own_irrigated_land_in_hectare",
-  "column_break_pels",
-  "do_you_have_any_leased_land_area_in_acre",
-  "how_much_irrigated_leased_land_area_in_acre",
-  "how_much_irrigated_leased_land_in_hectare",
-  "section_break_tjir",
-  "column_break_kejv",
-  "year_of_share_issued",
-  "no_of_share_alloted",
-  "distinctive_number_of_share",
-  "column_break_jyrt",
-  "folio_no",
-  "would_you_like_to_get_ivrs_or_other_alerts",
-  "mobile_number"
- ],
- "fields": [
-  {
-   "fieldname": "state_name",
-   "fieldtype": "Link",
-   "label": "State Name",
-   "options": "State",
-   "reqd": 1
-  },
-  {
-   "fieldname": "details_tab",
-   "fieldtype": "Tab Break",
-   "label": "Details"
-  },
-  {
-   "fieldname": "fpo",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "FPO",
-   "options": "FPO",
-   "reqd": 1
-  },
-  {
-   "fieldname": "district_name",
-   "fieldtype": "Link",
-   "label": "District Name",
-   "options": "District",
-   "reqd": 1
-  },
-  {
-   "fieldname": "block_name",
-   "fieldtype": "Link",
-   "label": "Block Name",
-   "options": "Block",
-   "reqd": 1
-  },
-  {
-   "fieldname": "grampanchayat_name",
-   "fieldtype": "Link",
-   "label": "Grampanchayat Name",
-   "options": "Grampanchayat"
-  },
-  {
-   "fieldname": "village_name",
-   "fieldtype": "Link",
-   "label": "Village Name",
-   "options": "Village"
-  },
-  {
-   "fieldname": "producer_group",
-   "fieldtype": "Link",
-   "label": "Producer Group",
-   "options": "Producer Groups"
-  },
-  {
-   "fieldname": "member_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Member Name",
-   "reqd": 1
-  },
-  {
-   "fieldname": "father__husbands_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Father / Husband's Name",
-   "reqd": 1
-  },
-  {
-   "fieldname": "gender",
-   "fieldtype": "Autocomplete",
-   "label": "Gender",
-   "options": "Male\nFemale\nTransgender\nNot willing to disclose",
-   "reqd": 1
-  },
-  {
-   "fieldname": "age",
-   "fieldtype": "Int",
-   "label": "Age",
-   "non_negative": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "category",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Category",
-   "options": "Category",
-   "reqd": 1
-  },
-  {
-   "fieldname": "tribe",
-   "fieldtype": "Small Text",
-   "label": "Tribe"
-  },
-  {
-   "fieldname": "member_of_shg",
-   "fieldtype": "Autocomplete",
-   "label": "Member of SHG",
-   "options": "Yes\nNo",
-   "reqd": 1
-  },
-  {
-   "depends_on": "eval:doc.member_of_shg == \"Yes\"",
-   "fieldname": "name_of_the_shg",
-   "fieldtype": "Data",
-   "label": "Name of the SHG",
-   "mandatory_depends_on": "eval:doc.member_of_shg == \"Yes\""
-  },
-  {
-   "fieldname": "bpl_status",
-   "fieldtype": "Autocomplete",
-   "label": "BPL Status",
-   "options": "Yes\nNo",
-   "reqd": 1
-  },
-  {
-   "fieldname": "have_you_received_aadhar_card_consent",
-   "fieldtype": "Autocomplete",
-   "label": "Have You Received Aadhar Card Consent",
-   "options": "Yes\nNo",
-   "reqd": 1
-  },
-  {
-   "depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
-   "fieldname": "aadhar_number",
-   "fieldtype": "Data",
-   "label": "Aadhar Number",
-   "length": 12,
-   "mandatory_depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
-   "non_negative": 1
-  },
-  {
-   "depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
-   "fieldname": "consent_image",
-   "fieldtype": "Attach Image",
-   "label": "Consent Image",
-   "mandatory_depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\""
-  },
-  {
-   "depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
-   "fieldname": "register_aadhar_mobile_number",
-   "fieldtype": "Data",
-   "label": "Register Aadhar Mobile Number",
-   "length": 10,
-   "non_negative": 1
-  },
-  {
-   "fieldname": "bank_ac_number",
-   "fieldtype": "Data",
-   "label": "Bank Ac Number",
-   "length": 16,
-   "non_negative": 1
-  },
-  {
-   "fieldname": "ifsc_code",
-   "fieldtype": "Data",
-   "label": "IFSC Code"
-  },
-  {
-   "fieldname": "number_of_family_member",
-   "fieldtype": "Int",
-   "label": "Number Of Family Member",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "agriculture",
-   "fieldtype": "Currency",
-   "label": "Agriculture",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "livestock",
-   "fieldtype": "Currency",
-   "label": "Livestock",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "labour",
-   "fieldtype": "Currency",
-   "label": "Labour",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "ntfp",
-   "fieldtype": "Currency",
-   "label": "Non-Timber Forest Products (NTFP)",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "micro_enterprise",
-   "fieldtype": "Currency",
-   "label": "Micro Enterprise",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "other_income",
-   "fieldtype": "Currency",
-   "label": "Other income",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "total_income",
-   "fieldtype": "Currency",
-   "label": "Total Income",
-   "non_negative": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "total_own_land",
-   "fieldtype": "Int",
-   "label": "Total own land",
-   "non_negative": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "total_own_irrigated_land",
-   "fieldtype": "Int",
-   "label": "Total own irrigated land",
-   "non_negative": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "member_of_any_other_cooperative_agriculture_societies",
-   "fieldtype": "Autocomplete",
-   "label": "Member of any other cooperative agriculture societies",
-   "options": "Yes\nNo"
-  },
-  {
-   "fieldname": "do_you_have_any_leased_land_area_in_acre",
-   "fieldtype": "Autocomplete",
-   "label": "Do you have any leased land? (Area in Acre)",
-   "options": "Yes\nNo"
-  },
-  {
-   "default": "0",
-   "depends_on": "eval:doc.do_you_have_any_leased_land_area_in_acre == \"Yes\"",
-   "fieldname": "how_much_irrigated_leased_land_area_in_acre",
-   "fieldtype": "Int",
-   "label": "How Much Irrigated Leased Land( Area In acre)?",
-   "mandatory_depends_on": "eval:doc.do_you_have_any_leased_land_area_in_acre == \"Yes\"",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "year_of_share_issued",
-   "fieldtype": "Autocomplete",
-   "label": "Year of Share issued",
-   "options": "2020\n2021\n2022\n2023\n2024\n2025\n2026\n2027\n2028\n2029\n2030"
-  },
-  {
-   "fieldname": "no_of_share_alloted",
-   "fieldtype": "Int",
-   "label": "No. of Share Alloted",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "distinctive_number_of_share",
-   "fieldtype": "Data",
-   "label": "Distinctive number of share",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "folio_no",
-   "fieldtype": "Data",
-   "label": "Folio No.",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "would_you_like_to_get_ivrs_or_other_alerts",
-   "fieldtype": "Autocomplete",
-   "label": "Would you like to get IVRS or other alerts?",
-   "options": "Yes\nNo"
-  },
-  {
-   "fieldname": "mobile_number",
-   "fieldtype": "Data",
-   "label": "Mobile Number",
-   "length": 10,
-   "non_negative": 1
-  },
-  {
-   "fieldname": "column_break_kejv",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_tjir",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "total_income_annually_section",
-   "fieldtype": "Section Break",
-   "label": "Annual Income (in Rs.)"
-  },
-  {
-   "fieldname": "column_break_lodv",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "availability_of_land_area_in_acre_section",
-   "fieldtype": "Section Break",
-   "label": "Availability of land (Area in Acre)"
-  },
-  {
-   "fieldname": "column_break_pels",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_jyrt",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fetch_from": "fpo.cbbo_name",
-   "fieldname": "cbbo",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "CBBO",
-   "options": "CBBO"
-  },
-  {
-   "fetch_from": "cbbo.ia_name",
-   "fieldname": "ia",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "IA",
-   "options": "IA"
-  },
-  {
-   "fieldname": "column_break_nsyz",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_cvsh",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_qvkr",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "0",
-   "fieldname": "total_owned_in_hectare",
-   "fieldtype": "Float",
-   "label": "Total Owned in Hectare",
-   "non_negative": 1,
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "total_own_irrigated_land_in_hectare",
-   "fieldtype": "Float",
-   "label": "Total own irrigated land in Hectare",
-   "non_negative": 1,
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "depends_on": "eval:doc.do_you_have_any_leased_land_area_in_acre == \"Yes\"",
-   "fieldname": "how_much_irrigated_leased_land_in_hectare",
-   "fieldtype": "Float",
-   "label": "How Much Irrigated Leased Land in Hectare",
-   "non_negative": 1,
-   "read_only": 1
-  }
- ],
- "hide_toolbar": 1,
- "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-08-09 15:35:18.701243",
- "modified_by": "Administrator",
- "module": "Profiling",
- "name": "FPO member details",
- "naming_rule": "Expression",
- "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Admin",
-   "select": 1,
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "CBBO",
-   "select": 1,
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "FPO",
-   "select": 1,
-   "share": 1,
-   "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "IA",
-   "select": 1,
-   "share": 1,
-   "write": 1
-  }
- ],
- "show_title_field_in_link": 1,
- "sort_field": "creation",
- "sort_order": "DESC",
- "states": [],
- "title_field": "member_name"
+    "actions": [],
+    "allow_import": 1,
+    "autoname": "format:FMD-{#######}",
+    "creation": "2024-05-10 10:25:32.806796",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "details_tab",
+        "state_name",
+        "district_name",
+        "block_name",
+        "fpo",
+        "cbbo",
+        "column_break_nsyz",
+        "ia",
+        "grampanchayat_name",
+        "village_name",
+        "producer_group",
+        "section_break_cvsh",
+        "member_name",
+        "father__husbands_name",
+        "gender",
+        "age",
+        "category",
+        "tribe",
+        "member_of_shg",
+        "name_of_the_shg",
+        "column_break_qvkr",
+        "bpl_status",
+        "have_you_received_aadhar_card_consent",
+        "aadhar_number",
+        "consent_image",
+        "register_aadhar_mobile_number",
+        "bank_ac_number",
+        "ifsc_code",
+        "number_of_family_member",
+        "member_of_any_other_cooperative_agriculture_societies",
+        "total_income_annually_section",
+        "agriculture",
+        "livestock",
+        "labour",
+        "ntfp",
+        "column_break_lodv",
+        "micro_enterprise",
+        "other_income",
+        "total_income",
+        "availability_of_land_area_in_acre_section",
+        "total_own_land",
+        "total_owned_in_hectare",
+        "total_own_irrigated_land",
+        "total_own_irrigated_land_in_hectare",
+        "column_break_pels",
+        "do_you_have_any_leased_land_area_in_acre",
+        "how_much_irrigated_leased_land_area_in_acre",
+        "how_much_irrigated_leased_land_in_hectare",
+        "section_break_tjir",
+        "column_break_kejv",
+        "year_of_share_issued",
+        "no_of_share_alloted",
+        "distinctive_number_of_share",
+        "column_break_jyrt",
+        "folio_no",
+        "would_you_like_to_get_ivrs_or_other_alerts",
+        "mobile_number"
+    ],
+    "fields": [
+        {
+            "fieldname": "state_name",
+            "fieldtype": "Link",
+            "label": "State Name",
+            "options": "State",
+            "reqd": 1
+        },
+        {
+            "fieldname": "details_tab",
+            "fieldtype": "Tab Break",
+            "label": "Details"
+        },
+        {
+            "fieldname": "fpo",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "FPO",
+            "options": "FPO",
+            "reqd": 1
+        },
+        {
+            "fieldname": "district_name",
+            "fieldtype": "Link",
+            "label": "District Name",
+            "options": "District",
+            "reqd": 1
+        },
+        {
+            "fieldname": "block_name",
+            "fieldtype": "Link",
+            "label": "Block Name",
+            "options": "Block",
+            "reqd": 1
+        },
+        {
+            "fieldname": "grampanchayat_name",
+            "fieldtype": "Link",
+            "label": "Grampanchayat Name",
+            "options": "Grampanchayat"
+        },
+        {
+            "fieldname": "village_name",
+            "fieldtype": "Link",
+            "label": "Village Name",
+            "options": "Village"
+        },
+        {
+            "fieldname": "producer_group",
+            "fieldtype": "Link",
+            "label": "Producer Group",
+            "options": "Producer Groups"
+        },
+        {
+            "fieldname": "member_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Member Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "father__husbands_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Father / Husband's Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "gender",
+            "fieldtype": "Autocomplete",
+            "label": "Gender",
+            "options": "Male\nFemale\nTransgender\nNot willing to disclose",
+            "reqd": 1
+        },
+        {
+            "fieldname": "age",
+            "fieldtype": "Int",
+            "label": "Age",
+            "non_negative": 1,
+            "reqd": 1
+        },
+        {
+            "fieldname": "category",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Category",
+            "options": "Category",
+            "reqd": 1
+        },
+        {
+            "fieldname": "tribe",
+            "fieldtype": "Small Text",
+            "label": "Tribe"
+        },
+        {
+            "fieldname": "member_of_shg",
+            "fieldtype": "Autocomplete",
+            "label": "Member of SHG",
+            "options": "Yes\nNo",
+            "reqd": 1
+        },
+        {
+            "depends_on": "eval:doc.member_of_shg == \"Yes\"",
+            "fieldname": "name_of_the_shg",
+            "fieldtype": "Data",
+            "label": "Name of the SHG",
+            "mandatory_depends_on": "eval:doc.member_of_shg == \"Yes\""
+        },
+        {
+            "fieldname": "bpl_status",
+            "fieldtype": "Autocomplete",
+            "label": "BPL Status",
+            "options": "Yes\nNo",
+            "reqd": 1
+        },
+        {
+            "fieldname": "have_you_received_aadhar_card_consent",
+            "fieldtype": "Autocomplete",
+            "label": "Have You Received Aadhar Card Consent",
+            "options": "Yes\nNo",
+            "reqd": 1
+        },
+        {
+            "depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
+            "fieldname": "aadhar_number",
+            "fieldtype": "Data",
+            "label": "Aadhar Number",
+            "length": 12,
+            "mandatory_depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
+            "non_negative": 1
+        },
+        {
+            "depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
+            "fieldname": "consent_image",
+            "fieldtype": "Attach Image",
+            "label": "Consent Image",
+            "mandatory_depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\""
+        },
+        {
+            "depends_on": "eval:doc.have_you_received_aadhar_card_consent == \"Yes\"",
+            "fieldname": "register_aadhar_mobile_number",
+            "fieldtype": "Data",
+            "label": "Register Aadhar Mobile Number",
+            "length": 10,
+            "non_negative": 1
+        },
+        {
+            "fieldname": "bank_ac_number",
+            "fieldtype": "Data",
+            "label": "Bank Ac Number",
+            "length": 16,
+            "non_negative": 1
+        },
+        {
+            "fieldname": "ifsc_code",
+            "fieldtype": "Data",
+            "label": "IFSC Code"
+        },
+        {
+            "fieldname": "number_of_family_member",
+            "fieldtype": "Int",
+            "label": "Number Of Family Member",
+            "non_negative": 1
+        },
+        {
+            "fieldname": "agriculture",
+            "fieldtype": "Currency",
+            "label": "Agriculture",
+            "non_negative": 1
+        },
+        {
+            "fieldname": "livestock",
+            "fieldtype": "Currency",
+            "label": "Livestock",
+            "non_negative": 1
+        },
+        {
+            "fieldname": "labour",
+            "fieldtype": "Currency",
+            "label": "Labour",
+            "non_negative": 1
+        },
+        {
+            "fieldname": "ntfp",
+            "fieldtype": "Currency",
+            "label": "Non-Timber Forest Products (NTFP)",
+            "non_negative": 1
+        },
+        {
+            "fieldname": "micro_enterprise",
+            "fieldtype": "Currency",
+            "label": "Micro Enterprise",
+            "non_negative": 1
+        },
+        {
+            "fieldname": "other_income",
+            "fieldtype": "Currency",
+            "label": "Other income",
+            "non_negative": 1
+        },
+        {
+            "fieldname": "total_income",
+            "fieldtype": "Currency",
+            "label": "Total Income",
+            "non_negative": 1,
+            "read_only": 1
+        },
+        {
+            "fieldname": "total_own_land",
+            "fieldtype": "Int",
+            "label": "Total own land",
+            "non_negative": 1,
+            "reqd": 1
+        },
+        {
+            "fieldname": "total_own_irrigated_land",
+            "fieldtype": "Int",
+            "label": "Total own irrigated land",
+            "non_negative": 1,
+            "reqd": 1
+        },
+        {
+            "fieldname": "member_of_any_other_cooperative_agriculture_societies",
+            "fieldtype": "Autocomplete",
+            "label": "Member of any other cooperative agriculture societies",
+            "options": "Yes\nNo"
+        },
+        {
+            "fieldname": "do_you_have_any_leased_land_area_in_acre",
+            "fieldtype": "Autocomplete",
+            "label": "Do you have any leased land? (Area in Acre)",
+            "options": "Yes\nNo"
+        },
+        {
+            "default": "0",
+            "depends_on": "eval:doc.do_you_have_any_leased_land_area_in_acre == \"Yes\"",
+            "fieldname": "how_much_irrigated_leased_land_area_in_acre",
+            "fieldtype": "Int",
+            "label": "How Much Irrigated Leased Land( Area In acre)?",
+            "mandatory_depends_on": "eval:doc.do_you_have_any_leased_land_area_in_acre == \"Yes\"",
+            "non_negative": 1
+        },
+        {
+            "fieldname": "year_of_share_issued",
+            "fieldtype": "Autocomplete",
+            "label": "Year of Share issued",
+            "options": "2020\n2021\n2022\n2023\n2024\n2025\n2026\n2027\n2028\n2029\n2030"
+        },
+        {
+            "fieldname": "no_of_share_alloted",
+            "fieldtype": "Int",
+            "label": "No. of Share Alloted",
+            "non_negative": 1
+        },
+        {
+            "fieldname": "distinctive_number_of_share",
+            "fieldtype": "Data",
+            "label": "Distinctive number of share",
+            "non_negative": 1
+        },
+        {
+            "fieldname": "folio_no",
+            "fieldtype": "Data",
+            "label": "Folio No.",
+            "non_negative": 1
+        },
+        {
+            "fieldname": "would_you_like_to_get_ivrs_or_other_alerts",
+            "fieldtype": "Autocomplete",
+            "label": "Would you like to get IVRS or other alerts?",
+            "options": "Yes\nNo"
+        },
+        {
+            "fieldname": "mobile_number",
+            "fieldtype": "Data",
+            "label": "Mobile Number",
+            "length": 10,
+            "non_negative": 1
+        },
+        {
+            "fieldname": "column_break_kejv",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "section_break_tjir",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "total_income_annually_section",
+            "fieldtype": "Section Break",
+            "label": "Annual Income (in Rs.)"
+        },
+        {
+            "fieldname": "column_break_lodv",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "availability_of_land_area_in_acre_section",
+            "fieldtype": "Section Break",
+            "label": "Availability of land (Area in Acre)"
+        },
+        {
+            "fieldname": "column_break_pels",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "column_break_jyrt",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fetch_from": "fpo.cbbo_name",
+            "fieldname": "cbbo",
+            "fieldtype": "Link",
+            "hidden": 1,
+            "label": "CBBO",
+            "options": "CBBO"
+        },
+        {
+            "fetch_from": "cbbo.ia_name",
+            "fieldname": "ia",
+            "fieldtype": "Link",
+            "hidden": 1,
+            "label": "IA",
+            "options": "IA"
+        },
+        {
+            "fieldname": "column_break_nsyz",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "section_break_cvsh",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "column_break_qvkr",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "0",
+            "fieldname": "total_owned_in_hectare",
+            "fieldtype": "Float",
+            "label": "Total Owned in Hectare",
+            "non_negative": 1,
+            "read_only": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "total_own_irrigated_land_in_hectare",
+            "fieldtype": "Float",
+            "label": "Total own irrigated land in Hectare",
+            "non_negative": 1,
+            "read_only": 1
+        },
+        {
+            "default": "0",
+            "depends_on": "eval:doc.do_you_have_any_leased_land_area_in_acre == \"Yes\"",
+            "fieldname": "how_much_irrigated_leased_land_in_hectare",
+            "fieldtype": "Float",
+            "label": "How Much Irrigated Leased Land in Hectare",
+            "non_negative": 1,
+            "read_only": 1
+        }
+    ],
+    "hide_toolbar": 1,
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-08-09 15:35:18.701243",
+    "modified_by": "Administrator",
+    "module": "Profiling",
+    "name": "FPO member details",
+    "naming_rule": "Expression",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Admin",
+            "select": 1,
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "CBBO",
+            "select": 1,
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "FPO",
+            "select": 1,
+            "share": 1,
+            "write": 1
+        },
+        {
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "IA",
+            "select": 1,
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "show_title_field_in_link": 1,
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": [],
+    "title_field": "member_name"
 }

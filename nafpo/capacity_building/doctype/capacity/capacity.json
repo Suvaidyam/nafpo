@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:CB-{#####}",
  "creation": "2024-06-09 12:20:53.446650",
  "doctype": "DocType",
@@ -150,7 +149,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-19 14:37:35.797402",
+ "modified": "2024-08-11 13:18:53.599739",
  "modified_by": "Administrator",
  "module": "Capacity Building",
  "name": "Capacity",

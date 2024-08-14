@@ -2,31 +2,98 @@
 // For license information, please see license.txt
 const submitted_on_fields = ['aoc_4_submitted_on', 'mgt_7_submitted_on', 'adt_1_submitted_on', 'd_kyc_submitted_on', 'it_return_submitted_on', 'agm_submitted_on'];
 
-function set_due_date(frm) {
-    frappe.call({
-        method: "nafpo.apis.api.get_fpo_profile_doc",
+async function set_due_date(frm) {
+    let get_fpo_profiling = await callAPI({
+        method: "nafpo.apis.api.get_list_event",
         args: {
             doctype_name: 'FPO Profiling',
-            filter: frm.doc.fpo
+            filter: { name_of_the_fpo: frm.doc.fpo },
+            fields: ['name_of_the_fpo', 'date_of_incorporation', 'date_of_registration']
         },
-        callback: function (response) {
-            if (response.message == undefined) {
-                frappe.throw({ message: "FPO Profile doesn't exist. Please create FPO Profiling." })
-            }
-            let date = new Date(response.message.date_of_registration);
-            date.setFullYear(date.getFullYear() + 1);
-            let formattedDate = date.toISOString().split('T')[0];
-            frm.set_value('aoc_4_due_date', formattedDate);
-            frm.set_value('mgt_7_due_date', formattedDate);
-            frm.set_value('adt_1_due_date', formattedDate);
-            frm.set_value('d_kyc_due_date', formattedDate);
-            frm.set_value('it_return_due_date', formattedDate);
-            frm.set_value('agm_due_date', formattedDate);
-        },
-        error: function (error) {
-            console.log("An error occurred: ", error);
-        }
+        freeze: true,
+        freeze_message: __("Getting"),
+    }).then(response => {
+        // if (response.message == undefined) {
+        //     frappe.throw({ message: "FPO Profile doesn't exist. Please create FPO Profiling." })
+        // }
+        return response
     });
+    let financial_year_date = await callAPI({
+        method: 'nafpo.apis.api.get_list_event',
+        args: {
+            doctype_name: 'Financial Year',
+            filter: { name: frm.doc.financial_year },
+            fields: ['financial_year_name', 'start_date', 'end_date']
+        },
+        freeze: true,
+        freeze_message: __("Getting"),
+    }).then(response => {
+        return response
+    });
+    // console.log('fpo :>> ', get_fpo_profiling[0].date_of_incorporation);
+    // console.log('Split :>> ', financial_year_date[0].financial_year_name.split('-'));
+    // console.log('Split :>> ', financial_year_date[0].financial_year_name.split('-')[1]);
+    const get_next_year = financial_year_date[0].end_date.split('-')[0] - get_fpo_profiling[0].date_of_incorporation.split('-')[0]
+    // console.log('financial :>> ', financial_year_date[0].start_date);
+    // console.log('financial_year_date :>> ', financial_year_date[0].financial_year_name.split('-')[1]);
+    // console.log('financial_year_date :>> ', parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10) + 1);
+    if (get_next_year < 0) {
+        frm.set_value('financial_year', '')
+        frappe.throw({ message: "The date of incorporation is earlier than the financial year." })
+    }
+    const [day1, month1] = '01-01'.split('-').map(Number); console
+    const [day2, month2] = '31-03'.split('-').map(Number);
+    const [day, month] = `${get_fpo_profiling[0].date_of_incorporation.split('-')[2]}-${get_fpo_profiling[0].date_of_incorporation.split('-')[1]}`.split('-').map(Number);
+
+    if ((month > month1 || (month === month1 && day >= day1)) &&
+        (month < month2 || (month === month2 && day <= day2))) {
+        // Audit report Due Date 
+        if (get_next_year >= 0) {
+            console.log('get_next_year :>> ', get_next_year);
+            let adt_report_due_date = new Date(financial_year_date[0].end_date);
+            adt_report_due_date.setFullYear(adt_report_due_date.getFullYear() + get_next_year);
+            frm.set_value('adt_report_due_date', adt_report_due_date.toISOString().split('T')[0])
+
+            // Calculate and set AGM Due Date
+            let agm_due_date = new Date(adt_report_due_date);
+            agm_due_date.setMonth(agm_due_date.getMonth() + 6);
+            agm_due_date.setDate(agm_due_date.getDate() - 1);
+            frm.set_value('agm_due_date', agm_due_date.toISOString().split('T')[0]);
+            console.log('6 Months - 1 Day:>> ', agm_due_date.toISOString().split('T')[0]);
+
+            // Calculate and set Form ADT-1 – Auditor Appointment for Five year
+            let adt_1_due_date = new Date(agm_due_date.toISOString().split('T')[0])
+            adt_1_due_date.setDate(adt_1_due_date.getDate() - 21);
+            frm.set_value('adt_1_due_date', adt_1_due_date.toISOString().split('T')[0])
+            console.log('-21 :>> ', adt_1_due_date.toISOString().split('T')[0]);
+
+            // Calculate and set IT Return
+            console.log('object :>> ', `20${financial_year_date[0].financial_year_name.split('-')[1]}-10-31`);
+            frm.set_value('it_return_due_date', `20${financial_year_date[0].financial_year_name.split('-')[1]}-10-31`)
+
+            // DIRECTOR KYC
+            console.log('object :>> ', `20${financial_year_date[0].financial_year_name.split('-')[1]}-09-30`);
+            frm.set_value('d_kyc_due_date', `20${financial_year_date[0].financial_year_name.split('-')[1]}-09-30`)
+
+        }
+    } else {
+        console.log('OUT')
+        // Audit report Due Date
+        if (get_next_year > 0) {
+            let adt_report_due_date = new Date(financial_year_date[0].end_date);
+            adt_report_due_date.setFullYear(adt_report_due_date.getFullYear() + get_next_year + 1);
+            frm.set_value('adt_report_due_date', adt_report_due_date.toISOString().split('T')[0])
+            console.log(adt_report_due_date.toISOString().split('T')[0])
+            // Add 1 year
+            // Assuming agm_due_date is already initialized
+            // let data = new Date(agm_due_date.toISOString().split('T')[0])
+            // data.setFullYear(data.getFullYear() + 1); // Add 1 year
+
+            // // Format the date as YYYY-MM-DD
+            // let formatted_agm_due_date = data.toISOString().split('T')[0];
+            // console.log('+1 year:>> ', formatted_agm_due_date);
+        }
+    }
 }
 async function check_ACF(frm) {
     callAPI({
@@ -39,10 +106,10 @@ async function check_ACF(frm) {
             freeze_message: __("Getting"),
         },
     }).then(response => {
-        console.log('response[0] :>> ', response[0].name);
-        console.log('frm.doc.name :>> ', frm.doc.name);
+        // console.log('response[0] :>> ', response[0].name);
+        // console.log('frm.doc.name :>> ', frm.doc.name);
         if (response[0] && response[0].name !== frm.doc.name) {
-            return frappe.throw({ message: `This FPO is already exist with the Financial Year ${response[0].financial_year}` })
+            return frappe.throw({ message: `This FPO is already exist with the Financial Year ${response[0].financial_year} ` })
         }
     });
 }
@@ -71,6 +138,7 @@ frappe.ui.form.on("Annual Compliance Forms", {
     },
     validate(frm) {
         if (frm.doc.aoc_4_status !== 'Completed' &&
+            frm.doc.adt_report_status !== 'Completed' &&
             frm.doc.mgt_7_status !== 'Completed' &&
             frm.doc.adt_1_status !== 'Completed' &&
             frm.doc.d_kyc_status !== 'Completed' &&
@@ -89,17 +157,33 @@ frappe.ui.form.on("Annual Compliance Forms", {
     },
     async fpo(frm) {
         if (frm.doc.fpo) {
-            set_due_date(frm)
             if (frm.doc.financial_year) {
+                await set_due_date(frm)
                 await check_ACF(frm)
             }
         }
     },
     async financial_year(frm) {
+        if (frm.doc.financial_year && frm.doc.fpo) {
+            await set_due_date(frm)
+        }
         if (frm.doc.fpo) {
             await check_ACF(frm)
         }
     },
+    async agm_submitted_on(frm) {
+        let aoc_4_due_date = new Date(frm.doc.agm_submitted_on);
+        aoc_4_due_date.setMonth(aoc_4_due_date.getMonth() + 1);
+        console.log('aoc_4_due_date :>> ', aoc_4_due_date.toISOString().split('T')[0]);
+        frm.set_value('aoc_4_due_date', aoc_4_due_date.toISOString().split('T')[0]);
+
+        // Form MGT-7 - Filing of Annual Return
+        let mgt_7_due_date = new Date(frm.doc.agm_submitted_on);
+        mgt_7_due_date.setMonth(mgt_7_due_date.getMonth() + 2);
+        console.log('mgt_7_due_date :>> ', mgt_7_due_date.toISOString().split('T')[0]);
+        frm.set_value('mgt_7_due_date', mgt_7_due_date.toISOString().split('T')[0]);
+    },
+
     aoc_4_status(frm) {
         blank_submitted_on(frm, 'aoc_4_status', ['aoc_4_submitted_on', 'aoc_4_audit_report']);
     },

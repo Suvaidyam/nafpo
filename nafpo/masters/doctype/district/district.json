@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
  "autoname": "format:D-{####}",
  "creation": "2024-05-09 07:39:34.744974",
  "doctype": "DocType",
@@ -37,7 +36,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-31 13:45:30.270559",
+ "modified": "2024-08-11 13:26:53.327687",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "District",
