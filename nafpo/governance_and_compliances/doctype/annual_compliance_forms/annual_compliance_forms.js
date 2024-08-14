@@ -30,7 +30,8 @@ async function set_due_date(frm) {
     }).then(response => {
         return response
     });
-    const get_next_year = financial_year_date[0].end_date.split('-')[0] - get_fpo_profiling[0].date_of_incorporation.split('-')[0]
+    const get_next_year = financial_year_date[0].start_date.split('-')[0] - get_fpo_profiling[0].date_of_incorporation.split('-')[0]
+    console.log('get_next_year :>> ', get_next_year);
     if (get_next_year < 0) {
         frm.set_value('financial_year', '')
         frappe.throw({ message: "The date of incorporation is earlier than the financial year." })
