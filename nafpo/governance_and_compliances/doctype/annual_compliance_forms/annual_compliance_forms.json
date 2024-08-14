@@ -79,7 +79,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "description": "<span style=\"font-size:13.5px;\">1 financial year</span>",
+   "description": "<span style=\"font-size:13.5px;\">After agm 30 days</span>",
    "fieldname": "section_break_fjls",
    "fieldtype": "Section Break",
    "label": "FORM AOC-4 \u2013 Filing of Financial Statements"
@@ -380,7 +380,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-12 19:00:34.254312",
+ "modified": "2024-08-14 13:18:14.922232",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Annual Compliance Forms",

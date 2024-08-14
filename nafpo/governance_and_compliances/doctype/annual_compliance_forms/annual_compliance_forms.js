@@ -1,6 +1,6 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
-const submitted_on_fields = ['aoc_4_submitted_on', 'mgt_7_submitted_on', 'adt_1_submitted_on', 'd_kyc_submitted_on', 'it_return_submitted_on', 'agm_submitted_on'];
+const submitted_on_fields = ['aoc_4_submitted_on', 'adt_report_submitted_on', 'mgt_7_submitted_on', 'adt_1_submitted_on', 'd_kyc_submitted_on', 'it_return_submitted_on', 'agm_submitted_on'];
 
 async function set_due_date(frm) {
     let get_fpo_profiling = await callAPI({
@@ -85,7 +85,8 @@ async function set_due_date(frm) {
             frm.set_value('adt_1_due_date', adt_1_due_date.toISOString().split('T')[0])
 
             // Calculate and set INCOME TAX Return
-            frm.set_value('it_return_due_date', `20${financial_year_date[0].financial_year_name.split('-')[1]}-10-31`)
+            let it_return_due_date = parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10) + 1
+            frm.set_value('it_return_due_date', `20${it_return_due_date}-10-31`)
 
             // DIRECTOR KYC
             let updatedYear = parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10) + 1;
@@ -178,6 +179,9 @@ frappe.ui.form.on("Annual Compliance Forms", {
         frm.set_value('mgt_7_due_date', mgt_7_due_date.toISOString().split('T')[0]);
     },
 
+    adt_report_status(frm) {
+        blank_submitted_on(frm, 'adt_report_status', ['adt_report_submitted_on', 'audit_report']);
+    },
     aoc_4_status(frm) {
         blank_submitted_on(frm, 'aoc_4_status', ['aoc_4_submitted_on', 'aoc_4_audit_report']);
     },
@@ -196,7 +200,7 @@ frappe.ui.form.on("Annual Compliance Forms", {
     agm_status(frm) {
         blank_submitted_on(frm, 'agm_status', 'agm_submitted_on');
     },
-    ...['aoc_4_audit_report', 'mgt_7_director_list', 'mgt_7_shareholder_list', 'adt_1_fpo_resolution', 'd_kyc_bod_aadhar', 'd_kyc_pan_card_verification', 'd_kyc_otp', 'it_return'].reduce((acc, field) => {
+    ...['aoc_4_audit_report', 'audit_report', 'mgt_7_director_list', 'mgt_7_shareholder_list', 'adt_1_fpo_resolution', 'd_kyc_bod_aadhar', 'd_kyc_pan_card_verification', 'd_kyc_otp', 'it_return'].reduce((acc, field) => {
         acc[field] = function (frm) {
             frm.image_uploaded = true;
         };
