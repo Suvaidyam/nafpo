@@ -30,13 +30,7 @@ async function set_due_date(frm) {
     }).then(response => {
         return response
     });
-    // console.log('fpo :>> ', get_fpo_profiling[0].date_of_incorporation);
-    // console.log('Split :>> ', financial_year_date[0].financial_year_name.split('-'));
-    // console.log('Split :>> ', financial_year_date[0].financial_year_name.split('-')[1]);
     const get_next_year = financial_year_date[0].end_date.split('-')[0] - get_fpo_profiling[0].date_of_incorporation.split('-')[0]
-    // console.log('financial :>> ', financial_year_date[0].start_date);
-    // console.log('financial_year_date :>> ', financial_year_date[0].financial_year_name.split('-')[1]);
-    // console.log('financial_year_date :>> ', parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10) + 1);
     if (get_next_year < 0) {
         frm.set_value('financial_year', '')
         frappe.throw({ message: "The date of incorporation is earlier than the financial year." })
@@ -48,24 +42,32 @@ async function set_due_date(frm) {
     if ((month > month1 || (month === month1 && day >= day1)) &&
         (month < month2 || (month === month2 && day <= day2))) {
         // Audit report Due Date
-        if (get_next_year > 0) {
+        if (get_next_year >= 0) {
             let adt_report_due_date = new Date(financial_year_date[0].end_date);
-            adt_report_due_date.setFullYear(adt_report_due_date.getFullYear() + get_next_year + 1);
+            adt_report_due_date.setFullYear(adt_report_due_date.getFullYear() + get_next_year + 2);
             frm.set_value('adt_report_due_date', adt_report_due_date.toISOString().split('T')[0])
-            console.log(adt_report_due_date.toISOString().split('T')[0])
-            // Add 1 year
-            // Assuming agm_due_date is already initialized
-            // let data = new Date(agm_due_date.toISOString().split('T')[0])
-            // data.setFullYear(data.getFullYear() + 1); // Add 1 year
 
-            // // Format the date as YYYY-MM-DD
-            // let formatted_agm_due_date = data.toISOString().split('T')[0];
-            // console.log('+1 year:>> ', formatted_agm_due_date);
+            // Calculate and set AGM Due Date
+            let agm_due_date = new Date(adt_report_due_date);
+            agm_due_date.setMonth(agm_due_date.getMonth() + 6);
+            agm_due_date.setDate(agm_due_date.getDate() - 1);
+            frm.set_value('agm_due_date', agm_due_date.toISOString().split('T')[0]);
+
+            // Calculate and set Form ADT-1 – Auditor Appointment for Five year
+            let adt_1_due_date = new Date(agm_due_date.toISOString().split('T')[0])
+            adt_1_due_date.setDate(adt_1_due_date.getDate() - 21);
+            frm.set_value('adt_1_due_date', adt_1_due_date.toISOString().split('T')[0])
+
+            // Calculate and set INCOME TAX Return
+            let updatedYear = parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10) + 2;
+            frm.set_value('it_return_due_date', `20${updatedYear}-10-31`)
+
+            // DIRECTOR KYC
+            frm.set_value('d_kyc_due_date', `20${financial_year_date[0].financial_year_name.split('-')[1]}-09-30`)
         }
 
     } else {
         if (get_next_year >= 0) {
-            console.log('get_next_year :>> ', get_next_year);
             // Audit report Due Date 
             let adt_report_due_date = new Date(financial_year_date[0].end_date);
             adt_report_due_date.setFullYear(adt_report_due_date.getFullYear() + get_next_year);
@@ -76,22 +78,18 @@ async function set_due_date(frm) {
             agm_due_date.setMonth(agm_due_date.getMonth() + 6);
             agm_due_date.setDate(agm_due_date.getDate() - 1);
             frm.set_value('agm_due_date', agm_due_date.toISOString().split('T')[0]);
-            console.log('6 Months - 1 Day:>> ', agm_due_date.toISOString().split('T')[0]);
 
             // Calculate and set Form ADT-1 – Auditor Appointment for Five year
             let adt_1_due_date = new Date(agm_due_date.toISOString().split('T')[0])
             adt_1_due_date.setDate(adt_1_due_date.getDate() - 21);
             frm.set_value('adt_1_due_date', adt_1_due_date.toISOString().split('T')[0])
-            console.log('-21 :>> ', adt_1_due_date.toISOString().split('T')[0]);
 
-            // Calculate and set IT Return
-            console.log('object :>> ', `20${financial_year_date[0].financial_year_name.split('-')[1]}-10-31`);
+            // Calculate and set INCOME TAX Return
             frm.set_value('it_return_due_date', `20${financial_year_date[0].financial_year_name.split('-')[1]}-10-31`)
 
             // DIRECTOR KYC
-            console.log('object :>> ', `20${financial_year_date[0].financial_year_name.split('-')[1]}-09-30`);
-            frm.set_value('d_kyc_due_date', `20${financial_year_date[0].financial_year_name.split('-')[1]}-09-30`)
-
+            let updatedYear = parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10) + 1;
+            frm.set_value('d_kyc_due_date', `20${updatedYear}-09-30`)
         }
     }
 }
@@ -106,8 +104,6 @@ async function check_ACF(frm) {
             freeze_message: __("Getting"),
         },
     }).then(response => {
-        // console.log('response[0] :>> ', response[0].name);
-        // console.log('frm.doc.name :>> ', frm.doc.name);
         if (response[0] && response[0].name !== frm.doc.name) {
             return frappe.throw({ message: `This FPO is already exist with the Financial Year ${response[0].financial_year} ` })
         }
@@ -174,13 +170,11 @@ frappe.ui.form.on("Annual Compliance Forms", {
     async agm_submitted_on(frm) {
         let aoc_4_due_date = new Date(frm.doc.agm_submitted_on);
         aoc_4_due_date.setMonth(aoc_4_due_date.getMonth() + 1);
-        console.log('aoc_4_due_date :>> ', aoc_4_due_date.toISOString().split('T')[0]);
         frm.set_value('aoc_4_due_date', aoc_4_due_date.toISOString().split('T')[0]);
 
         // Form MGT-7 - Filing of Annual Return
         let mgt_7_due_date = new Date(frm.doc.agm_submitted_on);
         mgt_7_due_date.setMonth(mgt_7_due_date.getMonth() + 2);
-        console.log('mgt_7_due_date :>> ', mgt_7_due_date.toISOString().split('T')[0]);
         frm.set_value('mgt_7_due_date', mgt_7_due_date.toISOString().split('T')[0]);
     },
 
