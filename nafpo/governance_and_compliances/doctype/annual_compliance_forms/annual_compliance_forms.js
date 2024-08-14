@@ -47,9 +47,26 @@ async function set_due_date(frm) {
 
     if ((month > month1 || (month === month1 && day >= day1)) &&
         (month < month2 || (month === month2 && day <= day2))) {
-        // Audit report Due Date 
+        // Audit report Due Date
+        if (get_next_year > 0) {
+            let adt_report_due_date = new Date(financial_year_date[0].end_date);
+            adt_report_due_date.setFullYear(adt_report_due_date.getFullYear() + get_next_year + 1);
+            frm.set_value('adt_report_due_date', adt_report_due_date.toISOString().split('T')[0])
+            console.log(adt_report_due_date.toISOString().split('T')[0])
+            // Add 1 year
+            // Assuming agm_due_date is already initialized
+            // let data = new Date(agm_due_date.toISOString().split('T')[0])
+            // data.setFullYear(data.getFullYear() + 1); // Add 1 year
+
+            // // Format the date as YYYY-MM-DD
+            // let formatted_agm_due_date = data.toISOString().split('T')[0];
+            // console.log('+1 year:>> ', formatted_agm_due_date);
+        }
+
+    } else {
         if (get_next_year >= 0) {
             console.log('get_next_year :>> ', get_next_year);
+            // Audit report Due Date 
             let adt_report_due_date = new Date(financial_year_date[0].end_date);
             adt_report_due_date.setFullYear(adt_report_due_date.getFullYear() + get_next_year);
             frm.set_value('adt_report_due_date', adt_report_due_date.toISOString().split('T')[0])
@@ -75,23 +92,6 @@ async function set_due_date(frm) {
             console.log('object :>> ', `20${financial_year_date[0].financial_year_name.split('-')[1]}-09-30`);
             frm.set_value('d_kyc_due_date', `20${financial_year_date[0].financial_year_name.split('-')[1]}-09-30`)
 
-        }
-    } else {
-        console.log('OUT')
-        // Audit report Due Date
-        if (get_next_year > 0) {
-            let adt_report_due_date = new Date(financial_year_date[0].end_date);
-            adt_report_due_date.setFullYear(adt_report_due_date.getFullYear() + get_next_year + 1);
-            frm.set_value('adt_report_due_date', adt_report_due_date.toISOString().split('T')[0])
-            console.log(adt_report_due_date.toISOString().split('T')[0])
-            // Add 1 year
-            // Assuming agm_due_date is already initialized
-            // let data = new Date(agm_due_date.toISOString().split('T')[0])
-            // data.setFullYear(data.getFullYear() + 1); // Add 1 year
-
-            // // Format the date as YYYY-MM-DD
-            // let formatted_agm_due_date = data.toISOString().split('T')[0];
-            // console.log('+1 year:>> ', formatted_agm_due_date);
         }
     }
 }
