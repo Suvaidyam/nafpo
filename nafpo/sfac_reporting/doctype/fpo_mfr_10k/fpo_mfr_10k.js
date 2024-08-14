@@ -15,33 +15,24 @@ async function check_exists_fpo_in_mfr(frm) {
 }
 function set_due_date(frm) {
     frappe.call({
-        method: "nafpo.apis.api.get_fpo_profile_doc",
+        method: "nafpo.apis.api.get_list_event",
         args: {
             doctype_name: 'FPO Profiling',
-            filter: frm.doc.fpo
+            filter: { 'name': frm.doc.fpo },
+            fields: ['date_of_registration']
         },
         callback: function (response) {
-            let registration_date = new Date(response.message.date_of_registration);
-            let first_due_date = new Date(registration_date);
-            let second_due_date = new Date(registration_date);
-            let third_due_date = new Date(registration_date);
-            let fourth_due_date = new Date(registration_date);
-            let fifth_due_date = new Date(registration_date);
-            let sixth_due_date = new Date(registration_date);
-
-            first_due_date.setMonth(first_due_date.getMonth());
-            second_due_date.setMonth(second_due_date.getMonth() + 6);
-            third_due_date.setMonth(third_due_date.getMonth() + 12);
-            fourth_due_date.setMonth(fourth_due_date.getMonth() + 18);
-            fifth_due_date.setMonth(fifth_due_date.getMonth() + 24);
-            sixth_due_date.setMonth(sixth_due_date.getMonth() + 30);
-
-            frm.set_value('1st_installment_due_date', first_due_date.toISOString().split('T')[0]);
-            frm.set_value('2nd_installment_due_date', second_due_date.toISOString().split('T')[0]);
-            frm.set_value('3rd_installment_due_date', third_due_date.toISOString().split('T')[0]);
-            frm.set_value('4th_installment_due_date', fourth_due_date.toISOString().split('T')[0]);
-            frm.set_value('5th_installment_due_date', fifth_due_date.toISOString().split('T')[0]);
-            frm.set_value('6th_installment_due_date', sixth_due_date.toISOString().split('T')[0]);
+            let registration_date = new Date(response.message[0].date_of_registration);
+            // Define due dates as an array with the corresponding month increments
+            const due_dates = [1, 6, 12, 18, 24, 30].map(months => {
+                let due_date = new Date(registration_date);
+                due_date.setMonth(registration_date.getMonth() + months);
+                return due_date.toISOString().split('T')[0];
+            });
+            // Set values in the form
+            ['1st_installment_due_date', '2nd_installment_due_date', '3rd_installment_due_date', '4th_installment_due_date', '5th_installment_due_date', '6th_installment_due_date'].forEach((field, index) => {
+                frm.set_value(field, due_dates[index]);
+            });
         },
         error: function (error) {
             console.log("An error occurred: ", error);

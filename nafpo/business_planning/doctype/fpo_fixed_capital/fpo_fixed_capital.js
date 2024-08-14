@@ -12,9 +12,28 @@ async function check_fpo(frm) {
         freeze: true,
         freeze_message: __("Getting"),
     }).then(response => {
-        if (response) {
+        if (response && response != frm.doc.name) {
             // frm.set_value('fpo', '')
             frappe.throw({ message: 'This FPO already exists for the Fixed Capital' })
+        }
+    });
+}
+
+async function frize_date(frm) {
+    await callAPI({
+        method: "nafpo.apis.api.get_exists_event",
+        args: {
+            doctype_name: 'Business Plannings',
+            filterName: 'fpo',
+            value: frm.doc.fpo
+        },
+        freeze: true,
+        freeze_message: __("Getting"),
+    }).then(response => {
+        if (response) {
+            frm.set_df_property('fixed_capital_details_table', 'read_only', true);
+        } else {
+            frm.set_df_property('fixed_capital_details_table', 'read_only', false);
         }
     });
 }
@@ -22,6 +41,9 @@ async function check_fpo(frm) {
 frappe.ui.form.on("FPO Fixed Capital", {
     async refresh(frm) {
         hide_print_button(frm)
+        if (frm.doc.fpo) {
+            await frize_date(frm)
+        }
         if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
             try {
                 let fpo = await frappe.call({
@@ -52,13 +74,11 @@ frappe.ui.form.on("FPO Fixed Capital", {
             }
         }
     },
-    // async validate(frm) {
-    //     if (!frm.doc.fpo) {
-    //         await check_fpo(frm)
-    //     }
-    // },
     async fpo(frm) {
-        await check_fpo(frm)
+        if (frm.doc.fpo) {
+            await check_fpo(frm)
+            await frize_date(frm)
+        }
     }
 });
 
