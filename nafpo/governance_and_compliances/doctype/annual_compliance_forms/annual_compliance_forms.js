@@ -8,14 +8,11 @@ async function set_due_date(frm) {
         args: {
             doctype_name: 'FPO Profiling',
             filter: { name_of_the_fpo: frm.doc.fpo },
-            fields: ['name_of_the_fpo', 'date_of_incorporation', 'date_of_registration']
+            fields: ['date_of_incorporation']
         },
         freeze: true,
         freeze_message: __("Getting"),
     }).then(response => {
-        // if (response.message == undefined) {
-        //     frappe.throw({ message: "FPO Profile doesn't exist. Please create FPO Profiling." })
-        // }
         return response
     });
     let financial_year_date = await callAPI({
@@ -31,10 +28,9 @@ async function set_due_date(frm) {
         return response
     });
     const get_next_year = financial_year_date[0].start_date.split('-')[0] - get_fpo_profiling[0].date_of_incorporation.split('-')[0]
-    console.log('get_next_year :>> ', get_next_year);
     if (get_next_year < 0) {
         frm.set_value('financial_year', '')
-        frappe.throw({ message: "The date of incorporation is earlier than the financial year." })
+        frappe.throw({ message: `The date of incorporation is earlier than the financial year.` })
     }
     const [day1, month1] = '01-01'.split('-').map(Number); console
     const [day2, month2] = '31-03'.split('-').map(Number);
@@ -124,7 +120,6 @@ frappe.ui.form.on("Annual Compliance Forms", {
                     }
                 });
                 frm.set_value('fpo', fpo.message.fpo);
-                set_due_date(frm);
             } catch (e) {
                 console.error('User data fetch error:', e);
             }

@@ -37,9 +37,11 @@
    "fieldname": "fpo",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "FPO",
    "options": "FPO",
-   "reqd": 1
+   "reqd": 1,
+   "set_only_once": 1
   },
   {
    "description": "<span style=\"font-size:13.5px;\">Within 180 days of registration</span>",
@@ -198,7 +200,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-11 13:19:34.108701",
+ "modified": "2024-08-14 18:44:14.121342",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "One Time Organization Registration Forms",

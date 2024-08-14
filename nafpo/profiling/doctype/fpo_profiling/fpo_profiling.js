@@ -21,6 +21,39 @@ function validate_expiry_felids(frm) {
     }
 }
 
+async function frize_date(frm) {
+    await callAPI({
+        method: "nafpo.apis.api.get_exists_event",
+        args: {
+            doctype_name: 'Annual Compliance Forms',
+            filterName: 'fpo',
+            value: frm.doc.name_of_the_fpo
+        },
+        freeze: true,
+        freeze_message: __("Getting"),
+    }).then(response => {
+        if (response) {
+            frm.set_df_property('date_of_incorporation', 'read_only', true);
+        } else {
+            frm.set_df_property('date_of_incorporation', 'read_only', false);
+        }
+    });
+    await callAPI({
+        method: "nafpo.apis.api.get_exists_event",
+        args: {
+            doctype_name: 'FPO MFR 10K',
+            filterName: 'fpo',
+            value: frm.doc.name
+        },
+        freeze: true,
+        freeze_message: __("Getting"),
+    }).then(response => {
+        if (response) {
+            frm.set_df_property('date_of_registration', 'read_only', true);
+        }
+    });
+}
+
 
 frappe.ui.form.on("FPO Profiling", {
     async refresh(frm) {
@@ -37,6 +70,7 @@ frappe.ui.form.on("FPO Profiling", {
             'block_name', 'district_name', 'name_of_the_fpo', 'type_of_organization', 'cbbo'
         ])
         extend_options_length(frm, ['district_name', 'name_of_the_fpo', 'bod_kyc_name', 'name_of_cbbo', 'cbbo'])
+        await frize_date(frm)
     },
     async validate(frm) {
         validate_mobile_number(frm.doc.contact_detail_of_fpo, "Contact Detail of FPO")
@@ -77,7 +111,6 @@ frappe.ui.form.on("FPO Profiling", {
     },
     date_of_expiry_for_seeds(frm) {
         validate_expiry_felids(frm)
-        console.log('validate_expiry_felids(frm) :>> ', validate_expiry_felids(frm));
     },
     // date_of_expiry_for_fertilizer(frm) {
     //     validate_expiry_felids(frm)
@@ -95,6 +128,7 @@ frappe.ui.form.on("FPO Profiling", {
         await apply_filter('bod_kyc_name', 'fpo_name', frm, frm.doc.name_of_the_fpo)
         truncate_multiple_fields_value(frm, ['bod_kyc_name', 'fpos_address', 'fpos_pincode'])
         await check_exists_fpo(frm)
+        await frize_date(frm)
     },
     ...['gst_received_upload', 'license_doc_for_seed', 'license_doc_for_fertilizer', 'license_doc_for_pesticide', 'license_doc_for_fssai', 'licence_doc_for_seed_production', 'fpo_logo', 'supporting_document'].reduce((acc, field) => {
         acc[field] = function (frm) {

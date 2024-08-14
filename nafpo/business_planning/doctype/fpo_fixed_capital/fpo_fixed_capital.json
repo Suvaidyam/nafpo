@@ -21,7 +21,8 @@
    "in_standard_filter": 1,
    "label": "FPO",
    "options": "FPO",
-   "reqd": 1
+   "reqd": 1,
+   "set_only_once": 1
   },
   {
    "fetch_from": "fpo.cbbo_name",
@@ -68,7 +69,7 @@
    "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-07-17 13:41:28.660104",
+ "modified": "2024-08-14 18:40:21.683861",
  "modified_by": "Administrator",
  "module": "Business Planning",
  "name": "FPO Fixed Capital",

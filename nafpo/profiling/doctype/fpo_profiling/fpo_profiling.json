@@ -97,6 +97,7 @@
    "label": "FPO",
    "options": "FPO",
    "reqd": 1,
+   "set_only_once": 1,
    "unique": 1
   },
   {
@@ -429,7 +430,7 @@
    "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-08-12 17:28:53.775461",
+ "modified": "2024-08-14 18:43:27.048634",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
