@@ -21,11 +21,11 @@ class FPOFixedCapital(Document):
 		if exists and exists != self.name:
 			fpo = frappe.get_doc('FPO',self.fpo)
 			frappe.throw(_(f'{fpo.fpo_name} already exists for the Fpo Fixed Capital'))
-	def on_update(self):
-		# BP = frappe.db.get_list("Business Plannings", {'fpo': self.fpo}, fields=['name', 'depreciation_percent'])
-		BP = frappe.db.get_list("Business Plannings", filters={'fpo': self.fpo}, fields=['name', 'depreciation_percent'])
-		if BP:
-			for bp in BP:
-				frappe.db.set_value('Business Plannings',bp.name,'depreciation',self.total_value / bp.depreciation_percent ,update_modified=False)
+	# def on_update(self):
+	# 	# BP = frappe.db.get_list("Business Plannings", {'fpo': self.fpo}, fields=['name', 'depreciation_percent'])
+	# 	BP = frappe.db.get_list("Business Plannings", filters={'fpo': self.fpo}, fields=['name', 'depreciation_percent'])
+	# 	if BP:
+	# 		for bp in BP:
+	# 			frappe.db.set_value('Business Plannings',bp.name,'depreciation',self.total_value / bp.depreciation_percent ,update_modified=False)
 
 
