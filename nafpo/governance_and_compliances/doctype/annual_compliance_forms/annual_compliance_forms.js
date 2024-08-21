@@ -2,6 +2,22 @@
 // For license information, please see license.txt
 const submitted_on_fields = ['aoc_4_submitted_on', 'adt_report_submitted_on', 'mgt_7_submitted_on', 'adt_1_submitted_on', 'd_kyc_submitted_on', 'it_return_submitted_on', 'agm_submitted_on'];
 
+async function blank_submitted_on(frm, status_field, date_fields) {
+    if (frm.doc[status_field] == "Pending") {
+        if (Array.isArray(date_fields)) {
+            date_fields.forEach(date_field => frm.set_value(date_field, ''));
+        } else {
+            frm.set_value(date_fields, '');
+        }
+    }
+}
+async function validate_submitted_on(frm, submitted_on_felid_name, due_date_felid_name) {
+    frm.fields_dict[submitted_on_felid_name].$input.datepicker({
+        minDate: new Date(),
+        maxDate: new Date(frm.doc[due_date_felid_name]),
+    });
+}
+
 async function set_due_date(frm) {
     let get_fpo_profiling = await callAPI({
         method: "nafpo.apis.api.get_list_event",
@@ -125,9 +141,16 @@ frappe.ui.form.on("Annual Compliance Forms", {
             }
         }
         hide_print_button(frm)
-        submitted_on_fields.forEach(field => {
-            frm.fields_dict[field].$input.datepicker({ maxDate: new Date() });
-        });
+        await validate_submitted_on(frm, 'adt_report_submitted_on', 'adt_report_due_date');
+        await validate_submitted_on(frm, 'aoc_4_submitted_on', 'aoc_4_due_date');
+        await validate_submitted_on(frm, 'mgt_7_submitted_on', 'mgt_7_due_date');
+        await validate_submitted_on(frm, 'adt_1_submitted_on', 'adt_1_due_date');
+        await validate_submitted_on(frm, 'd_kyc_submitted_on', 'd_kyc_due_date');
+        await validate_submitted_on(frm, 'it_return_submitted_on', 'it_return_due_date');
+        await validate_submitted_on(frm, 'agm_submitted_on', 'agm_due_date');
+        // submitted_on_fields.forEach(field => {
+        //     frm.fields_dict[field].$input.datepicker({ maxDate: new Date() });
+        // });
     },
     validate(frm) {
         if (frm.doc.aoc_4_status !== 'Completed' &&
@@ -140,9 +163,9 @@ frappe.ui.form.on("Annual Compliance Forms", {
         ) {
             frappe.throw({ message: 'Form Status Not Yet Updated' });
         }
-        if (submitted_on_fields.some(field => new Date(frm.doc[field]).setHours(0, 0, 0, 0) > new Date().setHours(0, 0, 0, 0))) {
-            frappe.throw({ message: "Submitted On cannot be a future date. Please select a past date" });
-        }
+        // if (submitted_on_fields.some(field => new Date(frm.doc[field]).setHours(0, 0, 0, 0) > new Date().setHours(0, 0, 0, 0))) {
+        //     frappe.throw({ message: "Submitted On cannot be a future date. Please select a past date" });
+        // }
         if (frm.image_uploaded) {
             frappe.validated = false;
             frm.image_uploaded = false;
@@ -175,26 +198,33 @@ frappe.ui.form.on("Annual Compliance Forms", {
         frm.set_value('mgt_7_due_date', mgt_7_due_date.toISOString().split('T')[0]);
     },
 
-    adt_report_status(frm) {
-        blank_submitted_on(frm, 'adt_report_status', ['adt_report_submitted_on', 'audit_report']);
+    async adt_report_status(frm) {
+        await blank_submitted_on(frm, 'adt_report_status', ['adt_report_submitted_on', 'audit_report'], 'adt_report_submitted_on', 'adt_report_due_date');
+        await validate_submitted_on(frm, 'adt_report_submitted_on', 'adt_report_due_date');
     },
-    aoc_4_status(frm) {
-        blank_submitted_on(frm, 'aoc_4_status', ['aoc_4_submitted_on', 'aoc_4_audit_report']);
+    async aoc_4_status(frm) {
+        await blank_submitted_on(frm, 'aoc_4_status', ['aoc_4_submitted_on', 'aoc_4_audit_report'], 'aoc_4_submitted_on', 'aoc_4_due_date');
+        await validate_submitted_on(frm, 'aoc_4_submitted_on', 'aoc_4_due_date');
     },
-    mgt_7_status(frm) {
-        blank_submitted_on(frm, 'mgt_7_status', ['mgt_7_submitted_on', 'mgt_7_director_list', 'mgt_7_director_list']);
+    async mgt_7_status(frm) {
+        await blank_submitted_on(frm, 'mgt_7_status', ['mgt_7_submitted_on', 'mgt_7_director_list', 'mgt_7_director_list'], 'mgt_7_submitted_on', 'mgt_7_due_date');
+        await validate_submitted_on(frm, 'mgt_7_submitted_on', 'mgt_7_due_date');
     },
-    adt_1_status(frm) {
-        blank_submitted_on(frm, 'adt_1_status', ['adt_1_submitted_on', 'adt_1_fpo_resolution']);
+    async adt_1_status(frm) {
+        await blank_submitted_on(frm, 'adt_1_status', ['adt_1_submitted_on', 'adt_1_fpo_resolution'], 'adt_1_submitted_on', 'adt_1_due_date');
+        await validate_submitted_on(frm, 'adt_1_submitted_on', 'adt_1_due_date');
     },
-    d_kyc_status(frm) {
-        blank_submitted_on(frm, 'd_kyc_status', ['d_kyc_submitted_on', 'd_kyc_pan_card_verification', 'd_kyc_otp', 'd_kyc_bod_aadhar']);
+    async d_kyc_status(frm) {
+        await blank_submitted_on(frm, 'd_kyc_status', ['d_kyc_submitted_on', 'd_kyc_pan_card_verification', 'd_kyc_otp', 'd_kyc_bod_aadhar'], 'd_kyc_submitted_on', 'd_kyc_due_date');
+        await validate_submitted_on(frm, 'd_kyc_submitted_on', 'd_kyc_due_date');
     },
-    it_return_status(frm) {
-        blank_submitted_on(frm, 'it_return_status', ['it_return_submitted_on', 'it_return']);
+    async it_return_status(frm) {
+        await blank_submitted_on(frm, 'it_return_status', ['it_return_submitted_on', 'it_return'], 'it_return_submitted_on', 'it_return_due_date');
+        await validate_submitted_on(frm, 'it_return_submitted_on', 'it_return_due_date');
     },
-    agm_status(frm) {
-        blank_submitted_on(frm, 'agm_status', 'agm_submitted_on');
+    async agm_status(frm) {
+        await blank_submitted_on(frm, 'agm_status', 'agm_submitted_on', 'agm_submitted_on', 'agm_due_date');
+        await validate_submitted_on(frm, 'agm_submitted_on', 'agm_due_date');
     },
     ...['aoc_4_audit_report', 'audit_report', 'mgt_7_director_list', 'mgt_7_shareholder_list', 'adt_1_fpo_resolution', 'd_kyc_bod_aadhar', 'd_kyc_pan_card_verification', 'd_kyc_otp', 'it_return'].reduce((acc, field) => {
         acc[field] = function (frm) {
@@ -203,13 +233,3 @@ frappe.ui.form.on("Annual Compliance Forms", {
         return acc;
     }, {})
 });
-
-function blank_submitted_on(frm, status_field, date_fields) {
-    if (frm.doc[status_field] == "Pending") {
-        if (Array.isArray(date_fields)) {
-            date_fields.forEach(date_field => frm.set_value(date_field, ''));
-        } else {
-            frm.set_value(date_fields, '');
-        }
-    }
-}
