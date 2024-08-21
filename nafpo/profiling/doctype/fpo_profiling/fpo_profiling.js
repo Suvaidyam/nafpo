@@ -109,7 +109,7 @@ frappe.ui.form.on("FPO Profiling", {
         truncate_multiple_fields_value(frm, ['block_name', 'name_of_the_fpo'])
     },
     block_name: async function (frm) {
-        truncate_multiple_fields_value(frm, ['name_of_the_fpo'])
+        // truncate_multiple_fields_value(frm, ['name_of_the_fpo'])
     },
     date_of_expiry_for_seeds(frm) {
         validate_expiry_felids(frm)
