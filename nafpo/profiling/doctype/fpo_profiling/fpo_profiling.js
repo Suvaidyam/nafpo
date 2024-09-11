@@ -12,7 +12,7 @@ async function check_exists_fpo(frm) {
         }
     });
     if (response.message) {
-        return frappe.throw({ message: 'This FPO are already exists in FPO Profiling' });
+        return frappe.throw({ message: `This FPO has already profiled <a href="/app/fpo-profiling/${response.message || ''}">${response.message || ''}</a>`, title: 'Error' });
     }
 }
 function validate_expiry_felids(frm) {
@@ -70,7 +70,7 @@ frappe.ui.form.on("FPO Profiling", {
             'block_name', 'district_name', 'name_of_the_fpo', 'type_of_organization', 'cbbo'
         ])
         extend_options_length(frm, ['district_name', 'name_of_the_fpo', 'bod_kyc_name', 'name_of_cbbo', 'cbbo'])
-        if (frm.doc.fpo) {
+        if (frm.doc.name_of_the_fpo) {
             await frize_date(frm)
         }
     },
