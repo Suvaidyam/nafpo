@@ -1,5 +1,12 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
+var adt_report_submitted_on_lock = false;
+var adt_1_submitted_on_lock = false;
+var agm_submitted_on_lock = false;
+var it_return_submitted_on_lock = false;
+var aoc_4_submitted_on_lock = false;
+var mgt_7_submitted_on_lock = false;
+var d_kyc_submitted_on_lock = false;
 const submitted_on_fields = ['aoc_4_submitted_on', 'adt_report_submitted_on', 'mgt_7_submitted_on', 'adt_1_submitted_on', 'd_kyc_submitted_on', 'it_return_submitted_on', 'agm_submitted_on'];
 
 async function blank_submitted_on(frm, status_field, date_fields) {
@@ -14,7 +21,7 @@ async function blank_submitted_on(frm, status_field, date_fields) {
 async function validate_submitted_on(frm, submitted_on_felid_name, due_date_felid_name) {
     frm.fields_dict[submitted_on_felid_name].$input.datepicker({
         minDate: new Date(),
-        maxDate: new Date(frm.doc[due_date_felid_name]),
+        // maxDate: new Date(frm.doc[due_date_felid_name]),
     });
 }
 
@@ -170,6 +177,39 @@ frappe.ui.form.on("Annual Compliance Forms", {
             frappe.validated = false;
             frm.image_uploaded = false;
         }
+
+    },
+    before_save(frm) {
+        // adt_report_submitted_on_lock = true;
+        // adt_1_submitted_on_lock = true;
+        // agm_submitted_on_lock = true;
+        // it_return_submitted_on_lock = true;
+        // aoc_4_submitted_on_lock = true;
+        // mgt_7_submitted_on_lock = true;
+        // d_kyc_submitted_on_lock = true;
+        console.log('adt_report_submitted_on_lock :>> ', adt_report_submitted_on_lock);
+        if (new Date(frm.doc.adt_report_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0) && adt_report_submitted_on_lock == true)) {
+            frappe.throw({ message: "Audit Report Submitted On Date can't be earlier than today's date." });
+        }
+        if (new Date(frm.doc.adt_1_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0)) && adt_1_submitted_on_lock == true) {
+            adt_1_submitted_on_lock = false
+            frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
+        }
+        if (new Date(frm.doc.agm_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0)) && agm_submitted_on_lock == true) {
+            frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
+        }
+        if (new Date(frm.doc.it_return_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0)) && it_return_submitted_on_lock == true) {
+            frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
+        }
+        if (new Date(frm.doc.aoc_4_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0)) && aoc_4_submitted_on_lock == true) {
+            frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
+        }
+        if (new Date(frm.doc.mgt_7_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0)) && mgt_7_submitted_on_lock == true) {
+            frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
+        }
+        if (new Date(frm.doc.d_kyc_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0)) && d_kyc_submitted_on_lock == true) {
+            frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
+        }
     },
     async fpo(frm) {
         if (frm.doc.fpo) {
@@ -225,6 +265,48 @@ frappe.ui.form.on("Annual Compliance Forms", {
     async agm_status(frm) {
         await blank_submitted_on(frm, 'agm_status', 'agm_submitted_on', 'agm_submitted_on', 'agm_due_date');
         await validate_submitted_on(frm, 'agm_submitted_on', 'agm_due_date');
+    },
+    adt_report_submitted_on(frm) {
+        if (new Date(frm.doc.adt_report_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0))) {
+            adt_report_submitted_on_lock = true
+            frappe.throw({ message: "Audit Report Submitted On Date can't be earlier than today's date." });
+        }
+    },
+    adt_1_submitted_on(frm) {
+        if (new Date(frm.doc.adt_1_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0))) {
+            adt_1_submitted_on_lock = true
+            frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
+        }
+    },
+    agm_submitted_on(frm) {
+        if (new Date(frm.doc.agm_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0))) {
+            agm_submitted_on_lock = true
+            frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
+        }
+    },
+    it_return_submitted_on(frm) {
+        if (new Date(frm.doc.it_return_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0))) {
+            it_return_submitted_on_lock = true
+            frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
+        }
+    },
+    aoc_4_submitted_on(frm) {
+        if (new Date(frm.doc.aoc_4_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0))) {
+            aoc_4_submitted_on_lock = true
+            frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
+        }
+    },
+    mgt_7_submitted_on(frm) {
+        if (new Date(frm.doc.mgt_7_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0))) {
+            mgt_7_submitted_on_lock = true
+            frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
+        }
+    },
+    d_kyc_submitted_on(frm) {
+        if (new Date(frm.doc.d_kyc_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0))) {
+            d_kyc_submitted_on_lock = true
+            frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
+        }
     },
     ...['aoc_4_audit_report', 'audit_report', 'mgt_7_director_list', 'mgt_7_shareholder_list', 'adt_1_fpo_resolution', 'd_kyc_bod_aadhar', 'd_kyc_pan_card_verification', 'd_kyc_otp', 'it_return'].reduce((acc, field) => {
         acc[field] = function (frm) {

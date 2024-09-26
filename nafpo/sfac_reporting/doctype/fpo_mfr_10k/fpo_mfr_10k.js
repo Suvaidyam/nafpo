@@ -24,7 +24,7 @@ function set_due_date(frm) {
         callback: function (response) {
             let registration_date = new Date(response.message[0].date_of_registration);
             // Define due dates as an array with the corresponding month increments
-            const due_dates = [1, 6, 12, 18, 24, 30].map(months => {
+            const due_dates = [0, 6, 12, 18, 24, 30].map(months => {
                 let due_date = new Date(registration_date);
                 due_date.setMonth(registration_date.getMonth() + months);
                 return due_date.toISOString().split('T')[0];

@@ -348,7 +348,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-11 13:19:09.026148",
+ "modified": "2024-09-26 11:36:58.809151",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "FPO MFR 10K",
@@ -368,8 +368,6 @@
    "write": 1
   },
   {
-   "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,
