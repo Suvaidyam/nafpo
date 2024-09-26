@@ -50,6 +50,7 @@ async function frize_date(frm) {
     }).then(response => {
         if (response) {
             frm.set_df_property('date_of_registration', 'read_only', true);
+            frm.set_df_property('under_the_central_sector_scheme_10k_fpo_formation', 'read_only', true);
         }
     });
 }
