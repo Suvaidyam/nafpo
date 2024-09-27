@@ -22,17 +22,45 @@ class FPOProfiling(Document):
         new_otorf.inc_22_due_date = registration_date + relativedelta(days=30)
         new_otorf.adt_1_due_date = registration_date + relativedelta(days=30)
         new_otorf.save()
+        if not self.is_new():
+            # FPO MFR 10k
+            if self.under_the_central_sector_scheme_10k_fpo_formation:
+                check_fpo_mfr = frappe.db.exists({
+                    "doctype": "FPO MFR 10K",
+                    'fpo': self.name
+                })
+                print('======================= IF' , check_fpo_mfr)
+                if check_fpo_mfr:
+                    print('======================= IF' , check_fpo_mfr)
+                    new_fpo_mfr = frappe.get_doc("FPO MFR 10K", check_fpo_mfr)
+                else:
+                    new_fpo_mfr = frappe.new_doc("FPO MFR 10K")
+                    print('======================= Else' , check_fpo_mfr)
+                
+                registration_date = datetime.strptime(self.date_of_registration, '%Y-%m-%d').date()
+                new_fpo_mfr.fpo = self.name
+                new_fpo_mfr.__dict__['1st_installment_due_date'] = registration_date
+                new_fpo_mfr.__dict__['2nd_installment_due_date'] = registration_date + relativedelta(months=6)
+                new_fpo_mfr.__dict__['3rd_installment_due_date'] = registration_date + relativedelta(months=12)
+                new_fpo_mfr.__dict__['4th_installment_due_date'] = registration_date + relativedelta(months=18)
+                new_fpo_mfr.__dict__['5th_installment_due_date'] = registration_date + relativedelta(months=24)
+                new_fpo_mfr.__dict__['6th_installment_due_date'] = registration_date + relativedelta(months=30)
+                new_fpo_mfr.save()
         
-        # FPO MFR 10k
+    def after_insert(self):
+    # FPO MFR 10k
         if self.under_the_central_sector_scheme_10k_fpo_formation:
             check_fpo_mfr = frappe.db.exists({
                 "doctype": "FPO MFR 10K",
                 'fpo': self.name
             })
+            print('======================= IF' , check_fpo_mfr)
             if check_fpo_mfr:
+                print('======================= IF' , check_fpo_mfr)
                 new_fpo_mfr = frappe.get_doc("FPO MFR 10K", check_fpo_mfr)
             else:
                 new_fpo_mfr = frappe.new_doc("FPO MFR 10K")
+                print('======================= Else' , check_fpo_mfr)
             
             registration_date = datetime.strptime(self.date_of_registration, '%Y-%m-%d').date()
             new_fpo_mfr.fpo = self.name
