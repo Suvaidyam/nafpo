@@ -29,13 +29,10 @@ class FPOProfiling(Document):
                     "doctype": "FPO MFR 10K",
                     'fpo': self.name
                 })
-                print('======================= IF' , check_fpo_mfr)
                 if check_fpo_mfr:
-                    print('======================= IF' , check_fpo_mfr)
                     new_fpo_mfr = frappe.get_doc("FPO MFR 10K", check_fpo_mfr)
                 else:
                     new_fpo_mfr = frappe.new_doc("FPO MFR 10K")
-                    print('======================= Else' , check_fpo_mfr)
                 
                 registration_date = datetime.strptime(self.date_of_registration, '%Y-%m-%d').date()
                 new_fpo_mfr.fpo = self.name
@@ -54,13 +51,10 @@ class FPOProfiling(Document):
                 "doctype": "FPO MFR 10K",
                 'fpo': self.name
             })
-            print('======================= IF' , check_fpo_mfr)
             if check_fpo_mfr:
-                print('======================= IF' , check_fpo_mfr)
                 new_fpo_mfr = frappe.get_doc("FPO MFR 10K", check_fpo_mfr)
             else:
                 new_fpo_mfr = frappe.new_doc("FPO MFR 10K")
-                print('======================= Else' , check_fpo_mfr)
             
             registration_date = datetime.strptime(self.date_of_registration, '%Y-%m-%d').date()
             new_fpo_mfr.fpo = self.name
