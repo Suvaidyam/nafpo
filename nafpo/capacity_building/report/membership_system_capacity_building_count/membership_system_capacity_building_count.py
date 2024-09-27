@@ -20,7 +20,7 @@ def execute(filters=None):
 				CASE WHEN c.fpo IS NOT NULL THEN 'Yes' ELSE 'No' END AS trained_status,
 				COUNT(DISTINCT f.name) AS count
 			FROM tabFPO f
-			LEFT JOIN tabCapacity c ON f.name = c.fpo
+			LEFT JOIN tabCapacity c ON f.name = c.fpo AND c.name IN (SELECT name FROM `tabCapacity` WHERE category = 'Membership System (FPO Member)')
 			{user_cond_str}
 			GROUP BY CASE WHEN c.fpo IS NOT NULL THEN 'Yes' ELSE 'No' END
 		) AS subquery
