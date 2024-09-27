@@ -307,20 +307,34 @@ HAVING
 @frappe.whitelist()
 def membership_system_capacity_buidling_count():
     user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
-        mappings={'CBBO': ('f', 'cbbo_name'), 'IA': ('f', 'ia') , 'FPO': ('f', 'fpo')},
-        selected_filters=['CBBO', 'IA' , 'FPO']
+        mappings={'CBBO': ('f', 'cbbo_name'), 'State': ('f', 'state'), 'District': ('f', 'district'), 'FPO': ('f', 'name'), 'IA': ('f', 'ia')},
+        selected_filters=['CBBO','State','FPO','District','IA']
     )
-    cond_str = f" WHERE {user_filter_conditions}" if user_filter_conditions else ""
-    queary = f"""
-    SELECT
-        COUNT(DISTINCT CASE WHEN c.fpo IS NOT NULL THEN f.name END) AS FPO_with_Training,
-        COUNT(DISTINCT CASE WHEN c.fpo IS NULL THEN f.name END) AS FPO_without_Training
-    FROM `tabFPO` f
-    LEFT JOIN `tabCapacity` c ON f.name = c.fpo
-    {cond_str}
+    user_cond_str = f"WHERE {user_filter_conditions}" if user_filter_conditions else ""
+
+    query = f"""
+        SELECT
+            all_statuses.trained_status,
+            COALESCE(subquery.count, 0) AS count
+        FROM (
+            SELECT
+                CASE WHEN c.fpo IS NOT NULL THEN 'Yes' ELSE 'No' END AS trained_status,
+                COUNT(DISTINCT f.name) AS count
+            FROM tabFPO f
+            LEFT JOIN tabCapacity c ON f.name = c.fpo AND c.name IN (SELECT name FROM `tabCapacity` WHERE category = 'Membership System (FPO Member)')
+            {user_cond_str}
+            GROUP BY CASE WHEN c.fpo IS NOT NULL THEN 'Yes' ELSE 'No' END
+        ) AS subquery
+        RIGHT JOIN (
+            SELECT 'Yes' AS trained_status
+            UNION ALL
+            SELECT 'No' AS trained_status
+        ) AS all_statuses ON subquery.trained_status = all_statuses.trained_status
+        ORDER BY all_statuses.trained_status ASC;
     """
-    count= frappe.db.sql(queary, as_dict=1)
-    return count[0]
+
+    count = frappe.db.sql(query, as_dict=True)
+    return {"FPO_with_training":count[1].count, "FPO_without_training":count[0].count}
 
 
 @frappe.whitelist()
@@ -371,31 +385,34 @@ def operation_system_capacity_building():
 @frappe.whitelist()
 def governance_system_capacity_building_count():
     user_filter_conditions = ReportFilter.rport_filter_by_user_permissions(
-        mappings={'CBBO': ('f', 'cbbo_name'), 'IA': ('f', 'ia') , 'FPO': ('f', 'fpo')},
-        selected_filters=['CBBO', 'IA' , 'FPO']
+        mappings={'CBBO': ('f', 'cbbo_name'), 'State': ('f', 'state'), 'District': ('f', 'district'), 'FPO': ('f', 'name'), 'IA': ('f', 'ia')},
+        selected_filters=['CBBO','State','FPO','District','IA']
     )
-    cond_str = f" WHERE {user_filter_conditions}" if user_filter_conditions else ""
-    queary = f"""
-    SELECT
-    COUNT(CASE WHEN subquery.training_count > 0 THEN 1 END) AS FPOs_With_Training,
-    COUNT(CASE WHEN subquery.training_count = 0 THEN 1 END) AS FPOs_Without_Training
-FROM (
-    SELECT
-        f.name AS fpo_name,
-        COUNT(b.parent) AS training_count
-    FROM
-        `tabFPO` f
-    LEFT JOIN
-        `tabCapacity` c ON f.name = c.fpo
-    LEFT JOIN
-        `tabBOD KYC Child` b ON c.name = b.parent
-    {cond_str}
-    GROUP BY
-        f.name
-) AS subquery;
+    user_cond_str = f"WHERE {user_filter_conditions}" if user_filter_conditions else ""
+
+    query = f"""
+        SELECT
+            all_statuses.trained_status,
+            COALESCE(subquery.count, 0) AS count
+        FROM (
+            SELECT
+                CASE WHEN c.fpo IS NOT NULL THEN 'Yes' ELSE 'No' END AS trained_status,
+                COUNT(DISTINCT f.name) AS count
+            FROM tabFPO f
+            LEFT JOIN tabCapacity c ON f.name = c.fpo AND c.name IN (SELECT name FROM `tabCapacity` WHERE category = 'Governance System (BOD)')
+            {user_cond_str}
+            GROUP BY CASE WHEN c.fpo IS NOT NULL THEN 'Yes' ELSE 'No' END
+        ) AS subquery
+        RIGHT JOIN (
+            SELECT 'Yes' AS trained_status
+            UNION ALL
+            SELECT 'No' AS trained_status
+        ) AS all_statuses ON subquery.trained_status = all_statuses.trained_status
+        ORDER BY all_statuses.trained_status ASC;
     """
-    count= frappe.db.sql(queary, as_dict=1)
-    return count[0]
+
+    count = frappe.db.sql(query, as_dict=True)
+    return {"FPO_with_training":count[1].count, "FPO_without_training":count[0].count}
 
 
 

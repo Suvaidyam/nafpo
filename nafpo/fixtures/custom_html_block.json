@@ -848,7 +848,7 @@
   "docstatus": 0,
   "doctype": "Custom HTML Block",
   "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Membership System Capacity Building</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=Yes\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">At least one training: Yes </div>\n      <div class=\"data\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Membership%20System%20Capacity%20Buidling?FPO_with_Training=No\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">At least one training: No</div>\n      <div class=\"data1\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>\n\n\n\n\n\n",
-  "modified": "2024-09-26 16:00:06.180835",
+  "modified": "2024-09-27 16:03:57.840806",
   "name": "Membership System Capacity Building",
   "private": 0,
   "roles": [
@@ -871,14 +871,14 @@
     "role": "Admin"
    }
   ],
-  "script": " frappe.call({\n    method: \"nafpo.apis.api.membership_system_capacity_buidling_count\",\n    \n             callback(r) {\n                console.log(r,\"erheoiuhr\")\n                let some_class_element = root_element.querySelector('.data');\n                some_class_element.textContent = r.message.FPO_with_Training;\n                 let some_class_element1 = root_element.querySelector('.data1');\n                some_class_element1.textContent = r.message.FPO_without_Training;\n             }\n});",
+  "script": " frappe.call({\n    method: \"nafpo.apis.api.membership_system_capacity_buidling_count\",\n    \n             callback(r) {\n                console.log(r,\"erheoiuhr\")\n                let some_class_element = root_element.querySelector('.data');\n                some_class_element.textContent = r.message.FPO_with_training;\n                 let some_class_element1 = root_element.querySelector('.data1');\n                some_class_element1.textContent = r.message.FPO_without_training;\n             }\n});",
   "style": "\n"
  },
  {
   "docstatus": 0,
   "doctype": "Custom HTML Block",
   "html": "<div>\n  <h2 style=\"font-size: 14px; color: #525252; margin-bottom: 10px;\">Governance System Capacity Building</h2>\n  <div class=\"main-container\" style=\"display: flex; flex-direction: column; gap: 10px;\">\n  <a href=\"/app/query-report/Governance%20System%20Capacity%20Building?Has_Trained_Bod=Yes\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No. of FPO with Trained BOD</div>\n      <div id=\"data_with_training\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n  <a href=\"/app/query-report/Governance%20System%20Capacity%20Building?Has_Trained_Bod=No\" class=\"card border rounded-lg\" style=\"height: 84px; font-size: 11px; color:#525252; text-decoration: none; flex: 1;\">\n    <div class=\"p-3\">\n      <div style=\"font-size: 11px; font-weight: bold;\">No. of FPO without Trained BOD</div>\n      <div id=\"data_without_training\" style=\"font-size: 20px; font-weight: bold;\"></div>\n    </div>\n  </a>\n</div>\n</div>",
-  "modified": "2024-09-27 14:04:40.517480",
+  "modified": "2024-09-27 16:08:43.998037",
   "name": "Governance System Capacity Buildin",
   "private": 0,
   "roles": [
@@ -901,7 +901,7 @@
     "role": "CBBO"
    }
   ],
-  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.governance_system_capacity_building_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n        console.log('==========',forms_lists)\n        let some_class_element = root_element.querySelector('#data_with_training');\n        some_class_element.textContent = forms_lists.FPOs_With_Training;\n        let some_class_element1 = root_element.querySelector('#data_without_training');\n        some_class_element1.textContent = forms_lists.FPOs_Without_Training;\n});",
+  "script": "async function callAPI(options) {\n  return new Promise((resolve, reject) => {\n    frappe.call({\n      ...options,\n      callback: async function (response) {\n        resolve(response?.message || response?.value)\n      }\n    });\n  })\n}\n\ncallAPI({\n  method: 'nafpo.apis.api.governance_system_capacity_building_count',\n  freeze: true,\n  freeze_message: __(\"Getting\"),\n}).then(forms_lists => {\n        console.log('==========',forms_lists)\n        let some_class_element = root_element.querySelector('#data_with_training');\n        some_class_element.textContent = forms_lists.FPO_with_training;\n        let some_class_element1 = root_element.querySelector('#data_without_training');\n        some_class_element1.textContent = forms_lists.FPO_without_training;\n});",
   "style": ""
  },
  {
