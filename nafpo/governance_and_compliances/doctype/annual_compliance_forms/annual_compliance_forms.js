@@ -64,7 +64,7 @@ async function set_due_date(frm) {
         // Audit report Due Date
         if (get_next_year >= 0) {
             let adt_report_due_date = new Date(financial_year_date[0].end_date);
-            adt_report_due_date.setFullYear(adt_report_due_date.getFullYear() + get_next_year + 2);
+            adt_report_due_date.setFullYear(adt_report_due_date.getFullYear() + get_next_year + 1);
             frm.set_value('adt_report_due_date', adt_report_due_date.toISOString().split('T')[0])
 
             // Calculate and set AGM Due Date
@@ -79,11 +79,11 @@ async function set_due_date(frm) {
             frm.set_value('adt_1_due_date', adt_1_due_date.toISOString().split('T')[0])
 
             // Calculate and set INCOME TAX Return
-            let updatedYear = parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10) + 2;
+            let updatedYear = parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10) + get_next_year + 1;
             frm.set_value('it_return_due_date', `20${updatedYear}-10-31`)
 
             // DIRECTOR KYC
-            frm.set_value('d_kyc_due_date', `20${financial_year_date[0].financial_year_name.split('-')[1]}-09-30`)
+            frm.set_value('d_kyc_due_date', `20${financial_year_date[0].financial_year_name.split('-')[1] - 1}-09-30`)
         }
 
     } else {
@@ -187,7 +187,6 @@ frappe.ui.form.on("Annual Compliance Forms", {
         // aoc_4_submitted_on_lock = true;
         // mgt_7_submitted_on_lock = true;
         // d_kyc_submitted_on_lock = true;
-        console.log('adt_report_submitted_on_lock :>> ', adt_report_submitted_on_lock);
         if (new Date(frm.doc.adt_report_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0) && adt_report_submitted_on_lock == true)) {
             frappe.throw({ message: "Audit Report Submitted On Date can't be earlier than today's date." });
         }
@@ -227,7 +226,8 @@ frappe.ui.form.on("Annual Compliance Forms", {
             await check_ACF(frm)
         }
     },
-    async agm_submitted_on(frm) {
+    agm_submitted_on(frm) {
+        // FORM AOC-4 – Filing of Financial Statements
         let aoc_4_due_date = new Date(frm.doc.agm_submitted_on);
         aoc_4_due_date.setMonth(aoc_4_due_date.getMonth() + 1);
         frm.set_value('aoc_4_due_date', aoc_4_due_date.toISOString().split('T')[0]);
@@ -236,6 +236,12 @@ frappe.ui.form.on("Annual Compliance Forms", {
         let mgt_7_due_date = new Date(frm.doc.agm_submitted_on);
         mgt_7_due_date.setMonth(mgt_7_due_date.getMonth() + 2);
         frm.set_value('mgt_7_due_date', mgt_7_due_date.toISOString().split('T')[0]);
+
+        // Validate Manual Date Entry 
+        if (new Date(frm.doc.agm_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0))) {
+            agm_submitted_on_lock = true
+            frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
+        }
     },
 
     async adt_report_status(frm) {
@@ -278,12 +284,12 @@ frappe.ui.form.on("Annual Compliance Forms", {
             frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
         }
     },
-    agm_submitted_on(frm) {
-        if (new Date(frm.doc.agm_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0))) {
-            agm_submitted_on_lock = true
-            frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
-        }
-    },
+    // agm_submitted_on(frm) {
+    //     if (new Date(frm.doc.agm_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0))) {
+    //         agm_submitted_on_lock = true
+    //         frappe.throw({ message: "Submitted On Date can't be earlier than today's date." });
+    //     }
+    // },
     it_return_submitted_on(frm) {
         if (new Date(frm.doc.it_return_submitted_on) < new Date(new Date().setHours(0, 0, 0, 0))) {
             it_return_submitted_on_lock = true
