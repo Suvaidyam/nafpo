@@ -10,9 +10,9 @@ function set_due_date(frm) {
             filter: frm.doc.fpo
         },
         callback: function (response) {
-            if (response.message == undefined) {
-                return frappe.throw({ message: "FPO Profile doesn't exist. Please create FPO Profiling." })
-            }
+            // if (response.message == undefined) {
+            //     return frappe.throw({ message: "FPO Profile doesn't exist. Please create FPO Profiling." })
+            // }
             let date = new Date(response.message.date_of_registration);
             date.setDate(date.getDate() + 180);
             frm.set_value('inc_20_due_date', date.toISOString().split('T')[0]);

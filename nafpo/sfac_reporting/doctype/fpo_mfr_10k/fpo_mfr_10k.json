@@ -60,7 +60,8 @@
    "label": "FPO",
    "link_filters": "[[\"FPO Profiling\",\"under_the_central_sector_scheme_10k_fpo_formation\",\"=\",1]]",
    "options": "FPO Profiling",
-   "reqd": 1
+   "reqd": 1,
+   "set_only_once": 1
   },
   {
    "description": "<span style=\"font-size:12px; color:gray;\">Registration Date</span>",
@@ -348,7 +349,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-26 11:36:58.809151",
+ "modified": "2024-09-27 13:28:47.122452",
  "modified_by": "Administrator",
  "module": "SFAC Reporting",
  "name": "FPO MFR 10K",
