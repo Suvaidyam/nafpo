@@ -107,7 +107,7 @@
   {
    "fieldname": "fpos_pincode",
    "fieldtype": "Data",
-   "label": "FPO's pincode",
+   "label": "FPO's Pincode",
    "length": 6
   },
   {
@@ -128,7 +128,7 @@
   {
    "fieldname": "date_of_incorporation",
    "fieldtype": "Date",
-   "label": "Date of incorporation",
+   "label": "Date of Incorporation",
    "reqd": 1
   },
   {
@@ -163,7 +163,7 @@
   {
    "fieldname": "fpo_email_id",
    "fieldtype": "Data",
-   "label": "FPO Email Id",
+   "label": "FPO's Email Id",
    "options": "Email",
    "reqd": 1
   },
@@ -178,13 +178,13 @@
   {
    "fieldname": "licence_number_for_seeds",
    "fieldtype": "Data",
-   "label": "Licence number",
+   "label": "Licence Number",
    "length": 25
   },
   {
    "fieldname": "date_of_expiry_for_seeds",
    "fieldtype": "Date",
-   "label": "Date of expiry"
+   "label": "Date of Expiry"
   },
   {
    "fieldname": "licence_number_for_fertilizer",
@@ -196,19 +196,19 @@
   {
    "fieldname": "date_of_expiry_for_fertilizer",
    "fieldtype": "Date",
-   "label": "Date of expiry"
+   "label": "Date of Expiry"
   },
   {
    "fieldname": "licence_number_for_pesticide",
    "fieldtype": "Data",
-   "label": "Licence number",
+   "label": "Licence Number",
    "length": 25,
    "non_negative": 1
   },
   {
    "fieldname": "date_of_expiry_for_pesticide",
    "fieldtype": "Date",
-   "label": "Date of expiry"
+   "label": "Date of Expiry"
   },
   {
    "fieldname": "licence_number_for_fssai",
@@ -219,7 +219,7 @@
   {
    "fieldname": "date_of_expiry_for_fssai",
    "fieldtype": "Date",
-   "label": "Date of expiry"
+   "label": "Date of Expiry"
   },
   {
    "default": "No",
@@ -316,13 +316,13 @@
   {
    "fieldname": "licence_number_for_seed_production",
    "fieldtype": "Data",
-   "label": "Licence number",
+   "label": "Licence Number",
    "length": 25
   },
   {
    "fieldname": "date_of_expiry__for_seed_production",
    "fieldtype": "Date",
-   "label": "Date of expiry"
+   "label": "Date of Expiry"
   },
   {
    "fieldname": "column_break_zhah",
@@ -429,7 +429,7 @@
    "link_fieldname": "fpo"
   }
  ],
- "modified": "2024-08-21 19:01:30.363176",
+ "modified": "2024-09-27 14:45:04.957478",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "FPO Profiling",
