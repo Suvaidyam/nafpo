@@ -50,6 +50,10 @@ async function set_due_date(frm) {
     }).then(response => {
         return response
     });
+    console.log('get_fpo_profiling :>> ', get_fpo_profiling[0]);
+    if (get_fpo_profiling[0] == undefined) {
+        frappe.throw({ message: "FPO Profile doesn't exist. Please create FPO Profiling." })
+    }
     const get_next_year = financial_year_date[0].start_date.split('-')[0] - get_fpo_profiling[0].date_of_incorporation.split('-')[0]
     if (get_next_year < 0) {
         frm.set_value('financial_year', '')
