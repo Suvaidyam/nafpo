@@ -1,48 +1,49 @@
 // Copyright (c) 2024, dhwaniris and contributors
 // For license information, please see license.txt
-// async function check_exists_fpo_in_mfr(frm) {
-//     let response = await frappe.call({
-//         method: "nafpo.apis.api.get_exists_event",
-//         args: {
-//             doctype_name: "FPO MFR 10K",
-//             filterName: "fpo",
-//             value: frm.doc.fpo,
-//         }
-//     });
-//     if (response.message) {
-//         return frappe.throw({ message: 'This FPO are already exists in FPO MFR 10K' });
-//     }
-// }
-// function set_due_date(frm) {
-//     frappe.call({
-//         method: "nafpo.apis.api.get_list_event",
-//         args: {
-//             doctype_name: 'FPO Profiling',
-//             filter: { 'name': frm.doc.fpo },
-//             fields: ['date_of_registration']
-//         },
-//         callback: function (response) {
-//             let registration_date = new Date(response.message[0].date_of_registration);
-//             // Define due dates as an array with the corresponding month increments
-//             const due_dates = [0, 6, 12, 18, 24, 30].map(months => {
-//                 let due_date = new Date(registration_date);
-//                 due_date.setMonth(registration_date.getMonth() + months);
-//                 return due_date.toISOString().split('T')[0];
-//             });
-//             // Set values in the form
-//             ['1st_installment_due_date', '2nd_installment_due_date', '3rd_installment_due_date', '4th_installment_due_date', '5th_installment_due_date', '6th_installment_due_date'].forEach((field, index) => {
-//                 frm.set_value(field, due_dates[index]);
-//             });
-//         },
-//         error: function (error) {
-//             console.log("An error occurred: ", error);
-//         }
-//     });
-// }
+async function check_exists_fpo_in_mfr(frm) {
+    let response = await frappe.call({
+        method: "nafpo.apis.api.get_exists_event",
+        args: {
+            doctype_name: "FPO MFR 10K",
+            filterName: "fpo",
+            value: frm.doc.fpo,
+        }
+    });
+    if (response.message) {
+        return frappe.throw({ message: 'This FPO are already exists in FPO MFR 10K' });
+    }
+}
+function set_due_date(frm) {
+    frappe.call({
+        method: "nafpo.apis.api.get_list_event",
+        args: {
+            doctype_name: 'FPO Profiling',
+            filter: { 'name': frm.doc.fpo },
+            fields: ['date_of_registration']
+        },
+        callback: function (response) {
+            console.log('date_of_registration :>> ', response.message[0].date_of_registration);
+            let registration_date = new Date(response.message[0].date_of_registration);
+            // Define due dates as an array with the corresponding month increments
+            const due_dates = [0, 6, 12, 18, 24, 30].map(months => {
+                let due_date = new Date(registration_date);
+                due_date.setMonth(registration_date.getMonth() + months);
+                return due_date.toISOString().split('T')[0];
+            });
+            // Set values in the form
+            ['1st_installment_due_date', '2nd_installment_due_date', '3rd_installment_due_date', '4th_installment_due_date', '5th_installment_due_date', '6th_installment_due_date'].forEach((field, index) => {
+                frm.set_value(field, due_dates[index]);
+            });
+        },
+        error: function (error) {
+            console.log("An error occurred: ", error);
+        }
+    });
+}
 
 frappe.ui.form.on("FPO MFR 10K", {
     refresh: async function (frm) {
-        if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator')) {
+        if (frappe.user.has_role('FPO') && !frappe.user.has_role('Administrator') && frm.is_new()) {
             try {
                 let fpo = await frappe.call({
                     method: "nafpo.apis.api.get_fpo_doc",
@@ -76,10 +77,10 @@ frappe.ui.form.on("FPO MFR 10K", {
     },
 
     fpo: async function (frm) {
-        // if (frm.is_new() && frm.doc.fpo) {
-        //     await check_exists_fpo_in_mfr(frm)
-        // }
-        // if (frm.doc.fpo) { set_due_date(frm) }
+        if (frm.is_new() && frm.doc.fpo) {
+            await check_exists_fpo_in_mfr(frm)
+        }
+        if (frm.doc.fpo) { set_due_date(frm) }
     },
     are_you_received_1st_installment_fund(frm) {
         if (frm.doc.are_you_received_1st_installment_fund == "Yes") {

@@ -19,6 +19,7 @@
    "fieldname": "state",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "State",
    "options": "State",
    "reqd": 1
@@ -27,6 +28,7 @@
    "fieldname": "district",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "District",
    "options": "District",
    "reqd": 1
@@ -35,6 +37,7 @@
    "fieldname": "block",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Block",
    "options": "Block",
    "reqd": 1
@@ -43,6 +46,7 @@
    "fieldname": "grampanchayat",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Grampanchayat",
    "options": "Grampanchayat",
    "reqd": 1
@@ -51,6 +55,7 @@
    "fieldname": "village_name",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Village Name",
    "reqd": 1
   },
@@ -71,7 +76,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-11 13:26:34.496556",
+ "modified": "2024-09-28 10:24:27.898708",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Village",
@@ -118,6 +123,7 @@
    "email": 1,
    "export": 1,
    "print": 1,
+   "read": 1,
    "report": 1,
    "role": "FPO",
    "select": 1,
