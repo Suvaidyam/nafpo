@@ -22,7 +22,8 @@
    "in_list_view": 1,
    "label": "FPO",
    "options": "FPO",
-   "reqd": 1
+   "reqd": 1,
+   "set_only_once": 1
   },
   {
    "fieldname": "financial_year",
@@ -74,7 +75,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-11 13:20:55.054120",
+ "modified": "2024-09-28 10:30:55.954374",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Board of Directors Meeting Forms",

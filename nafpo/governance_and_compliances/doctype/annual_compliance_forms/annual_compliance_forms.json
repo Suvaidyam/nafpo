@@ -64,7 +64,8 @@
    "in_list_view": 1,
    "label": "FPO",
    "options": "FPO",
-   "reqd": 1
+   "reqd": 1,
+   "set_only_once": 1
   },
   {
    "fieldname": "financial_year",
@@ -380,7 +381,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-14 13:18:14.922232",
+ "modified": "2024-09-28 10:30:43.527835",
  "modified_by": "Administrator",
  "module": "Governance and compliances",
  "name": "Annual Compliance Forms",
