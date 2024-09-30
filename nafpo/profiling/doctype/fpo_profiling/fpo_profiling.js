@@ -58,6 +58,7 @@ async function frize_date(frm) {
 
 frappe.ui.form.on("FPO Profiling", {
     async refresh(frm) {
+        console.log('refresh called...')
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
         await apply_filter('block_name', 'district', frm, frm.doc.district_name)
         await apply_filter('name_of_the_fpo', 'district', frm, frm.doc.district_name)
