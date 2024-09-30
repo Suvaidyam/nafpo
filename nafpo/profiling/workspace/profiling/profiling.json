@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"ElPIo7XXJF\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Overview</span>\",\"col\":12}},{\"id\":\"gKfVM86HqS\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO Profile Summary\",\"col\":6}},{\"id\":\"RG6Di_lr4m\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Producer Groups\",\"col\":6}},{\"id\":\"q4LdvlFN4M\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Board of Directors Overview\",\"col\":6}},{\"id\":\"w5vQ7wiR3r\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO member details Overview\",\"col\":6}}]",
+ "content": "[{\"id\":\"ElPIo7XXJF\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Overview</span>\",\"col\":12}},{\"id\":\"gKfVM86HqS\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO Profile Summary\",\"col\":6}},{\"id\":\"RG6Di_lr4m\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Producer Group\",\"col\":6}},{\"id\":\"q4LdvlFN4M\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Board of Directors Overview\",\"col\":6}},{\"id\":\"w5vQ7wiR3r\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO member details Overview\",\"col\":6}}]",
  "creation": "2024-06-19 09:58:07.824654",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,11 +13,15 @@
  "is_hidden": 0,
  "label": "Profiling",
  "links": [],
- "modified": "2024-08-08 17:45:29.652820",
+ "modified": "2024-09-30 15:53:30.993578",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "Profiling",
  "number_cards": [
+  {
+   "label": "Producer Group",
+   "number_card_name": "Producer Groups"
+  },
   {
    "label": "Board of Directors Overview",
    "number_card_name": "BOD KYC"
@@ -29,10 +33,6 @@
   {
    "label": "FPO member details Overview",
    "number_card_name": "FPO member details"
-  },
-  {
-   "label": "Producer Groups",
-   "number_card_name": "Producer Groups"
   }
  ],
  "owner": "Administrator",

@@ -72,7 +72,7 @@
    "fieldname": "address_proof_status",
    "fieldtype": "Autocomplete",
    "label": "Address Proof Status",
-   "options": "Voter Card\nRation Card\nDriving Licence\nOther",
+   "options": "Voter ID\nRation Card\nDriving Licence\nOther",
    "reqd": 1
   },
   {
@@ -163,7 +163,7 @@
    "fieldname": "director_identification_number",
    "fieldtype": "Data",
    "label": "Director Identification Number",
-   "length": 20,
+   "length": 25,
    "non_negative": 1,
    "reqd": 1
   },
@@ -195,7 +195,7 @@
    "link_fieldname": "name_of_the_fpo"
   }
  ],
- "modified": "2024-09-27 15:33:00.844313",
+ "modified": "2024-09-30 16:05:44.244837",
  "modified_by": "Administrator",
  "module": "Profiling",
  "name": "BOD KYC",
