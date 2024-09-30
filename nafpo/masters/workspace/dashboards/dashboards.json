@@ -13,7 +13,7 @@
    "label": "Gender Wise Land Holding"
   }
  ],
- "content": "[{\"id\":\"JnDP76c_65\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">FPO Details</span>\",\"col\":12}},{\"id\":\"J6XGIAj2cG\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total FPOs\",\"col\":4}},{\"id\":\"TfDD8SfCq1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO's Profiled\",\"col\":4}},{\"id\":\"jsvNZnr44O\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Board of Directors Count\",\"col\":4}},{\"id\":\"8xTeWrxYcV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Producer Groups Count\",\"col\":6}},{\"id\":\"vHIlydq6ER\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Members Count\",\"col\":6}},{\"id\":\"7te4fKkLXb\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Coverage Summary - FPO</span>\",\"col\":12}},{\"id\":\"b0Emfnm0ln\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State \",\"col\":4}},{\"id\":\"NB66j3wIam\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District\",\"col\":4}},{\"id\":\"I2cDbGFnuH\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block\",\"col\":4}},{\"id\":\"tNzAHcv1-t\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Coverage Summary - FPO Members</span><br>\",\"col\":12}},{\"id\":\"RE4t4YwgN4\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State Covered\",\"col\":4}},{\"id\":\"dX8R3SGXa8\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District Covered\",\"col\":4}},{\"id\":\"1HTmy7gYri\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block Covered\",\"col\":4}},{\"id\":\"TRjeXMdWyx\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Grampanchayat Covered\",\"col\":6}},{\"id\":\"c20Mf0HCYO\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Village Covered\",\"col\":6}},{\"id\":\"105sFDPzrl\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"bXk1PL5uWY\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender Distribution Of FPO Members\",\"col\":6}},{\"id\":\"siA2wtWCR8\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender Wise Land Holding\",\"col\":6}},{\"id\":\"x7kD3CHDsy\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Member Landholding\",\"col\":12}}]",
+ "content": "[{\"id\":\"JnDP76c_65\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">FPO Details</span>\",\"col\":12}},{\"id\":\"J6XGIAj2cG\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total FPOs\",\"col\":4}},{\"id\":\"TfDD8SfCq1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"FPO's Profiled\",\"col\":4}},{\"id\":\"jsvNZnr44O\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Board of Directors\",\"col\":4}},{\"id\":\"8xTeWrxYcV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Producer Group\",\"col\":6}},{\"id\":\"vHIlydq6ER\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Members \",\"col\":6}},{\"id\":\"7te4fKkLXb\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Coverage Summary - FPO</span>\",\"col\":12}},{\"id\":\"b0Emfnm0ln\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State \",\"col\":4}},{\"id\":\"NB66j3wIam\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District\",\"col\":4}},{\"id\":\"I2cDbGFnuH\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block\",\"col\":4}},{\"id\":\"tNzAHcv1-t\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Coverage Summary - FPO Members</span><br>\",\"col\":12}},{\"id\":\"RE4t4YwgN4\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"State Covered\",\"col\":4}},{\"id\":\"dX8R3SGXa8\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"District Covered\",\"col\":4}},{\"id\":\"1HTmy7gYri\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Block Covered\",\"col\":4}},{\"id\":\"TRjeXMdWyx\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Grampanchayat Covered\",\"col\":6}},{\"id\":\"c20Mf0HCYO\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Village Covered\",\"col\":6}},{\"id\":\"105sFDPzrl\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"bXk1PL5uWY\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender Distribution Of FPO Members\",\"col\":6}},{\"id\":\"siA2wtWCR8\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Gender Wise Land Holding\",\"col\":6}},{\"id\":\"x7kD3CHDsy\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Member Landholding\",\"col\":12}}]",
  "creation": "2024-06-25 11:27:09.963063",
  "custom_blocks": [],
  "docstatus": 0,
@@ -26,7 +26,7 @@
  "is_hidden": 0,
  "label": "Dashboards",
  "links": [],
- "modified": "2024-08-08 19:35:12.629837",
+ "modified": "2024-09-30 15:59:09.292140",
  "modified_by": "Administrator",
  "module": "Masters",
  "name": "Dashboards",
@@ -34,6 +34,14 @@
   {
    "label": "State ",
    "number_card_name": "State Covered"
+  },
+  {
+   "label": "Board of Directors",
+   "number_card_name": "BOD"
+  },
+  {
+   "label": "Producer Group",
+   "number_card_name": "Producer Group"
   },
   {
    "label": "FPO's Profiled",
@@ -46,6 +54,10 @@
   {
    "label": "Block",
    "number_card_name": "Block Cover"
+  },
+  {
+   "label": "Members ",
+   "number_card_name": "Members"
   },
   {
    "label": "State Covered",
@@ -70,18 +82,6 @@
   {
    "label": "Total FPOs",
    "number_card_name": "No. of FPO (Total FPO)"
-  },
-  {
-   "label": "Board of Directors Count",
-   "number_card_name": "BOD"
-  },
-  {
-   "label": "Producer Groups Count",
-   "number_card_name": "Producer Group"
-  },
-  {
-   "label": "Members Count",
-   "number_card_name": "Members"
   }
  ],
  "owner": "Administrator",
