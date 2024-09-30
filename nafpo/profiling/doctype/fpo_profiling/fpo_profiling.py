@@ -21,7 +21,7 @@ class FPOProfiling(Document):
         new_otorf.inc_20_due_date = registration_date + relativedelta(days=180)
         new_otorf.inc_22_due_date = registration_date + relativedelta(days=30)
         new_otorf.adt_1_due_date = registration_date + relativedelta(days=30)
-        new_otorf.save()
+        new_otorf.save(ignore_permissions=True)
         if not self.is_new():
             # FPO MFR 10k
             if self.under_the_central_sector_scheme_10k_fpo_formation:
@@ -42,7 +42,7 @@ class FPOProfiling(Document):
                 new_fpo_mfr.__dict__['4th_installment_due_date'] = registration_date + relativedelta(months=18)
                 new_fpo_mfr.__dict__['5th_installment_due_date'] = registration_date + relativedelta(months=24)
                 new_fpo_mfr.__dict__['6th_installment_due_date'] = registration_date + relativedelta(months=30)
-                new_fpo_mfr.save()
+                new_fpo_mfr.save(ignore_permissions=True)
         
     def after_insert(self):
     # FPO MFR 10k
@@ -64,7 +64,7 @@ class FPOProfiling(Document):
             new_fpo_mfr.__dict__['4th_installment_due_date'] = registration_date + relativedelta(months=18)
             new_fpo_mfr.__dict__['5th_installment_due_date'] = registration_date + relativedelta(months=24)
             new_fpo_mfr.__dict__['6th_installment_due_date'] = registration_date + relativedelta(months=30)
-            new_fpo_mfr.save()
+            new_fpo_mfr.save(ignore_permissions=True)
 
 
     def before_validate(self):

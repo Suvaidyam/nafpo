@@ -6,11 +6,11 @@ const hide_advance_search = (frm, list) => {
 };
 //  This Function extend limit of Link field in dropdowns
 const extend_options_length = (frm, fields) => {
-    fields?.forEach((field) => {
-        frm.set_query(field, () => {
-            return { page_length: 1000 };
-        });
-    })
+    // fields?.forEach((field) => {
+    //     frm.set_query(field, () => {
+    //         return { page_length: 1000 };
+    //     });
+    // })
 };
 
 // this function apply filter
