@@ -11,11 +11,34 @@ async function calculate_total_income(frm) {
         (frm.doc.other_income || 0)
     ))
 }
+const getFPOsIDs = async (block) => {
+    let response = await frappe.db.get_list('FPO', {
+        pluck: 'name',
+        filters: [
+            ['Block Child', 'block', '=', block]
+        ],
+        distinct: true
+    });
+    if (block) {
+        return response
+    } else {
+        return []
+    }
+};
+const fpoFilter = async (frm, fpoIds) => {
+    frm.fields_dict['fpo'].get_query = () => {
+        return {
+            filters: [
+                ['FPO', 'name', 'in', fpoIds]
+            ]
+        }
+    }
+}
 frappe.ui.form.on("FPO member details", {
     async refresh(frm) {
         await apply_filter('district_name', 'state', frm, frm.doc.state_name)
         await apply_filter('block_name', 'district', frm, frm.doc.district_name)
-        await apply_filter('fpo', 'district', frm, frm.doc.district_name)
+        await fpoFilter(frm, await getFPOsIDs(frm.doc.block_name))
         await apply_filter('grampanchayat_name', 'block', frm, frm.doc.block_name)
         await apply_filter('producer_group', 'fpo', frm, frm.doc.fpo)
         hide_print_button(frm)
@@ -44,7 +67,6 @@ frappe.ui.form.on("FPO member details", {
         truncate_multiple_fields_value(frm, ['district_name', 'block_name', 'fpo', 'grampanchayat_name', 'village_name'])
     },
     district_name: async function (frm) {
-        await apply_filter('fpo', 'district', frm, frm.doc.district_name)
         await apply_filter('block_name', 'district', frm, frm.doc.district_name)
         truncate_multiple_fields_value(frm, ['block_name', 'fpo', 'grampanchayat_name', 'village_name'])
     },
@@ -55,6 +77,7 @@ frappe.ui.form.on("FPO member details", {
         validate_string(frm, 'bank_ac_number', "Bank Account Number");
     },
     block_name: async function (frm) {
+        await fpoFilter(frm, await getFPOsIDs(frm.doc.block_name))
         await apply_filter('grampanchayat_name', 'block', frm, frm.doc.block_name)
         truncate_multiple_fields_value(frm, ['fpo', 'grampanchayat_name', 'village_name'])
     },

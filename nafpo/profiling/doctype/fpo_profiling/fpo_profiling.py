@@ -66,7 +66,6 @@ class FPOProfiling(Document):
             new_fpo_mfr.__dict__['6th_installment_due_date'] = registration_date + relativedelta(months=30)
             new_fpo_mfr.save(ignore_permissions=True)
 
-
     def before_validate(self):
         exists = frappe.db.exists({
             "doctype": "FPO Profiling",
