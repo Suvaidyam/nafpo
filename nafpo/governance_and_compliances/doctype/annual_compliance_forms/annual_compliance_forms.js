@@ -50,72 +50,74 @@ async function set_due_date(frm) {
     }).then(response => {
         return response
     });
-    console.log('get_fpo_profiling :>> ', get_fpo_profiling[0]);
     if (get_fpo_profiling[0] == undefined) {
         frappe.throw({ message: "FPO Profile doesn't exist. Please create FPO Profiling." })
     }
     const get_next_year = financial_year_date[0].start_date.split('-')[0] - get_fpo_profiling[0].date_of_incorporation.split('-')[0]
-    if (get_next_year < 0) {
-        frm.set_value('financial_year', '')
-        frappe.throw({ message: `The date of incorporation is earlier than the financial year.` })
-    }
-    const [day1, month1] = '01-01'.split('-').map(Number); console
+
+    const [day1, month1] = '01-01'.split('-').map(Number);
     const [day2, month2] = '31-03'.split('-').map(Number);
     const [day, month] = `${get_fpo_profiling[0].date_of_incorporation.split('-')[2]}-${get_fpo_profiling[0].date_of_incorporation.split('-')[1]}`.split('-').map(Number);
 
     if ((month > month1 || (month === month1 && day >= day1)) &&
         (month < month2 || (month === month2 && day <= day2))) {
+        // Quarter 4
         // Audit report Due Date
-        if (get_next_year >= 0) {
-            let adt_report_due_date = new Date(financial_year_date[0].end_date);
-            adt_report_due_date.setFullYear(adt_report_due_date.getFullYear() + get_next_year + 1);
-            frm.set_value('adt_report_due_date', adt_report_due_date.toISOString().split('T')[0])
-
-            // Calculate and set AGM Due Date
-            let agm_due_date = new Date(adt_report_due_date);
-            agm_due_date.setMonth(agm_due_date.getMonth() + 6);
-            agm_due_date.setDate(agm_due_date.getDate() - 1);
-            frm.set_value('agm_due_date', agm_due_date.toISOString().split('T')[0]);
-
-            // Calculate and set Form ADT-1 – Auditor Appointment for Five year
-            let adt_1_due_date = new Date(agm_due_date.toISOString().split('T')[0])
-            adt_1_due_date.setDate(adt_1_due_date.getDate() - 21);
-            frm.set_value('adt_1_due_date', adt_1_due_date.toISOString().split('T')[0])
-
-            // Calculate and set INCOME TAX Return
-            let updatedYear = parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10) + get_next_year + 1;
-            frm.set_value('it_return_due_date', `20${updatedYear}-10-31`)
-
-            // DIRECTOR KYC
-            frm.set_value('d_kyc_due_date', `20${financial_year_date[0].financial_year_name.split('-')[1] - 1}-09-30`)
+        if (get_next_year < -1) {
+            frm.set_value('financial_year', '')
+            return frappe.throw({ message: `The date of incorporation is earlier than the financial year.` })
         }
+        let adt_report_due_date = new Date(financial_year_date[0].end_date);
+        adt_report_due_date.setFullYear(adt_report_due_date.getFullYear() + (get_next_year === -1 ? 1 : 0));
+        frm.set_value('adt_report_due_date', adt_report_due_date.toISOString().split('T')[0])
+
+        // Calculate and set AGM Due Date
+        let agm_due_date = new Date(adt_report_due_date);
+        agm_due_date.setMonth(agm_due_date.getMonth() + 6);
+        agm_due_date.setDate(agm_due_date.getDate() - 1);
+        frm.set_value('agm_due_date', agm_due_date.toISOString().split('T')[0]);
+
+        // Calculate and set Form ADT-1 – Auditor Appointment for Five year
+        let adt_1_due_date = new Date(agm_due_date.toISOString().split('T')[0])
+        adt_1_due_date.setDate(adt_1_due_date.getDate() - 21);
+        frm.set_value('adt_1_due_date', adt_1_due_date.toISOString().split('T')[0])
+
+        // Calculate and set INCOME TAX Return
+        let updatedYear = parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10) + (get_next_year === -1 ? 1 : 0);
+        frm.set_value('it_return_due_date', `20${updatedYear}-10-31`)
+
+        // DIRECTOR KYC
+        frm.set_value('d_kyc_due_date', `20${financial_year_date[0].financial_year_name.split('-')[1] - 1}-09-30`)
 
     } else {
-        if (get_next_year >= 0) {
-            // Audit report Due Date 
-            let adt_report_due_date = new Date(financial_year_date[0].end_date);
-            adt_report_due_date.setFullYear(adt_report_due_date.getFullYear() + get_next_year);
-            frm.set_value('adt_report_due_date', adt_report_due_date.toISOString().split('T')[0])
-
-            // Calculate and set AGM Due Date
-            let agm_due_date = new Date(adt_report_due_date);
-            agm_due_date.setMonth(agm_due_date.getMonth() + 6);
-            agm_due_date.setDate(agm_due_date.getDate() - 1);
-            frm.set_value('agm_due_date', agm_due_date.toISOString().split('T')[0]);
-
-            // Calculate and set Form ADT-1 – Auditor Appointment for Five year
-            let adt_1_due_date = new Date(agm_due_date.toISOString().split('T')[0])
-            adt_1_due_date.setDate(adt_1_due_date.getDate() - 21);
-            frm.set_value('adt_1_due_date', adt_1_due_date.toISOString().split('T')[0])
-
-            // Calculate and set INCOME TAX Return
-            let it_return_due_date = parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10) + 1
-            frm.set_value('it_return_due_date', `20${it_return_due_date}-10-31`)
-
-            // DIRECTOR KYC
-            let updatedYear = parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10) + 1;
-            frm.set_value('d_kyc_due_date', `20${updatedYear}-09-30`)
+        if (get_next_year < 0) {
+            frm.set_value('financial_year', '')
+            return frappe.throw({ message: `The date of incorporation is earlier than the financial year.` })
         }
+        // Quarter 1,2,3
+        // Audit report Due Date 
+        let adt_report_due_date = new Date(financial_year_date[0].end_date);
+        adt_report_due_date.setFullYear(adt_report_due_date.getFullYear());
+        frm.set_value('adt_report_due_date', adt_report_due_date.toISOString().split('T')[0])
+
+        // Calculate and set AGM Due Date
+        let agm_due_date = new Date(adt_report_due_date);
+        agm_due_date.setMonth(agm_due_date.getMonth() + 6);
+        agm_due_date.setDate(agm_due_date.getDate() - 1);
+        frm.set_value('agm_due_date', agm_due_date.toISOString().split('T')[0]);
+
+        // Calculate and set Form ADT-1 – Auditor Appointment for Five year
+        let adt_1_due_date = new Date(agm_due_date.toISOString().split('T')[0])
+        adt_1_due_date.setDate(adt_1_due_date.getDate() - 21);
+        frm.set_value('adt_1_due_date', adt_1_due_date.toISOString().split('T')[0])
+
+        // Calculate and set INCOME TAX Return
+        let it_return_due_date = parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10)
+        frm.set_value('it_return_due_date', `20${it_return_due_date}-10-31`)
+
+        // DIRECTOR KYC
+        let updatedYear = parseInt(financial_year_date[0].financial_year_name.split('-')[1], 10);
+        frm.set_value('d_kyc_due_date', `20${updatedYear}-09-30`)
     }
 }
 async function check_ACF(frm) {
