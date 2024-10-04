@@ -87,7 +87,7 @@ async function set_due_date(frm) {
         frm.set_value('it_return_due_date', `20${updatedYear}-10-31`)
 
         // DIRECTOR KYC
-        frm.set_value('d_kyc_due_date', `20${financial_year_date[0].financial_year_name.split('-')[1] - 1}-09-30`)
+        frm.set_value('d_kyc_due_date', `20${financial_year_date[0].financial_year_name.split('-')[1] - 1 + (get_next_year === -1 ? 1 : 0)}-09-30`)
 
     } else {
         if (get_next_year < 0) {
@@ -152,6 +152,9 @@ frappe.ui.form.on("Annual Compliance Forms", {
             } catch (e) {
                 console.error('User data fetch error:', e);
             }
+        }
+        if (!frm.is_new()) {
+            await set_due_date(frm)
         }
         hide_print_button(frm)
         await validate_submitted_on(frm, 'adt_report_submitted_on', 'adt_report_due_date');
